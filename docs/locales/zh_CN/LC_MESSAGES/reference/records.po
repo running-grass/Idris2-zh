@@ -3,18 +3,21 @@
 # This file is distributed under the same license as the Idris2 package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-12 11:10+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2022-07-22 15:48+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"Language-Team: Chinese (Simplified) <https://weblate.grass.work:30443/"
+"projects/idris2/referencerecords/zh_Hans/>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 4.13.1\n"
 "Generated-By: Babel 2.10.3\n"
 
 #: ../../source/reference/records.rst:2 474c519761f94cd29fa5fd945fb43f82
@@ -125,8 +128,9 @@ msgid "projection ``.f`` in namespace ``R`` with the same definition"
 msgstr ""
 
 #: ../../source/reference/records.rst:67 3202a43967bd4ab98db5d768d0eeba6b
+#, fuzzy
 msgid "Example code"
-msgstr ""
+msgstr "示例代码"
 
 #: ../../source/reference/records.rst:76 dcbbd53ac4594f6c94b66f09947293e7
 msgid ""
@@ -165,4 +169,3 @@ msgstr ""
 #: ../../source/reference/records.rst:188 575c5c6729e44a6eb98aa41f9a0ba76e
 msgid "Parses but does not typecheck:"
 msgstr ""
-
