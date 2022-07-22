@@ -3,18 +3,21 @@
 # This file is distributed under the same license as the Idris2 package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-12 11:10+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2022-07-22 15:46+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"Language-Team: Chinese (Simplified) <https://weblate.grass.work:30443/"
+"projects/idris2/tutorialmiscellany/zh_Hans/>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 4.13.1\n"
 "Generated-By: Babel 2.10.3\n"
 
 #: ../../source/tutorial/miscellany.rst:5 97410e26a99b4ca6a0c84f8f871b6208
@@ -38,8 +41,9 @@ msgid "the universe hierarchy."
 msgstr ""
 
 #: ../../source/tutorial/miscellany.rst:14 2221c06a0d3e4fdf8aeb0f062d2049eb
+#, fuzzy
 msgid "Implicit arguments"
-msgstr ""
+msgstr "隐式参数"
 
 #: ../../source/tutorial/miscellany.rst:16 b65e31c8d446451ba7c87cf4f6ac0623
 msgid ""
@@ -199,4 +203,3 @@ msgstr ""
 #: ../../source/tutorial/miscellany.rst:164 0b5976f77aa94f21bda33f53f3008439
 msgid "https://github.com/david-christiansen/idris-type-providers"
 msgstr ""
-
