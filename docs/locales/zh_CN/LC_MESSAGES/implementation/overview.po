@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: 467195537@qq.com\n"
 "POT-Creation-Date: 2022-07-12 11:10+0800\n"
-"PO-Revision-Date: 2022-07-21 14:13+0000\n"
-"Last-Translator: Leo Liu <leo19920823@gmail.com>\n"
-"Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
-"idris2/implementationoverview/zh_Hans/>\n"
+"PO-Revision-Date: 2022-07-22 15:42+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"Language-Team: Chinese (Simplified) <https://weblate.grass.work:30443/"
+"projects/idris2/implementationoverview/zh_Hans/>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.14-dev\n"
+"X-Generator: Weblate 4.13.1\n"
 "Generated-By: Babel 2.10.3\n"
 
 #: ../../source/implementation/overview.rst:3 737d254ef9464680ae33f0d422fb6468
@@ -458,8 +458,9 @@ msgstr ""
 
 #: ../../source/implementation/overview.rst:295
 #: 3f2eb72933334a45b35fda5e75ba1dc7
+#, fuzzy
 msgid "Implicit arguments"
-msgstr ""
+msgstr "隐式参数"
 
 #: ../../source/implementation/overview.rst:297
 #: 1582489abe464b0cb3e481d7e72599d9
