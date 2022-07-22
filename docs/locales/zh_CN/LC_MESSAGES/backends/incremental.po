@@ -3,18 +3,21 @@
 # This file is distributed under the same license as the Idris2 package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-12 11:10+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2022-07-22 15:31+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"Language-Team: Chinese (Simplified) <https://weblate.grass.work:30443/"
+"projects/idris2/backendsincremental/zh_Hans/>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 4.13.1\n"
 "Generated-By: Babel 2.10.3\n"
 
 #: ../../source/backends/incremental.rst:3 53e6d502e33d478c8991c9230ef9c80b
@@ -22,6 +25,7 @@ msgid "Incremental Code Generation"
 msgstr ""
 
 #: ../../source/backends/incremental.rst:5 e2ec25eb2b554efc993db78cfb64480a
+#, fuzzy
 msgid ""
 "By default, Idris 2 is a whole program compiler - that is, it finds all "
 "the necessary function definitions and compiles them only when you build "
@@ -29,6 +33,9 @@ msgid ""
 "also be slow for rebuilding. However, if the backend supports it, you can"
 " build modules and executables *incrementally*. To do so, you can either:"
 msgstr ""
+"默认情况下，Idris 2 是一个完整的程序编译器 - 也就是说，它找到所有必要的函数定"
+"义，并在你构建可执行文件时才编译它们。这提供了大量的优化机会，但对于重新构建"
+"来说可能会很慢。然而，如果后端支持的话，你可以 *增量* 构建模块和可执行文件："
 
 #: ../../source/backends/incremental.rst:11 c6e899075f0e4a86861e04b0e8c5a477
 msgid ""
@@ -122,4 +129,3 @@ msgid ""
 "the resulting executable will not perform as well. For deployment, "
 "``--whole-program`` compilation is recommended."
 msgstr ""
-
