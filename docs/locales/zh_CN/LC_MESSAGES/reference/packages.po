@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: 467195537@qq.com\n"
 "POT-Creation-Date: 2022-07-12 11:10+0800\n"
-"PO-Revision-Date: 2022-07-19 12:25+0000\n"
-"Last-Translator: Leo Liu <leo19920823@gmail.com>\n"
-"Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
-"idris2/referencepackages/zh_Hans/>\n"
+"PO-Revision-Date: 2022-07-22 15:46+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"Language-Team: Chinese (Simplified) <https://weblate.grass.work:30443/"
+"projects/idris2/referencepackages/zh_Hans/>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.14-dev\n"
+"X-Generator: Weblate 4.13.1\n"
 "Generated-By: Babel 2.10.3\n"
 
 #: ../../source/reference/packages.rst:5 308eab30895b401181160f1296402ac1
@@ -40,15 +40,19 @@ msgid "A package description includes the following:"
 msgstr "一个包的描述包括以下内容："
 
 #: ../../source/reference/packages.rst:16 354b4d3323894ad79159db9e538a10a6
+#, fuzzy
 msgid ""
 "A header, consisting of the keyword ``package`` followed by the package "
 "name. Package names can be any valid Idris identifier. The iPKG format "
 "also takes a quoted version that accepts any valid filename."
 msgstr ""
+"一个头，由关键词``package``组成，后面是一个包名。包名可以是任何有效的 Idris "
+"标识符。iPKG 格式也需要一个带引号的版本，接受任何有效的文件名。"
 
 #: ../../source/reference/packages.rst:19 16afa60c368b40848ae9fff9f637e141
+#, fuzzy
 msgid "Fields describing package contents, ``<field> = <value>``"
-msgstr ""
+msgstr "描述包内容的字段， ``<field> = <value>`` 。"
 
 #: ../../source/reference/packages.rst:21 335bbbf920a14622a0a26b64d81545bd
 msgid ""
@@ -238,8 +242,9 @@ msgid ""
 msgstr ""
 
 #: ../../source/reference/packages.rst:126 16ac89a5a3034e2ab0d48553403f7af4
+#, fuzzy
 msgid "``idris2 --build test.ipkg`` will build all modules in the package"
-msgstr ""
+msgstr "``idris2 --build maths.ipkg`` 将构建包中的所有模块"
 
 #: ../../source/reference/packages.rst:128 335be656af3c471eaa42c38e2f6d45e9
 msgid ""
@@ -261,11 +266,13 @@ msgid ""
 msgstr ""
 
 #: ../../source/reference/packages.rst:139 84b665fd9a51447489da7deb7cd2ad69
+#, fuzzy
 msgid ""
 "Once the test package has been installed, the command line option "
 "``--package test`` makes it accessible (abbreviated to ``-p test``). For "
 "example::"
-msgstr ""
+msgstr "一旦安装了 math 包，命令行选项 ``--package maths`` 使其可以访问（缩写为 ``-p "
+"maths`` ）。比如："
 
 #: ../../source/reference/packages.rst:146 78a65400b99e44e6843373c214ca0bf4
 msgid "Where does Idris look for packages?"
