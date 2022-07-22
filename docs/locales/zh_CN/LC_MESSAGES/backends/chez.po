@@ -3,18 +3,21 @@
 # This file is distributed under the same license as the Idris2 package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-12 11:10+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2022-07-22 15:43+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"Language-Team: Chinese (Simplified) <https://weblate.grass.work:30443/"
+"projects/idris2/backendschez/zh_Hans/>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 4.13.1\n"
 "Generated-By: Babel 2.10.3\n"
 
 #: ../../source/backends/chez.rst:3 031df179d38d4bf78b60c1efeef7bc1d
@@ -65,8 +68,9 @@ msgid ""
 msgstr ""
 
 #: ../../source/backends/chez.rst:35 3b99a2f1c4af4c889e2b22d6075e0a5f
+#, fuzzy
 msgid "You can also execute an expression directly:"
-msgstr ""
+msgstr "你也可以直接执行表达式："
 
 #: ../../source/backends/chez.rst:41 1f79591c812f407aabd77f2c6b1073e7
 msgid ""
@@ -139,4 +143,3 @@ msgid ""
 "library. It's possible to also eliminate that dependency by linking with "
 "it statically."
 msgstr ""
-
