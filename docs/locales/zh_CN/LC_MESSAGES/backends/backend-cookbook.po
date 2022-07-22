@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: 467195537@qq.com\n"
 "POT-Creation-Date: 2022-07-12 11:10+0800\n"
-"PO-Revision-Date: 2022-07-13 02:03+0000\n"
-"Last-Translator: Leo Liu <leo19920823@gmail.com>\n"
-"Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
-"idris2/backendsbackend-cookbook/zh_Hans/>\n"
+"PO-Revision-Date: 2022-07-22 15:46+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"Language-Team: Chinese (Simplified) <https://weblate.grass.work:30443/"
+"projects/idris2/backendsbackend-cookbook/zh_Hans/>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.14-dev\n"
+"X-Generator: Weblate 4.13.1\n"
 "Generated-By: Babel 2.10.3\n"
 
 #: ../../source/backends/backend-cookbook.rst:2
@@ -770,8 +770,9 @@ msgstr ""
 
 #: ../../source/backends/backend-cookbook.rst:414
 #: 188ac92867464449a598187bd7ecb795
+#, fuzzy
 msgid "Function"
-msgstr ""
+msgstr "函数"
 
 #: ../../source/backends/backend-cookbook.rst:415
 #: 7eae2d4f664e42138e7d94c10af7f956
