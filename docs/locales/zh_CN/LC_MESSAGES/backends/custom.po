@@ -3,18 +3,21 @@
 # This file is distributed under the same license as the Idris2 package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-12 11:10+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2022-07-22 15:43+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"Language-Team: Chinese (Simplified) <https://weblate.grass.work:30443/"
+"projects/idris2/backendscustom/zh_Hans/>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 4.13.1\n"
 "Generated-By: Babel 2.10.3\n"
 
 #: ../../source/backends/custom.rst:3 8c9ced13d7b943f997118bb2188629d6
@@ -31,8 +34,9 @@ msgid ""
 msgstr ""
 
 #: ../../source/backends/custom.rst:12 16c2cc74328e4c88ab80cdf0a3405df8
+#, fuzzy
 msgid "Getting started"
-msgstr ""
+msgstr "入门"
 
 #: ../../source/backends/custom.rst:14 757096183da34d32be93a3f1241e16f8
 msgid ""
@@ -72,4 +76,3 @@ msgid ""
 ":`ref-sect-packages`) or via command line options (Listed in ``idris2 "
 "--help``)."
 msgstr ""
-
