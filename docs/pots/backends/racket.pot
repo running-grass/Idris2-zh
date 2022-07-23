@@ -1,0 +1,82 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-23 12:38+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../source/backends/racket.rst:3
+#: 9fe878e57dc548068eb73bdaca1961ec
+msgid "Racket Code Generator"
+msgstr ""
+
+#: ../source/backends/racket.rst:5
+#: 836ccfe9352e449fb6c0d64faa43f98b
+msgid "The Racket code generator is accessed via a REPL command:"
+msgstr ""
+
+#: ../source/backends/racket.rst:11
+#: 6a7305cf8bc94d21b9af319f8f0884b4
+msgid "Alternatively, you can set it via the ``IDRIS2_CG`` environment variable:"
+msgstr ""
+
+#: ../source/backends/racket.rst:17
+#: 08501d45061a4af1bee1265f62f49fdb
+msgid "You can compile an expression ``expr`` of type ``IO ()`` to an executable as follows, at the REPL:"
+msgstr ""
+
+#: ../source/backends/racket.rst:24
+#: 27798600403643d0a8b64436bac5ea1b
+msgid "...where ``execname`` is the name of the executable file. This will generate the following:"
+msgstr ""
+
+#: ../source/backends/racket.rst:27
+#: 503ca81984b04c3a8016b5ff7d527df3
+msgid "A shell script ``build/exec/execname`` which invokes the program"
+msgstr ""
+
+#: ../source/backends/racket.rst:28
+#: 15598275ad4d409abd1166fbc77d637a
+msgid "A subdirectory ``build/exec/execname_app`` which contains all the data necessary to run the program. This includes the Racket source (``execname.rkt``), the compiled Racket code (``execname`` or ``execname.exe`` on Windows) and any shared libraries needed for foreign function definitions."
+msgstr ""
+
+#: ../source/backends/racket.rst:33
+#: 60a58679ccba4a28bd5d42ac0a8bc53b
+msgid "The executable ``execname`` is relocatable to any subdirectory, provided that ``execname_app`` is also in the same subdirectory."
+msgstr ""
+
+#: ../source/backends/racket.rst:36
+#: 23384c6562b14043b6c3bb3c7c197561
+msgid "You can also execute an expression directly:"
+msgstr ""
+
+#: ../source/backends/racket.rst:42
+#: 9c6f779aec044e6b8bdc9767ebd2e159
+msgid "Again, ``expr`` must have type ``IO ()``. This will generate a temporary executable script ``_tmpracket`` in the ``build/exec`` directory, and execute that, without compiling to a binary first (so the resulting Racket code is interpreted)."
+msgstr ""
+
+#: ../source/backends/racket.rst:49
+#: d03379664cd84adeb864ef841ef51877
+msgid "Racket Directives"
+msgstr ""
+
+#: ../source/backends/racket.rst:51
+#: ebbd35819b164374bccd5e96e29c0166
+msgid "``--directive extraRuntime=<path>``"
+msgstr ""
+
+#: ../source/backends/racket.rst:53
+#: 38f8f89c69a7457c958ad327d2c0663f
+msgid "Embed Scheme source from ``<path>`` directly into generated output. Can be specified more than once, in which case all given files will be included in the order specified."
+msgstr ""

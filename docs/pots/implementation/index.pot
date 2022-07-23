@@ -1,0 +1,37 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-23 12:38+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../source/implementation/index.rst:5
+#: 405446d3abb94ab5880ca4920143a03e
+msgid "Implementation Notes"
+msgstr ""
+
+#: ../source/implementation/index.rst:9
+#: f0faacc5d5b04c76a29470101e4ddb4e
+msgid "The documentation for Idris has been published under the Creative Commons CC0 License. As such to the extent possible under law, *The Idris Community* has waived all copyright and related or neighboring rights to Documentation for Idris."
+msgstr ""
+
+#: ../source/implementation/index.rst:14
+#: 2b3f605de0fb4b8db116ae3ecb6e2c9b
+msgid "More information concerning the CC0 can be found online at: http://creativecommons.org/publicdomain/zero/1.0/"
+msgstr ""
+
+#: ../source/implementation/index.rst:16
+#: 767c511297bb4c4d9abff3e99d45efc6
+msgid "This section contains (or will contain, hopefully) a variety of notes on aspects of the implementation of Idris 2, in the hope that they help with debugging and future contributions."
+msgstr ""

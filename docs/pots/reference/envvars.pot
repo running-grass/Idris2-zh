@@ -1,0 +1,112 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-23 12:38+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../source/reference/envvars.rst:5
+#: 776b313020e04574b7f7b74e0e11345e
+msgid "Environment Variables"
+msgstr ""
+
+#: ../source/reference/envvars.rst:7
+#: d803d7e092f04154aef7a122b83b23d0
+msgid "Idris 2 recognises a number of environment variables, to decide where to look for packages, external libraries, code generators, etc. It currently recognises, in approximately the order you're likely to need them:"
+msgstr ""
+
+#: ../source/reference/envvars.rst:11
+#: 021322dba40e47f5ae57ee3aa64115b8
+msgid "``EDITOR`` - Sets the editor used in REPL :e command"
+msgstr ""
+
+#: ../source/reference/envvars.rst:12
+#: 4f9b74b79bc24d43bce83f5ae1c26220
+msgid "``IDRIS2_CG`` - Sets which code generator to use when compiling programs"
+msgstr ""
+
+#: ../source/reference/envvars.rst:13
+#: 660b99d3ad704243981b651037e6f1f1
+msgid "``IDRIS2_PACKAGE_PATH`` - Lists the directories where Idris2 looks for packages, in addition to the defaults (which are under the ``IDRIS2_PREFIX`` and in the ``depends`` subdirectory of the current working directory). Directories are separated by a ``:``, or a ``;`` on Windows"
+msgstr ""
+
+#: ../source/reference/envvars.rst:17
+#: e140d5bb94cd4c82b943fdb4ffeb738f
+msgid "``IDRIS2_PATH`` - Places Idris2 looks for import files, in addition to the imports in packages"
+msgstr ""
+
+#: ../source/reference/envvars.rst:19
+#: 7f2e68cad69a45e296c2f4d9855e4d99
+msgid "``IDRIS2_DATA`` - Places Idris2 looks for its data files. These are typically support code for code generators."
+msgstr ""
+
+#: ../source/reference/envvars.rst:21
+#: 16054b5376d94618af6e7950a26b5627
+msgid "``IDRIS2_LIBS`` - Places Idris2 looks for libraries used by code generators."
+msgstr ""
+
+#: ../source/reference/envvars.rst:22
+#: c0e538710828403a923e2074ea81a14e
+msgid "``IDRIS2_PREFIX`` - Gives the Idris2 installation prefix"
+msgstr ""
+
+#: ../source/reference/envvars.rst:23
+#: d7a99157b4ca41a0886aa1f73d7fd70e
+msgid "``CHEZ`` - Sets the location of the ``chez`` executable used in Chez codegen"
+msgstr ""
+
+#: ../source/reference/envvars.rst:24
+#: d7f73b3a63414cea97ebcc0d8bd48f46
+msgid "``RACKET`` - Sets the location of the ``racket`` executable used in Racket codegen"
+msgstr ""
+
+#: ../source/reference/envvars.rst:25
+#: 98e3f7be9c954e5795cd6171e8ade4a6
+msgid "``RACKET_RACO`` - Sets the location of the ``raco`` executable used in Racket codegen"
+msgstr ""
+
+#: ../source/reference/envvars.rst:26
+#: b6f14e95786d4a4b87d8bbcb68a8fdce
+msgid "``GAMBIT_GSI`` - Sets the location of the ``gsi`` executable used in Gambit codegen"
+msgstr ""
+
+#: ../source/reference/envvars.rst:27
+#: 201cc56efb1c47a8986df7dae7eb8b9b
+msgid "``GAMBIT_GSC`` - Sets the location of the ``gsc`` executable used in Gambit codegen"
+msgstr ""
+
+#: ../source/reference/envvars.rst:28
+#: f79596bc641943aabfe6796df38aa907
+msgid "``GAMBIT_GSC_BACKEND`` - Sets the ``gsc`` executable backend argument"
+msgstr ""
+
+#: ../source/reference/envvars.rst:29
+#: b7cb296eb42047f48960804d5d7d8f14
+msgid "``IDRIS2_CC`` - Sets the location of the C compiler executable used in RefC codegen"
+msgstr ""
+
+#: ../source/reference/envvars.rst:30
+#: 4a8323f62b904ce1ba2d003fc3972f5a
+msgid "``CC`` - Sets the location of the C compiler executable used in RefC codegen"
+msgstr ""
+
+#: ../source/reference/envvars.rst:31
+#: 53c98e78d4e440a29259ecaac4984317
+msgid "``NODE`` - Sets the location of the ``node`` executable used in Node codegen"
+msgstr ""
+
+#: ../source/reference/envvars.rst:32
+#: 4b514d65fed44a29940ea6a701dcae01
+msgid "``PATH`` - used to search for executables in certain codegens"
+msgstr ""

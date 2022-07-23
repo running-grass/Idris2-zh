@@ -1,0 +1,77 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-23 12:38+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../source/app/exceptionsstate.rst:2
+#: bb6d230bdaf944b7be9cf64f76b8326d
+msgid "Exceptions and State"
+msgstr ""
+
+#: ../source/app/exceptionsstate.rst:4
+#: 35eb024a5a6f4e71b94cfecf2122cf9b
+msgid "``Control.App`` is primarily intended to make it easier to manage the common cases of applications with exceptions and state. We can throw and catch exceptions listed in the list of errors (the ``es`` parameter to ``App``) and introduce new global state."
+msgstr ""
+
+#: ../source/app/exceptionsstate.rst:10
+#: 3e087ebfc64f43a1b65352f97b9819a8
+msgid "Exceptions"
+msgstr ""
+
+#: ../source/app/exceptionsstate.rst:12
+#: 08972c9fa2ba4593a9f7a02e16215424
+msgid "The ``List Error`` is a list of error types, usable via the ``Exception`` interface defined in ``Control.App``:"
+msgstr ""
+
+#: ../source/app/exceptionsstate.rst:21
+#: 86ef8b9c80bb4ba69073753a4da529ca
+msgid "We can use ``throw`` and ``catch`` for some exception type ``err`` as long as the exception type exists in the list of errors. This is checked with the ``HasErr`` predicate, also defined in ``Control.App``:"
+msgstr ""
+
+#: ../source/app/exceptionsstate.rst:33
+#: 8f93c5a4f91a4e5695653b53ed3dee32
+msgid "Note the ``HasErr`` constraint on ``Exception``: this is one place where it is notationally convenient that the ``auto`` implicit mechanism and the interface resolution mechanism are identical in Idris 2. Finally, we can introduce new exception types via ``handle``, which runs a block of code which might throw, handling any exceptions:"
+msgstr ""
+
+#: ../source/app/exceptionsstate.rst:46
+#: ecdfc7539d294e0da92fd6f8416cdf03
+msgid "Adding State"
+msgstr ""
+
+#: ../source/app/exceptionsstate.rst:48
+#: 1459688721e94b20ae7589d5e4c50e3d
+msgid "Applications will typically need to keep track of state, and we support this primitively in ``App`` using a ``State`` type, defined in ``Control.App``:"
+msgstr ""
+
+#: ../source/app/exceptionsstate.rst:56
+#: 112cb81189ae4607b9845f121ef78957
+msgid "The ``tag`` is used purely to distinguish between different states, and is not required at run-time, as explicitly stated in the types of ``get`` and ``put``, which are used to access and update a state:"
+msgstr ""
+
+#: ../source/app/exceptionsstate.rst:65
+#: 038622605d9e43f9b8a3f9ecab689d9d
+msgid "These use an ``auto``-implicit to pass around a ``State`` with the relevant ``tag`` implicitly, so we refer to states by tag alone. In ``helloCount`` earlier, we used an empty type ``Counter`` as the tag:"
+msgstr ""
+
+#: ../source/app/exceptionsstate.rst:74
+#: 13f4546355154ba9a4899f0f7caa634b
+msgid "The list of errors ``e`` is used to ensure that states are only usable in the list of errors in which they are introduced. States are introduced using ``new``:"
+msgstr ""
+
+#: ../source/app/exceptionsstate.rst:82
+#: 1bac24f4997b4e4db0a853994ace8468
+msgid "Note that the type tells us ``new`` runs the program with the state exactly once. Rather than using ``State`` and ``Exception`` directly, however, we typically use interfaces to constrain the operations which are allowed in a list of errors. Internally, ``State`` is implemented via an ``IORef``, primarily for performance reasons."
+msgstr ""

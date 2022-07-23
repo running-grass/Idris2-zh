@@ -1,0 +1,204 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-23 12:38+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../source/reference/literate.rst:5
+#: 8656a0e87f474d8bae47a55d50d8dafa
+msgid "Literate Programming"
+msgstr ""
+
+#: ../source/reference/literate.rst:7
+#: 56a2d31a38b4410099c10acb32c9069c
+msgid "Idris2 supports several types of literate mode styles."
+msgstr ""
+
+#: ../source/reference/literate.rst:9
+#: cac9149e8eff447bb94f57c8e456d884
+msgid "The unlit'n has been designed based such that we assume that we are parsing markdown-like languages The unlit'n is performed by a Lexer that uses a provided literate style to recognise code blocks and code lines. Anything else is ignored. Idris2 also provides support for recognising both 'visible' and 'invisible' code blocks using 'native features' of each literate style."
+msgstr ""
+
+#: ../source/reference/literate.rst:14
+#: edf4c4efc7d54837ab3594e980cf1dd6
+msgid "A literate style consists of:"
+msgstr ""
+
+#: ../source/reference/literate.rst:16
+#: 8e887915a5b5431ea4ae199ecdd254d8
+msgid "a list of String encoded code block deliminators;"
+msgstr ""
+
+#: ../source/reference/literate.rst:17
+#: 1301cdf28414469797be30ac0a1c5a7b
+msgid "a list of line indicators; and"
+msgstr ""
+
+#: ../source/reference/literate.rst:18
+#: 8d2edb124d264980be0e5d372796fce2
+msgid "a list of valid file extensions."
+msgstr ""
+
+#: ../source/reference/literate.rst:20
+#: b7cced6615c24a7f9e52e350b53021c5
+msgid "Lexing is simple and greedy in that when consuming anything that is a code blocks we treat everything as code until we reach the closing deliminator. This means that use of verbatim modes in a literate file will also be treated as active code."
+msgstr ""
+
+#: ../source/reference/literate.rst:23
+#: 27f691d286744d0083af83780b61d3b9
+msgid "In future we should add support for literate ``LaTeX`` files, and potentially other common document formats. But more importantly, a more intelligent processing of literate documents using a pandoc like library in Idris such as: `Edda <https://github.com/jfdm/edda>` would also be welcome."
+msgstr ""
+
+#: ../source/reference/literate.rst:27
+#: 2d0213daff9d4ea0a41cd540a6befb6b
+msgid "Bird Style Literate Files"
+msgstr ""
+
+#: ../source/reference/literate.rst:29
+#: b4256311b56a4ec68e1dabfe85a8f6e2
+msgid "We treat files with an extension of ``.lidr`` as bird style literate files."
+msgstr ""
+
+#: ../source/reference/literate.rst:31
+#: 15148b0947954cc89cf5240038a62941
+msgid "Bird notation is a classic literate mode found in Haskell, (and Orwell) in which visible code lines begin with ``>`` and hidden lines with ``<``. Other lines are treated as documentation."
+msgstr ""
+
+#: ../source/reference/literate.rst:37
+#: ff2506a8a7ca4c03a8368c6e89433ca8
+msgid "We have diverged from ``lhs2tex`` in which ``<`` is traditionally used to display inactive code. Bird-style is presented as is, and we recommended use of the other styles for much more comprehensive literate mode."
+msgstr ""
+
+#: ../source/reference/literate.rst:41
+#: 82296c3c80024701b83457e021b2c23b
+msgid "Embedding in Markdown-like documents"
+msgstr ""
+
+#: ../source/reference/literate.rst:43
+#: 80fe248186384c048c04db23aba2fcf3
+msgid "While Bird Style literate mode is useful, it does not lend itself well to more modern markdown-like notations such as Org-Mode and CommonMark. Idris2 also provides support for recognising both 'visible' and 'invisible' code blocks and lines in both CommonMark and OrgMode documents using native code blocks and lines.."
+msgstr ""
+
+#: ../source/reference/literate.rst:48
+#: ea50dac639c34d71993947e7f22c8d0b
+msgid "The idea being is that:"
+msgstr ""
+
+#: ../source/reference/literate.rst:50
+#: 36002c4ec5bd4ee3bee18ef3cd389764
+msgid "**Visible** content will be kept in the pretty printer's output;"
+msgstr ""
+
+#: ../source/reference/literate.rst:51
+#: 32406c23fb594e6cac499c78e5905a1e
+msgid "**Invisible** content will be removed; and"
+msgstr ""
+
+#: ../source/reference/literate.rst:52
+#: 7a098253f53043d2ab6197aa18df6e68
+msgid "**Specifications** will be displayed *as is* and not touched by the compiler."
+msgstr ""
+
+#: ../source/reference/literate.rst:55
+#: d698aae1154749b2adbb46bbe6ee3f46
+msgid "OrgMode"
+msgstr ""
+
+#: ../source/reference/literate.rst:57
+#: 42b26cfcf6db4cefbf37ffa76b568e04
+msgid "We treat files with an extension of ``.org`` as org-style literate files. Each of the following markup is recognised regardless of case:"
+msgstr ""
+
+#: ../source/reference/literate.rst:60
+#: 0a6f9c12d6c646acb54fe65123ec853d
+msgid "Org mode source blocks for idris sans options are recognised as visible code blocks::"
+msgstr ""
+
+#: ../source/reference/literate.rst:66
+#: 3921f055b93a474ebf153e26aa44f4b7
+msgid "Comment blocks that begin with ``#+BEGIN_COMMENT idris`` are treated as invisible code blocks::"
+msgstr ""
+
+#: ../source/reference/literate.rst:72
+#: a44062c7ebed439a8a834bae401a9cfc
+msgid "Visible code lines, and specifications, are not supported. Invisible code lines are denoted with ``#+IDRIS:``::"
+msgstr ""
+
+#: ../source/reference/literate.rst:76
+#: 67cbc129873441ef83b53ca48a15b1b7
+msgid "Specifications can be given using OrgModes plain source or example blocks::"
+msgstr ""
+
+#: ../source/reference/literate.rst:86
+#: bc053beee23c4534b347116bf8b8a22d
+msgid "CommonMark"
+msgstr ""
+
+#: ../source/reference/literate.rst:88
+#: 745652a86158428789243656b13046ff
+msgid "We treat files with an extension of ``.md`` and ``.markdown`` as CommonMark style literate files."
+msgstr ""
+
+#: ../source/reference/literate.rst:90
+#: 4e45388e25714527ae8919c820d80a0d
+msgid "CommonMark source blocks for idris sans options are recognised as visible code blocks::"
+msgstr ""
+
+#: ../source/reference/literate.rst:100
+#: b6855061a5f04090b1b48be4c3ad5183
+msgid "Comment blocks of the form ``<!-- idris\\n ... \\n -->`` are treated as invisible code blocks::"
+msgstr ""
+
+#: ../source/reference/literate.rst:106
+#: ../source/reference/literate.rst:144
+#: 77c30822089b415d913ff3a3aadad516
+#: fda1b3ceb4d1449fb6cf73ed1fac6442
+msgid "Code lines are not supported."
+msgstr ""
+
+#: ../source/reference/literate.rst:108
+#: 8652068e111a4e9498bd83e9c70cc9b3
+msgid "Specifications can be given using CommonMark's pre-formatted blocks (indented by four spaces) or unlabelled code blocks.::"
+msgstr ""
+
+#: ../source/reference/literate.rst:127
+#: 5088761b0fac47acaaff9448d111f6c7
+msgid "LaTeX"
+msgstr ""
+
+#: ../source/reference/literate.rst:129
+#: 235e5573b48a4e8b811eb1d823d79f7a
+msgid "We treat files with an extension of ``.tex`` and ``.ltx`` as LaTeX style literate files."
+msgstr ""
+
+#: ../source/reference/literate.rst:131
+#: 687439a4415140aca26a5e9ac2885a09
+msgid "We treat environments named ``code`` as visible code blocks::"
+msgstr ""
+
+#: ../source/reference/literate.rst:138
+#: b8da0284a222403cbcc3b784c4b9cf39
+msgid "We treat environments named ``hidden`` as invisible code blocks::"
+msgstr ""
+
+#: ../source/reference/literate.rst:146
+#: 4d9d9bf72254461889c3f1949322425a
+msgid "Specifications can be given using user defined environments."
+msgstr ""
+
+#: ../source/reference/literate.rst:148
+#: 9f18b75ca0394f1e837dadd9883fa08b
+msgid "We do not provide definitions for these code blocks and ask the user to define them. With one such example using ``fancyverbatim`` and ``comment`` packages as::"
+msgstr ""

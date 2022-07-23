@@ -1,0 +1,167 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-23 12:38+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../source/proofs/pluscomm.rst:3
+#: a737f8f957f44ff69e72c740b21ff49c
+msgid "Running example: Addition of Natural Numbers"
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:5
+#: 8f369803dcd84c54a22d14d732e5286f
+msgid "Throughout this tutorial, we will be working with the following function, defined in the Idris prelude, which defines addition on natural numbers:"
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:15
+#: bade47b7e2454817ad84add643a00aae
+msgid "It is defined by the above equations, meaning that we have for free the properties that adding ``m`` to zero always results in ``m``, and that adding ``m`` to any non-zero number ``S k`` always results in ``S (plus k m)``. We can see this by evaluation at the Idris REPL (i.e. the prompt, the read-eval-print loop):"
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:29
+#: e70bc393195a440e8856b422deb8fbed
+msgid "Note that unlike many other language REPLs, the Idris REPL performs evaluation on *open* terms, meaning that it can reduce terms which appear inside lambda bindings, like those above. Therefore, we can introduce unknowns ``k`` and ``m`` as lambda bindings and see how ``plus`` reduces."
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:35
+#: 0f1223ee788d44bfacd73c58de3a29ad
+msgid "The ``plus`` function has a number of other useful properties, for example:"
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:38
+#: 67f116bec3e34cbfaf6d166e48fc35e4
+msgid "It is *commutative*, that is for all ``Nat`` inputs ``n`` and ``m``, we know that ``plus n m = plus m n``."
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:41
+#: 5de674d28cac42cd999eed5edff545aa
+msgid "It is *associative*, that is for all ``Nat`` inputs ``n``, ``m`` and ``p``, we know that ``plus n (plus m p) = plus (plus m n) p``."
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:44
+#: d64ce1ca21cd4758994fcf3eec20057a
+msgid "We can use these properties in an Idris program, but in order to do so we must *prove* them."
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:48
+#: d74416c553634c4ead43b08f1fc30d09
+msgid "Equality Proofs"
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:50
+#: 34d925db2a1c4b338d94febd9212e856
+msgid "Idris defines a propositional equality type as follows:"
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:57
+#: 08363362e4724a54b203b14b8fb864d2
+msgid "As syntactic sugar, ``Equal x y`` can be written as ``x = y``."
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:59
+#: 5a682bdbcfb442129f312868b1bbbe12
+msgid "It is *propositional* equality, where the type states that any two values in different types ``a`` and ``b`` may be proposed to be equal. There is only one way to *prove* equality, however, which is by reflexivity (``Refl``)."
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:64
+#: d26ebd49e6944fbd99ec768f0d07cf41
+msgid "We have a *type* for propositional equality here, and correspondingly a *program* inhabiting an instance of this type can be seen as a proof of the corresponding proposition [1]_. So, trivially, we can prove that ``4`` equals ``4``:"
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:74
+#: 0a6d3b2fba0c42f8a626720ab30c066f
+msgid "However, trying to prove that ``4 = 5`` results in failure:"
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:81
+#: da8d18a7e6c642e090a4785c18019fa2
+msgid "The type ``4 = 5`` is a perfectly valid type, but is uninhabited, so when trying to type check this definition, Idris gives the following error:"
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:94
+#: ef08fe91161c4ea7979c0d51d3e34214
+msgid "Type checking equality proofs"
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:96
+#: 2018353f4f7f464e9f34a78e22c72d83
+msgid "An important step in type checking Idris programs is *unification*, which attempts to resolve implicit arguments such as the implicit argument ``x`` in ``Refl``. As far as our understanding of type checking proofs is concerned, it suffices to know that unifying two terms involves reducing both to normal form then trying to find an assignment to implicit arguments which will make those normal forms equal."
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:103
+#: 12beab40bee5449288630f9c55bf57db
+msgid "When type checking ``Refl``, Idris requires that the type is of the form ``x = x``, as we see from the type of ``Refl``. In the case of ``four_eq_five``, Idris will try to unify the expected type ``4 = 5`` with the type of ``Refl``, ``x = x``, notice that a solution requires that ``x`` be both ``4`` and ``5``, and therefore fail."
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:109
+#: 7d7d728654d84ee1ad8a0bb7e577a58d
+msgid "Since type checking involves reduction to normal form, we can write the following equalities directly:"
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:124
+#: 926de0e559424094af16465679525ef6
+msgid "Heterogeneous Equality"
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:126
+#: 6b76c612da9c46d7b01b6cfabaf1ecc5
+msgid "Equality in Idris is *heterogeneous*, meaning that we can even propose equalities between values in different types:"
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:133
+#: d6f8faa7828045d697e2f780aa69327b
+msgid "The type ``Z = \"Z\"`` is uninhabited, and one might wonder why it is useful to be able to propose equalities between values in different types. However, with dependent types, such equalities can arise naturally. For example, if two vectors are equal, their lengths must be equal:"
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:143
+#: 3744e37599314c7d95cd734f77056856
+msgid "In the above declaration, ``xs`` and ``ys`` have different types because their lengths are different, but we would still like to draw a conclusion about the lengths if they happen to be equal. We can define ``vect_eq_length`` as follows:"
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:152
+#: c7e9ea6c7cbf43efb4e00f8c498feb88
+msgid "By matching on ``Refl`` for the third argument, we know that the only valid value for ``ys`` is ``xs``, because they must be equal, and therefore their types must be equal, so the lengths must be equal."
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:156
+#: 5db5c912c5e04b27ad881d6639ae4c18
+msgid "Alternatively, we can put an underscore for the second ``xs``, since there is only one value which will type check:"
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:164
+#: fc69473f27c040c28ff64b5436c69609
+msgid "Properties of ``plus``"
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:166
+#: 0cae940e4e024da98443383c5968cedf
+msgid "Using the ``(=)`` type, we can now state the properties of ``plus`` given above as Idris type declarations:"
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:174
+#: 7170ed003b084d90b98926e3c95cb133
+msgid "Both of these properties (and many others) are proved for natural number addition in the Idris standard library, using ``(+)`` from the ``Num`` interface rather than using ``plus`` directly. They have the names ``plusCommutative`` and ``plusAssociative`` respectively."
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:179
+#: 24bc680443e1486eb66b8e159e7a23ab
+msgid "In the remainder of this tutorial, we will explore several different ways of proving ``plus_commutes`` (or, to put it another way, writing the function.) We will also discuss how to use such equality proofs, and see where the need for them arises in practice."
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:185
+#: e0c3f7e02af64a01afd1aeec8caf7901
+msgid "This is known as the Curry-Howard correspondence."
+msgstr ""

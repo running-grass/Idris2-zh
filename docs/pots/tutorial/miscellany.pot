@@ -1,0 +1,172 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-23 12:38+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../source/tutorial/miscellany.rst:5
+#: a2182acb732049debb320d3327712cba
+msgid "Miscellany"
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:7
+#: 634caef99a6144599366a13840f94466
+msgid "In this section we discuss a variety of additional features:"
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:9
+#: 490ed410302548ae944fb03d20d8ad48
+msgid "auto, implicit, and default arguments;"
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:10
+#: 5ade330e357647a986cbfcf720a3e3b0
+msgid "literate programming; and"
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:11
+#: a1b46693ea9241cfb78ebd4862b0a7f8
+msgid "the universe hierarchy."
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:14
+#: 7f861dbcafce40e2a2901ad860852a2d
+msgid "Implicit arguments"
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:16
+#: 664440c05e27403694dfc6bfd94d1510
+msgid "We have already seen implicit arguments, which allows arguments to be omitted when they can be inferred by the type checker [#IdrisType]_, e.g."
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:24
+#: 37b96476d28d4c4f9916da2db0f1cef7
+msgid "Auto implicit arguments"
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:26
+#: 857df96465634d79a622e16aca7fb407
+msgid "In other situations, it may be possible to infer arguments not by type checking but by searching the context for an appropriate value, or constructing a proof. For example, the following definition of ``head`` which requires a proof that the list is non-empty:"
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:40
+#: 4bfa1dfa26084934b357a5401e034c52
+msgid "If the list is statically known to be non-empty, either because its value is known or because a proof already exists in the context, the proof can be constructed automatically. Auto implicit arguments allow this to happen silently. We define ``head`` as follows:"
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:50
+#: 576a3cbb542b4501aabfe9047251d0cd
+msgid "The ``auto`` annotation on the implicit argument means that Idris will attempt to fill in the implicit argument by searching for a value of the appropriate type. In fact, internally, this is exactly how interface resolution works. It will try the following, in order:"
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:55
+#: a8501bb72de7485b861ee30a16840122
+msgid "Local variables, i.e. names bound in pattern matches or ``let`` bindings, with exactly the right type."
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:57
+#: 2d7da5474ccd48a8824f4b12c72ae33e
+msgid "The constructors of the required type. If they have arguments, it will search recursively up to a maximum depth of 100."
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:59
+#: ce5b938cca35484c87219deb9e706f4f
+msgid "Local variables with function types, searching recursively for the arguments."
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:61
+#: f28974bbd745453b86ae72ebfb2fb823
+msgid "Any function with the appropriate return type which is marked with the ``%hint`` annotation."
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:64
+#: 85fba9efc5b347baae94837577520f5e
+msgid "In the case that a proof is not found, it can be provided explicitly as normal:"
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:71
+#: cd3ed189858f43658bb33bb033320af5
+msgid "Default implicit arguments"
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:73
+#: e8478ab6d4c94084bd781cc3f8106a42
+msgid "Besides having Idris automatically find a value of a given type, sometimes we want to have an implicit argument with a specific default value. In Idris, we can do this using the ``default`` annotation. While this is primarily intended to assist in automatically constructing a proof where auto fails, or finds an unhelpful value, it might be easier to first consider a simpler case, not involving proofs."
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:79
+#: c45d333abe8e4083aad8ef7113b33628
+msgid "If we want to compute the n'th fibonacci number (and defining the 0th fibonacci number as 0), we could write:"
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:88
+#: d5b539fca0d64857a732708d27d21f1b
+msgid "After this definition, ``fibonacci 5`` is equivalent to ``fibonacci {lag=0} {lead=1} 5``, and will return the 5th fibonacci number. Note that while this works, this is not the intended use of the ``default`` annotation. It is included here for illustrative purposes only. Usually, ``default`` is used to provide things like a custom proof search script."
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:94
+#: 530acc81cf384b4aa4e2fbee4a2d2f73
+msgid "Literate programming"
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:96
+#: a72334dbf83f433fa6b916d86cb47937
+msgid "Like Haskell, Idris supports *literate* programming. If a file has an extension of ``.lidr`` then it is assumed to be a literate file. In literate programs, everything is assumed to be a comment unless the line begins with a greater than sign ``>``, for example:"
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:110
+#: 23c42f3ea59845128bae27a9d068405e
+msgid "An additional restriction is that there must be a blank line between a program line (beginning with ``>``) and a comment line (beginning with any other character)."
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:115
+#: 444e83734b654696891f5bf76210c9b4
+msgid "Cumulativity"
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:119
+#: 1f5ae1fc6de6493588b16126382eb5ad
+msgid "NOT YET IN IDRIS 2"
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:121
+#: 87eb6d9351784f659c1d539470304092
+msgid "Since values can appear in types and *vice versa*, it is natural that types themselves have types. For example:"
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:131
+#: 6c1a0b2af90b484b8497df6b83d76b16
+msgid "But what about the type of ``Type``? If we ask Idris it reports:"
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:138
+#: 05c4eb17aa394de7bd8e8a0fd3acc511
+msgid "If ``Type`` were its own type, it would lead to an inconsistency due to `Girard’s paradox <https://www.cs.cmu.edu/afs/cs.cmu.edu/user/kw/www/scans/girard72thesis.pdf>`_, so internally there is a *hierarchy* of types (or *universes*):"
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:146
+#: 4b9d08573b674b978f2ba83e1d23618e
+msgid "Universes are *cumulative*, that is, if ``x : Type n`` we can also have that ``x : Type m``, as long as ``n < m``. The typechecker generates such universe constraints and reports an error if any inconsistencies are found. Ordinarily, a programmer does not need to worry about this, but it does prevent (contrived) programs such as the following:"
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:160
+#: 838e68d811fb42fca18c27c983a60326
+msgid "The application of ``myid`` to itself leads to a cycle in the universe hierarchy — ``myid``\\ ’s first argument is a ``Type``, which cannot be at a lower level than required if it is applied to itself."
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:164
+#: d7c688c66a4e42a2920509d6b2490487
+msgid "https://github.com/david-christiansen/idris-type-providers"
+msgstr ""

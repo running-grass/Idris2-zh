@@ -1,0 +1,107 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-23 12:38+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../source/app/interfaces.rst:2
+#: 7fce09c0137f4c23aefb100dfa997663
+msgid "Defining Interfaces"
+msgstr ""
+
+#: ../source/app/interfaces.rst:4
+#: 68a8078c1b7441e09cd8dd23298971b8
+msgid "The only way provided by ``Control.App`` to run an ``App`` is via the ``run`` function, which takes a concrete list of errors ``Init``. All concrete extensions to this list of errors are via either ``handle``, to introduce a new exception, or ``new``, to introduce a new state. In order to compose ``App`` programs effectively, rather than introducing concrete exceptions and state in general, we define interfaces for collections of operations which work in a specific list of errors."
+msgstr ""
+
+#: ../source/app/interfaces.rst:14
+#: 0da7b3425d0548cd9d8d23bdd7863b95
+msgid "Example: Console I/O"
+msgstr ""
+
+#: ../source/app/interfaces.rst:16
+#: 6915a29ea5714810a33491c95f18382d
+msgid "We have seen an initial example using the ``Console`` interface, which is declared as follows, in ``Control.App.Console``:"
+msgstr ""
+
+#: ../source/app/interfaces.rst:27
+#: ae67be50856840e59fe52585a5448295
+msgid "It provides primitives for writing to and reading from the console, and generalising the path parameter to ``l`` means that neither can throw an exception, because they have to work in both the ``NoThrow`` and ``MayThrow`` contexts."
+msgstr ""
+
+#: ../source/app/interfaces.rst:32
+#: f126bc3c0dd642fd9e1492c7ce82fe13
+msgid "To implement this for use in a top level ``IO`` program, we need access to primitive ``IO`` operations. The ``Control.App`` library defines a primitive interface for this:"
+msgstr ""
+
+#: ../source/app/interfaces.rst:42
+#: 9104a179e78549f3909801e0fa8b03ce
+msgid "We use ``primIO`` to invoke an ``IO`` function. We also have a ``fork`` primitive, which starts a new thread in a new list of errors supporting ``PrimIO``.  Note that ``fork`` starts a new list of errors ``e'`` so that states are only available in a single thread."
+msgstr ""
+
+#: ../source/app/interfaces.rst:47
+#: 7065ea615ba54a28820a675f93c25258
+msgid "There is an implementation of ``PrimIO`` for a list of errors which can throw the empty type as an exception. This means that if ``PrimIO`` is the only interface available, we cannot throw an exception, which is consistent with the definition of ``IO``. This also allows us to use ``PrimIO`` in the initial list of errors ``Init``."
+msgstr ""
+
+#: ../source/app/interfaces.rst:57
+#: c60063b6852d483f8f74ae1dd3b6ac57
+msgid "Given this, we can implement ``Console`` and run our ``hello`` program in ``IO``. It is implemented as follows in ``Control.App.Console``:"
+msgstr ""
+
+#: ../source/app/interfaces.rst:69
+#: 1709bdb53e0b4079b599b85cb3584345
+msgid "Example: File I/O"
+msgstr ""
+
+#: ../source/app/interfaces.rst:71
+#: 3c993467d6dc4bf9af9ede54973d7105
+msgid "Console I/O can be implemented directly, but most I/O operations can fail. For example, opening a file can fail for several reasons: the file does not exist; the user has the wrong permissions, etc. In Idris, the ``IO`` primitive reflects this in its type:"
+msgstr ""
+
+#: ../source/app/interfaces.rst:80
+#: 510d81a4d6b04d48bc43fdd09b35c76f
+msgid "While precise, this becomes unwieldy when there are long sequences of ``IO`` operations. Using ``App``, we can provide an interface which throws an exception when an operation fails, and guarantee that any exceptions are handled at the top level using ``handle``. We begin by defining the ``FileIO`` interface, in ``Control.App.FileIO``:"
+msgstr ""
+
+#: ../source/app/interfaces.rst:101
+#: 5796e1b86b7942abbae45862c0a56163
+msgid "We use resource bracketing - passing a function to ``withFile`` for working with the opened file - rather than an explicit ``open`` operation, to open a file, to ensure that the file handle is cleaned up on completion."
+msgstr ""
+
+#: ../source/app/interfaces.rst:106
+#: 652fca1b5d8749f68cb52a6adb42a8f8
+msgid "One could also imagine an interface using a linear resource for the file, which might be appropriate in some safety critical contexts, but for most programming tasks, exceptions should suffice. All of the operations can fail, and the interface makes this explicit by saying we can only implement ``FileIO`` if the list of errors supports throwing and catching the ``IOError`` exception. ``IOError`` is defined in ``Control.App``."
+msgstr ""
+
+#: ../source/app/interfaces.rst:114
+#: 0bfc3eeac4674e3193144427f2e35e79
+msgid "For example, we can use this interface to implement ``readFile``, throwing an exception if opening the file fails in ``withFile``:"
+msgstr ""
+
+#: ../source/app/interfaces.rst:130
+#: b654eaaeabdb43debbe0ab62cd343f64
+msgid "Again, this is defined in ``Control.App.FileIO``."
+msgstr ""
+
+#: ../source/app/interfaces.rst:132
+#: 9b6a5c95383e4fe18b4cf289d34cd1dd
+msgid "To implement ``FileIO``, we need access to the primitive operations via ``PrimIO``, and the ability to throw exceptions if any of the operations fail. With this, we can implement ``withFile`` as follows, for example:"
+msgstr ""
+
+#: ../source/app/interfaces.rst:148
+#: 6bc54d0aa61f49cb909f34d3f7fc1ca7
+msgid "Given this implementation of ``FileIO``, we can run ``readFile``, provided that we wrap it in a top level ``handle`` function to deal with any errors thrown by ``readFile``:"
+msgstr ""

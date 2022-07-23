@@ -1,0 +1,77 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-23 12:38+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../source/app/index.rst:5
+#: b9d54a8149054d9e842cf3e1e92f5001
+msgid "Structuring Idris 2 Applications"
+msgstr ""
+
+#: ../source/app/index.rst:7
+#: 99bc0c9350dc4937b126b9706bccda8c
+msgid "A tutorial on structuring Idris 2 applications using ``Control.App``."
+msgstr ""
+
+#: ../source/app/index.rst:11
+#: b8cad8bf3475487a94fe5125dfbf3cd7
+msgid "The documentation for Idris has been published under the Creative Commons CC0 License. As such to the extent possible under law, *The Idris Community* has waived all copyright and related or neighboring rights to Documentation for Idris."
+msgstr ""
+
+#: ../source/app/index.rst:16
+#: 4f6ff313f9354c5abc1c3e00cb27d1bf
+msgid "More information concerning the CC0 can be found online at: http://creativecommons.org/publicdomain/zero/1.0/"
+msgstr ""
+
+#: ../source/app/index.rst:21
+#: 04a7276077034420a7b434eb87b95252
+msgid "Idris applications have ``main : IO ()`` as an entry point.  A type ``IO a`` is a description of interactive actions which produce a value of type ``a``. This is fine for primitives, but ``IO`` does not support exceptions so we have to be explicit about how an operation handles failure. Also, if we do want to support exceptions, we also want to explain how exceptions and linearity (see Section :ref:`sect-multiplicities`) interact."
+msgstr ""
+
+#: ../source/app/index.rst:28
+#: 98d70e0f5b1b4d15a447746fb1835f72
+msgid "In this tutorial, we describe a parameterised type ``App`` and a related parameterised type ``App1``, which together allow us to structure larger applications, taking into account both exceptions and linearity. The aims of ``App`` and ``App1`` are that they should:"
+msgstr ""
+
+#: ../source/app/index.rst:33
+#: 1f8ad6976e7147449c7465bc22b11e36
+msgid "make it possible to express what interactions a function does, in its type, without too much notational overhead."
+msgstr ""
+
+#: ../source/app/index.rst:35
+#: 42a76612545043429247468a015bfc6e
+msgid "have little or no performance overhead compared to writing in *IO*."
+msgstr ""
+
+#: ../source/app/index.rst:36
+#: e115784778e94a058fe07b7de5aa9fe2
+msgid "be compatible with other libraries and techniques for describing effects, such as algebraic effects or monad transformers."
+msgstr ""
+
+#: ../source/app/index.rst:38
+#: c44765af7c32408aa0f5c7b5f690cb19
+msgid "be sufficiently easy to use and performant that it can be the basis of *all* libraries that make foreign function calls, much as *IO* is in Idris 1 and Haskell"
+msgstr ""
+
+#: ../source/app/index.rst:41
+#: 511afcc02d694294a68fbbeb49ffadf3
+msgid "be compatible with linear types, meaning that they should express whether a section of code is linear (guaranteed to execute exactly once without throwing an exception) or whether it might throw an exception."
+msgstr ""
+
+#: ../source/app/index.rst:45
+#: b2563ad56ee04d87b0bb94756d581ee2
+msgid "We begin by introducing ``App``, with some small example programs, then show how to extend it with exceptions, state, and other interfaces."
+msgstr ""

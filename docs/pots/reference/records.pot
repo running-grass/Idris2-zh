@@ -1,0 +1,167 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-23 12:38+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../source/reference/records.rst:2
+#: 554d77b883b34821887ecbf90a30bda4
+msgid "Dot syntax for records"
+msgstr ""
+
+#: ../source/reference/records.rst:7
+#: fc98937d54bd498bb5bf8a9a2c8017dd
+msgid "Long story short, ``.field`` is a postfix projection operator that binds tighter than function application."
+msgstr ""
+
+#: ../source/reference/records.rst:11
+#: 42f6a5b3589d4bdb9d06af5d06f094b6
+msgid "Lexical structure"
+msgstr ""
+
+#: ../source/reference/records.rst:13
+#: 5fbd7c63981948c99ef9eba91a919c2a
+msgid "``.foo`` is a valid name, which stands for record fields (new ``Name`` constructor ``RF \"foo\"``)"
+msgstr ""
+
+#: ../source/reference/records.rst:16
+#: 4628ca4f392d40bf963121bd3dab4401
+msgid "``Foo.bar.baz`` starting with uppercase ``F`` is one lexeme, a namespaced identifier: ``DotSepIdent [\"baz\", \"bar\", \"Foo\"]``"
+msgstr ""
+
+#: ../source/reference/records.rst:19
+#: 909e4778b4194079893ec6d0d95666aa
+msgid "``foo.bar.baz`` starting with lowercase ``f`` is three lexemes: ``foo``, ``.bar``, ``.baz``"
+msgstr ""
+
+#: ../source/reference/records.rst:22
+#: 3905b999597e41478a2cfeafe5f14504
+msgid "``.foo.bar.baz`` is three lexemes: ``.foo``, ``.bar``, ``.baz``"
+msgstr ""
+
+#: ../source/reference/records.rst:24
+#: a34a0426afb74467853224cd74849a84
+msgid "If you want ``Constructor.field``, you have to write ``(Constructor).field``."
+msgstr ""
+
+#: ../source/reference/records.rst:26
+#: 91dc6457c5ba422db07907e6ccd33ca4
+msgid "All module names must start with an uppercase letter."
+msgstr ""
+
+#: ../source/reference/records.rst:29
+#: 121c7381f4a1481faf3c497b5504ef56
+msgid "New syntax of ``simpleExpr``"
+msgstr ""
+
+#: ../source/reference/records.rst:31
+#: b7b2c7bf2fff4f94ba76c84772dda0a7
+msgid "Expressions binding tighter than application (``simpleExpr``), such as variables or parenthesised expressions, have been renamed to ``simplerExpr``, and an extra layer of syntax has been inserted."
+msgstr ""
+
+#: ../source/reference/records.rst:39
+#: 1da545ef2a3d4109953f5e9515a9a523
+msgid "``(.foo)`` is a name, so you can use it to e.g. define a function called ``.foo`` (see ``.squared`` below)"
+msgstr ""
+
+#: ../source/reference/records.rst:42
+#: d09bffdb6f4e4fb0bd45166faa67ef38
+msgid "``(.foo.bar)`` is a parenthesised expression"
+msgstr ""
+
+#: ../source/reference/records.rst:45
+#: 481276e7cd9c44f6a83e95d126346bd5
+msgid "Desugaring rules"
+msgstr ""
+
+#: ../source/reference/records.rst:47
+#: ff78d3e7515d4a30bd51916fc733543f
+msgid "``(.field1 .field2 .field3)`` desugars to ``(\\x => .field3 (.field2 (.field1 x)))``"
+msgstr ""
+
+#: ../source/reference/records.rst:50
+#: 5ceb0ba153dd42a69da5d709ab7ab13f
+msgid "``(simpleExpr .field1 .field2 .field3)`` desugars to ``((.field .field2 .field3) simpleExpr)``"
+msgstr ""
+
+#: ../source/reference/records.rst:54
+#: 6f36e6770f6a4f4d8b1b9299052ac11c
+msgid "Record elaboration"
+msgstr ""
+
+#: ../source/reference/records.rst:56
+#: 7ec8a95aa36b4a3b81b1f4815753cf61
+msgid "there is a new pragma ``%prefix_record_projections``, which is ``on`` by default"
+msgstr ""
+
+#: ../source/reference/records.rst:59
+#: 9e64359d2e1649789366e09d8cd83206
+msgid "for every field ``f`` of a record ``R``, we get:"
+msgstr ""
+
+#: ../source/reference/records.rst:61
+#: c169f04c221a4f97a51d242432be9ad3
+msgid "projection ``f`` in namespace ``R`` (exactly like now), unless ``%prefix_record_projections`` is ``off``"
+msgstr ""
+
+#: ../source/reference/records.rst:64
+#: 0051a9b081b24f739da685d938040077
+msgid "projection ``.f`` in namespace ``R`` with the same definition"
+msgstr ""
+
+#: ../source/reference/records.rst:67
+#: eebc5557c8d6425da0e3be6bcd885459
+msgid "Example code"
+msgstr ""
+
+#: ../source/reference/records.rst:76
+#: d9208f1608e6431c841050aabf8fd38b
+msgid "This record creates two projections: * ``.x : Point -> Double`` * ``.y : Point -> Double``"
+msgstr ""
+
+#: ../source/reference/records.rst:80
+#: 25358430a96b41b1a400a311996e43d4
+msgid "Because ``%prefix_record_projections`` are ``on`` by default, we also get: * ``x : Point -> Double`` * ``y : Point -> Double``"
+msgstr ""
+
+#: ../source/reference/records.rst:84
+#: f03e600d8de54f8f8c4d130ce6668e7b
+msgid "To prevent cluttering the ordinary global name space with short identifiers, we can do this:"
+msgstr ""
+
+#: ../source/reference/records.rst:95
+#: 833dde8d39934c07a5a16727c5752128
+msgid "For ``Rect``, we don't get the prefix projections:"
+msgstr ""
+
+#: ../source/reference/records.rst:104
+#: dbdd4591e74544d8975737af19809da1
+msgid "Let's define some constants:"
+msgstr ""
+
+#: ../source/reference/records.rst:117
+#: 5c3e69562db142748b00ab7add0011fd
+msgid "User-defined projections work, too. (Should they?)"
+msgstr ""
+
+#: ../source/reference/records.rst:124
+#: f35ccb0a6e854c0785f19daf640ee81b
+msgid "Finally, the examples:"
+msgstr ""
+
+#: ../source/reference/records.rst:188
+#: f422fbbf5f894c42831e5e07a87d6a4f
+msgid "Parses but does not typecheck:"
+msgstr ""

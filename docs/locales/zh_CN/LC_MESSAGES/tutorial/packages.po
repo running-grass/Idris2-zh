@@ -7,55 +7,51 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: 467195537@qq.com\n"
-"POT-Creation-Date: 2022-07-12 11:10+0800\n"
+"POT-Creation-Date: 2022-07-23 12:38+0800\n"
 "PO-Revision-Date: 2022-07-19 12:25+0000\n"
 "Last-Translator: Leo Liu <leo19920823@gmail.com>\n"
-"Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
-"idris2/tutorialpackages/zh_Hans/>\n"
 "Language: zh_CN\n"
+"Language-Team: Chinese (Simplified) "
+"<https://hosted.weblate.org/projects/idris2/tutorialpackages/zh_Hans/>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.14-dev\n"
 "Generated-By: Babel 2.10.3\n"
 
-#: ../../source/tutorial/packages.rst:5 0430ef70f0ee419aad11ace9b642561d
+#: ../source/tutorial/packages.rst:5 d545843afaf84bf7a71812a458937334
 msgid "Packages"
 msgstr "包"
 
-#: ../../source/tutorial/packages.rst:7 63bb917da5654ff78872feef2678771e
+#: ../source/tutorial/packages.rst:7 e7d5c73b493048079e27a5da610476c9
 msgid ""
 "Idris includes a simple build system for building packages and "
 "executables from a named package description file. These files can be "
 "used with the Idris compiler to manage the development process."
-msgstr ""
-"Idris "
-"包括一个简单的构建系统，用于从一个命名的包描述文件中构建包和可执行文件。"
-"这些文件可以与 Idris 编译器一起使用，以管理开发过程。"
+msgstr "Idris 包括一个简单的构建系统，用于从一个命名的包描述文件中构建包和可执行文件。这些文件可以与 Idris 编译器一起使用，以管理开发过程。"
 
-#: ../../source/tutorial/packages.rst:12 938566aa238043939def72fb085ec259
+#: ../source/tutorial/packages.rst:12 4f1af5e852a34aeab70709e84f203054
 msgid "Package Descriptions"
 msgstr "包描述"
 
-#: ../../source/tutorial/packages.rst:14 80d07fdaea8441a79a11114a70311cf5
+#: ../source/tutorial/packages.rst:14 4522fd7271364cfcad612ec310b51bf5
 msgid "A package description includes the following:"
 msgstr "一个包的描述包括以下内容："
 
-#: ../../source/tutorial/packages.rst:16 50ad51910c8645e1929cb94c3446a8e3
+#: ../source/tutorial/packages.rst:16 f87ed061ecfc4623a869b482c189254c
 msgid ""
 "A header, consisting of the keyword ``package`` followed by a package "
 "name. Package names can be any valid Idris identifier. The iPKG format "
 "also takes a quoted version that accepts any valid filename."
 msgstr ""
-"一个头，由关键词``package``组成，后面是一个包名。包名可以是任何有效的 Idris "
-"标识符。iPKG 格式也需要一个带引号的版本，接受任何有效的文件名。"
+"一个头，由关键词``package``组成，后面是一个包名。包名可以是任何有效的 Idris 标识符。iPKG "
+"格式也需要一个带引号的版本，接受任何有效的文件名。"
 
-#: ../../source/tutorial/packages.rst:20 91f7984e4cf84bea931fef10447faaa0
+#: ../source/tutorial/packages.rst:20 9967ac5d378d48b69c0a3fdd5e7a84a0
 msgid "Fields describing package contents, ``<field> = <value>``."
 msgstr "描述包内容的字段， ``<field> = <value>`` 。"
 
-#: ../../source/tutorial/packages.rst:22 7180b5144aa54335b80da70294f66252
+#: ../source/tutorial/packages.rst:22 dd073d2578364fdc94465ac5e3e07c36
 msgid ""
 "At least one field must be the modules field, where the value is a comma "
 "separated list of modules. For example, given an idris package ``maths`` "
@@ -63,72 +59,69 @@ msgid ""
 "``Maths.BinOps.idr``, and ``Maths.HexOps.idr``, the corresponding package"
 " file would be:"
 msgstr ""
-"至少有一个字段必须是模块字段，其值是一个逗号分隔的模块列表。例如，给定一个 "
-"idris 包 ``maths`` ，其中有模块 ``Maths.idr`` ， ``Maths.NumOps.idr`` ， "
-"``Maths.BinOps.idr`` ，和 ``Maths.HexOps.idr`` ，相应的包文件应该是："
+"至少有一个字段必须是模块字段，其值是一个逗号分隔的模块列表。例如，给定一个 idris 包 ``maths`` ，其中有模块 "
+"``Maths.idr`` ， ``Maths.NumOps.idr`` ， ``Maths.BinOps.idr`` ，和 "
+"``Maths.HexOps.idr`` ，相应的包文件应该是："
 
-#: ../../source/tutorial/packages.rst:37 1c7d564ed50c430e9d3d3d95fdde628f
+#: ../source/tutorial/packages.rst:37 31ee190040f1417ca44258d4f30c3062
+#, fuzzy
 msgid ""
 "Running ``idris2 --init`` will interactively create a new package file in"
-" the current directory. The generated pacakge file lists all configurable"
+" the current directory. The generated package file lists all configurable"
 " fields with a brief description."
-msgstr "运行 ``idris2 --init`` 将在当前目录下交互式地创建一个新的包文件。生成的包文件"
-"列出了所有可配置的字段，并附有简要说明。"
+msgstr "运行 ``idris2 --init`` 将在当前目录下交互式地创建一个新的包文件。生成的包文件列出了所有可配置的字段，并附有简要说明。"
 
-#: ../../source/tutorial/packages.rst:39 de128ce9cd724370b6882384050ca981
+#: ../source/tutorial/packages.rst:39 cc9b2fe1c65542e0ab23d491d05ed4a1
 msgid ""
 "Other examples of package files can be found in the ``libs`` directory of"
 " the main Idris repository, and in `third-party libraries "
 "<https://github.com/idris-lang/Idris-dev/wiki/Libraries>`_."
 msgstr ""
-"其他包文件的例子可以在 ``libs`` 目录下的主Idris资源库中找到，也可以在 `"
-"第三方库 <https://github.com/idris-lang/Idris-dev/wiki/Libraries>`_中找到 。"
+"其他包文件的例子可以在 ``libs`` 目录下的主Idris资源库中找到，也可以在 `第三方库 <https://github.com"
+"/idris-lang/Idris-dev/wiki/Libraries>`_中找到 。"
 
-#: ../../source/tutorial/packages.rst:45 ecde70c4ca5d4afdba7607daf6eb8f20
+#: ../source/tutorial/packages.rst:45 859169d121cd49e7a19f5a82521ece18
 msgid "Using Package files"
 msgstr "使用包文件"
 
-#: ../../source/tutorial/packages.rst:47 5858aa5700404030a40c2fcd27897262
+#: ../source/tutorial/packages.rst:47 eb1de121c52e43cf87dfa0b4dacc5b33
 msgid ""
 "Idris itself is aware about packages, and special commands are available "
 "to help with, for example, building packages, installing packages, and "
 "cleaning packages.  For instance, given the ``maths`` package from "
 "earlier we can use Idris as follows:"
 msgstr ""
-"Idris 本身知道软件包，并且有特殊的命令来帮助，例如，构建软件包，安装软件包，"
-"和清理软件包。 例如，考虑到前面的 ``maths`` 包，我们可以按以下方式使用 "
-"Idris："
+"Idris 本身知道软件包，并且有特殊的命令来帮助，例如，构建软件包，安装软件包，和清理软件包。 例如，考虑到前面的 ``maths`` "
+"包，我们可以按以下方式使用 Idris："
 
-#: ../../source/tutorial/packages.rst:52 337b0d7dbed94ccda428b600f026c796
+#: ../source/tutorial/packages.rst:52 7d58d94092324716a5c7dcda3a134a58
 msgid "``idris2 --build maths.ipkg`` will build all modules in the package"
 msgstr "``idris2 --build maths.ipkg`` 将构建包中的所有模块"
 
-#: ../../source/tutorial/packages.rst:54 4bf6d8e840dd4656b7c7164493ed80bf
+#: ../source/tutorial/packages.rst:54 f23ada6322494a5ebe1bb696d6d822b5
 msgid ""
 "``idris2 --install maths.ipkg`` will install the package, making it "
 "accessible by other Idris libraries and programs."
-msgstr "``idris2 --install maths.ipkg`` 将安装这个包，使其他 Idris "
-"库和程序可以访问它。"
+msgstr "``idris2 --install maths.ipkg`` 将安装这个包，使其他 Idris 库和程序可以访问它。"
 
-#: ../../source/tutorial/packages.rst:57 ddaaf849f2ba473788b9538881b65945
+#: ../source/tutorial/packages.rst:57 367e5ad22b574c978eb51a86f974821e
 msgid ""
 "``idris2 --clean maths.ipkg`` will delete all intermediate code and "
 "executable files generated when building."
 msgstr "``idris2 --clean maths.ipkg`` 将删除所有中间代码和构建时产生的可执行文件。"
 
-#: ../../source/tutorial/packages.rst:60 5e1cab2d4de2420e80e77d91089ef3dc
+#: ../source/tutorial/packages.rst:60 0617b32707794e8fb09a808d79e6297e
 msgid ""
 "Once the maths package has been installed, the command line option "
 "``--package maths`` makes it accessible (abbreviated to ``-p maths``). "
 "For example:"
-msgstr "一旦安装了 math 包，命令行选项 ``--package maths`` 使其可以访问（缩写为 ``-p "
-"maths`` ）。比如："
+msgstr "一旦安装了 math 包，命令行选项 ``--package maths`` 使其可以访问（缩写为 ``-p maths`` ）。比如："
 
-#: ../../source/tutorial/packages.rst:69 3acaa79f3e1841658f92877e2823a3f1
+#: ../source/tutorial/packages.rst:69 e6aa2932c6894bde99c64bba5fac643b
 msgid "Package Dependencies Using Atom"
 msgstr "在 Atom 中使用包依赖"
 
-#: ../../source/tutorial/packages.rst:71 7acb108795604535aea0e92ff16c9ee3
+#: ../source/tutorial/packages.rst:71 664cf5b4d6fa46748734c1bcdfe363d5
 msgid ""
 "If you are using the Atom editor and have a dependency on another "
 "package, corresponding to for instance ``import Lightyear`` or ``import "
@@ -137,19 +130,19 @@ msgid ""
 " of an ipkg file will be described in the next section of the tutorial, "
 "but for now here is a simple recipe for this trivial case:"
 msgstr ""
-"如果你在使用 Atom 编辑器，并且有对另一个软件包的依赖，例如对应于 ``import "
-"Lightyear`` 或 ``import Pruviloj`` ，你需要让 Atom 知道它应该被加载。"
-"最简单的方法是通过一个 .ipkg 文件来实现。 ipkg 文件的一般内容将在本教程的下一"
-"节中描述，但现在这里有一个简单的示例，用于这个微不足道的案例："
+"如果你在使用 Atom 编辑器，并且有对另一个软件包的依赖，例如对应于 ``import Lightyear`` 或 ``import "
+"Pruviloj`` ，你需要让 Atom 知道它应该被加载。最简单的方法是通过一个 .ipkg 文件来实现。 ipkg "
+"文件的一般内容将在本教程的下一节中描述，但现在这里有一个简单的示例，用于这个微不足道的案例："
 
-#: ../../source/tutorial/packages.rst:78 cd866389b9f54b60b8681d72387d8a32
+#: ../source/tutorial/packages.rst:78 319d388e1508420fa9aa5a9998933289
 msgid "Create a folder myProject."
 msgstr "创建一个文件夹 myProject。"
 
-#: ../../source/tutorial/packages.rst:80 e11aa68646674262b5446213c3dc848b
+#: ../source/tutorial/packages.rst:80 8d196d40387744b3b5ef754893b8920c
 msgid "Add a file myProject.ipkg containing just a couple of lines:"
 msgstr "添加一个只包含几行的 myProject.ipkg 文件："
 
-#: ../../source/tutorial/packages.rst:88 2e06fb60ec9c4c648e51fb9e7e83313e
+#: ../source/tutorial/packages.rst:88 db2f3a79ba354410b59e20f5989fa286
 msgid "In Atom, use the File menu to Open Folder myProject."
 msgstr "在 Atom 中，使用文件菜单，打开文件夹 myProject 。"
+

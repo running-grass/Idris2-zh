@@ -1,0 +1,42 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-23 12:38+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../source/backends/libraries.rst:3
+#: fb55cd2c8cff472793991df731c34624
+msgid "Libraries"
+msgstr ""
+
+#: ../source/backends/libraries.rst:5
+#: 9fdaf711c6ec418a8374bea9280f8789
+msgid "This pragma tells the backend what name to use for a given function."
+msgstr ""
+
+#: ../source/backends/libraries.rst:13
+#: 069d6ef5dd9d4b2cbf5270d13bf245bf
+msgid "On backends that support this feature, the function will be called ``foo`` rather than being mangled, with the namespace."
+msgstr ""
+
+#: ../source/backends/libraries.rst:16
+#: b6284175792c471495314b8b2defd24b
+msgid "If the name you want to use isn't a valid idris identifier, you can use a different name for the idris name and name that appears in the compiled code, e.g."
+msgstr ""
+
+#: ../source/backends/libraries.rst:25
+#: b50de18ab9b440a08c1f4ae0981fbfdf
+msgid "You can also specificy different names for different backends, in a similar way to %foreign"
+msgstr ""

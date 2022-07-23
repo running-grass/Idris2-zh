@@ -1,0 +1,152 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-23 12:38+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../source/tutorial/starting.rst:5
+#: 84fcaaaca5614df8b891ae766893b5c5
+msgid "Getting Started"
+msgstr ""
+
+#: ../source/tutorial/starting.rst:8
+#: 7385a8ea1e67425ab40af6b4cbfcb594
+msgid "Installing from Source"
+msgstr ""
+
+#: ../source/tutorial/starting.rst:16
+#: ca11ab4654d6440fac6dbe8a407f71a4
+msgid "Prerequisites"
+msgstr ""
+
+#: ../source/tutorial/starting.rst:18
+#: 4db2347757684e46a346fefe3d55a49c
+msgid "Idris 2 is implemented in Idris 2 itself, so to bootstrap it you can build from generated Scheme sources. To do this, you need either Chez Scheme (default, and currently preferred since it is the fastest) or Racket. You can get one of these from:"
+msgstr ""
+
+#: ../source/tutorial/starting.rst:23
+#: be7a5a7e6596430ebbe306e0c02bcda5
+msgid "`Chez Scheme <https://cisco.github.io/ChezScheme/>`_"
+msgstr ""
+
+#: ../source/tutorial/starting.rst:24
+#: a884bf89ab6b4771b9f797208063d3b6
+msgid "`Racket <https://download.racket-lang.org/>`_"
+msgstr ""
+
+#: ../source/tutorial/starting.rst:26
+#: 572a5add54e143dfbd985ef4ca2e19fe
+msgid "Both are also available from MacPorts/Homebrew and all major Linux distributions. Windows requires some further prerequisites, see :ref:`windows-install`."
+msgstr ""
+
+#: ../source/tutorial/starting.rst:29
+#: b60dbcbff57d40e29b8658dd378cae4d
+msgid "**Note**: If you install Chez Scheme from source files, building it locally, make sure you run ``./configure --threads`` to build multithreading support in."
+msgstr ""
+
+#: ../source/tutorial/starting.rst:33
+#: ee9986a3533e4ca1851f1005ba437be6
+msgid "Downloading and Installing"
+msgstr ""
+
+#: ../source/tutorial/starting.rst:35
+#: 2f2336b939ab4270a7b854252708d488
+msgid "You can download the Idris 2 source from the `Idris web site <https://www.idris-lang.org/pages/download.html>`_ or get the latest development version from `idris-lang/Idris2 <https://github.com/idris-lang/Idris2>`_ on Github.  This includes the Idris 2 source code and the Scheme code generated from that.  Once you have unpacked the source, you can install it as follows::"
+msgstr ""
+
+#: ../source/tutorial/starting.rst:44
+#: a1a6e66d3fcf411daafcf8cd1b9f1fe7
+msgid "Where `chez` is the executable name of the Chez Scheme compiler. This will vary from system to system, but is often one of ``scheme``, ``chezscheme``, or ``chezscheme9.5``. If you are building via Racket, you can install it as follows::"
+msgstr ""
+
+#: ../source/tutorial/starting.rst:51
+#: b3615b493d2b49298d8660764ec9ae54
+msgid "Once you've successfully bootstrapped with any of the above commands, you can install with the command ``make install``.  This will, by default, install into ``${HOME}/.idris2``. You can change this by editing the options in ``config.mk``. For example, to install into ``/usr/local``, you can edit the ``IDRIS2_PREFIX`` as follows::"
+msgstr ""
+
+#: ../source/tutorial/starting.rst:60
+#: 03100843c59d4135b7f5f44f839ecc3f
+msgid "Installing from a Package Manager"
+msgstr ""
+
+#: ../source/tutorial/starting.rst:63
+#: 0a7c261d084d48aa83ad6e994add44e5
+msgid "Installing Using Homebrew"
+msgstr ""
+
+#: ../source/tutorial/starting.rst:65
+#: b73bbd1a6f584393989169eef3e7b7f9
+msgid "If you are Homebrew user you can install Idris 2 together with all the requirements by running following command::"
+msgstr ""
+
+#: ../source/tutorial/starting.rst:71
+#: 51c8792de5b449488c64c80c41485726
+msgid "Checking Installation"
+msgstr ""
+
+#: ../source/tutorial/starting.rst:73
+#: 7251792e2a30476b9cc9e32c24505fc8
+msgid "To check that installation has succeeded, and to write your first Idris program, create a file called ``hello.idr`` containing the following text:"
+msgstr ""
+
+#: ../source/tutorial/starting.rst:84
+#: aa568de2b9b04e97863c8c64c1f186b3
+msgid "If you are familiar with Haskell, it should be fairly clear what the program is doing and how it works, but if not, we will explain the details later. You can compile the program to an executable by entering ``idris2 hello.idr -o hello`` at the shell prompt. This will, by default, create an executable called ``hello``, which invokes a generated and compiled Chez Scheme program, in the destination directory ``build/exec`` which you can run:"
+msgstr ""
+
+#: ../source/tutorial/starting.rst:98
+#: da9e4842c3f64246ae22bc9ed335f840
+msgid "Please note that the dollar sign ``$`` indicates the shell prompt! Some useful options to the Idris command are:"
+msgstr ""
+
+#: ../source/tutorial/starting.rst:101
+#: b073c217be544adb9c53bfce453838f1
+msgid "``-o prog`` to compile to an executable called ``prog``."
+msgstr ""
+
+#: ../source/tutorial/starting.rst:103
+#: a2e8e7529bb74c7b8b5c76a82724d4f6
+msgid "``--check`` type check the file and its dependencies without starting the interactive environment."
+msgstr ""
+
+#: ../source/tutorial/starting.rst:105
+#: 35a55bff38c943349c89bfa08f1197d0
+msgid "``--package pkg`` add package as dependency, e.g. ``--package contrib`` to make use of the contrib package."
+msgstr ""
+
+#: ../source/tutorial/starting.rst:107
+#: 82d76e388a2b412f90ece405461ced39
+msgid "``--help`` display usage summary and command line options."
+msgstr ""
+
+#: ../source/tutorial/starting.rst:109
+#: 1ca338ee0293496f863dc1230cac77ba
+msgid "You can find out more about compiling to executables in Section :ref:`sect-execs`."
+msgstr ""
+
+#: ../source/tutorial/starting.rst:113
+#: 6f43309c53c548a7ab790876c3dd5bc7
+msgid "The Interactive Environment"
+msgstr ""
+
+#: ../source/tutorial/starting.rst:115
+#: 4d5c62e1f3a74c7c95a77cb15ca10d17
+msgid "Entering ``idris2`` at the shell prompt starts up the interactive environment. You should see something like the following:"
+msgstr ""
+
+#: ../source/tutorial/starting.rst:120
+#: 0a3ad505d6974b4ba440daa4454f40c7
+msgid "This gives a ``ghci`` style interface which allows evaluation of, as well as type checking of, expressions; theorem proving, compilation; editing; and various other operations. The command ``:?`` gives a list of supported commands. Below, we see an example run in which ``hello.idr`` is loaded, the type of ``main`` is checked and then the program is compiled to the executable file ``hello``, available in the destination directory ``build/exec/``. Type checking a file, if successful, creates a bytecode version of the file (in this case ``build/ttc/hello.ttc``) to speed up loading in future. The bytecode is regenerated if the source file changes."
+msgstr ""
