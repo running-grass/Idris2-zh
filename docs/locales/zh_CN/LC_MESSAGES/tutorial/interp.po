@@ -3,23 +3,26 @@
 # This file is distributed under the same license as the Idris2 package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-12 11:10+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2022-07-23 04:11+0000\n"
+"Last-Translator: admin <467195537@qq.com>\n"
+"Language-Team: Chinese (Simplified) <https://weblate.grass.work:30443/"
+"projects/idris2/tutorialinterp/zh_Hans/>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 4.13.1\n"
 "Generated-By: Babel 2.10.3\n"
 
 #: ../../source/tutorial/interp.rst:5 3ebe9d4d7cef4b9fa94850e3b7ed91c0
 msgid "Example: The Well-Typed Interpreter"
-msgstr ""
+msgstr "示例——良类型的解释器"
 
 #: ../../source/tutorial/interp.rst:7 efd20f4d19634f3d8b1b49e7258ff883
 msgid ""
@@ -249,4 +252,3 @@ msgid ""
 "*both* parameters at the point where the cast is applied. There are casts"
 " defined between all of the primitive types, as far as they make sense."
 msgstr ""
-
