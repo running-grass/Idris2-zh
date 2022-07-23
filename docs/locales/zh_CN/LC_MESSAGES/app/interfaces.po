@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: 467195537@qq.com\n"
 "POT-Creation-Date: 2022-07-12 11:10+0800\n"
-"PO-Revision-Date: 2022-07-16 15:58+0000\n"
-"Last-Translator: Leo Liu <leo19920823@gmail.com>\n"
-"Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
-"idris2/appinterfaces/zh_Hans/>\n"
+"PO-Revision-Date: 2022-07-24 12:56+0000\n"
+"Last-Translator: admin <467195537@qq.com>\n"
+"Language-Team: Chinese (Simplified) <https://weblate.grass.work:30443/"
+"projects/idris2/appinterfaces/zh_Hans/>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.14-dev\n"
+"X-Generator: Weblate 4.13.1\n"
 "Generated-By: Babel 2.10.3\n"
 
 #: ../../source/app/interfaces.rst:2 bbb3800959114ebf8791eac1ee7ca44d
@@ -42,7 +42,7 @@ msgstr ""
 
 #: ../../source/app/interfaces.rst:14 e5e22ecd503642e6ba64a48aafef553d
 msgid "Example: Console I/O"
-msgstr ""
+msgstr "Console I/O 示例"
 
 #: ../../source/app/interfaces.rst:16 0d44675b4a38447195ff6a2d215916a8
 msgid ""
