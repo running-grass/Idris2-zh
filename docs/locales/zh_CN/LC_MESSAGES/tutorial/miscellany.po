@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-12 11:10+0800\n"
 "PO-Revision-Date: 2022-07-24 12:56+0000\n"
-"Last-Translator: admin <467195537@qq.com>\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Chinese (Simplified) <https://weblate.grass.work:30443/"
 "projects/idris2/tutorialmiscellany/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -140,8 +140,9 @@ msgid ""
 msgstr ""
 
 #: ../../source/tutorial/miscellany.rst:94 fc403c0ea5764f32bfc261e0323967f1
+#, fuzzy
 msgid "Literate programming"
-msgstr ""
+msgstr "文学编程"
 
 #: ../../source/tutorial/miscellany.rst:96 cb9199419e8e48b2a06c684834dbdc8b
 msgid ""
