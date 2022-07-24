@@ -18,6 +18,54 @@
                 <langSet xml:lang="en"><tig><term>interpreter</term></tig></langSet>
                 <langSet xml:lang="zh_Hans"><tig><term>解释器</term></tig></langSet>
             </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>universe hierarchy</term></tig></langSet>
+                <langSet xml:lang="zh_Hans"><tig><term>全域层级</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>argument</term></tig></langSet>
+                <langSet xml:lang="zh_Hans"><tig><term>参数</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>arguments</term></tig></langSet>
+                <langSet xml:lang="zh_Hans"><tig><term>参数</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>implicit arguments</term></tig></langSet>
+                <langSet xml:lang="zh_Hans"><tig><term>隐式参数</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Auto</term></tig></langSet>
+                <langSet xml:lang="zh_Hans"><tig><term>自动</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>annotation</term></tig></langSet>
+                <langSet xml:lang="zh_Hans"><tig><term>注解</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Idris</term></tig></langSet>
+                <langSet xml:lang="zh_Hans"><tig><term>Idris</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>local variables</term></tig></langSet>
+                <langSet xml:lang="zh_Hans"><tig><term>局部变量</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>literate programming</term></tig></langSet>
+                <langSet xml:lang="zh_Hans"><tig><term>文学编程</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>cumulativity</term></tig></langSet>
+                <langSet xml:lang="zh_Hans"><tig><term>累积性</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>hierarchy</term></tig></langSet>
+                <langSet xml:lang="zh_Hans"><tig><term>层级</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>universes</term></tig></langSet>
+                <langSet xml:lang="zh_Hans"><tig><term>全域</term></tig></langSet>
+            </termEntry>
         </body>
     </text>
 </martif>
