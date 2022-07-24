@@ -66,6 +66,26 @@
                 <langSet xml:lang="en"><tig><term>universes</term></tig></langSet>
                 <langSet xml:lang="zh_Hans"><tig><term>全域</term></tig></langSet>
             </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Frequently Asked Questions</term></tig></langSet>
+                <langSet xml:lang="zh_Hans"><tig><term>常见问题解答</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>FAQ</term></tig></langSet>
+                <langSet xml:lang="zh_Hans"><tig><term>常见问题解答</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>plug-in</term></tig></langSet>
+                <langSet xml:lang="zh_Hans"><tig><term>可插拔</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>javascript</term></tig></langSet>
+                <langSet xml:lang="zh_Hans"><tig><term></term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>eager evaluation</term></tig></langSet>
+                <langSet xml:lang="zh_Hans"><tig><term>及早求值</term></tig></langSet>
+            </termEntry>
         </body>
     </text>
 </martif>
