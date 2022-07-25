@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-12 11:10+0800\n"
-"PO-Revision-Date: 2022-07-24 23:54+0000\n"
+"PO-Revision-Date: 2022-07-25 12:06+0000\n"
 "Last-Translator: admin <467195537@qq.com>\n"
 "Language-Team: Chinese (Simplified) <https://weblate.grass.work:30443/"
 "projects/idris2/librariesindex/zh_Hans/>\n"
@@ -22,13 +22,15 @@ msgstr ""
 
 #: ../../source/libraries/index.rst:2 ac5cb3d7157d4c85bd390534d689e713
 msgid "Where To Find Libraries"
-msgstr ""
+msgstr "在哪里可以找到库"
 
 #: ../../source/libraries/index.rst:4 c0fe124c654c407eb262aef88a099237
 msgid ""
 "You can find a canonical source of Idris libraries on the wiki on github:"
 " https://github.com/idris-lang/Idris2/wiki/1-%5BLanguage%5D-Libraries"
 msgstr ""
+"您可以在 github 上的 wiki 上找到 Idris 库的列表：https://github.com/"
+"idris-lang/Idris2/wiki/1-%5BLanguage%5D-Libraries"
 
 #: ../../source/libraries/index.rst:7 207b942ee2494c5cb1b6c96ce996ff57
 msgid ""
@@ -36,7 +38,8 @@ msgid ""
 "aim to have a package manager for managing libraries and dependencies. We"
 " do not yet have an official one, but there are (at least) two in "
 "development:"
-msgstr ""
+msgstr "请随时在那里贡献您自己的库！最终，我们的目标是拥有一个包管理器来管理库和依赖"
+"项。我们还没有正式的，但（至少）有两个正在开发中："
 
 #: ../../source/libraries/index.rst:11 dbee9ee878d14bb292a2e831f6fb1717
 msgid "Inigo: https://github.com/idris-community/inigo"
