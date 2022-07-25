@@ -94,6 +94,14 @@
                 <langSet xml:lang="en"><tig><term>comprehension</term></tig></langSet>
                 <langSet xml:lang="zh_Hans"><tig><term>推导式</term></tig></langSet>
             </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>overloaded</term></tig></langSet>
+                <langSet xml:lang="zh_Hans"><tig><term>重载</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>literals</term></tig></langSet>
+                <langSet xml:lang="zh_Hans"><tig><term>字面量</term></tig></langSet>
+            </termEntry>
         </body>
     </text>
 </martif>
