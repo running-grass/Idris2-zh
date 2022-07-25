@@ -90,6 +90,10 @@
                 <langSet xml:lang="en"><tig><term>Comments</term></tig></langSet>
                 <langSet xml:lang="zh_Hans"><tig><term>注释</term></tig></langSet>
             </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>comprehension</term></tig></langSet>
+                <langSet xml:lang="zh_Hans"><tig><term>推导式</term></tig></langSet>
+            </termEntry>
         </body>
     </text>
 </martif>
