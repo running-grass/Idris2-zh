@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-12 11:10+0800\n"
-"PO-Revision-Date: 2022-07-22 15:43+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2022-07-25 23:48+0000\n"
+"Last-Translator: admin <467195537@qq.com>\n"
 "Language-Team: Chinese (Simplified) <https://weblate.grass.work:30443/"
 "projects/idris2/backendscustom/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../source/backends/custom.rst:3 8c9ced13d7b943f997118bb2188629d6
 msgid "Building Idris 2 with new backends"
-msgstr ""
+msgstr "使用新后端构建 Idris 2"
 
 #: ../../source/backends/custom.rst:5 6fecec6be95a4c19b87e1624dfc36b7d
 msgid ""
@@ -32,9 +32,12 @@ msgid ""
 "codegens in addition to the built-in ones. The first codegen in the list "
 "will be set as the default codegen."
 msgstr ""
+"使用新后端扩展 Idris 2 的方法是将其用作库。模块 ``Idris.Driver`` 导出函数 "
+"``mainWithCodegens`` ，它接受一个 ``(String, Codegen)`` "
+"列表，除了内置代码之外，还使用这些代码生成器启动\n"
+" idris 。列表中的第一个 codegen 将被设置为默认 codegen。"
 
 #: ../../source/backends/custom.rst:12 16c2cc74328e4c88ab80cdf0a3405df8
-#, fuzzy
 msgid "Getting started"
 msgstr "入门"
 
@@ -42,29 +45,30 @@ msgstr "入门"
 msgid ""
 "To use Idris 2 as a library you need a self-hosting installation and then"
 " install the `idris2api` library (at the top level of the Idris2 repo)"
-msgstr ""
+msgstr "要将 Idris 2 用作库，您需要自托管安装，然后安装 ``idris2api`` 库（位于 "
+"Idris2 存储库的顶层）"
 
 #: ../../source/backends/custom.rst:21 335c776fe0264b4fb5860d0547b8d6f4
 msgid "Now create a file containing"
-msgstr ""
+msgstr "接下来创建一个文件，包含以下内容"
 
 #: ../../source/backends/custom.rst:45 d4c8b246dee44f77b6ee4241db7409af
 msgid "Build it with"
-msgstr ""
+msgstr "构建它"
 
 #: ../../source/backends/custom.rst:51 736609bfcc2b482282d600d071b8babe
 msgid "Now you have an idris2 with an added backend."
-msgstr ""
+msgstr "现在您有了一个带有附加后端的 idris2 。"
 
 #: ../../source/backends/custom.rst:66 b1890c31d1004919b20a7172fda320bc
 msgid ""
 "It will not be overly eager to actually compile any code with the new "
 "backend though"
-msgstr ""
+msgstr "不过，它不会过分急于用新的后端实际编译任何代码"
 
 #: ../../source/backends/custom.rst:75 62cb56b4390c426d8eb2619a8ab7d89f
 msgid "About the directories"
-msgstr ""
+msgstr "关于目录"
 
 #: ../../source/backends/custom.rst:77 634227a80b5349ce9ed01f35dce8f059
 msgid ""
@@ -76,3 +80,8 @@ msgid ""
 ":`ref-sect-packages`) or via command line options (Listed in ``idris2 "
 "--help``)."
 msgstr ""
+"代码生成器可以假设 ``tmpDir`` 和 ``outputDir`` 都存在。 ``tmpDir`` "
+"用于临时文件，而 ``outputDir`` 是放置所需输出文件的位置。默认情况下， "
+"``tmpDir`` 和 ``outputDir`` 指向同一个目录（ ``build/exec`` "
+"）。可以从包描述（参见 :ref:`ref-sect-packages` 部分）或通过命令行选项（在 ``"
+"idris2 --help`` 中列出）设置目录。"
