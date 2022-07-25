@@ -3,23 +3,26 @@
 # This file is distributed under the same license as the Idris2 package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-12 11:10+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2022-07-25 23:48+0000\n"
+"Last-Translator: admin <467195537@qq.com>\n"
+"Language-Team: Chinese (Simplified) <https://weblate.grass.work:30443/"
+"projects/idris2/referenceoverloadedlit/zh_Hans/>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 4.13.1\n"
 "Generated-By: Babel 2.10.3\n"
 
 #: ../../source/reference/overloadedlit.rst:2 f23f66fa6bd2415394adfb1c13b8d866
 msgid "Overloaded literals"
-msgstr ""
+msgstr "字面量重载"
 
 #: ../../source/reference/overloadedlit.rst:7 f5ccee24e772439dbb27716dd629554e
 #, python-format
@@ -30,6 +33,9 @@ msgid ""
 "corresponding literal. In the Prelude these functions are set to "
 "``fromString`` and ``fromInteger``."
 msgstr ""
+"编译器为字面量重载提供指令，分别为字符串和整数字面量的 ``%stringLit <fun>`` "
+"和 ``%integerLit <fun>`` 。在细化过程中，给定的函数将应用于相应的字面量。在 "
+"Prelude 中，这些函数被设置为 ``fromString`` 和 ``fromInteger`` 。"
 
 #: ../../source/reference/overloadedlit.rst:12 60aeba8237244472a3b9e14227f301eb
 msgid ""
@@ -37,10 +43,12 @@ msgid ""
 "ty`` function, while the ``Num ty`` interface provides the ``fromInteger "
 ": Integer -> ty`` function for all numerical types."
 msgstr ""
+"``FromString ty`` 接口提供了 ``fromString : String -> ty`` 函数，而 ``Num "
+"ty`` 接口为所有数值类型提供了 ``fromInteger : Integer -> ty`` 函数。"
 
 #: ../../source/reference/overloadedlit.rst:17 ce2a74bc1e764d939719bd30f1adac5b
 msgid "Restricted overloads"
-msgstr ""
+msgstr "受限重载"
 
 #: ../../source/reference/overloadedlit.rst:18 f9e4589535a74c639a953a2c7a49e33b
 msgid ""
@@ -54,6 +62,11 @@ msgid ""
 "implicit arguments for searching proofs. As an example, this is the "
 "implementation of ``fromInteger`` for ``Fin n``."
 msgstr ""
+"尽管可以通过实现上述接口来实现字面量的重载，但原则上只有具有正确签名和名称的"
+"函数才能实现所需的行为。这可以被利用来获得更多限制性的重载，"
+"例如将字面量转换为 ``Fin n`` 值，其中大于或等于 n 的整数字面量不是该类型的可"
+"构造值。可以将其他隐式参数添加到函数签名中，特别是用于搜索证明的自动隐式参数"
+"。例如，这是 ``Fin n`` 的 ``fromInteger`` 的实现。"
 
 #: ../../source/reference/overloadedlit.rst:36 038a8895bb074b539daccf5a203b3519
 msgid ""
@@ -63,4 +76,6 @@ msgid ""
 "construct a valid proof is caught during the type-checking phase and not "
 "at runtime:"
 msgstr ""
-
+"``prf`` 自动隐式是一个自动构造的证明（如果可能的话），该字面量适用于 ``Fin "
+"n`` 类型。在 REPL 中可以观察到受限行为，其中在类型检查阶段而不是在运行时捕获"
+"构建有效证明的失败："
