@@ -80,7 +80,7 @@
             </termEntry>
             <termEntry>
                 <langSet xml:lang="en"><tig><term>javascript</term></tig></langSet>
-                <langSet xml:lang="zh_Hans"><tig><term/></tig></langSet>
+                <langSet xml:lang="zh_Hans"><tig><term>javascript</term></tig></langSet>
             </termEntry>
             <termEntry>
                 <langSet xml:lang="en"><tig><term>eager evaluation</term></tig></langSet>
