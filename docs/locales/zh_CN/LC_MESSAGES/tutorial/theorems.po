@@ -3,23 +3,26 @@
 # This file is distributed under the same license as the Idris2 package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-12 11:10+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2022-07-25 12:06+0000\n"
+"Last-Translator: admin <467195537@qq.com>\n"
+"Language-Team: Chinese (Simplified) <https://weblate.grass.work:30443/"
+"projects/idris2/tutorialtheorems/zh_Hans/>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 4.13.1\n"
 "Generated-By: Babel 2.10.3\n"
 
 #: ../../source/tutorial/theorems.rst:5 dfbd440093844b9580b1f61fd4291175
 msgid "Theorem Proving"
-msgstr ""
+msgstr "定理证明"
 
 #: ../../source/tutorial/theorems.rst:8 13e16debaf6b46c48d985ebafbccd9f9
 msgid "Equality"
@@ -407,4 +410,3 @@ msgid ""
 "programming languages (POPL '90). ACM, New York, NY, USA, 47-58. "
 "DOI=10.1145/96709.96714 https://doi.acm.org/10.1145/96709.96714"
 msgstr ""
-
