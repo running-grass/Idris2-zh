@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: 467195537@qq.com\n"
 "POT-Creation-Date: 2022-07-23 12:38+0800\n"
-"PO-Revision-Date: 2022-07-19 12:25+0000\n"
-"Last-Translator: Leo Liu <leo19920823@gmail.com>\n"
+"PO-Revision-Date: 2022-07-25 12:06+0000\n"
+"Last-Translator: admin <467195537@qq.com>\n"
+"Language-Team: Chinese (Simplified) <https://weblate.grass.work:30443/"
+"projects/idris2/tutorialpackages/zh_Hans/>\n"
 "Language: zh_CN\n"
-"Language-Team: Chinese (Simplified) "
-"<https://hosted.weblate.org/projects/idris2/tutorialpackages/zh_Hans/>\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 4.13.1\n"
 "Generated-By: Babel 2.10.3\n"
 
 #: ../source/tutorial/packages.rst:5 d545843afaf84bf7a71812a458937334
@@ -64,12 +65,12 @@ msgstr ""
 "``Maths.HexOps.idr`` ，相应的包文件应该是："
 
 #: ../source/tutorial/packages.rst:37 31ee190040f1417ca44258d4f30c3062
-#, fuzzy
 msgid ""
 "Running ``idris2 --init`` will interactively create a new package file in"
 " the current directory. The generated package file lists all configurable"
 " fields with a brief description."
-msgstr "运行 ``idris2 --init`` 将在当前目录下交互式地创建一个新的包文件。生成的包文件列出了所有可配置的字段，并附有简要说明。"
+msgstr "运行 ``idris2 --init`` 将在当前目录下交互式地创建一个新的包文件。生成的包文件"
+"列出了所有可配置的字段，并附有简要说明。"
 
 #: ../source/tutorial/packages.rst:39 cc9b2fe1c65542e0ab23d491d05ed4a1
 msgid ""
@@ -145,4 +146,3 @@ msgstr "添加一个只包含几行的 myProject.ipkg 文件："
 #: ../source/tutorial/packages.rst:88 db2f3a79ba354410b59e20f5989fa286
 msgid "In Atom, use the File menu to Open Folder myProject."
 msgstr "在 Atom 中，使用文件菜单，打开文件夹 myProject 。"
-
