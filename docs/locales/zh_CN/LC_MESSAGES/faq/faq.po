@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-12 11:10+0800\n"
-"PO-Revision-Date: 2022-07-24 23:54+0000\n"
+"PO-Revision-Date: 2022-07-25 11:26+0000\n"
 "Last-Translator: admin <467195537@qq.com>\n"
 "Language-Team: Chinese (Simplified) <https://weblate.grass.work:30443/"
 "projects/idris2/faqfaq/zh_Hans/>\n"
@@ -324,6 +324,8 @@ msgid ""
 "compute an integer? In Idris, we have decided that we would like to make "
 "this distinction precise, in the type:"
 msgstr ""
+"``thing`` 在运行时的表示形式是什么？它是表示整数的位模式，还是指向某些将计算"
+"整数的代码的指针？在 Idris 中，我们决定在类型中使这种区分更加精确："
 
 #: ../../source/faq/faq.rst:161 a8ff0aadf5914724945c01b164ce58f3
 msgid ""
@@ -331,10 +333,12 @@ msgid ""
 "concrete ``Int``, whereas ``thing_comp`` is a computation which will "
 "produce an ``Int``."
 msgstr ""
+"在这里，从类型中可以清楚地看出， ``thing_val`` 被保证是一个具体的 ``Int`` ，"
+"而 ``thing_comp`` 是一个将会产生一个 ``Int`` 的计算。"
 
 #: ../../source/faq/faq.rst:166 2567a91636b940beb510e587f297074a
 msgid "How can I make lazy control structures?"
-msgstr ""
+msgstr "如何创建惰性控制结构？"
 
 #: ../../source/faq/faq.rst:168 caf94d26c0dc4e41a4da7bc2cbeb6450
 msgid ""
@@ -342,13 +346,16 @@ msgid ""
 " one way to implement a non-dependent ``if...then...else...`` would be "
 "via a function named ``ifThenElse``:"
 msgstr ""
+"您可以使用特殊的 Lazy 类型创建控制结构。例如，实现不依赖的 ``if...then..."
+"else...`` 的一种方法是通过名为 ``ifThenElse`` 的函数："
 
 #: ../../source/faq/faq.rst:178 e773be844ca14206a65098e0b081ff87
 msgid ""
 "The type ``Lazy a`` for ``t`` and ``e`` indicates that those arguments "
 "will only be evaluated if they are used, that is, they are evaluated "
 "lazily."
-msgstr ""
+msgstr "``t`` 和 ``e`` 的 ``Lazy a`` "
+"类型表示只有在使用它们时才会对这些参数求值，也就是说，它们会被延迟求值。"
 
 #: ../../source/faq/faq.rst:181 afe14ca35bc045a582702bd6aab70fd1
 msgid ""
@@ -356,10 +363,12 @@ msgid ""
 "in Idris 2! Rather, it is transformed to a ``case`` expression which "
 "allows dependent ``if``."
 msgstr ""
+"顺便说一句：我们实际上并没有在 Idris 2 中以这种方式实现 ``if...then..."
+"else...”`` 相反，它被转换为允许依赖 ``if`` 的 ``case`` 表达式。"
 
 #: ../../source/faq/faq.rst:186 b7590f52563e4ccd9e746b41bef5da2b
 msgid "Evaluation at the REPL doesn't behave as I expect. What's going on?"
-msgstr ""
+msgstr "REPL 的求值并不像我预期的那样。这是怎么回事？"
 
 #: ../../source/faq/faq.rst:188 e7b59c3cb38a460780d8f2bcf0901010
 msgid ""
@@ -374,6 +383,12 @@ msgid ""
 " by name, since this avoids evaluating sub-expressions which are not "
 "needed for type checking."
 msgstr ""
+"作为一种完全依赖类型的语言，Idris 有两个阶段来对事物求值，编译时和运行时。在"
+"编译时，它只会求值它知道的全部内容（即终止并覆盖所有可能的输入），以保持类型"
+"检查的可判定性。编译时求值器是 Idris 内核的一部分，在 Idris 中作为解释器实现"
+"。由于这里的所有内容都具有范式，因此求值策略实际上并不重要，因为无论哪种方式"
+"都会得到相同的答案！在实践中，它使用按名称调用，因为这避免了类型检查不需要的"
+"子表达式求值。"
 
 #: ../../source/faq/faq.rst:198 a760a8e9c0374ea8acc3c6250753c17d
 msgid ""
@@ -382,6 +397,9 @@ msgid ""
 "available) this can be very useful to show how terms evaluate in the type"
 " checker. So you can see the difference between:"
 msgstr ""
+"为方便起见，REPL 使用了编译时的求值概念。除了更容易实现（因为我们有可用的求值"
+"器），这对于显示被求值项在类型检查器中如何求值非常有用。所以你可以看到两者之"
+"间的区别："
 
 #: ../../source/faq/faq.rst:211 2a8a648b59c04cfebb89a65455844cd4
 msgid ""
@@ -389,17 +407,21 @@ msgid ""
 " the ``:exec`` command. In this case, the expression must have type ``IO "
 "a`` (for any ``a``, although it won't print the result)."
 msgstr ""
+"如果你想在 REPL 编译和执行一个表达式，你可以使用 ``:exec`` "
+"命令。在这种情况下，表达式必须具有类型 ``IO a`` （ ``a`` "
+"可以是任何类型，尽管它不会打印结果）。"
 
 #: ../../source/faq/faq.rst:216 ab25ac8e14ac485da6a5d7b593cdcb7d
 msgid "Why can't I use a function with no arguments in a type?"
-msgstr ""
+msgstr "为什么我不能使用类型中没有参数的函数？"
 
 #: ../../source/faq/faq.rst:218 c4463139ba1c464f88a8fe6de278fc5e
 msgid ""
 "If you use a name in a type which begins with a lower case letter, and "
 "which is not applied to any arguments, then Idris will treat it as an "
 "implicitly bound argument. For example:"
-msgstr ""
+msgstr "如果您在以小写字母开头且不应用于任何参数的类型中使用名称，则 Idris "
+"会将其视为隐式绑定参数。例如："
 
 #: ../../source/faq/faq.rst:226 142390b7b55f41cf84d93e6d4f033fe7
 msgid ""
@@ -407,20 +429,24 @@ msgid ""
 "even if there are functions defined elsewhere with any of these names. "
 "For example, you may also have:"
 msgstr ""
+"在这里， ``n`` 、 ``m`` 和 ``ty`` 是隐式绑定的。即使在其他地方定义了具有任何"
+"这些名称的函数，此规则也适用。例如，您可能还拥有："
 
 #: ../../source/faq/faq.rst:235 92a34a01f5be4013972d732f669f47fb
 msgid ""
 "Even in this case, ``ty`` is still considered implicitly bound in the "
 "definition of ``append``, rather than making the type of ``append`` "
 "equivalent to..."
-msgstr ""
+msgstr "即使在这种情况下， ``ty`` 仍然被认为是隐式绑定在 ``append`` 的定义中，"
+"而不是使 ``append`` 的类型等价于..."
 
 #: ../../source/faq/faq.rst:242 39ce0eb8a13e414c8ebb2cd43331f078
 msgid ""
 "...which is probably not what was intended!  The reason for this rule is "
 "so that it is clear just from looking at the type of ``append``, and no "
 "other context, what the implicitly bound names are."
-msgstr ""
+msgstr "...这可能不是预期的！这条规则的原因是，只看 ``append`` "
+"的类型，而不是其他上下文，就可以清楚地知道隐式绑定的名称是什么。"
 
 #: ../../source/faq/faq.rst:246 46072c9a344e468790141b4cda637da8
 msgid ""
@@ -428,68 +454,74 @@ msgid ""
 "You can either explicitly qualify it, for example, if ``ty`` is defined "
 "in the namespace ``Main`` you can do the following:"
 msgstr ""
+"如果您想在类型中使用未应用的名称，您有三个选项。您可以明确限定它，例如，"
+"如果在命名空间 ``Main`` 中定义了 ``ty`` ，则可以执行以下操作："
 
 #: ../../source/faq/faq.rst:254 33f652ef69e74559bdcc5b3b9f205840
 msgid ""
 "Alternatively, you can use a name which does not begin with a lower case "
 "letter, which will never be implicitly bound:"
-msgstr ""
+msgstr "或者，您可以使用不以小写字母开头的名称，它永远不会被隐式绑定："
 
 #: ../../source/faq/faq.rst:264 0e25d1e286bb45e39277f3be9994891c
 msgid ""
 "As a convention, if a name is intended to be used as a type synonym, it "
 "is best for it to begin with a capital letter to avoid this restriction."
-msgstr ""
+msgstr "按照惯例，如果一个名称打算用作类型同义词，最好以大写字母开头以避免这种限制。"
 
 #: ../../source/faq/faq.rst:267 90bb89cf861a4f4390f3fddd4a707a38
 msgid ""
 "Finally, you can turn off the automatic binding of implicits with the "
 "directive:"
-msgstr ""
+msgstr "最后，您可以使用指令关闭隐式的自动绑定："
 
 #: ../../source/faq/faq.rst:274 6de3c9502898433f996acb709d540f99
 msgid ""
 "In this case, you can bind ``n`` and ``m`` as implicits, but not ``ty``, "
 "as follows:"
-msgstr ""
+msgstr "在这种情况下，您可以将 ``n`` 和 ``m`` 绑定为隐式，但不能将 ``ty`` "
+"绑定，如下所示："
 
 #: ../../source/faq/faq.rst:282 0827185a0f8946249147aae0cef0246a
 msgid ""
 "Why don't the ``Functor``, ``Applicative``, ``Monad`` and other "
 "interfaces include the laws?"
-msgstr ""
+msgstr "为什么 ``Functor`` 、 ``Applicative`` 、 ``Monad`` 等接口不包含定律？"
 
 #: ../../source/faq/faq.rst:284 1d9c7b8060db4520be7be874f4b7d3d7
 msgid ""
 "On the face of it, this sounds like a good idea, because the type system "
 "allows us to specify the laws. We don't do this in the prelude, though, "
 "for two main reasons:"
-msgstr ""
+msgstr "从表面上看，这听起来是个好主意，因为类型系统允许我们指定规律。不过，"
+"我们不会在 prelude 中这样做，主要有两个原因："
 
 #: ../../source/faq/faq.rst:288 23ff765fb86b4a4fa1e50dcf270bc12b
 msgid ""
 "It goes against the philosophy (above) that Idris *allows* programmers to"
 " prove properties of their programs, but does not *require* it."
-msgstr ""
+msgstr "它违背了 Idris *允许* 程序员证明其程序的属性，但不 *要求* "
+"它的哲学（在上面）。"
 
 #: ../../source/faq/faq.rst:290 4e223380338b4776ad53f4762b6d00fa
 msgid ""
 "A valid, lawful, implementation may not necessarily be provably lawful "
 "within the Idris system, especially if it involves higher order "
 "functions."
-msgstr ""
+msgstr "在 Idris 系统内，有效、合法的实现不一定是可证明合法的，尤其是在涉及更高阶功能"
+"的情况下。"
 
 #: ../../source/faq/faq.rst:293 f180a1b2f0a34c47a78582d1ab3242ad
 msgid ""
 "There are verified versions of the interfaces in ``Control.Algebra``, "
 "which extend interfaces with laws."
-msgstr ""
+msgstr "``Control.Algebra`` 中有经过验证的接口版本，它们扩展了带有定律的接口。"
 
 #: ../../source/faq/faq.rst:297 0a164b2b43de4d0f9b775276f5df1538
 msgid ""
 "I have an obviously terminating program, but Idris says it possibly isn't"
 " total. Why is that?"
-msgstr ""
+msgstr "我有一个明显终止的程序，但 Idris 说它可能不是完全函数。这是为什么？"
 
 #: ../../source/faq/faq.rst:299 757d3dad40ca46a89fbc1ad4e74a67eb
 msgid ""
@@ -501,16 +533,20 @@ msgid ""
 "recursive paths from a function back to itself. On such a path, there "
 "must be at least one argument which converges to a base case."
 msgstr ""
+"由于 `停机问题 <https://en.wikipedia.org/wiki/Halting_problem>`_ 的不确定性，"
+"Idris 通常无法确定程序是否终止。但是，可以识别某些肯定终止的程序。 Idris "
+"使用 “大小更改终止” 来执行此操作，它查找从函数返回到自身的递归路径。在这样的"
+"路径上，必须至少有一个参数收敛到基本情况。"
 
 #: ../../source/faq/faq.rst:307 567434821f8b4ce5990a704f1743c196
 msgid "Mutually recursive functions are supported"
-msgstr ""
+msgstr "支持相互递归函数"
 
 #: ../../source/faq/faq.rst:309 bb3f7e6d9a5643faa8be27efaeecc84f
 msgid ""
 "However, all functions on the path must be fully applied. In particular, "
 "higher order applications are not supported"
-msgstr ""
+msgstr "不过，递归路径上的所有函数必须被完整地应用。此外，Idris 不支持高阶应用。"
 
 #: ../../source/faq/faq.rst:312 8ade815b7e5d40c08dfc4fe293557f65
 msgid ""
@@ -520,24 +556,29 @@ msgid ""
 "``S (S k)``, but ``(k, k)`` is not syntactically smaller than ``(S k, S "
 "k)``."
 msgstr ""
+"Idris 通过查找对语法上较小的输入参数的递归调用来识别收敛到基本情况的参数。"
+"例如 ``k`` 在语法上小于 ``S (S k)`` 因为 ``k`` 是 ``S (S k)`` 的子项，但 ``("
+"k, k)`` 在语法不小于 ``(S k, S k)`` 。"
 
 #: ../../source/faq/faq.rst:318 3392a1e63a9940208623e893b48dbcdf
 msgid ""
 "If you have a function which you believe to be terminating, but Idris "
 "does not, you can either restructure the program, or use the "
 "``assert_total`` function."
-msgstr ""
+msgstr "如果你有一个你认为要终止的函数，但 Idris 不这么认为，你可以重新组织程序，"
+"或者使用 ``assert_total`` 函数。"
 
 #: ../../source/faq/faq.rst:323 08cc6808df6444afbbde7c8b20854976
 msgid "Does Idris have universe polymorphism? What is the type of ``Type``?"
-msgstr ""
+msgstr "Idris 有全域多态吗？ ``Type`` 的类型是什么？"
 
 #: ../../source/faq/faq.rst:325 5d8bea574499495c8308f03d04a1f5fa
 msgid ""
 "Idris 2 currently implements ``Type : Type``. Don't worry, this will not "
 "be the case forever! For Idris 1, the FAQ answered this question as "
 "follows:"
-msgstr ""
+msgstr "Idris 2 当前实现了 ``Type : Type`` 。别担心，这不会永远如此！对于 Idris 1，"
+"FAQ 对这个问题的回答如下："
 
 #: ../../source/faq/faq.rst:328 0835e3cbe0a94b7dacadfad4a5f27ae3
 msgid ""
@@ -548,10 +589,14 @@ msgid ""
 "explicitly. The REPL command ``:type Type 1`` will result in an error, as"
 " will attempting to specify the universe level of any type."
 msgstr ""
+"Idris 不是全域多态，而是全域的累积层层级。 ``Type : Type 1``, ``Type 1 : "
+"Type 2`` 等等。累积性意味着如果 ``x : Type n`` 并且 ``n <= m`` ，那么 ``x : "
+"Type m `` 。全域级别总是由 Idris 推断，不能明确指定。 REPL 命令 ``:type Type "
+"1`` 将导致错误，尝试指定任何类型的全域级别也会导致错误。"
 
 #: ../../source/faq/faq.rst:337 68f26731d4d94cc29cea7019807e1f76
 msgid "What does the name “Idris” mean?"
-msgstr ""
+msgstr "“Idris”这个名字是什么意思？"
 
 #: ../../source/faq/faq.rst:339 1681a3bfe7ef401d8eb97c64cb4c2362
 msgid ""
@@ -559,13 +604,18 @@ msgid ""
 " <https://www.youtube.com/watch?v=G5ZMNyscPcg>`_. If that doesn’t help, "
 "maybe you can invent a suitable acronym :-) ."
 msgstr ""
+"到了一定年龄的英国人可能对这条 `会唱歌的龙  <https://www.youtube.com/"
+"watch?v=G5ZMNyscPcg>`_ "
+"比较熟悉。如果这没有帮助，也许你可以发明一个合适的首字母缩略词:-)。"
 
 #: ../../source/faq/faq.rst:344 c6852d179a684fcab2138918899cac5b
 msgid "Where can I find the community standards for the Idris community?"
-msgstr ""
+msgstr "在哪里可以找到 Idris 社区的社区标准？"
 
 #: ../../source/faq/faq.rst:346 0f3a6f65d4d34fa69e25bcc131e06718
 msgid ""
 "The Idris Community Standards are stated `here <https://www.idris-"
 "lang.org/pages/community-standards.html>`_"
 msgstr ""
+"Idris 社区标准在 `这里 <https://www.idris-lang.org/pages/community-standards."
+"html>`_ 声明"
