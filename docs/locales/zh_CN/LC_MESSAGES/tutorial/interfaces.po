@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: 467195537@qq.com\n"
 "POT-Creation-Date: 2022-07-12 11:10+0800\n"
-"PO-Revision-Date: 2022-07-22 13:19+0000\n"
-"Last-Translator: Leo Liu <leo19920823@gmail.com>\n"
-"Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
-"idris2/tutorialinterfaces/zh_Hans/>\n"
+"PO-Revision-Date: 2022-07-25 12:06+0000\n"
+"Last-Translator: admin <467195537@qq.com>\n"
+"Language-Team: Chinese (Simplified) <https://weblate.grass.work:30443/"
+"projects/idris2/tutorialinterfaces/zh_Hans/>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.14-dev\n"
+"X-Generator: Weblate 4.13.1\n"
 "Generated-By: Babel 2.10.3\n"
 
 #: ../../source/tutorial/interfaces.rst:5 81fbbe3ced404f2e958f4187a9ae2f95
@@ -510,9 +510,8 @@ msgid "A *guard*, which is an expression of type ``Bool``"
 msgstr "一个 *守卫* ，它是一个类型为 ``Bool`` 的表达式"
 
 #: ../../source/tutorial/interfaces.rst:475 3aca342faabd47d88d89ae795dd3c7ba
-#, fuzzy
 msgid "A let binding ``let x = e``"
-msgstr "一个 let 绑定 ``let x = e``"
+msgstr "let 绑定 ``let x = e``"
 
 #: ../../source/tutorial/interfaces.rst:477 f16893c568c2479fb186528e9c41e48f
 msgid ""
@@ -520,10 +519,12 @@ msgid ""
 "any qualifier ``qual`` which is a *guard* is translated to ``guard "
 "qual``, using the following function:"
 msgstr ""
+"翻译一个推导式 ``[exp | qual1, qual2, ..., qualn]`` ，"
+"首先使用以下函数将任何作为 *guard* 的限定符 ``qual`` 转换为 ``guard qual`` ："
 
 #: ../../source/tutorial/interfaces.rst:485 458eef3eb89d4ab8bfb122405f7473a2
 msgid "Then the comprehension is converted to ``do`` notation:"
-msgstr ""
+msgstr "然后将推导式转换为 do 记法："
 
 #: ../../source/tutorial/interfaces.rst:491 a4f838b9a8404e3e824feef2bc195a01
 msgid ""
