@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: 467195537@qq.com\n"
 "POT-Creation-Date: 2022-07-12 11:10+0800\n"
-"PO-Revision-Date: 2022-07-22 15:46+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2022-07-25 11:44+0000\n"
+"Last-Translator: admin <467195537@qq.com>\n"
 "Language-Team: Chinese (Simplified) <https://weblate.grass.work:30443/"
 "projects/idris2/referencepackages/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -223,7 +223,7 @@ msgstr ""
 
 #: ../../source/reference/packages.rst:117 cb0bd2eeba044cb2b34f41ce3c77a621
 msgid "Comments"
-msgstr ""
+msgstr "注释"
 
 #: ../../source/reference/packages.rst:119 3cf575cebeb0425d976d4da135af2514
 msgid ""
