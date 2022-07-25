@@ -3,38 +3,42 @@
 # This file is distributed under the same license as the Idris2 package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-12 11:10+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2022-07-25 11:44+0000\n"
+"Last-Translator: admin <467195537@qq.com>\n"
+"Language-Team: Chinese (Simplified) <https://weblate.grass.work:30443/"
+"projects/idris2/referenceenvvars/zh_Hans/>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 4.13.1\n"
 "Generated-By: Babel 2.10.3\n"
 
 #: ../../source/reference/envvars.rst:5 fa3214cbd4fc4ab0a6638fb6bbab105c
 msgid "Environment Variables"
-msgstr ""
+msgstr "环境变量"
 
 #: ../../source/reference/envvars.rst:7 07b9c7862b1f4b42883062755d45e42c
 msgid ""
 "Idris 2 recognises a number of environment variables, to decide where to "
 "look for packages, external libraries, code generators, etc. It currently"
 " recognises, in approximately the order you're likely to need them:"
-msgstr ""
+msgstr "Idris 2 识别许多环境变量，以决定在哪里寻找包、外部库、代码生成器等。下面是它"
+"目前可以识别的列表，大致按照您可能需要它们的顺序："
 
 #: ../../source/reference/envvars.rst:11 79580e4d8d4a43ee96a48a7065971392
 msgid "``EDITOR`` - Sets the editor used in REPL :e command"
-msgstr ""
+msgstr "``EDITOR`` - 设置 REPL :e 命令中使用的编辑器"
 
 #: ../../source/reference/envvars.rst:12 b6909184f988469c8f9b6896fd82974d
 msgid "``IDRIS2_CG`` - Sets which code generator to use when compiling programs"
-msgstr ""
+msgstr "``IDRIS2_CG`` - 设置编译程序时使用哪个代码生成器"
 
 #: ../../source/reference/envvars.rst:13 dd18261db21d4ecea79631169aaf19ae
 msgid ""
@@ -44,82 +48,85 @@ msgid ""
 "working directory). Directories are separated by a ``:``, or a ``;`` on "
 "Windows"
 msgstr ""
+"``IDRIS2_PACKAGE_PATH`` - 列出 Idris2 查找包的目录，除了默认目录（在 "
+"``IDRIS2_PREFIX`` 和当前工作目录的 ``depends`` 子目录下）。目录由 ``:`` 或 "
+"Windows 上的 ``;`` 分隔"
 
 #: ../../source/reference/envvars.rst:17 95315f7594314d2cab3f93fa8431c7eb
 msgid ""
 "``IDRIS2_PATH`` - Places Idris2 looks for import files, in addition to "
 "the imports in packages"
-msgstr ""
+msgstr "``IDRIS2_PATH`` - 除了在包中的查找导入， Idris2 还会查找的导入文件目录"
 
 #: ../../source/reference/envvars.rst:19 205b5ded569948af8709137ded41d3ec
 msgid ""
 "``IDRIS2_DATA`` - Places Idris2 looks for its data files. These are "
 "typically support code for code generators."
-msgstr ""
+msgstr "``IDRIS2_DATA`` - 放置 Idris2 "
+"寻找它的数据文件。这些通常是代码生成器的支持代码。"
 
 #: ../../source/reference/envvars.rst:21 0e61594751874468a50ea3728e1d16bb
 msgid ""
 "``IDRIS2_LIBS`` - Places Idris2 looks for libraries used by code "
 "generators."
-msgstr ""
+msgstr "``IDRIS2_LIBS`` - 放置 Idris2 查找代码生成器使用的库。"
 
 #: ../../source/reference/envvars.rst:22 0e19b7c4d14049f684c25bd2ccaacbbd
 msgid "``IDRIS2_PREFIX`` - Gives the Idris2 installation prefix"
-msgstr ""
+msgstr "``IDRIS2_PREFIX`` - 给出 Idris2 安装前缀"
 
 #: ../../source/reference/envvars.rst:23 d82ae586806143d0b34e216e0567a789
 msgid ""
 "``CHEZ`` - Sets the location of the ``chez`` executable used in Chez "
 "codegen"
-msgstr ""
+msgstr "``CHEZ`` - 设置 Chez codegen 中使用的``chez`` 可执行文件的位置"
 
 #: ../../source/reference/envvars.rst:24 90e1d40134ee407588daba5ae38fb942
 msgid ""
 "``RACKET`` - Sets the location of the ``racket`` executable used in "
 "Racket codegen"
-msgstr ""
+msgstr "``RACKET`` - 设置在 Racket codegen 中使用的 ``racket`` 可执行文件的位置"
 
 #: ../../source/reference/envvars.rst:25 d21fd60f7eb2483085c92544d67ce1aa
 msgid ""
 "``RACKET_RACO`` - Sets the location of the ``raco`` executable used in "
 "Racket codegen"
-msgstr ""
+msgstr "``RACKET_RACO`` - 设置 Racket codegen 中使用的 ``raco`` 可执行文件的位置"
 
 #: ../../source/reference/envvars.rst:26 466ee09d35b2462fa226a7933ebdbee4
 msgid ""
 "``GAMBIT_GSI`` - Sets the location of the ``gsi`` executable used in "
 "Gambit codegen"
-msgstr ""
+msgstr "``GAMBIT_GSI`` - 设置 Gambit codegen 中使用的 ``gsi`` 可执行文件的位置"
 
 #: ../../source/reference/envvars.rst:27 b02f7b6efc8643aa8034eed3a9912013
 msgid ""
 "``GAMBIT_GSC`` - Sets the location of the ``gsc`` executable used in "
 "Gambit codegen"
-msgstr ""
+msgstr "``GAMBIT_GSC`` - 设置 Gambit codegen 中使用的 ``gsc`` 可执行文件的位置"
 
 #: ../../source/reference/envvars.rst:28 a16314a79f794f608270b0544a2f0e3d
 msgid "``GAMBIT_GSC_BACKEND`` - Sets the ``gsc`` executable backend argument"
-msgstr ""
+msgstr "``GAMBIT_GSC_BACKEND`` - 设置 ``gsc`` 可执行后端参数"
 
 #: ../../source/reference/envvars.rst:29 512eda781df24c31988d76574836831e
 msgid ""
 "``IDRIS2_CC`` - Sets the location of the C compiler executable used in "
 "RefC codegen"
-msgstr ""
+msgstr "``IDRIS2_CC`` - 设置 RefC 代码生成中使用的 C 编译器可执行文件的位置"
 
 #: ../../source/reference/envvars.rst:30 3e4818e758cb4e41a6890268f6742d5e
 msgid ""
 "``CC`` - Sets the location of the C compiler executable used in RefC "
 "codegen"
-msgstr ""
+msgstr "``CC`` - 设置 RefC 代码生成中使用的 C 编译器可执行文件的位置"
 
 #: ../../source/reference/envvars.rst:31 640ddd068e7a43f99407c1d69fddfd00
 msgid ""
 "``NODE`` - Sets the location of the ``node`` executable used in Node "
 "codegen"
-msgstr ""
+msgstr "``NODE`` - 设置 Node codegen 中使用的 ``node`` 可执行文件的位置"
 
 #: ../../source/reference/envvars.rst:32 fa211c19e31c426abc182be4b93d758c
 msgid "``PATH`` - used to search for executables in certain codegens"
-msgstr ""
-
+msgstr "``PATH`` - 用于在某些 codegens 中搜索可执行文件"
