@@ -8,25 +8,25 @@ msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: 467195537@qq.com\n"
 "POT-Creation-Date: 2022-07-12 11:10+0800\n"
-"PO-Revision-Date: 2022-07-12 03:38+0000\n"
-"Last-Translator: Leo Liu <leo19920823@gmail.com>\n"
-"Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
-"idris2/proofsindex/zh_Hans/>\n"
+"PO-Revision-Date: 2022-07-25 12:06+0000\n"
+"Last-Translator: admin <467195537@qq.com>\n"
+"Language-Team: Chinese (Simplified) <https://weblate.grass.work:30443/"
+"projects/idris2/proofsindex/zh_Hans/>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.14-dev\n"
+"X-Generator: Weblate 4.13.1\n"
 "Generated-By: Babel 2.10.3\n"
 
 #: ../../source/proofs/index.rst:5 cca300e7db0542909a0fcbcf15441fc1
 msgid "Theorem Proving"
-msgstr ""
+msgstr "定理证明"
 
 #: ../../source/proofs/index.rst:7 8f3d7d2e89b342c48301e70f68d462e4
 msgid "A tutorial on theorem proving in Idris 2."
-msgstr ""
+msgstr "Idris 2 中的定理证明教程。"
 
 #: ../../source/proofs/index.rst:11 34acdfec3249498c8ab925f5804433b7
 msgid ""
