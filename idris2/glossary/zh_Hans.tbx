@@ -114,6 +114,14 @@
                 <langSet xml:lang="en"><tig><term>Gambit</term></tig></langSet>
                 <langSet xml:lang="zh_Hans"><tig><term>Gambit</term></tig></langSet>
             </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Chez</term></tig></langSet>
+                <langSet xml:lang="zh_Hans"><tig><term>Chez</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>pragma</term></tig></langSet>
+                <langSet xml:lang="zh_Hans"><tig><term>编译指令</term></tig></langSet>
+            </termEntry>
         </body>
     </text>
 </martif>
