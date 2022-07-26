@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-12 11:10+0800\n"
-"PO-Revision-Date: 2022-07-23 10:06+0000\n"
+"PO-Revision-Date: 2022-07-27 15:37+0000\n"
 "Last-Translator: admin <467195537@qq.com>\n"
 "Language-Team: Chinese (Simplified) <https://weblate.grass.work:30443/"
 "projects/idris2/tutorialinterp/zh_Hans/>\n"
@@ -63,16 +63,20 @@ msgid ""
 "``Vect`` data type, so we'll need to import ``Data.Vect`` at the top of "
 "our source file:"
 msgstr ""
+"我们将定义我们的语言的一种表示方式，即只有类型良好的程序才能被表示。我们将按"
+"表达式的类型、 **和** 局部变量的类型（上下文）来索引表达式的表示。"
+"上下文可以使用 ``Vect`` 数据类型表示，因此我们需要在源文件顶部导入 ``Data."
+"Vect`` ："
 
 #: ../../source/tutorial/interp.rst:46 b131e4e6fdba4721835190e04ba2c543
 msgid ""
 "Expressions are indexed by the types of the local variables, and the type"
 " of the expression itself:"
-msgstr ""
+msgstr "表达式由局部变量的类型和表达式本身的类型索引："
 
 #: ../../source/tutorial/interp.rst:53 bfb3b10d7e634468aec433f29ea57ef6
 msgid "The full representation of expressions is:"
-msgstr ""
+msgstr "表达式的完整表示是："
 
 #: ../../source/tutorial/interp.rst:72 67609ca8cf2047a683bb9ab31808cf7f
 msgid ""
@@ -80,23 +84,31 @@ msgid ""
 "libraries. ``Fin`` is available as part of ``Data.Vect``. Throughout, "
 "``ctxt`` refers to the local variable context."
 msgstr ""
+"上面的代码使用了 base 库中的 ``Vect`` 和 ``Fin`` 类型。 ``Fin`` 可作为 ``Data"
+".Vect`` 的一部分使用。在整个过程中， ``ctxt`` 指的是局部变量上下文。"
 
 #: ../../source/tutorial/interp.rst:76 21a8ca60b604481da5f15aeecd4affe8
 msgid ""
 "Since expressions are indexed by their type, we can read the typing rules"
 " of the language from the definitions of the constructors. Let us look at"
 " each constructor in turn."
-msgstr ""
+msgstr "由于表达式是按其类型索引的，我们可以从构造函数的定义中读取语言的类型规则。让"
+"我们依次看看每个构造函数。"
 
 #: ../../source/tutorial/interp.rst:80 2450caec92a346aca8d98bf7d63c3286
+#, fuzzy
 msgid ""
 "We use a nameless representation for variables — they are *de Bruijn "
 "indexed*. Variables are represented by a proof of their membership in the"
 " context, ``HasType i ctxt T``, which is a proof that variable ``i`` in "
 "context ``ctxt`` has type ``T``. This is defined as follows:"
 msgstr ""
+"我们对变量使用无名表示——它们是*de Bruijn "
+"indexed*。变量由它们在上下文中的成员资格证明“HasType i ctxt "
+"T”来表示，这证明了上下文“ctxt”中的变量“i”具有类型“T”。这定义如下："
 
 #: ../../source/tutorial/interp.rst:91 c2937ebff7cc47e0b0a828f8ff3298a7
+#, fuzzy
 msgid ""
 "We can treat *Stop* as a proof that the most recently defined variable is"
 " well-typed, and *Pop n* as a proof that, if the ``n``\\ th most recently"
@@ -105,50 +117,68 @@ msgid ""
 "variable, ``Pop Stop`` to refer to the next, and so on, via the ``Var`` "
 "constructor:"
 msgstr ""
+"我们可以将 *Stop* 视为最近定义的变量类型正确的证明，并且 *Pop n* "
+"视为如果最近定义的第 n 个变量是正确类型的证明，那么``n+1``\\ "
+"th。在实践中，这意味着我们使用“Stop”来指代最近定义的变量，“Pop "
+"Stop”来指代下一个，依此类推，通过“Var”构造函数："
 
 #: ../../source/tutorial/interp.rst:102 615ff27786e44df5a0a42876c06d17e8
+#, fuzzy
 msgid ""
 "So, in an expression ``\\x. \\y. x y``, the variable ``x`` would have a "
 "de Bruijn index of 1, represented as ``Pop Stop``, and ``y 0``, "
 "represented as ``Stop``. We find these by counting the number of lambdas "
 "between the definition and the use."
 msgstr ""
+"因此，在表达式 ``\\x. \\y。 x y ，变量 ``x`` 的 de Bruijn 索引为 1，表示为 ``"
+"Pop Stop`` 和 ``y 0``，表示为 ``Stop``。我们通过计算定义和使用之间的 lambda "
+"数量来找到这些。"
 
 #: ../../source/tutorial/interp.rst:107 3d09c78f5b0146e2aeb301797ceff173
+#, fuzzy
 msgid "A value carries a concrete representation of an integer:"
-msgstr ""
+msgstr "值携带整数的具体表示："
 
 #: ../../source/tutorial/interp.rst:113 c35ed0480c0c4aa5813ad391b6ad7ea7
+#, fuzzy
 msgid ""
 "A lambda creates a function. In the scope of a function of type ``a -> "
 "t``, there is a new local variable of type ``a``, which is expressed by "
 "the context index:"
-msgstr ""
+msgstr "一个 lambda 创建一个函数。在“a -> "
+"t”类型的函数范围内，有一个“a”类型的新局部变量，由上下文索引表示："
 
 #: ../../source/tutorial/interp.rst:121 f5f755c5983c48bca7a66f2d4a70fc26
+#, fuzzy
 msgid ""
 "Function application produces a value of type ``t`` given a function from"
 " ``a`` to ``t`` and a value of type ``a``:"
-msgstr ""
+msgstr "给定从 ``a`` 到 ``t`` 的函数和``a`` 类型的值，函数应用程序产生``t`` "
+"类型的值："
 
 #: ../../source/tutorial/interp.rst:128 b416886980da492e896e54ff98b9f802
+#, fuzzy
 msgid ""
 "We allow arbitrary binary operators, where the type of the operator "
 "informs what the types of the arguments must be:"
-msgstr ""
+msgstr "我们允许任意二元运算符，其中运算符的类型告知参数的类型必须是什么："
 
 #: ../../source/tutorial/interp.rst:136 25ef61455236417fbbc9ab7461c8c295
+#, fuzzy
 msgid ""
 "Finally, ``If`` expressions make a choice given a boolean. Each branch "
 "must have the same type, and we will evaluate the branches lazily so that"
 " only the branch which is taken need be evaluated:"
-msgstr ""
+msgstr "最后，``If`` 表达式在给定布尔值的情况下做出选择。每个分支必须具有相同的类型，"
+"我们将懒惰地评估分支，以便只评估被采用的分支："
 
 #: ../../source/tutorial/interp.rst:148 4139887e9e3a4dfbac192bd7fd3c0e6d
+#, fuzzy
 msgid "Writing the Interpreter"
-msgstr ""
+msgstr "编写解释器"
 
 #: ../../source/tutorial/interp.rst:150 3e0f4f541ba14cfb8a7edd18e7a84725
+#, fuzzy
 msgid ""
 "When we evaluate an ``Expr``, we'll need to know the values in scope, as "
 "well as their types. ``Env`` is an environment, indexed over the types in"
@@ -158,101 +188,138 @@ msgid ""
 "usual list syntax. Given a proof that a variable is defined in the "
 "context, we can then produce a value from the environment:"
 msgstr ""
+"当我们评估一个“Expr”时，我们需要知道范围内的值，以及它们的类型。 ``Env`` 是一"
+"个环境，索引范围内的类型。由于环境只是列表的另一种形式，尽管与局部变量类型的"
+"向量有强烈指定的连接，我们使用通常的 ``::`` 和 ``Nil`` "
+"构造函数，以便我们可以使用通常的列表语法."
+"给定一个变量在上下文中定义的证明，我们可以从环境中产生一个值："
 
 #: ../../source/tutorial/interp.rst:169 cb0e4f7ab6b84bd1b34383755db3a3b0
+#, fuzzy
 msgid ""
 "Given this, an interpreter is a function which translates an ``Expr`` "
 "into a concrete Idris value with respect to a specific environment:"
-msgstr ""
+msgstr "鉴于此，解释器是一个函数，它将“Expr”转换为特定环境的具体 Idris 值："
 
 #: ../../source/tutorial/interp.rst:177 eb097f6973434891b9e8f2de8a680e0c
+#, fuzzy
 msgid ""
 "The complete interpreter is defined as follows, for reference. For each "
 "constructor, we translate it into the corresponding Idris value:"
-msgstr ""
+msgstr "完整的解释器定义如下，供参考。对于每个构造函数，我们将其转换为相应的 Idris "
+"值："
 
 #: ../../source/tutorial/interp.rst:190 8659e4d366534996af138b56224600f1
+#, fuzzy
 msgid ""
 "Let us look at each case in turn. To translate a variable, we simply look"
 " it up in the environment:"
-msgstr ""
+msgstr "让我们依次看看每个案例。要翻译一个变量，我们只需在环境中查找它："
 
 #: ../../source/tutorial/interp.rst:197 8adb63c4892a47d1bc43e471c7d1ccaa
+#, fuzzy
 msgid ""
 "To translate a value, we just return the concrete representation of the "
 "value:"
-msgstr ""
+msgstr "要翻译一个值，我们只需返回该值的具体表示："
 
 #: ../../source/tutorial/interp.rst:204 2f0012840fc3488dafd06660f50fabb0
+#, fuzzy
 msgid ""
 "Lambdas are more interesting. In this case, we construct a function which"
 " interprets the scope of the lambda with a new value in the environment. "
 "So, a function in the object language is translated to an Idris function:"
 msgstr ""
+"Lambda 更有趣。在这种情况下，我们构造了一个函数，它用环境中的新值解释 lambda "
+"的范围。因此，对象语言中的函数被转换为 Idris 函数："
 
 #: ../../source/tutorial/interp.rst:213 fed8bf1a7b204c29a182b40c4ca204c7
+#, fuzzy
 msgid ""
 "For an application, we interpret the function and its argument and apply "
 "it directly. We know that interpreting ``f`` must produce a function, "
 "because of its type:"
-msgstr ""
+msgstr "对于应用程序，我们解释函数及其参数并直接应用它。我们知道解释 f "
+"必须产生一个函数，因为它的类型："
 
 #: ../../source/tutorial/interp.rst:221 2fa6ae31ee89427092ec3547a727e93a
+#, fuzzy
 msgid ""
 "Operators and conditionals are, again, direct translations into the "
 "equivalent Idris constructs. For operators, we apply the function to its "
 "operands directly, and for ``If``, we apply the Idris "
 "``if...then...else`` construct directly."
 msgstr ""
+"运算符和条件再次直接转换为等效的 Idris "
+"结构。对于运算符，我们直接将函数应用于其操作数，对于“If”，我们直接应用 Idris "
+"的“if...then...else”构造。"
 
 #: ../../source/tutorial/interp.rst:233 e41935b305b4496f804af9c95204dcbe
+#, fuzzy
 msgid "Testing"
-msgstr ""
+msgstr "测试"
 
 #: ../../source/tutorial/interp.rst:235 11743793f0ab4a4ab331002e65348dce
+#, fuzzy
 msgid ""
 "We can make some simple test functions. Firstly, adding two inputs ``\\x."
 " \\y. y + x`` is written as follows:"
-msgstr ""
+msgstr "我们可以做一些简单的测试功能。首先，添加两个输入 ``\\x. \\y。 y + x`` "
+"写成如下："
 
 #: ../../source/tutorial/interp.rst:243 e0fec2ea17084542836b0b19875927a4
+#, fuzzy
 msgid ""
 "More interestingly, a factorial function ``fact`` (e.g. ``\\x. if (x == "
 "0) then 1 else (fact (x-1) * x)``), can be written as:"
 msgstr ""
+"更有趣的是，阶乘函数 ``fact``（例如 ``\\x. if (x == 0) then 1 else (fact "
+"(x-1) * x)``）可以写成："
 
 #: ../../source/tutorial/interp.rst:256 3f399bcf5b87455f9e8e793332ed75de
+#, fuzzy
 msgid "Running"
-msgstr ""
+msgstr "跑步"
 
 #: ../../source/tutorial/interp.rst:258 c68aab351e384304a6435144e069f6d8
+#, fuzzy
 msgid ""
 "To finish, we write a ``main`` program which interprets the factorial "
 "function on user input:"
-msgstr ""
+msgstr "最后，我们编写一个“主”程序来解释用户输入的阶乘函数："
 
 #: ../../source/tutorial/interp.rst:268 1b0b6916a08d421a81d911120af29428
+#, fuzzy
 msgid ""
 "Here, ``cast`` is an overloaded function which converts a value from one "
 "type to another if possible. Here, it converts a string to an integer, "
 "giving 0 if the input is invalid. An example run of this program at the "
 "Idris interactive environment is:"
 msgstr ""
+"在这里，``cast`` 是一个重载函数，如果可能，它将值从一种类型转换为另一种类型。"
+"在这里，它将字符串转换为整数，如果输入无效，则为 0。该程序在 Idris "
+"交互式环境中的示例运行是："
 
 #: ../../source/tutorial/interp.rst:278 fe4c471ec1374316bd1ddb2693e90c8a
+#, fuzzy
 msgid "Aside: ``cast``"
-msgstr ""
+msgstr "旁白：``演员``"
 
 #: ../../source/tutorial/interp.rst:280 13f720bf167e4910a77084ba59c947ab
+#, fuzzy
 msgid ""
 "The prelude defines an interface ``Cast`` which allows conversion between"
 " types:"
-msgstr ""
+msgstr "前奏定义了一个接口“Cast”，它允许类型之间的转换："
 
 #: ../../source/tutorial/interp.rst:288 2c25062e8e424ecb98a4730f5bfc386c
+#, fuzzy
 msgid ""
 "It is a *multi-parameter* interface, defining the source type and object "
 "type of the cast. It must be possible for the type checker to infer "
 "*both* parameters at the point where the cast is applied. There are casts"
 " defined between all of the primitive types, as far as they make sense."
 msgstr ""
+"它是一个*多参数*接口，定义了转换的源类型和对象类型。"
+"类型检查器必须可以在应用强制转换的点推断 *both* "
+"参数。在所有原始类型之间定义了强制转换，只要它们有意义。"
