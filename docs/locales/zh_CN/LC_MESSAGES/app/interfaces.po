@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: 467195537@qq.com\n"
 "POT-Creation-Date: 2022-07-12 11:10+0800\n"
-"PO-Revision-Date: 2022-07-24 12:56+0000\n"
+"PO-Revision-Date: 2022-07-26 13:03+0000\n"
 "Last-Translator: admin <467195537@qq.com>\n"
 "Language-Team: Chinese (Simplified) <https://weblate.grass.work:30443/"
 "projects/idris2/appinterfaces/zh_Hans/>\n"
@@ -48,7 +48,8 @@ msgstr "Console I/O 示例"
 msgid ""
 "We have seen an initial example using the ``Console`` interface, which is"
 " declared as follows, in ``Control.App.Console``:"
-msgstr ""
+msgstr "我们已经看到了一个使用 ``Console`` 接口的初始示例，它在 ``Control.App."
+"Console`` 中声明如下："
 
 #: ../../source/app/interfaces.rst:27 9c36069bd5694a3780dc318b8df1ac31
 msgid ""
@@ -57,6 +58,9 @@ msgid ""
 "exception, because they have to work in both the ``NoThrow`` and "
 "``MayThrow`` contexts."
 msgstr ""
+"它提供了用于写入和读取控制台的原语，并将路径参数推广到 ``|`` "
+"意味着两者都不能抛出异常，因为它们必须在 ``NoThrow`` 和 ``MayThrow`` "
+"上下文中工作。"
 
 #: ../../source/app/interfaces.rst:32 274c4049cdc3445fb51747430af97823
 msgid ""
@@ -64,6 +68,8 @@ msgid ""
 "to primitive ``IO`` operations. The ``Control.App`` library defines a "
 "primitive interface for this:"
 msgstr ""
+"为了在顶层 ``IO`` 程序中实现这一点，我们需要访问原始的 ``IO`` 操作。 "
+"``Control.App`` 库为此定义了一个原语接口："
 
 #: ../../source/app/interfaces.rst:42 6194bc979fa2468fbf9b38fd5baf301a
 msgid ""
@@ -72,6 +78,9 @@ msgid ""
 "``PrimIO``.  Note that ``fork`` starts a new list of errors ``e'`` so "
 "that states are only available in a single thread."
 msgstr ""
+"我们使用 ``primIO`` 来调用 ``IO`` 函数。我们还有一个 ``fork`` 原语，它在支持 "
+"``PrimIO`` 的新错误列表中启动一个新线程。请注意， ``fork`` "
+"启动了一个新的错误列表 ``e`` ，因此状态仅在单个线程中可用。"
 
 #: ../../source/app/interfaces.rst:47 891bcfa43d6640748f00eec67146c32b
 msgid ""
@@ -81,16 +90,21 @@ msgid ""
 "consistent with the definition of ``IO``. This also allows us to use "
 "``PrimIO`` in the initial list of errors ``Init``."
 msgstr ""
+"``PrimIO`` 有一个错误列表的实现，可以将空类型作为异常抛出。这意味着如果 "
+"``PrimIO`` 是唯一可用的接口，我们不能抛出异常，这与 ``IO`` 的定义是一致的。"
+"这也允许我们在初始错误列表 ``Init`` 中使用 ``PrimIO`` 。"
 
 #: ../../source/app/interfaces.rst:57 2ffc165867f54a33b1187cd6a97c6195
 msgid ""
 "Given this, we can implement ``Console`` and run our ``hello`` program in"
 " ``IO``. It is implemented as follows in ``Control.App.Console``:"
 msgstr ""
+"鉴于此，我们可以实现 ``Console`` 并在 ``IO`` 中运行我们的 ``hello`` 程序。"
+"它在 ``Control.App.Console`` 中实现如下："
 
 #: ../../source/app/interfaces.rst:69 2049f76c60484895a240ef95b8b2ded7
 msgid "Example: File I/O"
-msgstr ""
+msgstr "示例：文件 I/O"
 
 #: ../../source/app/interfaces.rst:71 0871097ca06f4d17a5329242b3d2acbb
 msgid ""
@@ -99,6 +113,9 @@ msgid ""
 "does not exist; the user has the wrong permissions, etc. In Idris, the "
 "``IO`` primitive reflects this in its type:"
 msgstr ""
+"控制台 I/O 可以直接实现，但大多数 I/O 操作可能会失败。例如，打开文件失败的原"
+"因有多种：文件不存在；用户拥有错误的权限等。在 Idris 中， ``IO`` "
+"原语在其类型中反映了这一点："
 
 #: ../../source/app/interfaces.rst:80 2f9fd93b154f4790ac3ee1293187c165
 msgid ""
@@ -108,6 +125,10 @@ msgid ""
 "exceptions are handled at the top level using ``handle``. We begin by "
 "defining the ``FileIO`` interface, in ``Control.App.FileIO``:"
 msgstr ""
+"虽然精确，但当有很长的 ``IO`` 操作序列时，这会变得笨拙。使用 ``App`` "
+"时，我们可以提供一个接口，当操作失败时抛出异常，并保证使用 ``handle`` "
+"在顶层处理任何异常。我们首先在 ``Control.App.FileIO`` 中定义 ``FileIO`` "
+"接口："
 
 #: ../../source/app/interfaces.rst:101 5a65dc11e4e947ffb62be9bbcf17d045
 msgid ""
@@ -116,6 +137,8 @@ msgid ""
 "operation, to open a file, to ensure that the file handle is cleaned up "
 "on completion."
 msgstr ""
+"我们使用资源括号 - 将函数传递给 ``withFile`` 来处理打开的文件 - 而不是显式的 "
+"``open`` 操作来打开文件，以确保文件句柄在完成时被清理。"
 
 #: ../../source/app/interfaces.rst:106 7ead812ada634b38a3708befff9f5a62
 msgid ""
@@ -126,16 +149,21 @@ msgid ""
 "implement ``FileIO`` if the list of errors supports throwing and catching"
 " the ``IOError`` exception. ``IOError`` is defined in ``Control.App``."
 msgstr ""
+"还可以想象一个接口使用文件的线性资源，这在某些安全关键的上下文中可能是合适的"
+"，但对于大多数编程任务，异常应该就足够了。所有的操作都可能失败，接口明确表示"
+"，如果错误列表支持抛出和捕获 ``IOError`` 异常，我们只能实现 ``FileIO`` 。 "
+"``IOError`` 在 ``Control.App`` 中定义。"
 
 #: ../../source/app/interfaces.rst:114 d98eae39e0b8480db8d60e3646841e4a
 msgid ""
 "For example, we can use this interface to implement ``readFile``, "
 "throwing an exception if opening the file fails in ``withFile``:"
-msgstr ""
+msgstr "例如，我们可以使用这个接口来实现 ``readFile`` ，如果在 ``withFile`` "
+"中打开文件失败则抛出异常："
 
 #: ../../source/app/interfaces.rst:130 a1606fcb81c748468e8277532619ee87
 msgid "Again, this is defined in ``Control.App.FileIO``."
-msgstr ""
+msgstr "同样，这是在 ``Control.App.FileIO`` 中定义的。"
 
 #: ../../source/app/interfaces.rst:132 fe4f165697bf43cbb9908bcee2fc09a4
 msgid ""
@@ -143,6 +171,9 @@ msgid ""
 "``PrimIO``, and the ability to throw exceptions if any of the operations "
 "fail. With this, we can implement ``withFile`` as follows, for example:"
 msgstr ""
+"要实现 ``FileIO`` ，我们需要通过 ``PrimIO`` "
+"访问原始操作，以及在任何操作失败时抛出异常的能力。有了这个，我们可以如下实现 "
+"``withFile`` ，例如："
 
 #: ../../source/app/interfaces.rst:148 0b58f382a5bc418186abf3ce817e84ed
 msgid ""
@@ -150,3 +181,6 @@ msgid ""
 "provided that we wrap it in a top level ``handle`` function to deal with "
 "any errors thrown by ``readFile``:"
 msgstr ""
+"鉴于 ``FileIO`` 的这个实现，我们可以运行 ``readFile`` ，"
+"前提是我们将它包装在一个顶级的 ``handle`` 函数中以处理 ``readFile`` "
+"抛出的任何错误："
