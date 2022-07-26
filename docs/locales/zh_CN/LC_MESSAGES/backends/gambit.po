@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-12 11:10+0800\n"
-"PO-Revision-Date: 2022-07-26 00:32+0000\n"
+"PO-Revision-Date: 2022-07-26 12:31+0000\n"
 "Last-Translator: admin <467195537@qq.com>\n"
 "Language-Team: Chinese (Simplified) <https://weblate.grass.work:30443/"
 "projects/idris2/backendsgambit/zh_Hans/>\n"
@@ -22,11 +22,11 @@ msgstr ""
 
 #: ../../source/backends/gambit.rst:3 9cf8aada8a294cdab904692aa9b05277
 msgid "Gambit Scheme Code Generator"
-msgstr ""
+msgstr "Gambit Scheme 代码生成器"
 
 #: ../../source/backends/gambit.rst:5 d4ed6ccd46664559823d59ce76bcf4fb
 msgid "The Gambit Scheme code generator can be accessed via the REPL command:"
-msgstr ""
+msgstr "可以通过 REPL 命令访问 Gambit Scheme 代码生成器："
 
 #: ../../source/backends/gambit.rst:11 e0814f8499c84a24aaafb7411c92bf53
 msgid "Alternatively, you can set it via the ``IDRIS2_CG`` environment variable:"
@@ -38,6 +38,9 @@ msgid ""
 "`Gambit Scheme <https://gambitscheme.org>`_. Gambit Scheme is free "
 "software, and available via most package managers."
 msgstr ""
+"要使用此生成器运行 Idris 程序，您需要安装 `Gambit Scheme "
+"<https://gambitscheme.org>`_ 。 Gambit Scheme "
+"是免费软件，可通过大多数包管理器获得。"
 
 #: ../../source/backends/gambit.rst:21 a7da69de71d84ea8b316801a461b049e
 msgid ""
@@ -54,13 +57,14 @@ msgstr "...其中 ``execname`` 是可执行文件的名称。这将生成以下�
 
 #: ../../source/backends/gambit.rst:31 ae3292f29b494533bce1293de4b07e71
 msgid "An executable binary ``build/exec/execname`` of the program."
-msgstr ""
+msgstr "程序的可执行二进制文件为 ``build/exec/execname`` 。"
 
 #: ../../source/backends/gambit.rst:32 4838cdfe7af2483fa6b8822d0d9ecf50
 msgid ""
 "A Gambit Scheme source file ``build/exec/execname.scm``, from which the "
 "binary is generated."
-msgstr ""
+msgstr "一个 Gambit Scheme 源文件 ``build/exec/execname.scm`` "
+"，并从中生成二进制文件。"
 
 #: ../../source/backends/gambit.rst:35 5773de5e3fa44bfcb65043a1cc7cc715
 msgid "You can also execute an expression directly:"
@@ -70,11 +74,12 @@ msgstr "你也可以直接执行表达式："
 msgid ""
 "Again, ``expr`` must have type ``IO ()``. This will generate a temporary "
 "Scheme file, and execute the Gambit interpreter on it."
-msgstr ""
+msgstr "同样， ``expr`` 必须具有 ``IO ()`` 类型。这将生成一个临时 Scheme 文件，"
+"并在其上执行 Gambit 解释器。"
 
 #: ../../source/backends/gambit.rst:46 d27de474acdf4194afdfc9cb2b3a8026
 msgid "Gambit Directives"
-msgstr ""
+msgstr "Gambit 指令"
 
 #: ../../source/backends/gambit.rst:48 b06e031541f140139fd162953d04585a
 msgid "``--directive extraRuntime=<path>``"
@@ -90,30 +95,36 @@ msgstr "将来自 ``<path>`` 的 Scheme 源代码直接嵌入到生成的输出�
 
 #: ../../source/backends/gambit.rst:70 fb57dda9fcea485aa13905890dabe79c
 msgid "``--directive C``"
-msgstr ""
+msgstr "``--directive C``"
 
 #: ../../source/backends/gambit.rst:72 8c99b879e6244ed5a6f6158b4ffd77d7
 msgid "Compile to C."
-msgstr ""
+msgstr "编译为 C。"
 
 #: ../../source/backends/gambit.rst:75 f953e6a079244e8a8fa4b39179ce3fb2
 msgid "Gambit Environment Configurations"
-msgstr ""
+msgstr "Gambit 环境变量配置"
 
 #: ../../source/backends/gambit.rst:77 1a8e2225338c48cba3351bd4ca125cb8
 msgid "``GAMBIT_GSC_BACKEND``"
-msgstr ""
+msgstr "``GAMBIT_GSC_BACKEND``"
 
 #: ../../source/backends/gambit.rst:79 1db0aa8e42214a968eefa959eb057f45
+#, fuzzy
 msgid ""
 "The ``GAMBIT_GSC_BACKEND`` variable controls which C compiler Gambit will"
 " use during compilation. E.g. to use clang:"
-msgstr ""
+msgstr "``GAMBIT_GSC_BACKEND`` 变量控制在编译期间将使用哪个 C 编译器 "
+"Gambit。例如。使用铿锵声："
 
 #: ../../source/backends/gambit.rst:85 dffc064ddf4b47dbabc9d00d53044990
+#, fuzzy
 msgid ""
 "Gambit after version v4.9.3 supports the ``-cc`` option, which configures"
 " the compiler backend Gambit will use to build the binary. Currently to "
 "get this functionality Gambit needs to be built from source, since it is "
 "not yet available in a released version."
 msgstr ""
+"v4.9.3 之后的 Gambit 支持 ``-cc`` 选项，它配置编译器后端 Gambit "
+"将用于构建二进制文件。目前要获得此功能 Gambit "
+"需要从源代码构建，因为它尚未在发布版本中可用。"
