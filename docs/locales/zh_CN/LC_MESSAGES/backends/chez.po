@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-12 11:10+0800\n"
-"PO-Revision-Date: 2022-07-26 12:31+0000\n"
+"PO-Revision-Date: 2022-07-26 13:03+0000\n"
 "Last-Translator: admin <467195537@qq.com>\n"
 "Language-Team: Chinese (Simplified) <https://weblate.grass.work:30443/"
 "projects/idris2/backendschez/zh_Hans/>\n"
@@ -21,26 +21,23 @@ msgstr ""
 "Generated-By: Babel 2.10.3\n"
 
 #: ../../source/backends/chez.rst:3 031df179d38d4bf78b60c1efeef7bc1d
-#, fuzzy
 msgid "Chez Scheme Code Generator"
 msgstr "Chez Scheme 代码生成器"
 
 #: ../../source/backends/chez.rst:5 68e22470735d433baa93b8eda6f06fd1
-#, fuzzy
 msgid ""
 "The Chez Scheme code generator is the default, or it can be accessed via "
 "a REPL command:"
 msgstr "Chez Scheme 代码生成器是默认的，或者可以通过 REPL 命令访问："
 
 #: ../../source/backends/chez.rst:12 0dd31067e2a644f887013bb78b1d8da8
-#, fuzzy
 msgid ""
 "By default, therefore, to run Idris programs you will need to install "
 "`Chez Scheme <https://www.scheme.com/>`_. Chez Scheme is open source, and"
 " available via most OS package managers."
 msgstr ""
 "因此，默认情况下，要运行 Idris 程序，您需要安装 `Chez Scheme <https://www."
-"scheme.com/>`_。 Chez Scheme 是开源的，可通过大多数操作系统包管理器获得。"
+"scheme.com/>`_ 。 Chez Scheme 是开源的，可通过大多数操作系统包管理器获得。"
 
 #: ../../source/backends/chez.rst:16 46fc5437caa8498689ab6b9216809f95
 msgid ""
@@ -60,16 +57,15 @@ msgid "A shell script ``build/exec/execname`` which invokes the program"
 msgstr "调用程序的 shell 脚本 ``build/exec/execname``"
 
 #: ../../source/backends/chez.rst:27 551bed13ae73406a83bfb41fbd1b23b9
-#, fuzzy
 msgid ""
 "A subdirectory ``build/exec/execname_app`` which contains all the data "
 "necessary to run the program. This includes the Chez Scheme source "
 "(``execname.ss``), the compiled Chez Scheme code (``execname.so``) and "
 "any shared libraries needed for foreign function definitions."
 msgstr ""
-"一个子目录“build/exec/execname_app”，其中包含运行程序所需的所有数据。这包括 "
-"Chez Scheme 源代码（``execname.ss``），已编译的 Chez Scheme 代码（``execname."
-"so``）和外部函数定义所需的任何共享库。"
+"子目录 ``build/exec/execname_app`` 中包含运行程序所需的所有数据。这包括 Chez "
+"Scheme 源代码（ ``execname.ss`` ），已编译的 Chez Scheme 代码（ ``execname."
+"so`` ）和外部函数定义所需的任何共享库。"
 
 #: ../../source/backends/chez.rst:32 8dda3ec059bc4eb3b83faf3a4638340c
 msgid ""
@@ -83,17 +79,15 @@ msgid "You can also execute an expression directly:"
 msgstr "你也可以直接执行表达式："
 
 #: ../../source/backends/chez.rst:41 1f79591c812f407aabd77f2c6b1073e7
-#, fuzzy
 msgid ""
 "Again, ``expr`` must have type ``IO ()``. This will generate a temporary "
 "executable script ``_tmpchez`` in the ``build/exec`` directory, and "
 "execute that."
 msgstr ""
-"同样，``expr`` 必须具有 ``IO ()`` 类型。这将在 ``build/exec`` "
-"目录中生成一个临时可执行脚本``_tmpchez``，并执行它。"
+"同样， ``expr`` 必须具有 ``IO ()`` 类型。这将在 ``build/exec`` "
+"目录中生成一个临时可执行脚本 ``_tmpchez`` ，并执行它。"
 
 #: ../../source/backends/chez.rst:45 956e16790c9d46bc86f218d18116b730
-#, fuzzy
 msgid ""
 "Chez Scheme is the default code generator, so if you invoke ``idris2`` "
 "with the ``-o execname`` flag, it will generate an executable script "
@@ -101,11 +95,10 @@ msgid ""
 "``build/exec/execname_app``."
 msgstr ""
 "Chez Scheme 是默认的代码生成器，因此如果您使用 ``-o execname`` 标志调用 "
-"``idris2``，它将生成一个可执行脚本 ``build/exec/execname``，同样在 ` `build/"
-"exec/execname_app`。"
+"``idris2`` ，它将生成一个可执行脚本 ``build/exec/execname`` ，和支持文件 ``"
+"build/exec/execname_app`` 。"
 
 #: ../../source/backends/chez.rst:51 f9a98275862a449bb841b93003cc2ed9
-#, fuzzy
 msgid "Chez Directives"
 msgstr "Chez 指令"
 
@@ -122,12 +115,10 @@ msgstr "将来自 ``<path>`` 的 Scheme 源代码直接嵌入到生成的输出�
 "种情况下，所有给定的文件都将按指定的顺序包含。"
 
 #: ../../source/backends/chez.rst:76 63865231998945b69cdb7d4f170bff56
-#, fuzzy
 msgid "Making a freestanding executable"
-msgstr "制作独立的可执行文件"
+msgstr "构建独立的可执行文件"
 
 #: ../../source/backends/chez.rst:78 0cab716a44b34d67b2d147c1d5af50b5
-#, fuzzy
 msgid ""
 "It's possible to embed the Chez Scheme system and the built Idris2 "
 "program into a freestanding executable with `chez-exe "
@@ -137,39 +128,34 @@ msgstr ""
 "系统和内置的 Idris2 程序嵌入到独立的可执行文件中。"
 
 #: ../../source/backends/chez.rst:80 9a98b2c9ff1a443cac6e238e932f3445
-#, fuzzy
 msgid ""
 "Build and install the ``compile-chez-program-tool`` by running the "
 "configuration script and then make:"
-msgstr "通过运行配置脚本构建并安装“compile-chez-program-tool”，然后执行："
+msgstr "通过运行配置脚本构建并安装 ``compile-chez-program-tool`` ，然后执行："
 
 #: ../../source/backends/chez.rst:87 9c12d28d66d049ba94738d966cb13fdd
-#, fuzzy
 msgid ""
 "where ``<bootpath`` is the path to where the Chez Scheme bootfiles "
 "(``petite.boot`` and ``scheme.boot``) and ``scheme.h`` are. More "
 "configuration is described in the chez-exe installation instructions."
 msgstr ""
-"其中“<bootpath”是 Chez Scheme 引导文件（“petite.boot”和“scheme."
-"boot”）和“scheme.h”所在的路径。更多配置在 chez-exe 安装说明中描述。"
+"其中 ``<bootpath`` 是 Chez Scheme 引导文件（ ``petite.boot`` 和 ``scheme."
+"boot`` ）和 ``scheme.h`` 所在的路径。更多配置在 chez-exe 安装说明中描述。"
 
 #: ../../source/backends/chez.rst:90 9aa394ad4dad4746bcfa26caeced49eb
-#, fuzzy
 msgid "Invoke ``compile-chez-program``:"
-msgstr "调用``compile-chez-program``："
+msgstr "调用 ``compile-chez-program`` ："
 
 #: ../../source/backends/chez.rst:96 07af1e01e5704f87a3232ea2159bb2d5
-#, fuzzy
 msgid ""
 "Note that it can only use the ``.ss``-file and not the ``.so``-file. To "
 "embed the full Chez Scheme system including the compiler add the "
 "``--full-chez`` option."
 msgstr ""
-"请注意，它只能使用 .ss 文件而不是 .so 文件。要嵌入包括编译器在内的完整 Chez "
-"Scheme 系统，请添加 --full-chez 选项。"
+"请注意，它只能使用 ``.ss`` 文件而不是 ``.so`` 文件。"
+"要嵌入包括编译器在内的完整 Chez Scheme 系统，请添加 ``--full-chez`` 选项。"
 
 #: ../../source/backends/chez.rst:99 07eae07f07e945ee98023649941271ce
-#, fuzzy
 msgid ""
 "The finished executable still requires the libidris_support shared "
 "library. It's possible to also eliminate that dependency by linking with "
