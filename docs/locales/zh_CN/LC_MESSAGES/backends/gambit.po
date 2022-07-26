@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-12 11:10+0800\n"
-"PO-Revision-Date: 2022-07-26 12:31+0000\n"
+"PO-Revision-Date: 2022-07-26 13:03+0000\n"
 "Last-Translator: admin <467195537@qq.com>\n"
 "Language-Team: Chinese (Simplified) <https://weblate.grass.work:30443/"
 "projects/idris2/backendsgambit/zh_Hans/>\n"
@@ -110,15 +110,13 @@ msgid "``GAMBIT_GSC_BACKEND``"
 msgstr "``GAMBIT_GSC_BACKEND``"
 
 #: ../../source/backends/gambit.rst:79 1db0aa8e42214a968eefa959eb057f45
-#, fuzzy
 msgid ""
 "The ``GAMBIT_GSC_BACKEND`` variable controls which C compiler Gambit will"
 " use during compilation. E.g. to use clang:"
-msgstr "``GAMBIT_GSC_BACKEND`` 变量控制在编译期间将使用哪个 C 编译器 "
-"Gambit。例如。使用铿锵声："
+msgstr "``GAMBIT_GSC_BACKEND`` 变量控制在编译期间 Gambit 将使用哪个 C 编译器。例如。"
+"使用 clang ："
 
 #: ../../source/backends/gambit.rst:85 dffc064ddf4b47dbabc9d00d53044990
-#, fuzzy
 msgid ""
 "Gambit after version v4.9.3 supports the ``-cc`` option, which configures"
 " the compiler backend Gambit will use to build the binary. Currently to "
