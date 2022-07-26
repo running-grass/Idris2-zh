@@ -102,6 +102,10 @@
                 <langSet xml:lang="en"><tig><term>literals</term></tig></langSet>
                 <langSet xml:lang="zh_Hans"><tig><term>字面量</term></tig></langSet>
             </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Racket</term></tig></langSet>
+                <langSet xml:lang="zh_Hans"><tig><term>Racket</term></tig></langSet>
+            </termEntry>
         </body>
     </text>
 </martif>
