@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-12 11:10+0800\n"
-"PO-Revision-Date: 2022-07-22 15:30+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2022-07-26 00:32+0000\n"
+"Last-Translator: admin <467195537@qq.com>\n"
 "Language-Team: Chinese (Simplified) <https://weblate.grass.work:30443/"
 "projects/idris2/backendsgambit/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -30,7 +30,7 @@ msgstr ""
 
 #: ../../source/backends/gambit.rst:11 e0814f8499c84a24aaafb7411c92bf53
 msgid "Alternatively, you can set it via the ``IDRIS2_CG`` environment variable:"
-msgstr ""
+msgstr "或者，您可以通过 ``IDRIS2_CG`` 环境变量进行设置："
 
 #: ../../source/backends/gambit.rst:17 a7b597a0f5414031917dc579e575ee77
 msgid ""
@@ -43,13 +43,14 @@ msgstr ""
 msgid ""
 "You can compile an expression ``expr`` of type ``IO ()`` to an executable"
 " as follows, at the REPL:"
-msgstr ""
+msgstr "您可以在 REPL 中将类型为 ``IO ()`` 的表达式 ``expr`` "
+"编译为可执行文件，如下所示："
 
 #: ../../source/backends/gambit.rst:28 9b2ff76380574b7393728d24fb26b80c
 msgid ""
 "...where ``execname`` is the name of the executable file. This will "
 "generate the following:"
-msgstr ""
+msgstr "...其中 ``execname`` 是可执行文件的名称。这将生成以下内容："
 
 #: ../../source/backends/gambit.rst:31 ae3292f29b494533bce1293de4b07e71
 msgid "An executable binary ``build/exec/execname`` of the program."
@@ -62,7 +63,6 @@ msgid ""
 msgstr ""
 
 #: ../../source/backends/gambit.rst:35 5773de5e3fa44bfcb65043a1cc7cc715
-#, fuzzy
 msgid "You can also execute an expression directly:"
 msgstr "你也可以直接执行表达式："
 
@@ -78,14 +78,15 @@ msgstr ""
 
 #: ../../source/backends/gambit.rst:48 b06e031541f140139fd162953d04585a
 msgid "``--directive extraRuntime=<path>``"
-msgstr ""
+msgstr "``--directive extraRuntime=<path>``"
 
 #: ../../source/backends/gambit.rst:50 08d1b957092a4240b35ae95995c314d0
 msgid ""
 "Embed Scheme source from ``<path>`` directly into generated output. Can "
 "be specified more than once, in which case all given files will be "
 "included in the order specified."
-msgstr ""
+msgstr "将来自 ``<path>`` 的 Scheme 源代码直接嵌入到生成的输出中。可以多次指定，在这"
+"种情况下，所有给定的文件都将按指定的顺序包含。"
 
 #: ../../source/backends/gambit.rst:70 fb57dda9fcea485aa13905890dabe79c
 msgid "``--directive C``"
