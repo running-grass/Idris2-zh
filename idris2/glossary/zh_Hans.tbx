@@ -106,6 +106,14 @@
                 <langSet xml:lang="en"><tig><term>Racket</term></tig></langSet>
                 <langSet xml:lang="zh_Hans"><tig><term>Racket</term></tig></langSet>
             </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Scheme</term></tig></langSet>
+                <langSet xml:lang="zh_Hans"><tig><term>Scheme</term></tig></langSet>
+            </termEntry>
+            <termEntry>
+                <langSet xml:lang="en"><tig><term>Gambit</term></tig></langSet>
+                <langSet xml:lang="zh_Hans"><tig><term>Gambit</term></tig></langSet>
+            </termEntry>
         </body>
     </text>
 </martif>
