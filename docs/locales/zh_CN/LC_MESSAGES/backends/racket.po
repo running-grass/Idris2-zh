@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-12 11:10+0800\n"
-"PO-Revision-Date: 2022-07-22 15:33+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2022-07-26 00:32+0000\n"
+"Last-Translator: admin <467195537@qq.com>\n"
 "Language-Team: Chinese (Simplified) <https://weblate.grass.work:30443/"
 "projects/idris2/backendsracket/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -22,31 +22,32 @@ msgstr ""
 
 #: ../../source/backends/racket.rst:3 fbb50cc8671d47d7ab806e51924939b5
 msgid "Racket Code Generator"
-msgstr ""
+msgstr "Racket 代码生成器"
 
 #: ../../source/backends/racket.rst:5 3d22a2f49863400e8e5c04a2cc8219df
 msgid "The Racket code generator is accessed via a REPL command:"
-msgstr ""
+msgstr "Racket 代码生成器通过 REPL 命令访问："
 
 #: ../../source/backends/racket.rst:11 6ee9ebb0d45d4387a82f93b9f71ce0d7
 msgid "Alternatively, you can set it via the ``IDRIS2_CG`` environment variable:"
-msgstr ""
+msgstr "或者，您可以通过 ``IDRIS2_CG`` 环境变量进行设置："
 
 #: ../../source/backends/racket.rst:17 828229d7d87644209db32d2e39395195
 msgid ""
 "You can compile an expression ``expr`` of type ``IO ()`` to an executable"
 " as follows, at the REPL:"
-msgstr ""
+msgstr "您可以在 REPL 中将类型为 ``IO ()`` 的表达式 ``expr`` "
+"编译为可执行文件，如下所示："
 
 #: ../../source/backends/racket.rst:24 62f29db8d15b455883e808eb9e63b053
 msgid ""
 "...where ``execname`` is the name of the executable file. This will "
 "generate the following:"
-msgstr ""
+msgstr "...其中 ``execname`` 是可执行文件的名称。这将生成以下内容："
 
 #: ../../source/backends/racket.rst:27 2d4212f21b43473d9b61eef568de726c
 msgid "A shell script ``build/exec/execname`` which invokes the program"
-msgstr ""
+msgstr "调用程序的 shell 脚本 ``build/exec/execname``"
 
 #: ../../source/backends/racket.rst:28 54171f4adff04a8cb87c2d8db6e15e28
 msgid ""
@@ -56,15 +57,18 @@ msgid ""
 "``execname.exe`` on Windows) and any shared libraries needed for foreign "
 "function definitions."
 msgstr ""
+"一个子目录 ``build/exec/execname_app`` 中包含运行程序所需的所有数据。这包括 "
+"Racket 源代码（ ``execname.rkt`` ）、已编译的 Racket 代码（Windows 上的 "
+"``execname`` 或 ``execname.exe`` ）以及外部函数定义所需的任何共享库。"
 
 #: ../../source/backends/racket.rst:33 ac329b7df7d348ff85cf8f72e49a131a
 msgid ""
 "The executable ``execname`` is relocatable to any subdirectory, provided "
 "that ``execname_app`` is also in the same subdirectory."
-msgstr ""
+msgstr "可执行的 ``execname`` 可以重新定位到任何子目录，前提是 ``execname_app`` "
+"也在同一个子目录中。"
 
 #: ../../source/backends/racket.rst:36 bcfb539070eb42d3bb466801c973831a
-#, fuzzy
 msgid "You can also execute an expression directly:"
 msgstr "你也可以直接执行表达式："
 
@@ -75,18 +79,22 @@ msgid ""
 "execute that, without compiling to a binary first (so the resulting "
 "Racket code is interpreted)."
 msgstr ""
+"同样， ``expr`` 必须具有 ``IO ()`` 类型。这将在 ``build/exec`` "
+"目录中生成一个临时可执行脚本 ``_tmpracket`` "
+"，并执行该脚本，而无需先编译为二进制文件（因此会解释生成的 Racket 代码）。"
 
 #: ../../source/backends/racket.rst:49 f76ba9602b314442aca3e65210b965ad
 msgid "Racket Directives"
-msgstr ""
+msgstr "Racket 指令"
 
 #: ../../source/backends/racket.rst:51 2278afb496ee46e7a164f187096486ec
 msgid "``--directive extraRuntime=<path>``"
-msgstr ""
+msgstr "``--directive extraRuntime=<path>``"
 
 #: ../../source/backends/racket.rst:53 0c15fa1ccf074ec18d2a31e267082220
 msgid ""
 "Embed Scheme source from ``<path>`` directly into generated output. Can "
 "be specified more than once, in which case all given files will be "
 "included in the order specified."
-msgstr ""
+msgstr "将来自 ``<path>`` 的 Scheme 源代码直接嵌入到生成的输出中。可以多次指定，在这"
+"种情况下，所有给定的文件都将按指定的顺序包含。"
