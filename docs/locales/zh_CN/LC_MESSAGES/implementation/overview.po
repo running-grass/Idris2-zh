@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: 467195537@qq.com\n"
 "POT-Creation-Date: 2022-07-12 11:10+0800\n"
-"PO-Revision-Date: 2022-07-24 15:14+0000\n"
+"PO-Revision-Date: 2022-07-28 00:31+0000\n"
 "Last-Translator: admin <467195537@qq.com>\n"
 "Language-Team: Chinese (Simplified) <https://weblate.grass.work:30443/"
 "projects/idris2/implementationoverview/zh_Hans/>\n"
@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../source/implementation/overview.rst:3 737d254ef9464680ae33f0d422fb6468
 msgid "Implementation Overview"
-msgstr ""
+msgstr "实现概述"
 
 #: ../../source/implementation/overview.rst:5 83901897d87e4a46ad2d49bb81a2ded6
 msgid ""
@@ -31,6 +31,8 @@ msgid ""
 " what's going on and some ideas where to look in the code to see how "
 "certain features work."
 msgstr ""
+"这些是关于实现方面的一些未分类的注释。粗略的，并不总是完全最新的，但希望能提"
+"供一些关于正在发生的事情的提示以及在代码中查看某些功能如何工作的一些想法。"
 
 #: ../../source/implementation/overview.rst:11 e3ecd98a843241db9373686476418e58
 msgid "Introduction"
@@ -42,6 +44,9 @@ msgid ""
 "theory (see https://bentnib.org/quantitative-type-theory.html). Binders "
 "have \"multiplicities\" which are either *0*, *1* or *unlimited*."
 msgstr ""
+"核心语言 TT（在 ``Core.TT`` 中定义），基于定量类型理论（参见 https://bentnib."
+"org/quantitative-type-theory.html）。具有 *0* 、 *1* 或 *unlimited* 的 "
+"“多重性”。"
 
 #: ../../source/implementation/overview.rst:17 805f54dd6cf446c1ac3178adfb5fdca0
 msgid ""
@@ -50,6 +55,9 @@ msgid ""
 "``Core.Value`` as ``NF``; constructors do not evaluate their arguments "
 "until explicitly requested."
 msgstr ""
+"术语在范围内的名称上编入索引，因此我们知道术语始终具有良好的范围。值（即标准"
+"形式）在 ``Core.Value`` 中定义为 ``NF`` "
+"；在明确请求之前，构造函数不会对参数进行求值。"
 
 #: ../../source/implementation/overview.rst:21 928d0be8a7aa4afdaddbaf5c88fb4c55
 msgid ""
@@ -58,6 +66,9 @@ msgid ""
 "definitions, case blocks, as patterns, qualified names with automatic "
 "type-directed disambiguation, and proof search."
 msgstr ""
+"从更高级别的语言 *TTImp*（定义在 ``TTImp.TTImp`` ）中细化到 "
+"*TT*，这是带有隐式参数、局部函数定义、案例块、作为模式、"
+"具有自动类型导向消歧的限定名称的 TT , 还有证明搜索。"
 
 #: ../../source/implementation/overview.rst:26 ab64a2cf85ad45e396725e22e66b4579
 msgid ""
@@ -65,6 +76,8 @@ msgid ""
 "postponing of unification problems. Essentially works the same way as "
 "Agda as described in Ulf Norell's thesis."
 msgstr ""
+"细化依赖于 unification（在 ``Core.Unify`` 中），它允许推迟 unification 问题。"
+"基本上与 Ulf Norell 论文中描述的 Agda 的工作方式相同。"
 
 #: ../../source/implementation/overview.rst:30 b3f872f2340540e8a79cbad2a15e2a80
 msgid ""
@@ -73,6 +86,8 @@ msgid ""
 "Idris, which translates to TTImp by desugaring operators, do notation, "
 "etc."
 msgstr ""
+"一般的想法是高级语言将提供对 TT 的翻译。在 ``Idris/`` 命名空间中，我们定义了 "
+"Idris 的高级语法，它通过脱糖操作符、do 符号等转换为 TTImp。"
 
 #: ../../source/implementation/overview.rst:34 7b45c53efe7b4cdd8a6ba1347344a80a
 msgid ""
@@ -83,56 +98,60 @@ msgid ""
 "appropriately (e.g. if a linear variable is unused elsewhere, it will "
 "always appear with multiplicity 1 in holes)."
 msgstr ""
+"在细化之后有一个单独的线性检查，它会更新孔的类型（并且知道 case 块）。这是在 "
+"``Core.LinearCheck`` 中实现的。在此检查期间，我们还重新计算孔应用程序中的多重"
+"性，以便它们正确显示（例如，如果线性变量在其他地方未使用，它将始终以多重性 1 "
+"出现在孔中）。"
 
 #: ../../source/implementation/overview.rst:42 566f1e639ef34fed828d043186a3cb6d
 msgid "Where to find things:"
-msgstr ""
+msgstr "目录结构："
 
 #: ../../source/implementation/overview.rst:44 e23aa47c547e4a66b5ec5c9c850dbf04
 msgid "``Core/`` -- anything related to the core TT, typechecking and unification"
-msgstr ""
+msgstr "``Core/`` -- 与核心 TT、类型检查和 unification 相关的任何内容"
 
 #: ../../source/implementation/overview.rst:45 646e636d6aed4fea8b99bb9824a861e1
 msgid "``TTImp/`` -- anything related to the implicit TT and its elaboration"
-msgstr ""
+msgstr "``TTImp/`` -- 与隐式 TT 及其详细说明相关的任何内容"
 
 #: ../../source/implementation/overview.rst:47 b836d5b74b6441c99bd725667eb05f1e
 msgid "``TTImp/Elab/`` -- Elaboration state and elaboration of terms"
-msgstr ""
+msgstr "``TTImp/Elab/`` -- 细化状态和细化术语"
 
 #: ../../source/implementation/overview.rst:48 ebf00303cfd9481b946833432606e7d6
 msgid "``TTImp/Interactive/`` -- Interactive editing infrastructure"
-msgstr ""
+msgstr "``TTImp/Interactive/`` -- 交互式编辑基础设施"
 
 #: ../../source/implementation/overview.rst:50 94fe6e2bd14644ee9aeb5be8f66ca3b3
 msgid ""
 "``Parser/`` -- various utilities for parsing and lexing TT and TTImp (and"
 " other things)"
-msgstr ""
+msgstr "``Parser/`` -- 用于解析和词法分析 TT 和 TTImp（以及其他东西）的各种实用程序"
 
 #: ../../source/implementation/overview.rst:51 b1e4f48cfeff4316ac03ad8cc15e5f3b
 msgid "``Utils/`` -- some generally useful utilities"
-msgstr ""
+msgstr "``Utils/`` -- 一些通常有用的实用程序"
 
 #: ../../source/implementation/overview.rst:52 429b8f9bb64648f4a6645feb801cf67c
 msgid ""
 "``Idris/`` -- anything relating to the high level language, translating "
 "to TTImp"
-msgstr ""
+msgstr "``Idris/`` -- 任何与高级语言相关的东西，翻译成 TTImp"
 
 #: ../../source/implementation/overview.rst:54 1eebdc2cbf8b4d4d81405af58b11fa60
 msgid ""
 "``Idris/Elab/`` -- High level construct elaboration machinery (e.g. "
 "interfaces)"
-msgstr ""
+msgstr "``Idris/Elab/`` -- 高级构造细化机制（例如接口）"
 
 #: ../../source/implementation/overview.rst:56 6b3a51a9f0114722adc18374755c544a
 msgid "``Compiler/`` -- back ends"
-msgstr ""
+msgstr "``Compiler/`` -- 编译器后端"
 
 #: ../../source/implementation/overview.rst:59 4c157483f9354d3b86d630d9b2b00df5
 msgid "The Core Type, and Ref"
-msgstr ""
+msgstr "核心类型和参考"
 
 #: ../../source/implementation/overview.rst:61 1a86113aee354bd5b1e067c181d137e9
 msgid ""
@@ -143,6 +162,10 @@ msgid ""
 "location at each node, and any errors in elaboration note the location at"
 " the point where the error occurred, as a file context ``FC``."
 msgstr ""
+"``Core`` 是一个 “monad”（不是真的，出于效率的原因，目前...）支持 ``Error`` "
+"和 ``IO`` (我最初确实计划允许将此限制到一些特定的 IO 操作，但尚未完成）。"
+"原始语法由 ``RawImp`` 类型定义，该类型在每个节点都有一个源位置，详细说明中的"
+"任何错误都会记录错误发生点的位置，作为文件上下文 ``FC`` 。"
 
 #: ../../source/implementation/overview.rst:68 c9ffe6d040024bc2a472412405b7b562
 msgid ""
@@ -152,22 +175,27 @@ msgid ""
 "be neater to use a state monad this turned out to be about 2-3 times "
 "faster, so I'm going with the \"ugly\" choice..."
 msgstr ""
+"``Ref`` 本质上是一个 ``IORef`` "
+"。通常我们会隐式传递它们并使用标签来区分我们的意图。有关它们的定义，请参见 "
+"``Core.Core`` 。再一次， ``IORef`` 是为了提高效率——即使使用 state monad "
+"会更整洁，但结果却快了大约 2-3 倍，所以我选择了 “丑陋” 的选择......"
 
 #: ../../source/implementation/overview.rst:75 5fb1afdfa30946cc856c76ac8b03e20e
 msgid "Term representation"
-msgstr ""
+msgstr "术语表示"
 
 #: ../../source/implementation/overview.rst:77 85cc517ee56f4a47896c084ab4931d30
 msgid ""
 "Terms in the core language are indexed by a list of the names in scope, "
 "most recently defined first:"
-msgstr ""
+msgstr "核心语言中的术语由作用域内的名称列表索引，最近定义的优先："
 
 #: ../../source/implementation/overview.rst:84 8861c879e47249cc8be35b7dd50dc4cc
 msgid ""
 "This means that terms are always well scoped, and we can use the type "
 "system to keep us right when manipulating names. For example, we have:"
-msgstr ""
+msgstr "这意味着术语总是有恰当的作用域，我们可以使用类型系统来保持我们在操作名称时的"
+"正确性。例如，我们有："
 
 #: ../../source/implementation/overview.rst:92 f26e9a48237b4e319a4ef00df45d5bed
 msgid ""
@@ -176,12 +204,15 @@ msgid ""
 "index is valid. So everything is de Bruijn indexed, but the type checker "
 "still keeps track of the indices so that we don't have to think too hard!"
 msgstr ""
+"因此，局部变量由局部上下文中的索引（de Bruijn 索引 ``idx`` "
+"）表示，并在运行时擦除该索引有效的证明。所以一切都被 de Bruijn "
+"索引了，但是类型检查器仍然跟踪索引，这样我们就不必想太多了！"
 
 #: ../../source/implementation/overview.rst:97 53721e82f9db461d83ed90d51b292565
 msgid ""
 "``Core.TT`` contains various handy tools for manipulating terms with "
 "their indices, such as:"
-msgstr ""
+msgstr "``Core.TT`` 包含各种方便的工具，用于使用它们的索引来操作术语，例如："
 
 #: ../../source/implementation/overview.rst:108
 #: 3e96450b5d484d86b9357b1a76997669
@@ -192,39 +223,50 @@ msgid ""
 "fundamental reason in the core. In general, this isn't expensive at run "
 "time."
 msgstr ""
+"请注意，类型明确说明何时需要在运行时传递 ``vars`` ，何时不需要。大多数需要它"
+"的地方是帮助显示名称或名称生成，而不是核心中的任何基本原因。一般来说，这在运"
+"行时并不昂贵。"
 
 #: ../../source/implementation/overview.rst:113
 #: d8ba858a50b54c80b3db4919d3455a72
 msgid "Environments, defined in ``Core.Env``, map local variables to binders:"
-msgstr ""
+msgstr "在 ``Core.Env`` 中定义的环境变量将局部变量映射到绑定器："
 
 #: ../../source/implementation/overview.rst:119
 #: 3934ce68bb804123b9c3d28b936a960e
+#, fuzzy
 msgid ""
 "A binders is typically a *lambda*, a *pi*, or a *let* (with a value), but"
 " can also be a *pattern variable*. See the definition of ``TT`` for more "
 "details. Where we have a term, we usually also need an ``Env``."
 msgstr ""
+"binders 通常是 *lambda*、*pi* 或 *let*（带有值），但也可以是 *pattern "
+"variable*。有关详细信息，请参阅 ``TT`` "
+"的定义。在我们有一个术语的地方，我们通常还需要一个“环境”。"
 
 #: ../../source/implementation/overview.rst:123
 #: 1d54be0105b94e30b0db9bc4c36f627d
+#, fuzzy
 msgid ""
 "We also have values, which are in head normal form, and defined in "
 "``Core.Value``:"
-msgstr ""
+msgstr "我们也有值，它们是头部范式，并在“Core.Value”中定义："
 
 #: ../../source/implementation/overview.rst:130
 #: 6b88a5d607dc4fac8c2410de3514627a
+#, fuzzy
 msgid "We can convert a term to a value by normalising..."
-msgstr ""
+msgstr "我们可以通过规范化将术语转换为值..."
 
 #: ../../source/implementation/overview.rst:137
 #: dae1f5e8f7754d79a6b1470df0c324fe
+#, fuzzy
 msgid "...and back again, by quoting:"
-msgstr ""
+msgstr "...然后再回来，引用："
 
 #: ../../source/implementation/overview.rst:144
 #: f34598028de74001ae5254be1382aa7a
+#, fuzzy
 msgid ""
 "Both ``nf`` and ``quote`` are defined in ``Core.Normalise``. We don't "
 "always know whether we'll need to work with ``NF`` or ``Term``, so we "
@@ -232,23 +274,32 @@ msgid ""
 "``Core.Normalise``, which lazily computes either a ``NF`` or ``Term`` as "
 "required. Elaborating a term returns the type as a ``Glued vars``."
 msgstr ""
+"``nf`` 和 ``quote`` 都在 ``Core.Normalise`` 中定义。我们并不总是知道我们是否"
+"需要使用“NF”或“Term”，所以我们还有一个“粘合的”表示，“粘合的变量”，再次在“"
+"Core. Normalise ，它会根据需要懒惰地计算 ``NF`` 或 "
+"``Term``。详细说明一个术语将类型返回为“Glued vars”。"
 
 #: ../../source/implementation/overview.rst:150
 #: 6822e49793784725a50ba776ed886e4a
+#, fuzzy
 msgid ""
 "``Term`` separates ``Ref`` (global user defined names) from ``Meta``, "
 "which are globally defined metavariables. For efficiency, metavariables "
 "are only substituted into terms if they have non-0 multiplicity, to "
 "preserve sharing as much as possible."
 msgstr ""
+"``Term`` 将``Ref``（全局用户定义名称）与``Meta``分开，后者是全局定义的元变量"
+"。为提高效率，元变量仅在具有非 0 多重性时才被代入项中，以尽可能保持共享。"
 
 #: ../../source/implementation/overview.rst:156
 #: 3991559873ae4f85a6bd58b6e6db7a87
+#, fuzzy
 msgid "Unification"
-msgstr ""
+msgstr "统一"
 
 #: ../../source/implementation/overview.rst:157
 #: fc32be7f8e784a91a35fc45edd3482dc
+#, fuzzy
 msgid ""
 "Unification is probably the most important part of the elaboration "
 "process, and infers values for implicit arguments. That is, it finds "
@@ -256,37 +307,48 @@ msgid ""
 "is defined in ``Core.Unify``, as the top level unification function has "
 "the following type:"
 msgstr ""
+"统一可能是细化过程中最重要的部分，并推断隐含参数的值。也就是说，它会为 "
+"``Term`` 中的``Meta`` 引用的事物找到值。它在 ``Core.Unify`` "
+"中定义，因为顶层统一函数具有以下类型："
 
 #: ../../source/implementation/overview.rst:174
 #: f938882126504e1dbf5d0020de57b79f
+#, fuzzy
 msgid ""
 "The ``Unify`` interface is there because it is convenient to be able to "
 "define unification on ``Term`` and ``NF``, as well as ``Closure`` (which "
 "is part of ``NF`` to represent unevaluated arguments to constructors)."
 msgstr ""
+"有 ``Unify`` 接口是因为能够方便地定义 ``Term`` 和 ``NF`` 以及 ``Closure`` （"
+"这是 ``NF`` 的一部分表示构造函数的未评估参数）。"
 
 #: ../../source/implementation/overview.rst:178
 #: 2675899b2b9d409592a2d1d87e7ce92f
+#, fuzzy
 msgid ""
 "This is one place where indexing over ``vars`` is extremely valuable: we "
 "have to keep the environment consistent, so unification won't "
 "accidentally introduce any scoping bugs!"
-msgstr ""
+msgstr "这是对 vars 进行索引非常有价值的一个地方：我们必须保持环境一致，因此统一不会"
+"意外引入任何范围界定错误！"
 
 #: ../../source/implementation/overview.rst:182
 #: b69046276aaf46a4a3bc38233bc55b72
+#, fuzzy
 msgid ""
 "Idris 2 implements pattern unification - see Adam Gundry's thesis for an "
 "accessible introduction."
-msgstr ""
+msgstr "Idris 2 实现了模式统一 - 请参阅 Adam Gundry 的论文以获得易于理解的介绍。"
 
 #: ../../source/implementation/overview.rst:186
 #: fb4437dc00884705b102cd73f0d37a0a
+#, fuzzy
 msgid "Context"
-msgstr ""
+msgstr "语境"
 
 #: ../../source/implementation/overview.rst:188
 #: 73d84fc81f104ad7a640e0934c50cbbd
+#, fuzzy
 msgid ""
 "``Core.Context`` defines all the things needed for TT. Most importantly: "
 "``Def`` gives definitions of names (case trees, builtins, constructors "
@@ -295,9 +357,15 @@ msgid ""
 "context mapping names to ``GlobalDef``, and ``Defs`` is the core data "
 "structure with everything needed to typecheck more definitions."
 msgstr ""
+"``Core.Context`` 定义了 TT 所需的所有东西。最重要的是：``Def`` "
+"给出了名称的定义（主要是案例树、内置函数、构造函数和孔）； ``GlobalDef`` "
+"是一个包含有关它的所有其他信息（类型、可见性、整体性等）的定义； ``Context`` "
+"是一个将名称映射到``GlobalDef`` 的上下文，而``Defs`` "
+"是核心数据结构，包含对更多定义进行类型检查所需的一切。"
 
 #: ../../source/implementation/overview.rst:195
 #: 04563d7f264144309b3676e97611abee
+#, fuzzy
 msgid ""
 "The main Context type stores definitions in an array, indexed by a "
 "\"resolved name id\", an integer, for fast look up. This means that it "
@@ -306,22 +374,29 @@ msgid ""
 "between structures with human readable names, and structures with "
 "resolved integer names."
 msgstr ""
+"主上下文类型将定义存储在一个数组中，由一个“解析名称 id”索引，一个整数，用于快"
+"速查找。这意味着它还需要能够在解析名称和全名之间进行转换。 “HasNames”接口定义"
+"了在具有人类可读名称的结构和具有解析整数名称的结构之间来回切换的方法。"
 
 #: ../../source/implementation/overview.rst:201
 #: d77fdddec8984dac8ebff6638e065ffb
+#, fuzzy
 msgid ""
 "Since we store names in an array, all the lookup functions need to be in "
 "the ``Core`` monad. This also turns out to help with loading checked "
 "files (see below)."
-msgstr ""
+msgstr "由于我们将名称存储在一个数组中，所有查找函数都需要在 ``Core`` monad "
+"中。这也有助于加载检查的文件（见下文）。"
 
 #: ../../source/implementation/overview.rst:206
 #: d405666abfaf4b75a3eeacbffb11fdaf
+#, fuzzy
 msgid "Elaboration Overview"
-msgstr ""
+msgstr "细化概述"
 
 #: ../../source/implementation/overview.rst:208
 #: 7f832f7060684befa6001cd09867692d
+#, fuzzy
 msgid ""
 "Elaboration of ``RawImp`` to ``TT`` is driven by ``TTImp.Elab``, with the"
 " top level function for elaborating terms defined in ``TTImp.Elab.Term``,"
@@ -329,6 +404,10 @@ msgid ""
 "the various TTImp constructs defined in separate files under "
 "``TTImp.Elab.*``."
 msgstr ""
+"``RawImp`` 到 ``TT`` 的细化由``TTImp.Elab`` 驱动，具有在``TTImp.Elab.Term`` "
+"中定义的用于细化术语的顶级函数，支持在`` 中定义的函数TTImp.Elab."
+"Check``，以及在``TTImp.Elab.*`` 下的单独文件中定义的各种 TTImp "
+"构造的详细说明。"
 
 #: ../../source/implementation/overview.rst:214
 #: 5844f04b30064adb90c408ed1de90238
@@ -337,14 +416,19 @@ msgstr "惰性"
 
 #: ../../source/implementation/overview.rst:216
 #: c0b7531fb85149a48aa4f4b700543769
+#, fuzzy
 msgid ""
 "Like Idris 1, laziness is marked in types using ``Lazy``, ``Delay`` and "
 "``Force``, or ``Inf`` (instead of ``Lazy``) for codata. Unlike Idris 1, "
 "these are language primitives rather than special purpose names."
 msgstr ""
+"与 Idris 1 "
+"一样，惰性在类型中使用“惰性”、“延迟”和“强制”或“Inf”（而不是“惰性”）作为 "
+"codata 进行标记。与 Idris 1 不同，这些是语言原语而不是特殊用途的名称。"
 
 #: ../../source/implementation/overview.rst:220
 #: c75dc02dc113405583a14587f20beb8a
+#, fuzzy
 msgid ""
 "Implicit laziness resolution is handled during unification (in "
 "``Core.Unify``). When unification is invoked (by ``convert`` in "
@@ -353,23 +437,33 @@ msgid ""
 "with unification, but returning that either a ``Force`` or ``Delay`` "
 "needs inserting as appropriate."
 msgstr ""
+"在统一期间处理隐式惰性解析（在 ``Core.Unify`` 中）。当在设置了 ``withLazy`` "
+"标志的情况下（通过``TTImp.Elab.Check`` 中的``convert``）调用统一时，它会检查"
+"它是否正在将惰性类型转换为非惰性类型。如果是这样，它将继续统一，但返回“强制”"
+"或“延迟”需要适当插入。"
 
 #: ../../source/implementation/overview.rst:227
 #: 3e5c2932907e4e05ae69500903e8682f
+#, fuzzy
 msgid "TTC format"
-msgstr ""
+msgstr "TTC 格式"
 
 #: ../../source/implementation/overview.rst:229
 #: 40d96e77cb5c43d19c0ccc6cd16fd2e5
+#, fuzzy
 msgid ""
 "We can save things to binary if we have an implementation of the TTC "
 "interface for it. See ``Utils.Binary`` to see how this is done. It uses a"
 " global reference ``Ref Bin Binary`` which uses ``Data.Buffer`` "
 "underneath."
 msgstr ""
+"如果我们有一个 TTC 接口的实现，我们可以将它保存为二进制文件。请参阅 ``Utils."
+"Binary`` 以了解这是如何完成的。它使用全局引用“Ref Bin "
+"Binary”，它在下面使用“Data.Buffer”。"
 
 #: ../../source/implementation/overview.rst:233
 #: 0def1f80333d4719a36e72dc20c338f0
+#, fuzzy
 msgid ""
 "When we load checked TTC files, we don't process the definitions "
 "immediately, but rather store them as a ``ContextEntry``, which is either"
@@ -378,14 +472,20 @@ msgid ""
 " the definition is fairly costly (due to having to construct a lot of AST"
 " nodes), and often definitions in an imported file are never used."
 msgstr ""
+"当我们加载检查过的 TTC 文件时，我们不会立即处理定义，而是将它们存储为“Context"
+"Entry”，它可以是“二进制”blob，也可以是已处理的定义。我们只在第一次查找定义时"
+"处理定义，因为将二进制转换为定义的成本相当高（由于必须构建大量 AST "
+"节点），并且通常从不使用导入文件中的定义。"
 
 #: ../../source/implementation/overview.rst:241
 #: c1121bc487074486b5b19702a0ed4106
+#, fuzzy
 msgid "Bound Implicits"
-msgstr ""
+msgstr "绑定隐式"
 
 #: ../../source/implementation/overview.rst:243
 #: 750078adb14246a2ae7b458aed581f2c
+#, fuzzy
 msgid ""
 "The ``RawImp`` type has a constructor ``IBindVar``. The first time we "
 "encounter an ``IBindVar``, we record the name as one which will be "
@@ -396,65 +496,86 @@ msgid ""
 "are bound in dependency order. This happens in "
 "``TTImp.Implicit.getToBind``."
 msgstr ""
+"``RawImp`` 类型有一个构造函数``IBindVar``。第一次遇到“IBindVar”时，我们将名称"
+"记录为将被隐式绑定的名称。在详细说明的最后，我们通过查看绑定为“IBindVar”的名"
+"称列表来决定哪些洞应该变成绑定变量（Pi 绑定在类型中，模式绑定在 LHS 上，"
+"仍然是 RHS "
+"上的洞），事情它们依赖于它们，并对它们进行排序，以便它们按依赖顺序绑定。"
+"这发生在 ``TTImp.Implicit.getToBind`` 中。"
 
 #: ../../source/implementation/overview.rst:251
 #: e725902a1c5b4875a8771dd3d841432c
+#, fuzzy
 msgid ""
 "Once we know what the bound implicits need to be, we bind them in "
 "``bindImplicits``. Any application of a hole which stands for a bound "
 "implicit gets turned into a local binding (either Pi or Pat as "
 "appropriate, or PLet for @-patterns)."
 msgstr ""
+"一旦我们知道绑定的隐式需要是什么，我们将它们绑定到“bindImplicits”中。任何表示"
+"绑定隐式的空洞应用程序都会变成本地绑定（Pi 或 Pat 视情况而定，或 PLet 表示 "
+"@-patterns）。"
 
 #: ../../source/implementation/overview.rst:257
 #: 1938df0d2d634c54a20938dc4625fb48
+#, fuzzy
 msgid "Unbound Implicits"
-msgstr ""
+msgstr "未绑定的隐式"
 
 #: ../../source/implementation/overview.rst:259
 #: 406f77c81ecf4758946611231e1e0748
+#, fuzzy
 msgid ""
 "Any name beginning with a lower case letter is considered an unbound "
 "implicit. They are elaborated as holes, which may depend on the initial "
 "environment of the elaboration, and after elaboration they are converted "
 "to an implicit pi binding, with multiplicity 0. So, for example:"
 msgstr ""
+"任何以小写字母开头的名称都被认为是未绑定的隐式名称。它们被细化为孔，这可能取"
+"决于细化的初始环境，并且在细化之后它们被转换为隐式 pi 绑定，多重性为 "
+"0。因此，例如："
 
 #: ../../source/implementation/overview.rst:268
 #: 633466a064ca4ee49f24c500a98b7396
+#, fuzzy
 msgid "becomes:"
-msgstr ""
+msgstr "变成："
 
 #: ../../source/implementation/overview.rst:274
 #: 7b482f3f6732470fb8acb0b0ffd35fa0
+#, fuzzy
 msgid ""
 "Bindings are ordered according to dependency. It'll infer any additional "
 "names, e.g. in:"
-msgstr ""
+msgstr "绑定是根据依赖关系排序的。它会推断出任何其他名称，例如在："
 
 #: ../../source/implementation/overview.rst:281
 #: b07ed4a05dcb4f08b5bb45cdd9866afd
+#, fuzzy
 msgid ""
 "... where ``xs`` is a ``Vect n a``, it infers bindings for ``n`` and "
 "``a``."
-msgstr ""
+msgstr "...其中“xs”是一个“Vect n a”，它推断“n”和“a”的绑定。"
 
 #: ../../source/implementation/overview.rst:283
 #: bfa568203c0d4892b8699f43fa6cf396
-#, python-format
+#, fuzzy, python-format
 msgid ""
 "The ``%unbound_implicits`` directive means that it will no longer "
 "automatically bind names (that is, ``a`` and ``b`` in ``map`` above) but "
 "it will still infer the types for any additional names, e.g. if you "
 "write:"
 msgstr ""
+"``%unbound_implicits`` 指令意味着它将不再自动绑定名称（即上面 ``map`` 中的 "
+"``a`` 和 ``b``），但它仍会推断类型任何其他名称，例如如果你写："
 
 #: ../../source/implementation/overview.rst:291
 #: 5089c6c3fd8c42ccad53c2fb875dac48
+#, fuzzy
 msgid ""
 "... it will still infer a type for ``xs`` and infer bindings for ``n`` "
 "and ``a``."
-msgstr ""
+msgstr "...它仍然会推断“xs”的类型并推断“n”和“a”的绑定。"
 
 #: ../../source/implementation/overview.rst:295
 #: 3f2eb72933334a45b35fda5e75ba1dc7
@@ -463,6 +584,7 @@ msgstr "隐式参数"
 
 #: ../../source/implementation/overview.rst:297
 #: 1582489abe464b0cb3e481d7e72599d9
+#, fuzzy
 msgid ""
 "When we encounter an implicit argument (``_`` in the raw syntax, or added"
 " when we elaborate an application and see that there is an implicit "
@@ -472,34 +594,50 @@ msgid ""
 "information elsewhere we'll find the definition of the hole by "
 "unification."
 msgstr ""
+"当我们遇到一个隐式参数（原始语法中的``_``，或者当我们详细说明应用程序并看到需"
+"要隐式时添加），我们会创建一个新的洞，它是应用于当前环境的新名称，并且将其作"
+"为详细的术语返回。这发生在 ``TTImp.Elab.Check`` 中，带有函数``metaVar``。如果"
+"其他地方有足够的信息，我们将通过统一找到洞的定义。"
 
 #: ../../source/implementation/overview.rst:304
 #: 43ac7600e607403a93f998bcc5f1e488
+#, fuzzy
 msgid ""
 "We never substitute holes in a term during elaboration and rely on "
 "normalisation if we need to look inside it. If there are holes remaining "
 "after elaboration of a definition, report an error (it's okay for a hole "
 "in a type as long as it's resolved by the time the definition is done)."
 msgstr ""
+"在细化过程中，我们从不替换术语中的漏洞，如果我们需要查看它的内部，我们会依赖"
+"规范化。如果在细化定义后仍有漏洞，请报告错误（类型中的漏洞是可以的，只要在定"
+"义完成时已解决）。"
 
 #: ../../source/implementation/overview.rst:309
 #: efc0fdd220314bb990568eac1a741741
+#, fuzzy
 msgid ""
 "See ``Elab.App.makeImplicit``, ``Elab.App.makeAutoImplicit`` to see where"
 " we add holes for the implicit arguments in applications."
 msgstr ""
+"请参阅“Elab.App.makeImplicit”、“Elab.App."
+"makeAutoImplicit”，了解我们在应用程序中为隐式参数添加孔的位置。"
 
 #: ../../source/implementation/overview.rst:312
 #: 177d3e89b6ee4d178439a67e8f17825e
+#, fuzzy
 msgid ""
 "``Elab.App`` does quite a lot of tricky stuff! In an attempt to help with"
 " resolving ambiguous names and record updates, it will sometimes delay "
 "elaboration of an argument (see ``App.checkRestApp``) so that it can get "
 "more information about its type first."
 msgstr ""
+"``Elab.App`` 做了很多棘手的事情！为了帮助解决模棱两可的名称和记录更新，它有时"
+"会延迟参数的详细说明（参见 App.checkRestApp "
+"），以便它可以首先获取有关其类型的更多信息。"
 
 #: ../../source/implementation/overview.rst:317
 #: 63039e6a63004dd790a57a5cb2804644
+#, fuzzy
 msgid ""
 "``Core.Unify.solveConstraints`` revisits all of the currently unsolved "
 "holes and constrained definitions, and tries again to unify any "
@@ -510,14 +648,20 @@ msgid ""
 "only retry a constraint if one of the blocking metavariables has been "
 "resolved."
 msgstr ""
+"``Core.Unify.solveConstraints`` 重新访问所有当前未解决的漏洞和约束定义，并再"
+"次尝试统一它们需要的任何约束。它还尝试解决由证明搜索定义的任何内容。统一的当"
+"前状态在“Core.UnifyState”中定义，统一约束记录了哪些元变量阻塞了它们。这提高了"
+"性能，因为我们只会在阻塞元变量之一已解决时重试约束。"
 
 #: ../../source/implementation/overview.rst:326
 #: 6e7aa2c18dd347b6ba35f89d86011989
+#, fuzzy
 msgid "Additional type inference"
-msgstr ""
+msgstr "附加类型推断"
 
 #: ../../source/implementation/overview.rst:328
 #: db32632c83814cb597852711eb6f380c
+#, fuzzy
 msgid ""
 "A ``?`` in a type means \"infer this part of the type\".  This is "
 "distinct from ``_`` in types, which means \"I don't care what this is\". "
@@ -527,36 +671,52 @@ msgid ""
 "for ``?``, we leave it as a hole and try to fill it in later. As a "
 "result, we can say:"
 msgstr ""
+"类型中的 ``?`` 表示“推断类型的这一部分”。这与类型中的 ``_`` "
+"不同，这意味着“我不在乎这是什么”。区别在于推理失败时会发生什么。如果 ``_`` "
+"的推理失败，我们会隐式绑定一个新名称（就像 lhs 上的模式匹配 - "
+"即它意味着匹配任何东西）。如果 ``?`` "
+"的推理失败，我们将其留作一个洞，稍后再尝试填充它。结果，我们可以说："
 
 #: ../../source/implementation/overview.rst:340
 #: c76f10ac638a41f3a3c199821de1f5a6
+#, fuzzy
 msgid "... and the ``?`` will be inferred to be 4. But if we say:"
-msgstr ""
+msgstr "...并且 ``?`` 将被推断为 4。但是如果我们说："
 
 #: ../../source/implementation/overview.rst:347
 #: 50078f32fcae447da709565d8fdd39a0
+#, fuzzy
 msgid ""
 "... we'll get an error, because the ``_`` has been bound as a new name. "
 "Both ``?`` and ``_`` are represented in ``RawImp`` by the ``Implicit`` "
 "constructor, which has a boolean flag meaning \"bind if unresolved\"."
 msgstr ""
+"...我们会得到一个错误，因为 ``_`` 已被绑定为一个新名称。 ``?`` 和 ``_`` "
+"都在``RawImp`` 中由``Implicit`` "
+"构造函数表示，它有一个布尔标志，意思是“如果未解析则绑定”。"
 
 #: ../../source/implementation/overview.rst:351
 #: 5a8c4a5088ec49a9aa66c8c1af2fda02
+#, fuzzy
 msgid ""
 "So the meaning of ``_`` is now consistent on the lhs and in types (i.e. "
 "it means infer a value and bind a variable on failure to infer anything)."
 " In practice, using ``_`` will get you the old Idris behaviour, but ``?``"
 " might get you a bit more type inference."
 msgstr ""
+"所以 ``_`` 的含义现在在 lhs 和类型上是一致的（即它意味着推断一个值并在推断失"
+"败时绑定一个变量）。在实践中，使用 ``_`` 会得到旧的 Idris 行为，但是 ``?`` "
+"可能会得到更多的类型推断。"
 
 #: ../../source/implementation/overview.rst:357
 #: 30cfc9b432144488a2f7ff01fe6a8b56
+#, fuzzy
 msgid "Auto Implicits"
-msgstr ""
+msgstr "自动隐式"
 
 #: ../../source/implementation/overview.rst:359
 #: b28c525da8b64702a00d219862fe1376
+#, fuzzy
 msgid ""
 "Auto implicits are resolved by proof search, and can be given explicit "
 "arguments in the same way as ordinary implicits: i.e. ``{x = exp}`` to "
@@ -565,18 +725,25 @@ msgid ""
 " interfaces translate into records, and implementations translate into "
 "hints for the search)."
 msgstr ""
+"自动隐式通过证明搜索解决，并且可以以与普通隐式相同的方式给出显式参数：即 {x "
+"= exp} 将 exp 作为自动隐式 x 的值.接口是自动隐式的语法糖（它是相同的解析机制 "
+"- 接口转换为记录，实现转换为搜索提示）。"
 
 #: ../../source/implementation/overview.rst:365
 #: 8a9b96278b8842f3b000f29ad770434d
+#, fuzzy
 msgid ""
 "The argument syntax ``@{exp}`` means that the value of the next auto "
 "implicit in the application should be ``exp`` - this is the same as the "
 "syntax for invoking named implementations in Idris 1, but interfaces and "
 "auto implicits have been combined now."
 msgstr ""
+"参数语法 ``@{exp}`` 意味着应用程序中隐含的下一个 auto 的值应该是 ``exp`` - "
+"这与 Idris 1 中调用命名实现的语法相同，但接口和 auto现在已经合并了隐式。"
 
 #: ../../source/implementation/overview.rst:370
 #: 81a558a2a4e441f292a44c2f421d6997
+#, fuzzy
 msgid ""
 "Implicit search is defined in ``Core.AutoSearch``. It will only begin a "
 "search if all the *determining arguments* of the goal are defined, "
@@ -585,14 +752,20 @@ msgid ""
 "unification, unless a programmer has explicitly said (via a ``search`` "
 "option on a data type) that that's what they want."
 msgstr ""
+"隐式搜索在 ``Core.AutoSearch`` 中定义。只有定义了目标的所有*确定参数*，它才会"
+"开始搜索，这意味着它们不包含*任何*孔。这避免了过早地通过搜索解决漏洞来解决漏"
+"洞，而不是统一，除非程序员明确表示（通过数据类型上的“搜索”选项）这是他们想要"
+"的。"
 
 #: ../../source/implementation/overview.rst:378
 #: e4564d7b424f49009deb2407b88c31ef
+#, fuzzy
 msgid "Dot Patterns"
-msgstr ""
+msgstr "点图案"
 
 #: ../../source/implementation/overview.rst:380
 #: 5fd960471b75442e9c12998f00b1f8d0
+#, fuzzy
 msgid ""
 "``IMustUnify`` is a constructor of ``RawImp``. When we elaborate this, we"
 " generate a hole, then elaborate the term, and add a constraint that the "
@@ -600,47 +773,63 @@ msgid ""
 "``UnifyState.addDot``), without resolving any holes. This is finally "
 "checked in ``UnifyState.checkDots``."
 msgstr ""
+"``IMustUnify`` 是``RawImp`` 的构造函数。当我们详细说明这一点时，我们会生成一"
+"个空洞，然后详细说明该术语，并添加一个约束，即生成的空洞必须与明确给出的术语"
+"（在“UnifyState.addDot”中）统一，而不解决任何漏洞。这最终在 ``UnifyState."
+"checkDots`` 中被检查。"
 
 #: ../../source/implementation/overview.rst:386
 #: 60a6e970ade84237bb710fd4f317f609
+#, fuzzy
 msgid "Proof Search"
-msgstr ""
+msgstr "证明搜索"
 
 #: ../../source/implementation/overview.rst:388
 #: 542a128cc4304b3b8703c1fe755eeeb8
+#, fuzzy
 msgid ""
 "A definition constructed with ``Core.Context.BySearch`` is a hole which "
 "will be resolved by searching for something which fits the type. This "
 "happens in ``Core.AutoSearch``. It checks all possible hints for a term, "
 "to ensure that only one is possible."
 msgstr ""
+"用 ``Core.Context.BySearch`` "
+"构造的定义是一个漏洞，将通过搜索适合该类型的东西来解决。这发生在 ``Core."
+"AutoSearch`` 中。它检查一个术语的所有可能提示，以确保只有一个可能。"
 
 #: ../../source/implementation/overview.rst:394
 #: 788cb3be3f2a419eb3fbac482c0082d4
+#, fuzzy
 msgid "@-Patterns"
-msgstr ""
+msgstr "@-模式"
 
 #: ../../source/implementation/overview.rst:396
 #: db13cbe1c8af484b8848ebb727167f71
+#, fuzzy
 msgid ""
 "Names which are bound in types are also bound as @-patterns, meaning that"
 " functions have access to them. For example, we can say:"
-msgstr ""
+msgstr "绑定在类型中的名称也绑定为 "
+"@-patterns，这意味着函数可以访问它们。例如，我们可以说："
 
 #: ../../source/implementation/overview.rst:405
 #: ea736f00472f475b9b0ccf677c8e30a9
+#, fuzzy
 msgid ""
 "As patterns are implemented as a constructor of ``TT``, which makes a lot"
 " of things more convenient (especially case tree compilation)."
-msgstr ""
+msgstr "由于模式被实现为 ``TT`` "
+"的构造函数，这使得很多事情变得更加方便（尤其是案例树编译）。"
 
 #: ../../source/implementation/overview.rst:409
 #: f49cd12be93d4218958ffb41d341bc4e
+#, fuzzy
 msgid "Linear Types"
-msgstr ""
+msgstr "线性类型"
 
 #: ../../source/implementation/overview.rst:411
 #: 3e2d9d0d43cf4f218ba5a30a9d3a78d2
+#, fuzzy
 msgid ""
 "Following Conor McBride and Bob Atkey's work, all binders have a "
 "multiplicity annotation (``RigCount``). After elaboration in "
@@ -648,37 +837,52 @@ msgid ""
 "that linear variables are used exactly once; b) updates hole types to "
 "properly reflect usage information."
 msgstr ""
+"按照 Conor McBride 和 Bob Atkey "
+"的工作，所有的活页夹都有一个多重性注释（``RigCount``）。在“TTImp."
+"Elab”中详细说明之后，我们进行了单独的线性检查：a）确保线性变量只使用一次； b)"
+" 更新孔类型以正确反映使用信息。"
 
 #: ../../source/implementation/overview.rst:417
 #: c4099c3e350041248d77a5c5abc2fb2c
+#, fuzzy
 msgid "Local definitions"
-msgstr ""
+msgstr "本地定义"
 
 #: ../../source/implementation/overview.rst:419
 #: 87f57dcd50694cc69d14ded7f8a90d33
+#, fuzzy
 msgid ""
 "We elaborate relative to an environment, meaning that we can elaborate "
 "local function definitions. We keep track of the names being defined in a"
 " nested block of declarations, and ensure that they are lifted to top "
 "level definitions in TT by applying them to every name in scope."
 msgstr ""
+"我们相对于环境进行详细说明，这意味着我们可以详细说明本地函数定义。我们跟踪在"
+"嵌套声明块中定义的名称，并通过将它们应用于范围内的每个名称来确保将它们提升到 "
+"TT 中的顶级定义。"
 
 #: ../../source/implementation/overview.rst:424
 #: dbe6ef145f7c40659f8b7672180cfd20
+#, fuzzy
 msgid ""
 "Since we don't know how many times a local definition will be applied, in"
 " general, anything bound with multiplicity 1 is passed to the local "
 "definition with multiplicity 0, so if you want to use it in a local "
 "definition, you need to pass it explicitly."
 msgstr ""
+"由于我们不知道一个局部定义会被应用多少次，一般来说，任何与多重性 1 "
+"绑定的东西都会传递给多重性为 0 "
+"的局部定义，所以如果你想在局部定义中使用它，你需要通过它明确地。"
 
 #: ../../source/implementation/overview.rst:430
 #: 917082a0f08e4c5dbdb6fb38f379eebc
+#, fuzzy
 msgid "Case blocks"
-msgstr ""
+msgstr "案例块"
 
 #: ../../source/implementation/overview.rst:432
 #: 796ac70063df40e3aa92cfe96a8b29ad
+#, fuzzy
 msgid ""
 "Similar to local definitions, these are lifted to top level definitions "
 "which represent the case block, which is immediately applied to the "
@@ -687,9 +891,13 @@ msgid ""
 " wrong - instead, these are checked during linearity checking, which "
 "knows about case functions."
 msgstr ""
+"与本地定义类似，这些定义被提升到代表案例块的顶级定义，立即应用于案例的审查者"
+"。在详细说明 case 块时，我们不会尝试计算参数的多重性，因为我们可能会弄错 - "
+"相反，这些是在线性检查期间检查的，它知道 case 函数。"
 
 #: ../../source/implementation/overview.rst:438
 #: 1cd0a73d5a2e425d9e4ef65ea121bc2b
+#, fuzzy
 msgid ""
 "Case blocks in the scope of local definitions are tricky, because the "
 "names need to match up, and the types might be refined, but we also still"
@@ -697,26 +905,33 @@ msgid ""
 "This is a bit fiddly, and dealt with by the ``ICaseLocal`` constructor of"
 " ``RawImp``."
 msgstr ""
+"本地定义范围内的 case 块很棘手，因为名称需要匹配，并且类型可能会被细化，但我"
+"们仍然需要将本地名称应用于定义它们的范围。这有点繁琐，由“RawImp”的“ICaseLocal"
+"”构造函数处理。"
 
 #: ../../source/implementation/overview.rst:443
 #: 233938a975fa44199aa707d5a1f9da5e
+#, fuzzy
 msgid ""
 "Various parts of the system treat case blocks specially, even though they"
 " aren't strictly part of the core. In particular, these are linearity "
 "checking and totality checking."
-msgstr ""
+msgstr "系统的各个部分特别对待案例块，即使它们严格来说不是核心的一部分。特别是，这些"
+"是线性检查和整体检查。"
 
 #: ../../source/implementation/overview.rst:448
 #: 6c8c9f1cbac5474781e11d3c66767289
+#, fuzzy
 msgid "Parameters"
-msgstr ""
+msgstr "参数"
 
 #: ../../source/implementation/overview.rst:450
 #: 2ccac8ceff93403ba37eca40acfa8474
+#, fuzzy
 msgid ""
 "The parameters to a data type are taken to be the arguments which appear,"
 " unchanged, in the same position, everywhere across a data definition."
-msgstr ""
+msgstr "数据类型的参数被认为是在数据定义中随处出现的、不变的、相同位置的参数。"
 
 #: ../../source/implementation/overview.rst:454
 #: 42b726a0e990491fa7fd01ac74f96d13
@@ -725,14 +940,17 @@ msgstr "擦除"
 
 #: ../../source/implementation/overview.rst:456
 #: 5bc3cd2c57a84e14b6e739f78aca8917
+#, fuzzy
 msgid ""
 "Unbound implicits are given ``0`` multiplicity, so the rule is now that "
 "if you don't explicitly write it in the type of a function or "
 "constructor, the argument is erased at run time."
-msgstr ""
+msgstr "未绑定的隐式被赋予 ``0`` 多重性，因此现在的规则是，如果您没有将其显式写入函数"
+"或构造函数的类型，则参数将在运行时被删除。"
 
 #: ../../source/implementation/overview.rst:460
 #: 30d5371ceb294066a285a4f081a368f9
+#, fuzzy
 msgid ""
 "Elaboration and the case tree compiler check ensure that 0-multiplicity "
 "arguments are not inspected in case trees. In the compiler, "
@@ -740,23 +958,32 @@ msgid ""
 "0-multiplicity arguments to functions are replaced with a placeholder "
 "erased value."
 msgstr ""
+"细化和案例树编译器检查确保在案例树中不检查 0 多重性参数。在编译器中，"
+"构造函数的 0-multiplicity 参数被完全擦除，而函数的 0-multiplicity "
+"参数被替换为占位符擦除的值。"
 
 #: ../../source/implementation/overview.rst:466
 #: 274da16f8900453393fe765ffaeb743b
+#, fuzzy
 msgid "Namespaces and name visibility"
-msgstr ""
+msgstr "命名空间和名称可见性"
 
 #: ../../source/implementation/overview.rst:468
 #: 9a1ed7be79b54e1fa1515c10bbf41b6e
+#, fuzzy
 msgid ""
 "Same rules mostly apply as in Idris 1. The difference is that visibility "
 "is *per namespace* not *per file* (that is, files have no relevance other"
 " except in that they introduce their own namespace, and in that they "
 "allow separate typechecking)."
 msgstr ""
+"与 Idris 1 中的规则大多适用。不同之处在于可见性是 *per namespace* 而不是 *"
+"per file*（也就是说，文件与其他无关，除了它们引入自己的命名空间，并且它们允许"
+"单独的类型检查） ."
 
 #: ../../source/implementation/overview.rst:473
 #: dcb915f776514f639a425cc40234912d
+#, fuzzy
 msgid ""
 "One effect of this is that when a file defines nested namespaces, the "
 "inner namespace can see what's in the outer namespace, but not vice versa"
@@ -765,15 +992,21 @@ msgid ""
 "control whether the name can be seen in any other namespace, and it's "
 "nothing to do with the file they're defined in at all."
 msgstr ""
+"这样做的一个影响是，当文件定义嵌套命名空间时，内部命名空间可以看到外部命名空"
+"间中的内容，但反之亦然，除非明确导出内部命名空间中定义的名称。可见性修饰符“ex"
+"port”、“public export”和“private”控制名称是否可以在任何其他命名空间中看到，并"
+"且与定义它们的文件完全无关。"
 
 #: ../../source/implementation/overview.rst:480
 #: d2a0098c1a024102bd617ce69ae053b1
+#, fuzzy
 msgid ""
 "Unlike Idris 1, there is no restriction on whether public definitions can"
 " refer to private names. The only restriction on ``private`` names is "
 "that they can't be referred to directly (i.e. in code) outside the "
 "namespace."
-msgstr ""
+msgstr "与 Idris 1 不同，公共定义是否可以引用私有名称没有限制。对“私有”名称的唯一限制"
+"是它们不能在命名空间之外直接引用（即在代码中）。"
 
 #: ../../source/implementation/overview.rst:485
 #: 3a32065773d24398848137f489d6943a
@@ -782,6 +1015,7 @@ msgstr "记录"
 
 #: ../../source/implementation/overview.rst:487
 #: d627110eea5b455ba34e80a311af77a4
+#, fuzzy
 msgid ""
 "Records are part of TTImp (rather than the surface language). Elaborating"
 " a record declaration creates a data type and associated projection "
@@ -791,3 +1025,8 @@ msgid ""
 "expect (i.e. it's safe as long as all of the fields are updated at the "
 "same time consistently)."
 msgstr ""
+"记录是 TTImp "
+"的一部分（而不是表面语言）。详细说明记录声明会创建数据类型和相关的投影函数。"
+"记录设置器在详细说明 TTImp（在 ``TTImp.Elab.Record`` 中）时按需生成。 Setter "
+"直接转换为“case”块，这意味着依赖字段的更新按预期工作（即，只要所有字段一致地"
+"同时更新，它就是安全的）。"
