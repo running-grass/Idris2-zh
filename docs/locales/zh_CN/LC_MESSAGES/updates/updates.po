@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: 467195537@qq.com\n"
 "POT-Creation-Date: 2022-07-12 11:10+0800\n"
-"PO-Revision-Date: 2022-07-28 00:31+0000\n"
+"PO-Revision-Date: 2022-07-28 13:17+0000\n"
 "Last-Translator: admin <467195537@qq.com>\n"
 "Language-Team: Chinese (Simplified) <https://weblate.grass.work:30443/"
 "projects/idris2/updatesupdates/zh_Hans/>\n"
@@ -25,7 +25,6 @@ msgid "Changes since Idris 1"
 msgstr "自 Idris 1 以来的变化"
 
 #: ../../source/updates/updates.rst:7 e62c8316f7d84d3490ed1d17342e8688
-#, fuzzy
 msgid ""
 "Idris 2 is mostly backwards compatible with Idris 1, with some minor "
 "exceptions. This document describes the changes, approximately in order "
@@ -37,16 +36,16 @@ msgstr ""
 "中描述。"
 
 #: ../../source/updates/updates.rst:12 6105dd81019e49c289d36e51a8c2710d
-#, fuzzy
 msgid ""
 "The Section :ref:`typedd-index` describes how these changes affect the "
 "code in the book `Type-Driven Development with Idris "
 "<https://www.manning.com/books/type-driven-development-with-idris>`_ by "
 "Edwin Brady, available from `Manning <https://www.manning.com>`_."
 msgstr ""
-":ref:`typedd-index` 部分描述了这些更改如何影响《使用 Idris 进行类型驱动开发》"
-"一书中的代码 <https://www.manning.com/books/type-driven-development-with-"
-"idris> `_ 由 Edwin Brady 撰写，可从`Manning <https://www.manning.com>`_获得。"
+":ref:`typedd-index` 章节描述了这些更改如何影响由 Edwin Brady 撰写的 `《使用 "
+"Idris 进行类型驱动开发》 <https://www.manning.com/books/type-driven-"
+"development-with-idris> `_ 一书中的代码，可从 `Manning <https://www.manning."
+"com>`_ 获得。"
 
 #: ../../source/updates/updates.rst:17 c5d1e9029f174ce7a297cc23e87a7088
 msgid ""
@@ -66,7 +65,6 @@ msgstr "关于CC0的更多信息，可以在网上找到：http://creativecommon
 "zero/1.0/"
 
 #: ../../source/updates/updates.rst:25 fa0ef42bb62642539ce28653ff68b99b
-#, fuzzy
 msgid "New Core Language: Quantities in Types"
 msgstr "新核心语言：类型中的数量"
 
@@ -347,85 +345,70 @@ msgid "Basic ``Char`` and ``String`` manipulation"
 msgstr "基本的 ``Char`` 和 ``String`` 操作"
 
 #: ../../source/updates/updates.rst:227 10532db421f64ef79686d63c5ee5bc90
-#, fuzzy
 msgid ""
 "``Show``, ``Eq``, ``Ord``, and implementations for all types in the "
 "prelude"
-msgstr "``Show``，``Eq``，``Ord``，以及前奏中所有类型的实现"
+msgstr "``Show`` ， ``Eq`` ， ``Ord`` ，以及 Prelude 中所有类型的实现"
 
 #: ../../source/updates/updates.rst:228 9e213063fd794293ae9430c6756eacf1
-#, fuzzy
 msgid "Interfaces and functions for basic proof (``cong``, ``Uninhabited``, etc)"
-msgstr "基本证明的接口和函数（“cong”、“Uninhabited”等）"
+msgstr "基本证明的接口和函数（ ``cong`` 、 ``Uninhabited`` 等）"
 
 #: ../../source/updates/updates.rst:229 7f5690e0b6554fa4b1f5246faa2f8ac8
-#, fuzzy
 msgid "``Semigroup``, ``Monoid``"
-msgstr "``半群``，``幺半群``"
+msgstr "``Semigroup``, ``Monoid``"
 
 #: ../../source/updates/updates.rst:230 bbb2dda410854595bfeee483af35ba95
-#, fuzzy
 msgid "``Functor``, ``Applicative``, ``Monad`` and related functions"
 msgstr "``Functor``, ``Applicative``, ``Monad`` 和相关函数"
 
 #: ../../source/updates/updates.rst:231 e56770bb4f9c4ba88128b45fc7dbe059
-#, fuzzy
 msgid "``Foldable``, ``Alternative`` and ``Traversable``"
-msgstr "“可折叠”、“替代”和“可遍历”"
+msgstr "``Foldable``, ``Alternative`` 和 ``Traversable``"
 
 #: ../../source/updates/updates.rst:232 241f5321b9884141b551e4fee626e50c
-#, fuzzy
 msgid "``Range``, for list range syntax"
-msgstr "``Range``，用于列表范围语法"
+msgstr "``Range`` ，用于列表区间语法"
 
 #: ../../source/updates/updates.rst:233 f1a0d89744fd4991a32c08369ca2a050
-#, fuzzy
 msgid "Console ``IO``"
-msgstr "控制台“IO”"
+msgstr "控制台 ``IO``"
 
 #: ../../source/updates/updates.rst:235 21586f6bd7064c93a816664598315b74
-#, fuzzy
 msgid ""
 "Anything which doesn't fit in here has been moved to the ``base`` "
 "libraries. Among other places, you can find some of the functions which "
 "used to be in the prelude in:"
-msgstr "任何不适合此处的内容都已移至“基本”库。在其他地方，您可以找到一些曾经在前奏中"
-"的功能："
+msgstr "任何不适合此处的内容都已移至 ``base`` 库。在其他地方，您可以找到一些曾经在 "
+"prelude 中的函数："
 
 #: ../../source/updates/updates.rst:239 f493bf22097846d3a827291b37def74b
-#, fuzzy
 msgid "``Data.List`` and ``Data.Nat``"
 msgstr "``Data.List`` 和 ``Data.Nat``"
 
 #: ../../source/updates/updates.rst:240 de358256b0e34bbea06245730988e23e
-#, fuzzy
 msgid "``Data.Maybe`` and ``Data.Either``"
 msgstr "``Data.Maybe`` 和 ``Data.Either``"
 
 #: ../../source/updates/updates.rst:241 909fd895098e4b1da7605a3250365fd4
-#, fuzzy
 msgid ""
 "``System.File`` and ``System.Directory``, (file management was previously"
 " part of the prelude)"
-msgstr "``System.File`` 和 ``System.Directory``，（文件管理以前是前奏的一部分）"
+msgstr "``System.File`` 和 ``System.Directory`` ，（文件管理以前是 Prelude 的一部分）"
 
 #: ../../source/updates/updates.rst:243 c7d3263d12034065817d8f36c257c09d
-#, fuzzy
 msgid "``Decidable.Equality``"
-msgstr "``可判定的.平等``"
+msgstr "``Decidable.Equality``"
 
 #: ../../source/updates/updates.rst:246 132ff420528f44f597db8adabb4729c7
-#, fuzzy
 msgid "Smaller Changes"
 msgstr "较小的变化"
 
 #: ../../source/updates/updates.rst:249 8139b3bf21374d9c8498bedffea22177
-#, fuzzy
 msgid "Ambiguous Name Resolution"
-msgstr "不明确的名称解析"
+msgstr "有歧义名称的解析"
 
 #: ../../source/updates/updates.rst:251 62260653e9c0450998d42ebd4345cb03
-#, fuzzy
 msgid ""
 "Idris 1 worked very hard to resolve ambiguous names, by type, even if "
 "this involved some complicated interaction with interface resolution. "
@@ -433,12 +416,11 @@ msgid ""
 "simplifies this, at the cost of sometimes requiring more programmer "
 "annotations on ambiguous names."
 msgstr ""
-"Idris 1 非常努力地按类型解析模棱两可的名称，即使这涉及与接口解析的一些复杂交"
-"互。这有时可能是导致类型检查时间过长的原因。 Idris 2 "
-"简化了这一点，代价是有时需要对模棱两可的名称进行更多的程序员注释。"
+"Idris 1 非常努力地按类型解析有歧义的名称，即使这涉及与接口解析的一些复杂交互"
+"。这有时可能是导致类型检查时间过长的原因。 Idris 2 "
+"简化了这一点，代价是有时需要对有歧义的名称进行更多的程序员注释。"
 
 #: ../../source/updates/updates.rst:257 698ddf083f0d4fc1ae2a0bb57e252ce1
-#, fuzzy
 msgid ""
 "As a general rule, Idris 2 will be able to disambiguate between names "
 "which have different concrete return types (such as data constructors), "
@@ -453,120 +435,108 @@ msgstr ""
 "作为一般规则，Idris 2 将能够区分具有不同具体返回类型（例如数据构造函数）或具"
 "有不同具体参数类型（例如记录投影）的名称。如果一个名称需要解析接口，则可能难"
 "以解决歧义。如果无法立即解析名称，它将推迟解析，但与 Idris 1 "
-"不同，它不会尝试显着回溯。如果你有深度嵌套的模糊名称（超过一个小阈值，默认为 "
-"3），Idris 2 将报告错误。您可以使用指令更改此阈值，例如："
+"不同，它不会尝试显着回溯。如果你有深度嵌套的有歧义名称（超过一个小阈值，"
+"默认为 3），Idris 2 将报告错误。您可以使用指令更改此阈值，例如："
 
 #: ../../source/updates/updates.rst:270 1cda962ebd6f43d2abd80edbc81943fb
-#, fuzzy
 msgid ""
 "However, in such circumstances it is almost certainly a better idea to "
 "disambiguate explicitly."
-msgstr "然而，在这种情况下，明确地消除歧义几乎肯定是一个更好的主意。"
+msgstr "然而，在这种情况下，明确地消除歧义肯定是一个更好的主意。"
 
 #: ../../source/updates/updates.rst:273 fd7254814e9448a98a6291a8d4ee2363
-#, fuzzy
 msgid ""
 "Indeed in general, if you get an ambiguous name error, the best approach "
 "is to give the namespace explicitly. You can also rebind names locally:"
-msgstr "实际上，一般来说，如果您遇到不明确的名称错误，最好的方法是明确给出命名空间。"
-"您还可以在本地重新绑定名称："
+msgstr "实际上，一般来说，如果您遇到名称歧义错误，最好的方法是明确给出命名空间。您还"
+"可以在局部重新绑定名称："
 
 #: ../../source/updates/updates.rst:281 ecd9fbadb35d4ca2bca873bcae333259
-#, fuzzy
 msgid ""
 "One difficulty which remains is resolving ambiguous names where one "
 "possibility is an interface method, and another is a concrete top level "
 "function. For example, we may have:"
-msgstr "剩下的一个困难是解决模棱两可的名称，其中一种可能是接口方法，另一种可能是具体"
-"的顶级函数。例如，我们可能有："
+msgstr "剩下的一个困难是解决有歧义的名称，其中一种可能是接口方法，另一种可能是具体的"
+"顶级函数。例如，我们可能有："
 
 #: ../../source/updates/updates.rst:290 acdca71dce8f40d39c9b878bc0f9fffd
-#, fuzzy
 msgid ""
 "As a pragmatic choice, if type checking in a context where the more "
 "concrete name is valid (``LinearIO.(>>=)`` here, so if type checking an "
 "expression known to have type ``IO t`` for some ``t``), the more concrete"
 " name will be chosen."
 msgstr ""
-"作为一个务实的选择，如果在更具体的名称有效的上下文中进行类型检查（此处为``Lin"
-"earIO.(>>=)``，因此如果对已知具有类型``IO t`` "
-"的表达式进行类型检查``t``），将选择更具体的名称。"
+"作为一个务实的选择，如果在更具体的名称有效的上下文中进行类型检查（此处为 "
+"``LinearIO.(>>=)`` ，因此如果对已知具有类型 ``IO t`` 的表达式 ``t`` "
+"进行类型检查），将选择更具体的名称。"
 
 #: ../../source/updates/updates.rst:294 3db06c10b8b547a79eacbfa330ce5d6d
-#, fuzzy
 msgid "This is somehow unsatisfying, so we may revisit this in future!"
 msgstr "这在某种程度上令人不满意，所以我们将来可能会重新审视这个！"
 
 #: ../../source/updates/updates.rst:297 8d853366a6274d0da9dad88d0754684a
-#, fuzzy
 msgid "Modules, namespaces and export"
 msgstr "模块、命名空间和导出"
 
 #: ../../source/updates/updates.rst:299 eec1491449bf423b82cdb795548d2a01
-#, fuzzy
 msgid ""
 "The visibility rules, as controlled by the ``private``, ``export`` and "
 "``public export`` modifiers, now refer to the visibility of names from "
 "other *namespaces*, rather than other *files*."
 msgstr ""
-"由 ``private``、``export`` 和 ``public export`` "
-"修饰符控制的可见性规则现在指的是来自其他 *namespaces* 的名称的可见性，"
-"而不是其他 *files*。"
+"由  ``private`` 、 ``export`` 和 ``public export`` "
+"修饰符控制的可见性规则现在指的是来自其他 *命名空间* 的名称的可见性，"
+"而不是其他 *文件* 。"
 
 #: ../../source/updates/updates.rst:303 c07df9e70a744da592eb2da12c31455a
-#, fuzzy
 msgid "So if you have the following, all in the same file..."
-msgstr "因此，如果您有以下内容，则所有内容都在同一个文件中..."
+msgstr "因此，如果您有以下内容，且所有内容都在同一个文件中..."
 
 #: ../../source/updates/updates.rst:321 f951655a101e4b5ebee39e46a9e4cf09
-#, fuzzy
 msgid "...then ``bVisible`` can access ``aVisible``, but not ``aHidden``."
-msgstr "...然后 ``bVisible`` 可以访问 ``aVisible``，但不能访问 ``aHidden``。"
+msgstr ""
+"...然后 ``bVisible`` 可以访 ``aVisible`` ，但不能访问\n"
+"``aHidden`` 。"
 
 #: ../../source/updates/updates.rst:323 adc715ee47f7425aa0c0aeff65f5dfa4
-#, fuzzy
 msgid ""
 "Records are, as before, defined in their own namespace, but fields are "
 "always visible from the parent namespace."
 msgstr "和以前一样，记录在它们自己的命名空间中定义，但字段始终在父命名空间中可见。"
 
 #: ../../source/updates/updates.rst:326 92d00353b37d48acb650ccee8b736d7b
-#, fuzzy
 msgid ""
 "Also, module names must now match the filename in which they're defined, "
 "with the exception of the module ``Main``, which can be defined in a file"
 " with any name."
-msgstr "此外，模块名称现在必须与定义它们的文件名匹配，但模块“Main”除外，它可以在任何"
-"名称的文件中定义。"
+msgstr "此外，模块名称现在必须与定义它们的文件名匹配，但模块 “Main” "
+"除外，它可以在任何名称的文件中定义。"
 
 #: ../../source/updates/updates.rst:331 b4ee8278ccfc44708a9b3e1c2436829a
-#, fuzzy
 msgid "``%language`` pragmas"
 msgstr "``%language`` 编译指示"
 
 #: ../../source/updates/updates.rst:333 3de0d86134114ea1bbe59ebbfc6d205b
-#, fuzzy
 msgid ""
 "There are several ``%language`` pragmas in Idris 1, which define various "
 "experimental extensions. None of these are available in Idris 2, although"
 " extensions may be defined in the future."
 msgstr ""
-"Idris 1 中有几个 ``%language`` pragma，它们定义了各种实验性扩展。这些在 "
+"Idris 1 中有几个 ``%language`` 编译指示，它们定义了各种实验性扩展。这些在 "
 "Idris 2 中都不可用，尽管将来可能会定义扩展。"
 
 #: ../../source/updates/updates.rst:337 bb49dc8c33674572953840e9349d66e3
-#, fuzzy
 msgid ""
 "Also removed was the ``%access`` pragma for default visibility, use "
 "visibility modifiers on each declaration instead."
-msgstr "还删除了用于默认可见性的 ``%access`` 杂注，而是在每个声明上使用可见性修饰符。"
+msgstr "还删除了用于默认可见性的 ``%access`` "
+"编译指示，而是在每个声明上使用可见性修饰符。"
 
 #: ../../source/updates/updates.rst:341 a12f43c7f8014ff28a8b9f15b2934835
 msgid "``let`` bindings"
 msgstr "``let`` 绑定"
 
 #: ../../source/updates/updates.rst:343 eab7b97c088841ef96b8a6b5cda03c2f
-#, fuzzy
 msgid ""
 "``let`` bindings, i.e. expressions of the form ``let x = val in e`` have "
 "slightly different behaviour. Previously, you could rely on the "
@@ -577,47 +547,45 @@ msgid ""
 "significant changes to the way ``case`` and ``with`` are elaborated."
 msgstr ""
 "``let`` 绑定，即 ``let x = val in e`` 形式的表达式具有稍微不同的行为。以前，"
-"您可以依赖 ``e`` 范围内的``x`` 的计算行为，因此类型检查可以考虑 ``x`` 减少为 "
-"``val``。不幸的是，这导致了“case”和“with”子句的复杂化：如果我们想保留计算行为"
-"，我们需要对“case”和“with”的方式进行重大改变进行了阐述。"
+"您可以依赖 ``e`` 作用域内的 ``x`` 的计算行为，因此类型检查可以考虑 ``x`` "
+"替换为 ``val`` 。不幸的是，这导致了 ``case`` 和 ``with`` "
+"子句的复杂化：如果我们想保留计算行为，我们需要对 ``case`` 和 ``with`` "
+"的阐述方式进行重大改变。"
 
 #: ../../source/updates/updates.rst:351 905f942e596b419c82d6dadf0ac2ebc4
-#, fuzzy
 msgid ""
 "So, for simplicity and consistency (and, realistically, because I don't "
 "have enough time to resolve the problem for ``case`` and ``with``) the "
 "above expression ``let x = val in e`` is equivalent to ``(\\x => e) "
 "val``."
 msgstr ""
-"所以，为了简单和一致（实际上，因为我没有足够的时间来解决“case”和“with”的问题"
-"）上面的表达式“let x = val in e”是相当于``(\\x => e) val``。"
+"所以，为了简单和一致（实际上，因为我没有足够的时间来解决 ``case`` 和 ``with``"
+" 的问题）上面的表达式 ``let x = val in e`` 相当于 ``(\\x => e) val`` 。"
 
 #: ../../source/updates/updates.rst:355 5a98922e7f47428ea0af4253a22951c5
-#, fuzzy
 msgid ""
 "So, ``let`` now effectively generalises a complex subexpression. If you "
 "do need the computational behaviour of a definition, it is now possible "
 "using local function definitions instead - see Section :ref:`sect-local-"
 "defs` below."
 msgstr ""
-"所以，“let”现在有效地概括了一个复杂的子表达式。如果您确实需要定义的计算行为，"
-"现在可以使用局部函数定义来代替 - 请参阅下面的 :ref:`sect-local-defs 部分。"
+"所以， ``let`` "
+"现在有效地概括了一个复杂的子表达式。如果您确实需要定义的计算行为，"
+"现在可以使用局部函数定义来代替 - 请参阅下面的 :ref:`sect-local-defs` 章节。"
 
 #: ../../source/updates/updates.rst:360 0f04f0edd4994f4dbb19c308e93dc40e
-#, fuzzy
 msgid ""
 "Also, an alternative syntax ``let x := val in e`` is available. See "
 "Section :ref:`sect-let-bindings` for more info."
-msgstr "此外，还可以使用替代语法“let x := val in e”。有关更多信息，请参见 :ref:`sect-"
-"let-bindings` 部分。"
+msgstr ""
+"此外，还可以使用替代语法 ``let x := val in e`` 。有关更多信息，请参见 :ref"
+":`sect-let-bindings` 章节。"
 
 #: ../../source/updates/updates.rst:364 0c6ad18905fe4370896db9fb9f733679
-#, fuzzy
 msgid "``auto``-implicits and Interfaces"
 msgstr "``auto``-隐式和接口"
 
 #: ../../source/updates/updates.rst:366 42448e7317864bb6b29b84f42e00c731
-#, fuzzy
 msgid ""
 "Interfaces and ``auto``-implicit arguments are similar, in that they "
 "invoke an expression search mechanism to find the value of an argument. "
@@ -625,103 +593,93 @@ msgid ""
 "the same mechanism. Consider the following *total* definition of "
 "``fromMaybe``:"
 msgstr ""
-"接口和``auto``-隐式参数是相似的，因为它们调用表达式搜索机制来查找参数的值。"
-"在 Idris 1 中，它们是分开实现的，但在 Idris 2 "
-"中，它们使用相同的机制。考虑以下“fromMaybe”的*total*定义："
+"接口和 ``auto``-隐式参数是相似的，因为它们调用表达式搜索机制来查找参数的值。"
+"在 Idris 1 中，它们是分开实现的，但在 Idris 2 中，它们使用相同的机制。"
+"考虑以下 ``fromMaybe`` 的 *total* 定义："
 
 #: ../../source/updates/updates.rst:379 4e3fe00771b64ff2938b5ea4e8172479
-#, fuzzy
 msgid ""
 "Since interface resolution and ``auto``-implicits are now the same thing,"
 " the type of ``fromMaybe`` can be written as:"
-msgstr "由于接口解析和``auto``-implicits 现在是同一个东西，``fromMaybe`` "
+msgstr "由于接口解析和 ``auto``- 隐式现在是同一个东西， ``fromMaybe`` "
 "的类型可以写成："
 
 #: ../../source/updates/updates.rst:386 d0707b6836f94daabc2445c17945cf20
-#, fuzzy
 msgid ""
 "So now, the constraint arrow ``=>`` means that the argument will be found"
 " by ``auto``-implicit search."
 msgstr "所以现在，约束箭头 ``=>`` 意味着参数将通过 ``auto`` 隐式搜索找到。"
 
 #: ../../source/updates/updates.rst:389 37545086cb9c45ab8a38a7185e177786
-#, fuzzy
 msgid ""
 "When defining a ``data`` type, there are ways to control how "
 "``auto``-implicit search will proceed, by giving options to the data "
 "type. For example:"
-msgstr "在定义“数据”类型时，可以通过为数据类型提供选项来控制“自动”隐式搜索将如何进行"
-"。例如："
+msgstr "在定义 ``data`` 类型时，可以通过为数据类型提供选项来控制 ``auto`` "
+"隐式搜索将如何进行。例如："
 
 #: ../../source/updates/updates.rst:399 32420139c0054a76aed6f9be7c23d48b
-#, fuzzy
 msgid ""
 "The ``search x`` option means that ``auto``-implicit search for a value "
 "of type ``Elem t ts`` will start as soon as the type checker has resolved"
 " the value ``t``, even if ``ts`` is still unknown."
 msgstr ""
-"``search x`` 选项意味着``auto``-隐式搜索类型为``Elem t ts`` "
-"的值将在类型检查器解析值``t`` 后立即开始，即使``ts`` 仍然未知。"
+"``search x`` 选项意味着 ``auto``-隐式搜索类型为 ``Elem t ts`` "
+"的值将在类型检查器解析值 ``t`` 后立即开始，即使 ``ts`` 仍然未知。"
 
 #: ../../source/updates/updates.rst:403 cf4254a0883a4566a70f116b6e93aec9
-#, fuzzy
 msgid ""
 "By default, ``auto``-implicit search uses the constructors of a data type"
 " as search hints. The ``noHints`` option on a data type turns this "
 "behaviour off."
-msgstr ""
-"默认情况下，``auto``-implicit search 使用数据类型的构造函数作为搜索提示。"
+msgstr "默认情况下， ``auto`` - 隐式搜索使用数据类型的构造函数作为搜索提示。"
 "数据类型上的 ``noHints`` 选项会关闭此行为。"
 
 #: ../../source/updates/updates.rst:407 60bc933d086947389cea72cd89353f55
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "You can add your own search hints with the ``%hint`` option on a "
 "function. For example:"
 msgstr "您可以使用函数上的 ``%hint`` 选项添加自己的搜索提示。例如："
 
 #: ../../source/updates/updates.rst:423 fb6e2f6eb7d648258f84903902b54ca9
-#, fuzzy
 msgid ""
 "In this case, searching for ``MyShow Bool`` will find ``showBool``, as we"
 " can see if we try evaluating ``myShow True`` at the REPL:"
 msgstr ""
-"在这种情况下，搜索 ``MyShow Bool`` 会找到 ``showBool``，如果我们尝试在 REPL "
-"中评估 ``myShow True`` 可以看到："
+"在这种情况下，搜索 ``MyShow Bool`` 会找到 ``showBool`` ，如果我们尝试在 REPL "
+"中对 ``myShow True`` 求值可以看到："
 
 #: ../../source/updates/updates.rst:431 2b1c419034524d3084f979b2584c561e
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "In fact, this is how interfaces are elaborated. However, ``%hint`` should"
 " be used with care. Too many hints can lead to a large search space!"
-msgstr "事实上，这就是接口的详细说明。然而，``%hint`` "
+msgstr "事实上，这就是接口的详细说明。然而， ``%hint`` "
 "应该小心使用。提示过多会导致搜索空间过大！"
 
 #: ../../source/updates/updates.rst:435 30304765c976412ca8425499ac37806b
-#, fuzzy
 msgid "Record fields"
 msgstr "记录字段"
 
 #: ../../source/updates/updates.rst:437 44b81daa34754919b4253a41aaea3bb3
-#, fuzzy
 msgid "Record fields can now be accessed via a ``.``. For example, if you have:"
 msgstr "现在可以通过 ``.`` 访问记录字段。例如，如果您有："
 
 #: ../../source/updates/updates.rst:446 0b0bf54b6477444fb4fe32192fa0e36d
-#, fuzzy
 msgid ""
 "and you have a record ``fred : Person``, then you can use "
 "``fred.firstName`` to access the ``firstName`` field."
-msgstr "并且您有一条记录“fred:Person”，那么您可以使用“fred."
-"firstName”访问“firstName”字段。"
+msgstr ""
+"并且您有一条记录 ``fred:Person`` ，那么您可以使用 ``fred.firstName`` 访问 "
+"``firstName`` 字段。"
 
 #: ../../source/updates/updates.rst:450 ffd819b4030a4e519e4b188cf62a6488
-#, fuzzy
 msgid "Totality and Coverage"
-msgstr "整体性和覆盖面"
+msgstr "完全性和覆盖性"
 
 #: ../../source/updates/updates.rst:452 4f292240d7df4e2b98fcf78219728a3e
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "``%default covering`` is now the default status, so all functions must "
 "cover all their inputs unless stated otherwise with a ``partial`` "
@@ -729,17 +687,15 @@ msgid ""
 "recommended - use a ``partial`` annotation instead to have the smallest "
 "possible place where functions are partial)."
 msgstr ""
-"``%d 故障覆盖`` 现在是默认状态，因此所有函数必须覆盖所有输入，除非另有说明 "
-"``partial`` 注释，或切换到 ``%d 故障部分``（即不推荐 - 使用 ``partial`` "
-"注释来代替函数是部分的最小可能位置）。"
+"``%default covering`` 现在是默认状态，因此所有函数必须覆盖所有输入，"
+"除非另有说明 ``partial`` 注释，或切换到 ``%default partial``（不推荐 - 使用 "
+"``partial`` 注释来代替函数是部分的最小可能位置）。"
 
 #: ../../source/updates/updates.rst:461 c15e0ec13b8741e39877105c397f2a1d
-#, fuzzy
 msgid "Build artefacts"
-msgstr "构建人工制品"
+msgstr "构建制品"
 
 #: ../../source/updates/updates.rst:463 eaabae93a8fd4575b0813c5f89398ab4
-#, fuzzy
 msgid ""
 "This is not really a language change, but a change in the way Idris saves"
 " checked files, and still useful to know. All checked modules are now "
@@ -749,61 +705,56 @@ msgid ""
 msgstr ""
 "这并不是真正的语言更改，而是 Idris 保存检查文件的方式的更改，并且仍然有用。"
 "所有检查的模块现在都保存在源代码树的根目录中的 build/ttc "
-"目录中，目录结构遵循源目录结构。可执行文件放置在“build/exec”中。"
+"目录中，目录结构遵循源目录结构。可执行文件放置在 ``build/exec`` 中。"
 
 #: ../../source/updates/updates.rst:470 54d96853143045fc9a6876b89d5ae0cd
 msgid "Packages"
 msgstr "包"
 
 #: ../../source/updates/updates.rst:472 73d06c24c60748f9a0cc84feb67c4fee
-#, fuzzy
 msgid ""
 "Dependencies on other packages are now indicated with the ``depends`` "
 "field, the ``pkgs`` field is no longer recognized. Also, fields with URLS"
 " or other string data (other than module or package names), must be "
 "enclosed in double quotes. For example:"
 msgstr ""
-"对其他包的依赖现在用“depends”字段表示，“pkgs”字段不再被识别。此外，具有 URLS "
+"对其他包的依赖现在用 ``depends`` 字段表示， ``pkgs`` 字段不再被识别。此外，"
+"具有 URLS "
 "或其他字符串数据（模块或包名称除外）的字段必须用双引号引起来。例如："
 
 #: ../../source/updates/updates.rst:500 43d3c780a3cd4608a30f3269358ab003
-#, fuzzy
 msgid "New features"
-msgstr "新的功能"
+msgstr "新的特性"
 
 #: ../../source/updates/updates.rst:502 28dc11c84d524688bbcc1ad8124f40a4
-#, fuzzy
 msgid ""
 "As well as the change to the core language to use quantitative type "
 "theory, described above, there are several other new features."
-msgstr "除了将核心语言更改为使用上述定量类型理论之外，还有其他几个新功能。"
+msgstr "除了将核心语言更改为使用上述定量类型理论之外，还有其他几个新特性。"
 
 #: ../../source/updates/updates.rst:508 a10641d3efb24afa8c5b55f20f8559a0
-#, fuzzy
 msgid "Local function definitions"
 msgstr "局部函数定义"
 
 #: ../../source/updates/updates.rst:510 6dd0e1ea96a3445aa8b0f9a88f74eaf3
-#, fuzzy
 msgid ""
 "Functions can now be defined locally, using a ``let`` block. For example,"
 " ``greet`` in the following example, which is defined in the scope of a "
 "local variable ``x``:"
-msgstr "现在可以使用“let”块在本地定义函数。例如，以下示例中的“greet”，它是在局部变量“"
-"x”的范围内定义的："
+msgstr "现在可以使用 ``let`` 块在本地定义函数。例如，以下示例中的 ``greet`` ，"
+"它是在局部变量 ``x`` 的作用域内定义的："
 
 #: ../../source/updates/updates.rst:525 5fac3bc5d6b84c85aaa8f1f52f20a61e
-#, fuzzy
 msgid ""
 "These ``let`` blocks can be used anywhere (in the middle of ``do`` blocks"
 " as above, but also in any function, or in type declarations). ``where`` "
 "blocks are now elaborated by translation into a local ``let``."
 msgstr ""
-"这些“let”块可以在任何地方使用（在上面的“do”块中间，也可以在任何函数中，或在类"
-"型声明中）。 ``where`` 块现在通过翻译成本地 ``let`` 来详细说明。"
+"这些“ ``et`` 块可以在任何地方使用（在上面的 ``do`` "
+"块中间，也可以在任何函数中，或在类型声明中）。 ``where`` "
+"块现在通过翻译成局部 ``let`` 来阐述。"
 
 #: ../../source/updates/updates.rst:529 9b1b8acbbd864e5490d13a5818cf0505
-#, fuzzy
 msgid ""
 "However, Idris no longer attempts to infer types for functions defined in"
 " ``where`` blocks, because this was fragile. This may be reinstated, if "
@@ -813,21 +764,18 @@ msgstr ""
 "我们能想出一个好的、可预测的方法，这可能会被恢复。"
 
 #: ../../source/updates/updates.rst:534 7ca876873ed34684a8dac11e31bcfc84
-#, fuzzy
 msgid "Scope of implicit arguments"
-msgstr "隐式参数的范围"
+msgstr "隐式参数的作用域"
 
 #: ../../source/updates/updates.rst:536 23581d8d35284eb5b99658f35339dcaa
-#, fuzzy
 msgid ""
 "Implicit arguments in a type are now in scope in the body of a "
 "definition. We've already seen this above, where ``n`` is in scope "
 "automatically in the body of ``vlen``:"
-msgstr "类型中的隐式参数现在在定义主体的范围内。我们已经在上面看到了，其中 ``n`` "
-"自动在 ``vlen`` 的主体范围内："
+msgstr "类型中的隐式参数现在在定义主体的作用域内。我们已经在上面看到了，其中 ``n`` "
+"自动在 ``vlen`` 的主体作用域内："
 
 #: ../../source/updates/updates.rst:545 77828db14bc948e9a0b019f3213faf1f
-#, fuzzy
 msgid ""
 "This is important to remember when using ``where`` blocks, or local "
 "definitions, since the names in scope will also be in scope when "
@@ -835,9 +783,9 @@ msgid ""
 "definition, where we attempt to define our own version of ``Show`` for "
 "``Vect``, will fail to type check:"
 msgstr ""
-"在使用 where 块或本地定义时记住这一点很重要，因为在声明本地定义的 *type* "
-"时，范围内的名称也将在范围内。例如，下面的定义，我们试图为 ``Vect`` "
-"定义我们自己的``Show`` 版本，将无法进行类型检查："
+"在使用 ``where`` 块或局部定义时记住这一点很重要，因为在声明局部定义的 *type* "
+"时，作用域内的名称也将在作用域内。例如，下面的定义，我们试图为 ``Vect`` "
+"定义我们自己的 ``Show`` 版本，将无法进行类型检查："
 
 #: ../../source/updates/updates.rst:560 cfb0489e046c4231ac957cae073863d3
 #, fuzzy
@@ -847,9 +795,9 @@ msgid ""
 "clause ``showBody []`` will fail to type check because ``[]`` has length "
 "``Z``, not ``n``. We can fix this by locally binding ``n``:"
 msgstr ""
-"这失败了，因为 ``n`` 已经在范围内，从``showVect`` 的类型，在``showBody`` "
-"的类型声明中，所以第一个子句``showBody []`` 将无法键入检查因为 ``[]`` "
-"的长度是 ``Z``，而不是 ``n``。我们可以通过本地绑定 n 来解决这个问题："
+"这失败了，因为 ``n`` 已经在作用域内，从 ``showVect`` 的类型，在``showBody`` "
+"的类型声明中，所以第一个子句``showBody []`` 将无法通过检查，因为 ``[]`` "
+"的长度是 ``Z``，而不是 ``n`` 。我们可以通过本地绑定 n 来解决这个问题："
 
 #: ../../source/updates/updates.rst:573 9f81674c0e3340b091d309b10e5b9de7
 #, fuzzy
