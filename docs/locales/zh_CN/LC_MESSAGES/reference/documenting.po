@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-12 11:10+0800\n"
-"PO-Revision-Date: 2022-07-25 11:44+0000\n"
+"PO-Revision-Date: 2022-07-28 13:17+0000\n"
 "Last-Translator: admin <467195537@qq.com>\n"
 "Language-Team: Chinese (Simplified) <https://weblate.grass.work:30443/"
 "projects/idris2/referencedocumenting/zh_Hans/>\n"
@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../source/reference/documenting.rst:5 6b55bdcad768410bba65c5eb1148f855
 msgid "Documenting Idris Code"
-msgstr "Idris 代码文档化"
+msgstr "Idris 代码文档"
 
 #: ../../source/reference/documenting.rst:7 b76b8c70b30e4ba08463e219d7c5b998
 msgid ""
