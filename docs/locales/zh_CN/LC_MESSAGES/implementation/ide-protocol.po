@@ -3,18 +3,21 @@
 # This file is distributed under the same license as the Idris2 package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-23 12:38+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2022-08-17 05:54+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"Language-Team: Chinese (Simplified) <https://weblate.grass.work:30443/"
+"projects/idris2/implementationide-protocol/zh_Hans/>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 4.13.1\n"
 "Generated-By: Babel 2.10.3\n"
 
 #: ../source/implementation/ide-protocol.rst:3 86e155058b9e432e895855e4ca4a5670
@@ -620,8 +623,9 @@ msgstr ""
 
 #: ../source/implementation/ide-protocol.rst:235
 #: 0f11e813cecc4cf9b1c50c9234307620
+#, fuzzy
 msgid "``name``"
-msgstr ""
+msgstr "``%name``"
 
 #: ../source/implementation/ide-protocol.rst:236
 #: d3986fbbb47b42cfb2bcdfa64790902d
@@ -830,4 +834,3 @@ msgstr ""
 #~ "``:load-file`` or ``:interpret``. They have"
 #~ " the format:::"
 #~ msgstr ""
-
