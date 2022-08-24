@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: 467195537@qq.com\n"
 "POT-Creation-Date: 2022-07-12 11:10+0800\n"
-"PO-Revision-Date: 2022-07-22 15:46+0000\n"
+"PO-Revision-Date: 2022-08-25 06:52+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Chinese (Simplified) <https://weblate.grass.work:30443/"
 "projects/idris2/backendsbackend-cookbook/zh_Hans/>\n"
@@ -49,6 +49,7 @@ msgstr ""
 
 #: ../../source/backends/backend-cookbook.rst:14
 #: ec092e9e50cc40cfa24058d2f576ac63
+#, fuzzy
 msgid ""
 "The way to extend Idris with new back-ends is to use it as a library. The"
 " module ``Idris.Driver`` exports the function ``mainWithCodegens``, that "
@@ -56,6 +57,10 @@ msgid ""
 " in addition to the built-in ones. The first codegen in the list will be "
 "set as the default codegen."
 msgstr ""
+"使用新后端扩展 Idris 2 的方法是将其用作库。模块 ``Idris.Driver`` 导出函数 "
+"``mainWithCodegens`` ，它接受一个 ``(String, Codegen)`` "
+"列表，除了内置代码之外，还使用这些代码生成器启动\n"
+" idris 。列表中的第一个 codegen 将被设置为默认 codegen。"
 
 #: ../../source/backends/backend-cookbook.rst:20
 #: 14aefb90740441e0b905c8bda28ff660
@@ -843,8 +848,9 @@ msgstr ""
 
 #: ../../source/backends/backend-cookbook.rst:453
 #: 81c62449b8284769b708b20c45e5ba11
+#, fuzzy
 msgid "Case expressions"
-msgstr ""
+msgstr "Case 表达式"
 
 #: ../../source/backends/backend-cookbook.rst:455
 #: 0dee6d29945a48fd9c31be48831854f6
