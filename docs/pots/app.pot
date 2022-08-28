@@ -1,0 +1,448 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-08-28 21:56+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../source/app/exceptionsstate.rst:2
+#: bb6d230bdaf944b7be9cf64f76b8326d
+msgid "Exceptions and State"
+msgstr ""
+
+#: ../source/app/exceptionsstate.rst:4
+#: 35eb024a5a6f4e71b94cfecf2122cf9b
+msgid "``Control.App`` is primarily intended to make it easier to manage the common cases of applications with exceptions and state. We can throw and catch exceptions listed in the list of errors (the ``es`` parameter to ``App``) and introduce new global state."
+msgstr ""
+
+#: ../source/app/exceptionsstate.rst:10
+#: 3e087ebfc64f43a1b65352f97b9819a8
+msgid "Exceptions"
+msgstr ""
+
+#: ../source/app/exceptionsstate.rst:12
+#: 08972c9fa2ba4593a9f7a02e16215424
+msgid "The ``List Error`` is a list of error types, usable via the ``Exception`` interface defined in ``Control.App``:"
+msgstr ""
+
+#: ../source/app/exceptionsstate.rst:21
+#: 86ef8b9c80bb4ba69073753a4da529ca
+msgid "We can use ``throw`` and ``catch`` for some exception type ``err`` as long as the exception type exists in the list of errors. This is checked with the ``HasErr`` predicate, also defined in ``Control.App``:"
+msgstr ""
+
+#: ../source/app/exceptionsstate.rst:33
+#: 8f93c5a4f91a4e5695653b53ed3dee32
+msgid "Note the ``HasErr`` constraint on ``Exception``: this is one place where it is notationally convenient that the ``auto`` implicit mechanism and the interface resolution mechanism are identical in Idris 2. Finally, we can introduce new exception types via ``handle``, which runs a block of code which might throw, handling any exceptions:"
+msgstr ""
+
+#: ../source/app/exceptionsstate.rst:46
+#: ecdfc7539d294e0da92fd6f8416cdf03
+msgid "Adding State"
+msgstr ""
+
+#: ../source/app/exceptionsstate.rst:48
+#: 1459688721e94b20ae7589d5e4c50e3d
+msgid "Applications will typically need to keep track of state, and we support this primitively in ``App`` using a ``State`` type, defined in ``Control.App``:"
+msgstr ""
+
+#: ../source/app/exceptionsstate.rst:56
+#: 112cb81189ae4607b9845f121ef78957
+msgid "The ``tag`` is used purely to distinguish between different states, and is not required at run-time, as explicitly stated in the types of ``get`` and ``put``, which are used to access and update a state:"
+msgstr ""
+
+#: ../source/app/exceptionsstate.rst:65
+#: 038622605d9e43f9b8a3f9ecab689d9d
+msgid "These use an ``auto``-implicit to pass around a ``State`` with the relevant ``tag`` implicitly, so we refer to states by tag alone. In ``helloCount`` earlier, we used an empty type ``Counter`` as the tag:"
+msgstr ""
+
+#: ../source/app/exceptionsstate.rst:74
+#: 13f4546355154ba9a4899f0f7caa634b
+msgid "The list of errors ``e`` is used to ensure that states are only usable in the list of errors in which they are introduced. States are introduced using ``new``:"
+msgstr ""
+
+#: ../source/app/exceptionsstate.rst:82
+#: 1bac24f4997b4e4db0a853994ace8468
+msgid "Note that the type tells us ``new`` runs the program with the state exactly once. Rather than using ``State`` and ``Exception`` directly, however, we typically use interfaces to constrain the operations which are allowed in a list of errors. Internally, ``State`` is implemented via an ``IORef``, primarily for performance reasons."
+msgstr ""
+
+#: ../source/app/index.rst:5
+#: b9d54a8149054d9e842cf3e1e92f5001
+msgid "Structuring Idris 2 Applications"
+msgstr ""
+
+#: ../source/app/index.rst:7
+#: 99bc0c9350dc4937b126b9706bccda8c
+msgid "A tutorial on structuring Idris 2 applications using ``Control.App``."
+msgstr ""
+
+#: ../source/app/index.rst:11
+#: b8cad8bf3475487a94fe5125dfbf3cd7
+msgid "The documentation for Idris has been published under the Creative Commons CC0 License. As such to the extent possible under law, *The Idris Community* has waived all copyright and related or neighboring rights to Documentation for Idris."
+msgstr ""
+
+#: ../source/app/index.rst:16
+#: 4f6ff313f9354c5abc1c3e00cb27d1bf
+msgid "More information concerning the CC0 can be found online at: http://creativecommons.org/publicdomain/zero/1.0/"
+msgstr ""
+
+#: ../source/app/index.rst:21
+#: 04a7276077034420a7b434eb87b95252
+msgid "Idris applications have ``main : IO ()`` as an entry point.  A type ``IO a`` is a description of interactive actions which produce a value of type ``a``. This is fine for primitives, but ``IO`` does not support exceptions so we have to be explicit about how an operation handles failure. Also, if we do want to support exceptions, we also want to explain how exceptions and linearity (see Section :ref:`sect-multiplicities`) interact."
+msgstr ""
+
+#: ../source/app/index.rst:28
+#: 98d70e0f5b1b4d15a447746fb1835f72
+msgid "In this tutorial, we describe a parameterised type ``App`` and a related parameterised type ``App1``, which together allow us to structure larger applications, taking into account both exceptions and linearity. The aims of ``App`` and ``App1`` are that they should:"
+msgstr ""
+
+#: ../source/app/index.rst:33
+#: 1f8ad6976e7147449c7465bc22b11e36
+msgid "make it possible to express what interactions a function does, in its type, without too much notational overhead."
+msgstr ""
+
+#: ../source/app/index.rst:35
+#: 42a76612545043429247468a015bfc6e
+msgid "have little or no performance overhead compared to writing in *IO*."
+msgstr ""
+
+#: ../source/app/index.rst:36
+#: e115784778e94a058fe07b7de5aa9fe2
+msgid "be compatible with other libraries and techniques for describing effects, such as algebraic effects or monad transformers."
+msgstr ""
+
+#: ../source/app/index.rst:38
+#: c44765af7c32408aa0f5c7b5f690cb19
+msgid "be sufficiently easy to use and performant that it can be the basis of *all* libraries that make foreign function calls, much as *IO* is in Idris 1 and Haskell"
+msgstr ""
+
+#: ../source/app/index.rst:41
+#: 511afcc02d694294a68fbbeb49ffadf3
+msgid "be compatible with linear types, meaning that they should express whether a section of code is linear (guaranteed to execute exactly once without throwing an exception) or whether it might throw an exception."
+msgstr ""
+
+#: ../source/app/index.rst:45
+#: b2563ad56ee04d87b0bb94756d581ee2
+msgid "We begin by introducing ``App``, with some small example programs, then show how to extend it with exceptions, state, and other interfaces."
+msgstr ""
+
+#: ../source/app/interfaces.rst:2
+#: 7fce09c0137f4c23aefb100dfa997663
+msgid "Defining Interfaces"
+msgstr ""
+
+#: ../source/app/interfaces.rst:4
+#: 68a8078c1b7441e09cd8dd23298971b8
+msgid "The only way provided by ``Control.App`` to run an ``App`` is via the ``run`` function, which takes a concrete list of errors ``Init``. All concrete extensions to this list of errors are via either ``handle``, to introduce a new exception, or ``new``, to introduce a new state. In order to compose ``App`` programs effectively, rather than introducing concrete exceptions and state in general, we define interfaces for collections of operations which work in a specific list of errors."
+msgstr ""
+
+#: ../source/app/interfaces.rst:14
+#: 0da7b3425d0548cd9d8d23bdd7863b95
+msgid "Example: Console I/O"
+msgstr ""
+
+#: ../source/app/interfaces.rst:16
+#: 6915a29ea5714810a33491c95f18382d
+msgid "We have seen an initial example using the ``Console`` interface, which is declared as follows, in ``Control.App.Console``:"
+msgstr ""
+
+#: ../source/app/interfaces.rst:27
+#: ae67be50856840e59fe52585a5448295
+msgid "It provides primitives for writing to and reading from the console, and generalising the path parameter to ``l`` means that neither can throw an exception, because they have to work in both the ``NoThrow`` and ``MayThrow`` contexts."
+msgstr ""
+
+#: ../source/app/interfaces.rst:32
+#: f126bc3c0dd642fd9e1492c7ce82fe13
+msgid "To implement this for use in a top level ``IO`` program, we need access to primitive ``IO`` operations. The ``Control.App`` library defines a primitive interface for this:"
+msgstr ""
+
+#: ../source/app/interfaces.rst:42
+#: 9104a179e78549f3909801e0fa8b03ce
+msgid "We use ``primIO`` to invoke an ``IO`` function. We also have a ``fork`` primitive, which starts a new thread in a new list of errors supporting ``PrimIO``.  Note that ``fork`` starts a new list of errors ``e'`` so that states are only available in a single thread."
+msgstr ""
+
+#: ../source/app/interfaces.rst:47
+#: 7065ea615ba54a28820a675f93c25258
+msgid "There is an implementation of ``PrimIO`` for a list of errors which can throw the empty type as an exception. This means that if ``PrimIO`` is the only interface available, we cannot throw an exception, which is consistent with the definition of ``IO``. This also allows us to use ``PrimIO`` in the initial list of errors ``Init``."
+msgstr ""
+
+#: ../source/app/interfaces.rst:57
+#: c60063b6852d483f8f74ae1dd3b6ac57
+msgid "Given this, we can implement ``Console`` and run our ``hello`` program in ``IO``. It is implemented as follows in ``Control.App.Console``:"
+msgstr ""
+
+#: ../source/app/interfaces.rst:69
+#: 1709bdb53e0b4079b599b85cb3584345
+msgid "Example: File I/O"
+msgstr ""
+
+#: ../source/app/interfaces.rst:71
+#: 3c993467d6dc4bf9af9ede54973d7105
+msgid "Console I/O can be implemented directly, but most I/O operations can fail. For example, opening a file can fail for several reasons: the file does not exist; the user has the wrong permissions, etc. In Idris, the ``IO`` primitive reflects this in its type:"
+msgstr ""
+
+#: ../source/app/interfaces.rst:80
+#: 510d81a4d6b04d48bc43fdd09b35c76f
+msgid "While precise, this becomes unwieldy when there are long sequences of ``IO`` operations. Using ``App``, we can provide an interface which throws an exception when an operation fails, and guarantee that any exceptions are handled at the top level using ``handle``. We begin by defining the ``FileIO`` interface, in ``Control.App.FileIO``:"
+msgstr ""
+
+#: ../source/app/interfaces.rst:101
+#: 5796e1b86b7942abbae45862c0a56163
+msgid "We use resource bracketing - passing a function to ``withFile`` for working with the opened file - rather than an explicit ``open`` operation, to open a file, to ensure that the file handle is cleaned up on completion."
+msgstr ""
+
+#: ../source/app/interfaces.rst:106
+#: 652fca1b5d8749f68cb52a6adb42a8f8
+msgid "One could also imagine an interface using a linear resource for the file, which might be appropriate in some safety critical contexts, but for most programming tasks, exceptions should suffice. All of the operations can fail, and the interface makes this explicit by saying we can only implement ``FileIO`` if the list of errors supports throwing and catching the ``IOError`` exception. ``IOError`` is defined in ``Control.App``."
+msgstr ""
+
+#: ../source/app/interfaces.rst:114
+#: 0bfc3eeac4674e3193144427f2e35e79
+msgid "For example, we can use this interface to implement ``readFile``, throwing an exception if opening the file fails in ``withFile``:"
+msgstr ""
+
+#: ../source/app/interfaces.rst:130
+#: b654eaaeabdb43debbe0ab62cd343f64
+msgid "Again, this is defined in ``Control.App.FileIO``."
+msgstr ""
+
+#: ../source/app/interfaces.rst:132
+#: 9b6a5c95383e4fe18b4cf289d34cd1dd
+msgid "To implement ``FileIO``, we need access to the primitive operations via ``PrimIO``, and the ability to throw exceptions if any of the operations fail. With this, we can implement ``withFile`` as follows, for example:"
+msgstr ""
+
+#: ../source/app/interfaces.rst:148
+#: 6bc54d0aa61f49cb909f34d3f7fc1ca7
+msgid "Given this implementation of ``FileIO``, we can run ``readFile``, provided that we wrap it in a top level ``handle`` function to deal with any errors thrown by ``readFile``:"
+msgstr ""
+
+#: ../source/app/introapp.rst:2
+#: 9456dfc0f3a94a2e8f3a3279d8c2be4b
+msgid "Introducing App"
+msgstr ""
+
+#: ../source/app/introapp.rst:4
+#: 6a56811defd14f229f08a92e7d48a327
+msgid "``App`` is declared as below, in a module ``Control.App``, which is part of the ``base`` libraries. It is parameterised by an implicit ``Path`` (which states whether the program's execution path is linear or might throw exceptions), which has a ``default`` value that the program might throw, and a ``List Error`` (which gives a list of exception types which can be thrown, ``Error`` is a synonym for ``Type``):"
+msgstr ""
+
+#: ../source/app/introapp.rst:19
+#: 5768d1bdf1434112b26e95e670b96c71
+msgid "It serves the same purpose as ``IO``, but supports throwing and catching exceptions, and allows us to define more constrained interfaces parameterised by the list of errors ``es``. e.g. a program which supports console IO:"
+msgstr ""
+
+#: ../source/app/introapp.rst:29
+#: 34f85ec7789c49fd86ab3fb6738da94f
+msgid "We can use this in a complete program as follows:"
+msgstr ""
+
+#: ../source/app/introapp.rst:44
+#: 6f791a0d669f4e15b28cd8b62f6934c1
+msgid "Or, a program which supports console IO and carries an ``Int`` state, labelled ``Counter``:"
+msgstr ""
+
+#: ../source/app/introapp.rst:58
+#: d1b4236954e546f2a5d068a8554ff488
+msgid "To run this as part of a complete program, we need to initialise the state."
+msgstr ""
+
+#: ../source/app/introapp.rst:65
+#: e6fae569ce074b53b5ea29160fde07d2
+msgid "For convenience, we can list multiple interfaces in one go, using a function ``Has``, defined in ``Control.App``, to compute the interface constraints:"
+msgstr ""
+
+#: ../source/app/introapp.rst:76
+#: cdaad91421ee4c8c8fc3db2663346deb
+msgid "The purpose of ``Path`` is to state whether a program can throw exceptions, so that we can know where it is safe to reference linear resources. It is declared as follows:"
+msgstr ""
+
+#: ../source/app/introapp.rst:84
+#: 516b8b7b670145efb9439066120b8ea1
+msgid "The type of ``App`` states that ``MayThrow`` is the default. We expect this to be the most common case. After all, realistically, most operations have possible failure modes, especially those which interact with the outside world."
+msgstr ""
+
+#: ../source/app/introapp.rst:89
+#: 61ea1b5567594467aea4661a8fa4c730
+msgid "The ``0`` on the declaration of ``Has`` indicates that it can only be run in an erased context, so it will never be run at run-time. To run an ``App`` inside ``IO``, we use an initial list of errors ``Init`` (recall that an ``Error`` is a synonym for ``Type``):"
+msgstr ""
+
+#: ../source/app/introapp.rst:102
+#: 98003c8c6987481eb49d3568baff1394
+msgid "Generalising the ``Path`` parameter with ``l`` means that we can invoke ``run`` for any application, whether the ``Path`` is ``NoThrow`` or ``MayThrow``. But, in practice, all applications given to ``run`` will not throw at the top level, because the only exception type available is the type ``AppHasIO``. Any exceptions will have been introduced and handled inside the ``App``."
+msgstr ""
+
+#: ../source/app/linear.rst:2
+#: c67340197c1442e9802635c51be76c68
+msgid "Linear Resources"
+msgstr ""
+
+#: ../source/app/linear.rst:4
+#: 71c121fa069e4727a81dddd16123125c
+msgid "We have introduced ``App`` for writing interactive programs, using interfaces to constrain which operations are permitted, but have not yet seen the ``Path`` parameter in action. Its purpose is to constrain when programs can throw exceptions, to know where linear resource usage is allowed. The bind operator for ``App`` is defined as follows (not via ``Monad``):"
+msgstr ""
+
+#: ../source/app/linear.rst:20
+#: 74926b183e7b4ff699fe2bc157af7da2
+msgid "The intuition behind this type is that, when sequencing two ``App`` programs:"
+msgstr ""
+
+#: ../source/app/linear.rst:23
+#: 04e9559673ec45c4b92042ddb5c7dd4b
+msgid "if the first action might throw an exception, then the whole program might throw."
+msgstr ""
+
+#: ../source/app/linear.rst:25
+#: 693b6b1973544db6b03fd3cffe56d42e
+msgid "if the first action cannot throw an exception, the second action can still throw, and the program as a whole can throw."
+msgstr ""
+
+#: ../source/app/linear.rst:27
+#: 8103ba77dc984c71aa3443e35aa53500
+msgid "if neither action can throw an exception, the program as a whole cannot throw."
+msgstr ""
+
+#: ../source/app/linear.rst:30
+#: d94402ec63234a9db70ee3732e29e665
+msgid "The reason for the detail in the type is that it is useful to be able to sequence programs with a different ``Path``, but in doing so, we must calculate the resulting ``Path`` accurately. Then, if we want to sequence subprograms with linear variables, we can use an alternative bind operator which guarantees to run the continuation exactly once:"
+msgstr ""
+
+#: ../source/app/linear.rst:42
+#: 61315ee54bb348fd90f29f8637c30e4d
+msgid "To illustrate the need for ``bindL``, we can try writing a program which tracks the state of a secure data store, which requires logging in before reading the data."
+msgstr ""
+
+#: ../source/app/linear.rst:47
+#: 16a8096996154f0d8bfb981403251948
+msgid "Example: a data store requiring a login"
+msgstr ""
+
+#: ../source/app/linear.rst:49
+#: 336039cf7b65413084dfa25de35f4b2f
+msgid "Many software components rely on some form of state, and there may be operations which are only valid in specific states. For example, consider a secure data store in which a user must log in before getting access to some secret data. This system can be in one of two states:"
+msgstr ""
+
+#: ../source/app/linear.rst:54
+#: 2da483d3685546c6bf1b95b68f9b265d
+msgid "``LoggedIn``, in which the user is allowed to read the secret"
+msgstr ""
+
+#: ../source/app/linear.rst:55
+#: f32d8621744e4ea1a0f191457dce7d16
+msgid "``LoggedOut``, in which the user has no access to the secret"
+msgstr ""
+
+#: ../source/app/linear.rst:57
+#: b8b5ad01928e4c68916f7f97891e079f
+msgid "We can provide commands to log in, log out, and read the data, as illustrated in the following diagram:"
+msgstr ""
+
+#: ../source/app/linear.rst:60
+#: b813459616f14a30868990f0bfa65f0c
+msgid "|login|"
+msgstr ""
+
+#: ../source/app/linear.rst:126
+#: 4d8aac8fd0184086b065fefc5666414b
+#: 514a1f0eeba24474b0d00a20e2503546
+msgid "login"
+msgstr ""
+
+#: ../source/app/linear.rst:62
+#: 3dbdb0eed22d465cb4c0d4925b46fc3b
+msgid "The ``login`` command, if it succeeds, moves the overall system state from ``LoggedOut`` to ``LoggedIn``. The ``logout`` command moves the state from ``LoggedIn`` to ``LoggedOut``. Most importantly, the ``readSecret`` command is only valid when the system is in the ``LoggedIn`` state."
+msgstr ""
+
+#: ../source/app/linear.rst:67
+#: b5e64d04f68b49aa89e7cd016e792d34
+msgid "We can represent the state transitions using functions with linear types. To begin, we define an interface for connecting to and disconnecting from a store:"
+msgstr ""
+
+#: ../source/app/linear.rst:78
+#: c07f3a79efc94e7780c7850effa9b435
+msgid "Neither ``connect`` nor ``disconnect`` throw, as shown by generalising over ``l``. Once we have a connection, we can use the following functions to access the resource directly:"
+msgstr ""
+
+#: ../source/app/linear.rst:94
+#: ec97e173434647f58f27977a5397cd9d
+msgid "``Res`` is defined in the Prelude, since it is commonly useful.  It is a dependent pair type, which associates a value with a linear resource. We'll leave the other definitions abstract, for the purposes of this introductory example."
+msgstr ""
+
+#: ../source/app/linear.rst:99
+#: 6129eae5431b410fa5f213a3509da842
+msgid "The following listing shows a complete program accessing the store, which reads a password, accesses the store if the password is correct and prints the secret data. It uses ``let (>>=) = bindL`` to redefine ``do``-notation locally."
+msgstr ""
+
+#: ../source/app/linear.rst:119
+#: ba10d31af905426e90d3bb73a8ff2fed
+msgid "If we omit the ``let (>>=) = bindL``, it will use the default ``(>>=)`` operator, which allows the continuation to be run multiple times, which would mean that ``s`` is not guaranteed to be accessed linearly, and ``storeProg`` would not type check. We can safely use ``getStr`` and ``putStr`` because they are guaranteed not to throw by the ``Path`` parameter in their types."
+msgstr ""
+
+#: ../source/app/linear.rst:130
+#: 16a59a302f574fa0a743dc875b04f637
+msgid "App1: Linear Interfaces"
+msgstr ""
+
+#: ../source/app/linear.rst:132
+#: a84075c3fd214d90ac3b9e12d1f747a1
+msgid "Adding the ``bindL`` function to allow locally rebinding the ``(>>=)`` operator allows us to combine existing linear resource programs with operations in ``App`` - at least, those that don't throw. It would nevertheless be nice to interoperate more directly with ``App``. One advantage of defining interfaces is that we can provide multiple implementations for different contexts, but our implementation of the data store uses primitive functions (which we left undefined in any case) to access the store."
+msgstr ""
+
+#: ../source/app/linear.rst:141
+#: d520685d209e4c47a9aa7500db3bb4a8
+msgid "To allow control over linear resources, ``Control.App`` provides an alternative parameterised type ``App1``:"
+msgstr ""
+
+#: ../source/app/linear.rst:149
+#: 95830cb8e95f4ded895f4c147b01e959
+msgid "There is no need for a ``Path`` argument, since linear programs can never throw. The ``Usage`` argument states whether the value returned is to be used once, or has unrestricted usage, with the default in ``App1`` being to use once:"
+msgstr ""
+
+#: ../source/app/linear.rst:158
+#: 85a885101b5e4db5ac41f1b8b37507d5
+msgid "The main difference from ``App`` is the ``(>>=)`` operator, which has a different multiplicity for the variable bound by the continuation depending on the usage of the first action:"
+msgstr ""
+
+#: ../source/app/linear.rst:171
+#: 9975ae63407043b0b3f679cd465bf8d7
+msgid "``Cont1Type`` returns a continuation which uses the argument linearly, if the first ``App1`` program has usage ``One``, otherwise it returns a continuation where argument usage is unrestricted. Either way, because there may be linear resources in scope, the continuation is run exactly once and there can be no exceptions thrown."
+msgstr ""
+
+#: ../source/app/linear.rst:177
+#: 66921b1528674047b0cc87d4740f1743
+msgid "Using ``App1``, we can define all of the data store operations in a single interface, as shown in the following listing. Each operation other than ``disconnect`` returns a `linear` resource."
+msgstr ""
+
+#: ../source/app/linear.rst:193
+#: f2c1369cd97f40689634b41fd1ac4fa7
+msgid "We can explicitly move between ``App`` and ``App1``:"
+msgstr ""
+
+#: ../source/app/linear.rst:200
+#: 01b1e4a37b1c4a288acf3472c8e502dd
+msgid "We can run an ``App`` program using ``app``, inside ``App1``, provided that it is guaranteed not to throw. Similarly, we can run an ``App1`` program using ``app1``, inside ``App``, provided that the value it returns has unrestricted usage. So, for example, we can write:"
+msgstr ""
+
+#: ../source/app/linear.rst:214
+#: 96a6cdbd7f084805b62ad21e252670cb
+msgid "This uses ``app1`` to state that the body of the program is linear, then ``app`` to state that the ``putStr`` operation is in ``App``. We can see that ``connect`` returns a linear resource by inspecting the hole ``what_next``, which also shows that we are running inside ``App1``:"
+msgstr ""
+
+#: ../source/app/linear.rst:227
+#: fedb4ca58e474230981d24424567fe39
+msgid "For completeness, one way to implement the interface is as follows, with hard coded password and internal data:"
+msgstr ""
+
+#: ../source/app/linear.rst:247
+#: 93054fe65c524ed4b9ab84960ca87139
+msgid "Then we can run it in ``main``:"
+msgstr ""

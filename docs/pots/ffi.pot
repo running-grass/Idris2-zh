@@ -1,0 +1,599 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-08-28 21:56+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../source/ffi/ffi.rst:3
+#: 1fb3a540634d490bad9b84056f20f9c9
+msgid "FFI Overview"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:5
+#: f98cc1912672427280991a099ce0c90c
+msgid "Foreign functions are declared with the ``%foreign`` directive, which takes the following general form:"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:13
+#: 6cd1769516ab433589e4f407b4f2dbe4
+msgid "The specifier is an Idris ``String`` which says in which language the foreign function is written, what it's called, and where to find it. There may be more than one specifier, and a code generator is free to choose any specifier it understands - or even ignore the specifiers completely and use their own approach. In general, a specifier has the form \"Language:name,library\". For example, in C:"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:25
+#: 5b69d17e95174922b6a722662e772066
+msgid "It is up to specific code generators to decide how to locate the function and the library. In this document, we will assume the default Chez Scheme code generator (the examples also work with the Racket or Gambit code generator) and that the foreign language is C."
+msgstr ""
+
+#: ../source/ffi/ffi.rst:31
+#: 94b1bf2282a64578b1364709f3f69b61
+msgid "Scheme Sidenote"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:33
+#: 993eb4a371ed49359330518640705d2d
+msgid "Scheme foreign specifiers can be written to target particular flavors."
+msgstr ""
+
+#: ../source/ffi/ffi.rst:35
+#: da48f694dac34072a664914dc5f62d18
+msgid "The following example shows a foreign declaration that allocates memory in a way specific to the choice of code generator. In this example there is no general scheme specifier present that matches every flavor, e.g. ``scheme:foo``, so it  will only match the specific flavors listed:"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:48
+#: d8fc0cc844784682948b1c095eadd209
+msgid "If your backend (code generator) is not specified but defines a C FFI it will be able to make use of the ``C:malloc,libc`` specifier."
+msgstr ""
+
+#: ../source/ffi/ffi.rst:52
+#: da01834dec844c93913ab3e358a0bac9
+msgid "C Sidenote"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:54
+#: f40fe99f325b4a459e1500cf6bdc461b
+msgid "The ``C`` language specifier is used for common functions that may be used by any backend which can, in turn, FFI out to C. For example, Scheme."
+msgstr ""
+
+#: ../source/ffi/ffi.rst:57
+#: 45bf289abfa7496fa1bb1e9bc7314d20
+msgid "The common C functions do no automatic memory management, deferring that to the individual backends."
+msgstr ""
+
+#: ../source/ffi/ffi.rst:60
+#: 1b77aab10c964931900730b38726b00e
+msgid "The standard C backend is known as \"RefC\", and uses the ``RefC`` language specifier."
+msgstr ""
+
+#: ../source/ffi/ffi.rst:64
+#: 6e6d8f79d6dc4b4ebb129f3da10ffb6d
+msgid "FFI Example"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:66
+#: 5a6a627d152646babbadddae2abd8eae
+msgid "As a running example, we are going to work with a small C file. Save the following content to a file ``smallc.c``"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:82
+#: cd8b334476ec4a3199e3b62c9c795672
+msgid "Then, compile it to a shared library with::"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:86
+#: 1381006c4f8a44df8209c059e560155f
+msgid "We can now write an Idris program which calls each of these. First, we'll write a small program which uses ``add`` to add two integers:"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:97
+#: b2f7d5b2aeff4ccca0c515cd29bf531c
+msgid "The ``%foreign`` declaration states that ``add`` is written in C, with the name ``add`` in the library ``libsmall``. As long as the run time is able to locate ``libsmall.so`` (in practice it looks in the current directory and the system library paths) we can run this at the REPL:"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:107
+#: db9079da813042189ea1268fb890a883
+msgid "Note that it is the programmer's responsibility to make sure that the Idris function and C function have corresponding types. There is no way for the machine to check this! If you get it wrong, you will get unpredictable behaviour."
+msgstr ""
+
+#: ../source/ffi/ffi.rst:112
+#: ca8af434ad1c42e6bd10ff525152d09d
+msgid "Since ``add`` has no side effects, we've given it a return type of ``Int``. But what if the function has some effect on the outside world, like ``addWithMessage``? In this case, we use ``PrimIO Int`` to say that it returns a primitive IO action:"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:122
+#: de889edcd3f04fb1a8eb66015ac56019
+msgid "Internally, ``PrimIO Int`` is a function which takes the current (linear) state of the world, and returns an ``Int`` with an updated state of the world. In general, ``IO`` operations in an Idris program are defined as instances of the ``HasIO`` interface. We can convert a primitive operation to one usable in ``HasIO`` using ``primIO``:"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:132
+#: a79cf92866d74bc286dc41144024a8cd
+msgid "So, we can extend our program as follows:"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:145
+#: 332ea592a8304bc0ab3eb9b879a1db65
+msgid "It is up to the programmer to declare which functions are pure, and which have side effects, via ``PrimIO``. Executing this gives:"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:154
+#: 1e82cf22261c4a8494afee8054e9326d
+msgid "We have seen two specifiers for foreign functions:"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:161
+#: 032761c79aa547b09f40f388c76f70bc
+msgid "These both have the same form: ``\"C:[name],libsmall\"`` so instead of writing the concrete ``String``, we write a function to compute the specifier, and use that instead:"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:179
+#: d17e8e810a4c499292090a17391f412e
+msgid "Primitive FFI Types"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:181
+#: d5ed30566c0746a38f266c2b6d0f5bc3
+msgid "The types which can be passed to and returned from foreign functions are restricted to those which it is reasonable to assume any back end can handle. In practice, this means most primitive types, and a limited selection of others.  Argument types can be any of the following primitives:"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:186
+#: ../source/ffi/ffi.rst:414
+#: 1d8d8fefc5ac4dc3a8729f9aa74fe76c
+#: 19d03656e5d2449eacc8d461cb2cd56a
+msgid "``Int``"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:187
+#: ../source/ffi/ffi.rst:415
+#: a039b91f3e644d6bbe7622973c51d130
+#: 0a543e6d842d4c17a4b1d680513e81ed
+msgid "``Char``"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:188
+#: 56be652e95d74928ba77f036fadfc335
+msgid "``Double`` (as ``double`` in C)"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:189
+#: ../source/ffi/ffi.rst:417
+#: 49f419f9fb7942559eb0b281a134a3e0
+#: 183f23d71f764366a80f6fcc4fdaa6c2
+msgid "``Bits8``"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:190
+#: ../source/ffi/ffi.rst:418
+#: 34ab388071d14c44b5a7334c414ed96d
+#: 3a88038c08f64bf7826a2697cb4f9ec7
+msgid "``Bits16``"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:191
+#: ../source/ffi/ffi.rst:419
+#: f83218198d6d44e8b533d54209d8b869
+#: f4ffe303ceae426085c22aa7b9ec072a
+msgid "``Bits32``"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:192
+#: ../source/ffi/ffi.rst:420
+#: 9d5e67ebc2e547f6818a361079a43881
+#: b4e52a1822694187ada579ef654e437f
+msgid "``Bits64``"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:193
+#: 6ed130f9029549238eff2e6835ea73d6
+msgid "``String`` (as ``char*`` in C)"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:194
+#: c8bc7a84c87b4250868bb18f849efd31
+msgid "``Ptr t`` and ``AnyPtr`` (both as ``void*`` in C)"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:196
+#: 3e0ada00b6134a299dbb6b7c7cc4b708
+msgid "Return types can be any of the above, plus:"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:198
+#: 26508fe32bc14e54aa33f1d372bc6ad4
+msgid "``()``"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:199
+#: 3f5ecd14104e4eddb351363dd5790be0
+msgid "``PrimIO t``, where ``t`` is a valid return type other than a ``PrimIO``."
+msgstr ""
+
+#: ../source/ffi/ffi.rst:201
+#: f9065b8470ee42e9a9a5c1ff4ba55de3
+msgid "Handling ``String`` leads to some complications, for a number of reasons:"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:203
+#: 22031d3b418c4a10bd34c9bc92302192
+msgid "Strings can have multiple encodings. In the Idris run time, Strings are encoded as UTF-8, but C makes no assumptions."
+msgstr ""
+
+#: ../source/ffi/ffi.rst:205
+#: 31f0e0ca150f46988e69bf748f5acb60
+msgid "It is not always clear who is responsible for freeing a ``String`` allocated by a C function."
+msgstr ""
+
+#: ../source/ffi/ffi.rst:207
+#: 90467c3997024d79baeeea0bcdcc0743
+msgid "In C, strings can be ``NULL``, but Idris strings always have a value."
+msgstr ""
+
+#: ../source/ffi/ffi.rst:209
+#: fd0c610bfe64442c8ef3ac1a71e5c334
+msgid "So, when passing ``String`` to and from C, remember the following:"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:211
+#: 6459bb5c0a13427386c861b9f05393bc
+msgid "A ``char*`` returned by a C function will be copied to the Idris heap, and the Idris run time immediately calls ``free`` with the returned ``char*``."
+msgstr ""
+
+#: ../source/ffi/ffi.rst:213
+#: 612442b4c1d744878b67f8174cfb1252
+msgid "If a ``char*`` might be ``NULL`` in ``C``, use ``Ptr String`` rather than ``String``."
+msgstr ""
+
+#: ../source/ffi/ffi.rst:216
+#: 6ded84f2aacb4828a191dbad267c75a8
+msgid "When using ``Ptr String``, the value will be passed as a ``void*``, and therefore not accessible directly by Idris code. This is to protect against accidentally trying to use ``NULL`` as a ``String``. You can nevertheless work with them and convert to ``String`` via foreign functions of the following form:"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:236
+#: fc81908c54eb4759b66ae5a2b376992d
+msgid "For an example, see the sample :ref:`sect-readline` bindings."
+msgstr ""
+
+#: ../source/ffi/ffi.rst:238
+#: 244dc79782724f87b098c0c64b3b9538
+msgid "Additionally, foreign functions can take *callbacks*, and take and return C ``struct`` pointers."
+msgstr ""
+
+#: ../source/ffi/ffi.rst:244
+#: 0b0dabe2942543c6be3de533a35b3735
+msgid "Callbacks"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:246
+#: 85afb54a94684df68bed2ad7e0838955
+msgid "It is often useful in C for a function to take a *callback*, that is a function which is called after doing some work. For example, we can write a function which takes a callback that takes a ``char*`` and an ``int`` and returns a ``char*``, in C, as follows (added to ``smallc.c`` above):"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:260
+#: ffd7b1de2e3a4cae8770a29187079b12
+msgid "Then, we can access this from Idris by declaring it as a ``%foreign`` function and wrapping it in the ``HasIO`` interface, with the C function calling the Idris function as the callback:"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:273
+#: 99a1e73347cf4db3ac690c3d097ef334
+msgid "For example, we can try this as follows:"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:291
+#: ffa635fcd7d641d7a877c6adedca0bf9
+msgid "As a variant, the callback could have a side effect:"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:299
+#: a52daaaee3a7406aaafec5d3b25b6c09
+msgid "This is a little more fiddly to lift to a ``HasIO`` function, due to the callback, but we can do so using ``toPrim : IO a -> PrimIO a``:"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:308
+#: b8c9953d2637446ea7269c4fddf40776
+msgid "Note that the callback is explicitly in ``IO`` here, since ``HasIO`` doesn't have a general method for extracting the primitive ``IO`` operation."
+msgstr ""
+
+#: ../source/ffi/ffi.rst:311
+#: cd8b0fe326fb4c31914773c40ce409f0
+msgid "For example, we can extend the above ``pluralise`` example to print a message in the callback:"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:332
+#: d61d6f93a0184752b80031770fb5a0c8
+msgid "Structs"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:334
+#: 2e802831a1374b9b82b575c7919a7b45
+msgid "Many C APIs pass around more complex data structures, as a ``struct``. We do not aim to be completely general in the C types we support, because this will make it harder to write code which is portable across multiple back ends. However, it is still often useful to be able to access a ``struct`` directly. For example, add the following to the top of ``smallc.c``, and rebuild ``libsmall.so``:"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:361
+#: 2c017625f8364d75b91b45692abac647
+msgid "We can define a type for accessing ``point`` in Idris by importing ``System.FFI`` and using the ``Struct`` type, as follows:"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:378
+#: 8c66ff78aad044c9b515eb88ce990bf1
+msgid "The ``Point`` type in Idris now corresponds to ``point*`` in C. Fields can be read and written using the following, also from ``System.FFI``:"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:388
+#: 5497c0ff242543cc94d27b21c4c25b64
+msgid "Notice that fields are accessed by name, and must be available in the struct, given the constraint ``FieldType n ty fs``, which states that the field named ``n`` has type ``ty`` in the structure fields ``fs``. So, we can display a ``Point`` as follows by accessing the fields directly:"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:401
+#: 8e4c4304c0264497a4c71baf6edd9782
+msgid "And, as a complete example, we can initialise, update, display and delete a ``Point`` as follows:"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:412
+#: 4c3a4709be6e476b80ef3345424abb1b
+msgid "The field types of a ``Struct`` can be any of the following:"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:416
+#: bd6090ba85064ea3a3a9cb4a0bda272a
+msgid "``Double`` (``double`` in C)"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:421
+#: b0efaf1d741b42acad32a0e3f0cde8dc
+msgid "``Ptr a`` or ``AnyPtr`` (``void*`` in C)"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:422
+#: c93ce4e7a43440fab525283706117d25
+msgid "Another ``Struct``, which is a pointer to a ``struct`` in C"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:424
+#: 7d17efe3263642ff90e2d32b6714a79d
+msgid "Note that this doesn't include ``String`` or function types! This is primarily because these aren't directly supported by the Chez back end. However, you can use another pointer type and convert. For example, assuming you have, in C:"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:435
+#: cd2247ccf6d045f585972a120b41822e
+msgid "You can represent this in Idris as:"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:445
+#: 28a39585b6cd4961958a47a55d35c55b
+msgid "That is, using a ``Ptr String`` instead of a ``String`` directly. Then you can convert between a ``void*`` and a ``char*`` in C:"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:454
+#: 34558a72fe204cf88a1a2baf895dc619
+msgid "...and use this to convert to a ``String`` in Idris:"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:463
+#: f0768e94e28a48e9a9f7bb0c349180a5
+msgid "Finalisers"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:465
+#: 41d259c61dc64d0c93cc5624df6f1bac
+msgid "In some libraries, a foreign function creates a pointer and the caller is responsible for freeing it. In this case, you can make an explicit foreign call to ``free``. However, this is not always convenient, or even possible. Instead, you can ask the Idris run-time to be responsible for freeing the pointer when it is no longer accessible, using ``onCollect`` (or its typeless variant ``onCollectAny``) defined in the Prelude:"
+msgstr ""
+
+#: ../source/ffi/ffi.rst:477
+#: f8d03ab6458040a9a7703013d8b8136c
+msgid "A ``GCPtr t`` behaves exactly like ``Ptr t`` when passed to a foreign function (and, similarly, ``GCAnyPtr`` behaves like ``AnyPtr``). A foreign function cannot return a ``GCPtr`` however, because then we can no longer assume the pointer is completely managed by the Idris run-time."
+msgstr ""
+
+#: ../source/ffi/ffi.rst:482
+#: e6bfdf3307b0476daf82928b69ae0bd5
+msgid "The finaliser is called either when the garbage collector determines that the pointer is no longer accessible, or at the end of execution."
+msgstr ""
+
+#: ../source/ffi/ffi.rst:485
+#: 6d9fb96b3bdf488a9c338f9ffe3f9b00
+msgid "Note that finalisers might not be supported by all back ends, since they depend on the facilities offered by a specific back end's run time system. They are certainly supported in the Chez Scheme and Racket back ends."
+msgstr ""
+
+#: ../source/ffi/index.rst:3
+#: b9a30701f4214f7ea5d8f65e0d1beac0
+msgid "Foreign Function Interface"
+msgstr ""
+
+#: ../source/ffi/index.rst:7
+#: 6843df425ff94108b36cfc6250a51938
+msgid "The documentation for Idris has been published under the Creative Commons CC0 License. As such to the extent possible under law, *The Idris Community* has waived all copyright and related or neighboring rights to Documentation for Idris."
+msgstr ""
+
+#: ../source/ffi/index.rst:12
+#: fd215ff15e3e42edbbeebb16e6beb0d3
+msgid "More information concerning the CC0 can be found online at: http://creativecommons.org/publicdomain/zero/1.0/"
+msgstr ""
+
+#: ../source/ffi/index.rst:14
+#: 6674d924cac040e5880316744685ba32
+msgid "Idris 2 is designed to support multiple code generators. The default target is Chez Scheme, with Racket and Gambit code generators also supported. However, the intention is, as with Idris 1, to support multiple targets on multiple platforms, including e.g. JavaScript, JVM, .NET, and others yet to be invented. This makes the design of a foreign function interface (FFI), which calls functions in other languages, a little challenging, since ideally it will support all possible targets!"
+msgstr ""
+
+#: ../source/ffi/index.rst:22
+#: 7399260b831a406084f500e4e2fc7a13
+msgid "To this end, the Idris 2 FFI aims to be flexible and adaptable, while still supporting most common requirements without too much need for \"glue\" code in the foreign language."
+msgstr ""
+
+#: ../source/ffi/readline.rst:5
+#: 7cce367552864c45b99251a561fa631b
+msgid "Example: Minimal Readline Bindings"
+msgstr ""
+
+#: ../source/ffi/readline.rst:7
+#: 5b6a3f8efc8046748091284eb77240ef
+msgid "In this section, we'll see how to create bindings for a C library (the `GNU Readline <https://tiswww.case.edu/php/chet/readline/rltop.html>`_ library) in Idris, and make them available in a package. We'll only create the most minimal bindings, but nevertheless they demonstrate some of the trickier problems in creating bindings to a C library, in that they need to handle memory allocation of ``String``."
+msgstr ""
+
+#: ../source/ffi/readline.rst:14
+#: 59a7cf0f84df47dbb6fb97c957967ce8
+msgid "You can find the example in full in the Idris 2 source repository, in `samples/FFI-readline <https://github.com/edwinb/Idris2/tree/master/samples/FFI-readline>`_. As a minimal example, this can be used as a starting point for other C library bindings."
+msgstr ""
+
+#: ../source/ffi/readline.rst:20
+#: dc3a8ae2c19441cd838de6dcecb7529a
+msgid "We are going to provide bindings to the following functions in the Readline API, available via ``#include <readline/readline.h>``:"
+msgstr ""
+
+#: ../source/ffi/readline.rst:28
+#: 84024cdb6efa4ecfa6d78baf74da1097
+msgid "Additionally, we are going to support tab completion, which in the Readline API is achieved by setting a global variable to a callback function (see Section :ref:`sect-callbacks`) which explains how to handle the completion:"
+msgstr ""
+
+#: ../source/ffi/readline.rst:38
+#: 9b6343eeb45e4ec99009762fb0579d2b
+msgid "A completion function takes a ``String``, which is the text to complete, and an ``Int``, which is the number of times it has asked for a completion so far. In Idris, this could be a function ``complete : String -> Int -> IO String``. So, for example, if the text so far is ``\"id\"``, and the possible completions are ``idiomatic`` and ``idris``, then ``complete \"id\" 0`` would produce the string ``\"idiomatic\"`` and ``complete \"id\" 1`` would produce ``\"idris\"``."
+msgstr ""
+
+#: ../source/ffi/readline.rst:45
+#: 61d79f674b344ecc834aa7b814f5da94
+msgid "We will define *glue* functions in a C file ``idris_readline.c``, which compiles to a shared object ``libidrisreadline``, so we write a function for locating the C functions:"
+msgstr ""
+
+#: ../source/ffi/readline.rst:54
+#: 9284e2c8c1474209b6696dd3af6a77b5
+msgid "Each of the foreign bindings will have a ``%foreign`` specifier which locates functions via ``rlib``."
+msgstr ""
+
+#: ../source/ffi/readline.rst:58
+#: c628e3c7532c442e96d72ff74b9e5df1
+msgid "Basic behaviour: Reading input, and history"
+msgstr ""
+
+#: ../source/ffi/readline.rst:60
+#: e5cdbd915fe14fb5ba594146273ce272
+msgid "We can start by writing a binding for ``readline`` directly. It's interactive, so needs to return a ``PrimIO``:"
+msgstr ""
+
+#: ../source/ffi/readline.rst:68
+#: 4e36f9a67d4b47dc9286e26a2fc30c13
+msgid "Then, we can write an ``IO`` wrapper:"
+msgstr ""
+
+#: ../source/ffi/readline.rst:75
+#: ae401df0cbce416b845465eba91b0755
+msgid "Unfortunately, this isn't quite good enough! The C ``readline`` function returns a ``NULL`` string if there is no input due to encountering an end of file. So, we need to handle that - if we don't, we'll get a crash on encountering end of file (remember: it's the Idris programmer's responsibility to give an appropriate type to the C binding!)"
+msgstr ""
+
+#: ../source/ffi/readline.rst:81
+#: 717869697a294d2eba1a9714166306cc
+msgid "Instead, we need to use a ``Ptr`` to say that it might be a ``NULL`` pointer (see Section :ref:`sect-ffi-string`):"
+msgstr ""
+
+#: ../source/ffi/readline.rst:89
+#: ca124258fa6644f1885a273daf06d47f
+msgid "We also need to provide a way to check whether the returned ``Ptr String`` is ``NULL``. To do so, we'll write some glue code to convert back and forth between ``Ptr String`` and ``String``, in a file ``idris_readline.c`` and a corresponding header ``idris_readline.h``. In ``idris_readline.h`` we have:"
+msgstr ""
+
+#: ../source/ffi/readline.rst:101
+#: 8ae862342eb24aad9d8e2d09da4e3c88
+msgid "Correspondingly, in ``idris_readline.c``:"
+msgstr ""
+
+#: ../source/ffi/readline.rst:121
+#: 200536b49d4c43e7ab12914b669112b2
+msgid "Now, we can use ``prim__readline`` as follows, with a safe API, checking whether the result it returns is ``NULL`` or a concrete ``String``:"
+msgstr ""
+
+#: ../source/ffi/readline.rst:141
+#: 22c93e6f9d05433ba8ab733a62f320aa
+msgid "We'll need ``nullString`` and ``mkString`` later, for dealing with completions."
+msgstr ""
+
+#: ../source/ffi/readline.rst:143
+#: 13a9389b658847d39516f88c60f50618
+msgid "Once we've read a string, we'll want to add it to the input history. We can provide a binding to ``add_history`` as follows:"
+msgstr ""
+
+#: ../source/ffi/readline.rst:155
+#: 02c569be8d974702938d8e2260ff8c8a
+msgid "In this case, since Idris is in control of the ``String``, we know it's not going to be ``NULL``, so we can add it directly."
+msgstr ""
+
+#: ../source/ffi/readline.rst:158
+#: 1d592797b1c24186ab3c2c8426bf0381
+msgid "A small ``readline`` program that reads input, and echoes it, recording input history for non-empty inputs, can be written as follows:"
+msgstr ""
+
+#: ../source/ffi/readline.rst:173
+#: d62b372df0504fc493905b514b6364ba
+msgid "This gives us command history, and command line editing, but Readline becomes much more useful when we add tab completion. The default tab completion, which is available even in the small example above, is to tab complete file names in the current working directory. But for any realistic application, we probably want to tab complete other commands, such as function names, references to local data, or anything that is appropriate for the application."
+msgstr ""
+
+#: ../source/ffi/readline.rst:181
+#: d602ba22065d441d8a8f56e7de2d6c8d
+msgid "Completions"
+msgstr ""
+
+#: ../source/ffi/readline.rst:183
+#: 0da557c74f6f4bb7ac623b625d8d43da
+msgid "Readline has a large API, with several ways of supporting tab completion, typically involving setting a global variable to an appropriate completion function. We'll use the following:"
+msgstr ""
+
+#: ../source/ffi/readline.rst:192
+#: a65527f749964bfaa3925e1be242c528
+msgid "The completion function takes the prefix of the completion, and the number of times it has been called so far on this prefix, and returns the next completion, or ``NULL`` if there are no more completions. An Idris equivalent would therefore have the following type:"
+msgstr ""
+
+#: ../source/ffi/readline.rst:201
+#: 2ba1fd12f9cf4c339604718570b79459
+msgid "The function returns ``Nothing`` if there are no more completions, or ``Just str`` for some ``str`` if there is another one for the current input."
+msgstr ""
+
+#: ../source/ffi/readline.rst:205
+#: e269edbc98cc4c41b140123107a6bfbe
+msgid "We might hope that it's a matter of defining a function to assign the completion function..."
+msgstr ""
+
+#: ../source/ffi/readline.rst:214
+#: 284fdd72706a4243a14db3625a6db620
+msgid "...then defining the Idris binding, which needs to take into account that the Readline library expects ``NULL`` when there are no more completions:"
+msgstr ""
+
+#: ../source/ffi/readline.rst:231
+#: 4c6b03f147394d60af8330b6d759862c
+msgid "So, we turn ``Nothing`` into ``nullString`` and ``Just str`` into ``mkString str``. Unfortunately, this doesn't quite work. To see what goes wrong, let's try it for the most basic completion function that returns one completion no matter what the input:"
+msgstr ""
+
+#: ../source/ffi/readline.rst:242
+#: 0630383dd94d4a57aa34910bfc2b4d9e
+msgid "We'll try this in a small modification of ``echoLoop`` above, setting a completion function first:"
+msgstr ""
+
+#: ../source/ffi/readline.rst:251
+#: 6c3dc18e08934fba981995e0e909d706
+msgid "We see that there is a problem when we try running it, and hitting TAB before entering anything:"
+msgstr ""
+
+#: ../source/ffi/readline.rst:259
+#: 02c2a61f629b4cbf89ed3130badfbf07
+msgid "The Idris code which sets up the completion is fine, but there is a problem with the memory allocation in the C glue code."
+msgstr ""
+
+#: ../source/ffi/readline.rst:262
+#: dac47a69db6b47f688f53ba75aa02b53
+msgid "This problem arises because we haven't thought carefully enough about which parts of our program are responsible for allocating and freeing strings. When Idris calls a foreign function that returns a string, it copies the string to the Idris heap and frees it immediately. But, if the foreign library also frees the string, it ends up being freed twice. This is what's happening here: the callback passed to ``prim__setCompletion`` frees the string and puts it onto the Idris heap, but Readline also frees the string returned by ``prim__setCompletion`` once it has processed it. We can solve this problem by writing a wrapper for the completion function which reallocates the string, and using that in ``idrisrl_setCompletion`` instead."
+msgstr ""
+
+#: ../source/ffi/readline.rst:296
+#: 341248320fe74660861799085922c856
+msgid "So, we define the completion function in C, which calls the Idris completion function then makes sure the string returned by the Idris function is copied to the C heap."
+msgstr ""
+
+#: ../source/ffi/readline.rst:300
+#: 3dd690fcde5d4382b084cb58f11c64e1
+msgid "We now have a primitive API that covers the most fundamental features of the readline API:"
+msgstr ""
