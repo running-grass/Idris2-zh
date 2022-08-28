@@ -298,5 +298,5 @@ epub_exclude_files = ['search.html']
 #epub_use_index = True
 
 gettext_uuid = True
-gettext_compact = False
+gettext_compact = True
 locale_dirs = ["../locales"]
