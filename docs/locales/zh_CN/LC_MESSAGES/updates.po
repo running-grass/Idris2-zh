@@ -3,23 +3,26 @@
 # This file is distributed under the same license as the Idris2 package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-08-28 21:56+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2022-08-29 09:22+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"Language-Team: Chinese (Simplified) <https://weblate.grass.work:30443/"
+"projects/idris/updates/zh_Hans/>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 4.13.1\n"
 "Generated-By: Babel 2.10.3\n"
 
 #: ../source/updates/updates.rst:5 b5b6756a02a743859f74284e9b16ab9a
 msgid "Changes since Idris 1"
-msgstr ""
+msgstr "自 Idris 1 以来的变化"
 
 #: ../source/updates/updates.rst:7 8ad02cba97f342b8ad406aeb9f07c2ce
 msgid ""
@@ -28,6 +31,9 @@ msgid ""
 "of likelihood of encountering them in practice. New features are "
 "described at the end, in Section :ref:`sect-new-features`."
 msgstr ""
+"Idris 2 主要向后兼容 Idris 1，但有一些小例外。本文档描述了这些变化，大致按照"
+"在实践中遇到它们的可能性排序。新特性在最后的章节 :ref:`sect-new-features` "
+"中描述。"
 
 #: ../source/updates/updates.rst:12 c013fc9acb6649708948334edbd4a228
 msgid ""
@@ -36,6 +42,10 @@ msgid ""
 "<https://www.manning.com/books/type-driven-development-with-idris>`_ by "
 "Edwin Brady, available from `Manning <https://www.manning.com>`_."
 msgstr ""
+":ref:`typedd-index` 章节描述了这些更改如何影响由 Edwin Brady 撰写的 `《使用 "
+"Idris 进行类型驱动开发》 <https://www.manning.com/books/type-driven-"
+"development-with-idris> `_ 一书中的代码，可从 `Manning <https://www.manning."
+"com>`_ 获得。"
 
 #: ../source/updates/updates.rst:17 9797be60e9ec4b0e817edbae1b575033
 msgid ""
@@ -44,16 +54,19 @@ msgid ""
 "Community* has waived all copyright and related or neighboring rights to "
 "Documentation for Idris."
 msgstr ""
+"Idris 的文档已在知识共享 CC0 许可下发布。因此，在法律允许的范围内，*Idris "
+"社区* 已经放弃了 Idris 文档的所有版权和相关或邻近的权利。"
 
 #: ../source/updates/updates.rst:22 389139ae705942618d82e1214356b378
 msgid ""
 "More information concerning the CC0 can be found online at: "
 "http://creativecommons.org/publicdomain/zero/1.0/"
-msgstr ""
+msgstr "关于CC0的更多信息，可以在网上找到：http://creativecommons.org/publicdomain/"
+"zero/1.0/"
 
 #: ../source/updates/updates.rst:25 647eb8dbba364aacac278d2d127afa8d
 msgid "New Core Language: Quantities in Types"
-msgstr ""
+msgstr "新核心语言：类型中的数量"
 
 #: ../source/updates/updates.rst:27 5932902c68774a60a5d9187be18a0a59
 msgid ""
@@ -62,18 +75,21 @@ msgid ""
 " and Conor McBride. In practice, this means that every variable in Idris "
 "2 has a *quantity* associated with it. A quantity is one of:"
 msgstr ""
+"Idris 2 是基于 `量化类型理论（QTT） <https://bentnib.org/quantitative-type-"
+"theory.html>`_ ，这是由 Bob Atkey 和 Conor McBride 开发的核心语言。在实践中，"
+"Idris 2 中的每个变量都有一个 *数量* 与之相关。数量是的取值是下列其中之一："
 
 #: ../source/updates/updates.rst:32 91abe3ea96044cdba719b07ec00dd183
 msgid "``0``, meaning that the variable is *erased* at run time"
-msgstr ""
+msgstr "``0`` ，表示变量在运行时被 *擦除*"
 
 #: ../source/updates/updates.rst:33 37d77a2390ee48abb1ba2b0ff12824d4
 msgid "``1``, meaning that the variable is used *exactly once* at run time"
-msgstr ""
+msgstr "``1`` ，表示变量在运行时 *正好使用一次*"
 
 #: ../source/updates/updates.rst:34 909f36e87e764fee98e8ca4f3a7ec323
 msgid "*Unrestricted*, which is the same behaviour as Idris 1"
-msgstr ""
+msgstr "*不受限制* ，这与 Idris 1 的行为相同"
 
 #: ../source/updates/updates.rst:36 21d37d36acba486eb526b32f5560ca38
 msgid ""
@@ -81,10 +97,13 @@ msgid ""
 "practice, this might cause some Idris 1 programs not to type check in "
 "Idris 2 due to attempting to use an argument which is erased at run time."
 msgstr ""
+"有关这方面的更多详细信息，请参阅章节 :ref:`sect-multiplicities`。在实践中，"
+"这可能会导致某些 Idris 1 程序由于尝试使用在运行时被擦除的参数而不能通过 "
+"Idris 2 的类型检查。"
 
 #: ../source/updates/updates.rst:41 2c77f4a5c2d940b78f301ecebbd40569
 msgid "Erasure"
-msgstr ""
+msgstr "擦除"
 
 #: ../source/updates/updates.rst:43 9af1ffed893748ce9d073ab272e5f2f9
 msgid ""
@@ -92,6 +111,9 @@ msgid ""
 "bound as implicit arguments in types, for example in the following "
 "skeleton definition, ``n``, ``a`` and ``m`` are implicitly bound:"
 msgstr ""
+"在 Idris "
+"中，以小写字母开头的名称会自动绑定为类型中的隐式参数，例如在以下骨架定义中， "
+"``n`` 、 ``a`` 和 ``m`` 是隐式绑定的："
 
 #: ../source/updates/updates.rst:52 2fdad3489c184d56ad5da3c737a26043
 msgid ""
@@ -100,6 +122,8 @@ msgid ""
 "safely be erased. More importantly, it's one of the difficulties when "
 "programming: how can a programmer *know* when an argument will be erased?"
 msgstr ""
+"编译依赖类型编程语言的困难之一是决定哪些参数在运行时使用，哪些可以安全地擦除"
+"。更重要的是，这也是编程时的困难之一：程序员如何 *知道* 什么时候会删除参数？"
 
 #: ../source/updates/updates.rst:57 53e2e7780ff84fd3be79cb203b20b8e9
 msgid ""
@@ -107,6 +131,8 @@ msgid ""
 "at run time or not. We can see the quantities of the variables in scope "
 "in ``append_rhs`` by inspecting the hole at the REPL:"
 msgstr ""
+"在 Idris 2 中，变量的数量告诉我们它在运行时是否可用。我们可以通过检查 REPL "
+"上的孔来查看 ``append_rhs`` 作用域内变量的数量："
 
 #: ../source/updates/updates.rst:72 ee33b7fe57a24d26915f7db8d11fce18
 msgid ""
@@ -114,6 +140,8 @@ msgid ""
 " there will be ``0`` occurrences at run-time. That is, it is *guaranteed*"
 " that they will be erased at run-time."
 msgstr ""
+"``0`` 旁边的 ``m``, ``a`` 和 ``n`` 表示它们在范用域内，但在运行时将会出现 "
+"``0`` 次，也就是说，将会 *保证* 它们在运行时会被删除。"
 
 #: ../source/updates/updates.rst:76 042ed2ada46049909ada26557f6134b8
 msgid ""
@@ -121,6 +149,9 @@ msgid ""
 "programs, if you are using implicit arguments at run time.  For example, "
 "in Idris 1 you can get the length of a vector as follows:"
 msgstr ""
+"如果您在运行时使用隐式参数，这确实会在转换 Idris 1 "
+"程序时导致一些潜在的困难。例如，在 Idris 1 "
+"中，您可以获得向量的长度，如下所示："
 
 #: ../source/updates/updates.rst:85 087b6d1c79544b02a68c5507fca44186
 msgid ""
@@ -131,26 +162,31 @@ msgid ""
 "can infer whether the length is needed, but there's no easy way for a "
 "programmer to be sure."
 msgstr ""
+"这似乎是个好主意，因为它在恒定时间内运行并利用了类型级别的信息，但代价是 "
+"``n`` 必须在运行时可用，所以在运行时我们总是需要如果我们调用 ``vlen`` "
+"时可用的向量的长度。 Idris 1 "
+"可以推断出是否需要长度，但程序员没有简单的方法可以确定。"
 
 #: ../source/updates/updates.rst:91 bc64694568be464da07458a1edd6a1df
 msgid "In Idris 2, we need to state explicitly that ``n`` is needed at run time"
-msgstr ""
+msgstr "在 Idris 2 中，我们需要明确指出，在运行时需要 ``n``"
 
 #: ../source/updates/updates.rst:98 6d9b6f635fba46d08c87f3fe73ebfb5c
 msgid ""
 "(Incidentally, also note that in Idris 2, names bound in types are also "
 "available in the definition without explicitly rebinding them.)"
-msgstr ""
+msgstr "(顺便说一下，还要注意在 Idris 2 "
+"中，在类型中绑定的名字也可以在定义中使用，而不需要明确地重新绑定它们)"
 
 #: ../source/updates/updates.rst:101 1db5c933d3e849b385bfef66c7082e47
 msgid ""
 "This also means that when you call ``vlen``, you need the length "
 "available. For example, this will give an error"
-msgstr ""
+msgstr "这也意味着，当你调用 ``vlen`` 时，你需要可用的长度。例如，这将产生一个错误"
 
 #: ../source/updates/updates.rst:109 cb78f34c06b24c7986805a9de214a6b1
 msgid "Idris 2 reports::"
-msgstr ""
+msgstr "Idris 2 会报告："
 
 #: ../source/updates/updates.rst:114 b0ab661fdc2246e19e761a80e9e6d8d8
 msgid ""
@@ -158,28 +194,32 @@ msgid ""
 "xs``, where it needs to be available at run time, but ``m`` is not "
 "available in ``sumLengths`` because it has multiplicity ``0``."
 msgstr ""
+"这意味着它需要使用 ``m`` 作为参数传递给 ``vlen xs`` "
+"，在这里它需要在运行时可用，但是 ``m`` 在 ``sumLengths`` 中不可用，"
+"因为它有多重性 ``0`` 。"
 
 #: ../source/updates/updates.rst:118 f9503ead845d4b69858d80cd5be87b4f
 msgid ""
 "We can see this more clearly by replacing the right hand side of "
 "``sumLengths`` with a hole..."
-msgstr ""
+msgstr "我们可以通过将 ``sumLengths`` 的右侧替换成一个孔来更清楚地看到这一点......"
 
 #: ../source/updates/updates.rst:126 27084282dcdb4bf68e326a4e0dffa4df
 msgid "...then checking the hole's type at the REPL::"
-msgstr ""
+msgstr "...然后在REPL检查孔的类型："
 
 #: ../source/updates/updates.rst:137 c8f9607276be4792a71f707686873e1e
 msgid ""
 "Instead, we need to give bindings for ``m`` and ``n`` with unrestricted "
 "multiplicity"
-msgstr ""
+msgstr "相反，我们需要为 ``m`` 和 ``n`` 提供无限制多重性的绑定"
 
 #: ../source/updates/updates.rst:145 7214b570bcfc44a79deb4a13b7d6a572
 msgid ""
 "Remember that giving no multiplicity on a binder, as with ``m`` and ``n``"
 " here, means that the variable has unrestricted usage."
-msgstr ""
+msgstr "请记住，在绑定器上不给出多重性，就像这里的 ``m`` 和 ``n`` "
+"一样，意味着变量的使用不受限制。"
 
 #: ../source/updates/updates.rst:148 33510357cf3f45558860997ceec1bc47
 msgid ""
@@ -187,13 +227,16 @@ msgid ""
 "probably the biggest thing you need to think about. It is important to "
 "note, though, that if you have bound implicits, such as..."
 msgstr ""
+"如果你要将 Idris 1 程序转换到 Idris 2 中使用，这可能是你需要考虑的最大问题。"
+"但需要注意的是，如果你有绑定的隐式参数，例如..."
 
 #: ../source/updates/updates.rst:156 1fbbea570e7045ee935a23bb9d7f67c9
 msgid ""
 "...then it's a good idea to make sure ``t`` really is needed, or "
 "performance might suffer due to the run time building the instance of "
 "``t`` unnecessarily!"
-msgstr ""
+msgstr "...那么最好确保 ``t`` 真的被需要，否则由于运行时间不必要地建立 ``t`` "
+"的实例，性能可能会受到影响！"
 
 #: ../source/updates/updates.rst:159 16400f38406d40eebe446c50599e2fc8
 msgid ""
@@ -201,10 +244,12 @@ msgid ""
 "argument with multiplicity ``0``, unless its value is inferrable from "
 "elsewhere. So, the following definition is rejected"
 msgstr ""
+"关于擦除的最后一点说明：试图对一个具有多重性 ``0`` 的参数进行模式匹配是一个错"
+"误，，除非其值可以从其他地方推断出来。因此，下面的定义会被拒绝"
 
 #: ../source/updates/updates.rst:169 5e06c76d7d8b4b7599da245d04b1c49c
 msgid "This is rejected with the error::"
-msgstr ""
+msgstr "这被拒绝了，错误是："
 
 #: ../source/updates/updates.rst:174 5c8f79ca5b504ef08258e8ef51af6767
 msgid ""
@@ -212,6 +257,8 @@ msgid ""
 "appear to match on the erased argument ``x``, its value is uniquely "
 "inferrable from the type of the second argument"
 msgstr ""
+"然而，下面的情况是好的，因为在 ``sNot`` 中，尽管我们似乎在被删除的参数 ``x`` "
+"上进行了匹配，但它的值是可以从第二个参数的类型中唯一推断出来的"
 
 #: ../source/updates/updates.rst:188 525d5e84782045a8a3794d55a90f45fa
 msgid ""
@@ -221,10 +268,14 @@ msgid ""
 "point out where you require an unbound implicit argument at run time - "
 "sometimes this is both surprising and enlightening!"
 msgstr ""
+"到目前为止，Idris 2 的经验表明，在大多数情况下，只要你在 Idris 1 "
+"程序中使用非绑定隐式参数，它们在 Idris 2 中无需过多修改即可工作。 Idris 2 "
+"类型检查器将指出你在运行时需要非绑定隐式参数的地方--"
+"有时这既令人惊讶又具有启发性！"
 
 #: ../source/updates/updates.rst:196 e684981df30b43ff9aad103f811d50b5
 msgid "Linearity"
-msgstr ""
+msgstr "线性"
 
 #: ../source/updates/updates.rst:198 c98dc703316f45409c1a621850eb012c
 msgid ""
@@ -233,16 +284,20 @@ msgid ""
 "multiplicity ``1`` is that if we have a function with a type of the "
 "following form..."
 msgstr ""
+"多重性为 1 的线性参数的完整细节在章节 :ref:`sect-multiplicities` "
+"中给出。简而言之，多重性 ``1`` "
+"背后的直觉是，如果我们有一个具有以下形式的函数......"
 
 #: ../source/updates/updates.rst:206 e0e70532d7374b9c9369264ee22fd453
 msgid ""
 "...then the guarantee given by the type system is that *if* ``f x`` *is "
 "used exactly once, then* ``x`` *is used exactly once* in the process."
-msgstr ""
+msgstr "...那么类型系统提供的保证是 *if* ``f x`` *只使用一次，然后* ``x`` "
+"*在此过程中只使用一次* 。"
 
 #: ../source/updates/updates.rst:210 a5943f80dfef448dae47b4ef181b05d8
 msgid "Prelude and ``base`` libraries"
-msgstr ""
+msgstr "Prelude 和 ``base`` 库"
 
 #: ../source/updates/updates.rst:212 5d1d19949d304df9b9e0f2e2520e764f
 msgid ""
@@ -251,100 +306,107 @@ msgid ""
 "vaguely specified) rule of thumb is that it should contain the basic "
 "functions required by almost any non-trivial program."
 msgstr ""
+"Idris 1 中的 Prelude 包含很多定义，其中许多很少需要。 Idris 2 "
+"中的哲学是不同的。 "
+"（相当模糊的）经验法则是它应该包含几乎所有非平凡程序所需的基本功能。"
 
 #: ../source/updates/updates.rst:217 9a9ca4778eb94d53acaa365718080ced
 msgid ""
 "This is a vague specification since different programmers will consider "
 "different things absolutely necessary, but the result is that it "
 "contains:"
-msgstr ""
+msgstr "这是一个模糊的规范，因为不同的程序员会考虑不同的东西绝对必要，但结果是它包含"
+"："
 
 #: ../source/updates/updates.rst:220 679d21011b764950852ab1e2e254d16b
 msgid "Anything the elaborator can desugar to (e.g. tuples, ``()``, ``=``)"
-msgstr ""
+msgstr "细化器可以脱糖的任何东西（例如元组、 ``()`` 、 ``=`` ）"
 
 #: ../source/updates/updates.rst:221 f46cc71c2ffd4c35833a70ddb8accec5
 msgid ""
 "Basic types ``Bool``, ``Nat``, ``List``, ``Stream``, ``Dec``, ``Maybe``, "
 "``Either``"
 msgstr ""
+"基本类型 ``Bool``, ``Nat``, ``List``, ``Stream``, ``Dec``, ``Maybe``, "
+"``Either``"
 
 #: ../source/updates/updates.rst:223 c0b077d8198748db88536771f3499e42
 msgid "The most important utility functions: ``id``, ``the``, composition, etc"
-msgstr ""
+msgstr "最重要的实用函数： ``id`` 、 ``the`` 、composition 等"
 
 #: ../source/updates/updates.rst:224 3ea3923fb9d14c7495885e0bcac595d4
 msgid ""
 "Interfaces for arithmetic and implementations for the primitives and "
 "basic types"
-msgstr ""
+msgstr "基本类型和基本类型的算术接口和实现"
 
 #: ../source/updates/updates.rst:226 5d20787323cd4e2eb769e84ab3dd8d84
 msgid "Basic ``Char`` and ``String`` manipulation"
-msgstr ""
+msgstr "基本的 ``Char`` 和 ``String`` 操作"
 
 #: ../source/updates/updates.rst:227 4f0f514415ad4c7d860b5faf53be36b9
 msgid ""
 "``Show``, ``Eq``, ``Ord``, and implementations for all types in the "
 "prelude"
-msgstr ""
+msgstr "``Show`` ， ``Eq`` ， ``Ord`` ，以及 Prelude 中所有类型的实现"
 
 #: ../source/updates/updates.rst:228 6da7ded4dc204c1c981948762109badb
 msgid "Interfaces and functions for basic proof (``cong``, ``Uninhabited``, etc)"
-msgstr ""
+msgstr "基本证明的接口和函数（ ``cong`` 、 ``Uninhabited`` 等）"
 
 #: ../source/updates/updates.rst:229 a40380550c2448a5a77fe9f6e0bed2df
 msgid "``Semigroup``, ``Monoid``"
-msgstr ""
+msgstr "``Semigroup``, ``Monoid``"
 
 #: ../source/updates/updates.rst:230 69967cfbeeb24211a61c45c8622af0ec
 msgid "``Functor``, ``Applicative``, ``Monad`` and related functions"
-msgstr ""
+msgstr "``Functor``, ``Applicative``, ``Monad`` 和相关函数"
 
 #: ../source/updates/updates.rst:231 5d1d8e16900742439cbd4990e5de4eaf
 msgid "``Foldable``, ``Alternative`` and ``Traversable``"
-msgstr ""
+msgstr "``Foldable``, ``Alternative`` 和 ``Traversable``"
 
 #: ../source/updates/updates.rst:232 a67e1a0d05a9489288c13f54430b5bc9
 msgid "``Range``, for list range syntax"
-msgstr ""
+msgstr "``Range`` ，用于列表区间语法"
 
 #: ../source/updates/updates.rst:233 6b50b068dd714d6f9d12b43227e6b30e
 msgid "Console ``IO``"
-msgstr ""
+msgstr "控制台 ``IO``"
 
 #: ../source/updates/updates.rst:235 649698927eb04322a506c51c458a9a61
 msgid ""
 "Anything which doesn't fit in here has been moved to the ``base`` "
 "libraries. Among other places, you can find some of the functions which "
 "used to be in the prelude in:"
-msgstr ""
+msgstr "任何不适合此处的内容都已移至 ``base`` 库。在其他地方，您可以找到一些曾经在 "
+"prelude 中的函数："
 
 #: ../source/updates/updates.rst:239 d7c560ee1c774decb61d26c597fedb59
 msgid "``Data.List`` and ``Data.Nat``"
-msgstr ""
+msgstr "``Data.List`` 和 ``Data.Nat``"
 
 #: ../source/updates/updates.rst:240 865443b9cf194fd88de68380d797e029
 msgid "``Data.Maybe`` and ``Data.Either``"
-msgstr ""
+msgstr "``Data.Maybe`` 和 ``Data.Either``"
 
 #: ../source/updates/updates.rst:241 0397ece2c499467e815379b53e24d31e
 msgid ""
 "``System.File`` and ``System.Directory``, (file management was previously"
 " part of the prelude)"
-msgstr ""
+msgstr "``System.File`` 和 ``System.Directory`` ，（文件管理以前是 Prelude 的一部分）"
 
 #: ../source/updates/updates.rst:243 865e9e35a9944f849c8ea8fc7780c229
 msgid "``Decidable.Equality``"
-msgstr ""
+msgstr "``Decidable.Equality``"
 
 #: ../source/updates/updates.rst:246 f38548904a584ee3aa90949d9762d9bc
 msgid "Smaller Changes"
-msgstr ""
+msgstr "较小的变化"
 
 #: ../source/updates/updates.rst:249 5f78e39d16374585a39f78f0ac5eca00
 msgid "Ambiguous Name Resolution"
-msgstr ""
+msgstr "有歧义名称的解析"
 
 #: ../source/updates/updates.rst:251 3fc21bfa7fc948829f10bbf63b55d154
 msgid ""
@@ -354,6 +416,9 @@ msgid ""
 "simplifies this, at the cost of sometimes requiring more programmer "
 "annotations on ambiguous names."
 msgstr ""
+"Idris 1 非常努力地按类型解析有歧义的名称，即使这涉及与接口解析的一些复杂交互"
+"。这有时可能是导致类型检查时间过长的原因。 Idris 2 "
+"简化了这一点，代价是有时需要对有歧义的名称进行更多的程序员注释。"
 
 #: ../source/updates/updates.rst:257 e812dfab072e473fab52b5fa83350dcb
 msgid ""
@@ -367,25 +432,32 @@ msgid ""
 "(beyond a small threshold, default 3) Idris 2 will report an error.  You "
 "can change this threshold with a directive, for example:"
 msgstr ""
+"作为一般规则，Idris 2 将能够区分具有不同具体返回类型（例如数据构造函数）或具"
+"有不同具体参数类型（例如记录投影）的名称。如果一个名称需要解析接口，则可能难"
+"以解决歧义。如果无法立即解析名称，它将推迟解析，但与 Idris 1 "
+"不同，它不会尝试显着回溯。如果你有深度嵌套的有歧义名称（超过一个小阈值，"
+"默认为 3），Idris 2 将报告错误。您可以使用指令更改此阈值，例如："
 
 #: ../source/updates/updates.rst:270 9a15a0cfc3904fae85401ada4aef1002
 msgid ""
 "However, in such circumstances it is almost certainly a better idea to "
 "disambiguate explicitly."
-msgstr ""
+msgstr "然而，在这种情况下，明确地消除歧义肯定是一个更好的主意。"
 
 #: ../source/updates/updates.rst:273 c2c76fd091a84b08b1abc7007c313f46
 msgid ""
 "Indeed in general, if you get an ambiguous name error, the best approach "
 "is to give the namespace explicitly. You can also rebind names locally:"
-msgstr ""
+msgstr "实际上，一般来说，如果您遇到名称歧义错误，最好的方法是明确给出命名空间。您还"
+"可以在局部重新绑定名称："
 
 #: ../source/updates/updates.rst:281 ca706cde597c4697808dd70680ca6c74
 msgid ""
 "One difficulty which remains is resolving ambiguous names where one "
 "possibility is an interface method, and another is a concrete top level "
 "function. For example, we may have:"
-msgstr ""
+msgstr "剩下的一个困难是解决有歧义的名称，其中一种可能是接口方法，另一种可能是具体的"
+"顶级函数。例如，我们可能有："
 
 #: ../source/updates/updates.rst:290 b837b59fffd84a91a9f77f3500d74179
 msgid ""
@@ -394,14 +466,17 @@ msgid ""
 "expression known to have type ``IO t`` for some ``t``), the more concrete"
 " name will be chosen."
 msgstr ""
+"作为一个务实的选择，如果在更具体的名称有效的上下文中进行类型检查（此处为 "
+"``LinearIO.(>>=)`` ，因此如果对已知具有类型 ``IO t`` 的表达式 ``t`` "
+"进行类型检查），将选择更具体的名称。"
 
 #: ../source/updates/updates.rst:294 ae3823bd0bea4f76b7be8c778252800f
 msgid "This is somehow unsatisfying, so we may revisit this in future!"
-msgstr ""
+msgstr "这在某种程度上令人不满意，所以我们将来可能会重新审视这个！"
 
 #: ../source/updates/updates.rst:297 4ff1fc5971644c73b5254559177098a3
 msgid "Modules, namespaces and export"
-msgstr ""
+msgstr "模块、命名空间和导出"
 
 #: ../source/updates/updates.rst:299 54bcf6a05924400aaa141fd502d9a589
 msgid ""
@@ -409,31 +484,37 @@ msgid ""
 "``public export`` modifiers, now refer to the visibility of names from "
 "other *namespaces*, rather than other *files*."
 msgstr ""
+"由  ``private`` 、 ``export`` 和 ``public export`` "
+"修饰符控制的可见性规则现在指的是来自其他 *命名空间* 的名称的可见性，"
+"而不是其他 *文件* 。"
 
 #: ../source/updates/updates.rst:303 eeb0bfd2bb0f44c49a2dc2c88ddf7b42
 msgid "So if you have the following, all in the same file..."
-msgstr ""
+msgstr "因此，如果您有以下内容，且所有内容都在同一个文件中..."
 
 #: ../source/updates/updates.rst:321 bd284fcef8b645c5a587044c107d90a4
 msgid "...then ``bVisible`` can access ``aVisible``, but not ``aHidden``."
 msgstr ""
+"...然后 ``bVisible`` 可以访 ``aVisible`` ，但不能访问\n"
+"``aHidden`` 。"
 
 #: ../source/updates/updates.rst:323 1818d75b855d4fc48f0a2ecb78f17b0d
 msgid ""
 "Records are, as before, defined in their own namespace, but fields are "
 "always visible from the parent namespace."
-msgstr ""
+msgstr "和以前一样，记录在它们自己的命名空间中定义，但字段始终在父命名空间中可见。"
 
 #: ../source/updates/updates.rst:326 6f8b4f36d143496db893b9a14b2cf0b5
 msgid ""
 "Also, module names must now match the filename in which they're defined, "
 "with the exception of the module ``Main``, which can be defined in a file"
 " with any name."
-msgstr ""
+msgstr "此外，模块名称现在必须与定义它们的文件名匹配，但模块 “Main” "
+"除外，它可以在任何名称的文件中定义。"
 
 #: ../source/updates/updates.rst:331 27dfcbd4a67849eab61077a6983dd1d3
 msgid "``%language`` pragmas"
-msgstr ""
+msgstr "``%language`` 编译指示"
 
 #: ../source/updates/updates.rst:333 b9f419d8b061428cae1624b8c042e152
 msgid ""
@@ -441,16 +522,19 @@ msgid ""
 "experimental extensions. None of these are available in Idris 2, although"
 " extensions may be defined in the future."
 msgstr ""
+"Idris 1 中有几个 ``%language`` 编译指示，它们定义了各种实验性扩展。这些在 "
+"Idris 2 中都不可用，尽管将来可能会定义扩展。"
 
 #: ../source/updates/updates.rst:337 1884affa3c1e428483174311878437e2
 msgid ""
 "Also removed was the ``%access`` pragma for default visibility, use "
 "visibility modifiers on each declaration instead."
-msgstr ""
+msgstr "还删除了用于默认可见性的 ``%access`` "
+"编译指示，而是在每个声明上使用可见性修饰符。"
 
 #: ../source/updates/updates.rst:341 8880f305bd7f40f8b93a7d72ce487cdc
 msgid "``let`` bindings"
-msgstr ""
+msgstr "``let`` 绑定"
 
 #: ../source/updates/updates.rst:343 cc6db6db67fe477ebab771b6cc3af678
 msgid ""
@@ -462,6 +546,11 @@ msgid ""
 "want to preserve the computational behaviour, we would need to make "
 "significant changes to the way ``case`` and ``with`` are elaborated."
 msgstr ""
+"``let`` 绑定，即 ``let x = val in e`` 形式的表达式具有稍微不同的行为。以前，"
+"您可以依赖 ``e`` 作用域内的 ``x`` 的计算行为，因此类型检查可以考虑 ``x`` "
+"替换为 ``val`` 。不幸的是，这导致了 ``case`` 和 ``with`` "
+"子句的复杂化：如果我们想保留计算行为，我们需要对 ``case`` 和 ``with`` "
+"的阐述方式进行重大改变。"
 
 #: ../source/updates/updates.rst:351 e43dd405b7aa4dfda68128f5f0b0c125
 msgid ""
@@ -470,6 +559,8 @@ msgid ""
 "above expression ``let x = val in e`` is equivalent to ``(\\x => e) "
 "val``."
 msgstr ""
+"所以，为了简单和一致（实际上，因为我没有足够的时间来解决 ``case`` 和 ``with``"
+" 的问题）上面的表达式 ``let x = val in e`` 相当于 ``(\\x => e) val`` 。"
 
 #: ../source/updates/updates.rst:355 1381ed5eb6104ef6b40dd3e8d16083e0
 msgid ""
@@ -478,16 +569,21 @@ msgid ""
 "using local function definitions instead - see Section :ref:`sect-local-"
 "defs` below."
 msgstr ""
+"所以， ``let`` "
+"现在有效地概括了一个复杂的子表达式。如果您确实需要定义的计算行为，"
+"现在可以使用局部函数定义来代替 - 请参阅下面的 :ref:`sect-local-defs` 章节。"
 
 #: ../source/updates/updates.rst:360 0e5b918931b7490b900affd6ade2fe8c
 msgid ""
 "Also, an alternative syntax ``let x := val in e`` is available. See "
 "Section :ref:`sect-let-bindings` for more info."
 msgstr ""
+"此外，还可以使用替代语法 ``let x := val in e`` 。有关更多信息，请参见 :ref"
+":`sect-let-bindings` 章节。"
 
 #: ../source/updates/updates.rst:364 59279eaf9de9405eb38ee9fb45e097aa
 msgid "``auto``-implicits and Interfaces"
-msgstr ""
+msgstr "``auto``-隐式和接口"
 
 #: ../source/updates/updates.rst:366 cb4955738d11487c946470b4aa76363a
 msgid ""
@@ -497,25 +593,30 @@ msgid ""
 "the same mechanism. Consider the following *total* definition of "
 "``fromMaybe``:"
 msgstr ""
+"接口和 ``auto``-隐式参数是相似的，因为它们调用表达式搜索机制来查找参数的值。"
+"在 Idris 1 中，它们是分开实现的，但在 Idris 2 中，它们使用相同的机制。"
+"考虑以下 ``fromMaybe`` 的 *total* 定义："
 
 #: ../source/updates/updates.rst:379 7b13a39f53c04f05842ccf037d0f57f4
 msgid ""
 "Since interface resolution and ``auto``-implicits are now the same thing,"
 " the type of ``fromMaybe`` can be written as:"
-msgstr ""
+msgstr "由于接口解析和 ``auto``- 隐式现在是同一个东西， ``fromMaybe`` "
+"的类型可以写成："
 
 #: ../source/updates/updates.rst:386 7aed18b2585d4cba9185ff48d6bbb71b
 msgid ""
 "So now, the constraint arrow ``=>`` means that the argument will be found"
 " by ``auto``-implicit search."
-msgstr ""
+msgstr "所以现在，约束箭头 ``=>`` 意味着参数将通过 ``auto`` 隐式搜索找到。"
 
 #: ../source/updates/updates.rst:389 e61664bafcab490e80712aa97e9bc293
 msgid ""
 "When defining a ``data`` type, there are ways to control how "
 "``auto``-implicit search will proceed, by giving options to the data "
 "type. For example:"
-msgstr ""
+msgstr "在定义 ``data`` 类型时，可以通过为数据类型提供选项来控制 ``auto`` "
+"隐式搜索将如何进行。例如："
 
 #: ../source/updates/updates.rst:399 20977460bc594d53acb00c437a0ada72
 msgid ""
@@ -523,51 +624,59 @@ msgid ""
 "of type ``Elem t ts`` will start as soon as the type checker has resolved"
 " the value ``t``, even if ``ts`` is still unknown."
 msgstr ""
+"``search x`` 选项意味着 ``auto``-隐式搜索类型为 ``Elem t ts`` "
+"的值将在类型检查器解析值 ``t`` 后立即开始，即使 ``ts`` 仍然未知。"
 
 #: ../source/updates/updates.rst:403 ec7ebb8c8c4b45e28786c362cf8c374d
 msgid ""
 "By default, ``auto``-implicit search uses the constructors of a data type"
 " as search hints. The ``noHints`` option on a data type turns this "
 "behaviour off."
-msgstr ""
+msgstr "默认情况下， ``auto`` - 隐式搜索使用数据类型的构造函数作为搜索提示。"
+"数据类型上的 ``noHints`` 选项会关闭此行为。"
 
 #: ../source/updates/updates.rst:407 05903a0d2d654713a01ceb64fc068c09
 #, python-format
 msgid ""
 "You can add your own search hints with the ``%hint`` option on a "
 "function. For example:"
-msgstr ""
+msgstr "您可以使用函数上的 ``%hint`` 选项添加自己的搜索提示。例如："
 
 #: ../source/updates/updates.rst:423 b5bd9c27fedb4c6e96e0b169855fc314
 msgid ""
 "In this case, searching for ``MyShow Bool`` will find ``showBool``, as we"
 " can see if we try evaluating ``myShow True`` at the REPL:"
 msgstr ""
+"在这种情况下，搜索 ``MyShow Bool`` 会找到 ``showBool`` ，如果我们尝试在 REPL "
+"中对 ``myShow True`` 求值可以看到："
 
 #: ../source/updates/updates.rst:431 dc47b61455984dc2af2d6603628d5c3e
 #, python-format
 msgid ""
 "In fact, this is how interfaces are elaborated. However, ``%hint`` should"
 " be used with care. Too many hints can lead to a large search space!"
-msgstr ""
+msgstr "事实上，这就是接口的详细说明。然而， ``%hint`` "
+"应该小心使用。提示过多会导致搜索空间过大！"
 
 #: ../source/updates/updates.rst:435 1b99b0d9a8ad47b1b459fa126779c4aa
 msgid "Record fields"
-msgstr ""
+msgstr "记录字段"
 
 #: ../source/updates/updates.rst:437 5dac84e934ad46d095f89b6f4ae7f31b
 msgid "Record fields can now be accessed via a ``.``. For example, if you have:"
-msgstr ""
+msgstr "现在可以通过 ``.`` 访问记录字段。例如，如果您有："
 
 #: ../source/updates/updates.rst:446 d4236eaf623347be8a09bd3f2386753f
 msgid ""
 "and you have a record ``fred : Person``, then you can use "
 "``fred.firstName`` to access the ``firstName`` field."
 msgstr ""
+"并且您有一条记录 ``fred:Person`` ，那么您可以使用 ``fred.firstName`` 访问 "
+"``firstName`` 字段。"
 
 #: ../source/updates/updates.rst:450 a64aa8dc7e0a4b6bb3164f8fab70f5ff
 msgid "Totality and Coverage"
-msgstr ""
+msgstr "完全性和覆盖性"
 
 #: ../source/updates/updates.rst:452 219318eebbd04d069f9b5cb3279b0f88
 #, python-format
@@ -578,10 +687,13 @@ msgid ""
 "recommended - use a ``partial`` annotation instead to have the smallest "
 "possible place where functions are partial)."
 msgstr ""
+"``%default covering`` 现在是默认状态，因此所有函数必须覆盖所有输入，"
+"除非另有说明 ``partial`` 注释，或切换到 ``%default partial``（不推荐 - 使用 "
+"``partial`` 注释来代替函数是部分的最小可能位置）。"
 
 #: ../source/updates/updates.rst:461 8e648fec52f2439786adcaf07cf2964e
 msgid "Build artefacts"
-msgstr ""
+msgstr "构建制品"
 
 #: ../source/updates/updates.rst:463 bdfe166241e4456a92d4f02208938c35
 msgid ""
@@ -591,10 +703,13 @@ msgid ""
 "the directory structure following the directory structure of the source."
 "  Executables are placed in ``build/exec``."
 msgstr ""
+"这并不是真正的语言更改，而是 Idris 保存检查文件的方式的更改，并且仍然有用。"
+"所有检查的模块现在都保存在源代码树的根目录中的 build/ttc "
+"目录中，目录结构遵循源目录结构。可执行文件放置在 ``build/exec`` 中。"
 
 #: ../source/updates/updates.rst:470 eb369bef2162471789133d295301c732
 msgid "Packages"
-msgstr ""
+msgstr "包"
 
 #: ../source/updates/updates.rst:472 0388a64663b545a3bb42e7ed0f3f4ad4
 msgid ""
@@ -603,27 +718,31 @@ msgid ""
 " or other string data (other than module or package names), must be "
 "enclosed in double quotes. For example:"
 msgstr ""
+"对其他包的依赖现在用 ``depends`` 字段表示， ``pkgs`` 字段不再被识别。此外，"
+"具有 URLS "
+"或其他字符串数据（模块或包名称除外）的字段必须用双引号引起来。例如："
 
 #: ../source/updates/updates.rst:500 6ea4ddcd07a3482c8a0f2e150ba22d35
 msgid "New features"
-msgstr ""
+msgstr "新的特性"
 
 #: ../source/updates/updates.rst:502 a0d2b39a99f044ce8282c0d1f8b7c3d8
 msgid ""
 "As well as the change to the core language to use quantitative type "
 "theory, described above, there are several other new features."
-msgstr ""
+msgstr "除了将核心语言更改为使用上述定量类型理论之外，还有其他几个新特性。"
 
 #: ../source/updates/updates.rst:508 7ccd7d452a8d4feda0aa993df67723e5
 msgid "Local function definitions"
-msgstr ""
+msgstr "局部函数定义"
 
 #: ../source/updates/updates.rst:510 e059e0101e584d03b7d0d8897c04f3eb
 msgid ""
 "Functions can now be defined locally, using a ``let`` block. For example,"
 " ``greet`` in the following example, which is defined in the scope of a "
 "local variable ``x``:"
-msgstr ""
+msgstr "现在可以使用 ``let`` 块在本地定义函数。例如，以下示例中的 ``greet`` ，"
+"它是在局部变量 ``x`` 的作用域内定义的："
 
 #: ../source/updates/updates.rst:525 a7349baa4feb47659a3f54356760c69a
 msgid ""
@@ -631,6 +750,9 @@ msgid ""
 " as above, but also in any function, or in type declarations). ``where`` "
 "blocks are now elaborated by translation into a local ``let``."
 msgstr ""
+"这些“ ``et`` 块可以在任何地方使用（在上面的 ``do`` "
+"块中间，也可以在任何函数中，或在类型声明中）。 ``where`` "
+"块现在通过翻译成局部 ``let`` 来阐述。"
 
 #: ../source/updates/updates.rst:529 375b182a22254a3fbd2067d81b942579
 msgid ""
@@ -638,17 +760,20 @@ msgid ""
 " ``where`` blocks, because this was fragile. This may be reinstated, if "
 "we can come up with a good, predictable approach."
 msgstr ""
+"然而，Idris 不再尝试推断在 ``where`` 块中定义的函数的类型，因为这很脆弱。如果"
+"我们能想出一个好的、可预测的方法，这可能会被恢复。"
 
 #: ../source/updates/updates.rst:534 60349e74224a4d969f2e22fdaf2ec6ce
 msgid "Scope of implicit arguments"
-msgstr ""
+msgstr "隐式参数的作用域"
 
 #: ../source/updates/updates.rst:536 0245132b96724add90005d129d03cc72
 msgid ""
 "Implicit arguments in a type are now in scope in the body of a "
 "definition. We've already seen this above, where ``n`` is in scope "
 "automatically in the body of ``vlen``:"
-msgstr ""
+msgstr "类型中的隐式参数现在在定义主体的作用域内。我们已经在上面看到了，其中 ``n`` "
+"自动在 ``vlen`` 的主体作用域内："
 
 #: ../source/updates/updates.rst:545 3431b32536d14feda32aa68ee66bb124
 msgid ""
@@ -658,6 +783,9 @@ msgid ""
 "definition, where we attempt to define our own version of ``Show`` for "
 "``Vect``, will fail to type check:"
 msgstr ""
+"在使用 ``where`` 块或局部定义时记住这一点很重要，因为在声明局部定义的 *type* "
+"时，作用域内的名称也将在作用域内。例如，下面的定义，我们试图为 ``Vect`` "
+"定义我们自己的 ``Show`` 版本，将无法进行类型检查："
 
 #: ../source/updates/updates.rst:560 b669f5c4bfd94768914d6f1716bd7c1a
 msgid ""
@@ -897,4 +1025,3 @@ msgid ""
 "generator, in both compile time and execution time (but we haven't done "
 "any formal study on this yet, so it's just anecdotal evidence)."
 msgstr ""
-
