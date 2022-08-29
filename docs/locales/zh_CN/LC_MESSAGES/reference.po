@@ -3,18 +3,21 @@
 # This file is distributed under the same license as the Idris2 package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-08-28 21:56+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2022-08-29 09:22+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"Language-Team: Chinese (Simplified) <https://weblate.grass.work:30443/"
+"projects/idris/reference/zh_Hans/>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 4.13.1\n"
 "Generated-By: Babel 2.10.3\n"
 
 #: ../source/reference/builtins.rst:5 196b9db569e8433498898b61b24099bc
@@ -608,12 +611,15 @@ msgid ""
 " Community* has waived all copyright and related or neighboring rights to"
 " Documentation for Idris."
 msgstr ""
+"Idris 2 的文档已在知识共享 CC0 许可下发布。因此，在法律允许的范围内，*Idris "
+"社区* 已经放弃了 Idris 文档的所有版权和相关或邻近的权利。"
 
 #: ../source/reference/index.rst:12 0b493888f9b3444dbef716b4723995b8
 msgid ""
 "More information concerning the CC0 can be found online at: "
 "https://creativecommons.org/publicdomain/zero/1.0/"
-msgstr ""
+msgstr "有关 CC0 的更多信息，请访问：https://creativecommons.org/publicdomain/zero/1."
+"0/"
 
 #: ../source/reference/index.rst:14 6acb287444dc46a2a3314275864574ec
 msgid "This is a placeholder, to get set up with readthedocs."
@@ -1587,4 +1593,3 @@ msgid ""
 "identity function: ``interpolate x = x``. This way the desugared code "
 "looks like: ``concat [id \"hello \", interpolate username]``."
 msgstr ""
-
