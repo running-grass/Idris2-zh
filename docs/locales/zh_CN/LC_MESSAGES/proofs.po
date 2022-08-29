@@ -3,18 +3,21 @@
 # This file is distributed under the same license as the Idris2 package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-08-28 21:56+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2022-08-29 09:22+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"Language-Team: Chinese (Simplified) <https://weblate.grass.work:30443/"
+"projects/idris/proofs/zh_Hans/>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 4.13.1\n"
 "Generated-By: Babel 2.10.3\n"
 
 #: ../source/proofs/definitional.rst:1 3138adc94cad4839b4a2351ac38578a5
@@ -317,11 +320,11 @@ msgstr ""
 
 #: ../source/proofs/index.rst:5 1cb883a131ca43719913b94c0145fdc7
 msgid "Theorem Proving"
-msgstr ""
+msgstr "定理证明"
 
 #: ../source/proofs/index.rst:7 4b9ceebb70b346d7bece4f9550cafd68
 msgid "A tutorial on theorem proving in Idris 2."
-msgstr ""
+msgstr "Idris 2 中的定理证明教程。"
 
 #: ../source/proofs/index.rst:11 4cbd972113e342a1a0668f0042da0530
 msgid ""
@@ -330,12 +333,15 @@ msgid ""
 "Community* has waived all copyright and related or neighboring rights to "
 "Documentation for Idris."
 msgstr ""
+"Idris 的文档已在知识共享 CC0 许可下发布。因此，在法律允许的范围内，*Idris "
+"社区* 已经放弃了 Idris 文档的所有版权和相关或邻近的权利。"
 
 #: ../source/proofs/index.rst:16 288ab9f09e1942bbad833a2142a9984c
 msgid ""
 "More information concerning the CC0 can be found online at: "
 "http://creativecommons.org/publicdomain/zero/1.0/"
-msgstr ""
+msgstr "关于CC0的更多信息，可以在网上找到：http://creativecommons.org/publicdomain/"
+"zero/1.0/"
 
 #: ../source/proofs/inductive.rst:5 040e526895df46bc8550957e6fab6a0a
 msgid "Inductive Proofs"
@@ -1140,4 +1146,3 @@ msgstr ""
 #: ../source/proofs/propositional.rst:126 e69faf21785e47fc9d5fe9d8407f6dea
 msgid "Also included in the prelude:"
 msgstr ""
-
