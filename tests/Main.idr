@@ -101,7 +101,7 @@ idrisTestsInteractive = MkTestPool "Interactive editing" [] Nothing
        "interactive029", "interactive030", "interactive031", "interactive032",
        "interactive033", "interactive034", "interactive035", "interactive036",
        "interactive037", "interactive038", "interactive039", "interactive040",
-       "interactive041", "interactive042"]
+       "interactive041", "interactive042", "interactive043"]
 
 idrisTestsInterface : TestPool
 idrisTestsInterface = MkTestPool "Interface" [] Nothing
@@ -280,7 +280,7 @@ chezTests = MkTestPool "Chez backend" [] (Just Chez)
     , "chez013", "chez014", "chez015", "chez016", "chez017", "chez018"
     , "chez019", "chez020", "chez021", "chez022", "chez023", "chez024"
     , "chez025", "chez026", "chez027", "chez028", "chez029", "chez030"
-    , "chez031", "chez032", "chez033", "chez034"
+    , "chez031", "chez032", "chez033", "chez034", "chez035"
     , "futures001"
     , "bitops"
     , "casts"
