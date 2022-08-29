@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-28 21:56+0800\n"
+"POT-Creation-Date: 2022-08-29 17:33+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -203,12 +203,12 @@ msgstr ""
 
 #: ../source/tutorial/interactive.rst:101
 #: a644c944607d466586d7915f2a910e49
-msgid "The ``:casesplit n x`` command, abbreviated ``:cs n x``, splits the pattern variable ``x`` on line ``n`` into the various pattern forms it may take, removing any cases which are impossible due to unification errors. For example, if the code beginning on line 94 is:"
+msgid "The ``:casesplit n c x`` command, abbreviated ``:cs n c x``, splits the pattern variable ``x`` on line ``n`` at column ``c`` into the various pattern forms it may take, removing any cases which are impossible due to unification errors. For example, if the code beginning on line 94 is:"
 msgstr ""
 
 #: ../source/tutorial/interactive.rst:112
 #: 6ed615ececf44b0a8bb883e3e0424b26
-msgid "then ``:cs 96 xs`` will give:"
+msgid "then ``:cs 96 12 xs`` will give:"
 msgstr ""
 
 #: ../source/tutorial/interactive.rst:119
