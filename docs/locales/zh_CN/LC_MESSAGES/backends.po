@@ -3,18 +3,21 @@
 # This file is distributed under the same license as the Idris2 package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-08-28 21:56+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2022-08-29 09:22+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"Language-Team: Chinese (Simplified) <https://weblate.grass.work:30443/"
+"projects/idris/backends/zh_Hans/>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 4.13.1\n"
 "Generated-By: Babel 2.10.3\n"
 
 #: ../source/backends/backend-cookbook.rst:2 78d13fa0278543afb0b6390e7d9a47d0
@@ -200,7 +203,7 @@ msgstr ""
 
 #: ../source/backends/backend-cookbook.rst:91 71c073f453214d239a5086c708df678d
 msgid "Functions"
-msgstr ""
+msgstr "函数"
 
 #: ../source/backends/backend-cookbook.rst:92 3146052eea7e461592a0c1e5b21f3c71
 msgid "Top-level data definitions"
@@ -1186,13 +1189,13 @@ msgstr ""
 
 #: ../source/backends/chez.rst:3 d8587a2f41c446d68a0c052c88e30963
 msgid "Chez Scheme Code Generator"
-msgstr ""
+msgstr "Chez Scheme 代码生成器"
 
 #: ../source/backends/chez.rst:5 88648da038d54933ba17ff4c3e7919ed
 msgid ""
 "The Chez Scheme code generator is the default, or it can be accessed via "
 "a REPL command:"
-msgstr ""
+msgstr "Chez Scheme 代码生成器是默认的，或者可以通过 REPL 命令访问："
 
 #: ../source/backends/chez.rst:12 7e30189f86e54ed694164f1e77e63b4f
 msgid ""
@@ -1200,6 +1203,8 @@ msgid ""
 "`Chez Scheme <https://www.scheme.com/>`_. Chez Scheme is open source, and"
 " available via most OS package managers."
 msgstr ""
+"因此，默认情况下，要运行 Idris 程序，您需要安装 `Chez Scheme <https://www."
+"scheme.com/>`_ 。 Chez Scheme 是开源的，可通过大多数操作系统包管理器获得。"
 
 #: ../source/backends/chez.rst:16 ../source/backends/gambit.rst:21
 #: ../source/backends/racket.rst:17 08501d45061a4af1bee1265f62f49fdb
@@ -1207,7 +1212,8 @@ msgstr ""
 msgid ""
 "You can compile an expression ``expr`` of type ``IO ()`` to an executable"
 " as follows, at the REPL:"
-msgstr ""
+msgstr "您可以在 REPL 中将类型为 ``IO ()`` 的表达式 ``expr`` "
+"编译为可执行文件，如下所示："
 
 #: ../source/backends/chez.rst:23 ../source/backends/gambit.rst:28
 #: ../source/backends/racket.rst:24 13b95be44de24399a5b6c77a0a59d6cb
@@ -1215,12 +1221,12 @@ msgstr ""
 msgid ""
 "...where ``execname`` is the name of the executable file. This will "
 "generate the following:"
-msgstr ""
+msgstr "...其中 ``execname`` 是可执行文件的名称。这将生成以下内容："
 
 #: ../source/backends/chez.rst:26 ../source/backends/racket.rst:27
 #: 503ca81984b04c3a8016b5ff7d527df3 e52decc1787a4f3199490c23ac2335ae
 msgid "A shell script ``build/exec/execname`` which invokes the program"
-msgstr ""
+msgstr "调用程序的 shell 脚本 ``build/exec/execname``"
 
 #: ../source/backends/chez.rst:27 5b2d2723b7a34e6ca50ea0eb57200335
 msgid ""
@@ -1229,19 +1235,23 @@ msgid ""
 "(``execname.ss``), the compiled Chez Scheme code (``execname.so``) and "
 "any shared libraries needed for foreign function definitions."
 msgstr ""
+"子目录 ``build/exec/execname_app`` 中包含运行程序所需的所有数据。这包括 Chez "
+"Scheme 源代码（ ``execname.ss`` ），已编译的 Chez Scheme 代码（ ``execname."
+"so`` ）和外部函数定义所需的任何共享库。"
 
 #: ../source/backends/chez.rst:32 ../source/backends/racket.rst:33
 #: 60a58679ccba4a28bd5d42ac0a8bc53b c4b306bb15624396adc10632e6fa56bf
 msgid ""
 "The executable ``execname`` is relocatable to any subdirectory, provided "
 "that ``execname_app`` is also in the same subdirectory."
-msgstr ""
+msgstr "可执行的 ``execname`` 可以重新定位到任何子目录，前提是 ``execname_app`` "
+"也在同一个子目录中。"
 
 #: ../source/backends/chez.rst:35 ../source/backends/gambit.rst:35
 #: ../source/backends/racket.rst:36 03e83a8e65974086aeb41c1fe7ed0afa
 #: 23384c6562b14043b6c3bb3c7c197561 8abf008b6bf2455eb497be94f06c0107
 msgid "You can also execute an expression directly:"
-msgstr ""
+msgstr "你也可以直接执行表达式："
 
 #: ../source/backends/chez.rst:41 f4bc1ed0373e492b8c6ca766d82abdcb
 msgid ""
@@ -1249,6 +1259,8 @@ msgid ""
 "executable script ``_tmpchez`` in the ``build/exec`` directory, and "
 "execute that."
 msgstr ""
+"同样， ``expr`` 必须具有 ``IO ()`` 类型。这将在 ``build/exec`` "
+"目录中生成一个临时可执行脚本 ``_tmpchez`` ，并执行它。"
 
 #: ../source/backends/chez.rst:45 48ea61545e18476aa320b292866e38ba
 msgid ""
@@ -1257,16 +1269,19 @@ msgid ""
 "``build/exec/execname``, again with support files in "
 "``build/exec/execname_app``."
 msgstr ""
+"Chez Scheme 是默认的代码生成器，因此如果您使用 ``-o execname`` 标志调用 "
+"``idris2`` ，它将生成一个可执行脚本 ``build/exec/execname`` ，和支持文件 ``"
+"build/exec/execname_app`` 。"
 
 #: ../source/backends/chez.rst:51 8df2ff6c7bb84b2d8bc827785eca5650
 msgid "Chez Directives"
-msgstr ""
+msgstr "Chez 指令"
 
 #: ../source/backends/chez.rst:53 ../source/backends/gambit.rst:48
 #: ../source/backends/racket.rst:51 91ced8078890405099ef31f291d328fd
 #: ebbd35819b164374bccd5e96e29c0166 fa3e5bb3d55e487cb48cfcb7ceedd519
 msgid "``--directive extraRuntime=<path>``"
-msgstr ""
+msgstr "``--directive extraRuntime=<path>``"
 
 #: ../source/backends/chez.rst:55 ../source/backends/gambit.rst:50
 #: ../source/backends/racket.rst:53 0dcca7eb4b314393be3cac1bd6a634ab
@@ -1275,11 +1290,12 @@ msgid ""
 "Embed Scheme source from ``<path>`` directly into generated output. Can "
 "be specified more than once, in which case all given files will be "
 "included in the order specified."
-msgstr ""
+msgstr "将来自 ``<path>`` 的 Scheme 源代码直接嵌入到生成的输出中。可以多次指定，在这"
+"种情况下，所有给定的文件都将按指定的顺序包含。"
 
 #: ../source/backends/chez.rst:76 fb8e8405689e42a6a8e6a31df0c99d10
 msgid "Making a freestanding executable"
-msgstr ""
+msgstr "构建独立的可执行文件"
 
 #: ../source/backends/chez.rst:78 755112e7013a4b41a1222b79d8cdf85d
 msgid ""
@@ -1287,12 +1303,14 @@ msgid ""
 "program into a freestanding executable with `chez-exe "
 "<https://github.com/gwatt/chez-exe>`_."
 msgstr ""
+"可以使用 `chez-exe <https://github.com/gwatt/chez-exe>`_ 将 Chez Scheme "
+"系统和内置的 Idris2 程序嵌入到独立的可执行文件中。"
 
 #: ../source/backends/chez.rst:80 03b51f3b43a2405bb3f26c00c8045306
 msgid ""
 "Build and install the ``compile-chez-program-tool`` by running the "
 "configuration script and then make:"
-msgstr ""
+msgstr "通过运行配置脚本构建并安装 ``compile-chez-program-tool`` ，然后执行："
 
 #: ../source/backends/chez.rst:87 c2ae613ad79a48908400267e4a0cfd86
 msgid ""
@@ -1300,10 +1318,12 @@ msgid ""
 "(``petite.boot`` and ``scheme.boot``) and ``scheme.h`` are. More "
 "configuration is described in the chez-exe installation instructions."
 msgstr ""
+"其中 ``<bootpath`` 是 Chez Scheme 引导文件（ ``petite.boot`` 和 ``scheme."
+"boot`` ）和 ``scheme.h`` 所在的路径。更多配置在 chez-exe 安装说明中描述。"
 
 #: ../source/backends/chez.rst:90 ef3e3a216f164e46ad6bbef863cf2938
 msgid "Invoke ``compile-chez-program``:"
-msgstr ""
+msgstr "调用 ``compile-chez-program`` ："
 
 #: ../source/backends/chez.rst:96 502f24e73b0d481f8dfda342d1cd2c92
 msgid ""
@@ -1311,17 +1331,20 @@ msgid ""
 "embed the full Chez Scheme system including the compiler add the "
 "``--full-chez`` option."
 msgstr ""
+"请注意，它只能使用 ``.ss`` 文件而不是 ``.so`` 文件。"
+"要嵌入包括编译器在内的完整 Chez Scheme 系统，请添加 ``--full-chez`` 选项。"
 
 #: ../source/backends/chez.rst:99 cb751866dd774dda97247b40199ea345
 msgid ""
 "The finished executable still requires the libidris_support shared "
 "library. It's possible to also eliminate that dependency by linking with "
 "it statically."
-msgstr ""
+msgstr "完成的可执行文件仍然需要 libidris_support "
+"共享库。也可以通过静态链接来消除这种依赖关系。"
 
 #: ../source/backends/custom.rst:3 8bb641a4be774b46b589f4875a9ea8a5
 msgid "Building Idris 2 with new backends"
-msgstr ""
+msgstr "使用新后端构建 Idris 2"
 
 #: ../source/backends/custom.rst:5 70fca0236950432b9f84554debb925cb
 msgid ""
@@ -1331,38 +1354,43 @@ msgid ""
 "codegens in addition to the built-in ones. The first codegen in the list "
 "will be set as the default codegen."
 msgstr ""
+"使用新后端扩展 Idris 2 的方法是将其用作库。模块 ``Idris.Driver`` 导出函数 "
+"``mainWithCodegens`` ，它接受一个 ``(String, Codegen)`` "
+"列表，除了内置代码之外，还使用这些代码生成器启动\n"
+" idris 。列表中的第一个 codegen 将被设置为默认 codegen。"
 
 #: ../source/backends/custom.rst:12 4de7bbbe3ece4ab5b68d137812eaa61c
 msgid "Getting started"
-msgstr ""
+msgstr "入门"
 
 #: ../source/backends/custom.rst:14 cdf276de154c49fca00c3dcae49cacec
 msgid ""
 "To use Idris 2 as a library you need a self-hosting installation and then"
 " install the `idris2api` library (at the top level of the Idris2 repo)"
-msgstr ""
+msgstr "要将 Idris 2 用作库，您需要自托管安装，然后安装 ``idris2api`` 库（位于 "
+"Idris2 存储库的顶层）"
 
 #: ../source/backends/custom.rst:21 af0b2ef26f21440087575f2a9c07e409
 msgid "Now create a file containing"
-msgstr ""
+msgstr "接下来创建一个文件，包含以下内容"
 
 #: ../source/backends/custom.rst:51 539adf44219d44e084c4ebccb93fc962
 msgid "Build it with"
-msgstr ""
+msgstr "构建它"
 
 #: ../source/backends/custom.rst:57 98213e8bdb904bb1a7c912077bd47a5c
 msgid "Now you have an idris2 with an added backend."
-msgstr ""
+msgstr "现在您有了一个带有附加后端的 idris2 。"
 
 #: ../source/backends/custom.rst:72 521d3fa8ae9e4bc4b629d4a708ecf658
 msgid ""
 "It will not be overly eager to actually compile any code with the new "
 "backend though"
-msgstr ""
+msgstr "不过，它不会过分急于用新的后端实际编译任何代码"
 
 #: ../source/backends/custom.rst:81 67e46ebe563e45ab95743937445ee5d2
 msgid "About the directories"
-msgstr ""
+msgstr "关于目录"
 
 #: ../source/backends/custom.rst:83 6178d0963e3d45028a9cbf9d739d41e5
 msgid ""
@@ -1374,20 +1402,25 @@ msgid ""
 ":`ref-sect-packages`) or via command line options (Listed in ``idris2 "
 "--help``)."
 msgstr ""
+"代码生成器可以假设 ``tmpDir`` 和 ``outputDir`` 都存在。 ``tmpDir`` "
+"用于临时文件，而 ``outputDir`` 是放置所需输出文件的位置。默认情况下， "
+"``tmpDir`` 和 ``outputDir`` 指向同一个目录（ ``build/exec`` "
+"）。可以从包描述（参见 :ref:`ref-sect-packages` 部分）或通过命令行选项（在 ``"
+"idris2 --help`` 中列出）设置目录。"
 
 #: ../source/backends/gambit.rst:3 446502bf2e97419c99f70f087118e7a5
 msgid "Gambit Scheme Code Generator"
-msgstr ""
+msgstr "Gambit Scheme 代码生成器"
 
 #: ../source/backends/gambit.rst:5 72d90f62b9a34677adb7642135dfe3f5
 msgid "The Gambit Scheme code generator can be accessed via the REPL command:"
-msgstr ""
+msgstr "可以通过 REPL 命令访问 Gambit Scheme 代码生成器："
 
 #: ../source/backends/gambit.rst:11 ../source/backends/racket.rst:11
 #: ../source/backends/refc.rst:21 6a7305cf8bc94d21b9af319f8f0884b4
 #: 78e26768a3d44072b23a0513a3f0163c a18fbe6b200b486db5472fe9c830541a
 msgid "Alternatively, you can set it via the ``IDRIS2_CG`` environment variable:"
-msgstr ""
+msgstr "或者，您可以通过 ``IDRIS2_CG`` 环境变量进行设置："
 
 #: ../source/backends/gambit.rst:17 f78b9bd28c564c468e4a9c112c3f0fac
 msgid ""
@@ -1395,48 +1428,54 @@ msgid ""
 "`Gambit Scheme <https://gambitscheme.org>`_. Gambit Scheme is free "
 "software, and available via most package managers."
 msgstr ""
+"要使用此生成器运行 Idris 程序，您需要安装 `Gambit Scheme "
+"<https://gambitscheme.org>`_ 。 Gambit Scheme "
+"是免费软件，可通过大多数包管理器获得。"
 
 #: ../source/backends/gambit.rst:31 8d049aeb84744ccea28c3c49ef74ce9f
 msgid "An executable binary ``build/exec/execname`` of the program."
-msgstr ""
+msgstr "程序的可执行二进制文件为 ``build/exec/execname`` 。"
 
 #: ../source/backends/gambit.rst:32 8f2099d3c76643a1bbc700afefc191cc
 msgid ""
 "A Gambit Scheme source file ``build/exec/execname.scm``, from which the "
 "binary is generated."
-msgstr ""
+msgstr "一个 Gambit Scheme 源文件 ``build/exec/execname.scm`` "
+"，并从中生成二进制文件。"
 
 #: ../source/backends/gambit.rst:41 2d4d0fba0ac0457aa1de9f816622fcd4
 msgid ""
 "Again, ``expr`` must have type ``IO ()``. This will generate a temporary "
 "Scheme file, and execute the Gambit interpreter on it."
-msgstr ""
+msgstr "同样， ``expr`` 必须具有 ``IO ()`` 类型。这将生成一个临时 Scheme 文件，"
+"并在其上执行 Gambit 解释器。"
 
 #: ../source/backends/gambit.rst:46 b8521861d8c549a7bf6938cfb8f2816a
 msgid "Gambit Directives"
-msgstr ""
+msgstr "Gambit 指令"
 
 #: ../source/backends/gambit.rst:70 85ba5185b7304b5e8b4046bda3b4ae4c
 msgid "``--directive C``"
-msgstr ""
+msgstr "``--directive C``"
 
 #: ../source/backends/gambit.rst:72 0f1ac0c4e3d44e03bdaa148d00302e55
 msgid "Compile to C."
-msgstr ""
+msgstr "编译为 C。"
 
 #: ../source/backends/gambit.rst:75 1c4519ceb9aa46a289677366b103845d
 msgid "Gambit Environment Configurations"
-msgstr ""
+msgstr "Gambit 环境变量配置"
 
 #: ../source/backends/gambit.rst:77 024211816b344f3ab37ace0fe2783015
 msgid "``GAMBIT_GSC_BACKEND``"
-msgstr ""
+msgstr "``GAMBIT_GSC_BACKEND``"
 
 #: ../source/backends/gambit.rst:79 560ebadf941c4313a9d01d3925ba948a
 msgid ""
 "The ``GAMBIT_GSC_BACKEND`` variable controls which C compiler Gambit will"
 " use during compilation. E.g. to use clang:"
-msgstr ""
+msgstr "``GAMBIT_GSC_BACKEND`` 变量控制在编译期间 Gambit 将使用哪个 C 编译器。例如。"
+"使用 clang ："
 
 #: ../source/backends/gambit.rst:85 b1ca3984c57245578beeac767af0f3f6
 msgid ""
@@ -1445,6 +1484,9 @@ msgid ""
 "get this functionality Gambit needs to be built from source, since it is "
 "not yet available in a released version."
 msgstr ""
+"v4.9.3 之后的 Gambit 支持 ``-cc`` 选项，它配置编译器后端 Gambit "
+"将用于构建二进制文件。目前要获得此功能 Gambit "
+"需要从源代码构建，因为它尚未在发布版本中可用。"
 
 #: ../source/backends/incremental.rst:3 db292acf803c4e15966e3f4c61bc2166
 msgid "Incremental Code Generation"
@@ -1554,7 +1596,7 @@ msgstr ""
 
 #: ../source/backends/index.rst:5 327c000e14aa41959cd0c69a18030f02
 msgid "Compiling to Executables"
-msgstr ""
+msgstr "编译为可执行文件"
 
 #: ../source/backends/index.rst:9 4f350ae357334d99a5741082ee146100
 msgid ""
@@ -1563,12 +1605,15 @@ msgid ""
 "Community* has waived all copyright and related or neighboring rights to "
 "Documentation for Idris."
 msgstr ""
+"Idris 的文档已在知识共享 CC0 许可下发布。因此，在法律允许的范围内，*Idris "
+"社区* 已经放弃了 Idris 文档的所有版权和相关或邻近的权利。"
 
 #: ../source/backends/index.rst:14 b82b65b7b00d45989da7103a23136c97
 msgid ""
 "More information concerning the CC0 can be found online at: "
 "http://creativecommons.org/publicdomain/zero/1.0/"
-msgstr ""
+msgstr "关于CC0的更多信息，可以在网上找到：http://creativecommons.org/publicdomain/"
+"zero/1.0/"
 
 #: ../source/backends/index.rst:16 575ebee2cf01454784d4bd4d26487033
 msgid ""
@@ -1577,10 +1622,13 @@ msgid ""
 "run it, it's important to know how to do so! By default, Idris compiles "
 "to executables via `Chez Scheme <https://www.scheme.com/>`_."
 msgstr ""
+"Idris 2（语言）被设计为不依赖于任何特定的代码生成器。不过，由于编写程序的重点"
+"是能够运行它，所以知道如何运行是很重要的,默认情况下，Idris通过 `Chez Scheme "
+"<https://www.scheme.com/>`_ 编译为可执行文件。"
 
 #: ../source/backends/index.rst:21 e45780a0dd4a4fb9b23ac6a94d762de5
 msgid "You can compile to an executable as follows, at the REPL:"
-msgstr ""
+msgstr "你可以在 REPL 中按如下方式编译到可执行文件："
 
 #: ../source/backends/index.rst:27 21f7a87101334680a167195aeab7169c
 msgid ""
@@ -1590,20 +1638,23 @@ msgid ""
 " in a directory ``build/exec``, relative to the current working "
 "directory."
 msgstr ""
+"...其中 ``execname`` 是要生成的可执行文件的名称， ``expr`` 是将被执行的 "
+"Idris 表达式。 ``expr`` 必须拥有 ``IO ()`` 的类型。这将产生一个可执行文件 "
+"``execname`` ，在相对于当前工作目录的 ``build/exec`` 目录下。"
 
 #: ../source/backends/index.rst:32 99e569bd2d144004b85d361e2e494261
 msgid "You can also execute expressions directly:"
-msgstr ""
+msgstr "你也可以直接执行表达式："
 
 #: ../source/backends/index.rst:38 71dae7a955014a1a9f379c3beeb828c7
 msgid "Again, ``expr`` must have type ``IO ()``."
-msgstr ""
+msgstr "同样， ``expr`` 也必须要有类型 ``IO ()`` 。"
 
 #: ../source/backends/index.rst:40 410ec94cb8bf4cb6b8570c71b9b2dd6b
 msgid ""
 "Finally, you can compile to an executable from the command line by adding"
 " the ``-o <output file>`` option:"
-msgstr ""
+msgstr "最后，你可以通过添加 ``-o <output file>`` 选项从命令行编译为可执行文件："
 
 #: ../source/backends/index.rst:47 a8bf60db89114604ae6db095acc37adf
 msgid ""
@@ -1611,6 +1662,8 @@ msgid ""
 "``hello`` (with an extension depending on the code generator) in the "
 "``build/exec`` directory."
 msgstr ""
+"将编译表达式 ``Main.main`` ，在 ``build/exec`` 目录下生成一个可执行的 "
+"``hello`` （根据代码生成器的不同，可能会有一个文件扩展名）。"
 
 #: ../source/backends/index.rst:51 b38bbe3bfa7f4da8a10b6986812040c3
 msgid ""
@@ -1620,6 +1673,9 @@ msgid ""
 "also be slow for rebuilding. However, if the backend supports it, you can"
 " build modules and executables *incrementally*:"
 msgstr ""
+"默认情况下，Idris 2 是一个完整的程序编译器 - 也就是说，它找到所有必要的函数定"
+"义，并在你构建可执行文件时才编译它们。这提供了大量的优化机会，但对于重新构建"
+"来说可能会很慢。然而，如果后端支持的话，你可以 *增量* 构建模块和可执行文件："
 
 #: ../source/backends/index.rst:62 a49dc8def238491da52a40245b461cac
 msgid ""
@@ -1629,6 +1685,10 @@ msgid ""
 "depend on the back end you are using. Currently, the Chez and Racket back"
 " ends support generating profile data."
 msgstr ""
+"如果后端支持，你可以通过设置 ``profile`` 标志来生成配置数据，或者用 "
+"``--profile`` 启动 Idris，或者在 REPL 运行 ``:set profile`` "
+"。生成的配置数据将取决于你所使用的后端。目前， Chez 和 Racket "
+"后端支持生成配置数据。"
 
 #: ../source/backends/index.rst:68 2d139d377e7b40c58fd5dec4d8eb5dfa
 msgid ""
@@ -1638,28 +1698,36 @@ msgid ""
 "Gambit. You can set the code generator at the REPL with the `:set "
 "codegen` command, or via the `IDRIS2_CG` environment variable."
 msgstr ""
+"Idris 2 "
+"中提供了五个代码生成器，并且有一个系统可以为各种目标语言插入新的代码生成器。"
+"默认是通过 Chez Scheme 编译，还有一个选择是通过 Racket 或 Gambit 编译。"
+"你可以在REPL中用 `:set codegen` 命令设置代码生成器，或者通过 `IDRIS2_CG` "
+"环境变量进行设置。"
 
 #: ../source/backends/index.rst:85 282c18615d2f49e79fa1128ca53d9c53
 msgid ""
 "There are also external code generators that aren't part of the main "
 "Idris 2 repository and can be found on Idris 2 wiki:"
-msgstr ""
+msgstr "还有一些其它的代码生成器，它们不是Idris 2 主资源库的一部分，你可以在 Idris 2 "
+"维基上找到："
 
 #: ../source/backends/index.rst:88 5ee0cd8687554b22987b86988862e902
 msgid ""
 "`External backends <https://github.com/idris-"
 "lang/Idris2/wiki/1-%5BLanguage%5D-External-backends>`_"
 msgstr ""
+"`其它后端 <https://github.com/idris-lang/Idris2/wiki/1-%5BLanguage%5D-"
+"External-backends>`_"
 
 #: ../source/backends/index.rst:90 12932ada2df5408bbece1ec28e7448d8
 msgid ""
 "There is work in progress support for generating libraries for other "
 "languages from idris2 code."
-msgstr ""
+msgstr "目前正在进行的工作是支持从 idris2 代码生成其他语言的库。"
 
 #: ../source/backends/javascript.rst:3 8625c9adc3124563b376fb7e2a504ea3
 msgid "Javascript and Node Code Generators"
-msgstr ""
+msgstr "Javascript 和 Node 代码生成器"
 
 #: ../source/backends/javascript.rst:5 1c0c4d18e27d426694aa04364153ef7d
 msgid ""
@@ -1669,10 +1737,14 @@ msgid ""
 "HTML document with the generated code inside a ``<script>`` tag; the "
 "other distinction is on the ffi that will be explained below."
 msgstr ""
+"有两个 javascript 代码生成器， ``node`` 和 ``javascript`` "
+"。两者之间有两个区别： ``javascript`` 代码生成器在被调用时，如果输出是一个一"
+"个HTML文件，会同时生成一个基本的HTML文件，生成的代码在 ``<script>`` 标签内；"
+"另一个区别是在 ffi 上，将在下面解释。"
 
 #: ../source/backends/javascript.rst:13 e1c460c27e66445988de25bbc4d5da37
 msgid "Javascript FFI Specifiers"
-msgstr ""
+msgstr "Javascript FFI 说明符"
 
 #: ../source/backends/javascript.rst:15 37543b7b89804923b0acb9512d48d711
 msgid ""
@@ -1681,34 +1753,37 @@ msgid ""
 "available on node and the browser, ``node`` for foreigns that are only "
 "available on node and ``browser`` for browser only foreigns."
 msgstr ""
+"有三种主要的 javascript ffi 说明符 ``javascript``, ``node`` 和 ``browser`` 。"
+" ``javascript`` 表示在node 和浏览器上均可用， ``node`` 仅在 node 上可用， "
+"``browser`` 仅在浏览器上可用。"
 
 #: ../source/backends/javascript.rst:20 7a625691274c4bafbf8782ad075f0c4a
 msgid "For ``node`` there are two ways of defining a foreign:"
-msgstr ""
+msgstr "对于 ``node`` 来说，有两种方法来定义一个外部函数："
 
 #: ../source/backends/javascript.rst:27 480fb79f06674ceaae68977c7262727d
 msgid ""
 "here ``lambda`` means that we are providing the definition as a lambda "
 "expression."
-msgstr ""
+msgstr "这里的 ``lambda`` 表示我们将定义作为一个 lambda 表达式进行提供。"
 
 #: ../source/backends/javascript.rst:36 3702f494ac2149cc96be9ca5a98a15ec
 msgid "``require`` can be used to import javascript modules."
-msgstr ""
+msgstr "``require`` 可以用来导入 javascript 模块。"
 
 #: ../source/backends/javascript.rst:38 fab505cb58df4584b6cdba4086ed9d27
 msgid ""
 "For completion below an example of a foreign available only with "
 "``browser`` codegen:"
-msgstr ""
+msgstr "下面是一个完整示例，只有在 ``browser`` 的 codegen 是外部函数才可用："
 
 #: ../source/backends/javascript.rst:47 9c2ac160515a4643995fc3a4be4e3c12
 msgid "Short Example"
-msgstr ""
+msgstr "简短示例"
 
 #: ../source/backends/javascript.rst:49 ef2932c9dfaa418ba8fbd510a0736aec
 msgid "An interesting example is creating a foreign for the setTimeout function:"
-msgstr ""
+msgstr "一个有趣的例子是为 setTimeout 函数创建一个外部函数："
 
 #: ../source/backends/javascript.rst:59 6c1c20e5364f497d91959eda97921a45
 msgid ""
@@ -1718,6 +1793,10 @@ msgid ""
 "represented by ``Number``. This should facilitate interop between Idris2 "
 "and the backend."
 msgstr ""
+"注意：以前版本 的javascript 后端将 ``Int`` 视为一个64位有符号的整数，在 "
+"javascript 领域由 ``BigInt`` 表示。现在情况不是这样了。 ``Int`` "
+"现在被视为一个32位有符号的整数，由 ``Number`` 表示。这应该有利于 Idris2 "
+"和后端之间的互操作。"
 
 #: ../source/backends/javascript.rst:64 023dee44cf804436ba90c08c1e9e0d17
 msgid ""
@@ -1729,10 +1808,15 @@ msgid ""
 "``Bits64``, and ``Integer`` are represented by ``BigInt``. The example "
 "above could therefore be improved by using ``Int32`` instad of ``Int``:"
 msgstr ""
+"但是，除非您有充分的理由这样做，否则请考虑使用其他固定精度整数类型之一。它们"
+"应该在所有后端上都具有相同的行为。所有精度高达 32 位的有符号和无符号整型（ "
+"``Int8``, ``Int16``, ``Int32``, ``Bits8``, ``Bits16``, 和 ``Bits32`` ）都由 "
+"``Number`` 表示，而 ``Int64`` 、 ``Bits64`` 和 ``Integer`` 由 ``BigInt`` "
+"表示。因此，可以通过使用 ``Int32`` 代替 ``Int`` 来改进上面的示例："
 
 #: ../source/backends/javascript.rst:81 fe1b55d3388849eaa50a42eb331e456a
 msgid "Browser Example"
-msgstr ""
+msgstr "浏览器示例"
 
 #: ../source/backends/javascript.rst:83 51970c6e007e46efafc6e166a1ff63d4
 msgid ""
@@ -1741,41 +1825,46 @@ msgid ""
 "JavaScript or an HTML file. The browser needs an HTML file to load. This "
 "HTML file can be created in two ways"
 msgstr ""
+"要构建能在浏览器中使用的JavaScript，必须使用 javascript codegen "
+"选项编译代码。编译器生成 JavaScript 或 HTML 文件。浏览器需要一个 HTML "
+"文件才能加载。此HTML文件可以通过两种方式创建"
 
 #: ../source/backends/javascript.rst:87 8a0c9d1ce4b34975b4ce3a4e7418ef24
 msgid ""
 "If the ``.html`` suffix is given to the output file the compiler "
 "generates an HTML file which includes a wrapping around the generated "
 "JavaScript."
-msgstr ""
+msgstr "如果输出文件中包含 ``.html`` 后缀，编译器就会生成一个 HTML 文件，"
+"其中包括对已生成的 JavaScript 的包装。"
 
 #: ../source/backends/javascript.rst:89 8ce86ee7f5d243f5a7a240abdbd2b2e3
 msgid ""
 "If *no* ``.html`` suffix is given, the generated file only contains the "
 "JavaScript code. In this case manual wrapping is needed."
-msgstr ""
+msgstr "如果 *没有* 给出 ``.html`` "
+"后缀，生成的文件只包含JavaScript代码。在这种情况下，需要手动包装。"
 
 #: ../source/backends/javascript.rst:92 e16f6126baa8415ab1176c627908755a
 msgid "Example of the wrapper HTML:"
-msgstr ""
+msgstr "包装到 HTML 的示例："
 
 #: ../source/backends/javascript.rst:105 b5b2e3545de74bf4b88affcd6d169eb5
 msgid ""
 "As our intention is to develop something that runs in the browser "
 "questions naturally arise:"
-msgstr ""
+msgstr "由于我们的目的是开发在浏览器中运行的东西，自然会产生一些问题："
 
 #: ../source/backends/javascript.rst:107 6fbdc76bad6c4743a3d6b81f1ca136d7
 msgid "How to interact with HTML elements?"
-msgstr ""
+msgstr "如何与 HTML 元素交互？"
 
 #: ../source/backends/javascript.rst:108 977cb54cdcf34bc8b9f298c901c058b0
 msgid "More importantly, when does the generated Idris code start?"
-msgstr ""
+msgstr "更重要的是，生成的 Idris 代码会在什么时候开始执行？"
 
 #: ../source/backends/javascript.rst:111 3171f5f33da4452cbfbe67f42aea8646
 msgid "Starting point of the Idris generated code"
-msgstr ""
+msgstr "Idris 生成代码的起点"
 
 #: ../source/backends/javascript.rst:113 b2620d522b8747c584c49e59fdd58260
 msgid ""
@@ -1784,10 +1873,13 @@ msgid ""
 " will be evaluated during the loading of the ``script`` tag and that is "
 "the entry point for Idris generated program starting in the browser."
 msgstr ""
+"为你的程序生成的 JavaScript 包含一个入口点。 ``main`` 函数被编译成一个 "
+"JavaScript 顶层表达式，它将在加载 ``script`` "
+"标签时被求值，这就是Idris生成的程序在浏览器中开始的入口点。"
 
 #: ../source/backends/javascript.rst:118 4e86fe3b02b14e4686110caabeffefcc
 msgid "Interaction with HTML elements"
-msgstr ""
+msgstr "与HTML元素的交互"
 
 #: ../source/backends/javascript.rst:120 1e9526c7d46549a09e7584eec23994f7
 #, python-format
@@ -1805,14 +1897,23 @@ msgid ""
 "declaration is a helper function which needs to be called behind the "
 "``primIO`` function. More on this can be found in the FFI chapter."
 msgstr ""
+"正如简短示例部分所描述的，当 Idris "
+"生成的代码和浏览器/JS生态系统的其他部分发生交互时，必须使用 FFI 。由 FFI "
+"处理的信息被分成两类。第一是Idris FFI 的原语类型，如 Int "
+"。第二类是除原语类型之外所有的。第二类是通过 AnyPtr 访问的。 ``%foreign`` "
+"结构应该被用来在 JavaScript 方面给出实现。还有一个 Idris 函数声明，在 Idris "
+"方面给出 ``Type`` 声明。语法是 ``%foreign \"browser:lambda:js-lambda-"
+"expression\"`` 。在 Idris 方面，当定义 ``%foreign`` 时，原语类型和 ``PrimIO "
+"t`` 类型应该作为参数。这个声明是一个辅助函数，需要在 ``primIO`` "
+"函数后面被调用。关于这一点的更多信息可以在 FFI 章节中找到。"
 
 #: ../source/backends/javascript.rst:131 2d8a678b9a574d9fb2453f7bc6924944
 msgid "Examples for JavaScript FFI"
-msgstr ""
+msgstr "JavaScript FFI 示例"
 
 #: ../source/backends/javascript.rst:134 916c04496da649008ea4f42092eed0dc
 msgid "console.log"
-msgstr ""
+msgstr "console.log"
 
 #: ../source/backends/javascript.rst:144 ed94337e1fe64b0b9798fece48c70fdf
 msgid ""
@@ -1820,10 +1921,12 @@ msgid ""
 " String. There is no need for any conversion between the Idris and the "
 "JavaScript."
 msgstr ""
+"在 Idris 中，字符串是一个原语类型，它被表示为一个 JavaScript 字符串。在 "
+"Idris 和 JavaScript 之间没有必要进行任何转换。"
 
 #: ../source/backends/javascript.rst:148 c2714e58d94b48c2b007be99159f0d8c
 msgid "setInterval"
-msgstr ""
+msgstr "setInterval"
 
 #: ../source/backends/javascript.rst:158 6d59cbbaeffb4d9d956964c6e584110f
 msgid ""
@@ -1831,10 +1934,12 @@ msgid ""
 "every ``x`` millisecond. We can use Idris generated functions in the "
 "callback as far as they have the type ``IO ()`` ."
 msgstr ""
+"JavaScript 中的 ``setInterval`` 函数在每 ``x`` 毫秒执行给定的函数。"
+"我们可以在回调中使用 Idris 生成的函数，只要它们的类型是 ``IO ()`` 。"
 
 #: ../source/backends/javascript.rst:162 d1d136d90e654decb39fee03e484d09e
 msgid "HTML Dom elements"
-msgstr ""
+msgstr "HTML Dom 元素"
 
 #: ../source/backends/javascript.rst:164 32621b0370984f4490a97eca62a8fe54
 msgid ""
@@ -1844,6 +1949,10 @@ msgid ""
 "JavaScript function should be captured in an ``AnyPtr`` value. It is "
 "advisory to separate the ``AnyPtr`` values into categories."
 msgstr ""
+"让我们把注意力转移到 Dom 元素和事件上。如上所述，"
+"任何不是原语类型的东西都应该通过FFI中的 ``AnyPtr`` 类型来处理。任何由 "
+"JavaScript 函数返回的复杂的东西都应该在 ``AnyPtr`` 值中捕获。建议将 "
+"``AnyPtr`` 值分成几类。"
 
 #: ../source/backends/javascript.rst:179 7af43989d9374cda91894ced8d754921
 msgid ""
@@ -1853,20 +1962,24 @@ msgid ""
 "wrap the result in the ``DomNode`` type using the ``MkNode`` data "
 "constructor."
 msgstr ""
+"我们创建了一个 ``DomNode`` 类型，它持有一个 ``AnyPtr`` 。 ``prim__body`` "
+"函数包装了一个没有参数的 lambda 函数。在 Idris 函数 ``body`` 中，"
+"我们传递一个额外的 ``()`` 参数，我们使用 ``MkNode`` 数据构造器将结果包裹在 "
+"``DomNode`` 类型中。"
 
 #: ../source/backends/javascript.rst:184 39fbb06c1184444295df9b4ab4697d00
 msgid "Primitive values originated in JavaScript"
-msgstr ""
+msgstr "JavaScript 返回的原语类型值"
 
 #: ../source/backends/javascript.rst:186 1b2a42c7b4294096b54bf403974ea320
 msgid ""
 "As a countinuation of the previous example, the ``width`` attribute of a "
 "DOM element can be retrieved via the FFI."
-msgstr ""
+msgstr "作为前面例子的延续，DOM元素的 ``width`` 属性可以通过FFI检索。"
 
 #: ../source/backends/javascript.rst:198 727f5d1bd4a44751b600664c0c99a1ce
 msgid "Handling JavaScript events"
-msgstr ""
+msgstr "处理 JavaScript 事件"
 
 #: ../source/backends/javascript.rst:212 445826cef85043638a7d7bb881cd37a0
 msgid ""
@@ -1876,10 +1989,14 @@ msgid ""
 "different types. Also it demonstrates how a simple callback function "
 "defined in Idris can be used on the JavaScript side."
 msgstr ""
+"在这个例子中显示了如何将一个事件处理程序附加到一个特定的 DOM 元素。在Idris "
+"方面事件的值也是 ``AnyPtr`` 类型。为了分离 ``DomNode`` 和 ``DomEvent`` "
+"我们创建了两个不同的类型。它还演示了在 Idris "
+"中定义的一个简单的回调函数如何在 JavaScript 侧使用。"
 
 #: ../source/backends/javascript.rst:218 807b1351f6f24bc09a867c23df28ffd1
 msgid "Directives"
-msgstr ""
+msgstr "指令"
 
 #: ../source/backends/javascript.rst:220 ecd27f6096e149a2926fa6ea94d18f6e
 msgid ""
@@ -1890,6 +2007,10 @@ msgid ""
 "examples below, but the behavior is the same when generating code to be "
 "run in browsers with ``--cg javascript``)."
 msgstr ""
+"javascript 代码生成器接受三种不同的指令，即生成的代码应该有多紧凑和多晦涩。"
+"下面的例子显示了为 ``putStr`` 函数生成的代码，这三个指令分别来自 prelude "
+"。(``--cg node`` 被在下面的例子使用，但在生成代码在浏览器中运行时， ``--cg "
+"javascript`` 的行为是一样的)。"
 
 #: ../source/backends/javascript.rst:227 f9ea5cc5cf8a46f794b5235f365204df
 msgid ""
@@ -1897,12 +2018,17 @@ msgid ""
 "directive is given), a basic pretty printer is used to generate properly "
 "indented javascript code."
 msgstr ""
+"使用 ``idris2 --cg node --directive pretty`` "
+"（默认情况下，如果没有给出指令），一个基本的美观打印器被用来生成正确缩进的 "
+"javascript 代码。"
 
 #: ../source/backends/javascript.rst:237 6bbb0d4947bc4727afad852efbf45ea3
 msgid ""
 "With ``idris2 --cg node --directive compact``, every toplevel function is"
 " declared on a single line, and unneeded spaces are removed:"
 msgstr ""
+"使用 ``idris2 --cg node --directive compact`` "
+"，每一个顶层函数都在一行中声明，不需要的空格都会被删除："
 
 #: ../source/backends/javascript.rst:244 b757af235d0348a0865335dbab14fc6f
 msgid ""
@@ -1910,42 +2036,46 @@ msgid ""
 " names are (with a few exceptions like the ones from the static preamble)"
 " obfuscated to reduce the size of the generated javascript file:"
 msgstr ""
+"最后，通过 ``idris2 --cg node --directive minimal`` "
+"，顶层函数名称（除了少数例外，如静态序言『static "
+"preamble』中的函数）会被混淆，以减少生成的javascript文件的大小："
 
 #: ../source/backends/libraries.rst:3 fb55cd2c8cff472793991df731c34624
 msgid "Libraries"
-msgstr ""
+msgstr "类库"
 
 #: ../source/backends/libraries.rst:5 9fdaf711c6ec418a8374bea9280f8789
 msgid "This pragma tells the backend what name to use for a given function."
-msgstr ""
+msgstr "这个编译指示告诉后端对一个给定的函数使用什么名字。"
 
 #: ../source/backends/libraries.rst:13 069d6ef5dd9d4b2cbf5270d13bf245bf
 msgid ""
 "On backends that support this feature, the function will be called "
 "``foo`` rather than being mangled, with the namespace."
-msgstr ""
+msgstr "在支持该功能的后端，该函数将被称为 ``foo`` 而不会被混淆，并带有命名空间。"
 
 #: ../source/backends/libraries.rst:16 b6284175792c471495314b8b2defd24b
 msgid ""
 "If the name you want to use isn't a valid idris identifier, you can use a"
 " different name for the idris name and name that appears in the compiled "
 "code, e.g."
-msgstr ""
+msgstr "如果您要使用的名称不是有效的 idris 标识符，则可以对已编译代码中显示的 idris "
+"名称和函数使用不同的名称，例如。"
 
 #: ../source/backends/libraries.rst:25 b50de18ab9b440a08c1f4ae0981fbfdf
 #, python-format
 msgid ""
 "You can also specificy different names for different backends, in a "
 "similar way to %foreign"
-msgstr ""
+msgstr "你也可以为不同的后端指定不同的名字，类似于 %foreign 的方式"
 
 #: ../source/backends/racket.rst:3 9fe878e57dc548068eb73bdaca1961ec
 msgid "Racket Code Generator"
-msgstr ""
+msgstr "Racket 代码生成器"
 
 #: ../source/backends/racket.rst:5 836ccfe9352e449fb6c0d64faa43f98b
 msgid "The Racket code generator is accessed via a REPL command:"
-msgstr ""
+msgstr "Racket 代码生成器通过 REPL 命令访问："
 
 #: ../source/backends/racket.rst:28 15598275ad4d409abd1166fbc77d637a
 msgid ""
@@ -1955,6 +2085,9 @@ msgid ""
 "``execname.exe`` on Windows) and any shared libraries needed for foreign "
 "function definitions."
 msgstr ""
+"一个子目录 ``build/exec/execname_app`` 中包含运行程序所需的所有数据。这包括 "
+"Racket 源代码（ ``execname.rkt`` ）、已编译的 Racket 代码（Windows 上的 "
+"``execname`` 或 ``execname.exe`` ）以及外部函数定义所需的任何共享库。"
 
 #: ../source/backends/racket.rst:42 9c6f779aec044e6b8bdc9767ebd2e159
 msgid ""
@@ -1963,10 +2096,13 @@ msgid ""
 "execute that, without compiling to a binary first (so the resulting "
 "Racket code is interpreted)."
 msgstr ""
+"同样， ``expr`` 必须具有 ``IO ()`` 类型。这将在 ``build/exec`` "
+"目录中生成一个临时可执行脚本 ``_tmpracket`` "
+"，并执行该脚本，而无需先编译为二进制文件（因此会解释生成的 Racket 代码）。"
 
 #: ../source/backends/racket.rst:49 d03379664cd84adeb864ef841ef51877
 msgid "Racket Directives"
-msgstr ""
+msgstr "Racket 指令"
 
 #: ../source/backends/refc.rst:3 d45e120ba7e9487db62811cadd95b734
 msgid "C with Reference Counting"
@@ -2079,4 +2215,3 @@ msgid ""
 "produces a stub ``python_Main_abs``, which can be backpatched in Python "
 "by:"
 msgstr ""
-
