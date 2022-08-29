@@ -3,23 +3,26 @@
 # This file is distributed under the same license as the Idris2 package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-08-28 21:56+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2022-08-29 09:22+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"Language-Team: Chinese (Simplified) <https://weblate.grass.work:30443/"
+"projects/idris/app/zh_Hans/>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 4.13.1\n"
 "Generated-By: Babel 2.10.3\n"
 
 #: ../source/app/exceptionsstate.rst:2 bb6d230bdaf944b7be9cf64f76b8326d
 msgid "Exceptions and State"
-msgstr ""
+msgstr "异常和状态"
 
 #: ../source/app/exceptionsstate.rst:4 35eb024a5a6f4e71b94cfecf2122cf9b
 msgid ""
@@ -28,16 +31,20 @@ msgid ""
 "catch exceptions listed in the list of errors (the ``es`` parameter to "
 "``App``) and introduce new global state."
 msgstr ""
+"``Control.App`` 主要是为了更容易管理有异常和状态的应用程序的常见情况。我们可"
+"以抛出和捕捉错误列表中列出的异常（ ``es`` 参数为 ``App`` "
+"），并引入新的全局状态。"
 
 #: ../source/app/exceptionsstate.rst:10 3e087ebfc64f43a1b65352f97b9819a8
 msgid "Exceptions"
-msgstr ""
+msgstr "异常"
 
 #: ../source/app/exceptionsstate.rst:12 08972c9fa2ba4593a9f7a02e16215424
 msgid ""
 "The ``List Error`` is a list of error types, usable via the ``Exception``"
 " interface defined in ``Control.App``:"
-msgstr ""
+msgstr "``List Error`` 是一个错误类型的列表，可通过定义在 ``Control.App`` 中 "
+"``Exception`` 接口使用："
 
 #: ../source/app/exceptionsstate.rst:21 86ef8b9c80bb4ba69073753a4da529ca
 msgid ""
@@ -45,6 +52,9 @@ msgid ""
 "long as the exception type exists in the list of errors. This is checked "
 "with the ``HasErr`` predicate, also defined in ``Control.App``:"
 msgstr ""
+"要该异常类型存在于错误列表中，我们就可以使用 ``throw`` 和 ``catch`` "
+"处理异常类型 ``err`` 。可以通过 ``HasErr`` 谓词来检查，被定义在``Control."
+"App`` 中："
 
 #: ../source/app/exceptionsstate.rst:33 8f93c5a4f91a4e5695653b53ed3dee32
 msgid ""
@@ -54,24 +64,29 @@ msgid ""
 "can introduce new exception types via ``handle``, which runs a block of "
 "code which might throw, handling any exceptions:"
 msgstr ""
+"注意 ``Exception`` 上的 ``HasErr`` 约束：这是在 Idris 2 中 ``auto`` "
+"隐式机制和接口解析机制相同的符号方便的地方。最后，我们可以通过 ``handle`` "
+"引入新的异常类型，它运行可能抛出的代码块，处理任何异常："
 
 #: ../source/app/exceptionsstate.rst:46 ecdfc7539d294e0da92fd6f8416cdf03
 msgid "Adding State"
-msgstr ""
+msgstr "添加状态"
 
 #: ../source/app/exceptionsstate.rst:48 1459688721e94b20ae7589d5e4c50e3d
 msgid ""
 "Applications will typically need to keep track of state, and we support "
 "this primitively in ``App`` using a ``State`` type, defined in "
 "``Control.App``:"
-msgstr ""
+msgstr "应用程序通常需要跟踪状态，我们在 ``App`` 中使用 ``Control.App`` 中定义的 "
+"``State`` 类型支持这个原语："
 
 #: ../source/app/exceptionsstate.rst:56 112cb81189ae4607b9845f121ef78957
 msgid ""
 "The ``tag`` is used purely to distinguish between different states, and "
 "is not required at run-time, as explicitly stated in the types of ``get``"
 " and ``put``, which are used to access and update a state:"
-msgstr ""
+msgstr "``tag`` 只被用于区分不同的状态，在运行时是不需要，如用于访问和更新的 ``get`` "
+"和 ``put`` 类型："
 
 #: ../source/app/exceptionsstate.rst:65 038622605d9e43f9b8a3f9ecab689d9d
 msgid ""
@@ -79,13 +94,17 @@ msgid ""
 "relevant ``tag`` implicitly, so we refer to states by tag alone. In "
 "``helloCount`` earlier, we used an empty type ``Counter`` as the tag:"
 msgstr ""
+"它们使用 ``auto``-implicit 来隐式传递带有相关 ``tag`` 的 ``State`` "
+"，因此我们仅通过标签来引用状态。在前面的 ``helloCount`` 中，"
+"我们使用了一个空类型 ``Counter`` 作为标签："
 
 #: ../source/app/exceptionsstate.rst:74 13f4546355154ba9a4899f0f7caa634b
 msgid ""
 "The list of errors ``e`` is used to ensure that states are only usable in"
 " the list of errors in which they are introduced. States are introduced "
 "using ``new``:"
-msgstr ""
+msgstr "错误列表 ``e`` 用来确保状态只在其被引入的错误列表中可用。状态是用 ``new`` "
+"引入的："
 
 #: ../source/app/exceptionsstate.rst:82 1bac24f4997b4e4db0a853994ace8468
 msgid ""
@@ -95,14 +114,18 @@ msgid ""
 "are allowed in a list of errors. Internally, ``State`` is implemented via"
 " an ``IORef``, primarily for performance reasons."
 msgstr ""
+"请注意，这个类型告诉我们 ``new`` 用这个状态运行程序正好一次。然而，"
+"我们通常不直接使用 ``State`` 和 ``Exception`` "
+"，而是使用接口来约束错误列表中允许的操作。在内部， ``State`` 是通过 ``IORef``"
+" 实现的，这主要是出于性能的考虑。"
 
 #: ../source/app/index.rst:5 b9d54a8149054d9e842cf3e1e92f5001
 msgid "Structuring Idris 2 Applications"
-msgstr ""
+msgstr "构建 Idris 2 应用程序"
 
 #: ../source/app/index.rst:7 99bc0c9350dc4937b126b9706bccda8c
 msgid "A tutorial on structuring Idris 2 applications using ``Control.App``."
-msgstr ""
+msgstr "关于使用 ``Control.App`` 构建Idris 2应用程序的教程。"
 
 #: ../source/app/index.rst:11 b8cad8bf3475487a94fe5125dfbf3cd7
 msgid ""
@@ -111,12 +134,15 @@ msgid ""
 "Community* has waived all copyright and related or neighboring rights to "
 "Documentation for Idris."
 msgstr ""
+"Idris 的文档已在知识共享 CC0 许可下发布。因此，在法律允许的范围内，*Idris "
+"社区* 已经放弃了 Idris 文档的所有版权和相关或邻近的权利。"
 
 #: ../source/app/index.rst:16 4f6ff313f9354c5abc1c3e00cb27d1bf
 msgid ""
 "More information concerning the CC0 can be found online at: "
 "http://creativecommons.org/publicdomain/zero/1.0/"
-msgstr ""
+msgstr "关于CC0的更多信息，可以在网上找到：http://creativecommons.org/publicdomain/"
+"zero/1.0/"
 
 #: ../source/app/index.rst:21 04a7276077034420a7b434eb87b95252
 msgid ""
@@ -128,6 +154,11 @@ msgid ""
 "explain how exceptions and linearity (see Section :ref:`sect-"
 "multiplicities`) interact."
 msgstr ""
+"Idris 应用程序有 ``main : IO ()`` 作为一个入口点， 类 型 ``IO a`` "
+"是对交互式操作的描述，它产生一个类型 ``a`` 的值。这对原语来说很好，但 ``IO`` "
+"不支持异常，所以我们必须明确说明一个操作如何处理失败。另外，如果我们确实想支"
+"持异常，我们也要解释异常和线性（见章节 :ref:`sect-multiplicities` "
+"）如何交互。"
 
 #: ../source/app/index.rst:28 98d70e0f5b1b4d15a447746fb1835f72
 msgid ""
@@ -136,46 +167,53 @@ msgid ""
 "applications, taking into account both exceptions and linearity. The aims"
 " of ``App`` and ``App1`` are that they should:"
 msgstr ""
+"在本教程中，我们描述了一个参数化类型 ``App`` 和一个相关的参数化类型 ``App1`` "
+"，它们共同允许我们在考虑到异常和线性的情况下构造更大的应用程序。 ``App`` 和 "
+"``App1`` 的目的是："
 
 #: ../source/app/index.rst:33 1f8ad6976e7147449c7465bc22b11e36
 msgid ""
 "make it possible to express what interactions a function does, in its "
 "type, without too much notational overhead."
-msgstr ""
+msgstr "使得在其类型中表达一个函数所做的交互成为可能，而没有太多的符号开销。"
 
 #: ../source/app/index.rst:35 42a76612545043429247468a015bfc6e
 msgid "have little or no performance overhead compared to writing in *IO*."
-msgstr ""
+msgstr "与写在 *IO* 中相比，几乎没有性能开销。"
 
 #: ../source/app/index.rst:36 e115784778e94a058fe07b7de5aa9fe2
 msgid ""
 "be compatible with other libraries and techniques for describing effects,"
 " such as algebraic effects or monad transformers."
-msgstr ""
+msgstr "与其他副作用相关的库和技术兼容，如代数副作用『algebraic "
+"effects』或单子变压器『monad transformers』。"
 
 #: ../source/app/index.rst:38 c44765af7c32408aa0f5c7b5f690cb19
 msgid ""
 "be sufficiently easy to use and performant that it can be the basis of "
 "*all* libraries that make foreign function calls, much as *IO* is in "
 "Idris 1 and Haskell"
-msgstr ""
+msgstr "足够易于使用和性能，它可以成为 *所有* 进行外部函数调用的库的基础，就像 *IO* "
+"在 Idris 1 和 Haskell 中一样"
 
 #: ../source/app/index.rst:41 511afcc02d694294a68fbbeb49ffadf3
 msgid ""
 "be compatible with linear types, meaning that they should express whether"
 " a section of code is linear (guaranteed to execute exactly once without "
 "throwing an exception) or whether it might throw an exception."
-msgstr ""
+msgstr "与线性类型兼容，也就是说，它们应该表达一段代码是否是线性的（保证只执行一次而"
+"不抛出异常）或是否可能抛出异常。"
 
 #: ../source/app/index.rst:45 b2563ad56ee04d87b0bb94756d581ee2
 msgid ""
 "We begin by introducing ``App``, with some small example programs, then "
 "show how to extend it with exceptions, state, and other interfaces."
-msgstr ""
+msgstr "我们首先介绍 ``App`` "
+"，用一些小的示例程序，然后展示如何用异常、状态和其他接口来扩展它。"
 
 #: ../source/app/interfaces.rst:2 7fce09c0137f4c23aefb100dfa997663
 msgid "Defining Interfaces"
-msgstr ""
+msgstr "定义接口"
 
 #: ../source/app/interfaces.rst:4 68a8078c1b7441e09cd8dd23298971b8
 msgid ""
@@ -187,16 +225,22 @@ msgid ""
 "concrete exceptions and state in general, we define interfaces for "
 "collections of operations which work in a specific list of errors."
 msgstr ""
+"``Control.App`` 提供的运行 ``App`` 的唯一方法是通过 ``run`` 函数，"
+"它接收一个具体的错误列表 ``Init`` 。对这个错误列表的所有具体扩展都是通过 "
+"``handle`` 以引入一个新的异常，或者 ``new`` 以引入一个新状态。为了有效地组成 "
+"``App`` 程序，而不是笼统地引入具体的异常和状态，我们为在特定错误列表中工作的"
+"操作集合定义接口。"
 
 #: ../source/app/interfaces.rst:14 0da7b3425d0548cd9d8d23bdd7863b95
 msgid "Example: Console I/O"
-msgstr ""
+msgstr "Console I/O 示例"
 
 #: ../source/app/interfaces.rst:16 6915a29ea5714810a33491c95f18382d
 msgid ""
 "We have seen an initial example using the ``Console`` interface, which is"
 " declared as follows, in ``Control.App.Console``:"
-msgstr ""
+msgstr "我们已经看到了一个使用 ``Console`` 接口的初始示例，它在 ``Control.App."
+"Console`` 中声明如下："
 
 #: ../source/app/interfaces.rst:27 ae67be50856840e59fe52585a5448295
 msgid ""
@@ -205,6 +249,9 @@ msgid ""
 "exception, because they have to work in both the ``NoThrow`` and "
 "``MayThrow`` contexts."
 msgstr ""
+"它提供了用于写入和读取控制台的原语，并将路径参数推广到 ``|`` "
+"意味着两者都不能抛出异常，因为它们必须在 ``NoThrow`` 和 ``MayThrow`` "
+"上下文中工作。"
 
 #: ../source/app/interfaces.rst:32 f126bc3c0dd642fd9e1492c7ce82fe13
 msgid ""
@@ -212,6 +259,8 @@ msgid ""
 "to primitive ``IO`` operations. The ``Control.App`` library defines a "
 "primitive interface for this:"
 msgstr ""
+"为了在顶层 ``IO`` 程序中实现这一点，我们需要访问原始的 ``IO`` 操作。 "
+"``Control.App`` 库为此定义了一个原语接口："
 
 #: ../source/app/interfaces.rst:42 9104a179e78549f3909801e0fa8b03ce
 msgid ""
@@ -220,6 +269,9 @@ msgid ""
 "``PrimIO``.  Note that ``fork`` starts a new list of errors ``e'`` so "
 "that states are only available in a single thread."
 msgstr ""
+"我们使用 ``primIO`` 来调用 ``IO`` 函数。我们还有一个 ``fork`` 原语，它在支持 "
+"``PrimIO`` 的新错误列表中启动一个新线程。请注意， ``fork`` "
+"启动了一个新的错误列表 ``e`` ，因此状态仅在单个线程中可用。"
 
 #: ../source/app/interfaces.rst:47 7065ea615ba54a28820a675f93c25258
 msgid ""
@@ -229,16 +281,21 @@ msgid ""
 "consistent with the definition of ``IO``. This also allows us to use "
 "``PrimIO`` in the initial list of errors ``Init``."
 msgstr ""
+"``PrimIO`` 有一个错误列表的实现，可以将空类型作为异常抛出。这意味着如果 "
+"``PrimIO`` 是唯一可用的接口，我们不能抛出异常，这与 ``IO`` 的定义是一致的。"
+"这也允许我们在初始错误列表 ``Init`` 中使用 ``PrimIO`` 。"
 
 #: ../source/app/interfaces.rst:57 c60063b6852d483f8f74ae1dd3b6ac57
 msgid ""
 "Given this, we can implement ``Console`` and run our ``hello`` program in"
 " ``IO``. It is implemented as follows in ``Control.App.Console``:"
 msgstr ""
+"鉴于此，我们可以实现 ``Console`` 并在 ``IO`` 中运行我们的 ``hello`` 程序。"
+"它在 ``Control.App.Console`` 中实现如下："
 
 #: ../source/app/interfaces.rst:69 1709bdb53e0b4079b599b85cb3584345
 msgid "Example: File I/O"
-msgstr ""
+msgstr "示例：文件 I/O"
 
 #: ../source/app/interfaces.rst:71 3c993467d6dc4bf9af9ede54973d7105
 msgid ""
@@ -247,6 +304,9 @@ msgid ""
 "does not exist; the user has the wrong permissions, etc. In Idris, the "
 "``IO`` primitive reflects this in its type:"
 msgstr ""
+"控制台 I/O 可以直接实现，但大多数 I/O 操作可能会失败。例如，打开文件失败的原"
+"因有多种：文件不存在；用户拥有错误的权限等。在 Idris 中， ``IO`` "
+"原语在其类型中反映了这一点："
 
 #: ../source/app/interfaces.rst:80 510d81a4d6b04d48bc43fdd09b35c76f
 msgid ""
@@ -256,6 +316,10 @@ msgid ""
 "exceptions are handled at the top level using ``handle``. We begin by "
 "defining the ``FileIO`` interface, in ``Control.App.FileIO``:"
 msgstr ""
+"虽然精确，但当有很长的 ``IO`` 操作序列时，这会变得笨拙。使用 ``App`` "
+"时，我们可以提供一个接口，当操作失败时抛出异常，并保证使用 ``handle`` "
+"在顶层处理任何异常。我们首先在 ``Control.App.FileIO`` 中定义 ``FileIO`` "
+"接口："
 
 #: ../source/app/interfaces.rst:101 5796e1b86b7942abbae45862c0a56163
 msgid ""
@@ -264,6 +328,8 @@ msgid ""
 "operation, to open a file, to ensure that the file handle is cleaned up "
 "on completion."
 msgstr ""
+"我们使用资源括号 - 将函数传递给 ``withFile`` 来处理打开的文件 - 而不是显式的 "
+"``open`` 操作来打开文件，以确保文件句柄在完成时被清理。"
 
 #: ../source/app/interfaces.rst:106 652fca1b5d8749f68cb52a6adb42a8f8
 msgid ""
@@ -274,16 +340,21 @@ msgid ""
 "implement ``FileIO`` if the list of errors supports throwing and catching"
 " the ``IOError`` exception. ``IOError`` is defined in ``Control.App``."
 msgstr ""
+"还可以想象一个接口使用文件的线性资源，这在某些安全关键的上下文中可能是合适的"
+"，但对于大多数编程任务，异常应该就足够了。所有的操作都可能失败，接口明确表示"
+"，如果错误列表支持抛出和捕获 ``IOError`` 异常，我们只能实现 ``FileIO`` 。 "
+"``IOError`` 在 ``Control.App`` 中定义。"
 
 #: ../source/app/interfaces.rst:114 0bfc3eeac4674e3193144427f2e35e79
 msgid ""
 "For example, we can use this interface to implement ``readFile``, "
 "throwing an exception if opening the file fails in ``withFile``:"
-msgstr ""
+msgstr "例如，我们可以使用这个接口来实现 ``readFile`` ，如果在 ``withFile`` "
+"中打开文件失败则抛出异常："
 
 #: ../source/app/interfaces.rst:130 b654eaaeabdb43debbe0ab62cd343f64
 msgid "Again, this is defined in ``Control.App.FileIO``."
-msgstr ""
+msgstr "同样，这是在 ``Control.App.FileIO`` 中定义的。"
 
 #: ../source/app/interfaces.rst:132 9b6a5c95383e4fe18b4cf289d34cd1dd
 msgid ""
@@ -291,6 +362,9 @@ msgid ""
 "``PrimIO``, and the ability to throw exceptions if any of the operations "
 "fail. With this, we can implement ``withFile`` as follows, for example:"
 msgstr ""
+"要实现 ``FileIO`` ，我们需要通过 ``PrimIO`` "
+"访问原始操作，以及在任何操作失败时抛出异常的能力。有了这个，我们可以如下实现 "
+"``withFile`` ，例如："
 
 #: ../source/app/interfaces.rst:148 6bc54d0aa61f49cb909f34d3f7fc1ca7
 msgid ""
@@ -298,10 +372,13 @@ msgid ""
 "provided that we wrap it in a top level ``handle`` function to deal with "
 "any errors thrown by ``readFile``:"
 msgstr ""
+"鉴于 ``FileIO`` 的这个实现，我们可以运行 ``readFile`` ，"
+"前提是我们将它包装在一个顶级的 ``handle`` 函数中以处理 ``readFile`` "
+"抛出的任何错误："
 
 #: ../source/app/introapp.rst:2 9456dfc0f3a94a2e8f3a3279d8c2be4b
 msgid "Introducing App"
-msgstr ""
+msgstr "APP 介绍"
 
 #: ../source/app/introapp.rst:4 6a56811defd14f229f08a92e7d48a327
 msgid ""
@@ -312,6 +389,11 @@ msgid ""
 "throw, and a ``List Error`` (which gives a list of exception types which "
 "can be thrown, ``Error`` is a synonym for ``Type``):"
 msgstr ""
+"``App`` 声明在模块 ``Control.App`` 中，它是 ``base`` 库的一部分。"
+"它的参数是一个隐含的 ``Path`` "
+"（说明程序的执行路径是线性的还是可能抛出异常），它有一个 ``default`` 值，"
+"程序可能会抛出一个 ``List Error`` （一个可以抛出的异常类型列表， ``Error`` "
+"是 ``Type`` 的同义词）："
 
 #: ../source/app/introapp.rst:19 5768d1bdf1434112b26e95e670b96c71
 msgid ""
@@ -320,36 +402,40 @@ msgid ""
 "parameterised by the list of errors ``es``. e.g. a program which supports"
 " console IO:"
 msgstr ""
+"它的作用与 ``IO`` 相同，但支持抛出和捕获异常，并允许我们定义更多的由错误列表 "
+"``es`` 参数化的约束性接口。例如，一个支持控制台IO的程序："
 
 #: ../source/app/introapp.rst:29 34f85ec7789c49fd86ab3fb6738da94f
 msgid "We can use this in a complete program as follows:"
-msgstr ""
+msgstr "我们可以在一个完整的程序中使用它，如下所示："
 
 #: ../source/app/introapp.rst:44 6f791a0d669f4e15b28cd8b62f6934c1
 msgid ""
 "Or, a program which supports console IO and carries an ``Int`` state, "
 "labelled ``Counter``:"
-msgstr ""
+msgstr "或者，一个支持控制台IO的程序，携带一个 ``Int`` 的状态，标记为 ``Counter`` ："
 
 #: ../source/app/introapp.rst:58 d1b4236954e546f2a5d068a8554ff488
 msgid ""
 "To run this as part of a complete program, we need to initialise the "
 "state."
-msgstr ""
+msgstr "为了将其作为一个完整程序的一部分来运行，我们需要初始化状态。"
 
 #: ../source/app/introapp.rst:65 e6fae569ce074b53b5ea29160fde07d2
 msgid ""
 "For convenience, we can list multiple interfaces in one go, using a "
 "function ``Has``, defined in ``Control.App``, to compute the interface "
 "constraints:"
-msgstr ""
+msgstr "为了方便起见，我们可以一次性列出多个接口，使用 ``Control.App`` 中定义的函数 "
+"``Has`` 来计算接口约束："
 
 #: ../source/app/introapp.rst:76 cdaad91421ee4c8c8fc3db2663346deb
 msgid ""
 "The purpose of ``Path`` is to state whether a program can throw "
 "exceptions, so that we can know where it is safe to reference linear "
 "resources. It is declared as follows:"
-msgstr ""
+msgstr "``Path`` 的目的是说明一个程序是否可以抛出异常，这样我们就可以知道在哪里引用线"
+"性资源是安全的。它被声明如下："
 
 #: ../source/app/introapp.rst:84 516b8b7b670145efb9439066120b8ea1
 msgid ""
@@ -358,6 +444,8 @@ msgid ""
 "operations have possible failure modes, especially those which interact "
 "with the outside world."
 msgstr ""
+"``App`` 的类型中 ``MayThrow`` 是默认的。我们希望这是最常见的情况。毕竟，现实"
+"中，大多数操作都有可能的失败模式，特别是那些与外部世界交互的操作。"
 
 #: ../source/app/introapp.rst:89 61ea1b5567594467aea4661a8fa4c730
 msgid ""
@@ -366,6 +454,10 @@ msgid ""
 "``App`` inside ``IO``, we use an initial list of errors ``Init`` (recall "
 "that an ``Error`` is a synonym for ``Type``):"
 msgstr ""
+"``0`` 在 ``Has`` "
+"的声明中表示它只能在一个被擦除的上下文中运行，所以它在运行时永远不会被运行。"
+"为了在 ``IO`` 内运行一个 ``App`` ，我们使用一个初始错误列表 ``Init`` （记住 "
+"``Error`` 是 ``Type`` 的同义词）："
 
 #: ../source/app/introapp.rst:102 98003c8c6987481eb49d3568baff1394
 msgid ""
@@ -376,6 +468,10 @@ msgid ""
 "the type ``AppHasIO``. Any exceptions will have been introduced and "
 "handled inside the ``App``."
 msgstr ""
+"将 ``Path`` 参数配合 ``l`` 使用，意味着我们可以为任何应用程序调用 ``run`` ，"
+"无论 ``Path`` 是 ``NoThrow`` 还是 ``MayThrow`` 。但是，在实践中，所有给 "
+"``run`` 的应用程序都不会在顶层抛出，因为唯一可用的异常类型是 ``AppHasIO`` 。"
+"任何异常都会在 ``App`` 里面被引入和处理。"
 
 #: ../source/app/linear.rst:2 c67340197c1442e9802635c51be76c68
 msgid "Linear Resources"
@@ -597,4 +693,3 @@ msgstr ""
 #: ../source/app/linear.rst:247 93054fe65c524ed4b9ab84960ca87139
 msgid "Then we can run it in ``main``:"
 msgstr ""
-
