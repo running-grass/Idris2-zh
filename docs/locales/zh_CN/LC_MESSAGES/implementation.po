@@ -3,18 +3,21 @@
 # This file is distributed under the same license as the Idris2 package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-08-28 21:56+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2022-08-29 09:23+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"Language-Team: Chinese (Simplified) <https://weblate.grass.work:30443/"
+"projects/idris/implementation/zh_Hans/>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 4.13.1\n"
 "Generated-By: Babel 2.10.3\n"
 
 #: ../source/implementation/ide-protocol.rst:3 86e155058b9e432e895855e4ca4a5670
@@ -810,7 +813,7 @@ msgstr ""
 
 #: ../source/implementation/index.rst:5 405446d3abb94ab5880ca4920143a03e
 msgid "Implementation Notes"
-msgstr ""
+msgstr "实现说明"
 
 #: ../source/implementation/index.rst:9 f0faacc5d5b04c76a29470101e4ddb4e
 msgid ""
@@ -819,23 +822,27 @@ msgid ""
 "Community* has waived all copyright and related or neighboring rights to "
 "Documentation for Idris."
 msgstr ""
+"Idris 的文档已在知识共享 CC0 许可下发布。因此，在法律允许的范围内，*Idris "
+"社区* 已经放弃了 Idris 文档的所有版权和相关或邻近的权利。"
 
 #: ../source/implementation/index.rst:14 2b3f605de0fb4b8db116ae3ecb6e2c9b
 msgid ""
 "More information concerning the CC0 can be found online at: "
 "http://creativecommons.org/publicdomain/zero/1.0/"
-msgstr ""
+msgstr "关于CC0的更多信息，可以在网上找到：http://creativecommons.org/publicdomain/"
+"zero/1.0/"
 
 #: ../source/implementation/index.rst:16 767c511297bb4c4d9abff3e99d45efc6
 msgid ""
 "This section contains (or will contain, hopefully) a variety of notes on "
 "aspects of the implementation of Idris 2, in the hope that they help with"
 " debugging and future contributions."
-msgstr ""
+msgstr "本节包含（或希望包含）关于 Idris 2 "
+"实现方面的各种注释，希望它们有助于调试和未来的贡献。"
 
 #: ../source/implementation/overview.rst:3 8d5c10f7f9bb4f71b299842b40e043c4
 msgid "Implementation Overview"
-msgstr ""
+msgstr "实现概述"
 
 #: ../source/implementation/overview.rst:5 5e7fae778a764873a39c306b187960ab
 msgid ""
@@ -844,10 +851,12 @@ msgid ""
 " what's going on and some ideas where to look in the code to see how "
 "certain features work."
 msgstr ""
+"这些是关于实现方面的一些未分类的注释。粗略的，并不总是完全最新的，但希望能提"
+"供一些关于正在发生的事情的提示以及在代码中查看某些功能如何工作的一些想法。"
 
 #: ../source/implementation/overview.rst:11 5a281c2007114102ab8c3035cfa605d1
 msgid "Introduction"
-msgstr ""
+msgstr "简介"
 
 #: ../source/implementation/overview.rst:13 3d4d307282fc4c9c81b72d1461c490f4
 msgid ""
@@ -855,6 +864,9 @@ msgid ""
 "theory (see https://bentnib.org/quantitative-type-theory.html). Binders "
 "have \"multiplicities\" which are either *0*, *1* or *unlimited*."
 msgstr ""
+"核心语言 TT（在 ``Core.TT`` 中定义），基于定量类型理论（参见 https://bentnib."
+"org/quantitative-type-theory.html）。具有 *0* 、 *1* 或 *unlimited* 的 "
+"“多重性”。"
 
 #: ../source/implementation/overview.rst:17 20e1013b18214f55b8edab8058c0bfc8
 msgid ""
@@ -863,6 +875,9 @@ msgid ""
 "``Core.Value`` as ``NF``; constructors do not evaluate their arguments "
 "until explicitly requested."
 msgstr ""
+"术语在范围内的名称上编入索引，因此我们知道术语始终具有良好的范围。值（即标准"
+"形式）在 ``Core.Value`` 中定义为 ``NF`` "
+"；在明确请求之前，构造函数不会对参数进行求值。"
 
 #: ../source/implementation/overview.rst:21 417a63c149b242ea94fc4e7044151fd5
 msgid ""
@@ -871,6 +886,9 @@ msgid ""
 "definitions, case blocks, as patterns, qualified names with automatic "
 "type-directed disambiguation, and proof search."
 msgstr ""
+"从更高级别的语言 *TTImp*（定义在 ``TTImp.TTImp`` ）中细化到 "
+"*TT*，这是带有隐式参数、局部函数定义、案例块、作为模式、"
+"具有自动类型导向消歧的限定名称的 TT , 还有证明搜索。"
 
 #: ../source/implementation/overview.rst:26 d785dc2b41f34f02b822faf835c3ff0b
 msgid ""
@@ -878,6 +896,8 @@ msgid ""
 "postponing of unification problems. Essentially works the same way as "
 "Agda as described in Ulf Norell's thesis."
 msgstr ""
+"细化依赖于 unification（在 ``Core.Unify`` 中），它允许推迟 unification 问题。"
+"基本上与 Ulf Norell 论文中描述的 Agda 的工作方式相同。"
 
 #: ../source/implementation/overview.rst:30 af74f43bca054314b2a11c1ff932e376
 msgid ""
@@ -886,6 +906,8 @@ msgid ""
 "Idris, which translates to TTImp by desugaring operators, do notation, "
 "etc."
 msgstr ""
+"一般的想法是高级语言将提供对 TT 的翻译。在 ``Idris/`` 命名空间中，我们定义了 "
+"Idris 的高级语法，它通过脱糖操作符、do 符号等转换为 TTImp。"
 
 #: ../source/implementation/overview.rst:34 904ee4cbe64a45ad899247db9b62eb24
 msgid ""
@@ -896,56 +918,60 @@ msgid ""
 "appropriately (e.g. if a linear variable is unused elsewhere, it will "
 "always appear with multiplicity 1 in holes)."
 msgstr ""
+"在细化之后有一个单独的线性检查，它会更新孔的类型（并且知道 case 块）。这是在 "
+"``Core.LinearCheck`` 中实现的。在此检查期间，我们还重新计算孔应用程序中的多重"
+"性，以便它们正确显示（例如，如果线性变量在其他地方未使用，它将始终以多重性 1 "
+"出现在孔中）。"
 
 #: ../source/implementation/overview.rst:42 0aba8bb750a948438323d3ee40bdf35d
 msgid "Where to find things:"
-msgstr ""
+msgstr "目录结构："
 
 #: ../source/implementation/overview.rst:44 ec91b2b56f59479b90dcdc8c88b1a445
 msgid "``Core/`` -- anything related to the core TT, typechecking and unification"
-msgstr ""
+msgstr "``Core/`` -- 与核心 TT、类型检查和 unification 相关的任何内容"
 
 #: ../source/implementation/overview.rst:45 b4c0f7203387439bb1ba34b4ca4408fe
 msgid "``TTImp/`` -- anything related to the implicit TT and its elaboration"
-msgstr ""
+msgstr "``TTImp/`` -- 与隐式 TT 及其详细说明相关的任何内容"
 
 #: ../source/implementation/overview.rst:47 6cd637aa9ce640ad919f18d229cc2cec
 msgid "``TTImp/Elab/`` -- Elaboration state and elaboration of terms"
-msgstr ""
+msgstr "``TTImp/Elab/`` -- 细化状态和细化术语"
 
 #: ../source/implementation/overview.rst:48 27b0497e5c474890b20fa211d553ab87
 msgid "``TTImp/Interactive/`` -- Interactive editing infrastructure"
-msgstr ""
+msgstr "``TTImp/Interactive/`` -- 交互式编辑基础设施"
 
 #: ../source/implementation/overview.rst:50 cd3fb1f10b9143309f80d8afc6f8670d
 msgid ""
 "``Parser/`` -- various utilities for parsing and lexing TT and TTImp (and"
 " other things)"
-msgstr ""
+msgstr "``Parser/`` -- 用于解析和词法分析 TT 和 TTImp（以及其他东西）的各种实用程序"
 
 #: ../source/implementation/overview.rst:51 17b45f8334614d34a91635f6589fcbd7
 msgid "``Utils/`` -- some generally useful utilities"
-msgstr ""
+msgstr "``Utils/`` -- 一些通常有用的实用程序"
 
 #: ../source/implementation/overview.rst:52 43854d680ed44153a4b82b0c662fb39d
 msgid ""
 "``Idris/`` -- anything relating to the high level language, translating "
 "to TTImp"
-msgstr ""
+msgstr "``Idris/`` -- 任何与高级语言相关的东西，翻译成 TTImp"
 
 #: ../source/implementation/overview.rst:54 f4c37180cff44b3888485294001c237f
 msgid ""
 "``Idris/Elab/`` -- High level construct elaboration machinery (e.g. "
 "interfaces)"
-msgstr ""
+msgstr "``Idris/Elab/`` -- 高级构造细化机制（例如接口）"
 
 #: ../source/implementation/overview.rst:56 7110c61e4d7b4754948b667068c24fda
 msgid "``Compiler/`` -- back ends"
-msgstr ""
+msgstr "``Compiler/`` -- 编译器后端"
 
 #: ../source/implementation/overview.rst:59 de88e167c0514b03baacd33eccb7cdc3
 msgid "The Core Type, and Ref"
-msgstr ""
+msgstr "核心类型和参考"
 
 #: ../source/implementation/overview.rst:61 cd49cb91ffca4ac99e776af39e14635d
 msgid ""
@@ -956,6 +982,10 @@ msgid ""
 "location at each node, and any errors in elaboration note the location at"
 " the point where the error occurred, as a file context ``FC``."
 msgstr ""
+"``Core`` 是一个 “monad”（不是真的，出于效率的原因，目前...）支持 ``Error`` "
+"和 ``IO`` (我最初确实计划允许将此限制到一些特定的 IO 操作，但尚未完成）。"
+"原始语法由 ``RawImp`` 类型定义，该类型在每个节点都有一个源位置，详细说明中的"
+"任何错误都会记录错误发生点的位置，作为文件上下文 ``FC`` 。"
 
 #: ../source/implementation/overview.rst:68 5e72905da7f2472aac6abb16a236d024
 msgid ""
@@ -965,22 +995,27 @@ msgid ""
 "be neater to use a state monad this turned out to be about 2-3 times "
 "faster, so I'm going with the \"ugly\" choice..."
 msgstr ""
+"``Ref`` 本质上是一个 ``IORef`` "
+"。通常我们会隐式传递它们并使用标签来区分我们的意图。有关它们的定义，请参见 "
+"``Core.Core`` 。再一次， ``IORef`` 是为了提高效率——即使使用 state monad "
+"会更整洁，但结果却快了大约 2-3 倍，所以我选择了 “丑陋” 的选择......"
 
 #: ../source/implementation/overview.rst:75 931514501deb41358e71bbe6cd7bf01c
 msgid "Term representation"
-msgstr ""
+msgstr "术语表示"
 
 #: ../source/implementation/overview.rst:77 a9d1edaeb6d341398014884cfeeab148
 msgid ""
 "Terms in the core language are indexed by a list of the names in scope, "
 "most recently defined first:"
-msgstr ""
+msgstr "核心语言中的术语由作用域内的名称列表索引，最近定义的优先："
 
 #: ../source/implementation/overview.rst:84 767292e74a3143ca8217ba86ac22a071
 msgid ""
 "This means that terms are always well scoped, and we can use the type "
 "system to keep us right when manipulating names. For example, we have:"
-msgstr ""
+msgstr "这意味着术语总是有恰当的作用域，我们可以使用类型系统来保持我们在操作名称时的"
+"正确性。例如，我们有："
 
 #: ../source/implementation/overview.rst:92 ac6e4e11c0ad4cfb93fdb45886c07884
 msgid ""
@@ -989,12 +1024,15 @@ msgid ""
 "index is valid. So everything is de Bruijn indexed, but the type checker "
 "still keeps track of the indices so that we don't have to think too hard!"
 msgstr ""
+"因此，局部变量由局部上下文中的索引（de Bruijn 索引 ``idx`` "
+"）表示，并在运行时擦除该索引有效的证明。所以一切都被 de Bruijn "
+"索引了，但是类型检查器仍然跟踪索引，这样我们就不必想太多了！"
 
 #: ../source/implementation/overview.rst:97 645a64541ce74fb4a76ef2d4c1c3d1ac
 msgid ""
 "``Core.TT`` contains various handy tools for manipulating terms with "
 "their indices, such as:"
-msgstr ""
+msgstr "``Core.TT`` 包含各种方便的工具，用于使用它们的索引来操作术语，例如："
 
 #: ../source/implementation/overview.rst:108 553ce2664c564f589e6fc15e163af5f2
 msgid ""
@@ -1004,10 +1042,13 @@ msgid ""
 "fundamental reason in the core. In general, this isn't expensive at run "
 "time."
 msgstr ""
+"请注意，类型明确说明何时需要在运行时传递 ``vars`` ，何时不需要。大多数需要它"
+"的地方是帮助显示名称或名称生成，而不是核心中的任何基本原因。一般来说，这在运"
+"行时并不昂贵。"
 
 #: ../source/implementation/overview.rst:113 f86762b1760d45159b931409e7728927
 msgid "Environments, defined in ``Core.Env``, map local variables to binders:"
-msgstr ""
+msgstr "在 ``Core.Env`` 中定义的环境变量将局部变量映射到绑定器："
 
 #: ../source/implementation/overview.rst:119 fe0c3ea13e50421c82fb941407db61a9
 msgid ""
@@ -1126,7 +1167,7 @@ msgstr ""
 
 #: ../source/implementation/overview.rst:214 cc8ce013caf74667953a79d8cb085636
 msgid "Laziness"
-msgstr ""
+msgstr "惰性"
 
 #: ../source/implementation/overview.rst:216 1bf9846bd86640889da38f84814f7de5
 msgid ""
@@ -1236,7 +1277,7 @@ msgstr ""
 
 #: ../source/implementation/overview.rst:295 be7894e7c33b4953a8fa2764341f972e
 msgid "Implicit arguments"
-msgstr ""
+msgstr "隐式参数"
 
 #: ../source/implementation/overview.rst:297 4a7a0bb10d6744a4b5d910883bd18dad
 msgid ""
@@ -1465,7 +1506,7 @@ msgstr ""
 
 #: ../source/implementation/overview.rst:454 15c93c8d8b0445f6a13af45aeef2bbd7
 msgid "Erasure"
-msgstr ""
+msgstr "擦除"
 
 #: ../source/implementation/overview.rst:456 72421474e05446ab8b8016d303b12559
 msgid ""
@@ -1515,7 +1556,7 @@ msgstr ""
 
 #: ../source/implementation/overview.rst:485 8ef39ccae701459e8b6c25fccbb2b081
 msgid "Records"
-msgstr ""
+msgstr "记录"
 
 #: ../source/implementation/overview.rst:487 b2650b745afd462a83eac4d0d4e754c5
 msgid ""
@@ -1527,4 +1568,3 @@ msgid ""
 "expect (i.e. it's safe as long as all of the fields are updated at the "
 "same time consistently)."
 msgstr ""
-
