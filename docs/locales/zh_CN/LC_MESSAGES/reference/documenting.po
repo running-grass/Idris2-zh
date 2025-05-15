@@ -1,0 +1,100 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2023, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-16 09:52+0800\n"
+"PO-Revision-Date: 2022-09-03 13:48+0000\n"
+"Last-Translator: grass <hi@grass.show>\n"
+"Language-Team: Chinese (Simplified) <>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../source/reference/documenting.rst:5 c321833fa8d943bcb70f49f59214c1fb
+msgid "Documenting Idris Code"
+msgstr "为 Idris 代码添加文档"
+
+#: ../source/reference/documenting.rst:7 4c12059113d24601bcd27dd57869baa6
+msgid ""
+"Idris documentation comes in two major forms: comments, which exist for a"
+" reader’s edification and are ignored by the compiler, and inline API "
+"documentation, which the compiler parses and stores for future reference."
+" To consult the documentation for a declaration ``f``, write ``:doc f`` "
+"at the REPL or use the appropriate command in your editor (``C-c C-d`` in"
+" Emacs, ``<LocalLeader>h`` in Vim)."
+msgstr ""
+"Idris 文档主要有两种形式：注释（comments）和内联 API 文档（inline API "
+"documentation）。注释仅供阅读者参考，编译器会忽略；内联 API 文档则会被编译器解析并存储，供后续查阅。要查看某个声明 `f` "
+"的文档，可在 REPL 中输入 `:doc f`，或在编辑器中使用相应命令（如 Emacs 的 `C-c C-d`，Vim 的 "
+"`<LocalLeader>h`）。"
+
+#: ../source/reference/documenting.rst:15 45cbc52cf2414fe9a36e7b4a5038cc23
+msgid "Comments"
+msgstr "注释"
+
+#: ../source/reference/documenting.rst:17 83b755613a574d75bc47579de5095142
+msgid ""
+"Use comments to explain why code is written the way that it is. Idris’s "
+"comment syntax is the same as that of Haskell: lines beginning with "
+"``--`` are comments, and regions bracketed by ``{-`` and ``-}`` are "
+"comments even if they extend across multiple lines. These can be used to "
+"comment out lines of code or provide simple documentation for the readers"
+" of Idris code."
+msgstr ""
+"使用注释来解释代码为何如此编写。Idris 的注释语法与 Haskell 相同：以 `--` 开头的行是单行注释，用 `{-` 和 `-}` "
+"括起来的区域是多行注释。这些注释可用于注释掉代码行，或为 Idris 代码的读者提供简单的文档说明。"
+
+#: ../source/reference/documenting.rst:25 00f701309ae9407c85e5260153f0d21a
+msgid "Inline Documentation"
+msgstr "内联文档（Inline Documentation）"
+
+#: ../source/reference/documenting.rst:27 0092eaa9ba7c456d8f4cac3a104b944f
+msgid ""
+"Idris also supports a comprehensive and rich inline syntax for Idris code"
+" to be generated. This syntax also allows for named parameters and "
+"variables within type signatures to be individually annotated using a "
+"syntax similar to Javadoc parameter annotations."
+msgstr "Idris 还支持丰富的内联文档语法。你可以为类型签名中的具名参数和变量单独添加注释，其语法类似于 Javadoc 的参数注释。"
+
+#: ../source/reference/documenting.rst:32 903fda1beb8448a097bc43515afdee67
+msgid ""
+"Documentation always comes before the declaration being documented. "
+"Inline documentation applies to either top-level declarations or to "
+"constructors. Documentation for specific arguments to constructors, type "
+"constructors, or functions can be associated with these arguments using "
+"their names."
+msgstr "文档注释总是位于所注释声明的前面。内联文档既可用于顶层声明，也可用于构造子（constructor）。对于构造子、类型构造子或函数的特定参数，可以通过参数名为其单独添加文档说明。"
+
+#: ../source/reference/documenting.rst:38 e3c6520d99c74a1d85e45630dba6a709
+msgid ""
+"The inline documentation for a declaration is an unbroken string of "
+"lines, each of which begins with ``|||`` (three pipe symbols). The first "
+"paragraph of the documentation is taken to be an overview, and in some "
+"contexts, only this overview will be shown. After the documentation for "
+"the declaration as a whole, it is possible to associate documentation "
+"with specific named parameters, which can either be explicitly name or "
+"the results of converting free variables to implicit parameters.  "
+"Annotations are the same as with Javadoc annotations, that is for the "
+"named parameter ``(n : T)``, the corresponding annotation is ``||| @ n "
+"Some description`` that is placed before the declaration."
+msgstr ""
+"声明的内联文档由一串连续的行组成，每行都以 "
+"`|||`（三个竖线）开头。文档的第一段被视为概述，在某些场景下只会显示这部分内容。在整体文档之后，还可以为特定具名参数添加说明，这些参数可以是显式命名的，也可以是自由变量转为隐式参数的结果。注释语法与"
+" Javadoc 注释类似，例如对于具名参数 `(n : T)`，对应的注释为 `||| @ n 描述内容`，并放在声明之前。"
+
+#: ../source/reference/documenting.rst:50 c2ffa44c8d264681851ea04b9898be99
+msgid ""
+"Documentation is written in Markdown, though not all contexts will "
+"display all possible formatting (for example, images are not displayed "
+"when viewing documentation in the REPL, and only some terminals render "
+"italics correctly). A comprehensive set of examples is given below."
+msgstr ""
+"文档内容采用 Markdown 语法编写，但并非所有场景都能完整显示所有格式（例如在 REPL "
+"查看文档时不会显示图片，只有部分终端能正确渲染斜体）。下方给出了一组完整的示例。"
+

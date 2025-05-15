@@ -1,0 +1,166 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2023, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-16 09:52+0800\n"
+"PO-Revision-Date: 2022-09-03 13:48+0000\n"
+"Last-Translator: grass <hi@grass.show>\n"
+"Language-Team: Chinese (Simplified) <>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../source/reference/records.rst:2 72904176bb1e4985866cc3cfc9449254
+msgid "Dot syntax for records"
+msgstr "记录的点语法（Dot syntax for records）"
+
+#: ../source/reference/records.rst:7 a445597be90f45099b996ad88f4979b2
+msgid ""
+"Long story short, ``.field`` is a postfix projection operator that binds "
+"tighter than function application."
+msgstr "简而言之，``.field`` 是一个后缀投影操作符，其结合优先级高于函数应用。"
+
+#: ../source/reference/records.rst:11 c0b3e19ece434df28bf5d86236c8eb64
+msgid "Lexical structure"
+msgstr "词法结构（Lexical structure）"
+
+#: ../source/reference/records.rst:13 5b70b3601b934d69b5393c4e31c0c1b0
+msgid ""
+"``.foo`` is a valid name, which stands for record fields (new ``Name`` "
+"constructor ``RF \"foo\"``)"
+msgstr "``.foo`` 是一个合法名称，表示记录字段（新的 ``Name`` 构造器 ``RF \"foo\"``）"
+
+#: ../source/reference/records.rst:16 206ea06fe4b24259985bc1b74fd857aa
+msgid ""
+"``Foo.bar.baz`` starting with uppercase ``F`` is one lexeme, a namespaced"
+" identifier: ``DotSepIdent [\"baz\", \"bar\", \"Foo\"]``"
+msgstr "以大写字母 ``F`` 开头的 ``Foo.bar.baz`` 是一个词素，即带命名空间的标识符：``DotSepIdent [\"baz\", \"bar\", \"Foo\"]``"
+
+#: ../source/reference/records.rst:19 81a1f3f0992a4e41a88d3df6420ebbc0
+msgid ""
+"``foo.bar.baz`` starting with lowercase ``f`` is three lexemes: ``foo``, "
+"``.bar``, ``.baz``"
+msgstr "以小写字母 ``f`` 开头的 ``foo.bar.baz`` 是三个词素：``foo``、``.bar``、``.baz``"
+
+#: ../source/reference/records.rst:22 95c7d092ce1d4821b6f9e0282850114f
+msgid "``.foo.bar.baz`` is three lexemes: ``.foo``, ``.bar``, ``.baz``"
+msgstr "``.foo.bar.baz`` 是三个词素：``.foo``、``.bar``、``.baz``"
+
+#: ../source/reference/records.rst:24 309c111c39904f59a9540c6012fe7e0c
+msgid ""
+"If you want ``Constructor.field``, you have to write "
+"``(Constructor).field``."
+msgstr "如果你想要 ``Constructor.field``，必须写成 ``(Constructor).field``。"
+
+#: ../source/reference/records.rst:26 eb21ee9cc8c543d78ba59e53c0ff0766
+msgid "All module names must start with an uppercase letter."
+msgstr "所有模块名必须以大写字母开头。"
+
+#: ../source/reference/records.rst:29 31c2b03a385e439a80307ba4b55bfb7c
+msgid "New syntax of ``simpleExpr``"
+msgstr "``simpleExpr`` 的新语法"
+
+#: ../source/reference/records.rst:31 095fa444d5824ebd965f5f8b79382bb6
+msgid ""
+"Expressions binding tighter than application (``simpleExpr``), such as "
+"variables or parenthesised expressions, have been renamed to "
+"``simplerExpr``, and an extra layer of syntax has been inserted."
+msgstr "结合优先级高于应用（simpleExpr）的表达式，如变量或括号表达式，现在被称为 ``simplerExpr``，并插入了一层新的语法。"
+
+#: ../source/reference/records.rst:39 82b4790888cf489e978b784d65646f55
+msgid ""
+"``(.foo)`` is a name, so you can use it to e.g. define a function called "
+"``.foo`` (see ``.squared`` below)"
+msgstr "``(.foo)`` 是一个名称，因此你可以用它来定义一个名为 ``.foo`` 的函数（见下方的 ``.squared``）"
+
+#: ../source/reference/records.rst:42 e642114c577949069769a5d1aa7e54ad
+msgid "``(.foo.bar)`` is a parenthesised expression"
+msgstr "``(.foo.bar)`` 是一个括号表达式"
+
+#: ../source/reference/records.rst:45 234d019c9a944deca7e267b093dce05a
+msgid "Desugaring rules"
+msgstr "语法糖展开规则（Desugaring rules）"
+
+#: ../source/reference/records.rst:47 a30aa81c1394469aa9004f9ea56bc72d
+msgid ""
+"``(.field1 .field2 .field3)`` desugars to ``(\\x => .field3 (.field2 "
+"(.field1 x)))``"
+msgstr "``(.field1 .field2 .field3)`` 会被展开为 ``(\\x => .field3 (.field2 (.field1 x)))``"
+
+#: ../source/reference/records.rst:50 86d3dd9c965e46be8d367c0fbae39516
+msgid ""
+"``(simpleExpr .field1 .field2 .field3)`` desugars to ``((.field .field2 "
+".field3) simpleExpr)``"
+msgstr "``(simpleExpr .field1 .field2 .field3)`` 会被展开为 ``((.field .field2 .field3) simpleExpr)``"
+
+#: ../source/reference/records.rst:56 3ac33a27924b41138644492c6046d46d
+msgid "Record elaboration"
+msgstr "记录展开（Record elaboration）"
+
+#: ../source/reference/records.rst:58 e95658efcd4044d48cc007a04c07677a
+msgid ""
+"there is a new pragma ``%prefix_record_projections``, which is ``on`` by "
+"default"
+msgstr "新增了一个编译指示 ``%prefix_record_projections``，默认开启（on）"
+
+#: ../source/reference/records.rst:61 3520dbae93e6484a8c0ad130d15f5ba2
+msgid "for every field ``f`` of a record ``R``, we get:"
+msgstr "对于记录 ``R`` 的每个字段 ``f``，我们会得到："
+
+#: ../source/reference/records.rst:63 2d463642a2a6437aab793ab86b44307c
+msgid ""
+"projection ``f`` in namespace ``R`` (exactly like now), unless "
+"``%prefix_record_projections`` is ``off``"
+msgstr "命名空间 ``R`` 下的投影 ``f``（与现在一致），除非 ``%prefix_record_projections`` 被关闭（off）"
+
+#: ../source/reference/records.rst:66 e907af6921d34bf1a90c0c6e14a514c4
+msgid "projection ``.f`` in namespace ``R`` with the same definition"
+msgstr "命名空间 ``R`` 下的投影 ``.f``，定义相同"
+
+#: ../source/reference/records.rst:69 d79be961368640d88251bc6b84892cd0
+msgid "Example code"
+msgstr "示例代码（Example code）"
+
+#: ../source/reference/records.rst:78 36bedc5c632445e99716bb5694828d7a
+msgid ""
+"This record creates two projections: * ``.x : Point -> Double`` * ``.y : "
+"Point -> Double``"
+msgstr "该记录会生成两个投影：* ``.x : Point -> Double`` * ``.y : Point -> Double``"
+
+#: ../source/reference/records.rst:82 47880d6ac89a4f43aedd6aa9ec69e031
+msgid ""
+"Because ``%prefix_record_projections`` are ``on`` by default, we also "
+"get: * ``x : Point -> Double`` * ``y : Point -> Double``"
+msgstr "由于 ``%prefix_record_projections`` 默认开启，还会得到：* ``x : Point -> Double`` * ``y : Point -> Double``"
+
+#: ../source/reference/records.rst:86 2d7cb874d3904fb0a7d7ae60153b5589
+msgid ""
+"To prevent cluttering the ordinary global name space with short "
+"identifiers, we can do this:"
+msgstr "为避免短标识符污染全局命名空间，可以这样做："
+
+#: ../source/reference/records.rst:97 ba6f55b8c8f34e548ee7b35c9f11d724
+msgid "For ``Rect``, we don't get the prefix projections:"
+msgstr "对于 ``Rect``，不会生成前缀投影："
+
+#: ../source/reference/records.rst:106 4dc003e511b44b18b010480e77d63c3b
+msgid "Let's define some constants:"
+msgstr "我们来定义一些常量："
+
+#: ../source/reference/records.rst:119 025a851f2ad14acd8df108021b5c8d23
+msgid "User-defined projections work, too. (Should they?)"
+msgstr "用户自定义的投影同样有效。（应该这样吗？）"
+
+#: ../source/reference/records.rst:126 09dd762c68c5482fbb1d83b923e2ba91
+msgid "Finally, the examples:"
+msgstr "最后，来看一些示例："
+
+#: ../source/reference/records.rst:190 f1d5eacc72a54628b645891afe133c0c
+msgid "Parses but does not typecheck:"
+msgstr "可以解析但无法通过类型检查："

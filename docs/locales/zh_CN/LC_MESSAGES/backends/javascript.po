@@ -1,0 +1,331 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2023, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-16 09:52+0800\n"
+"PO-Revision-Date: 2022-09-03 13:48+0000\n"
+"Last-Translator: grass <hi@grass.show>\n"
+"Language-Team: Chinese (Simplified) <>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../source/backends/javascript.rst:3 2597f73746fc4b18b346dbcb1d1c1f72
+msgid "Javascript and Node Code Generators"
+msgstr "Javascript 和 Node 代码生成器"
+
+#: ../source/backends/javascript.rst:5 65807e273efd4e8ea664434828986d06
+msgid ""
+"There are two javascript code generators, ``node`` and ``javascript``. "
+"There are two differences between the two: the ``javascript`` code "
+"generator when called to output an HTML file will also generate a basic "
+"HTML document with the generated code inside a ``<script>`` tag; the "
+"other distinction is on the ffi that will be explained below."
+msgstr ""
+"有两个 javascript 代码生成器， ``node`` 和 ``javascript`` "
+"。两者之间有两个区别： ``javascript`` 代码生成器在被调用时，如果输出是一个一"
+"个HTML文件，会同时生成一个基本的HTML文件，生成的代码在 ``<script>`` 标签内；"
+"另一个区别是在 ffi 上，将在下面解释。"
+
+#: ../source/backends/javascript.rst:11 fb26c614febd490b966a1171cc6a06e4
+msgid ""
+"**Note**: The JavaScript codegen uses the new BigInt, hence Node.js 10.4 "
+"or higher is required."
+msgstr "**注意**：JavaScript 代码生成器使用了新的 BigInt，因此需要 Node.js 10.4 或更高版本。"
+
+#: ../source/backends/javascript.rst:14 869dc4fb93f54539b69bfe8b43544d3e
+msgid "Javascript FFI Specifiers"
+msgstr "Javascript FFI 说明符"
+
+#: ../source/backends/javascript.rst:16 73371d3576cb44e7a3c198dc75fe2459
+msgid ""
+"There are three main kinds of javascript ffi specifiers ``javascript``, "
+"``node`` and ``browser``. ``javascript`` is for foreigns that are "
+"available on node and the browser, ``node`` for foreigns that are only "
+"available on node and ``browser`` for browser only foreigns."
+msgstr ""
+"有三种主要的 javascript ffi 说明符 ``javascript``, ``node`` 和 ``browser`` 。"
+" ``javascript`` 表示在node 和浏览器上均可用， ``node`` 仅在 node 上可用， "
+"``browser`` 仅在浏览器上可用。"
+
+#: ../source/backends/javascript.rst:21 7a0cdb96b86a49c1b34fe07560c55e86
+msgid "For ``node`` there are two ways of defining a foreign:"
+msgstr "对于 ``node`` 来说，有两种方法来定义一个外部函数："
+
+#: ../source/backends/javascript.rst:28 90a4c7a68a3f460c98bfa1ba8d92612b
+msgid ""
+"here ``lambda`` means that we are providing the definition as a lambda "
+"expression."
+msgstr "这里的 ``lambda`` 表示我们将定义作为一个 lambda 表达式进行提供。"
+
+#: ../source/backends/javascript.rst:37 221cf74de1f94499b18c7b57a8bd829f
+msgid "``require`` can be used to import javascript modules."
+msgstr "``require`` 可以用来导入 javascript 模块。"
+
+#: ../source/backends/javascript.rst:39 dbabbfa223824d528d46c21d07e3aaa7
+msgid ""
+"For completion below an example of a foreign available only with "
+"``browser`` codegen:"
+msgstr "下面是一个完整示例，只有在 ``browser`` 的 codegen 是外部函数才可用："
+
+#: ../source/backends/javascript.rst:48 f435fb18f46a4a239de6f9a4a6c06edd
+msgid "Short Example"
+msgstr "简短示例"
+
+#: ../source/backends/javascript.rst:50 955ff9105f4c48858d242167b108b73b
+msgid "An interesting example is creating a foreign for the setTimeout function:"
+msgstr "一个有趣的例子是为 setTimeout 函数创建一个外部函数："
+
+#: ../source/backends/javascript.rst:60 ef6995f3e80448b386504a1609c97a26
+msgid ""
+"Note: Previous versions of the javascript backends treated ``Int`` as a "
+"64 bit signed integer represented by ``BigInt`` in javascript land. This "
+"is no longer the case: ``Int`` is now treated as a 32 bit signed integer "
+"represented by ``Number``. This should facilitate interop between Idris2 "
+"and the backend."
+msgstr ""
+"注意：以前版本 的javascript 后端将 ``Int`` 视为一个64位有符号的整数，在 "
+"javascript 领域由 ``BigInt`` 表示。现在情况不是这样了。 ``Int`` "
+"现在被视为一个32位有符号的整数，由 ``Number`` 表示。这应该有利于 Idris2 "
+"和后端之间的互操作。"
+
+#: ../source/backends/javascript.rst:65 e4f420a87af044d599b11c8bb3fc34ce
+msgid ""
+"However, unless you have good reasons to do otherwise, consider using one"
+" of the other fixed precision integral types. They are supposed to behave"
+" the same across all backends. All signed and unsigned integrals of up to"
+" 32 bit precision (``Int8``, ``Int16``, ``Int32``, ``Bits8``, ``Bits16``,"
+" and ``Bits32``) are represented by ``Number`` while ``Int64``, "
+"``Bits64``, and ``Integer`` are represented by ``BigInt``. The example "
+"above could therefore be improved by using ``Int32`` instead of ``Int``:"
+msgstr ""
+"不过，除非有特别充分的理由，否则建议优先使用其他定长整数类型。这些类型在所有后端的行为应当保持一致。所有精度不超过 32 位的有符号和无符号整数（如 ``Int8``、``Int16``、``Int32``、``Bits8``、``Bits16`` 和 ``Bits32``）都由 ``Number`` 表示，而 ``Int64``、``Bits64`` 和 ``Integer`` 则由 ``BigInt`` 表示。因此，上述示例可以通过将 ``Int`` 替换为 ``Int32`` 进行改进："
+
+#: ../source/backends/javascript.rst:82 b0b80bf93c654e6e9143ddec8325c5fb
+msgid "Browser Example"
+msgstr "浏览器示例"
+
+#: ../source/backends/javascript.rst:84 3a0b923f7aa0446090ab1a2abfeedc91
+msgid ""
+"To build JavaScript aimed to use in the browser, the code must be "
+"compiled with the javascript codegen option. The compiler produces a "
+"JavaScript or an HTML file. The browser needs an HTML file to load. This "
+"HTML file can be created in two ways"
+msgstr ""
+"要构建能在浏览器中使用的JavaScript，必须使用 javascript codegen "
+"选项编译代码。编译器生成 JavaScript 或 HTML 文件。浏览器需要一个 HTML "
+"文件才能加载。此HTML文件可以通过两种方式创建"
+
+#: ../source/backends/javascript.rst:88 86a596cbb711404cb9fef759204db345
+msgid ""
+"If the ``.html`` suffix is given to the output file the compiler "
+"generates an HTML file which includes a wrapping around the generated "
+"JavaScript."
+msgstr "如果输出文件中包含 ``.html`` 后缀，编译器就会生成一个 HTML 文件，"
+"其中包括对已生成的 JavaScript 的包装。"
+
+#: ../source/backends/javascript.rst:90 5986232e7eff4b45909c814c3e68ca55
+msgid ""
+"If *no* ``.html`` suffix is given, the generated file only contains the "
+"JavaScript code. In this case manual wrapping is needed."
+msgstr "如果 *没有* 给出 ``.html`` "
+"后缀，生成的文件只包含JavaScript代码。在这种情况下，需要手动包装。"
+
+#: ../source/backends/javascript.rst:93 108e70c05e024efab7365f354ad8beb7
+msgid "Example of the wrapper HTML:"
+msgstr "包装到 HTML 的示例："
+
+#: ../source/backends/javascript.rst:106 d70c5ad44a8a4441a5986e57f95d2ae9
+msgid ""
+"As our intention is to develop something that runs in the browser "
+"questions naturally arise:"
+msgstr "由于我们的目的是开发在浏览器中运行的东西，自然会产生一些问题："
+
+#: ../source/backends/javascript.rst:108 09380fafc7c14b3e9491ebe40f9488f1
+msgid "How to interact with HTML elements?"
+msgstr "如何与 HTML 元素交互？"
+
+#: ../source/backends/javascript.rst:109 a966da8f5d5d4a47a113663c63ebb623
+msgid "More importantly, when does the generated Idris code start?"
+msgstr "更重要的是，生成的 Idris 代码会在什么时候开始执行？"
+
+#: ../source/backends/javascript.rst:112 53ccbc0407b34644a39633910abeb4d4
+msgid "Starting point of the Idris generated code"
+msgstr "Idris 生成代码的起点"
+
+#: ../source/backends/javascript.rst:114 cb86ff87f42b463dbd6180a6e7349c9b
+msgid ""
+"The generated JavaScript for your program contains an entry point. The "
+"``main`` function is compiled to a JavaScript top-level expression, which"
+" will be evaluated during the loading of the ``script`` tag and that is "
+"the entry point for Idris generated program starting in the browser."
+msgstr ""
+"为你的程序生成的 JavaScript 包含一个入口点。 ``main`` 函数被编译成一个 "
+"JavaScript 顶层表达式，它将在加载 ``script`` "
+"标签时被求值，这就是Idris生成的程序在浏览器中开始的入口点。"
+
+#: ../source/backends/javascript.rst:119 fab7ee0851ac409088d72a71d3fddcb4
+msgid "Interaction with HTML elements"
+msgstr "与HTML元素的交互"
+
+#: ../source/backends/javascript.rst:121 06d934a63a0344b2af70eceac9691791
+#, python-format
+msgid ""
+"As sketched in the Short Example section, the FFI must be used when "
+"interaction happens between Idris generated code and the rest of the "
+"Browser/JS ecosystem. Information handled by the FFI is separated into "
+"two categories. Primitive types in Idris FFI, such as Int, and everything"
+" else. The everything else part is accessed via AnyPtr. The ``%foreign`` "
+"construction should be used to give implementation on the JavaScript "
+"side. And an Idris function declaration  to give ``Type`` declaration on "
+"the Idris side. The syntax is ``%foreign \"browser:lambda:js-lambda-"
+"expression\"`` . On the Idris side, primitive types and ``PrimIO t`` "
+"types should be used as parameters, when defining ``%foreign``. This "
+"declaration is a helper function which needs to be called behind the "
+"``primIO`` function. More on this can be found in the FFI chapter."
+msgstr ""
+"正如简短示例部分所描述的，当 Idris "
+"生成的代码和浏览器/JS生态系统的其他部分发生交互时，必须使用 FFI 。由 FFI "
+"处理的信息被分成两类。第一是Idris FFI 的原语类型，如 Int "
+"。第二类是除原语类型之外所有的。第二类是通过 AnyPtr 访问的。 ``%foreign`` "
+"结构应该被用来在 JavaScript 方面给出实现。还有一个 Idris 函数声明，在 Idris "
+"方面给出 ``Type`` 声明。语法是 ``%foreign \"browser:lambda:js-lambda-"
+"expression\"`` 。在 Idris 方面，当定义 ``%foreign`` 时，原语类型和 ``PrimIO "
+"t`` 类型应该作为参数。这个声明是一个辅助函数，需要在 ``primIO`` "
+"函数后面被调用。关于这一点的更多信息可以在 FFI 章节中找到。"
+
+#: ../source/backends/javascript.rst:132 f4fbe8795334401cb861d2f4515bbfd0
+msgid "Examples for JavaScript FFI"
+msgstr "JavaScript FFI 示例"
+
+#: ../source/backends/javascript.rst:135 546a53b62c1a4dddbd4962b279636564
+msgid "console.log"
+msgstr "console.log"
+
+#: ../source/backends/javascript.rst:145 7c008b4a8c0441d8ae0740c2a53dcbf1
+msgid ""
+"String is a primitive type in Idris and it is represented as a JavaScript"
+" String. There is no need for any conversion between the Idris and the "
+"JavaScript."
+msgstr ""
+"在 Idris 中，字符串是一个原语类型，它被表示为一个 JavaScript 字符串。在 "
+"Idris 和 JavaScript 之间没有必要进行任何转换。"
+
+#: ../source/backends/javascript.rst:149 ce7ab21cbfc74b86bd6210c4a67601e2
+msgid "setInterval"
+msgstr "setInterval"
+
+#: ../source/backends/javascript.rst:159 b061312d292f4b259b937e47a2eba64b
+msgid ""
+"The ``setInterval`` JavaScript function executes the given function in "
+"every ``x`` millisecond. We can use Idris generated functions in the "
+"callback as far as they have the type ``IO ()`` ."
+msgstr ""
+"JavaScript 中的 ``setInterval`` 函数在每 ``x`` 毫秒执行给定的函数。"
+"我们可以在回调中使用 Idris 生成的函数，只要它们的类型是 ``IO ()`` 。"
+
+#: ../source/backends/javascript.rst:163 cf5afcad9f68414ea83723253f071c34
+msgid "HTML Dom elements"
+msgstr "HTML Dom 元素"
+
+#: ../source/backends/javascript.rst:165 ae283d5d06834afea5abe680317ff274
+msgid ""
+"Lets turn our attention to the Dom elements and events. As said above, "
+"anything that is not a primitive type should be handled via the "
+"``AnyPtr`` type in the FFI. Anything complex that is returned by a "
+"JavaScript function should be captured in an ``AnyPtr`` value. It is "
+"advisory to separate the ``AnyPtr`` values into categories."
+msgstr ""
+"让我们把注意力转移到 Dom 元素和事件上。如上所述，"
+"任何不是原语类型的东西都应该通过FFI中的 ``AnyPtr`` 类型来处理。任何由 "
+"JavaScript 函数返回的复杂的东西都应该在 ``AnyPtr`` 值中捕获。建议将 "
+"``AnyPtr`` 值分成几类。"
+
+#: ../source/backends/javascript.rst:180 b55c7934e8994c7c8b800826f09c0200
+msgid ""
+"We create a ``DomNode`` type which holds an ``AnyPtr``. The "
+"``prim__body`` function wraps a lambda function with no parameters. In "
+"the Idris function ``body`` we pass an extra ``()`` parameter and the we "
+"wrap the result in the ``DomNode`` type using the ``MkNode`` data "
+"constructor."
+msgstr ""
+"我们创建了一个 ``DomNode`` 类型，它持有一个 ``AnyPtr`` 。 ``prim__body`` "
+"函数包装了一个没有参数的 lambda 函数。在 Idris 函数 ``body`` 中，"
+"我们传递一个额外的 ``()`` 参数，我们使用 ``MkNode`` 数据构造器将结果包裹在 "
+"``DomNode`` 类型中。"
+
+#: ../source/backends/javascript.rst:185 835e65d11bc14207a82e8d356a5137d6
+msgid "Primitive values originated in JavaScript"
+msgstr "JavaScript 返回的原语类型值"
+
+#: ../source/backends/javascript.rst:187 d301fe15ac584c30975ac20ce08cff52
+msgid ""
+"As a countinuation of the previous example, the ``width`` attribute of a "
+"DOM element can be retrieved via the FFI."
+msgstr "作为前面例子的延续，DOM元素的 ``width`` 属性可以通过FFI检索。"
+
+#: ../source/backends/javascript.rst:199 e0f6c8c8ee4b462c8a096ed5416e3939
+msgid "Handling JavaScript events"
+msgstr "处理 JavaScript 事件"
+
+#: ../source/backends/javascript.rst:213 65196e38290847e7875549e99b676269
+msgid ""
+"In this example shows how to attach an event handler to a particular DOM "
+"element. Values of events are also associated with ``AnyPtr`` on the "
+"Idris side. To separate ``DomNode`` form ``DomEvent`` we create two "
+"different types. Also it demonstrates how a simple callback function "
+"defined in Idris can be used on the JavaScript side."
+msgstr ""
+"本例展示了如何将事件处理器附加到特定的 DOM 元素。在 Idris 端，事件的值同样通过 ``AnyPtr`` 进行关联。为了区分 ``DomNode`` 和 ``DomEvent``，我们分别定义了两种不同的类型。此外，该示例还演示了如何在 JavaScript 端使用 Idris 中定义的简单回调函数。"
+
+#: ../source/backends/javascript.rst:219 8cf4dcc534e345828ba7e84da7b9ad20
+msgid "Directives"
+msgstr "指令"
+
+#: ../source/backends/javascript.rst:221 fcbebf0f39d04e3a8c9058be4eaba087
+msgid ""
+"The javascript code generators accepts three different directives about "
+"how compact and obfusacted the generated code should be. The following "
+"examples show the code generated for the ``putStr`` function from the "
+"prelude for each of the three directives. (``--cg node`` is used in the "
+"examples below, but the behavior is the same when generating code to be "
+"run in browsers with ``--cg javascript``)."
+msgstr ""
+"javascript 代码生成器接受三种不同的指令，即生成的代码应该有多紧凑和多晦涩。"
+"下面的例子显示了为 ``putStr`` 函数生成的代码，这三个指令分别来自 prelude "
+"。(``--cg node`` 被在下面的例子使用，但在生成代码在浏览器中运行时， ``--cg "
+"javascript`` 的行为是一样的)。"
+
+#: ../source/backends/javascript.rst:228 a077737a702346788a72ebf2ef52503e
+msgid ""
+"With ``idris2 --cg node --directive pretty`` (the default, if no "
+"directive is given), a basic pretty printer is used to generate properly "
+"indented javascript code."
+msgstr ""
+"使用 ``idris2 --cg node --directive pretty`` "
+"（默认情况下，如果没有给出指令），一个基本的美观打印器被用来生成正确缩进的 "
+"javascript 代码。"
+
+#: ../source/backends/javascript.rst:238 f420fe3243014c47b0d600cf4032e048
+msgid ""
+"With ``idris2 --cg node --directive compact``, every toplevel function is"
+" declared on a single line, and unneeded spaces are removed:"
+msgstr ""
+"使用 ``idris2 --cg node --directive compact`` "
+"，每一个顶层函数都在一行中声明，不需要的空格都会被删除："
+
+#: ../source/backends/javascript.rst:245 4359330c975c4e09bc7e4f7da7b59535
+msgid ""
+"Finally, with ``idris2 --cg node --directive minimal``, toplevel function"
+" names are (with a few exceptions like the ones from the static preamble)"
+" obfuscated to reduce the size of the generated javascript file:"
+msgstr ""
+"最后，通过 ``idris2 --cg node --directive minimal`` "
+"，顶层函数名称（除了少数例外，如静态序言『static "
+"preamble』中的函数）会被混淆，以减少生成的javascript文件的大小："

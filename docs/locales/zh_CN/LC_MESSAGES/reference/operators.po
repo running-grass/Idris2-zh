@@ -1,0 +1,318 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2023, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-16 09:52+0800\n"
+"PO-Revision-Date: 2022-09-03 13:48+0000\n"
+"Last-Translator: grass <hi@grass.show>\n"
+"Language-Team: Chinese (Simplified) <>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../source/reference/operators.rst:5 dd523fd0a16c4727a5ff44b287ce7f7d
+msgid "Operators"
+msgstr "运算符（Operators）"
+
+#: ../source/reference/operators.rst:7 c256b837b4a94a7b9a104f7b2c3e656f
+msgid ""
+"Idris2 does not have syntax blocs (like in Idris1) or mixfix operators "
+"(like in Agda). Instead, it expands on the abilities of infix operators "
+"to enable library designers to write Domain Specific Languages (DSLs) "
+"while keeping error messages under control."
+msgstr "Idris2 没有语法块（如 Idris1）或混合型运算符（如 Agda）。相反，它扩展了中缀运算符的能力，使库设计者能够编写领域特定语言（DSL），同时保持错误信息的可控性。"
+
+#: ../source/reference/operators.rst:11 eb8a61a2ac2843a086407de615899e45
+msgid ""
+"Because operators are not linked to function definitions, they are also "
+"part of the file namespacing and follow the same rules as other "
+"defintions."
+msgstr "由于运算符不与函数定义直接关联，它们也属于文件命名空间的一部分，并遵循与其他定义相同的规则。"
+
+#: ../source/reference/operators.rst:15 db24cb64abd747258e413214f06c5d00
+msgid ""
+"Operators can and will make some code less legible. Use with taste and "
+"caution. This document is meant to be mainly used by library authors and "
+"advanced users. If you are on the fence about using operators, err on the"
+" side of caution and avoid them."
+msgstr "运算符有时会降低代码可读性。请谨慎、合理地使用。本文件主要面向库作者和高级用户。如果你对是否使用运算符犹豫不决，建议谨慎为上，尽量避免使用。"
+
+#: ../source/reference/operators.rst:21 bdd3fe0e73f1431ca92a96cbc1a44885
+msgid "Basics"
+msgstr "基础（Basics）"
+
+#: ../source/reference/operators.rst:23 88ff4bd32db74695b6fd2d1544789c47
+msgid ""
+"Before we jump into the fancy features, let us explain how operators work"
+" for most users."
+msgstr "在介绍高级特性之前，先说明运算符对大多数用户的基本用法。"
+
+#: ../source/reference/operators.rst:26 eea58d3fa91544edb0293f45ff008228
+msgid "When you see an expression"
+msgstr "当你看到如下表达式时"
+
+#: ../source/reference/operators.rst:33 9fd1289085bb4836b8dc22f5bb82d54d
+msgid ""
+"It means that there is a function ``(+)`` and a *fixity* declaration in "
+"scope. A fixity for this operator looks like this"
+msgstr "这意味着作用域内有一个函数 ``(+)`` 和一个 *fixity*（结合性）声明。该运算符的结合性声明如下："
+
+#: ../source/reference/operators.rst:40 a0f383cd77684885ab3d2a52bc15a719
+msgid ""
+"It starts with a fixity keyword, you have the choice to use either "
+"``infixl``, ``infixr``, ``infix`` or ``prefix``."
+msgstr "声明以结合性关键字开头，你可以选择 ``infixl``、``infixr``、``infix`` 或 ``prefix``。"
+
+#: ../source/reference/operators.rst:43 8d2546f318a24eb5903cedd0376bf454
+msgid ""
+"``infixl`` means the operator is left-associative, so that successive "
+"applications of the operator will bracket to the left: ``n + m + 3 + x = "
+"(((n + m) + 3) + x)```. Similarly, ``infixr`` is right-associative, and "
+"``infix`` is non-associative, so the brackets are mandatory. Here, we "
+"chose for ``+`` to be left-associative, hence ``infixl``."
+msgstr "``infixl`` 表示运算符是左结合的，因此连续应用时会向左括号归组：``n + m + 3 + x = (((n + m) + 3) + x)``。同理，``infixr`` 表示右结合，``infix`` 表示无结合性，此时括号是必须的。这里我们选择 ``+`` 为左结合，因此用 ``infixl``。"
+
+#: ../source/reference/operators.rst:48 f09e000047ce4652b373e0d3bf696ec5
+msgid ""
+"The number after the fixity indicate the *precedence level* of the "
+"operator, that is, if it should be bracketed before, or after, other "
+"operators used in the same expression. For example, we want ``*`` to "
+"*take precedence* over ``+`` we write:"
+msgstr "fixity 后的数字表示运算符的 *优先级*，即在同一表达式中遇到其他运算符时，是否需要加括号。例如，我们希望 ``*`` 的优先级高于 ``+``，可以这样声明："
+
+#: ../source/reference/operators.rst:56 c72d2023badf41fb9857f7e4ce409a3f
+msgid ""
+"This way, the expression ``n + m * x`` is correctly interpreted as ``n + "
+"(m * x)``."
+msgstr "这样，表达式 ``n + m * x`` 会被正确解析为 ``n + (m * x)``。"
+
+#: ../source/reference/operators.rst:58 508e722005904f7089c5083966b7183c
+msgid ""
+"Fixity declarations are optional and change how a file is parsed, but you"
+" can use any function defined with operator symbols with parenthesis "
+"around it:"
+msgstr "fixity 声明是可选的，会影响文件的解析方式，但你可以用括号包裹任意运算符符号定义的函数来使用它："
+
+#: ../source/reference/operators.rst:67 63001d41f0664345bf55d561f8b11ef4
+msgid ""
+"Because fixities are separated from the function definitions, a single "
+"operator can have 0 or multiple fixity definitions. In the next section, "
+"we explain how to deal with multiple fixity definitions."
+msgstr "由于 fixity 与函数定义分离，一个运算符可以有 0 个或多个 fixity 声明。下一节将介绍如何处理多个 fixity 声明。"
+
+#: ../source/reference/operators.rst:72 bbdd62e110354f50a661d45ce381cf0c
+msgid "Fixity & Precedence Namespacing"
+msgstr "结合性与优先级命名空间（Fixity & Precedence Namespacing）"
+
+#: ../source/reference/operators.rst:73 ee371733962c4f11a60bd1df4afbe0f7
+#, python-format
+msgid ""
+"Sometimes it could be that you need to import two libraries that export "
+"conflicting fixities. If that is the case, the compiler will emit a "
+"warning and pick one of the fixities to parse the file. If that happens, "
+"you should hide the fixity definitions that you do not wish to use. For "
+"this, use the ``%hide`` directive, just like you would to hide a function"
+" definition, but use the fixity and the operator to hide at the end. "
+"Let's work through an example:"
+msgstr "有时你可能需要导入两个导出冲突 fixity 的库。此时编译器会发出警告，并选择其中一个 fixity 解析文件。遇到这种情况，你应隐藏不想使用的 fixity 声明。为此，使用 ``%hide`` 指令，方法与隐藏函数定义类似，但要在末尾指定 fixity 和运算符。下面举例说明："
+
+#: ../source/reference/operators.rst:101 6962a9e808f34f70b6a7e218966ded8b
+#, python-format
+msgid ""
+"This program will raise a warning on the last line of module ``C`` "
+"because there are two conflicting fixities in scope. Should we parse the "
+"expression as ``(1 - 3) - 10`` or as ``1 - (3 - 10)``? In those cases, "
+"you can hide the extra fixity you do not wish to use by using ``%hide``:"
+msgstr "该程序会在模块 ``C`` 的最后一行发出警告，因为作用域内有两个冲突的 fixity。表达式应解析为 ``(1 - 3) - 10`` 还是 ``1 - (3 - 10)``？此时可用 ``%hide`` 隐藏不想用的 fixity："
+
+#: ../source/reference/operators.rst:118 ca82b00c76c242e69589adc3524ff1d4
+msgid ""
+"In which case the program will be parsed as ``1 - (3 - 10)`` and not emit"
+" any errors."
+msgstr "这样程序会被解析为 ``1 - (3 - 10)``，且不会报错。"
+
+#: ../source/reference/operators.rst:122 2607d68e8111407db5013e1edb623161
+msgid "Export modifiers on fixities"
+msgstr "fixity 的导出修饰符（Export modifiers on fixities）"
+
+#: ../source/reference/operators.rst:124 579c5cce0ce445a486463a99464838a5
+msgid ""
+"Just like other top-level declarations in the language, fixities can be "
+"exported with the ``export`` access modifier, or kept private with "
+"``private``."
+msgstr "与语言中的其他顶层声明一样，fixity 可以用 ``export`` 修饰符导出，也可以用 ``private`` 保持私有。"
+
+#: ../source/reference/operators.rst:127 9a41232c35e24c35b32949a228e375f2
+msgid ""
+"A ``private`` fixity will remain in scope for the rest of the file but "
+"will not be visible to users that import the module. Because fixities and"
+" operators are separate, this does not mean you cannot use the functions "
+"that have this operator name, it merely means that you cannot use it in "
+"infix position. But you can use it as a regular function application "
+"using brackets. Let us see what this looks like"
+msgstr "``private`` fixity 会在本文件剩余部分可用，但对导入该模块的用户不可见。由于 fixity 与运算符分离，这并不意味着你不能用该运算符名的函数，只是不能以中缀形式使用。你仍可用括号以普通函数方式调用。如下所示："
+
+#: ../source/reference/operators.rst:154 9b75a72c00a842c3b5a332e54f2d1e22
+msgid ""
+"In what follows, we have two examples of programs that benefit from "
+"declaring a fixity ``private`` rather than ``export``."
+msgstr "下文有两个示例，说明将 fixity 声明为 ``private`` 而非 ``export`` 的好处。"
+
+#: ../source/reference/operators.rst:158 bea4a9cced7a48b6a5b0e47a43b4c99f
+msgid "Private record fixity pattern"
+msgstr "私有记录 fixity 模式（Private record fixity pattern）"
+
+#: ../source/reference/operators.rst:160 4ed2511644b74b629823459ce25525c3
+msgid ""
+"Private fixity declarations are useful in conjuction with records. When "
+"you declare a record with operators as fields, it is helpful to write "
+"them in infix position. However, the compiler will also synthesize a "
+"projection function for the field that takes as first argument the a "
+"value of the record to project from. This makes using the operator as a "
+"binary infix operator impossible, since it now has 3 arguments."
+msgstr "私有 fixity 声明在与记录结合时很有用。当你声明一个以运算符为字段的记录时，使用中缀形式书写很方便。但编译器还会为该字段生成投影函数，其第一个参数为要投影的记录值。这样一来，该运算符就变成了 3 个参数，无法作为二元中缀运算符使用。"
+
+#: ../source/reference/operators.rst:184 ee9f7bf170c043b9a2917bda007121ed
+msgid ""
+"What we really want to write is ``natRel x y = (<@>) x y`` but ``(<@>)`` "
+"now has type ``SomeRelation a -> a -> a -> Type``."
+msgstr "我们真正想写的是 ``natRel x y = (<@>) x y``，但此时 ``(<@>)`` 的类型已变为 ``SomeRelation a -> a -> a -> Type``。"
+
+#: ../source/reference/operators.rst:187 91817d8b924e4f6dbb7594d0b771856a
+msgid ""
+"The solution is to define a private field with a private fixity and a "
+"public one which relies on proof search to find the appropriate argument:"
+msgstr "解决方法是定义一个带有私有 fixity 的私有字段，以及一个依赖证明搜索自动补全参数的公有字段："
+
+#: ../source/reference/operators.rst:211 f71f6388e39344b0a7e2bdb88e5c12f4
+msgid ""
+"We define ``(<@>)`` as a projection function with an implicit parameter "
+"allowing it to be used as a binary operator once again."
+msgstr "我们将 ``(<@>)`` 定义为带有隐式参数的投影函数，使其再次可用作二元运算符。"
+
+#: ../source/reference/operators.rst:215 56bf5c1c4cb34fa5b8113747ac4c2346
+msgid "Private Local definition"
+msgstr "私有本地定义（Private Local definition）"
+
+#: ../source/reference/operators.rst:217 0016f6e7bf704ea8aa1960dad4a068be
+msgid ""
+"Private fixity definitions are useful when redefining an operator fixity "
+"in a module. This happens when multiple DSLs are imported as the same "
+"time and you do not want to expose conflicting fixity declarations:"
+msgstr "当在模块中重新定义运算符 fixity 时，私有 fixity 定义很有用。比如同时导入多个 DSL，又不希望暴露冲突的 fixity 声明时："
+
+#: ../source/reference/operators.rst:236 9a5a3e323c084232ac4d65092fc2e028
+msgid ""
+"Here ``distrib1`` makes explicit use of the operator being defined as "
+"right-associative."
+msgstr "这里 ``distrib1`` 明确利用了该运算符的右结合性。"
+
+#: ../source/reference/operators.rst:240 3bdd42b7ec404d399ab698aa11d5e70a
+msgid "Typebind Operators"
+msgstr "类型绑定运算符（Typebind Operators）"
+
+#: ../source/reference/operators.rst:242 aa9bc0eee8a34ffe8172cacbaf45eae6
+msgid ""
+"In dependently-typed programming, we have the ability define constructors"
+" which first argument is a type and the second is a type indexed over the"
+" first argument. A typical example of this is the dependent linear arrow:"
+msgstr "在依赖类型编程中，我们可以定义构造子，其第一个参数是类型，第二个参数是以第一个参数为索引的类型。典型例子是依赖线性箭头："
+
+#: ../source/reference/operators.rst:253 502295b65a4c4398aa40c0dabe40aba0
+msgid ""
+"However, when trying to use it in infix position, we have to use a lambda"
+" to populate the second argument:"
+msgstr "但在尝试以中缀形式使用时，必须用 lambda 填充第二个参数："
+
+#: ../source/reference/operators.rst:261 2ffbe40a163847909c818afc05207439
+msgid ""
+"What we really want to write, is something like the dependent arrow "
+"``->`` but for linear types:"
+msgstr "我们真正想写的是类似依赖箭头 ``->`` 的语法，但用于线性类型："
+
+#: ../source/reference/operators.rst:269 549aff0adf3947afb33436c462be5e6d
+msgid ""
+"The above syntax is allowed if the operator is declared as ``typebind``. "
+"For this, simply add the ``typebind`` keyword in front of the fixity "
+"declaration."
+msgstr "如果运算符声明为 ``typebind``，上述语法是允许的。只需在 fixity 声明前加上 ``typebind`` 关键字即可。"
+
+#: ../source/reference/operators.rst:276 40deba4bab2444a0821803eb3c9924ea
+msgid ""
+"``typebind`` is a modifier like ``export`` and both can be used at the "
+"same time."
+msgstr "``typebind`` 是类似 ``export`` 的修饰符，两者可以同时使用。"
+
+#: ../source/reference/operators.rst:279 dcd8081091464711a5ad3382cce344a6
+msgid ""
+"An operator defined as ``typebind`` cannot be used in regular position "
+"anymore, writing ``Nat =@ (\\x => Singleton x)`` will raise an error."
+msgstr "声明为 ``typebind`` 的运算符不能再以常规方式使用，写 ``Nat =@ (\\x => Singleton x)`` 会报错。"
+
+#: ../source/reference/operators.rst:282 fe42d60340f547929b8adf532bc41fba
+msgid ""
+"This new syntax is purely syntax sugar and converts any instance of "
+"``(name : type) op expr`` into ``type op (\\name : type => expr)``"
+msgstr "这种新语法纯属语法糖，会将 ``(name : type) op expr`` 转换为 ``type op (\\name : type => expr)``。"
+
+#: ../source/reference/operators.rst:285 b82f65e423a54024a6e6e743bc5e205f
+msgid ""
+"Because of its left-to-right binding structure, typebind operators can "
+"only ever be ``infixr`` with precedence 0."
+msgstr "由于其自左向右的绑定结构，typebind 运算符只能是 ``infixr``，且优先级为 0。"
+
+#: ../source/reference/operators.rst:290 178010bb65aa42d5a0c5a284455a1ff8
+msgid "Autobind Operators"
+msgstr "自动绑定运算符（Autobind Operators）"
+
+#: ../source/reference/operators.rst:292 ca202b7e457a4033b7d79da79d162c90
+msgid ""
+"Typebind operators allow to bind a *type* on the left side of an "
+"operator, so that is can be used as the index of the second argument. But"
+" sometimes, there is no dependency between the first and second argument,"
+" yet we still want to use binding syntax. For those cases, we use "
+"``autobind``."
+msgstr "typebind 运算符允许在运算符左侧绑定一个 *类型*，以便作为第二个参数的索引。但有时第一个和第二个参数之间没有依赖关系，但我们仍希望使用绑定语法，这时可以用 ``autobind``。"
+
+#: ../source/reference/operators.rst:297 5cf571f926d44b50b9e6946225d88f10
+msgid ""
+"An example of this is a DSL for a dependently-typed programming language "
+"where the constructor for ``Pi`` takes terms on the left and lambdas on "
+"the right:"
+msgstr "例如，在依赖类型编程语言的 DSL 中，``Pi`` 构造子左侧为项，右侧为 lambda："
+
+#: ../source/reference/operators.rst:311 09e5a719cb8344bf92b32c136b0d6611
+msgid ""
+"We would like to use a custom operator to build values using ``VPi``, but"
+" its signature does not follow the pattern that ``typebind`` uses. "
+"Instead, we use ``autobind`` to tell the compiler that the type of the "
+"lambda must be inferred. For this we use ``:=`` instead of ``:``:"
+msgstr "我们希望用自定义运算符构造 ``VPi`` 的值，但其签名不符合 ``typebind`` 的模式。此时可用 ``autobind``，让编译器自动推断 lambda 的类型。为此用 ``:=`` 替代 ``:``："
+
+#: ../source/reference/operators.rst:331 4c3c37cc08cb4080a791ede4537fb664
+msgid ""
+"This new syntax is much closer to what the code is meant to look like for"
+" users accustomed to dependently-typed programming languages."
+msgstr "这种新语法更贴近依赖类型编程语言用户的习惯写法。"
+
+#: ../source/reference/operators.rst:334 303df65bb9b34f3d8d8604338189e7ea
+msgid ""
+"More technically, any ``autobind`` operator is called with the syntax "
+"``(name := expr) op body`` and is desugared into ``expr op (\\name : ? =>"
+" body)``. If you want, or need, to give the type explicitly, you can "
+"still do so by using the full syntax: ``(name : type := expr) op body`` "
+"which is desugared into ``expr op (\\name : type => body)``."
+msgstr "更具体地说，任何 ``autobind`` 运算符都用 ``(name := expr) op body`` 语法调用，并被展开为 ``expr op (\\name : ? => body)``。如需显式指定类型，可用完整语法：``(name : type := expr) op body``，其会被展开为 ``expr op (\\name : type => body)``。"
+
+#: ../source/reference/operators.rst:340 2d65930179b64744a44d9ef63fc5fa54
+msgid ""
+"Like ``typebind``, ``autobind`` operators cannot be used as regular "
+"operators anymore , additionally an ``autobind`` operator cannot use the "
+"``typebind`` syntax either."
+msgstr "与 ``typebind`` 类似，``autobind`` 运算符不能再作为常规运算符使用，且 ``autobind`` 运算符也不能使用 ``typebind`` 语法。"

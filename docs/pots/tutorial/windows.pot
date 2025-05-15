@@ -1,0 +1,107 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2023, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-16 09:52+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../source/tutorial/windows.rst:4
+#: cfee91a92d4f4182a53f27c6b7b27405
+msgid "Prerequisites for Windows"
+msgstr ""
+
+#: ../source/tutorial/windows.rst:7
+#: fe7f531c0ef74996a9a1a7bffa0f36df
+msgid "MSYS2"
+msgstr ""
+
+#: ../source/tutorial/windows.rst:9
+#: cfdd107e9b3048d897dd2a042976b9af
+msgid "To build Idris 2 on Windows, an Unix-like environment is needed for all the utilities used during the build. `MSYS2 <https://www.msys2.org>`_ provides that for us."
+msgstr ""
+
+#: ../source/tutorial/windows.rst:12
+#: e4c1430e39b745c184a12cb91c4c2403
+msgid "Download the latest version of MSYS2"
+msgstr ""
+
+#: ../source/tutorial/windows.rst:13
+#: 4daac470cf1d4d89969c6cb000d7a79c
+msgid "Run the installer. Don't install it under Program files as it needs to write files (the \"unix\" home directory lies under there, for example)"
+msgstr ""
+
+#: ../source/tutorial/windows.rst:16
+#: 55bd5b5840434960b06fe2860491067c
+msgid "In the directory where you installed MSYS2, find the file ``mingw64.ini`` and add the line ``MSYS2_PATH_TYPE=inherit``. This adds the normal windows PATH to the shell in MSYS2."
+msgstr ""
+
+#: ../source/tutorial/windows.rst:19
+#: 1bc7356346714fd5b5b879ef552b2fc4
+msgid "Start MSYS2 (click on mingw64.exe, as the icon in the start menu won't pick up the MSYS2_PATH_TYPE from the ini, it can be added to the system settings)"
+msgstr ""
+
+#: ../source/tutorial/windows.rst:22
+#: a0781bf97057461fbfd2ff388077ecb2
+msgid "Update the installation with the latest releases with ``pacman -Syu``"
+msgstr ""
+
+#: ../source/tutorial/windows.rst:24
+#: c4ffcce274934d94b944c97c1919781c
+msgid "Install the programs that the build needs with::"
+msgstr ""
+
+#: ../source/tutorial/windows.rst:30
+#: 165aa9b0b7474453a9e6ac821b1ea164
+msgid "Chez Scheme"
+msgstr ""
+
+#: ../source/tutorial/windows.rst:32
+#: 65d176ab575048da8704065d9d85d874
+msgid "Chez Scheme has a ready-made installer at `GitHub <https://github.com/cisco/ChezScheme/releases>`_"
+msgstr ""
+
+#: ../source/tutorial/windows.rst:34
+#: 5c0e2625a3854d57b5ce84282f13c651
+msgid "Download the installer and run it, do not install it in a path with spaces, currently Idris2 has trouble with them."
+msgstr ""
+
+#: ../source/tutorial/windows.rst:36
+#: 5e1d61b6e9b24485917aeb1c2b768936
+msgid "Add the threaded 64-bit scheme to the PATH. It is the ``\\bin\\ta6nt`` subdirectory to where Chez Scheme was installed. So if you used \"C:\\Chez\" it will be in ``C:\\Chez\\bin\\ta6nt``"
+msgstr ""
+
+#: ../source/tutorial/windows.rst:41
+#: 0c9c257073944d2b8c6062dbf21fc97b
+msgid "Building"
+msgstr ""
+
+#: ../source/tutorial/windows.rst:43
+#: a923d14c6ea94a3196a0d6d6ffba6f99
+msgid "Start a fresh MSYS2 shell so that it knows about your modified PATH (it's important to use Mingw64 to get access to the right compilers)."
+msgstr ""
+
+#: ../source/tutorial/windows.rst:46
+#: 05294817407a4c34bc08171c9c5ce8d0
+msgid "Navigate to the Idris2 directory."
+msgstr ""
+
+#: ../source/tutorial/windows.rst:47
+#: c84052f5af564a60b4eb131da1414fc0
+msgid "Set the SCHEME environment variable that Idris2 needs ``export SCHEME=scheme``. This can be set permanently in the bash profile file or the Windows settings."
+msgstr ""
+
+#: ../source/tutorial/windows.rst:50
+#: 1da478d68b8245e6975befe43f0e8e9f
+msgid "Now ``make bootstrap && make install`` should build Idris2 and install it in ``home/<username>/.idris2/bin`` under your MSYS2 installation. If you add that to the PATH in Windows settings it will be usable from any command line (including Powershell or DOS), that you open."
+msgstr ""

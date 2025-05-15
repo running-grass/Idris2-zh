@@ -1,0 +1,109 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2023, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-16 09:52+0800\n"
+"PO-Revision-Date: 2022-09-03 13:48+0000\n"
+"Last-Translator: grass <hi@grass.show>\n"
+"Language-Team: Chinese (Simplified) <>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../source/app/index.rst:5 89894b4c1b6c448b8d40b165077b6eed
+msgid "Structuring Idris 2 Applications"
+msgstr "构建 Idris 2 应用程序"
+
+#: ../source/app/index.rst:7 7f8715c48b3748b5a108e524f028fd1d
+msgid "A tutorial on structuring Idris 2 applications using ``Control.App``."
+msgstr "关于使用 ``Control.App`` 构建Idris 2应用程序的教程。"
+
+#: ../source/app/index.rst:11 81c8629d5e8947f8a83cc851c3fbd919
+msgid ""
+"The documentation for Idris has been published under the Creative Commons"
+" CC0 License. As such to the extent possible under law, *The Idris "
+"Community* has waived all copyright and related or neighboring rights to "
+"Documentation for Idris."
+msgstr ""
+"Idris 的文档已在知识共享 CC0 许可下发布。因此，在法律允许的范围内，*Idris "
+"社区* 已经放弃了 Idris 文档的所有版权和相关或邻近的权利。"
+
+#: ../source/app/index.rst:16 f0fdc66f78b445b29e80b1fcdc2f2dfc
+msgid ""
+"More information concerning the CC0 can be found online at: "
+"http://creativecommons.org/publicdomain/zero/1.0/"
+msgstr "关于CC0的更多信息，可以在网上找到：http://creativecommons.org/publicdomain/"
+"zero/1.0/"
+
+#: ../source/app/index.rst:21 82da9bbfb1564bd482351798539eb93e
+msgid ""
+"Idris applications have ``main : IO ()`` as an entry point.  A type ``IO "
+"a`` is a description of interactive actions which produce a value of type"
+" ``a``. This is fine for primitives, but ``IO`` does not support "
+"exceptions so we have to be explicit about how an operation handles "
+"failure. Also, if we do want to support exceptions, we also want to "
+"explain how exceptions and linearity (see Section :ref:`sect-"
+"multiplicities`) interact."
+msgstr ""
+"Idris 应用程序有 ``main : IO ()`` 作为一个入口点， 类 型 ``IO a`` "
+"是对交互式操作的描述，它产生一个类型 ``a`` 的值。这对原语来说很好，但 ``IO`` "
+"不支持异常，所以我们必须明确说明一个操作如何处理失败。另外，如果我们确实想支"
+"持异常，我们也要解释异常和线性（见章节 :ref:`sect-multiplicities` "
+"）如何交互。"
+
+#: ../source/app/index.rst:28 ae1b0aaf1e344136ae77c30b032bc9c4
+msgid ""
+"In this tutorial, we describe a parameterised type ``App`` and a related "
+"parameterised type ``App1``, which together allow us to structure larger "
+"applications, taking into account both exceptions and linearity. The aims"
+" of ``App`` and ``App1`` are that they should:"
+msgstr ""
+"在本教程中，我们描述了一个参数化类型 ``App`` 和一个相关的参数化类型 ``App1`` "
+"，它们共同允许我们在考虑到异常和线性的情况下构造更大的应用程序。 ``App`` 和 "
+"``App1`` 的目的是："
+
+#: ../source/app/index.rst:33 2a1b160214fb41a6936b75796d700949
+msgid ""
+"make it possible to express what interactions a function does, in its "
+"type, without too much notational overhead."
+msgstr "使得在其类型中表达一个函数所做的交互成为可能，而没有太多的符号开销。"
+
+#: ../source/app/index.rst:35 578947dcf92346218e55d0164f98a8ae
+msgid "have little or no performance overhead compared to writing in *IO*."
+msgstr "与写在 *IO* 中相比，几乎没有性能开销。"
+
+#: ../source/app/index.rst:36 4b94748ce4a74e368163bb11e3700747
+msgid ""
+"be compatible with other libraries and techniques for describing effects,"
+" such as algebraic effects or monad transformers."
+msgstr "与其他副作用相关的库和技术兼容，如代数副作用『algebraic "
+"effects』或单子变压器『monad transformers』。"
+
+#: ../source/app/index.rst:38 869057c9d71b4be39e88a6e08899cccc
+msgid ""
+"be sufficiently easy to use and performant that it can be the basis of "
+"*all* libraries that make foreign function calls, much as *IO* is in "
+"Idris 1 and Haskell"
+msgstr "足够易于使用和性能，它可以成为 *所有* 进行外部函数调用的库的基础，就像 *IO* "
+"在 Idris 1 和 Haskell 中一样"
+
+#: ../source/app/index.rst:41 bc0a2a082146494993ac885b5ea96f0e
+msgid ""
+"be compatible with linear types, meaning that they should express whether"
+" a section of code is linear (guaranteed to execute exactly once without "
+"throwing an exception) or whether it might throw an exception."
+msgstr "与线性类型兼容，也就是说，它们应该表达一段代码是否是线性的（保证只执行一次而"
+"不抛出异常）或是否可能抛出异常。"
+
+#: ../source/app/index.rst:45 1937eb02fb994271aab0457381813a5b
+msgid ""
+"We begin by introducing ``App``, with some small example programs, then "
+"show how to extend it with exceptions, state, and other interfaces."
+msgstr "我们首先介绍 ``App`` "
+"，用一些小的示例程序，然后展示如何用异常、状态和其他接口来扩展它。"

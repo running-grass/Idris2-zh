@@ -1,0 +1,263 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2023, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-16 09:52+0800\n"
+"PO-Revision-Date: 2022-09-03 13:48+0000\n"
+"Last-Translator: grass <hi@grass.show>\n"
+"Language-Team: Chinese (Simplified) <>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../source/reference/debugging.rst:3 9d2b5844ff3d465da1c1475a6cd89e42
+msgid "Debugging The Compiler"
+msgstr "调试编译器（Debugging The Compiler）"
+
+#: ../source/reference/debugging.rst:6 e3f48710e92c4e0d9c8124a440021b35
+msgid "Performance"
+msgstr "性能（Performance）"
+
+#: ../source/reference/debugging.rst:8 4b6ddb31cca1430eb8ae164836c449e2
+msgid ""
+"The compiler has the ``--timing`` flag to dump timing information "
+"collected during operation."
+msgstr "编译器提供了 ``--timing`` 标志，用于输出编译过程中收集的时间信息。"
+
+#: ../source/reference/debugging.rst:10 752d6bd7f606473e9ce7589b6dfb8d84
+msgid ""
+"The output documents, in reverse chronological order, the cumulative time"
+" taken for the operation (and sub operations) to complete. Sub levels are"
+" indicated by successive repetitions of ``+``."
+msgstr "输出内容会以逆时间顺序记录操作（及其子操作）完成所用的累计时间。子级通过连续的 ``+`` 符号表示。"
+
+#: ../source/reference/debugging.rst:16 27cb488cd9684d26bd6026eae00fc5dc
+msgid "Logging"
+msgstr "日志（Logging）"
+
+#: ../source/reference/debugging.rst:18 a7758e6731084bc686579af2093fb0e3
+msgid ""
+"The compiler logs various categories of information during operation at "
+"various levels."
+msgstr "编译器在运行过程中会以不同级别记录各种类别的信息。"
+
+#: ../source/reference/debugging.rst:20 560916877b7d4376b4b86d9d56c36fa1
+msgid "Log levels are characterised by two things:"
+msgstr "日志级别由两部分组成："
+
+#: ../source/reference/debugging.rst:22 aa0ec5fa73374783b38d0fa7a75a8ed2
+msgid "a dot-separated path of ever finer topics of interest e.g. scope.let"
+msgstr "以点分隔的主题路径，例如 scope.let"
+
+#: ../source/reference/debugging.rst:23 82ace29d11b0497d9fbf2cf230e82250
+msgid "a natural number corresponding to the verbosity level e.g. 5"
+msgstr "一个表示详细程度的自然数，例如 5"
+
+#: ../source/reference/debugging.rst:25 3c6283e858db42e9884afe806353600d
+msgid "If the user asks for some logs by writing::"
+msgstr "如果用户通过如下方式请求日志："
+
+#: ../source/reference/debugging.rst:29 83a963f796a5402ab0a6813451670b9b
+msgid ""
+"they will get all of the logs whose path starts with `scope` and whose "
+"verbosity level is less or equal to `5`. By combining different logging "
+"directives, users can request information about everything (with a low "
+"level of details) and at the same time focus on a particular subsystem "
+"they want to get a lot of information about. For instance:::"
+msgstr "他们会获得所有以 `scope` 开头且详细级别小于等于 `5` 的日志。通过组合不同的日志指令，用户既可以获取所有内容的简要信息，也可以聚焦于某个子系统的详细信息。例如："
+
+#: ../source/reference/debugging.rst:38 17c3c5359dd644bba8b012997ef37a8f
+msgid ""
+"will deliver basic information about the various phases the compiler goes"
+" through and deliver a lot of information about scope-checking let "
+"binders."
+msgstr "这样会输出编译器各阶段的基本信息，并详细输出关于 let 绑定作用域检查的信息。"
+
+#: ../source/reference/debugging.rst:42 bdf18acc39c04eacb4a3ea9d6c75ad39
+msgid "You can set the logging level at the command line using::"
+msgstr "你可以通过命令行设置日志级别："
+
+#: ../source/reference/debugging.rst:46 c4b6ef50e076420caeb32eb6abf7162e
+msgid "and through the REPL using::"
+msgstr "也可以在 REPL 中设置："
+
+#: ../source/reference/debugging.rst:52 0e2d2704478f4b43a2c34564391f8677
+msgid ""
+"The supported logging categories can be found using the command line "
+"flag::"
+msgstr "可用的日志类别可通过以下命令行参数查看："
+
+#: ../source/reference/debugging.rst:57 022bef612050411bbb0f10033af943d7
+msgid "REPL Commands"
+msgstr "REPL 命令"
+
+#: ../source/reference/debugging.rst:59 7e481d4c4b104e29bdd70def2bedd7f4
+msgid ""
+"To see more debug information from the REPL there are several options one"
+" can set."
+msgstr "要在 REPL 中查看更多调试信息，可以设置以下选项。"
+
+#: ../source/reference/debugging.rst:61 ../source/reference/debugging.rst:73
+#: 10d93adc46f34c90a246577b1b25ed44 ab7b3b34e2074e5eaa77ca99e425ff82
+msgid "Logging Categories"
+msgstr "日志类别（Logging Categories）"
+
+#: ../source/reference/debugging.rst:1 0e5e51dae2e6450680f61278abe77703
+#: fa832afb69644b55b0cf3526fc76c92b
+msgid "command"
+msgstr "命令"
+
+#: ../source/reference/debugging.rst:1 2a83a972cd844da6bf9b22d5c0fa8991
+#: 5f84b2b0e33644b7b95f14581c5a5876 7f516aef40734973b68bfb548043deb0
+msgid "description"
+msgstr "描述"
+
+#: ../source/reference/debugging.rst:1 c717b38a55ac482392da1ebad03d12fa
+msgid "``:di <name>``"
+msgstr "``:di <name>``"
+
+#: ../source/reference/debugging.rst:1 cbd2352614c54c7688406cd4a2f0cd39
+msgid "show debugging information for a name"
+msgstr "显示指定名称的调试信息"
+
+#: ../source/reference/debugging.rst:1 c7670f13ed2c483999ebc33e327a84f3
+msgid "``:set showimplicits``"
+msgstr "``:set showimplicits``"
+
+#: ../source/reference/debugging.rst:1 45968dfc92094a10b23fbe6513ad15f8
+msgid "show values of implicit arguments"
+msgstr "显示隐式参数的值"
+
+#: ../source/reference/debugging.rst:69 eaf822143c184907889738257d7404fb
+msgid "Compiler Flags"
+msgstr "编译器标志（Compiler Flags）"
+
+#: ../source/reference/debugging.rst:71 b2b532ddafe344c49d3378f78091ca5e
+msgid ""
+"There are several 'hidden' compiler flags that can help expose Idris' "
+"inner workings."
+msgstr "有一些\"隐藏\"的编译器标志可以帮助揭示 Idris 的内部工作机制。"
+
+#: ../source/reference/debugging.rst:1 0751d3ce7d5b4d44aed1f8b81cbf3769
+msgid "``--dumpcases <file>``"
+msgstr "``--dumpcases <file>``"
+
+#: ../source/reference/debugging.rst:1 612324355fcf4209b005cf2222061545
+msgid "dump case trees to the given file"
+msgstr "将 case tree 输出到指定文件"
+
+#: ../source/reference/debugging.rst:1 9c036f4e578c437c9227c04d815bcabd
+msgid "``--dumplifted <file>``"
+msgstr "``--dumplifted <file>``"
+
+#: ../source/reference/debugging.rst:1 368b3b9d8c4645118f962ea49e276be5
+msgid "dump lambda lifted trees to the given file"
+msgstr "将 lambda lifted tree 输出到指定文件"
+
+#: ../source/reference/debugging.rst:1 7f9467ec259c47e29cff1a3eeaffce99
+msgid "``--dumpanf <file>``"
+msgstr "``--dumpanf <file>``"
+
+#: ../source/reference/debugging.rst:1 22921120c2dd4c86aa9dfc00a22823d2
+msgid "dump ANF to the given file"
+msgstr "将 ANF 输出到指定文件"
+
+#: ../source/reference/debugging.rst:1 e553733874e24f0facba746d72241dd4
+msgid "``--dumpvmcode <file>``"
+msgstr "``--dumpvmcode <file>``"
+
+#: ../source/reference/debugging.rst:1 a61e21c2abc347a4ad4d7922e1bc5103
+msgid "dump VM Code to the given file"
+msgstr "将 VM 代码输出到指定文件"
+
+#: ../source/reference/debugging.rst:1 7b419bf270c24eabb1788ed57958e1ec
+msgid "``--debug-elab-check``"
+msgstr "``--debug-elab-check``"
+
+#: ../source/reference/debugging.rst:1 704cd30368b148f995d30c9be2ab210c
+msgid "do more elaborator checks (currently conversion in LinearCheck)"
+msgstr "执行更多 elaborator 检查（目前为 LinearCheck 中的转换检查）"
+
+#: ../source/reference/debugging.rst:85 fd37e3d761214b879cb8a8024d3ccbd0
+msgid "Output Formats"
+msgstr "输出格式（Output Formats）"
+
+#: ../source/reference/debugging.rst:88 538998ce3d5a4487ba00dffde16fe160
+msgid "Debug Output"
+msgstr "调试输出（Debug Output）"
+
+#: ../source/reference/debugging.rst:90 24364860128b4bb8b57c0d5ec4acf7b6
+msgid ""
+"Calling ``:di <name>`` dumps debugging information about the selected "
+"term. Specifically dumped are:"
+msgstr "调用 ``:di <name>`` 会输出所选术语的调试信息。具体包括："
+
+#: ../source/reference/debugging.rst:93 b237d88647804ddcadeaaf4cc9b6b641
+msgid "Debugging Information"
+msgstr "调试信息（Debugging Information）"
+
+#: ../source/reference/debugging.rst:1 d5a7b2910693403d90f562f6e476a602
+msgid "topic"
+msgstr "主题"
+
+#: ../source/reference/debugging.rst:1 8e015eb0ad8a4d4c956a110df1cbe115
+msgid "Full Name(s)"
+msgstr "全名（Full Name(s)）"
+
+#: ../source/reference/debugging.rst:1 0091136f6364420fafc28943a184c4a5
+msgid "The fully qualified name of the term."
+msgstr "术语的完全限定名。"
+
+#: ../source/reference/debugging.rst:1 e3d8ccc1bb534999ad42d01eb0fbb683
+msgid "Multiplicity"
+msgstr "多重性（Multiplicity）"
+
+#: ../source/reference/debugging.rst:1 203dc91208c44ad68e78956d220f7922
+msgid "The terms multiplicity."
+msgstr "术语的多重性。"
+
+#: ../source/reference/debugging.rst:1 a73e27768eea49d081cc68b906f41eac
+msgid "Erasable Arguments"
+msgstr "可擦除参数（Erasable Arguments）"
+
+#: ../source/reference/debugging.rst:1 71d5f3b61687473bbeb67e15b73508c3
+msgid "Things that are erased."
+msgstr "会被擦除的内容。"
+
+#: ../source/reference/debugging.rst:1 16c33fe67c1045ce97938ee136c32e29
+msgid "Detaggable argument types"
+msgstr "可去标签参数类型（Detaggable argument types）"
+
+#: ../source/reference/debugging.rst:1 3234645f887d44b48e34e2645d6ea4ff
+msgid "Specialised arguments"
+msgstr "特殊参数（Specialised arguments）"
+
+#: ../source/reference/debugging.rst:1 6350e37297544d1397523d5d0887bcc0
+msgid "Inferrable arguments"
+msgstr "可推断参数（Inferrable arguments）"
+
+#: ../source/reference/debugging.rst:1 697482539d2a48299d6b2b63423e108e
+msgid "Compiled version"
+msgstr "已编译版本（Compiled version）"
+
+#: ../source/reference/debugging.rst:1 3970524d7af4432ea3f706bfc1d1f8b0
+msgid "Compile time linked terms"
+msgstr "编译时链接术语（Compile time linked terms）"
+
+#: ../source/reference/debugging.rst:1 831777332dd347e3a7b34036ebbb860b
+msgid "Runtime linked terms"
+msgstr "运行时链接术语（Runtime linked terms）"
+
+#: ../source/reference/debugging.rst:1 dfc57c0950534bacaa7ef11f38217880
+msgid "Flags"
+msgstr "标志（Flags）"
+
+#: ../source/reference/debugging.rst:1 bc2c45e159f14c389d02d7da0d6be929
+msgid "Size change graph"
+msgstr "规模变化图（Size change graph）"

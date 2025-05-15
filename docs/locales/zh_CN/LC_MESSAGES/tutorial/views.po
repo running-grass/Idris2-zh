@@ -1,0 +1,212 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2023, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-16 09:52+0800\n"
+"PO-Revision-Date: 2022-09-03 13:48+0000\n"
+"Last-Translator: grass <hi@grass.show>\n"
+"Language-Team: Chinese (Simplified) <>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../source/tutorial/views.rst:5 b496a464d34a47c5b02e0b0b9726bb72
+msgid "Views and the “``with``” rule"
+msgstr "视图与“``with``”规则"
+
+#: ../source/tutorial/views.rst:8 1aca0cc268e342f48332dc165310447e
+msgid "Dependent pattern matching"
+msgstr "依值模式匹配（Dependent pattern matching）"
+
+#: ../source/tutorial/views.rst:10 4c2eb84a92204813b1e31af85429c6d8
+msgid ""
+"Since types can depend on values, the form of some arguments can be "
+"determined by the value of others. For example, if we were to write down "
+"the implicit length arguments to ``(++)``, we’d see that the form of the "
+"length argument was determined by whether the vector was empty or not:"
+msgstr ""
+"由于类型可以依赖于值，因此某些参数的形式可以由其他参数的值决定。例如，如果我们写出 ``(++)`` "
+"的隐式长度参数，可以看到长度参数的形式取决于向量是否为空："
+
+#: ../source/tutorial/views.rst:22 57dc167e49f44562a605eb15b98e060b
+msgid ""
+"If ``n`` was a successor in the ``[]`` case, or zero in the ``::`` case, "
+"the definition would not be well typed."
+msgstr ""
+"如果 ``[]`` 情况下的 ``n`` 是后继（successor），或者 ``::`` 情况下的 ``n`` "
+"是零（zero），那么该定义将不是良类型的。"
+
+#: ../source/tutorial/views.rst:28 fd0d226920944ff09d05c58b1befa7bb
+msgid "The ``with`` rule — matching intermediate values"
+msgstr "``with`` 规则 —— 匹配中间值"
+
+#: ../source/tutorial/views.rst:30 0ccefecc748c402eb160eacf921e088e
+msgid ""
+"Very often, we need to match on the result of an intermediate "
+"computation. Idris provides a construct for this, the ``with`` rule, "
+"inspired by views in ``Epigram`` [#McBridgeMcKinna]_, which takes account"
+" of the fact that matching on a value in a dependently typed language can"
+" affect what we know about the forms of other values. In its simplest "
+"form, the ``with`` rule adds another argument to the function being "
+"defined."
+msgstr ""
+"我们经常需要对中间计算的结果进行匹配。Idris 为此提供了 ``with`` 规则，这一构造受 ``Epigram`` "
+"[#McBridgeMcKinna]_ "
+"中的视图（view）启发。它考虑到，在依值类型语言中对某个值进行匹配，可能会影响我们对其他值形式的认知。在最简单的形式下，``with`` "
+"规则会为正在定义的函数增加一个参数。"
+
+#: ../source/tutorial/views.rst:38 e57bc8d24e2e4364b1a0037e1d88d9bf
+msgid ""
+"When this intermediate computation additionally appears in the type of "
+"the function being defined, the ``with`` construct allows us to capture "
+"these occurrences so that the observations made in the patterns will be "
+"reflected in the type."
+msgstr "当这个中间计算还出现在正在定义的函数的类型中时，``with`` 构造允许我们捕获这些情况，从而使模式中的观察能够反映到类型上。"
+
+#: ../source/tutorial/views.rst:43 5b34cb1ee4434c47bed9be74f0c9539d
+msgid ""
+"We have already seen a vector filter function. This time, we define it "
+"using ``with`` as follows:"
+msgstr "我们之前已经见过向量过滤（filter）函数。这一次，我们用 ``with`` 规则来定义它，如下所示："
+
+#: ../source/tutorial/views.rst:53 3781366bff494ee6a86c669ff7293cf8
+msgid ""
+"Here, the ``with`` clause allows us to deconstruct the result of ``filter"
+" p xs``. The view refined argument pattern ``filter p (x :: xs)`` goes "
+"beneath the ``with`` clause, followed by a vertical bar ``|``, followed "
+"by the deconstructed intermediate result ``( _ ** xs' )``. If the view "
+"refined argument pattern is unchanged from the original function argument"
+" pattern, then the left side of ``|`` is extraneous and may be omitted "
+"with an underscore ``_``:"
+msgstr ""
+"在这里，``with`` 子句允许我们解构 ``filter p xs`` 的结果。视图细化参数模式 ``filter p (x :: xs)``"
+" 位于 ``with`` 子句下方，后跟竖线 ``|``，再跟解构后的中间结果 ``( _ ** xs' "
+")``。如果视图细化参数模式与原始函数参数模式一致，则 ``|`` 左侧是多余的，可以用下划线 ``_`` 省略："
+
+#: ../source/tutorial/views.rst:66 b7cfa6766cf148e59658a9bccdb20419
+msgid "``with`` clauses can also be nested:"
+msgstr "``with`` 子句也可以嵌套使用："
+
+#: ../source/tutorial/views.rst:77 359418484f9d4568aa751ac23e057301
+msgid ""
+"and left hand sides that are the same as their parent's can be skipped by"
+" using ``_`` to focus on the patterns for the most local ``with``. "
+"Meaning that the above ``foo`` can be rewritten as follows:"
+msgstr "如果左侧与父级的模式相同，可以用 ``_`` 省略，只关注最内层 ``with`` 的模式。也就是说，上面的 ``foo`` 可以重写为如下形式："
+
+#: ../source/tutorial/views.rst:90 3ba3c9ca5ea44dd08d4d636527ef60f8
+msgid ""
+"Equivalently, multiple expressions separated by ``|`` can be can be "
+"deconstructed in one ``with`` statement:"
+msgstr "同理，多个用 ``|`` 分隔的表达式也可以在一个 ``with`` 语句中同时解构："
+
+#: ../source/tutorial/views.rst:100 f101393ed93a4b88bc69df0a430218a0
+msgid ""
+"If the intermediate computation itself has a dependent type, then the "
+"result can affect the forms of other arguments — we can learn the form of"
+" one value by testing another. In these cases, view refined argument "
+"patterns must be explicit. For example, a ``Nat`` is either even or odd. "
+"If it is even it will be the sum of two equal ``Nat``. Otherwise, it is "
+"the sum of two equal ``Nat`` plus one:"
+msgstr ""
+"如果中间计算本身具有依值类型，其结果就会影响其他参数的形式——我们可以通过测试一个值来推断另一个值的形式。在这些情况下，视图细化参数模式必须显式给出。例如，一个"
+" ``Nat`` 要么是偶数，要么是奇数。如果是偶数，它就是两个相等 ``Nat`` 的和；否则，就是两个相等 ``Nat`` 的和再加一："
+
+#: ../source/tutorial/views.rst:113 f85e7a9ac1c943d9a2a4de730cb119f1
+msgid ""
+"We say ``Parity`` is a *view* of ``Nat``. It has a *covering function* "
+"which tests whether it is even or odd and constructs the predicate "
+"accordingly. Note that we're going to need access to ``n`` at run time, "
+"so although it's an implicit argument, it has unrestricted multiplicity."
+msgstr ""
+"我们称 ``Parity`` 是 ``Nat`` 的一个*视图*（view）。它有一个*覆盖函数*（covering "
+"function），用于判断其是偶数还是奇数，并据此构造谓词。注意，我们在运行时需要访问 "
+"``n``，因此尽管它是隐式参数，但其复用性（multiplicity）不受限制。"
+
+#: ../source/tutorial/views.rst:122 5dfeb015b1b24ef9ab3848be5d5b9c8e
+msgid ""
+"We’ll come back to the definition of ``parity`` shortly. We can use it to"
+" write a function which converts a natural number to a list of binary "
+"digits (least significant first) as follows, using the ``with`` rule:"
+msgstr ""
+"我们稍后会回到 ``parity`` 的定义。我们可以用它来编写一个函数，将自然数转换为二进制位列表（最低有效位在前），如下所示，使用 "
+"``with`` 规则："
+
+#: ../source/tutorial/views.rst:135 51b642af2d8c474a98080ef597f5e588
+msgid ""
+"The value of ``parity k`` affects the form of ``k``, because the result "
+"of ``parity k`` depends on ``k``. So, as well as the patterns for the "
+"result of the intermediate computation (``Even`` and ``Odd``) right of "
+"the ``|``, we also write how the results affect the other patterns left "
+"of the ``|``. That is:"
+msgstr ""
+"``parity k`` 的值会影响 ``k`` 的形式，因为 ``parity k`` 的结果依赖于 ``k``。因此，除了在 ``|`` "
+"右侧写出中间计算结果（``Even`` 和 ``Odd``）的模式外，我们还要在左侧写出这些结果如何影响其他模式。即："
+
+#: ../source/tutorial/views.rst:141 609cb5bab5a245529ec6ce1bfdd294bd
+msgid ""
+"When ``parity k`` evaluates to ``Even``, we can refine the original "
+"argument ``k`` to a refined pattern ``(j + j)`` according to ``Parity (n "
+"+ n)`` from the ``Even`` constructor definition. So ``(j + j)`` replaces "
+"``k`` on the left side of ``|``, and the ``Even`` constructor appears on "
+"the right side. The natural number ``j`` in the refined pattern can be "
+"used on the right side of the ``=`` sign."
+msgstr ""
+"当 ``parity k`` 计算为 ``Even`` 时，我们可以根据 ``Even`` 构造子的 ``Parity (n + "
+"n)``，将原始参数 ``k`` 细化为 ``(j + j)``。因此，``(j + j)`` 替换了 ``|`` 左侧的 ``k``，而 "
+"``Even`` 构造子出现在右侧。细化模式中的自然数 ``j`` 可以在等号 ``=`` 右侧使用。"
+
+#: ../source/tutorial/views.rst:149 523df850765949f18fd92ff642df314c
+msgid ""
+"Otherwise, when ``parity k`` evaluates to ``Odd``, the original argument "
+"``k`` is refined to ``S (j + j)`` according to ``Parity (S (n + n))`` "
+"from the ``Odd`` constructor definition, and ``Odd`` now appears on the "
+"right side of ``|``, again with the natural number ``j`` used on the "
+"right side of the ``=`` sign."
+msgstr ""
+"否则，当 ``parity k`` 计算为 ``Odd`` 时，根据 ``Odd`` 构造子的 ``Parity (S (n + "
+"n))``，原始参数 ``k`` 被细化为 ``S (j + j)``，而 ``Odd`` 出现在 ``|`` 右侧，同样细化模式中的自然数 "
+"``j`` 可在等号右侧使用。"
+
+#: ../source/tutorial/views.rst:155 1dedf1e6748442468c9ade0aa9930dd6
+msgid ""
+"Note that there is a function in the patterns (``+``) and repeated "
+"occurrences of ``j`` - this is allowed because another argument has "
+"determined the form of these patterns."
+msgstr "注意，模式中出现了函数（``+``）和重复的 ``j``，这是允许的，因为另一个参数已经决定了这些模式的形式。"
+
+#: ../source/tutorial/views.rst:160 aa9ddab8f7764a9488d8a7f40a927d38
+msgid "Defining ``parity``"
+msgstr "定义 ``parity``"
+
+#: ../source/tutorial/views.rst:162 4d6c041c65c147bfa3048d77ab821fd2
+msgid ""
+"The definition of ``parity`` is a little tricky, and requires some "
+"knowledge of theorem proving (see Section :ref:`sect-theorems`), but for "
+"completeness, here it is:"
+msgstr ""
+"``parity`` 的定义稍显复杂，需要一些定理证明（theorem proving）知识（参见 :ref:`sect-"
+"theorems`），但为完整起见，现附上如下："
+
+#: ../source/tutorial/views.rst:177 fa5d604d1eec4c81987bce9d725335bf
+msgid ""
+"For full details on ``rewrite`` in particular, please refer to the "
+"theorem proving tutorial, in Section :ref:`proofs-index`."
+msgstr "关于 ``rewrite`` 的详细内容，请参阅定理证明教程 :ref:`proofs-index`。"
+
+#: ../source/tutorial/views.rst:180 838be94b8ce741b6be8bf349d63cb73a
+msgid ""
+"Conor McBride and James McKinna. 2004. The view from the left. J. Funct. "
+"Program. 14, 1 (January 2004), 69-111. "
+"https://doi.org/10.1017/S0956796803004829"
+msgstr ""
+"Conor McBride and James McKinna. 2004. The view from the left. J. Funct. "
+"Program. 14, 1 (January 2004), 69-111. "
+"https://doi.org/10.1017/S0956796803004829"
+

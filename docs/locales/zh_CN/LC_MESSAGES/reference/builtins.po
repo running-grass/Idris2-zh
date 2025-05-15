@@ -1,0 +1,173 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2023, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-16 09:52+0800\n"
+"PO-Revision-Date: 2022-09-03 13:48+0000\n"
+"Last-Translator: grass <hi@grass.show>\n"
+"Language-Team: Chinese (Simplified) <>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../source/reference/builtins.rst:5 25fd5fbfcd024fbd8ae26d75750dea23
+msgid "Builtins"
+msgstr "内建（Builtins）"
+
+#: ../source/reference/builtins.rst:11 d756f24cf2cb4fd1b5df5b01d19e5550
+msgid "Natural numbers"
+msgstr "自然数（Natural numbers）"
+
+#: ../source/reference/builtins.rst:13 42a111f9a9194821ba23249b7feecf1a
+msgid ""
+"Idris2 supports an optimized runtime representation of natural numbers "
+"(non-negative integers). This optimization is automatic, however it only "
+"works when natural numbers are represented in a specific way"
+msgstr "Idris2 支持对自然数（非负整数）进行优化的运行时表示。这种优化是自动完成的，但仅在自然数以特定方式表示时才生效。"
+
+#: ../source/reference/builtins.rst:17 e51bceb3f6714b34ba9df20b13c1c501
+msgid "Here is an example of a natural number that would be optimized:"
+msgstr "下面是一个会被优化的自然数示例："
+
+#: ../source/reference/builtins.rst:25 34ffb1175b394620b5c3fc905d9217fc
+msgid ""
+"Natural numbers are generally represented as either zero or the successor"
+" (1 more than) of another natural number. These are called Peano numbers."
+msgstr "自然数通常表示为零或另一个自然数的后继（即加一）。这种表示方式称为 Peano 数。"
+
+#: ../source/reference/builtins.rst:28 5f355ea7dcf8485ea3738fb6a10da9bd
+msgid ""
+"At runtime, Idris2 will automatically represent this the same as the "
+"``Integer`` type. This will massively reduce the memory usage."
+msgstr "在运行时，Idris2 会自动将其表示为 ``Integer`` 类型，从而大幅减少内存占用。"
+
+#: ../source/reference/builtins.rst:31 394aec9fa702444a8495db29884d5f67
+msgid "There are a few rules governing when this optimization occurs:"
+msgstr "该优化生效时有如下规则："
+
+#: ../source/reference/builtins.rst:33 09b72303285d4360ac83df29192b90fb
+msgid "The data type must have 2 constructors"
+msgstr "数据类型必须有两个构造子"
+
+#: ../source/reference/builtins.rst:35 7bac234970e146bfbeeed3b2be39af42
+msgid ""
+"After erasure of runtime irrelevant arguments + One must have no "
+"arguments + One must have exactly 1 argument (called ``Succ``)"
+msgstr "在擦除运行时无关参数后：+ 一个构造子不能有参数 + 另一个必须有且仅有一个参数（通常命名为 ``Succ``）"
+
+#: ../source/reference/builtins.rst:39 80b33545ab4f46f7b850080186a19e21
+msgid ""
+"The type of the argument to ``Succ`` must have the same type constructor "
+"as the parent type. This means indexed data types, like ``Fin``, can be "
+"optimised."
+msgstr "``Succ`` 的参数类型必须与父类型具有相同的类型构造器。这意味着像 ``Fin`` 这样的索引数据类型也可以被优化。"
+
+#: ../source/reference/builtins.rst:41 aae2857ea9cf4513ad8d7a6e64781696
+msgid "The argument to ``Succ`` must be strict, ie not ``Lazy Natural``"
+msgstr "``Succ`` 的参数必须是严格的，即不能是 ``Lazy Natural``。"
+
+#: ../source/reference/builtins.rst:43 00387134ae264f438142b3c5fb771d59
+msgid ""
+"To ensure that a type is optimized to an ``Integer``, use ``%builtin "
+"Natural`` ie"
+msgstr "要确保类型被优化为 ``Integer``，请使用 ``%builtin Natural``，例如："
+
+#: ../source/reference/builtins.rst:54 0796cd5c8fa943c99878185483693672
+msgid "Casting between natural numbers and integer"
+msgstr "自然数与整数之间的类型转换（Casting between natural numbers and integer）"
+
+#: ../source/reference/builtins.rst:56 c708e7cefcad44289c778173b2859120
+msgid ""
+"Idris optimizes functions which convert between natural numbers and "
+"integers, so that it takes constant time rather than linear time."
+msgstr "Idris 会优化自然数与整数之间的转换函数，使其时间复杂度为常数而非线性。"
+
+#: ../source/reference/builtins.rst:59 dd3803f90c3d4c25bb96aba7fc48e78c
+msgid ""
+"Such functions must be written in a specific way, so that idris can "
+"detect that it can be optimised."
+msgstr "这些函数必须以特定方式编写，以便 Idris 能检测并进行优化。"
+
+#: ../source/reference/builtins.rst:62 4b4bc7648a8e4bd0a4788fdbe5ed1b2c
+msgid "Here is an example of a natural to ``Integer`` function."
+msgstr "下面是一个将自然数转换为 ``Integer`` 的函数示例。"
+
+#: ../source/reference/builtins.rst:70 9244fa3ed11e45a0a2cf30001d189350
+msgid ""
+"This optimization is applied late in the compilation process, so it may "
+"be sensitive to seemingly insignificant changes."
+msgstr "该优化在编译过程的后期应用，因此对一些看似微小的更改也可能很敏感。"
+
+#: ../source/reference/builtins.rst:73 08461fb7cf5047fcb7459711436f5e05
+msgid "However here are roughly the rules governing this optimisation:"
+msgstr "但大致有如下规则控制此优化："
+
+#: ../source/reference/builtins.rst:75 11b98074934c47a79b78161fcb97a1a5
+msgid ""
+"Exactly one argument must be pattern matched on (any other forced or "
+"dotted patterns are allowed)"
+msgstr "必须对且仅对一个参数进行模式匹配（允许其他参数为强制或点模式）"
+
+#: ../source/reference/builtins.rst:77 34b033d1807f4444986309597fdd73e8
+msgid "The right hand side of the 'Zero' case must be ``0``"
+msgstr "'Zero' 分支的右侧必须为 ``0``"
+
+#: ../source/reference/builtins.rst:78 613c3a12f4b1452dbfc87deefb6727a8
+msgid ""
+"The right hand side of the 'Succ' case must be ``1 + cast k`` where ``k``"
+" is the predecessor of the pattern matched argument"
+msgstr "'Succ' 分支的右侧必须为 ``1 + cast k``，其中 ``k`` 是被模式匹配参数的前驱。"
+
+#: ../source/reference/builtins.rst:81 1ab7a6bc16734ac98496b0012f1959ce
+msgid "Casting from an ``Integer`` to a natural is a little more complex."
+msgstr "将 ``Integer`` 转换为自然数稍微复杂一些。"
+
+#: ../source/reference/builtins.rst:93 f4d80e919735417ca35dc554cdd55e97
+msgid "For now you must manually check the given integer is non-negative."
+msgstr "目前你必须手动检查给定的整数是否为非负数。"
+
+#: ../source/reference/builtins.rst:95 e36e7fd813814387a756cf318775cd0b
+msgid ""
+"If you are using an indexed data type it may be very hard to write your "
+"``Integer`` to natural cast in such a way, so you can use ``%builtin "
+"IntegerToNatural`` to assert to the compiler that a function is correct. "
+"It is your responsibility to make sure this is correct."
+msgstr "如果你使用的是索引数据类型，可能很难以这种方式编写 ``Integer`` 到自然数的转换函数，此时可以用 ``%builtin IntegerToNatural`` 向编译器断言该函数是正确的。你需要自行保证其正确性。"
+
+#: ../source/reference/builtins.rst:122 218a8e4266624b2cbcc52e47437c8087
+msgid "Other operations"
+msgstr "其他操作（Other operations）"
+
+#: ../source/reference/builtins.rst:124 f72ada3bc4a84b39b2f71948718ececd
+msgid ""
+"This can be used with ``%transform`` to allow many other operations to be"
+" O(1) too."
+msgstr "这可以与 ``%transform`` 配合使用，使许多其他操作也能达到 O(1) 复杂度。"
+
+#: ../source/reference/builtins.rst:142 3ede8850b62549179b93964974c9f7e0
+msgid "Compilation"
+msgstr "编译（Compilation）"
+
+#: ../source/reference/builtins.rst:144 1f7617032ffa4e60a950334f6fc89d59
+msgid ""
+"Here are the details of how natural numbers are compiled to ``Integer`` "
+"s. Note: a numeric literal here is an ``Integer``."
+msgstr "以下是自然数如何被编译为 ``Integer`` 的细节。注意：此处的数值字面量为 ``Integer``。"
+
+#: ../source/reference/builtins.rst:147 d9aeebcae16f43839e35b8eeec16e66a
+msgid "``Zero`` => ``0``"
+msgstr "``Zero`` => ``0``"
+
+#: ../source/reference/builtins.rst:149 254e551a1c594c3baed2ad1857d8bd60
+msgid "``Succ k`` => ``1 + k``"
+msgstr "``Succ k`` => ``1 + k``"
+
+#: ../source/reference/builtins.rst:157 56989fc9897e4844bc0f0586dcbf7e38
+msgid "=>"
+msgstr "=>"

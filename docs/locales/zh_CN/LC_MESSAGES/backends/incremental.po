@@ -1,0 +1,123 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2023, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-16 09:52+0800\n"
+"PO-Revision-Date: 2022-09-03 13:48+0000\n"
+"Last-Translator: grass <hi@grass.show>\n"
+"Language-Team: Chinese (Simplified) <>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../source/backends/incremental.rst:3 a349119484ec4194a41ab8ba825b18e9
+msgid "Incremental Code Generation"
+msgstr "增量代码生成（Incremental Code Generation）"
+
+#: ../source/backends/incremental.rst:5 27b34c3318874f52b6fbc6056a489389
+msgid ""
+"By default, Idris 2 is a whole program compiler - that is, it finds all "
+"the necessary function definitions and compiles them only when you build "
+"an executable. This gives plenty of optimisation opportunities, but can "
+"also be slow for rebuilding. However, if the backend supports it, you can"
+" build modules and executables *incrementally*. To do so, you can either:"
+msgstr "默认情况下，Idris 2 是一个整体程序编译器——即在构建可执行文件时才查找所有必要的函数定义并进行编译。这为优化提供了大量机会，但在重新构建时可能较慢。然而，如果后端支持，也可以*增量*构建模块和可执行文件。为此，你可以："
+
+#: ../source/backends/incremental.rst:11 e985e84ee74d4bb4835348f1a225eda7
+msgid ""
+"Set the ``--inc <backend>`` flag at the command line, for each backend "
+"you want to use incrementally."
+msgstr "在命令行中为每个希望增量使用的后端设置 ``--inc <backend>`` 标志。"
+
+#: ../source/backends/incremental.rst:13 b80ce4d8ce224824b37b0abcefce3791
+msgid ""
+"Set the ``IDRIS2_INC_CGS`` environment variable with a comma separated "
+"list of backends to use incrementally."
+msgstr "设置 ``IDRIS2_INC_CGS`` 环境变量，并用逗号分隔要增量使用的后端列表。"
+
+#: ../source/backends/incremental.rst:16 225ced7ad7104dc684e53b37f8c824d5
+msgid "At the moment, only the Chez backend supports incremental builds."
+msgstr "目前，仅 Chez 后端支持增量构建。"
+
+#: ../source/backends/incremental.rst:19 d799c422667c43069997aae97071c854
+msgid "Building modules incrementally"
+msgstr "增量构建模块（Building modules incrementally）"
+
+#: ../source/backends/incremental.rst:21 db791f1895304872b04016a4c1f7b5a1
+msgid ""
+"If either of the above are set, building a module will produce compiled "
+"binary code for all of the definitions in the module, as well as the "
+"usual checked TTC file. e.g.:"
+msgstr "如果设置了上述任一项，构建模块时会为模块中的所有定义生成已编译的二进制代码，以及常规的已检查 TTC 文件。例如："
+
+#: ../source/backends/incremental.rst:30 99ba484ccbfe4e6fbfb31035726f794c
+msgid ""
+"On successful type checking, each of these will produce a Chez Scheme "
+"file (``Foo.ss``) and compiled code for it (``Foo.so``) as well as the "
+"usual ``Foo.ttc``, in the same build directory as ``Foo.ttc``."
+msgstr "类型检查成功后，每个模块会在与 ``Foo.ttc`` 相同的构建目录下生成 Chez Scheme 文件（``Foo.ss``）、其已编译代码（``Foo.so``）以及常规的 ``Foo.ttc``。"
+
+#: ../source/backends/incremental.rst:34 004a10e902574af5b302206c21d9e891
+msgid ""
+"In incremental mode, you will see a warning for any holes in the module, "
+"even if those holes will be defined in a different module."
+msgstr "在增量模式下，若模块中存在空洞（hole），即使这些空洞会在其他模块中定义，也会收到警告。"
+
+#: ../source/backends/incremental.rst:38 ba24c9e92a2148dfaadd80155a3323e7
+msgid "Building executables incrementally"
+msgstr "增量构建可执行文件（Building executables incrementally）"
+
+#: ../source/backends/incremental.rst:40 e09b9c4558364a60894ab8fb02d2d3b4
+msgid ""
+"If either ``--inc`` is used or ``IDRIS2_INC_CGS`` is set, compiling to an"
+" executable will attempt to link all of the compiled modules together, "
+"rather than generating code for all of the functions at once. For this to"
+" work, all the imported modules *must* have been built with incremental "
+"compilation for the current back end (Idris will revert to whole program "
+"compilation if any are missing, and you will see a warning.)"
+msgstr "如果使用了 ``--inc`` 或设置了 ``IDRIS2_INC_CGS``，编译可执行文件时会尝试将所有已编译模块链接在一起，而不是一次性为所有函数生成代码。为实现此功能，所有被导入的模块*必须*已为当前后端以增量方式构建（若有缺失，Idris 会回退到整体程序编译，并发出警告）。"
+
+#: ../source/backends/incremental.rst:47 3da84b544c5041858445629547e15f23
+msgid ""
+"Therefore, all packages used by the executable must also have been built "
+"incrementally for the current back end. The ``prelude``, ``base``, "
+"``contrib``, ``network`` and ``test`` packages are all built with "
+"incremental compilation support for Chez by default."
+msgstr "因此，可执行文件所用的所有包也必须为当前后端以增量方式构建。``prelude``、``base``、``contrib``、``network`` 和 ``test`` 这些包默认都已为 Chez 后端启用增量编译支持。"
+
+#: ../source/backends/incremental.rst:52 ec122d693c9045eea60f153ec23b0a22
+msgid ""
+"When switching between incremental and whole program compilation, it is "
+"recommended that you remove the ``build`` directory first. This is "
+"particularly important when switching to incremental compilation, since "
+"there may be stale object files that Idris does not currently detect!"
+msgstr "在增量编译与整体程序编译之间切换时，建议先删除 ``build`` 目录。切换到增量编译时尤为重要，因为可能存在 Idris 当前无法检测到的过时目标文件！"
+
+#: ../source/backends/incremental.rst:59 fb45164091d6469bb268c1755059c129
+msgid "Overriding incremental compilation"
+msgstr "覆盖增量编译（Overriding incremental compilation）"
+
+#: ../source/backends/incremental.rst:61 1bf2c44bafdf4d498d7941bb9dacc95e
+msgid ""
+"The ``--whole-program`` flag overrides any incremental compilation "
+"settings when building an executable."
+msgstr "在构建可执行文件时，``--whole-program`` 标志会覆盖所有增量编译设置。"
+
+#: ../source/backends/incremental.rst:65 7fc7d91c90ab494285b952398b879e1e
+msgid "Performance note"
+msgstr "性能说明（Performance note）"
+
+#: ../source/backends/incremental.rst:67 10effd26052b452c8a350cb6ab70d715
+msgid ""
+"Incremental compilation means that executables are generated much "
+"quicker, especially when only a small proportion of modules have changed."
+" However, it means that there are fewer optimisation opportunities, so "
+"the resulting executable will not perform as well. For deployment, "
+"``--whole-program`` compilation is recommended."
+msgstr "增量编译意味着可执行文件生成速度更快，尤其是在只有少量模块发生变化时。但这也意味着优化机会减少，生成的可执行文件性能可能不如整体编译。部署时建议使用 ``--whole-program`` 编译。"

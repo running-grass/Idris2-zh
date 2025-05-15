@@ -1,0 +1,272 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2023, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-16 09:52+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../source/tutorial/interactive.rst:5
+#: 9c0d500234b64b9483079db022737c09
+msgid "Interactive Editing"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:7
+#: 8b610f9e55c94681b9791683436af784
+msgid "By now, we have seen several examples of how Idris’ dependent type system can give extra confidence in a function’s correctness by giving a more precise description of its intended behaviour in its *type*. We have also seen an example of how the type system can help with embedded DSL development by allowing a programmer to describe the type system of an object language. However, precise types give us more than verification of programs — we can also use the type system to help write programs which are *correct by construction*, interactively."
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:16
+#: 82750ad6c9e64d99a1f0f835e0a79e10
+msgid "The Idris REPL provides several commands for inspecting and modifying parts of programs, based on their types, such as case splitting on a pattern variable, inspecting the type of a hole, and even a basic proof search mechanism. In this section, we explain how these features can be exploited by a text editor, and specifically how to do so in `Vim <https://github.com/edwinb/idris2-vim>`_. An interactive mode for `Emacs <https://github.com/idris-hackers/idris-mode>`_ is also available, updated for Idris 2 compatibility as of 23 February 2021."
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:27
+#: ca31527a30984230b23f299dff63b0b0
+msgid "Editing at the REPL"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:30
+#: 1c9bf5de21304936aaae0d88f11006a2
+msgid "The Idris2 repl does not support readline in the interest of keeping dependencies minimal. Unfortunately this precludes some niceties such as line editing, persistent history and completion. A useful work around is to install `rlwrap <https://linux.die.net/man/1/rlwrap>`_, this utility provides all the aforementioned features simply by invoking the Idris2 repl as an argument to the utility ``rlwrap idris2``"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:37
+#: d665e896b10b4e4284fd144ccc9b88ac
+msgid "The REPL provides a number of commands, which we will describe shortly, which generate new program fragments based on the currently loaded module. These take the general form:"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:45
+#: bdda4d75653a41dbaac1d1d876e2b87a
+msgid "That is, each command acts on a specific source line, at a specific name, and outputs a new program fragment. Each command has an alternative form, which *updates* the source file in-place:"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:53
+#: aa629504393941399ba171843f3c7921
+msgid "It is also possible to invoke Idris in a mode which runs a REPL command, displays the result, then exits, using ``idris2 --client``. For example:"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:63
+#: 7450be2479ed41bab7fed4dec98ab375
+msgid "A text editor can take advantage of this, along with the editing commands, in order to provide interactive editing support."
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:67
+#: 7a5c61852be64248993f77a91d22f236
+msgid "Editing Commands"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:70
+#: c1ea2c1a810042f38fd35131743b956e
+msgid ":addclause"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:72
+#: 835e51279baf467a8263938f45d3fd0d
+msgid "The ``:addclause n f`` command, abbreviated ``:ac n f``, creates a template definition for the function named ``f`` declared on line ``n``. For example, if the code beginning on line 94 contains:"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:81
+#: 3d7bb37c645245259e996e17e2d78860
+msgid "then ``:ac 94 vzipWith`` will give:"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:87
+#: 344986e060db4187809cd52cb3522645
+msgid "The names are chosen according to hints which may be given by a programmer, and then made unique by the machine by adding a digit if necessary. Hints can be given as follows:"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:95
+#: 51752dae0a76441c969458375f4476b0
+msgid "This declares that any names generated for types in the ``Vect`` family should be chosen in the order ``xs``, ``ys``, ``zs``, ``ws``."
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:99
+#: 94339b735e7f4416b304012e7791a97c
+msgid ":casesplit"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:101
+#: 7454d583464a4fc4acad0a66bc9bd3a8
+msgid "The ``:casesplit n c x`` command, abbreviated ``:cs n c x``, splits the pattern variable ``x`` on line ``n`` at column ``c`` into the various pattern forms it may take, removing any cases which are impossible due to unification errors. For example, if the code beginning on line 94 is:"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:112
+#: e91e8c6715aa404b864ee071843e9034
+msgid "then ``:cs 96 12 xs`` will give:"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:119
+#: 722350b87f754d659a54eb6afc8a1af2
+msgid "That is, the pattern variable ``xs`` has been split into the two possible cases ``[]`` and ``x :: xs``. Again, the names are chosen according to the same heuristic. If we update the file (using ``:cs!``) then case split on ``ys`` on the same line, we get:"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:128
+#: 8af885e16ef449e4ba56726ff60244c6
+msgid "That is, the pattern variable ``ys`` has been split into one case ``[]``, Idris having noticed that the other possible case ``y :: ys`` would lead to a unification error."
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:133
+#: 7766da2a2e7f472a9494c5df40e639a2
+msgid ":addmissing"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:135
+#: 68083063cc1c478487c2df9dcc25fede
+msgid "The ``:addmissing n f`` command, abbreviated ``:am n f``, adds the clauses which are required to make the function ``f`` on line ``n`` cover all inputs. For example, if the code beginning on line 94 is:"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:145
+#: 04fd4b6a98ba44d69a88f75d9c2df09c
+msgid "then ``:am 96 vzipWith`` gives:"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:151
+#: 4d27ae69b9784435a1fcf65a3b73d6ed
+msgid "That is, it notices that there are no cases for empty vectors, generates the required clauses, and eliminates the clauses which would lead to unification errors."
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:156
+#: 2daefecc4f4743b4af5229db7fe6c401
+msgid ":proofsearch"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:158
+#: 958abfb6c9ff4e778aa2363de0e7c8d2
+msgid "The ``:proofsearch n f`` command, abbreviated ``:ps n f``, attempts to find a value for the hole ``f`` on line ``n`` by proof search, trying values of local variables, recursive calls and constructors of the required family. Optionally, it can take a list of *hints*, which are functions it can try applying to solve the hole. For example, if the code beginning on line 94 is:"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:172
+#: 03132fab25b7450489bd122bd85c6033
+msgid "then ``:ps 96 vzipWith_rhs_1`` will give"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:178
+#: ae57b5986fb94e2699019958fd595652
+msgid "This works because it is searching for a ``Vect`` of length 0, of which the empty vector is the only possibility. Similarly, and perhaps surprisingly, there is only one possibility if we try to solve ``:ps 97 vzipWith_rhs_2``:"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:187
+#: 61e914cd5b25482e941e4d79a7fa2ed4
+msgid "This works because ``vzipWith`` has a precise enough type: The resulting vector has to be non-empty (a ``::``); the first element must have type ``c`` and the only way to get this is to apply ``f`` to ``x`` and ``y``; finally, the tail of the vector can only be built recursively."
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:194
+#: 659171b74ebb4606855860a8ebbed4d7
+msgid ":makewith"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:196
+#: ca9c42d691e14e8baf3e69c7423d4c3f
+msgid "The ``:makewith n f`` command, abbreviated ``:mw n f``, adds a ``with`` to a pattern clause. For example, recall ``parity``. If line 10 is:"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:204
+#: 2525ce9ed0f84374a1cca7c06710f260
+msgid "then ``:mw 10 parity`` will give:"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:211
+#: 26c05e078a2345c7bb228f9fc33a03d8
+msgid "If we then fill in the placeholder ``_`` with ``parity k`` and case split on ``with_pat`` using ``:cs 11 with_pat`` we get the following patterns:"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:220
+#: ceb81d4c3caa4351a6ee9f953d8d3762
+msgid "Note that case splitting has normalised the patterns here (giving ``plus`` rather than ``+``). In any case, we see that using interactive editing significantly simplifies the implementation of dependent pattern matching by showing a programmer exactly what the valid patterns are."
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:227
+#: f04247556b304f6982ae6737d6cc4521
+msgid "Interactive Editing in Vim"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:229
+#: 98736205c27b4eb69956884b06a3493b
+msgid "The editor mode for Vim provides syntax highlighting, indentation and interactive editing support using the commands described above. Interactive editing is achieved using the following editor commands, each of which update the buffer directly:"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:234
+#: ac53901c4d6d4171adaeadbde297f2c3
+msgid "``\\a`` adds a template definition for the name declared on the"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:235
+#: f146ea9a7c3d4a54bcea988089b76cd2
+msgid "current line (using ``:addclause``)."
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:237
+#: 0bfcfb659fa4447188eff53a2d720e18
+msgid "``\\c`` case splits the variable at the cursor (using"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:238
+#: 5ebfd290b695428f806af3ded8c78ec8
+msgid "``:casesplit``)."
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:240
+#: 3af3c270627e456ab5a8905aaa6b065b
+msgid "``\\m`` adds the missing cases for the name at the cursor (using"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:241
+#: 7d895e7ca1824b28a30ab4c95b27fb96
+msgid "``:addmissing``)."
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:243
+#: 4a662c3ddf484c43baea7a2b1a99ba03
+msgid "``\\w`` adds a ``with`` clause (using ``:makewith``)."
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:245
+#: 3282b9c42338460d9d23b7f4a604605e
+msgid "``\\s`` invokes a proof search to solve the hole under the"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:246
+#: fec950482287477796fe50e6564ec6b6
+msgid "cursor (using ``:proofsearch``)."
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:248
+#: 4ef58df183494e23af71cc6f0906ad7b
+msgid "There are also commands to invoke the type checker and evaluator:"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:250
+#: 35afb710be124665b980c99c7efb91e6
+msgid "``\\t`` displays the type of the (globally visible) name under the"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:251
+#: f86b91761b6545a3aaea9ce4866858e6
+msgid "cursor. In the case of a hole, this displays the context and the expected type."
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:254
+#: cdb7c7cfe7784b89bc73b704784e2062
+msgid "``\\e`` prompts for an expression to evaluate."
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:256
+#: 69596899f44141c78b90d674e00567d9
+msgid "``\\r`` reloads and type checks the buffer."
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:258
+#: 7eedd609da8145749d7fe33a16440398
+msgid "Corresponding commands are also available in the Emacs mode. Support for other editors can be added in a relatively straightforward manner by using ``idris2 -–client``. More sophisticated support can be added by using the IDE protocol (yet to be documented for Idris 2, but which mostly extends to protocol documented for `Idris 1 <https://docs.idris-lang.org/en/latest/reference/ide-protocol.html>`_."
+msgstr ""

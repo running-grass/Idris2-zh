@@ -1,0 +1,113 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2023, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-16 09:52+0800\n"
+"PO-Revision-Date: 2022-09-03 13:48+0000\n"
+"Last-Translator: grass <hi@grass.show>\n"
+"Language-Team: Chinese (Simplified) <>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../source/reference/failing.rst:2 7dcfd489d36f4e4790ef9d704d95edd7
+msgid "Failing blocks"
+msgstr "失败块"
+
+#: ../source/reference/failing.rst:7 20f583856e894e61b8f1d750af66f301
+msgid ""
+"Failing blocks let users check that some code parses but is rejected "
+"during elaboration. Their simplest form is using the keyword ``failing`` "
+"followed by some indented Idris code:"
+msgstr ""
+"失败块允许用户检查某些代码虽然能通过解析但在细化阶段被拒绝。其最简单的形式是使用关键字 ``failing`` 后跟一些缩进的 Idris 代码："
+
+#: ../source/reference/failing.rst:17 bf21ad40c85541148771b9bb3e783d2f
+msgid ""
+"Putting the code above in a file and asking Idris to check it will not "
+"produce an error message since the code in the ``failing`` block is "
+"rejected, i.e. fails."
+msgstr ""
+"将上述代码放入文件并让 Idris 检查它不会产生错误消息，因为 ``failing`` 块中的代码被拒绝了，即失败了。"
+
+#: ../source/reference/failing.rst:21 b1169cddb130421fae2f4391f383ed8b
+msgid ""
+"The ``failing`` keyword optionally takes a string argument. If present, "
+"the string attached to the failing block is checked against the error "
+"message raised to check that it appears in the error. This lets the user "
+"document the kind of error expected in the block, while at the same time "
+"checking that the error message is indeed what we expected. For example, "
+"in the following example, we make sure that Idris rejects a proof that "
+"the character ``'a'`` is equal to ``'b'`` by throwing an error when "
+"unifying them:"
+msgstr ""
+"``failing`` 关键字可以选择性地接受一个字符串参数。如果提供了该参数，附加到失败块的字符串将与产生的错误消息进行比对，以检查它是否出现在错误中。这使用户可以记录块中预期的错误类型，同时验证错误消息确实符合我们的预期。例如，在下面的例子中，我们确保 Idris 在统一字符 ``'a'`` 和 ``'b'`` 时抛出错误，从而拒绝它们相等的证明："
+
+#: ../source/reference/failing.rst:35 0c9f10d554004516943b7f859e4ea8a0
+msgid ""
+"Failing blocks can be helpful when demonstrating false paths or starts in"
+" a program or example. Valid code is accepted in failing blocks, so "
+"intermediary helper functions can be used as long as at least one "
+"statement in the block fails (it does not have to be the first or last "
+"statement!):"
+msgstr ""
+"失败块在演示程序或示例中的错误路径或起点时很有用。失败块中允许使用有效的代码，因此只要块中至少有一个语句失败（不必是第一个或最后一个语句！），就可以使用中间辅助函数："
+
+#: ../source/reference/failing.rst:55 864d7ccf55ca44ac90d61c7d3f588351
+msgid "Invalid failing blocks"
+msgstr "无效的失败块"
+
+#: ../source/reference/failing.rst:57 f0edd63149ae459e9488164aff35ac4d
+msgid ""
+"Should the failing block not fail, i.e. the code inside is accepted "
+"during elaboration, the compiler will report an error:"
+msgstr ""
+"如果失败块没有失败，即其中的代码在细化阶段被接受，编译器将报告错误："
+
+#: ../source/reference/failing.rst:66 409b434437bb49d5aec96d9d6080adb5
+msgid "Checking the above gives:"
+msgstr "检查上述代码会得到："
+
+#: ../source/reference/failing.rst:72 3004d404cf2943549e644a93f445c65d
+msgid ""
+"Similarly, if an expected error (sub)string is given but the error output"
+" does not match, we get:"
+msgstr ""
+"同样，如果提供了预期的错误（子）字符串但错误输出不匹配，我们会得到："
+
+#: ../source/reference/failing.rst:79 f781aded4d064537acb2448a6659dc81
+msgid ""
+"Followed by the given expected error string and the actual error output, "
+"allowing us to compare and contrast."
+msgstr ""
+"后面跟着给定的预期错误字符串和实际的错误输出，允许我们进行比较和对比。"
+
+#: ../source/reference/failing.rst:83 8e61e0113621443788994da58b0321ce
+msgid "One block per falsehood"
+msgstr "每个错误一个块"
+
+#: ../source/reference/failing.rst:85 5ca3a40ebfdf43629de40542b94652dc
+msgid ""
+"**Take care to use separate ``failing`` blocks per thing to check.** "
+"Using a single block can lead to unexpected results. The following "
+"example passes, since the second statement fails:"
+msgstr ""
+"**注意为每个要检查的内容使用单独的 ``failing`` 块。** 使用单个块可能导致意外结果。以下示例通过，因为第二个语句失败："
+
+#: ../source/reference/failing.rst:102 a6bcf598a68943aa89391b7343c1d99d
+msgid "Instead, separate the statements out into separate failing blocks:"
+msgstr ""
+"相反，将语句分离到单独的失败块中："
+
+#: ../source/reference/failing.rst:118 19e3054256e34e90be1adaf002408bac
+msgid ""
+"This causes two ``Error: Failing block did not fail`` messages to be "
+"emitted, as one would expect."
+msgstr ""
+"这会发出两个 ``Error: Failing block did not fail`` 消息，正如预期的那样。"

@@ -1,0 +1,793 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2023, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-16 09:52+0800\n"
+"PO-Revision-Date: 2022-09-03 13:48+0000\n"
+"Last-Translator: grass <hi@grass.show>\n"
+"Language-Team: Chinese (Simplified) <>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../source/tutorial/interfaces.rst:5 664c83029c124e4e96ccff1f0f547a30
+msgid "Interfaces"
+msgstr "接口"
+
+#: ../source/tutorial/interfaces.rst:7 4dd9c258833c49f0a8ecb7229c58f173
+msgid ""
+"We often want to define functions which work across several different "
+"data types. For example, we would like arithmetic operators to work on "
+"``Int``, ``Integer`` and ``Double`` at the very least. We would like "
+"``==`` to work on the majority of data types. We would like to be able to"
+" display different types in a uniform way."
+msgstr ""
+"我们经常希望定义的函数能在几种不同的数据类型中工作。例如，"
+"我们希望算术运算符至少能在 ``Int``, ``Integer`` 和 ``Double`` 上工作。"
+"我们希望 ``==`` "
+"能在大多数数据类型上工作。我们希望能够以一种统一的方式显示不同的类型。"
+
+#: ../source/tutorial/interfaces.rst:13 a70559f569174047a289f4585f49318c
+msgid ""
+"To achieve this, we use *interfaces*, which are similar to type classes "
+"in Haskell or traits in Rust. To define an interface, we provide a "
+"collection of overloadable functions. A simple example is the ``Show`` "
+"interface, which is defined in the prelude and provides an interface for "
+"converting values to ``String``:"
+msgstr ""
+"为了实现这一点，我们使用 *接口* ，它类似于 Haskell 中的类型类或 Rust 中的 "
+"traits 。为了定义一个接口，我们提供一个可重载函数的集合。一个简单的例子是 "
+"``Show`` 接口，它被定义在 prelude 中，提供了一个将数值转换为 ``String`` "
+"的接口："
+
+#: ../source/tutorial/interfaces.rst:24 67c513d0b3ba46f9aba0b38eab1db303
+msgid ""
+"This generates a function of the following type (which we call a *method*"
+" of the ``Show`` interface):"
+msgstr "生成一个如下类型的函数（我们称之为 ``Show`` 接口的 *方法* ）："
+
+#: ../source/tutorial/interfaces.rst:31 f6dd1831805546acaa2daed578a44ebc
+msgid ""
+"We can read this as: “under the constraint that ``a`` has an "
+"implementation of ``Show``, take an input ``a`` and return a ``String``.”"
+" An implementation of an interface is defined by giving definitions of "
+"the methods of the interface. For example, the ``Show`` implementation "
+"for ``Nat`` could be defined as:"
+msgstr ""
+"我们可以把它理解为：“ 在 ``a`` 实现 ``Show`` 的约束下，该函数接受一个输入 "
+"``a`` 并返回一个 ``String`` "
+"”。我们可以通过为它定义接口的方法来实现该接口。例如， ``Nat`` 的 ``Show`` "
+"实现可以定义为："
+
+#: ../source/tutorial/interfaces.rst:47 d196d1a3b68f40549963bd404525a2b1
+msgid ""
+"Only one implementation of an interface can be given for a type — "
+"implementations may not overlap. Implementation declarations can "
+"themselves have constraints. To help with resolution, the arguments of an"
+" implementation must be constructors (either data or type constructors) "
+"or variables (i.e. you cannot give an implementation for a function). For"
+" example, to define a ``Show`` implementation for vectors, we need to "
+"know that there is a ``Show`` implementation for the element type, "
+"because we are going to use it to convert each element to a ``String``:"
+msgstr ""
+"一个类型对于同一个接口只能有一种实现——实现不得重合。实现声明本身可以有约束。"
+"为了帮助解决这个问题，实现的参数必须是构造函数（数据或类型构造函数）或变量（"
+"也就是说，你无法为函数赋予实现）。例如，为向量定义一个 ``Show`` 的实现，"
+"我们需要知道有一个 ``Show`` 的实现用于元素类型，"
+"因为我们要用它把每个元素转换为 ``String`` ："
+
+#: ../source/tutorial/interfaces.rst:65 6a37a133d61444ee96c72e007c22a126
+msgid ""
+"Note that we need the explicit ``forall n .`` in the ``show'`` function "
+"because otherwise the ``n`` is already in scope, and fixed to the value "
+"of the top level ``n``."
+msgstr ""
+"请注意，我们需要在 ``show'`` 函数中明确 ``forall n .`` ，因为 ``n`` "
+"已经在作用域内，并且固定为顶层的 ``n`` 的值。"
+
+#: ../source/tutorial/interfaces.rst:70 d58cfe9509ce4d55b05fe7f64a54c276
+msgid "Default Definitions"
+msgstr "默认定义"
+
+#: ../source/tutorial/interfaces.rst:72 50d8f5a4b1384a62b38c251391ab87a1
+msgid ""
+"The Prelude defines an ``Eq`` interface which provides methods for "
+"comparing values for equality or inequality, with implementations for all"
+" of the built-in types:"
+msgstr "Prelude 定义了一个 ``Eq`` "
+"接口，它提供了比较值的相等或不相等的方法，并为所有的内置类型提供了实现："
+
+#: ../source/tutorial/interfaces.rst:82 ff9d629040704b138b88bc6933e75a50
+msgid ""
+"To declare an implementation for a type, we have to give definitions of "
+"all of the methods. For example, for an implementation of ``Eq`` for "
+"``Nat``:"
+msgstr "要为类型实现一个接口，我们必须给出所有方法的定义。例如， ``Nat`` 类型的 "
+"``Eq`` 接口实现："
+
+#: ../source/tutorial/interfaces.rst:95 11816c291af74f2d90c9da975ae67e01
+msgid ""
+"It is hard to imagine many cases where the ``/=`` method will be anything"
+" other than the negation of the result of applying the ``==`` method. It "
+"is therefore convenient to give a default definition for each method in "
+"the interface declaration, in terms of the other method:"
+msgstr ""
+"很难想象在很多情况下， ``/=`` 方法除了是应用 ``==`` 方法的结果的否定之外，还"
+"会是什么。因此，在接口声明中为每个方法给出一个默认的定义是很方便的，默认定义"
+"可以调用其它方法："
+
+#: ../source/tutorial/interfaces.rst:109 2bfab47569e6460094d8bb08d1ada7b7
+msgid ""
+"A minimal complete implementation of ``Eq`` requires either ``==`` or "
+"``/=`` to be defined, but does not require both. If a method definition "
+"is missing, and there is a default definition for it, then the default is"
+" used instead."
+msgstr ""
+"``Eq`` 的最小完整实现需要定义 ``==`` 或 ``/=`` ，但不需要同时定义。如果缺少一"
+"个方法的定义，并且有一个默认的定义，那么就用默认的定义来代替。"
+
+#: ../source/tutorial/interfaces.rst:115 99be351f8c7a4b689270b51f557030d0
+msgid "Extending Interfaces"
+msgstr "扩展接口"
+
+#: ../source/tutorial/interfaces.rst:117 d67dde2f7df940dba8afe6726c75585b
+msgid ""
+"Interfaces can also be extended. A logical next step from an equality "
+"relation ``Eq`` is to define an ordering relation ``Ord``. We can define "
+"an ``Ord`` interface which inherits methods from ``Eq`` as well as "
+"defining some of its own:"
+msgstr ""
+"接口也可以被扩展。相等关系 ``Eq`` 的下一个逻辑步骤是定义一个排序关系 ``Ord`` "
+"。我们可以定义一个 ``Ord`` 接口，它继承了 ``Eq`` "
+"的方法，同时也定义了一些自己的方法："
+
+#: ../source/tutorial/interfaces.rst:138 2d89b7a8989744d5afbd651205fda53c
+msgid ""
+"The ``Ord`` interface allows us to compare two values and determine their"
+" ordering. Only the ``compare`` method is required; every other method "
+"has a default definition. Using this we can write functions such as "
+"``sort``, a function which sorts a list into increasing order, provided "
+"that the element type of the list is in the ``Ord`` interface. We give "
+"the constraints on the type variables left of the fat arrow ``=>``, and "
+"the function type to the right of the fat arrow:"
+msgstr ""
+"``Ord`` 接口允许我们比较两个值并确定它们的顺序。只有 ``compare`` 方法是必需的"
+"；其他每个方法都有一个默认的定义。利用这一点，我们可以写一些函数，比如 "
+"``sort`` ，这个函数可以将一个列表按递增顺序排序，前提是列表的元素类型在 "
+"``Ord`` 接口中。我们在胖箭头 ``=>`` "
+"的左边给出类型变量的约束，在胖箭头的右边给出函数类型："
+
+#: ../source/tutorial/interfaces.rst:150 7f5dd5817dec404cac342b9eb2137d12
+msgid ""
+"Functions, interfaces and implementations can have multiple constraints. "
+"Multiple constraints are written in brackets in a comma separated list, "
+"for example:"
+msgstr "函数、接口和实现可以有多个约束。多个约束条件以逗号分隔的列表方式写在括号里，"
+"例如："
+
+#: ../source/tutorial/interfaces.rst:159 adb2e711fecb42c3a86715c987c744a6
+msgid ""
+"Constraints are, like types, first class objects in the language. You can"
+" see this at the REPL:"
+msgstr "约束和类型一样，是语言中的一等对象。你可以在 REPL 中看到这一点："
+
+#: ../source/tutorial/interfaces.rst:167 5f0e9f4f09be4d56a23d44b9fc29750f
+msgid ""
+"So, ``(Ord a, Show a)`` is an ordinary pair of ``Types``, with two "
+"constraints as the first and second element of the pair."
+msgstr "所以， ``(Ord a, Show a)`` 是一对普通的 ``Types`` "
+"，将两个约束作为该对的第一个和第二个元素。"
+
+#: ../source/tutorial/interfaces.rst:171 662668ea954f4065a04f2e2a553836b5
+msgid "Note: Interfaces and ``mutual`` blocks"
+msgstr "注：接口和 ``mutual`` 块"
+
+#: ../source/tutorial/interfaces.rst:173 2a01e616aaba4fcbb3654a05da77fd25
+msgid ""
+"Idris is strictly \"define before use\", except in ``mutual`` blocks. In "
+"a ``mutual`` block, Idris elaborates in two passes: types on the first "
+"pass and definitions on the second. When the mutual block contains an "
+"interface declaration, it elaborates the interface header but none of the"
+" method types on the first pass, and elaborates the method types and any "
+"default definitions on the second pass."
+msgstr ""
+"Idris是严格的 \"先定义后使用\"，除了在 ``mutual`` 块中。在 ``mutual`` 块中，"
+"Idris 分两遍进行扫描：第一遍是类型，第二遍是定义。当 mutual 块包含一个接口声"
+"明时，它在第一遍中扫描接口头，但没有方法类型，在第二遍扫描方法类型和所有的默"
+"认定义。"
+
+#: ../source/tutorial/interfaces.rst:181 916cf8470a4646bbaae12b9210b27ea2
+msgid "Quantities for Parameters"
+msgstr "参数的量"
+
+#: ../source/tutorial/interfaces.rst:183 888d4248f7c04efa91a66f8fd978bbda
+msgid ""
+"By default parameters that are not explicitly ascribed a type in an "
+"``interface`` declaration are assigned the quantity ``0``. This means "
+"that the parameter is not available to use at runtime in the methods' "
+"definitions."
+msgstr ""
+"默认情况下，在 ``interface`` 声明中没有明确赋予类型的参数被分配为数量 ``0`` "
+"。这意味着该参数在运行时不能在方法的定义中使用。"
+
+#: ../source/tutorial/interfaces.rst:187 4014df4f130a41c1a09795fe0a414715
+msgid ""
+"For instance, ``Show a`` gives rise to a ``0``-quantified type variable "
+"``a`` in the type of the ``show`` method:"
+msgstr "例如， ``Show a`` 在 ``show`` 方法的类型中产生了一个数量为 ``0`` 的类型变量 "
+"``a`` ："
+
+#: ../source/tutorial/interfaces.rst:196 765b7127a5dc4074a8799100b15814ca
+msgid ""
+"However some use cases require that some of the parameters are available "
+"at runtime. We may for instance want to declare an interface for "
+"``Storable`` types. The constraint ``Storable a size`` means that we can "
+"store values of type ``a`` in a ``Buffer`` in exactly ``size`` bytes."
+msgstr ""
+"然而有些用例要求一些参数在运行时可用。例如，我们可能想为 ``Storable`` "
+"类型声明一个接口。约束 ``Storable a size`` 意味着我们可以将 ``a`` "
+"类型的值存储在一个 ``Buffer`` 中，正好是 ``size`` 字节。"
+
+#: ../source/tutorial/interfaces.rst:201 874e43179d9c4768a6423b3c0d4c0fd9
+msgid ""
+"If the user provides a method to read a value for such a type ``a`` at a "
+"given offset, then we can read the ``k`` th element stored in the buffer "
+"by computing the appropriate offset from ``k`` and ``size``. This is "
+"demonstrated by providing a default implementation for the method "
+"``peekElementOff`` implemented in terms of ``peekByteOff`` and the "
+"parameter ``size``."
+msgstr ""
+"如果用户提供一个方法来在通过给定一个偏移量读取类型 ``a`` 的值，"
+"那么我们可以通过计算 ``k`` 和 ``size`` 的适当偏移量来读取存储在缓冲区中的 "
+"``k`` 的元素。这可以通过为 ``peekElementOff`` 方法提供一个默认的实现来证明，"
+"该方法通过 ``peekByteOff`` 和参数 ``size`` 来实现。"
+
+#: ../source/tutorial/interfaces.rst:219 9af914a3b21c4761bd2da18dc1aa7473
+msgid ""
+"Note that ``a`` is explicitly marked as runtime irrelevant so that it is "
+"erased by the compiler. Equivalently we could have written ``interface "
+"Storable a (size : Nat)``. The meaning of ``| a`` is explained in "
+":ref:`DeterminingParameters`."
+msgstr ""
+"请注意， ``a`` 被明确标记为运行时不相关，所以它被编译器删除了。"
+"相当于我们可以写成 ``interface Storable a (size : Nat)`` 。 ``| a`` 的含义在 "
+":ref:`DeterminingParameters` 中有解释。"
+
+#: ../source/tutorial/interfaces.rst:225 5a3160897016403cbb8fb95b45f682e6
+msgid "Functors and Applicatives"
+msgstr "函子与应用子"
+
+#: ../source/tutorial/interfaces.rst:227 effea8c4042341418bc5c92624ce1c5f
+msgid ""
+"So far, we have seen single parameter interfaces, where the parameter is "
+"of type ``Type``. In general, there can be any number of parameters (even"
+" zero), and the parameters can have *any* type. If the type of the "
+"parameter is not ``Type``, we need to give an explicit type declaration. "
+"For example, the ``Functor`` interface is defined in the prelude:"
+msgstr ""
+"到目前为止，我们看到的都是单参数接口，其中参数的类型是 ``Type`` "
+"。一般来说，可以有任何数量的参数（甚至是零个），而且参数可以有 *任何* 类型。"
+"如果参数的类型不是 ``Type`` ，我们需要给出一个明确的类型声明。例如， "
+"``Functor`` 接口在 prelude 中是这样定义的："
+
+#: ../source/tutorial/interfaces.rst:240 16fdf32423ba4bafb0dc5c8790dbb432
+msgid ""
+"A functor allows a function to be applied across a structure, for example"
+" to apply a function to every element in a ``List``:"
+msgstr "函子允许在结构中应用一个函数，例如，将一个函数应用于 ``List`` 中的每个元素："
+
+#: ../source/tutorial/interfaces.rst:254 ded5c9d16f244084a8f7e3d52fabd33a
+msgid ""
+"Having defined ``Functor``, we can define ``Applicative`` which abstracts"
+" the notion of function application:"
+msgstr "在定义了 ``Functor`` 之后，我们可以定义 ``Applicative`` "
+"，它抽象了函数应用的概念："
+
+#: ../source/tutorial/interfaces.rst:268 07b544e26f7c401d8f85f8f02bc06783
+msgid "Monads and ``do``-notation"
+msgstr "单子和 ``do``- 记法"
+
+#: ../source/tutorial/interfaces.rst:270 c230f889f5544cc38f9f7dc836cd9a10
+msgid ""
+"The ``Monad`` interface allows us to encapsulate binding and computation,"
+" and is the basis of ``do``-notation introduced in Section :ref:`sect-"
+"do`. It extends ``Applicative`` as defined above, and is defined as "
+"follows:"
+msgstr ""
+"``Monad`` 接口允许我们对绑定和计算进行封装，它是 :ref:`sect-do` 一节中 ``do``"
+" 记法的基础 。它扩展了上面定义的 ``Applicative`` ，并有如下定义："
+
+#: ../source/tutorial/interfaces.rst:280 1aa3a34f22cd4103b330afd9bf0ed270
+msgid "There is also a non-binding sequencing operator, defined for ``Monad`` as:"
+msgstr "还有一个不进行绑定操作的运算符， ``Monad`` 将其定义为："
+
+#: ../source/tutorial/interfaces.rst:286 e738a8cf3e464305ad82cc91d969fa31
+msgid ""
+"Inside a ``do`` block, the following syntactic transformations are "
+"applied:"
+msgstr "在 ``do`` 块内，应用以下语法转换："
+
+#: ../source/tutorial/interfaces.rst:289 9d79ff50df684968b702df2748ef590f
+msgid "``x <- v; e`` becomes ``v >>= (\\x => e)``"
+msgstr "``x <- v; e`` 变成 ``v >>= (\\x => e)``"
+
+#: ../source/tutorial/interfaces.rst:291 1c70f70a702e40a6b1310bf9dfe9d86e
+msgid "``v; e`` becomes ``v >> e``"
+msgstr "``v; e`` 变成 ``v >> e``"
+
+#: ../source/tutorial/interfaces.rst:293 6118f03b9bf94dfe99bc5c3bf9f7da41
+msgid "``let x = v; e`` becomes ``let x = v in e``"
+msgstr "``let x = v; e`` 变成 ``let x = v in e``"
+
+#: ../source/tutorial/interfaces.rst:295 5b455ed224e24939b6232ed39358bd01
+msgid ""
+"``IO`` has an implementation of ``Monad``, defined using primitive "
+"functions. We can also define an implementation for ``Maybe``, as "
+"follows:"
+msgstr "``IO`` 有一个 ``Monad`` 的实现，是使用原语函数定义。我们也可以为 ``Maybe`` "
+"定义一个实现，如下所示："
+
+#: ../source/tutorial/interfaces.rst:304 2145abf8d2fd47e288724435d8b74462
+msgid ""
+"Using this we can, for example, define a function which adds two ``Maybe "
+"Int``, using the monad to encapsulate the error handling:"
+msgstr "利用这一点，我们可以做更多的事情，例如，定义用于对 ``Maybe Int`` "
+"进行加法操作的函数，使用单子来封装错误处理："
+
+#: ../source/tutorial/interfaces.rst:314 d44fb877e03b477997d1b39cc39ab1b5
+msgid ""
+"This function will extract the values from ``x`` and ``y``, if they are "
+"both available, or return ``Nothing`` if one or both are not (\"fail "
+"fast\"). Managing the ``Nothing`` cases is achieved by the ``>>=`` "
+"operator, hidden by the ``do`` notation."
+msgstr ""
+"如果两个值都是有值的，这个函数将从 ``x`` 和 ``y`` "
+"中提取数值，或者如果一个或两个都不是（\"快速失败\"），则返回 ``Nothing`` 。"
+"管理 ``Nothing`` 的情况是由 ``>>=`` 操作符实现的，被 ``do`` 符号所隐藏。"
+
+#: ../source/tutorial/interfaces.rst:326 7fb6cdf085f144d9b14210f4729e13ea
+msgid ""
+"The translation of ``do`` notation is entirely syntactic, so there is no "
+"need for the ``(>>=)`` and ``(>>)`` operators to be the operator defined "
+"in the ``Monad`` interface. Idris will, in general, try to disambiguate "
+"which operators you mean by type, but you can explicitly choose with "
+"qualified do notation, for example:"
+msgstr ""
+"``do`` 符号的翻译完全是句法性的，所以没有必要将 ``(>>=)`` 和 ``(>>)`` "
+"操作符作为 ``Monad`` 接口中定义的操作符。一般来说，Idris "
+"会尝试区分你所指的运算符的类型，但你可以用限定的 do 符号明确选择，例如："
+
+#: ../source/tutorial/interfaces.rst:340 982c295482e4411f8647c8ade1d1dc10
+msgid ""
+"The ``Prelude.do`` means that Idris will use the ``(>>=)`` and ``(>>)`` "
+"operators defined in the ``Prelude``."
+msgstr "``Prelude.do`` 意味着 Idris 将使用在 ``Prelude`` 中定义的 ``(>>=)`` 和 "
+"``(>>)`` 。"
+
+#: ../source/tutorial/interfaces.rst:344 dac8f00167054470afb3ed2b7eebc2c6
+msgid "Pattern Matching Bind"
+msgstr "模式匹配绑定"
+
+#: ../source/tutorial/interfaces.rst:346 2e1a07bd4caf4da797d77502f883ed7e
+msgid ""
+"Sometimes we want to pattern match immediately on the result of a "
+"function in ``do`` notation. For example, let's say we have a function "
+"``readNumber`` which reads a number from the console, returning a value "
+"of the form ``Just x`` if the number is valid, or ``Nothing`` otherwise:"
+msgstr ""
+"在 ``do`` 记法中，有时我们想在一个函数的结果上立即进行模式匹配，例如，"
+"假设我们有一个函数 ``readNumber`` 从控制台读取一个数字，如果该数字有效，"
+"则返回一个形式为 ``Just x`` 的值，否则为 ``Nothing`` ："
+
+#: ../source/tutorial/interfaces.rst:362 35511588674b42d59a62cc53df12cbd5
+msgid ""
+"If we then use it to write a function to read two numbers, returning "
+"``Nothing`` if neither are valid, then we would like to pattern match on "
+"the result of ``readNumber``:"
+msgstr ""
+"如果我们用它来写一个函数来读取两个数字，如果两个数字都无效，则返回 "
+"``Nothing`` ，然后我们想对 ``readNumber`` 的结果进行模式匹配："
+
+#: ../source/tutorial/interfaces.rst:378 3932a307dd7d41d098f1085b7805a840
+msgid ""
+"If there's a lot of error handling, this could get deeply nested very "
+"quickly! So instead, we can combine the bind and the pattern match in one"
+" line. For example, we could try pattern matching on values of the form "
+"``Just x_ok``:"
+msgstr ""
+"如果有大量的错误处理，这可能很快就会被深度嵌套！所以我们可以在一行中结合绑定"
+"和模式匹配。例如，我们可以尝试对形式为 ``Just x_ok`` 的值进行模式匹配："
+
+#: ../source/tutorial/interfaces.rst:390 9054d63c08824fbf90ec2cf10946a336
+msgid ""
+"There is still a problem, however, because we've now omitted the case for"
+" ``Nothing`` so ``readNumbers`` is no longer total! We can add the "
+"``Nothing`` case back as follows:"
+msgstr ""
+"然而，仍然有一个问题，因为我们现在省略了 ``Nothing`` 的情况，所以 "
+"``readNumbers`` 不再是完全函数！我们可以把 ``Nothing`` "
+"的情况加回来，如下所示："
+
+#: ../source/tutorial/interfaces.rst:404 6d3510bad0ba4788854504ce6178e71d
+msgid ""
+"The effect of this version of ``readNumbers`` is identical to the first "
+"(in fact, it is syntactic sugar for it and directly translated back into "
+"that form). The first part of each statement (``Just x_ok <-`` and ``Just"
+" y_ok <-``) gives the preferred binding - if this matches, execution will"
+" continue with the rest of the ``do`` block. The second part gives the "
+"alternative bindings, of which there may be more than one."
+msgstr ""
+"这个版本的 ``readNumbers`` 的效果与第一个版本相同（事实上，这是它的句法糖，会"
+"直接翻译成第一个版本的形式）。每个语句的第一部分（ ``Just x_ok <-`` 和 ``"
+"Just y_ok <-`` ）给出了首选的绑定方式--如果匹配，将继续执行 ``do`` "
+"块的其余部分。第二部分给出了备选的绑定方式，其中可能有多个绑定方式。"
+
+#: ../source/tutorial/interfaces.rst:412 3d3f1a6e536947e295d0891d973e127c
+msgid "``!``-notation"
+msgstr "``!``-记法"
+
+#: ../source/tutorial/interfaces.rst:414 b96dd881c27c4f85ada74ece5b6e01dc
+msgid ""
+"In many cases, using ``do``-notation can make programs unnecessarily "
+"verbose, particularly in cases such as ``m_add`` above where the value "
+"bound is used once, immediately. In these cases, we can use a shorthand "
+"version, as follows:"
+msgstr ""
+"在许多情况下，使用 ``do``- 记法会使程序变得不必要的冗长，特别是在上面 "
+"``m_add`` 的情况下，值被绑定后立即使用且只用一次。在这些情况下，我们可以使用"
+"一个速记版本，如下所示："
+
+#: ../source/tutorial/interfaces.rst:424 b59f7187dc694e2e8a45c1701b2c0b3d
+msgid ""
+"The notation ``!expr`` means that the expression ``expr`` should be "
+"evaluated and then implicitly bound. Conceptually, we can think of ``!`` "
+"as being a prefix function with the following type:"
+msgstr ""
+"符号 ``!expr`` 表示表达式 ``expr`` 应该被求值，然后被隐含地绑定。从概念上讲，"
+"我们可以把 ``!`` 看作是一个前缀函数，其类型如下："
+
+#: ../source/tutorial/interfaces.rst:432 d962ee1a958847978b5bb3aba849931d
+msgid ""
+"Note, however, that it is not really a function, merely syntax! In "
+"practice, a subexpression ``!expr`` will lift ``expr`` as high as "
+"possible within its current scope, bind it to a fresh name ``x``, and "
+"replace ``!expr`` with ``x``. Expressions are lifted depth first, left to"
+" right. In practice, ``!``-notation allows us to program in a more direct"
+" style, while still giving a notational clue as to which expressions are "
+"monadic."
+msgstr ""
+"然而，请注意，它并不是一个真正的函数，只是语法而已。一个子表达式 ``!expr`` "
+"将在其当前作用域内尽可能地提升 ``expr`` ，将其绑定到一个新的名称 ``x`` ，"
+"并将 ``!expr`` 替换为 ``x`` 。表达式从左到右，从深度开始提升。在实践中， "
+"``!`` - notation 允许我们以更直接的方式进行编程，同时仍然提供一个符号线索，说"
+"明哪些表达式是单子。"
+
+#: ../source/tutorial/interfaces.rst:440 e6bea91540eb43e6ac8c530bd8a1f15e
+msgid "For example, the expression:"
+msgstr "例如，表达式："
+
+#: ../source/tutorial/interfaces.rst:446 e78f2c24e94d4e1ba412ddd9a1f523b4
+msgid "is lifted to:"
+msgstr "被提升为："
+
+#: ../source/tutorial/interfaces.rst:456 1ad70d6f1cae48cdb9ece6fab0da13ef
+msgid "Monad comprehensions"
+msgstr "单子推导式"
+
+#: ../source/tutorial/interfaces.rst:458 ee7d5387b8b040978c15fd39987366ab
+msgid ""
+"The list comprehension notation we saw in Section :ref:`sect-more-expr` "
+"is more general, and applies to anything which has an implementation of "
+"both ``Monad`` and ``Alternative``:"
+msgstr ""
+"我们在 :ref:`sect-more-expr` 一节中看到的列表推导式符号更为通用，"
+"它适用于任何实现了 ``Monad`` 和 ``Alternative`` 的数据类型："
+
+#: ../source/tutorial/interfaces.rst:468 21082faa714842a9b835eda82521d7f2
+msgid ""
+"In general, a comprehension takes the form ``[ exp | qual1, qual2, …, "
+"qualn ]`` where ``quali`` can be one of:"
+msgstr ""
+"一般来说，推导式的形式是： ``[ exp | qual1, qual2, …, qualn ]`` 其中 "
+"``quali`` 可以是下列之一："
+
+#: ../source/tutorial/interfaces.rst:471 8eef644cd1c8422a8becfff6073a752b
+msgid "A generator ``x <- e``"
+msgstr "生成器 ``x <- e``"
+
+#: ../source/tutorial/interfaces.rst:473 f95d023b4e9e4d13b936ca0c370816a7
+msgid "A *guard*, which is an expression of type ``Bool``"
+msgstr "一个 *守卫* ，它是一个类型为 ``Bool`` 的表达式"
+
+#: ../source/tutorial/interfaces.rst:475 fc90c036c2d647d5828f5307ada4905e
+msgid "A let binding ``let x = e``"
+msgstr "let 绑定 ``let x = e``"
+
+#: ../source/tutorial/interfaces.rst:477 660897239e9e453198f53801ff740217
+msgid ""
+"To translate a comprehension ``[exp | qual1, qual2, …, qualn]``, first "
+"any qualifier ``qual`` which is a *guard* is translated to ``guard "
+"qual``, using the following function:"
+msgstr ""
+"翻译一个推导式 ``[exp | qual1, qual2, ..., qualn]`` ，"
+"首先使用以下函数将任何作为 *guard* 的限定符 ``qual`` 转换为 ``guard qual`` ："
+
+#: ../source/tutorial/interfaces.rst:485 84983354636944c78ae9f87723aa8059
+msgid "Then the comprehension is converted to ``do`` notation:"
+msgstr "然后将推导式转换为 do 记法："
+
+#: ../source/tutorial/interfaces.rst:491 1a17ad769dde413fa2ca9cb0e9667971
+msgid ""
+"Using monad comprehensions, an alternative definition for ``m_add`` would"
+" be:"
+msgstr "使用单子推导式， ``m_add`` 的另一个定义是："
+
+#: ../source/tutorial/interfaces.rst:500 3c744ab94c094935b4c10a00edcdc8f6
+msgid "Interfaces and IO"
+msgstr "接口和IO"
+
+#: ../source/tutorial/interfaces.rst:502 88d9a44a1a3e481daa02a5eb8d32c805
+msgid ""
+"In general, ``IO`` operations in the libraries aren't written using "
+"``IO`` directly, but rather via the ``HasIO`` interface:"
+msgstr "一般来说， ``IO`` 库中的操作不是直接使用 ``IO`` 编写的，而是通过 ``HasIO`` "
+"接口编写的："
+
+#: ../source/tutorial/interfaces.rst:510 00ec5ba0adf74039b3ebd432b6003231
+msgid ""
+"``HasIO`` explains, via ``liftIO``, how to convert a primitive ``IO`` "
+"operation to an operation in some underlying type, as long as that type "
+"has a ``Monad`` implementation.  These interface allows a programmer to "
+"define some more expressive notion of interactive program, while still "
+"giving direct access to ``IO`` primitives."
+msgstr ""
+"``HasIO`` 的解释，通过 ``liftIO`` 解释了如何将一个原语 ``IO`` "
+"操作转换为某个底层类型的操作，只要该类型有一个 ``Monad`` 实现。 "
+"这些接口允许程序员定义一些更具表现力的交互式程序的概念，同时仍然可以直接访问 "
+"``IO`` 原语。"
+
+#: ../source/tutorial/interfaces.rst:517 0caada94162149e883057f3f2170441d
+msgid "Idiom brackets"
+msgstr "习语括号"
+
+#: ../source/tutorial/interfaces.rst:519 2b832ae5ddce4d52a962dca6250ffe0e
+msgid ""
+"While ``do`` notation gives an alternative meaning to sequencing, idioms "
+"give an alternative meaning to *application*. The notation and larger "
+"example in this section is inspired by Conor McBride and Ross Paterson’s "
+"paper “Applicative Programming with Effects” [#ConorRoss]_."
+msgstr ""
+"虽然 ``do`` 记法给序列另一种含义，但习语给了 *应用子* 另一种含义。"
+"本节中的符号和较大的例子是受 Conor McBride 和 Ross Paterson 的论文 "
+"\"Applicative Programming with Effects \" 的启发 [#ConorRoss]_ 。"
+
+#: ../source/tutorial/interfaces.rst:524 a97dc44b50cb48e6be56102baeb00300
+msgid ""
+"First, let us revisit ``m_add`` above. All it is really doing is applying"
+" an operator to two values extracted from ``Maybe Int``. We could "
+"abstract out the application:"
+msgstr ""
+"首先，让我们重新审视上面的 ``m_add`` 。它所做的实际上是对从 ``Maybe Int`` "
+"中提取的两个值应用一个运算符。我们可以把这个应用子："
+
+#: ../source/tutorial/interfaces.rst:534 3e750bc1ae884423b8f9e0dc9cebece0
+msgid ""
+"Using this, we can write an alternative ``m_add`` which uses this "
+"alternative notion of function application, with explicit calls to "
+"``m_app``:"
+msgstr "利用这一点，我们可以写一个替代性的 ``m_add`` "
+"，它使用这个替代性的函数应用概念，并明确调用 ``m_app`` ："
+
+#: ../source/tutorial/interfaces.rst:543 31886b16859649829e5153f1a491f27c
+msgid ""
+"Rather than having to insert ``m_app`` everywhere there is an "
+"application, we can use idiom brackets to do the job for us. To do this, "
+"we can give ``Maybe`` an implementation of ``Applicative`` as follows, "
+"where ``<*>`` is defined in the same way as ``m_app`` above (this is "
+"defined in the Idris library):"
+msgstr ""
+"我们不必在有应用子的地方插入 ``m_app`` "
+"，而是可以使用习语括号来为我们完成这项工作。要做到这一点，我们可以让 "
+"``Maybe`` 实现 ``Applicative`` ，如下所示，其中 ``<*>`` 的定义与上面 "
+"``m_app`` 相同（这是在 Idris 库中定义的）："
+
+#: ../source/tutorial/interfaces.rst:557 a2c9806aeb6d4ebb8fbbf9c3a40e7289
+msgid ""
+"Using ``<*>`` we can use this implementation as follows, where a function"
+" application ``[| f a1 … an |]`` is translated into ``pure f <*> a1 <*> …"
+" <*> an``:"
+msgstr ""
+"使用 ``<*>`` 我们可以这样使用这个实现，其中函数应用 ``[| f a1 … an |]`` "
+"会被翻译成 ``pure f <*> a1 <*> … <*> an`` ："
+
+#: ../source/tutorial/interfaces.rst:567 3051630889334f13b7a4b7492a73b2f5
+msgid "An error-handling interpreter"
+msgstr "一个错误处理解释器"
+
+#: ../source/tutorial/interfaces.rst:569 5332722364774534924f7de3f2176005
+msgid ""
+"Idiom notation is commonly useful when defining evaluators. McBride and "
+"Paterson describe such an evaluator [#ConorRoss]_, for a language similar"
+" to the following:"
+msgstr ""
+"在定义求值器时，习语括号通常是有用的。McBride 和 Paterson "
+"描述了这样一个求值器 [#ConorRoss]_ ，用于类似于以下的语言："
+
+#: ../source/tutorial/interfaces.rst:579 e33399b23c8a41ed833e7e227a0efe7c
+msgid ""
+"Evaluation will take place relative to a context mapping variables "
+"(represented as ``String``\\s) to ``Int`` values, and can possibly fail. "
+"We define a data type ``Eval`` to wrap an evaluator:"
+msgstr ""
+"求值器将相对于上下文映射变量（表示为 ``String``\\s) 到 ``Int`` "
+"类型的求值，并可能失败。我们定义了一个数据类型 ``Eval`` 来包装一个求值器："
+
+#: ../source/tutorial/interfaces.rst:588 98c7813acff2453090da2f46a226f9aa
+msgid ""
+"Wrapping the evaluator in a data type means we will be able to provide "
+"implementations of interfaces for it later. We begin by defining a "
+"function to retrieve values from the context during evaluation:"
+msgstr "将求值器包裹在一个数据类型中意味着我们以后可以为它提供接口的实现。我们首先定"
+"义了一个函数，用于在求值过程中从上下文中获取数值："
+
+#: ../source/tutorial/interfaces.rst:602 4a5e62717bd44b5da7ae109858c021b1
+msgid ""
+"When defining an evaluator for the language, we will be applying "
+"functions in the context of an ``Eval``, so it is natural to give "
+"``Eval`` an implementation of ``Applicative``. Before ``Eval`` can have "
+"an implementation of ``Applicative`` it is necessary for ``Eval`` to have"
+" an implementation of ``Functor``:"
+msgstr ""
+"当定义语言的求值器时，我们将在 ``Eval`` 的上下文中应用函数，所以很自然地给 "
+"``Eval`` 一个 ``Applicative`` 的实现。在 ``Eval`` 允许有 ``Applicative`` "
+"的实现之前， ``Eval`` 必须有 ``Functor`` 的实现："
+
+#: ../source/tutorial/interfaces.rst:621 55079dc79b0849d0b7f1bcb85f9f9f04
+msgid ""
+"Evaluating an expression can now make use of the idiomatic application to"
+" handle errors:"
+msgstr "求值一个表达式时可以利用的习语括号来处理错误："
+
+#: ../source/tutorial/interfaces.rst:635 16e66644eff94c1297d770541cd14eb6
+msgid "For example:"
+msgstr "例如："
+
+#: ../source/tutorial/interfaces.rst:645 a0bb8bcfc56d4b50988b57174374942c
+msgid "Named Implementations"
+msgstr "命名实现"
+
+#: ../source/tutorial/interfaces.rst:647 85144ff01eb34bd99602b0f5ed1844ad
+msgid ""
+"It can be desirable to have multiple implementations of an interface for "
+"the same type, for example to provide alternative methods for sorting or "
+"printing values. To achieve this, implementations can be *named* as "
+"follows:"
+msgstr "对于同一类型的接口，可能需要有多个实现，例如，为排序或打印数值提供替代方法。"
+"为了实现这一点，实现可以被 *命名* ，如下所示："
+
+#: ../source/tutorial/interfaces.rst:659 f95ce20d1fa64b9bbcbd622303b314bf
+msgid ""
+"This declares an implementation as normal, but with an explicit name, "
+"``myord``. The syntax ``compare @{myord}`` gives an explicit "
+"implementation to ``compare``, otherwise it would use the default "
+"implementation for ``Nat``. We can use this, for example, to sort a list "
+"of ``Nat`` in reverse. Given the following list:"
+msgstr ""
+"这就像平常一样声明了一个实现，但是有一个明确的名字， ``myord`` 。语法 ``"
+"compare @{myord}`` 为 ``compare`` 提供了一个明确的实现，否则它将使用 ``Nat`` "
+"的默认实现。例如，我们可以用它来对 ``Nat`` 的列表进行反向排序。给出以下列表："
+
+#: ../source/tutorial/interfaces.rst:670 7662a88a2b274c29ada54bcd25feb6ba
+msgid ""
+"We can sort it using the default ``Ord`` implementation, by using the "
+"``sort`` function available with ``import Data.List``, then we can try "
+"with the named implementation ``myord`` as follows, at the Idris prompt:"
+msgstr ""
+"我们可以使用默认的 ``Ord`` 实现进行排序，通过使用 ``sort`` 函数， ``import "
+"Data.List`` 后可用，然后我们可以用命名的实现 ``myord`` 进行尝试，在 Idris "
+"提示符下输入："
+
+#: ../source/tutorial/interfaces.rst:681 c10c46dbbe494e19801d113a9497e805
+msgid ""
+"Sometimes, we also need access to a named parent implementation. For "
+"example, the prelude defines the following ``Semigroup`` interface:"
+msgstr "有时，我们还需要访问一个命名的父级实现。例如，prelude 中定义了以``Semigroup``"
+" 接口："
+
+#: ../source/tutorial/interfaces.rst:689 454cc704cb474583878efd7f36cc6ca1
+msgid ""
+"Then it defines ``Monoid``, which extends ``Semigroup`` with a “neutral” "
+"value:"
+msgstr "然后，它定义了 ``Monoid`` ，用一个 “neutral” 值扩展了 ``Semigroup`` ："
+
+#: ../source/tutorial/interfaces.rst:697 e9cc00cd6cdb4af7b6bb9f7541846266
+msgid ""
+"We can define two different implementations of ``Semigroup`` and "
+"``Monoid`` for ``Nat``, one based on addition and one on multiplication:"
+msgstr "我们可以为 ``Nat`` 定义 ``Semigroup`` 和 ``Monoid`` "
+"两种不同的实现，一种基于加法，一种基于乘法："
+
+#: ../source/tutorial/interfaces.rst:708 2b6aa9772939472cb690ec3b35de0c57
+msgid ""
+"The neutral value for addition is ``0``, but the neutral value for "
+"multiplication is ``1``. It's important, therefore, that when we define "
+"implementations of ``Monoid`` that they extend the correct ``Semigroup`` "
+"implementation. We can do this with a ``using`` clause in the "
+"implementation as follows:"
+msgstr ""
+"加法的中性值是 ``0`` ，但乘法的中性值是 ``1`` 。因此，重要的是，当我们定义 "
+"``Monoid`` 的实现时，它们要扩展正确的 ``Semigroup`` 实现。"
+"我们可以通过实现中的 ``using`` 子句来做到这一点，具体如下："
+
+#: ../source/tutorial/interfaces.rst:721 7c6fecedb1a64a5fa699366afd1b02c0
+msgid ""
+"The ``using PlusNatSemi`` clause indicates that ``PlusNatMonoid`` should "
+"extend ``PlusNatSemi`` specifically."
+msgstr "``using PlusNatSemi`` 子句表明， ``PlusNatMonoid`` 应扩展 自 ``PlusNatSemi`` "
+"。"
+
+#: ../source/tutorial/interfaces.rst:727 e942e4f12be54c598eed05e2115a5d61
+msgid "Interface Constructors"
+msgstr "接口构造器"
+
+#: ../source/tutorial/interfaces.rst:729 3322b853304a4948afe9d8356a40f688
+msgid ""
+"Interfaces, just like records, can be declared with a user-defined "
+"constructor."
+msgstr "接口，就像记录一样，可以用一个用户定义的构造函数来声明。"
+
+#: ../source/tutorial/interfaces.rst:741 12377215744b6abf904af9a029db4ed8
+msgid "Then ``MkB : A t => t -> B t``. If we have"
+msgstr "然后 ``MkB : A t => t -> B t`` 。如果我们有"
+
+#: ../source/tutorial/interfaces.rst:751 1f66f0051b9e48db8dfc2cce7887a3fa
+msgid ""
+"Then we can use the function ``getAB`` even though we didn't implement "
+"the interface ``B`` for ``Nat`` by passing an implementation inline"
+msgstr "然后我们可以使用函数 ``getAB`` ，即使我们没有为 ``Nat`` 实现接口 ``B`` ，也可以通过内联传递一个实现"
+
+#: ../source/tutorial/interfaces.rst:761 d6bd7b2b1dc544ecaf898ea43a78258f
+msgid "Determining Parameters"
+msgstr "确定参数"
+
+#: ../source/tutorial/interfaces.rst:763 45fbd895e4184200be3daba188fc8bbb
+msgid ""
+"When an interface has more than one parameter, it can help resolution if "
+"the parameters used to find an implementation are restricted. For "
+"example:"
+msgstr "当一个接口有一个以上的参数时，如果用来寻找实现的参数受到限制，就会有助于解决"
+"。比如说："
+
+#: ../source/tutorial/interfaces.rst:772 975fe46b4976427d834b481ebf91b01b
+msgid ""
+"In this interface, only ``m`` needs to be known to find an implementation"
+" of this interface, and ``s`` can then be determined from the "
+"implementation. This is declared with the ``| m`` after the interface "
+"declaration. We call ``m`` a *determining parameter* of the "
+"``MonadState`` interface, because it is the parameter used to find an "
+"implementation. This is similar to the concept of *functional "
+"dependencies* `in Haskell "
+"<https://wiki.haskell.org/Functional_dependencies>`_."
+msgstr ""
+"在这个接口中，只需要知道 ``m`` 就可以找到这个接口的实现，然后 ``s`` "
+"可以从实现中确定。这是在接口声明之后用 ``| m`` 声明的。我们称 ``m`` 为 "
+"``MonadState`` 接口的 *决定性参数* ，因为它是用来寻找实现的参数。"
+"这类似于Haskell中 *功能依赖* 的概念* ` <https://wiki.haskell.org/"
+"Functional_dependencies>`_ 。"
+
+#: ../source/tutorial/interfaces.rst:779 7375b49eeac94ae1aba491687957649b
+msgid ""
+"Conor McBride and Ross Paterson. 2008. Applicative programming with "
+"effects. J. Funct. Program. 18, 1 (January 2008), 1-13. "
+"DOI=10.1017/S0956796807006326 "
+"https://dx.doi.org/10.1017/S0956796807006326"
+msgstr ""
+"Conor McBride and Ross Paterson. 2008. Applicative programming with effects. "
+"J. Funct. Program. 18, 1 (January 2008), 1-13. DOI=10.1017/S0956796807006326 "
+"https://dx.doi.org/10.1017/S0956796807006326"

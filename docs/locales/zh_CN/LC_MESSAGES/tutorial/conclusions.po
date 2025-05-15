@@ -1,0 +1,137 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2023, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-16 09:52+0800\n"
+"PO-Revision-Date: 2022-09-03 13:48+0000\n"
+"Last-Translator: grass <hi@grass.show>\n"
+"Language-Team: Chinese (Simplified) <>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../source/tutorial/conclusions.rst:5 d7351bfeac5540eb968a80ed526ee6fe
+msgid "Further Reading"
+msgstr "延伸阅读"
+
+#: ../source/tutorial/conclusions.rst:7 806876f4fe0f4e90ac6503d1c214e4a4
+msgid ""
+"Further information about Idris programming, and programming with "
+"dependent types in general, can be obtained from various sources:"
+msgstr "有关 Idris 编程和一般依值类型编程的更多信息，可以从各种来源获得："
+
+#: ../source/tutorial/conclusions.rst:10 67b7c7e644e44c9b934b12d6aeeb5a2f
+msgid ""
+"`Type-Driven Development with Idris <https://www.manning.com/books/type-"
+"driven-development-with-idris>`_ by Edwin Brady, available from `Manning "
+"<https://www.manning.com>`_."
+msgstr ""
+"`使用 Idris 进行类型驱动开发 <https://www.manning.com/books/type-driven-"
+"development-with-idris>`_ 作者 Edwin Brady，可从 `Manning <https://"
+"www.manning.com >`_ 获得。"
+
+#: ../source/tutorial/conclusions.rst:13 f7437df7c06c4b34aa6dfdd42252dd9e
+msgid ""
+"The Idris web site (https://www.idris-lang.org/) and by asking questions "
+"on the mailing list."
+msgstr "Idris网站（https://www.idris-lang.org/）和通过在邮件列表中提问。"
+
+#: ../source/tutorial/conclusions.rst:16 34c3ced4783c4ba4a079c0492a12a549
+msgid ""
+"The IRC channel ``#idris``, on `webchat.freenode.net "
+"<https://webchat.freenode.net/>`__."
+msgstr ""
+"IRC 频道 ``#idris``, 在 `webchat.freenode.net <https://webchatfreenode.net/>`"
+"__ 。"
+
+#: ../source/tutorial/conclusions.rst:19 7fdab1e938e64842b8e27dc8467d3407
+msgid ""
+"The wiki (https://github.com/idris-lang/Idris-dev/wiki/) has further user"
+" provided information, in particular:"
+msgstr "维基（https://github.com/idris-lang/Idris-dev/wiki/"
+"）有进一步的用户提供的信息，特别是："
+
+#: ../source/tutorial/conclusions.rst:22 359224a1b45b464fa67b07e4e4c513d7
+msgid "https://github.com/idris-lang/Idris-dev/wiki/Manual"
+msgstr "https://github.com/idris-lang/Idris-dev/wiki/Manual"
+
+#: ../source/tutorial/conclusions.rst:24 3819a7f004724496afbf5694be8d9620
+msgid "https://github.com/idris-lang/Idris-dev/wiki/Language-Features"
+msgstr "https://github.com/idris-lang/Idris-dev/wiki/Language-Features"
+
+#: ../source/tutorial/conclusions.rst:26 93ff7c98229b45ad9e116addf7514fb0
+msgid ""
+"Examining the prelude and exploring the ``samples`` in the distribution. "
+"The Idris 2 source can be found online at:"
+msgstr "检查 preclude 和探索发行版中的 ``samples`` 目录。Idris 2 "
+"的源代码可以在网上找到："
+
+#: ../source/tutorial/conclusions.rst:29 e4e69b63085c43be967fc2d7b4905741
+msgid "https://github.com/edwinb/Idris2."
+msgstr "https://github.com/edwinb/Idris2."
+
+#: ../source/tutorial/conclusions.rst:31 d2a40cd42dd6480a8e6e6c7f473d6591
+msgid "Existing projects on the ``Idris Hackers`` web space:"
+msgstr "``Idris Hackers`` 网络空间上的现有项目："
+
+#: ../source/tutorial/conclusions.rst:33 68627d673b80494496ebc07c56f3436f
+msgid "https://idris-hackers.github.io."
+msgstr "https://idris-hackers.github.io."
+
+#: ../source/tutorial/conclusions.rst:35 c883d30afcf64343bc7c844783e51bc3
+msgid ""
+"Various papers (e.g. [#BradyHammond2012]_, [#Brady]_, and "
+"[#BradyHammond2010]_).  Although these mostly describe older versions of "
+"Idris."
+msgstr ""
+"各种论文（例如：[#BradyHammond2012]_,[#Brady]_, 和[#BradyHammond2010]_ ）。 "
+"虽然这些大多是描述 Idris 的旧版本。"
+
+#: ../source/tutorial/conclusions.rst:38 2593ae3e1e104b86b2a0f031d30f136e
+msgid ""
+"Edwin Brady and Kevin Hammond. 2012. Resource-Safe systems programming "
+"with embedded domain specific languages. In Proceedings of the 14th "
+"international conference on Practical Aspects of Declarative Languages "
+"(PADL'12), Claudio Russo and Neng-Fa Zhou (Eds.). Springer-Verlag, "
+"Berlin, Heidelberg, 242-257. DOI=10.1007/978-3-642-27694-1_18 "
+"https://dx.doi.org/10.1007/978-3-642-27694-1_18"
+msgstr ""
+"Edwin Brady and Kevin Hammond. 2012. Resource-Safe systems programming with "
+"embedded domain specific languages. In Proceedings of the 14th international "
+"conference on Practical Aspects of Declarative Languages (PADL'12), Claudio "
+"Russo and Neng-Fa Zhou (Eds.). Springer-Verlag, Berlin, Heidelberg, 242-257. "
+"DOI=10.1007/978-3-642-27694-1_18 https://dx.doi.org/10.1007/"
+"978-3-642-27694-1_18"
+
+#: ../source/tutorial/conclusions.rst:46 aba1ffc8ccc14b83a4f59e12c37c7b1e
+msgid ""
+"Edwin C. Brady. 2011. IDRIS ---: systems programming meets full dependent"
+" types. In Proceedings of the 5th ACM workshop on Programming languages "
+"meets program verification (PLPV '11). ACM, New York, NY, USA, 43-54. "
+"DOI=10.1145/1929529.1929536 https://doi.acm.org/10.1145/1929529.1929536"
+msgstr ""
+"Edwin C. Brady. 2011. IDRIS ---: systems programming meets full dependent "
+"types. In Proceedings of the 5th ACM workshop on Programming languages meets "
+"program verification (PLPV '11). ACM, New York, NY, USA, 43-54. DOI=10.1145/"
+"1929529.1929536 https://doi.acm.org/10.1145/1929529.1929536"
+
+#: ../source/tutorial/conclusions.rst:53 ad56c3b6f046457fa3dcd6edcc19ef9a
+msgid ""
+"Edwin C. Brady and Kevin Hammond. 2010. Scrapping your inefficient "
+"engine: using partial evaluation to improve domain-specific language "
+"implementation. In Proceedings of the 15th ACM SIGPLAN international "
+"conference on Functional programming (ICFP '10). ACM, New York, NY, USA, "
+"297-308. DOI=10.1145/1863543.1863587 "
+"https://doi.acm.org/10.1145/1863543.1863587"
+msgstr ""
+"Edwin C. Brady and Kevin Hammond. 2010. Scrapping your inefficient engine: "
+"using partial evaluation to improve domain-specific language implementation. "
+"In Proceedings of the 15th ACM SIGPLAN international conference on "
+"Functional programming (ICFP '10). ACM, New York, NY, USA, 297-308. DOI=10."
+"1145/1863543.1863587 https://doi.acm.org/10.1145/1863543.1863587"

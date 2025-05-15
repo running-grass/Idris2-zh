@@ -1,0 +1,133 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2023, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-16 09:52+0800\n"
+"PO-Revision-Date: 2022-09-03 13:48+0000\n"
+"Last-Translator: grass <hi@grass.show>\n"
+"Language-Team: Chinese (Simplified) <>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../source/backends/refc.rst:3 b96f77d4d8eb4578b357168907388479
+msgid "C with Reference Counting"
+msgstr "带引用计数的 C（C with Reference Counting）"
+
+#: ../source/backends/refc.rst:5 878caca51788441fa4e47b08b6144f8d
+msgid ""
+"There is an experimental code generator which compiles to an executable "
+"via C, using a reference counting garbage collector. This is intended as "
+"a lightweight (i.e. minimal dependencies) code generator that can be "
+"ported to multiple platforms, especially those with memory constraints."
+msgstr "有一个实验性的代码生成器可通过 C 语言编译为可执行文件，使用引用计数垃圾回收器。该生成器旨在作为轻量级（即依赖最少）的代码生成器，可移植到多种平台，尤其适用于内存受限的平台。"
+
+#: ../source/backends/refc.rst:10 83e01a2124f949c897086edc6c207242
+msgid ""
+"Performance is not as good as the Scheme based code generators, partly "
+"because the reference counting has not yet had any optimisation, and "
+"partly because of the limitations of C. However, the main goal is "
+"portability: the generated code should run on any platform that supports "
+"a C compiler."
+msgstr "性能不如基于 Scheme 的代码生成器，一方面是因为引用计数尚未优化，另一方面是 C 语言本身的限制。然而，主要目标是可移植性：生成的代码应能在任何支持 C 编译器的平台上运行。"
+
+#: ../source/backends/refc.rst:15 486419c55b5b43088854cf867f9930dd
+msgid "This code generator can be accessed via the REPL command:"
+msgstr "可通过 REPL 命令访问此代码生成器："
+
+#: ../source/backends/refc.rst:21 f72f1cad471f4e729af0ce2ed08091b9
+msgid "Alternatively, you can set it via the ``IDRIS2_CG`` environment variable:"
+msgstr "或者，您可以通过 ``IDRIS2_CG`` 环境变量进行设置："
+
+#: ../source/backends/refc.rst:27 33c7000e2a7948f893a47592bf932a13
+msgid ""
+"The C compiler it invokes is determined by either the ``IDRIS2_CC`` or "
+"``CC`` environment variables. If neither is set, it uses ``cc``."
+msgstr "所调用的 C 编译器由 ``IDRIS2_CC`` 或 ``CC`` 环境变量决定。如果两者都未设置，则使用 ``cc``。"
+
+#: ../source/backends/refc.rst:30 d1197778e54f49bfb6dc69d9bc29fe0b
+msgid "This code generator does not yet support `:exec`, just `:c`."
+msgstr "该代码生成器尚不支持 `:exec`，仅支持 `:c`。"
+
+#: ../source/backends/refc.rst:32 92e8bcd314f846c89d96085f988c27bd
+msgid ""
+"Also note that, if you link with any dynamic libraries for interfacing "
+"with C, you will need to arrange for them to be accessible via "
+"``LD_LIBRARY_PATH`` when running the executable. The default Idris 2 "
+"support libraries are statically linked."
+msgstr "另请注意，如果链接了用于 C 语言接口的动态库，运行可执行文件时需确保这些库可通过 ``LD_LIBRARY_PATH`` 访问。Idris 2 默认支持库为静态链接。"
+
+#: ../source/backends/refc.rst:38 ed6890401e7b44b1bc9c36890e317a8f
+msgid "Extending RefC"
+msgstr "扩展 RefC（Extending RefC）"
+
+#: ../source/backends/refc.rst:40 874cfe967cd9455d96a341ff948d1cfb
+msgid ""
+"RefC can be extended to produce a new backend for languages that support "
+"C foreign functions. For example, a `Python backend for Idris "
+"<https://github.com/madman-bob/idris2-python>`_."
+msgstr "RefC 可扩展为支持 C 语言外部函数的其他语言生成新后端。例如：`Idris 的 Python 后端 <https://github.com/madman-bob/idris2-python>`_。"
+
+#: ../source/backends/refc.rst:44 e526537ec79a405fa983e519cc3150b2
+msgid ""
+"In your backend, use the ``Compiler.RefC`` functions "
+"``generateCSourceFile``, ``compileCObjectFile {asLibrary = True}``, and "
+"``compileCFile {asShared = True}`` to generate a ``.so`` shared object "
+"file."
+msgstr "在您的后端中，使用 ``Compiler.RefC`` 的 ``generateCSourceFile``、``compileCObjectFile {asLibrary = True}`` 和 ``compileCFile {asShared = True}`` 函数生成 ``.so`` 共享对象文件。"
+
+#: ../source/backends/refc.rst:54 f379af922eb84b29807a09efbbdc2453
+msgid ""
+"To run a compiled Idris program, call the ``int main(int argc, char "
+"*argv[])`` function in the compiled ``.so`` file, with the arguments you "
+"wish to pass to the running program."
+msgstr "要运行已编译的 Idris 程序，请在编译生成的 ``.so`` 文件中调用 ``int main(int argc, char *argv[])`` 函数，并传入希望传递给运行程序的参数。"
+
+#: ../source/backends/refc.rst:58 f80bc55996314bd7b5ef69cf83448bed
+msgid "For example, in Python:"
+msgstr "例如，在 Python 中："
+
+#: ../source/backends/refc.rst:72 f667f7d1b16944de922e4efdc2d23074
+msgid "Extending RefC FFIs"
+msgstr "扩展 RefC FFI（Extending RefC FFIs）"
+
+#: ../source/backends/refc.rst:74 3207ff93f3294b9b8bc478c2e7ba8ca4
+msgid ""
+"To make the generated C code recognize additional FFI languages beyond "
+"the standard RefC FFIs, pass the ``additionalFFILangs`` option to "
+"``generateCSourceFile``, with a list of the language identifiers your "
+"backend recognizes."
+msgstr "如需让生成的 C 代码识别标准 RefC FFI 以外的其他 FFI 语言，请在调用 ``generateCSourceFile`` 时传递 ``additionalFFILangs`` 选项，并提供后端可识别的语言标识符列表。"
+
+#: ../source/backends/refc.rst:83 4cf2b6a5f5d8474fb6cb175bf67a1342
+msgid ""
+"This will generate stub FFI function pointers in the generated C file, "
+"which your backend should set to the appropriate C functions before "
+"``main`` is called."
+msgstr "这将在生成的 C 文件中生成 FFI 函数指针桩，您的后端应在调用 ``main`` 之前将其指向相应的 C 函数。"
+
+#: ../source/backends/refc.rst:87 0d22910fa4424087981c7f0e814c17aa
+#, python-format
+msgid ""
+"Each ``%foreign \"lang: foreignFuncName, opts\"`` definition for a "
+"function will produce a stub, of the appropriate function pointer type. "
+"This stub will be called ``cName $ NS (mkNamespace lang) funcName``, "
+"where ``funcName`` is the fully qualified Idris name of that function."
+msgstr "每个函数的 ``%foreign \"lang: foreignFuncName, opts\"`` 定义都会生成一个相应类型的函数指针桩。该桩名为 ``cName $ NS (mkNamespace lang) funcName``，其中 ``funcName`` 是该函数的 Idris 完全限定名。"
+
+#: ../source/backends/refc.rst:92 08d06104205f48ae80c517b4f5124844
+#, python-format
+msgid "So the ``%foreign`` function"
+msgstr "因此，``%foreign`` 函数"
+
+#: ../source/backends/refc.rst:99 6248586fc9d04a109ce419d512210ebe
+msgid ""
+"produces a stub ``python_Main_abs``, which can be backpatched in Python "
+"by:"
+msgstr "会生成一个 ``python_Main_abs`` 桩，可在 Python 中进行回补："

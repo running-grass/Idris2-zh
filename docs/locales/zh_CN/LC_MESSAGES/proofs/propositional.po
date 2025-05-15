@@ -1,0 +1,129 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2023, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-16 09:52+0800\n"
+"PO-Revision-Date: 2022-09-03 13:48+0000\n"
+"Last-Translator: grass <hi@grass.show>\n"
+"Language-Team: Chinese (Simplified) <>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../source/proofs/propositional.rst:1 bafd591930574e58a7d948575546f1f0
+msgid "This page attempts to explain some of the techniques used in Idris to prove propositional equalities."
+msgstr "本页旨在解释 Idris 中用于证明命题等式（propositional equality）的一些技术。"
+
+#: ../source/proofs/propositional.rst:5 b2c4f0bba91546d8a45c6ec646f37617
+msgid "Proving Propositional Equality"
+msgstr "证明命题等式（Propositional Equality）"
+
+#: ../source/proofs/propositional.rst:7 bcae08c1544a487dadb0bda91dda50be
+msgid "We have seen that definitional equalities can be proved using ``Refl`` since they always normalise to values that can be compared directly."
+msgstr "我们已经看到，定义等式（definitional equality）可以通过 ``Refl`` 证明，因为它们总是归约为可以直接比较的值。"
+
+#: ../source/proofs/propositional.rst:10 892f12670a6648a7a2668ac18f773cf6
+msgid "However with propositional equalities we are using symbolic variables, which do not always normalise."
+msgstr "然而，对于命题等式（propositional equality），我们使用的是符号变量，这些变量并不总是能够归约。"
+
+#: ../source/proofs/propositional.rst:13 48ddd2f79b6d4b23a2422a91c055adef
+msgid "So to take the previous example:"
+msgstr "以之前的例子为例："
+
+#: ../source/proofs/propositional.rst:19 a4097169e7944d9a951194192de6a9ba
+msgid "In this case ``plus n Z`` does not normalise to n. Even though both sides of the equality are provably equal we cannot claim ``Refl`` as a proof."
+msgstr "在这种情况下，``plus n Z`` 并不会归约为 n。即使等式两边可以被证明相等，我们也无法直接用 ``Refl`` 作为证明。"
+
+#: ../source/proofs/propositional.rst:22 06e1d9acab6d48b4b2f64c5ab2bcd1ef
+msgid "If the pattern match cannot match for all ``n`` then we need to match all possible values of ``n``. In this case"
+msgstr "如果模式匹配无法覆盖所有 ``n`` 的情况，那么我们需要对 ``n`` 的所有可能取值进行匹配。在本例中"
+
+#: ../source/proofs/propositional.rst:33 5a2c535d0f7c4952b1d5e2016a18c195
+msgid "we can't use ``Refl`` to prove ``plus n 0 = n`` for all ``n``. Instead, we call it for each case separately.  So, in the second line for example, the type checker substitutes ``Z`` for ``n`` in the type being matched, and reduces the type accordingly."
+msgstr "我们无法用 ``Refl`` 来证明对所有 ``n`` 都有 ``plus n 0 = n``。相反，我们需要对每种情况分别证明。例如，在第二行中，类型检查器会将 ``Z`` 代入被匹配的类型，并相应地化简类型。"
+
+#: ../source/proofs/propositional.rst:39 e6864eb9403c49818bf6764c9e97b41c
+msgid "Replace"
+msgstr "替换（Replace）"
+
+#: ../source/proofs/propositional.rst:41 eff1a657db90424f971bdf32627276f8
+msgid "This implements the 'indiscernability of identicals' principle, if two terms are equal then they have the same properties. In other words, if ``x=y``, then we can substitute y for x in any expression. In our proofs we can express this as:"
+msgstr "这实现了\"不可分辨同一性（indiscernability of identicals）\"原则：如果两个项相等，那么它们具有相同的性质。换句话说，如果 ``x=y``，那么我们可以在任何表达式中用 y 替换 x。在我们的证明中，可以这样表达："
+
+#: ../source/proofs/propositional.rst:45 ae0f916445c44b6b893f6d695c7f4d46
+msgid "if x=y then prop x = prop y"
+msgstr "如果 x=y，则 prop x = prop y"
+
+#: ../source/proofs/propositional.rst:48 6bbff96f0ebe407bb392c7de1f2711d1
+msgid "where prop is a pure function representing the property. In the examples below prop is an expression in some variable with a type like this: ``prop: n -> Type``"
+msgstr "其中 prop 是表示性质的纯函数。在下方示例中，prop 是某个变量上的表达式，类型类似于：``prop: n -> Type``"
+
+#: ../source/proofs/propositional.rst:51 7e27a5e740cc4c6bb2a19375e3a09182
+msgid "So if ``n`` is a natural number variable then ``prop`` could be something like ``\\n => 2*n + 3``."
+msgstr "因此，如果 ``n`` 是一个自然数变量，那么 ``prop`` 可以是类似 ``\\n => 2*n + 3`` 的表达式。"
+
+#: ../source/proofs/propositional.rst:54 f200c4c239ca4c7fa05db68bf58246af
+msgid "To use this in our proofs there is the following function in the prelude:"
+msgstr "要在我们的证明中使用这一点，prelude（前置库）中提供了如下函数："
+
+#: ../source/proofs/propositional.rst:62 47c95e3da9b148308b5f4cd331464ef6
+msgid "If we supply an equality (x=y) and a proof of a property of x (``prop x``) then we get a proof of a property of y (``prop y``). So, in the following example, if we supply ``p1 x`` which is a proof that ``x=2`` and the equality ``x=y`` then we get a proof that ``y=2``."
+msgstr "如果我们给出一个等式（x=y）以及 x 的某个性质的证明（``prop x``），那么就能得到 y 的该性质的证明（``prop y``）。因此，在下例中，如果我们提供 ``p1 x``（即 ``x=2`` 的证明）和等式 ``x=y``，就能得到 ``y=2`` 的证明。"
+
+#: ../source/proofs/propositional.rst:76 7b91beb1201143df97bdf96a33309dfd
+msgid "Rewrite"
+msgstr "重写（Rewrite）"
+
+#: ../source/proofs/propositional.rst:78 f829bf7527154f5aa02b7943568f8764
+msgid "In practice, ``replace`` can be a little tricky to use because in general the implicit argument ``prop`` can be hard to infer for the machine, so Idris provides a high level syntax which calculates the property and applies ``replace``."
+msgstr "在实际使用中，``replace`` 有时较难使用，因为通常隐式参数 ``prop`` 对机器来说难以推断。因此 Idris 提供了高级语法，能够自动计算性质并应用 ``replace``。"
+
+#: ../source/proofs/propositional.rst:83 87af375fdc21448b939a2b9f76acefb0
+msgid "Example: again we supply ``p1 x`` which is a proof that ``x=2`` and the equality ``y=x`` then we get a proof that ``y=2``."
+msgstr "示例：同样地，如果我们提供 ``p1 x``（即 ``x=2`` 的证明）和等式 ``y=x``，就能得到 ``y=2`` 的证明。"
+
+#: ../source/proofs/propositional.rst:94 5414f98cc76b458f8d3c2cde56969457
+msgid "We can think of ``rewrite`` as working in this way:"
+msgstr "我们可以这样理解 ``rewrite`` 的工作方式："
+
+#: ../source/proofs/propositional.rst:96 068a7eba1168400b9eae443c696a7cf4
+msgid "Start with a equation ``x=y`` and a property ``prop : x -> Type``"
+msgstr "以等式 ``x=y`` 和性质 ``prop : x -> Type`` 开始"
+
+#: ../source/proofs/propositional.rst:97 b6f96e73257b463ea209b26cad1b4908
+msgid "Search for ``x`` in ``prop``"
+msgstr "在 ``prop`` 中查找 ``x``"
+
+#: ../source/proofs/propositional.rst:98 5efa11c91c4f46cd843b873d03fc6edf
+msgid "Replaces all occurrences of ``x`` with ``y`` in ``prop``."
+msgstr "将 ``prop`` 中所有出现的 ``x`` 替换为 ``y``。"
+
+#: ../source/proofs/propositional.rst:100 297ba5f07a2c4f6ebb167d1e62129fb0
+msgid "That is, we are doing a substitution."
+msgstr "也就是说，我们在做替换操作。"
+
+#: ../source/proofs/propositional.rst:102 22c216e1896144c7af0e5e395e617d3d
+msgid "Notice that here we need to supply reverse equality, i.e. ``y=x`` instead of ``x=y``. This is because ``rewrite`` performs the substitution of left part of equality to the right part and this substitution is done in the *return type*. Thus, here in the return type ``y=2`` we need to apply ``y=x`` in order to match the type of the argument ``x=2``."
+msgstr "注意，这里我们需要提供反向等式，即 ``y=x`` 而不是 ``x=y``。这是因为 ``rewrite`` 会将等式左边替换为右边，并且这种替换发生在*返回类型*中。因此，在返回类型 ``y=2`` 中，我们需要应用 ``y=x``，以便与参数 ``x=2`` 的类型匹配。"
+
+#: ../source/proofs/propositional.rst:108 57045770e4444accbaf53b499bc58bfb
+msgid "Symmetry and Transitivity"
+msgstr "对称性与传递性（Symmetry and Transitivity）"
+
+#: ../source/proofs/propositional.rst:110 675b970ba29f4f4f9e81d19b1659b4e9
+msgid "In addition to 'reflexivity' equality also obeys 'symmetry' and 'transitivity' and these are also included in the prelude:"
+msgstr "除了\"自反性（reflexivity）\"，等式还遵循\"对称性（symmetry）\"和\"传递性（transitivity）\"，这些也包含在 prelude 中："
+
+#: ../source/proofs/propositional.rst:124 bca8264236c148f5a438bce0ee0c3538
+msgid "Heterogeneous Equality"
+msgstr "异类等式（Heterogeneous Equality）"
+
+#: ../source/proofs/propositional.rst:126 94f5b164456048d7be285f89cf122b6e
+msgid "Also included in the prelude:"
+msgstr "prelude 中同样包含："

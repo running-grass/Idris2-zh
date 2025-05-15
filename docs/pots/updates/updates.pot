@@ -1,0 +1,752 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2023, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-16 09:52+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../source/updates/updates.rst:5
+#: 5745e8c00d90402391590e8097241282
+msgid "Changes since Idris 1"
+msgstr ""
+
+#: ../source/updates/updates.rst:7
+#: 79d290a33fbc49008ba893dccb15c521
+msgid "Idris 2 is mostly backwards compatible with Idris 1, with some minor exceptions. This document describes the changes, approximately in order of likelihood of encountering them in practice. New features are described at the end, in Section :ref:`sect-new-features`."
+msgstr ""
+
+#: ../source/updates/updates.rst:12
+#: 447c87b8c8fa493bb25cc36f7e0a3797
+msgid "The Section :ref:`typedd-index` describes how these changes affect the code in the book `Type-Driven Development with Idris <https://www.manning.com/books/type-driven-development-with-idris>`_ by Edwin Brady, available from `Manning <https://www.manning.com>`_."
+msgstr ""
+
+#: ../source/updates/updates.rst:17
+#: a6c83129fbd24ec8869cf44cf0a9af32
+msgid "The documentation for Idris has been published under the Creative Commons CC0 License. As such to the extent possible under law, *The Idris Community* has waived all copyright and related or neighboring rights to Documentation for Idris."
+msgstr ""
+
+#: ../source/updates/updates.rst:22
+#: 9743ed3181a140418523b56df3cc744d
+msgid "More information concerning the CC0 can be found online at: http://creativecommons.org/publicdomain/zero/1.0/"
+msgstr ""
+
+#: ../source/updates/updates.rst:25
+#: 72f4a852c53a4cf58b510a48c4316f19
+msgid "New Core Language: Quantities in Types"
+msgstr ""
+
+#: ../source/updates/updates.rst:27
+#: ada125c2f65d4ffbb8f096cf64e5b30b
+msgid "Idris 2 is based on `Quantitative Type Theory (QTT) <https://bentnib.org/quantitative-type-theory.html>`_, a core language developed by Bob Atkey and Conor McBride. In practice, this means that every variable in Idris 2 has a *quantity* associated with it. A quantity is one of:"
+msgstr ""
+
+#: ../source/updates/updates.rst:32
+#: 0d43f5bea4f94b76a95a25db135eb9fd
+msgid "``0``, meaning that the variable is *erased* at run time"
+msgstr ""
+
+#: ../source/updates/updates.rst:33
+#: e5306da27fac424d966e5113461c3541
+msgid "``1``, meaning that the variable is used *exactly once* at run time"
+msgstr ""
+
+#: ../source/updates/updates.rst:34
+#: 0d7e8b5d725a44c4b3512db280517b36
+msgid "*Unrestricted*, which is the same behaviour as Idris 1"
+msgstr ""
+
+#: ../source/updates/updates.rst:36
+#: df4ffd82978e458cb7addf103e371f92
+msgid "For more details on this, see Section :ref:`sect-multiplicities`. In practice, this might cause some Idris 1 programs not to type check in Idris 2 due to attempting to use an argument which is erased at run time."
+msgstr ""
+
+#: ../source/updates/updates.rst:41
+#: dc85eea4ee1041eba0ac38e6ed6215c5
+msgid "Erasure"
+msgstr ""
+
+#: ../source/updates/updates.rst:43
+#: 0344132d275c415c97592e90114370c9
+msgid "In Idris, names which begin with a lower case letter are automatically bound as implicit arguments in types, for example in the following skeleton definition, ``n``, ``a`` and ``m`` are implicitly bound:"
+msgstr ""
+
+#: ../source/updates/updates.rst:52
+#: d22ed084a57f4cd1a5287f77a39f4874
+msgid "One of the difficulties in compiling a dependently typed programming language is deciding which arguments are used at run time and which can safely be erased. More importantly, it's one of the difficulties when programming: how can a programmer *know* when an argument will be erased?"
+msgstr ""
+
+#: ../source/updates/updates.rst:57
+#: d9153291f1d3443188e7fb5268e30cb7
+msgid "In Idris 2, a variable's quantity tells us whether it will be available at run time or not. We can see the quantities of the variables in scope in ``append_rhs`` by inspecting the hole at the REPL:"
+msgstr ""
+
+#: ../source/updates/updates.rst:72
+#: 41944ad04d224ff19c4861068b52729d
+msgid "The ``0`` next to ``m``, ``a`` and ``n`` mean that they are in scope, but there will be ``0`` occurrences at run-time. That is, it is *guaranteed* that they will be erased at run-time."
+msgstr ""
+
+#: ../source/updates/updates.rst:76
+#: b1784a2b27dd4678a537edc8e4aefac4
+msgid "This does lead to some potential difficulties when converting Idris 1 programs, if you are using implicit arguments at run time.  For example, in Idris 1 you can get the length of a vector as follows:"
+msgstr ""
+
+#: ../source/updates/updates.rst:85
+#: a14dd311bc3b4adf8061c32bf2253d53
+msgid "This might seem like a good idea, since it runs in constant time and takes advantage of the type level information, but the trade off is that ``n`` has to be available at run time, so at run time we always need the length of the vector to be available if we ever call ``vlen``. Idris 1 can infer whether the length is needed, but there's no easy way for a programmer to be sure."
+msgstr ""
+
+#: ../source/updates/updates.rst:91
+#: c81a8add12e0457f897731f13405a3f9
+msgid "In Idris 2, we need to state explicitly that ``n`` is needed at run time"
+msgstr ""
+
+#: ../source/updates/updates.rst:98
+#: 1af01e5b10f14480b3b772f9c5d9f2fd
+msgid "(Incidentally, also note that in Idris 2, names bound in types are also available in the definition without explicitly rebinding them.)"
+msgstr ""
+
+#: ../source/updates/updates.rst:101
+#: e66eaaef1ad64ac388353810b7332a9c
+msgid "This also means that when you call ``vlen``, you need the length available. For example, this will give an error"
+msgstr ""
+
+#: ../source/updates/updates.rst:109
+#: 8dff85698550490f9797203940f94b11
+msgid "Idris 2 reports::"
+msgstr ""
+
+#: ../source/updates/updates.rst:114
+#: 7d3371dc41b54236a3b332e86ff06e25
+msgid "This means that it needs to use ``m`` as an argument to pass to ``vlen xs``, where it needs to be available at run time, but ``m`` is not available in ``sumLengths`` because it has multiplicity ``0``."
+msgstr ""
+
+#: ../source/updates/updates.rst:118
+#: 3937791afbc5448b892f7ae23b12af84
+msgid "We can see this more clearly by replacing the right hand side of ``sumLengths`` with a hole..."
+msgstr ""
+
+#: ../source/updates/updates.rst:126
+#: 6a60706e5aa942c486f589e62e51aae1
+msgid "...then checking the hole's type at the REPL::"
+msgstr ""
+
+#: ../source/updates/updates.rst:137
+#: 2dfb2e9a6ccf410aaf42e5534aafea97
+msgid "Instead, we need to give bindings for ``m`` and ``n`` with unrestricted multiplicity"
+msgstr ""
+
+#: ../source/updates/updates.rst:145
+#: 94a20353c176488fbe0f2c4e8d5fbb87
+msgid "Remember that giving no multiplicity on a binder, as with ``m`` and ``n`` here, means that the variable has unrestricted usage."
+msgstr ""
+
+#: ../source/updates/updates.rst:148
+#: f7ce9cd7eda6410ea0264efb3194c5e4
+msgid "If you're converting Idris 1 programs to work with Idris 2, this is probably the biggest thing you need to think about. It is important to note, though, that if you have bound implicits, such as..."
+msgstr ""
+
+#: ../source/updates/updates.rst:156
+#: 38cef02be9d846f2b50d6fc3ef31a189
+msgid "...then it's a good idea to make sure ``t`` really is needed, or performance might suffer due to the run time building the instance of ``t`` unnecessarily!"
+msgstr ""
+
+#: ../source/updates/updates.rst:159
+#: 12e23961d34a4ce3b58d7cb5fae7cb60
+msgid "One final note on erasure: it is an error to try to pattern match on an argument with multiplicity ``0``, unless its value is inferrable from elsewhere. So, the following definition is rejected"
+msgstr ""
+
+#: ../source/updates/updates.rst:169
+#: dbe154f17dbc447c963d88916fa33d40
+msgid "This is rejected with the error::"
+msgstr ""
+
+#: ../source/updates/updates.rst:174
+#: 957c69a7e0994a3e9437440006488b31
+msgid "The following, however, is fine, because in ``sNot``, even though we appear to match on the erased argument ``x``, its value is uniquely inferrable from the type of the second argument"
+msgstr ""
+
+#: ../source/updates/updates.rst:188
+#: ba8eb27f16894a15b79671d89f39064a
+msgid "Experience with Idris 2 so far suggests that, most of the time, as long as you're using unbound implicits in your Idris 1 programs, they will work without much modification in Idris 2. The Idris 2 type checker will point out where you require an unbound implicit argument at run time - sometimes this is both surprising and enlightening!"
+msgstr ""
+
+#: ../source/updates/updates.rst:196
+#: cf03fe69bceb4632ad8ae02912a28e58
+msgid "Linearity"
+msgstr ""
+
+#: ../source/updates/updates.rst:198
+#: 8ed71b17b2ed4d5fa4c8f3a2aab6eed4
+msgid "Full details on linear arguments with multiplicity ``1`` are given in Section :ref:`sect-multiplicities`. In brief, the intuition behind multiplicity ``1`` is that if we have a function with a type of the following form..."
+msgstr ""
+
+#: ../source/updates/updates.rst:206
+#: 74cda4527cfc4bbcb19294591f9e2bc5
+msgid "...then the guarantee given by the type system is that *if* ``f x`` *is used exactly once, then* ``x`` *is used exactly once* in the process."
+msgstr ""
+
+#: ../source/updates/updates.rst:210
+#: 09eb3b5252714d90b1b79b32ba22e587
+msgid "Prelude and ``base`` libraries"
+msgstr ""
+
+#: ../source/updates/updates.rst:212
+#: 9794edc00bd44241897e25c0897d4057
+msgid "The Prelude in Idris 1 contained a lot of definitions, many of them rarely necessary. The philosophy in Idris 2 is different. The (rather vaguely specified) rule of thumb is that it should contain the basic functions required by almost any non-trivial program."
+msgstr ""
+
+#: ../source/updates/updates.rst:217
+#: 421f0d7d4507433ebd18bf49700da60d
+msgid "This is a vague specification since different programmers will consider different things absolutely necessary, but the result is that it contains:"
+msgstr ""
+
+#: ../source/updates/updates.rst:220
+#: 86bbe8df82704e36bf5de9ca791d16a4
+msgid "Anything the elaborator can desugar to (e.g. tuples, ``()``, ``=``)"
+msgstr ""
+
+#: ../source/updates/updates.rst:221
+#: 8d36292bc60f44e6a5c69ac367b9d803
+msgid "Basic types ``Bool``, ``Nat``, ``List``, ``Stream``, ``Dec``, ``Maybe``, ``Either``"
+msgstr ""
+
+#: ../source/updates/updates.rst:223
+#: 92f1e145166c4308849e65898df67afa
+msgid "The most important utility functions: ``id``, ``the``, composition, etc"
+msgstr ""
+
+#: ../source/updates/updates.rst:224
+#: 780a16e3ad234a9c8d9130a1244e563e
+msgid "Interfaces for arithmetic and implementations for the primitives and basic types"
+msgstr ""
+
+#: ../source/updates/updates.rst:226
+#: a1b9d18fff2b496287059c6a9b1aeb1c
+msgid "Basic ``Char`` and ``String`` manipulation"
+msgstr ""
+
+#: ../source/updates/updates.rst:227
+#: 091d2866cc84423b8909f8e314062ca5
+msgid "``Show``, ``Eq``, ``Ord``, and implementations for all types in the prelude"
+msgstr ""
+
+#: ../source/updates/updates.rst:228
+#: edc3b4c383354359a7b67cafc32ba7d7
+msgid "Interfaces and functions for basic proof (``cong``, ``Uninhabited``, etc)"
+msgstr ""
+
+#: ../source/updates/updates.rst:229
+#: 38fe455fdc4447e6b4932c3fdebee174
+msgid "``Semigroup``, ``Monoid``"
+msgstr ""
+
+#: ../source/updates/updates.rst:230
+#: 360005d9773b44c6b2138c962420dcc7
+msgid "``Functor``, ``Applicative``, ``Monad`` and related functions"
+msgstr ""
+
+#: ../source/updates/updates.rst:231
+#: 79781ca181df45a88aa4558ea6c2dc98
+msgid "``Foldable``, ``Alternative`` and ``Traversable``"
+msgstr ""
+
+#: ../source/updates/updates.rst:232
+#: 696a3a10fb7042fe83950c115ba000f9
+msgid "``Range``, for list range syntax"
+msgstr ""
+
+#: ../source/updates/updates.rst:233
+#: 49625de95bb74b77bb41e834980d3562
+msgid "Console ``IO``"
+msgstr ""
+
+#: ../source/updates/updates.rst:235
+#: f77321e97cab4047bcfe411c78fdf5ec
+msgid "Anything which doesn't fit in here has been moved to the ``base`` libraries. Among other places, you can find some of the functions which used to be in the prelude in:"
+msgstr ""
+
+#: ../source/updates/updates.rst:239
+#: 43a0e56c05aa45c8b646e160718b257a
+msgid "``Data.List`` and ``Data.Nat``"
+msgstr ""
+
+#: ../source/updates/updates.rst:240
+#: 0f2444cd4e6e4a1d9e4958d5a051e10d
+msgid "``Data.Maybe`` and ``Data.Either``"
+msgstr ""
+
+#: ../source/updates/updates.rst:241
+#: 0855df9b5bb448b18493a929fc3298be
+msgid "``System.File`` and ``System.Directory``, (file management was previously part of the prelude)"
+msgstr ""
+
+#: ../source/updates/updates.rst:243
+#: 2a30ea78e9324cc790867023f6b3fdca
+msgid "``Decidable.Equality``"
+msgstr ""
+
+#: ../source/updates/updates.rst:246
+#: 87c170126ce84983b5b38470548608e4
+msgid "Smaller Changes"
+msgstr ""
+
+#: ../source/updates/updates.rst:251
+#: 8fa8db9087044ab7973ee9c2603e31c3
+msgid "Ambiguous Name Resolution"
+msgstr ""
+
+#: ../source/updates/updates.rst:253
+#: 8c07b0571c884197b6bbda75ecc414be
+msgid "Idris 1 worked very hard to resolve ambiguous names, by type, even if this involved some complicated interaction with interface resolution. This could sometimes be the cause of long type checking times. Idris 2 simplifies this, at the cost of sometimes requiring more programmer annotations on ambiguous names."
+msgstr ""
+
+#: ../source/updates/updates.rst:259
+#: 8921441bfd704ff5a30c965c86130400
+msgid "As a general rule, Idris 2 will be able to disambiguate between names which have different concrete return types (such as data constructors), or which have different concrete argument types (such as record projections). It may struggle to resolve ambiguities if one name requires an interface to be resolved. It will postpone resolution if a name can't be resolved immediately, but unlike Idris 1, it won't attempt significant backtracking. If you have deeply nested ambiguous names (beyond a small threshold, default 3) Idris 2 will report an error.  You can change this threshold with a directive, for example:"
+msgstr ""
+
+#: ../source/updates/updates.rst:272
+#: 052c01cda45740c7b914f82a23a27663
+msgid "However, in such circumstances it is almost certainly a better idea to disambiguate explicitly."
+msgstr ""
+
+#: ../source/updates/updates.rst:275
+#: ee012c0d61c64d33a03e5b6b165ab47f
+msgid "Indeed in general, if you get an ambiguous name error, the best approach is to give the namespace explicitly. You can also rebind names locally:"
+msgstr ""
+
+#: ../source/updates/updates.rst:283
+#: ada96b8df8e8429ebbf6047b98eef733
+msgid "One difficulty which remains is resolving ambiguous names where one possibility is an interface method, and another is a concrete top level function. For example, we may have:"
+msgstr ""
+
+#: ../source/updates/updates.rst:292
+#: 9347da06c68146e7905f467a075049a1
+msgid "As a pragmatic choice, if type checking in a context where the more concrete name is valid (``LinearIO.(>>=)`` here, so if type checking an expression known to have type ``IO t`` for some ``t``), the more concrete name will be chosen."
+msgstr ""
+
+#: ../source/updates/updates.rst:296
+#: 1d32138516a64b7d86d9e742d77faa21
+msgid "This is somehow unsatisfying, so we may revisit this in future!"
+msgstr ""
+
+#: ../source/updates/updates.rst:299
+#: d1eebbef4b1647fda4a871582c5996d1
+msgid "Modules, namespaces and export"
+msgstr ""
+
+#: ../source/updates/updates.rst:301
+#: f02d55d6a3ca40a485064b5c4cd2265a
+msgid "The visibility rules, as controlled by the ``private``, ``export`` and ``public export`` modifiers, now refer to the visibility of names from other *namespaces*, rather than other *files*."
+msgstr ""
+
+#: ../source/updates/updates.rst:305
+#: c17d9c5994864069abb88a465b378f79
+msgid "So if you have the following, all in the same file..."
+msgstr ""
+
+#: ../source/updates/updates.rst:323
+#: 3ace5df49bae4b2fa12a757f1bc7fad7
+msgid "...then ``bVisible`` can access ``aVisible``, but not ``aHidden``."
+msgstr ""
+
+#: ../source/updates/updates.rst:325
+#: 7ea7d6db068a45668539b1c8a3081143
+msgid "Records are, as before, defined in their own namespace, but fields are always visible from the parent namespace."
+msgstr ""
+
+#: ../source/updates/updates.rst:328
+#: 730dbbab294c4eebbbbf94b59fa99d67
+msgid "Also, module names must now match the filename in which they're defined, with the exception of the module ``Main``, which can be defined in a file with any name."
+msgstr ""
+
+#: ../source/updates/updates.rst:333
+#: 259f818733a548f587a81dad818479eb
+msgid "``%language`` pragmas"
+msgstr ""
+
+#: ../source/updates/updates.rst:335
+#: 91b0b7a47e884eae9a6a33baddb21939
+msgid "There are several ``%language`` pragmas in Idris 1, which define various experimental extensions. None of these are available in Idris 2, although extensions may be defined in the future."
+msgstr ""
+
+#: ../source/updates/updates.rst:339
+#: f18f58b973b044ef9b40e8fbbbf122a6
+msgid "Also removed was the ``%access`` pragma for default visibility, use visibility modifiers on each declaration instead."
+msgstr ""
+
+#: ../source/updates/updates.rst:343
+#: f4f8269283bd44bbb5630df83799694e
+msgid "``let`` bindings"
+msgstr ""
+
+#: ../source/updates/updates.rst:345
+#: 8ba8cb2305df4733962b55e57be23d36
+msgid "``let`` bindings, i.e. expressions of the form ``let x = val in e`` have slightly different behaviour. Previously, you could rely on the computational behaviour of ``x`` in the scope of ``e``, so type checking could take into account that ``x`` reduces to ``val``. Unfortunately, this leads to complications with ``case`` and ``with`` clauses: if we want to preserve the computational behaviour, we would need to make significant changes to the way ``case`` and ``with`` are elaborated."
+msgstr ""
+
+#: ../source/updates/updates.rst:353
+#: 64d91c3c5c994285a9fd48f46c2762c7
+msgid "So, for simplicity and consistency (and, realistically, because I don't have enough time to resolve the problem for ``case`` and ``with``) the above expression ``let x = val in e`` is equivalent to ``(\\x => e) val``."
+msgstr ""
+
+#: ../source/updates/updates.rst:357
+#: 3e9113ac78824aed92d38c203ecb75ec
+msgid "So, ``let`` now effectively generalises a complex subexpression. If you do need the computational behaviour of a definition, it is now possible using local function definitions instead - see Section :ref:`sect-local-defs` below."
+msgstr ""
+
+#: ../source/updates/updates.rst:362
+#: 991c3e07efcc46f78bcd8b28fb7e9f78
+msgid "Also, an alternative syntax ``let x := val in e`` is available. See Section :ref:`sect-let-bindings` for more info."
+msgstr ""
+
+#: ../source/updates/updates.rst:368
+#: fda17747c2d845d2a68f32c5739e58e7
+msgid "``auto``-implicits and Interfaces"
+msgstr ""
+
+#: ../source/updates/updates.rst:370
+#: ed40d086726f484e91d35c900ab708de
+msgid "Interfaces and ``auto``-implicit arguments are similar, in that they invoke an expression search mechanism to find the value of an argument. In Idris 1, they were implemented separately, but in Idris 2, they use the same mechanism. Consider the following *total* definition of ``fromMaybe``:"
+msgstr ""
+
+#: ../source/updates/updates.rst:383
+#: afb87879427e4f75921b70c489a0bb39
+msgid "Since interface resolution and ``auto``-implicits are now the same thing, the type of ``fromMaybe`` can be written as:"
+msgstr ""
+
+#: ../source/updates/updates.rst:390
+#: cd705542840943879e50d6e26e92dbbf
+msgid "So now, the constraint arrow ``=>`` means that the argument will be found by ``auto``-implicit search."
+msgstr ""
+
+#: ../source/updates/updates.rst:393
+#: 80e24b0698254cedb2748e9793eb6d83
+msgid "When defining a ``data`` type, there are ways to control how ``auto``-implicit search will proceed, by giving options to the data type. For example:"
+msgstr ""
+
+#: ../source/updates/updates.rst:403
+#: 712916a499804857a8abbf47d9137e45
+msgid "The ``search x`` option means that ``auto``-implicit search for a value of type ``Elem t ts`` will start as soon as the type checker has resolved the value ``t``, even if ``ts`` is still unknown."
+msgstr ""
+
+#: ../source/updates/updates.rst:407
+#: a38de6f9005844de854a97f11506f8ef
+msgid "By default, ``auto``-implicit search uses the constructors of a data type as search hints. The ``noHints`` option on a data type turns this behaviour off."
+msgstr ""
+
+#: ../source/updates/updates.rst:411
+#: 071ed52e4d1a406cae95d5b59ff1dc8c
+msgid "You can add your own search hints with the ``%hint`` option on a function. For example:"
+msgstr ""
+
+#: ../source/updates/updates.rst:427
+#: 026bf6aac1b54a1381ff7ea62eef31ee
+msgid "In this case, searching for ``MyShow Bool`` will find ``showBool``, as we can see if we try evaluating ``myShow True`` at the REPL:"
+msgstr ""
+
+#: ../source/updates/updates.rst:435
+#: ad1d6ad767ec43bca990e2f20be69820
+msgid "In fact, this is how interfaces are elaborated. However, ``%hint`` should be used with care. Too many hints can lead to a large search space!"
+msgstr ""
+
+#: ../source/updates/updates.rst:439
+#: b7bb06e8ed224b7d804e8119527e95d6
+msgid "Record fields"
+msgstr ""
+
+#: ../source/updates/updates.rst:441
+#: 79aee1b7870340389d6b66daabc99958
+msgid "Record fields can now be accessed via a ``.``. For example, if you have:"
+msgstr ""
+
+#: ../source/updates/updates.rst:450
+#: e94d6df7709f4126ad49cecfdef40508
+msgid "and you have a record ``fred : Person``, then you can use ``fred.firstName`` to access the ``firstName`` field."
+msgstr ""
+
+#: ../source/updates/updates.rst:454
+#: 270582971a3543e8ae90db561714f734
+msgid "Totality and Coverage"
+msgstr ""
+
+#: ../source/updates/updates.rst:456
+#: 8e515e9de17b4e51bad3b478feb5eafa
+msgid "``%default covering`` is now the default status, so all functions must cover all their inputs unless stated otherwise with a ``partial`` annotation, or switching to ``%default partial`` (which is not recommended - use a ``partial`` annotation instead to have the smallest possible place where functions are partial)."
+msgstr ""
+
+#: ../source/updates/updates.rst:465
+#: 7874f935320543f9b04da83e06806f92
+msgid "Build artefacts"
+msgstr ""
+
+#: ../source/updates/updates.rst:467
+#: 9455a37700534f958f38e92c3b551664
+msgid "This is not really a language change, but a change in the way Idris saves checked files, and still useful to know. All checked modules are now saved in a directory ``build/ttc``, in the root of the source tree, with the directory structure following the directory structure of the source.  Executables are placed in ``build/exec``."
+msgstr ""
+
+#: ../source/updates/updates.rst:474
+#: 1f963eefd9324f52b903d8fec7772fc0
+msgid "Packages"
+msgstr ""
+
+#: ../source/updates/updates.rst:476
+#: 63223da0c7fb421c92df3dced80964cf
+msgid "Dependencies on other packages are now indicated with the ``depends`` field, the ``pkgs`` field is no longer recognized. Also, fields with URLS or other string data (other than module or package names), must be enclosed in double quotes. For example:"
+msgstr ""
+
+#: ../source/updates/updates.rst:504
+#: 4e976917f035494f81084343e1f9fef8
+msgid "New features"
+msgstr ""
+
+#: ../source/updates/updates.rst:506
+#: a092f0e3cbd741b587ff09568fe76ad6
+msgid "As well as the change to the core language to use quantitative type theory, described above, there are several other new features."
+msgstr ""
+
+#: ../source/updates/updates.rst:512
+#: 2e88797db348477a96278b369d06d5f3
+msgid "Local function definitions"
+msgstr ""
+
+#: ../source/updates/updates.rst:514
+#: 226a6acebcd9490f9a4e827e6b344548
+msgid "Functions can now be defined locally, using a ``let`` block. For example, ``greet`` in the following example, which is defined in the scope of a local variable ``x``:"
+msgstr ""
+
+#: ../source/updates/updates.rst:529
+#: e34f4f5bc88e41baa9e7374370389943
+msgid "These ``let`` blocks can be used anywhere (in the middle of ``do`` blocks as above, but also in any function, or in type declarations). ``where`` blocks are now elaborated by translation into a local ``let``."
+msgstr ""
+
+#: ../source/updates/updates.rst:533
+#: ef7940a92c7049f6829a3516c6b418d6
+msgid "However, Idris no longer attempts to infer types for functions defined in ``where`` blocks, because this was fragile. This may be reinstated, if we can come up with a good, predictable approach."
+msgstr ""
+
+#: ../source/updates/updates.rst:538
+#: a38b653ffa6c46b3967a813805f01cd7
+msgid "Scope of implicit arguments"
+msgstr ""
+
+#: ../source/updates/updates.rst:540
+#: 28e7960b43214d6f9bf07f800ad959be
+msgid "Implicit arguments in a type are now in scope in the body of a definition. We've already seen this above, where ``n`` is in scope automatically in the body of ``vlen``:"
+msgstr ""
+
+#: ../source/updates/updates.rst:549
+#: 3128ec093247425b83b8f9f469ca7be5
+msgid "This is important to remember when using ``where`` blocks, or local definitions, since the names in scope will also be in scope when declaring the *type* of the local definition. For example, the following definition, where we attempt to define our own version of ``Show`` for ``Vect``, will fail to type check:"
+msgstr ""
+
+#: ../source/updates/updates.rst:564
+#: 34ca14e99f5541ef8ee6824d091adce4
+msgid "This fails because ``n`` is in scope already, from the type of ``showVect``, in the type declaration for ``showBody``, and so the first clause ``showBody []`` will fail to type check because ``[]`` has length ``Z``, not ``n``. We can fix this by locally binding ``n``:"
+msgstr ""
+
+#: ../source/updates/updates.rst:577
+#: 0d69037e727d4755bb72ed54f6227d6c
+msgid "Or, alternatively, using a new name:"
+msgstr ""
+
+#: ../source/updates/updates.rst:587
+#: 6c74e6aebcd14a79970d6e71576fc0ba
+msgid "Idris 1 took a different approach here: names which were parameters to data types were in scope, other names were not. The Idris 2 approach is, we hope, more consistent and easier to understand."
+msgstr ""
+
+#: ../source/updates/updates.rst:594
+#: b29abdd8dfe04df69fca6f82432c1052
+msgid "Function application syntax additions"
+msgstr ""
+
+#: ../source/updates/updates.rst:596
+#: 2561d9fd3a944a73bfa14d54e5979b6d
+msgid "From now on you can utilise the new syntax of function applications:"
+msgstr ""
+
+#: ../source/updates/updates.rst:602
+#: 44c3094b348b4924a4c508062d52c6a7
+msgid "There are three additions here:"
+msgstr ""
+
+#: ../source/updates/updates.rst:604
+#: 1c488992994a4b2dafa2a201695fac39
+msgid "More than one argument can be written in braces, separated with commas:"
+msgstr ""
+
+#: ../source/updates/updates.rst:628
+#: e102e5376cd842dd85e8835121dc24d6
+msgid "Arguments in braces can now correspond to explicit, implicit and auto implicit dependent function types (``Pi`` types), provided the domain type is named:"
+msgstr ""
+
+#: ../source/updates/updates.rst:639
+#: 7906f55b144e49869dce5907b162dbd6
+msgid "Order of the arguments doesn't matter as long as they are in braces and the names are distinct. It is better to stick named arguments in braces at the end of your argument list, because regular unnamed explicit arguments are processed first and take priority:"
+msgstr ""
+
+#: ../source/updates/updates.rst:651
+#: 76644d5a2436426dbb4cae8b6e75cd4e
+msgid "This snippet won't type check, because \"b\" in ``badCall`` is passed first, although logically we want it to be second. Idris will tell you that it couldn't find a spot for ``a = \"a\"`` (because \"b\" took its place), so the application is ill-formed."
+msgstr ""
+
+#: ../source/updates/updates.rst:656
+#: 115ffcff3243403a8e590da098570aa8
+msgid "Thus if you want to use the new syntax, it is worth naming your ``Pi`` types."
+msgstr ""
+
+#: ../source/updates/updates.rst:658
+#: 1fe8f29cf2304d9f94f626a7a7b3af08
+msgid "Multiple explicit arguments can be \"skipped\" more easily with the following syntax:"
+msgstr ""
+
+#: ../source/updates/updates.rst:664
+#: 199e245a9c1f48e4a442b33ba45b40a4
+msgid "or"
+msgstr ""
+
+#: ../source/updates/updates.rst:670
+#: e7463796e4124b5092ac7afa1e7ad0b4
+msgid "in case none of the named arguments are wanted."
+msgstr ""
+
+#: ../source/updates/updates.rst:672
+#: 511e587dc7c14085936e5a0f08cc7334
+msgid "Examples:"
+msgstr ""
+
+#: ../source/updates/updates.rst:693
+#: 8d3f2300e8ec46789d92956e5d6593ec
+msgid "Last rule worth noting is the case of named applications with repeated argument names, e.g:"
+msgstr ""
+
+#: ../source/updates/updates.rst:707
+#: 988a30fb0bf944b6ba770ebb70597c77
+msgid "In this example the name ``x`` is given repeatedly to the ``Pi`` types of the data constructor ``MkWeirdPair``. In order to deconstruct the ``WeirdPair a b`` in ``weirdSnd``, while writing the left-hand side of the pattern-matching clause in a named manner (via the new syntax), we have to rename the first occurrence of ``x`` to any fresh name or the ``_`` as we did. Then the definition type checks normally."
+msgstr ""
+
+#: ../source/updates/updates.rst:712
+#: 5a64f759bfca48c9bfc6da6f57b4978b
+msgid "In general, duplicate names are bound sequentially on the left-hand side and must be renamed for the pattern expression to be valid."
+msgstr ""
+
+#: ../source/updates/updates.rst:714
+#: 9c06e62673ac4e8c814915affb465589
+msgid "The situation is similar on the right-hand side of pattern-matching clauses:"
+msgstr ""
+
+#: ../source/updates/updates.rst:731
+#: 11a38ce50a174fab9154dc2ebea2f24a
+msgid "Named arguments should be passed sequentially in the order they were defined in the ``Pi`` types, regardless of their (imp)explicitness."
+msgstr ""
+
+#: ../source/updates/updates.rst:735
+#: acb92d59a905458095db069266ec2942
+msgid "Better inference"
+msgstr ""
+
+#: ../source/updates/updates.rst:737
+#: b77d955c615245dd992e4a9ca3a4e8d0
+msgid "In Idris 1, holes (that is, unification variables arising from implicit arguments) were local to an expression, and if they were not resolved while checking the expression, they would not be resolved at all. In Idris 2, they are global, so inference works better. For example, we can now say:"
+msgstr ""
+
+#: ../source/updates/updates.rst:750
+#: 5d253808c0674041b72c4f16d920184f
+msgid "The ``?``, incidentally, differs from ``_`` in that ``_`` will be bound as an implicit argument if unresolved after checking the type of ``test``, but ``?`` will be left as a hole to be resolved later. Otherwise, they can be used interchangeably."
+msgstr ""
+
+#: ../source/updates/updates.rst:756
+#: b6b45a959b074b74a74972f03d57c939
+msgid "Dependent case"
+msgstr ""
+
+#: ../source/updates/updates.rst:758
+#: b87b90d76b3c4f1988c4ba918530d098
+msgid "``case`` blocks were available in Idris 1, but with some restrictions. Having better inference means that ``case`` blocks work more effectively in Idris 2, and dependent case analysis is supported."
+msgstr ""
+
+#: ../source/updates/updates.rst:770
+#: fe9846f274794ae2b501d38bb05cb220
+msgid "The implicit arguments and original values are still available in the body of the ``case``. Somewhat contrived, but the following is valid:"
+msgstr ""
+
+#: ../source/updates/updates.rst:783
+#: 5a57a2f6060b47539a548e53a59b4be6
+msgid "Record updates"
+msgstr ""
+
+#: ../source/updates/updates.rst:785
+#: 61fa87619dc04ff4a2d9d0e6ab9fae87
+msgid "Dependent record updates work, provided that all relevant fields are updated at the same time. Dependent record update is implemented via dependent ``case`` blocks rather than by generating a specific update function for each field as in Idris 1, so you will no longer get mystifying errors when trying to update dependent records!"
+msgstr ""
+
+#: ../source/updates/updates.rst:791
+#: f5c125ed095748b6a4925261cc21d3b0
+msgid "For example, we can wrap a vector in a record, with an explicit length field:"
+msgstr ""
+
+#: ../source/updates/updates.rst:802
+#: db64f1bd03844f37962ed3c6e0327e28
+msgid "Then, we can safely update the ``content``, provided we update the ``length`` correspondingly:"
+msgstr ""
+
+#: ../source/updates/updates.rst:811
+#: 3b7fd30d5dd842ca92fb4a4d7943d3c9
+msgid "Another novelty - new update syntax (previous one still functional):"
+msgstr ""
+
+#: ../source/updates/updates.rst:825
+#: d20f7da3cb66451a8a3cc27bbe03a6af
+msgid "The ``record`` keyword has been discarded for brevity, symbol ``:=`` replaces ``=`` in order to not introduce any ambiguity."
+msgstr ""
+
+#: ../source/updates/updates.rst:829
+#: df78c1a84fa04111a4afe602437de088
+msgid "Generate definition"
+msgstr ""
+
+#: ../source/updates/updates.rst:831
+#: 827cd2093e194278bdd089620530851f
+msgid "A new feature of the IDE protocol supports generating complete definitions from a type signature. You can try this at the REPL, for example, given our favourite introductory example..."
+msgstr ""
+
+#: ../source/updates/updates.rst:839
+#: baffbbf1bbb44c759cbb842341e8edab
+msgid "...assuming this is defined on line 3, you can use the ``:gd`` command as follows:"
+msgstr ""
+
+#: ../source/updates/updates.rst:848
+#: fb9aafd52db1443e98c387265c8afc59
+msgid "This works by a fairly simple brute force search, which tries searching for a valid right hand side, and case splitting on the left if that fails, but is remarkably effective in a lot of situations. Some other examples which work:"
+msgstr ""
+
+#: ../source/updates/updates.rst:861
+#: d05f409a72654804b89d916c80ab038f
+msgid "This is available in the IDE protocol via the ``generate-def`` command."
+msgstr ""
+
+#: ../source/updates/updates.rst:864
+#: 9ae85467d1854712b5ed33a017d50e03
+msgid "Chez Scheme target"
+msgstr ""
+
+#: ../source/updates/updates.rst:866
+#: aedc59c0e11f46fba1579e1a35a3242a
+msgid "The default code generator is, for the moment, `Chez Scheme <https://www.scheme.com/>`_. Racket and Gambit code generators are also available.  Like Idris 1, Idris 2 `supports plug-in code generation <https://idris2.readthedocs.io/en/latest/backends/custom.html>`_ to allow you to write a back end for the platform of your choice. To change the code generator, you can use the ``:set cg`` command:"
+msgstr ""
+
+#: ../source/updates/updates.rst:877
+#: 34e9b27a112741e49591be0f8ba58d00
+msgid "Early experience shows that both are much faster than the Idris 1 C code generator, in both compile time and execution time (but we haven't done any formal study on this yet, so it's just anecdotal evidence)."
+msgstr ""

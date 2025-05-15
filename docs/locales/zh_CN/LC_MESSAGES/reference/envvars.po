@@ -1,0 +1,175 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2023, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-16 09:52+0800\n"
+"PO-Revision-Date: 2022-09-03 13:48+0000\n"
+"Last-Translator: grass <hi@grass.show>\n"
+"Language-Team: Chinese (Simplified) <>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../source/reference/envvars.rst:5 2a201c4399234115bf0bcdf1547d1b35
+msgid "Environment Variables"
+msgstr "环境变量（Environment Variables）"
+
+#: ../source/reference/envvars.rst:7 2e546d8218c44878be2cb3e032557b34
+msgid ""
+"Idris 2 recognises a number of environment variables, to decide where to "
+"look for packages, external libraries, code generators, etc. It currently"
+" recognises, in approximately the order you're likely to need them:"
+msgstr "Idris 2 支持多种环境变量，用于决定查找包、外部库、代码生成器等的位置。以下按常用顺序列出当前支持的环境变量："
+
+#: ../source/reference/envvars.rst:12 357d87f090934811b5db1701ffaac8a1
+msgid "Build-time"
+msgstr "构建时（Build-time）"
+
+#: ../source/reference/envvars.rst:14 99ae373608dd43039345adcf1375bcb5
+msgid "``PREFIX`` - Default way to set the Idris2 installation prefix."
+msgstr "``PREFIX`` - 设置 Idris2 安装前缀的默认方式。"
+
+#: ../source/reference/envvars.rst:15 10836ca09d9243beae4fa4f34fd4c39d
+msgid "``IDRIS2_PREFIX`` - Alternative way to set the Idris2 installation prefix."
+msgstr "``IDRIS2_PREFIX`` - 设置 Idris2 安装前缀的另一种方式。"
+
+#: ../source/reference/envvars.rst:18 f2ef18f7a8934b6d832709618046b7dd
+msgid "Runtime"
+msgstr "运行时（Runtime）"
+
+#: ../source/reference/envvars.rst:20 9b60149616304b6a9a1c23adf1e22dbf
+msgid "``EDITOR`` - Editor used in REPL ``:e`` command."
+msgstr "``EDITOR`` - REPL 中 ``:e`` 命令使用的编辑器。"
+
+#: ../source/reference/envvars.rst:23 8ede4c614e014d259b6b998267fd4233
+msgid "Both"
+msgstr "两者皆有（Both）"
+
+#: ../source/reference/envvars.rst:25 ae058d2835f643b391f008e832a400fa
+msgid "``IDRIS2_CG`` - Codegen backend."
+msgstr "``IDRIS2_CG`` - 代码生成后端。"
+
+#: ../source/reference/envvars.rst:26 2f3ff6d0f49c435b9501b82fa98ea3f4
+msgid ""
+"``IDRIS2_PATH`` - Directories where Idris2 looks for import files, in "
+"addition to the imports in packages"
+msgstr "``IDRIS2_PATH`` - Idris2 查找导入文件的目录，除包内导入外。"
+
+#: ../source/reference/envvars.rst:28 3bcf73084e974fc7a3f8ea46f5fd90ec
+msgid ""
+"``IDRIS2_PACKAGE_PATH`` - Directories where Idris2 looks for Idris 2 "
+"packages, in addition to the defaults (which are under the "
+"``IDRIS2_PREFIX`` and in the ``depends`` subdirectory of the current "
+"working directory). Directories are separated by a ``:`` on MacOS and "
+"\\*NIX systems, or a ``;`` on Windows"
+msgstr "``IDRIS2_PACKAGE_PATH`` - Idris2 查找 Idris 2 包的目录，除默认目录（即 ``IDRIS2_PREFIX`` 下和当前工作目录的 ``depends`` 子目录）外。多个目录在 MacOS 和类 UNIX 系统下用 ``:`` 分隔，在 Windows 下用 ``;`` 分隔。"
+
+#: ../source/reference/envvars.rst:33 d42b98103f2b4a17b1bb31eaaa8c4723
+msgid ""
+"``IDRIS2_DATA`` - Directories where Idris2 looks for data files. These "
+"are typically support code for code generators."
+msgstr "``IDRIS2_DATA`` - Idris2 查找数据文件的目录，通常为代码生成器的支持代码。"
+
+#: ../source/reference/envvars.rst:35 fecdc20573b14ef098f80469b2447b28
+msgid ""
+"``IDRIS2_LIBS`` - Directories where Idris2 looks for libraries (for code "
+"generation)."
+msgstr "``IDRIS2_LIBS`` - Idris2 查找库文件的目录（用于代码生成）。"
+
+#: ../source/reference/envvars.rst:37 85c603ead25c45b09dece9402e4cedda
+msgid "``CHEZ`` - Chez backend: location of the ``chez`` executable."
+msgstr "``CHEZ`` - Chez 后端：``chez`` 可执行文件的位置。"
+
+#: ../source/reference/envvars.rst:38 bb5d3c1cd05342cda9d0820631a41dfc
+msgid "``RACKET`` - Racket backend: location of the ``racket`` executable."
+msgstr "``RACKET`` - Racket 后端：``racket`` 可执行文件的位置。"
+
+#: ../source/reference/envvars.rst:39 a24b91ad63ee46ceb966f92ce71f2e01
+msgid "``RACKET_RACO`` - Racket backend: location of the ``raco`` executable."
+msgstr "``RACKET_RACO`` - Racket 后端：``raco`` 可执行文件的位置。"
+
+#: ../source/reference/envvars.rst:40 d2eff6e2c49c485cb40ee92e58986ce3
+msgid ""
+"``IDRIS2_INC_CGS`` - Code generators to use (comma separated) when "
+"compiling modules incrementally."
+msgstr "``IDRIS2_INC_CGS`` - 增量编译模块时使用的代码生成器（逗号分隔）。"
+
+#: ../source/reference/envvars.rst:42 a4d5915649ab4b7d90114ba270f93f69
+msgid "``IDRIS2_CC`` - RefC backend: location of the C compiler executable."
+msgstr "``IDRIS2_CC`` - RefC 后端：C 编译器可执行文件的位置。"
+
+#: ../source/reference/envvars.rst:43 f146b085815748fd96cec92e002b3329
+msgid "``IDRIS2_CFLAGS`` - RefC backend: C compiler flags."
+msgstr "``IDRIS2_CFLAGS`` - RefC 后端：C 编译器参数。"
+
+#: ../source/reference/envvars.rst:44 03387d9bd35c46759914adc64c22ef64
+msgid "``IDRIS2_CPPFLAGS`` - RefC backend: C preprocessor flags."
+msgstr "``IDRIS2_CPPFLAGS`` - RefC 后端：C 预处理器参数。"
+
+#: ../source/reference/envvars.rst:45 0902138cd133425699ce6626a1a88e0e
+msgid "``IDRIS2_LDFLAGS`` - RefC backend: C linker flags."
+msgstr "``IDRIS2_LDFLAGS`` - RefC 后端：C 链接器参数。"
+
+#: ../source/reference/envvars.rst:46 47704d95914441b198f74edea042d6b5
+msgid "``IDRIS2_LDLIBS`` - RefC backend: C linker library names or flags."
+msgstr "``IDRIS2_LDLIBS`` - RefC 后端：C 链接器库名或参数。"
+
+#: ../source/reference/envvars.rst:47 c82052f718ed435ab4830144584dce60
+msgid "``CC`` - RefC backend: C compiler executable (IDRIS2_CC takes precedence)."
+msgstr "``CC`` - RefC 后端：C 编译器可执行文件（优先使用 IDRIS2_CC）。"
+
+#: ../source/reference/envvars.rst:48 5b5f82a74c864565b670c2b18bd626b3
+msgid ""
+"``CFLAGS`` - RefC backend: C compiler flags (IDRIS2_CFLAGS takes "
+"precedence)."
+msgstr "``CFLAGS`` - RefC 后端：C 编译器参数（优先使用 IDRIS2_CFLAGS）。"
+
+#: ../source/reference/envvars.rst:49 4ce6e8c8f7544582bff04d33e13703d5
+msgid ""
+"``CPPFLAGS`` - RefC backend: C preprocessor flags (IDRIS2_CPPFLAGS takes "
+"precedence)."
+msgstr "``CPPFLAGS`` - RefC 后端：C 预处理器参数（优先使用 IDRIS2_CPPFLAGS）。"
+
+#: ../source/reference/envvars.rst:50 4e882917049545b18989ef0f086f832b
+msgid ""
+"``LDFLAGS`` - RefC backend: C linker flags (IDRIS2_LDFLAGS takes "
+"precedence)."
+msgstr "``LDFLAGS`` - RefC 后端：C 链接器参数（优先使用 IDRIS2_LDFLAGS）。"
+
+#: ../source/reference/envvars.rst:51 498ae3f8c83a4d89963f5481af310f8d
+msgid "``LDLIBS`` - RefC backend: C linker library names or flags."
+msgstr "``LDLIBS`` - RefC 后端：C 链接器库名或参数。"
+
+#: ../source/reference/envvars.rst:52 0fded8b92b9a4095b8daafe535e40988
+msgid "``NODE`` - NodeJS backend: ``node`` executable."
+msgstr "``NODE`` - NodeJS 后端：``node`` 可执行文件。"
+
+#: ../source/reference/envvars.rst:53 bd86505b847e402fbde09f449b0aaa52
+msgid ""
+"``PATH`` - PATH variable is used to search for executables in certain "
+"codegens."
+msgstr "``PATH`` - PATH 变量用于在部分代码生成器中查找可执行文件。"
+
+#: ../source/reference/envvars.rst:55 811161dfe0114751933820203bc1708f
+msgid ""
+"``NO_COLOR`` - Instruct Idris not to print colour to stdout. Passing the "
+"--colour/--color option will supersede this environment variable."
+msgstr "``NO_COLOR`` - 指示 Idris 不向标准输出打印彩色内容。传递 --colour/--color 选项会覆盖该环境变量。"
+
+#: ../source/reference/envvars.rst:57 75103e430bdb4a44bc5263acda322f18
+msgid "``GAMBIT_GSI`` - Gambit backend: location of the ``gsi`` executable."
+msgstr "``GAMBIT_GSI`` - Gambit 后端：``gsi`` 可执行文件的位置。"
+
+#: ../source/reference/envvars.rst:58 3d8c88c5d9cb493d9cf338a5c9945885
+msgid "``GAMBIT_GSC`` - Gambit backend: location of the ``gsc`` executable."
+msgstr "``GAMBIT_GSC`` - Gambit 后端：``gsc`` 可执行文件的位置。"
+
+#: ../source/reference/envvars.rst:59 f822137ab5c34f34af85ab355c66296b
+msgid "``GAMBIT_GSC_BACKEND`` - Gambit backend: arguments passed to ``gsc``."
+msgstr "``GAMBIT_GSC_BACKEND`` - Gambit 后端：传递给 ``gsc`` 的参数。"

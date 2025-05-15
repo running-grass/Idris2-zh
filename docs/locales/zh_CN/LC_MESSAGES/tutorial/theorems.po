@@ -1,0 +1,446 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2023, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-16 09:52+0800\n"
+"PO-Revision-Date: 2022-09-03 13:48+0000\n"
+"Last-Translator: grass <hi@grass.show>\n"
+"Language-Team: Chinese (Simplified) <>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../source/tutorial/theorems.rst:5 c27f50d3fefa493597726a862f91596b
+msgid "Theorem Proving"
+msgstr "定理证明"
+
+#: ../source/tutorial/theorems.rst:8 8d2fdbbbd5dc41ee89700583cf899cd9
+msgid "Equality"
+msgstr "等式（Equality）"
+
+#: ../source/tutorial/theorems.rst:10 db4abb45af244e50b03b6b126a8d7fd6
+msgid ""
+"Idris allows propositional equalities to be declared, allowing theorems "
+"about programs to be stated and proved. An equality type is defined as "
+"follows in the Prelude:"
+msgstr ""
+"Idris 允许声明命题等式（propositional "
+"equality），从而可以对程序陈述和证明定理。Prelude（预定义库）中定义的等式类型如下："
+
+#: ../source/tutorial/theorems.rst:19 674dfdf6d564434ea4d24f3f0011f564
+msgid ""
+"As a notational convenience, ``Equal x y`` can be written as ``x = y``. "
+"Equalities can be proposed between any values of any types, but the only "
+"way to construct a proof of equality is if values actually are equal. For"
+" example:"
+msgstr ""
+"作为记号上的简化，``Equal x y`` 可以写作 ``x = "
+"y``。任意类型的任意值之间都可以提出等式，但只有在值实际相等时才能构造等式的证明。例如："
+
+#: ../source/tutorial/theorems.rst:32 7fee000dd7f6454e8ae4d20fbd4d1e2d
+msgid "If we try..."
+msgstr "如果我们尝试……"
+
+#: ../source/tutorial/theorems.rst:39 da409befeaf84c89b84cea4d67a88974
+msgid "...then we'll get an error:"
+msgstr "……那么会得到一个错误："
+
+#: ../source/tutorial/theorems.rst:53 9a89ede7aaae469b9cece07581dcc9d9
+msgid "The Empty Type"
+msgstr "空类型（Empty Type）"
+
+#: ../source/tutorial/theorems.rst:55 825131a086e24340b4b604e23df45552
+msgid ""
+"There is an empty type, ``Void``, which has no constructors. It is "
+"therefore impossible to construct a canonical element of the empty type. "
+"We can therefore use the empty type to prove that something is "
+"impossible, for example zero is never equal to a successor:"
+msgstr ""
+"有一种空类型 ``Void``，它没有任何构造函数，因此无法构造出空类型的规范元素。我们可以利用空类型来证明某些事情不可能发生，例如 0 "
+"永远不等于任意后继数："
+
+#: ../source/tutorial/theorems.rst:69 31a2cdabbcd746f3b4225c2b45cc0724
+msgid ""
+"Don't worry if you don't get all the details of how this works just yet -"
+" essentially, it applies the library function ``replace``, which uses an "
+"equality proof to transform a predicate. Here we use it to transform a "
+"value of a type which can exist, the empty tuple, to a value of a type "
+"which can’t, by using a proof of something which can’t exist."
+msgstr ""
+"如果你现在还不能完全理解其工作原理，不用担心——本质上，这里使用了库函数 "
+"``replace``，它通过等式证明来转换谓词。在这里，我们用它将一个可以存在的类型（空元组）的值，通过一个不可能存在的证明，转换为一个不可能存在的类型的值。"
+
+#: ../source/tutorial/theorems.rst:75 34c45383e4fa43e0aff6f14a98e64f1c
+msgid ""
+"Once we have an element of the empty type, we can prove anything. "
+"``void`` is defined in the library, to assist with proofs by "
+"contradiction."
+msgstr "一旦我们得到了空类型的元素，就可以证明任何命题。库中定义了 ``void``，用于辅助反证法（proof by contradiction）。"
+
+#: ../source/tutorial/theorems.rst:84 4a12ee58fbc64167b4e4775a2d5b69b9
+msgid "Proving Theorems"
+msgstr "定理证明"
+
+#: ../source/tutorial/theorems.rst:86 778372e46a304da5a0763d1cd5dbd73d
+msgid ""
+"When type checking dependent types, the type itself gets *normalised*. So"
+" imagine we want to prove the following theorem about the reduction "
+"behaviour of ``plus``:"
+msgstr "在对依值类型进行类型检查时，类型本身会被*归约*（normalise）。假设我们想要证明关于 ``plus`` 归约行为的如下定理："
+
+#: ../source/tutorial/theorems.rst:94 74e552be79294836bca6e6eeb7b94386
+msgid ""
+"We’ve written down the statement of the theorem as a type, in just the "
+"same way as we would write the type of a program. In fact there is no "
+"real distinction between proofs and programs. A proof, as far as we are "
+"concerned here, is merely a program with a precise enough type to "
+"guarantee a particular property of interest."
+msgstr "我们像写程序类型一样写下了定理的陈述。实际上，证明和程序之间并没有本质区别。就本节而言，证明只是一个具有足够精确类型的程序，用以保证某个特定性质成立。"
+
+#: ../source/tutorial/theorems.rst:100 54df0269e05940a3ad7f46688098ee8c
+msgid ""
+"We won’t go into details here, but the Curry-Howard correspondence "
+"[#Timothy]_ explains this relationship. The proof itself is immediate, "
+"because ``plus Z n`` normalises to ``n`` by the definition of ``plus``:"
+msgstr "这里不做详细展开，Curry-Howard 对应（Curry-Howard correspondence）[#Timothy]_ 解释了这种关系。该证明本身是直接的，因为根据 ``plus`` 的定义，``plus Z n`` 会归约为 ``n``："
+
+#: ../source/tutorial/theorems.rst:108 83615e1117bc4d3cbcc6e57dcf3ebaaf
+msgid ""
+"It is slightly harder if we try the arguments the other way, because plus"
+" is defined by recursion on its first argument. The proof also works by "
+"recursion on the first argument to ``plus``, namely ``n``."
+msgstr ""
+"如果我们将参数顺序调换，证明会稍微复杂一些，因为 ``plus`` 是按第一个参数递归定义的。此时，证明也需要对 ``plus`` "
+"的第一个参数（即 ``n``）递归进行。"
+
+#: ../source/tutorial/theorems.rst:118 4f16a5a637f446ab9466e88ad2faf894
+msgid ""
+"``cong`` is a function defined in the library which states that equality "
+"respects function application:"
+msgstr "``cong`` 是库中定义的一个函数，表明等式在函数应用下是保持的（即等式对函数应用封闭）："
+
+#: ../source/tutorial/theorems.rst:125 61cb7fd22a6240f8832b9635c7d5f132
+msgid ""
+"To see more detail on what's going on, we can replace the recursive call "
+"to ``plusReducesZ`` with a hole:"
+msgstr "要了解更多细节，我们可以将对 ``plusReducesZ`` 的递归调用替换为一个洞（hole）："
+
+#: ../source/tutorial/theorems.rst:132 5a0225d5041943b5b8c3f4df33b07696
+msgid "Then inspecting the type of the hole at the REPL shows us:"
+msgstr "然后在 REPL 中查看该洞的类型，可以看到："
+
+#: ../source/tutorial/theorems.rst:141 ec884eddae4c40f9b88cbff9e1172f44
+msgid "We can do the same for the reduction behaviour of plus on successors:"
+msgstr "我们也可以对 ``plus`` 在后继数（successor）上的归约行为做类似的证明："
+
+#: ../source/tutorial/theorems.rst:149 22d6a9e2c93b4f7998ee64a0844dfe61
+msgid ""
+"Even for small theorems like these, the proofs are a little tricky to "
+"construct in one go. When things get even slightly more complicated, it "
+"becomes too much to think about to construct proofs in this “batch mode”."
+msgstr "即使是这些简单的定理，一次性构造出完整证明也有些困难。当问题稍微复杂一点时，用这种\"批处理模式\"来构造证明就会变得难以掌控。"
+
+#: ../source/tutorial/theorems.rst:154 8799ee63f420478389237b4fcb810607
+msgid ""
+"Idris provides interactive editing capabilities, which can help with "
+"building proofs. For more details on building proofs interactively in an "
+"editor, see :ref:`proofs-index`."
+msgstr "Idris 提供了交互式编辑功能，可以帮助构造证明。关于如何在编辑器中交互式构造证明，详见 :ref:`proofs-index`。"
+
+#: ../source/tutorial/theorems.rst:161 8483f2ec435b40308a5608c91142bc23
+msgid "Theorems in Practice"
+msgstr "定理在实践中的应用"
+
+#: ../source/tutorial/theorems.rst:163 52582ad8630648bcb9ce8cb54b2b94db
+msgid ""
+"The need to prove theorems can arise naturally in practice. For example, "
+"previously (:ref:`sec-views`) we implemented ``natToBin`` using a "
+"function ``parity``:"
+msgstr ""
+"在实际编程中，证明定理的需求会自然而然地出现。例如，前文（:ref:`sec-views`）我们用 ``parity`` 函数实现了 "
+"``natToBin``："
+
+#: ../source/tutorial/theorems.rst:171 4bd635ad7bc14b6491c3064877691e2a
+msgid ""
+"We provided a definition for ``parity``, but without explanation.  We "
+"might have hoped that it would look something like the following:"
+msgstr "我们给出了 ``parity`` 的定义，但没有解释。我们可能希望它看起来像下面这样："
+
+#: ../source/tutorial/theorems.rst:183 be2f15952988491c9d6d381c7e6f2b85
+msgid "Unfortunately, this fails with a type error:"
+msgstr "但遗憾的是，这会因类型错误而失败："
+
+#: ../source/tutorial/theorems.rst:193 2596a91067ea48dc82bd562353d40587
+msgid ""
+"The problem is that normalising ``S j + S j``, in the type of ``Even`` "
+"doesn't result in what we need for the type of the right hand side of "
+"``Parity``. We know that ``S (S (plus j j))`` is going to be equal to ``S"
+" j + S j``, but we need to explain it to Idris with a proof. We can begin"
+" by adding some *holes* (see :ref:`sect-holes`) to the definition:"
+msgstr ""
+"问题在于，将 ``S j + S j`` 归约到 ``Even`` 的类型时，并不能得到 ``Parity`` 右侧所需的类型。我们知道 ``S "
+"(S (plus j j))`` 等于 ``S j + S j``，但需要用证明向 Idris "
+"说明。我们可以先在定义中加上一些*洞*（hole）（见 :ref:`sect-holes`）："
+
+#: ../source/tutorial/theorems.rst:210 e18ecdf441484203a6342f5800a931f1
+msgid ""
+"Checking the type of ``helpEven`` shows us what we need to prove for the "
+"``Even`` case:"
+msgstr "检查 ``helpEven`` 的类型，可以看到在 ``Even`` 情况下需要证明什么："
+
+#: ../source/tutorial/theorems.rst:220 98f70fc5d7e440318458acb7a4f99300
+msgid ""
+"We can therefore write a helper function to *rewrite* the type to the "
+"form we need:"
+msgstr "因此，我们可以编写一个辅助函数，将类型*重写*为我们需要的形式："
+
+#: ../source/tutorial/theorems.rst:228 fb211f726b3b4121aa9f1ed88a9f960f
+msgid ""
+"The ``rewrite ... in`` syntax allows you to change the required type of "
+"an expression by rewriting it according to an equality proof. Here, we "
+"have used ``plusSuccRightSucc``, which has the following type:"
+msgstr ""
+"``rewrite ... in`` 语法允许你根据等式证明重写表达式的类型。在这里，我们用到了 "
+"``plusSuccRightSucc``，其类型如下："
+
+#: ../source/tutorial/theorems.rst:236 f73d39bd25844d16a2d9b413996ff77f
+msgid ""
+"We can see the effect of ``rewrite`` by replacing the right hand side of "
+"``helpEven`` with a hole, and working step by step. Beginning with the "
+"following:"
+msgstr "我们可以通过将 ``helpEven`` 右侧替换为一个洞（hole），逐步观察 ``rewrite`` 的效果。首先如下："
+
+#: ../source/tutorial/theorems.rst:244 d6fa8c219eff41f7983b8bd6ee9a5a63
+msgid "We can look at the type of ``helpEven_rhs``:"
+msgstr "我们可以查看 ``helpEven_rhs`` 的类型："
+
+#: ../source/tutorial/theorems.rst:253 0147b815e49144b4821f164726d60935
+msgid ""
+"Then we can ``rewrite`` by applying ``plusSuccRightSucc j j``, which "
+"gives an equation ``S (j + j) = j + S j``, thus replacing ``S (j + j)`` "
+"(or, in this case, ``S (plus j j)`` since ``S (j + j)`` reduces to that) "
+"in the type with ``j + S j``:"
+msgstr ""
+"然后我们可以用 ``plusSuccRightSucc j j`` 进行 ``rewrite``，得到等式 ``S (j + j) = j + S"
+" j``，从而将类型中的 ``S (j + j)``（在本例中即 ``S (plus j j)``，因为 ``S (j + j)`` "
+"会归约为它）替换为 ``j + S j``："
+
+#: ../source/tutorial/theorems.rst:263 557c79be6df3491daf1b56d1891552a7
+msgid ""
+"Checking the type of ``helpEven_rhs`` now shows what has happened, "
+"including the type of the equation we just used (as the type of "
+"``_rewrite_rule``):"
+msgstr ""
+"现在检查 ``helpEven_rhs`` 的类型，可以看到发生了什么，包括刚才用到的等式的类型（作为 ``_rewrite_rule`` "
+"的类型）："
+
+#: ../source/tutorial/theorems.rst:274 0707a84d5f96468d9649257d44934ef8
+msgid ""
+"Using ``rewrite`` and another helper for the ``Odd`` case, we can "
+"complete ``parity`` as follows:"
+msgstr "结合 ``rewrite`` 和另一个用于 ``Odd`` 情况的辅助函数，我们可以如下完成 ``parity``："
+
+#: ../source/tutorial/theorems.rst:292 cd379c0343294670a97076633b863cf3
+msgid ""
+"Full details of ``rewrite`` are beyond the scope of this introductory "
+"tutorial, but it is covered in the theorem proving tutorial (see :ref"
+":`proofs-index`)."
+msgstr "``rewrite`` 的全部细节超出了本入门教程的范围，但可在定理证明教程中找到（见 :ref:`proofs-index`）。"
+
+#: ../source/tutorial/theorems.rst:298 cbd689c7222b4a45b3cac365d179ed4c
+msgid "Totality Checking"
+msgstr "完备性检查（Totality Checking）"
+
+#: ../source/tutorial/theorems.rst:300 31a07e51230c4d8ba4dfa595172bef81
+msgid ""
+"If we really want to trust our proofs, it is important that they are "
+"defined by *total* functions — that is, a function which is defined for "
+"all possible inputs and is guaranteed to terminate. Otherwise we could "
+"construct an element of the empty type, from which we could prove "
+"anything:"
+msgstr "如果我们真的想信任我们的证明，重要的一点是它们必须由*完备*（total）函数定义——即对所有可能输入都有定义，并且保证终止。否则我们就可能构造出空类型的元素，从而可以证明任何命题："
+
+#: ../source/tutorial/theorems.rst:318 2a83cf058ee4437490aabf8dfb22f010
+msgid ""
+"Internally, Idris checks every definition for totality, and we can check "
+"at the prompt with the ``:total`` command. We see that neither of the "
+"above definitions is total:"
+msgstr "在内部，Idris 会检查每个定义的完备性，我们也可以用 ``:total`` 命令在提示符下检查。从结果可以看到，上述两个定义都不是完备的："
+
+#: ../source/tutorial/theorems.rst:329 fdeca35a5bf746398336eed04c3844a7
+msgid ""
+"Note the use of the word “possibly” — a totality check can never be "
+"certain due to the undecidability of the halting problem. The check is, "
+"therefore, conservative. It is also possible (and indeed advisable, in "
+"the case of proofs) to mark functions as total so that it will be a "
+"compile time error for the totality check to fail:"
+msgstr "注意这里用了“可能（possibly）”一词——由于停机问题不可判定，完备性检查永远无法百分百确定。因此该检查是保守的。我们也可以（尤其在证明时建议）将函数标记为完备，这样如果检查失败就会在编译时报错："
+
+#: ../source/tutorial/theorems.rst:340 a05d85ef03844e2781bec5e8966950fb
+msgid ""
+"Reassuringly, our proof in Section :ref:`sect-empty` that the zero and "
+"successor constructors are disjoint is total:"
+msgstr "令人欣慰的是，我们在 :ref:`sect-empty` 节中关于 0 和后继构造子互斥的证明是完备的："
+
+#: ../source/tutorial/theorems.rst:348 aad0f8bd36d6492488a4292c496d1d76
+msgid ""
+"The totality check is, necessarily, conservative. To be recorded as "
+"total, a function ``f`` must:"
+msgstr "完备性检查必然是保守的。要被认定为完备，函数 ``f`` 必须："
+
+#: ../source/tutorial/theorems.rst:351 c69bf51151634cbbbe47a0d205905ceb
+msgid "Cover all possible inputs"
+msgstr "覆盖所有可能的输入"
+
+#: ../source/tutorial/theorems.rst:353 d72f80fc21584698bb9c664611621d3f
+msgid ""
+"Be *well-founded* — i.e. by the time a sequence of (possibly mutually) "
+"recursive calls reaches ``f`` again, it must be possible to show that one"
+" of its arguments has decreased."
+msgstr "*良基*（well-founded）——即在一系列（可能互相递归的）调用再次到达 ``f`` 时，必须能证明某个参数变小了。"
+
+#: ../source/tutorial/theorems.rst:357 159c6dbf3de94e75be37c0d670a26e44
+msgid "Not use any data types which are not *strictly positive*"
+msgstr "不能使用任何非*严格正*（strictly positive）的数据类型"
+
+#: ../source/tutorial/theorems.rst:359 a471671e753144f1b1c201d6b3ffb0af
+msgid "Not call any non-total functions"
+msgstr "不能调用任何非完备函数"
+
+#: ../source/tutorial/theorems.rst:362 1b1604d0ac6a4f229abca47a00d659bd
+msgid "Directives and Compiler Flags for Totality"
+msgstr "完备性相关指令与编译器选项"
+
+#: ../source/tutorial/theorems.rst:366 dacd144de5f242098d4ec03cf3022020
+msgid "Not all of this is implemented yet for Idris 2"
+msgstr "并非所有这些特性都已在 Idris 2 中实现"
+
+#: ../source/tutorial/theorems.rst:368 9bc291f407f94c198075b5f45f66ff2e
+msgid ""
+"By default, Idris allows all well-typed definitions, whether total or "
+"not. However, it is desirable for functions to be total as far as "
+"possible, as this provides a guarantee that they provide a result for all"
+" possible inputs, in finite time. It is possible to make total functions "
+"a requirement, either:"
+msgstr ""
+"默认情况下，Idris "
+"允许所有类型良好的定义，无论是否完备。但尽量让函数完备是有益的，因为这能保证它们对所有输入都能在有限时间内给出结果。我们可以通过以下方式强制要求函数完备："
+
+#: ../source/tutorial/theorems.rst:373 982f5cf7f0df46a48aeddc924a0a570e
+msgid "By using the ``--total`` compiler flag."
+msgstr "通过使用 ``--total`` 编译器选项。"
+
+#: ../source/tutorial/theorems.rst:375 405549d19c2d4ae99725755f8d0a273e
+#, python-format
+msgid ""
+"By adding a ``%default total`` directive to a source file. All "
+"definitions after this will be required to be total, unless explicitly "
+"flagged as ``partial``."
+msgstr "在源文件中添加 ``%default total`` 指令。此后所有定义都要求完备，除非显式标记为 ``partial``。"
+
+#: ../source/tutorial/theorems.rst:379 abe3c195cf294dd4ac4e0eab8722b4ce
+#, python-format
+msgid ""
+"All functions *after* a ``%default total`` declaration are required to be"
+" total. Correspondingly, after a ``%default partial`` declaration, the "
+"requirement is relaxed."
+msgstr ""
+"所有在 ``%default total`` 声明之后的函数都要求完备。相应地，在 ``%default partial`` "
+"声明之后，这一要求会放宽。"
+
+#: ../source/tutorial/theorems.rst:383 7f8f41352ce84fd68af260030228774c
+msgid ""
+"Finally, the compiler flag ``--warnpartial`` causes to print a warning "
+"for any undeclared partial function."
+msgstr "最后，编译器选项 ``--warnpartial`` 会对所有未声明为 partial 的非完备函数发出警告。"
+
+#: ../source/tutorial/theorems.rst:387 8b56c844ffab4e3e9d1e008441b53d43
+msgid "Totality checking issues"
+msgstr "完备性检查相关问题"
+
+#: ../source/tutorial/theorems.rst:389 df5c85a48e724dc4b868924d678e68ed
+msgid ""
+"Please note that the totality checker is not perfect! Firstly, it is "
+"necessarily conservative due to the undecidability of the halting "
+"problem, so many programs which *are* total will not be detected as such."
+" Secondly, the current implementation has had limited effort put into it "
+"so far, so there may still be cases where it believes a function is total"
+" which is not. Do not rely on it for your proofs yet!"
+msgstr "请注意，完备性检查器并不完美！首先，由于停机问题不可判定，它必然是保守的，因此许多实际上是完备的程序也可能不会被检测出来。其次，目前的实现还不够完善，可能会有一些实际上不完备的函数被误判为完备。在正式证明中请不要完全依赖它！"
+
+#: ../source/tutorial/theorems.rst:397 09ee478456e244e4a181211d1d0be98d
+msgid "Hints for totality"
+msgstr "完备性提示"
+
+#: ../source/tutorial/theorems.rst:399 7a9acb9759e943da8752e0fb76c0a49f
+msgid ""
+"In cases where you believe a program is total, but Idris does not agree, "
+"it is possible to give hints to the checker to give more detail for a "
+"termination argument. The checker works by ensuring that all chains of "
+"recursive calls eventually lead to one of the arguments decreasing "
+"towards a base case, but sometimes this is hard to spot. For example, the"
+" following definition cannot be checked as ``total`` because the checker "
+"cannot decide that ``filter (< x) xs`` will always be smaller than ``(x "
+":: xs)``:"
+msgstr ""
+"如果你认为程序是完备的，但 Idris "
+"不认同，可以给检查器一些提示，帮助其更好地判断终止性。检查器的原理是确保所有递归调用链最终会导致某个参数趋向基例（base "
+"case），但有时这很难自动判断。例如，下面的定义无法被判定为 ``total``，因为检查器无法确定 ``filter (< x) xs`` "
+"总是比 ``(x :: xs)`` 更小："
+
+#: ../source/tutorial/theorems.rst:415 44e69a056dac4d7f912c1f98cacd93b0
+msgid ""
+"The function ``assert_smaller``, defined in the prelude, is intended to "
+"address this problem:"
+msgstr "Prelude 中定义的 ``assert_smaller`` 函数就是为了解决这个问题："
+
+#: ../source/tutorial/theorems.rst:423 3f25bc5ce9e746fdb598cedf2ed8e724
+msgid ""
+"It simply evaluates to its second argument, but also asserts to the "
+"totality checker that ``y`` is structurally smaller than ``x``. This can "
+"be used to explain the reasoning for totality if the checker cannot work "
+"it out itself. The above example can now be written as:"
+msgstr ""
+"它只是简单地返回第二个参数，但同时向完备性检查器断言 ``y`` 在结构上小于 "
+"``x``。如果检查器无法自动推断，可以用它来解释完备性的理由。上面的例子现在可以这样写："
+
+#: ../source/tutorial/theorems.rst:437 cab45cc027d740a79aa4d75fe31c3134
+msgid ""
+"The expression ``assert_smaller (x :: xs) (filter (<= x) xs)`` asserts "
+"that the result of the filter will always be smaller than the pattern "
+"``(x :: xs)``."
+msgstr ""
+"表达式 ``assert_smaller (x :: xs) (filter (<= x) xs)`` 断言 filter 的结果总是比模式 "
+"``(x :: xs)`` 更小。"
+
+#: ../source/tutorial/theorems.rst:441 b95160cc7bc449469600cd4b014777d9
+msgid ""
+"In more extreme cases, the function ``assert_total`` marks a "
+"subexpression as always being total:"
+msgstr "在更极端的情况下，``assert_total`` 函数可以将某个子表达式标记为总是完备的："
+
+#: ../source/tutorial/theorems.rst:449 aa0a4a7371d44ed38c4122ae58df5767
+msgid ""
+"In general, this function should be avoided, but it can be very useful "
+"when reasoning about primitives or externally defined functions (for "
+"example from a C library) where totality can be shown by an external "
+"argument."
+msgstr "一般来说应避免使用该函数，但在推理原语（primitive）或外部定义的函数（如 C 库中的函数）时，如果能用外部理由证明完备性，它会非常有用。"
+
+#: ../source/tutorial/theorems.rst:455 2a856321375e413faadd14056278a463
+msgid ""
+"Timothy G. Griffin. 1989. A formulae-as-type notion of control. In "
+"Proceedings of the 17th ACM SIGPLAN-SIGACT symposium on Principles of "
+"programming languages (POPL '90). ACM, New York, NY, USA, 47-58. "
+"DOI=10.1145/96709.96714 https://doi.acm.org/10.1145/96709.96714"
+msgstr ""
+"Timothy G. Griffin. 1989. A formulae-as-type notion of control. 收录于第 17 届"
+" ACM SIGPLAN-SIGACT 编程语言原理研讨会（POPL '90）论文集。ACM, New York, NY, USA, 47-58."
+" DOI=10.1145/96709.96714 https://doi.acm.org/10.1145/96709.96714"
+

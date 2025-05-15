@@ -1,0 +1,333 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2023, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-16 09:52+0800\n"
+"PO-Revision-Date: 2022-09-03 13:48+0000\n"
+"Last-Translator: grass <hi@grass.show>\n"
+"Language-Team: Chinese (Simplified) <>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../source/proofs/definitional.rst:1 cc571bf9ee8b4959b387d4c3566d9e13
+msgid ""
+"Before we discuss the details of theorem proving in Idris, we will "
+"describe some fundamental concepts:"
+msgstr "在讨论 Idris 中定理证明的细节之前，我们先介绍一些基本概念："
+
+#: ../source/proofs/definitional.rst:4 c5d942a28e2a4ad9aa7cee8b70756854
+msgid "Propositions and judgments"
+msgstr "命题与判断（Propositions and Judgments）"
+
+#: ../source/proofs/definitional.rst:5 288da4698ae64f1c8feb00403b7dfb35
+msgid "Boolean and constructive logic"
+msgstr "布尔逻辑与构造性逻辑（Boolean and Constructive Logic）"
+
+#: ../source/proofs/definitional.rst:6 ../source/proofs/definitional.rst:57
+#: c57a1569ea46435e8343b021aa8e2eae f22b0844ff364830b25c01bf2ca00cee
+msgid "Curry-Howard correspondence"
+msgstr "Curry-Howard 对应（Curry-Howard Correspondence）"
+
+#: ../source/proofs/definitional.rst:7 5578845ce3584faf963a98b72c0ee987
+msgid "Definitional and propositional equalities"
+msgstr "定义等式与命题等式（Definitional and Propositional Equalities）"
+
+#: ../source/proofs/definitional.rst:8 7d2c809b13c24ea6b8efd977e60711e9
+msgid "Axiomatic and constructive approaches"
+msgstr "公理化与构造性方法（Axiomatic and Constructive Approaches）"
+
+#: ../source/proofs/definitional.rst:11 1fa5f238274a492c8b3ccbf0496ff9f3
+msgid "Propositions and Judgments"
+msgstr "命题与判断（Propositions and Judgments）"
+
+#: ../source/proofs/definitional.rst:13 c8f9703fa1374ea5a8102e869dec305e
+msgid ""
+"Propositions are the subject of our proofs. Before the proof, we can't "
+"formally say if they are true or not. If the proof is successful then the"
+" result is a 'judgment'.  For instance, if the ``proposition`` is,"
+msgstr "命题是我们证明的对象。在证明之前，我们无法正式判断它们是否为真。如果证明成功，那么结果就是一个'判断'。例如，如果``proposition``是，"
+
+#: ../source/proofs/definitional.rst:18 c01e679728db4ff1b02bfd29f761cea4
+msgid "1+1=2"
+msgstr "1+1=2"
+
+#: ../source/proofs/definitional.rst:21 392816b58716446798fdbc2c2c00a88c
+msgid "When we prove it, the ``judgment`` is,"
+msgstr "当我们证明它时，``判断`` 为："
+
+#: ../source/proofs/definitional.rst:24 3424b4614c38435dbec000c88035b0f3
+msgid "1+1=2 true"
+msgstr "1+1=2 成立（true）"
+
+#: ../source/proofs/definitional.rst:27 63ed1ba14bbb4f77a46c594888b5cbb5
+msgid "Or if the ``proposition`` is,"
+msgstr "或者如果 ``命题`` 为："
+
+#: ../source/proofs/definitional.rst:30 2fbbd83c4aa940dfa5d2f7c8b08d10e2
+msgid "1+1=3"
+msgstr "1+1=3"
+
+#: ../source/proofs/definitional.rst:33 e93ccffec47b4b25a1489e7548976f38
+msgid ""
+"we can't prove it is true, but it is still a valid proposition and "
+"perhaps we can prove it is false so the ``judgment`` is,"
+msgstr "我们无法证明它为真，但它依然是一个有效命题，也许我们可以证明它为假，因此 ``判断`` 为："
+
+#: ../source/proofs/definitional.rst:37 3ff9221e7cdb40bf8e5a45e10e8fa9ac
+msgid "1+1=3 false"
+msgstr "1+1=3 不成立（false）"
+
+#: ../source/proofs/definitional.rst:40 7d997b70b1624917863ac53c61505e8e
+msgid ""
+"This may seem a bit pedantic but it is important to be careful: in "
+"mathematics not every proposition is true or false. For instance, a "
+"proposition may be unproven or even unprovable."
+msgstr "这看起来有些迂腐，但必须谨慎：在数学中，并非每个命题都是真或假。例如，有些命题可能尚未被证明，甚至无法被证明。"
+
+#: ../source/proofs/definitional.rst:44 528fc24cbdef487aa528f6046f809f7f
+msgid ""
+"So the logic here is different from the logic that comes from boolean "
+"algebra. In that case what is not true is false and what is not false is "
+"true. The logic we are using here does not have this law, the \"Law of "
+"Excluded Middle\", so we cannot use it."
+msgstr ""
+"因此，这里的逻辑不同于布尔代数中的逻辑。在布尔逻辑中，非真即假，非假即真。而我们这里使用的逻辑并不具备这种\"排中律（Law of "
+"Excluded Middle）\"，因此不能使用它。"
+
+#: ../source/proofs/definitional.rst:49 9739476d618e48ce8648309e25a0506c
+msgid ""
+"A false proposition is taken to be a contradiction and if we have a "
+"contradiction then we can prove anything, so we need to avoid this. Some "
+"languages, used in proof assistants, prevent contradictions."
+msgstr "一个假命题被视为矛盾（contradiction），而一旦有矛盾就可以推出任何结论，因此我们要避免这种情况。一些用于证明助理的语言会防止矛盾的出现。"
+
+#: ../source/proofs/definitional.rst:53 409928072bac4d5f890ed6aadace6ea1
+msgid ""
+"The logic we are using is called constructive (or sometimes intuitional) "
+"because we are constructing a 'database' of judgments."
+msgstr ""
+"我们使用的逻辑被称为构造性逻辑（constructive logic，或称直觉主义逻辑），因为我们是在构建一个\"判断数据库（database "
+"of judgments）\"。"
+
+#: ../source/proofs/definitional.rst:59 267701ff43914c6a8befa2a4bce31f74
+msgid ""
+"So how do we relate these proofs to Idris programs? It turns out that "
+"there is a correspondence between constructive logic and type theory. "
+"They have the same structure and we can switch back and forth between the"
+" two notations."
+msgstr ""
+"那么，如何将这些证明与 Idris 程序关联起来？事实证明，构造性逻辑与类型理论（type "
+"theory）之间存在对应关系。它们具有相同的结构，我们可以在两种记法之间自由切换。"
+
+#: ../source/proofs/definitional.rst:63 b5da42a12279440bb709d3a2a4101a52
+msgid "The way that this works is that a proposition is a type so..."
+msgstr "其原理是：命题就是类型（a proposition is a type），因此..."
+
+#: ../source/proofs/definitional.rst:73 b7877bf76d554921bc7591b4ef7d584c
+msgid ""
+"...is a proposition and it is also a type. The following will also "
+"produce an equality type:"
+msgstr "......既是命题，也是类型。下列写法同样会产生一个等式类型："
+
+#: ../source/proofs/definitional.rst:82 2504fc275ec04a578bceba2fc592d3e4
+msgid ""
+"Both of these are valid propositions so both are valid equality types. "
+"But how do we represent a true judgment? That is, how do we denote 1+1=2 "
+"is true but not 1+1=3?  A type that is true is inhabited, that is, it can"
+" be constructed. An equality type has only one constructor 'Refl' so a "
+"proof of 1+1=2 is"
+msgstr ""
+"这两者都是有效命题，因此也是有效的等式类型。但我们如何表示一个\"成立的判断\"呢？也就是说，如何表示 1+1=2 成立而 1+1=3 "
+"不成立？一个\"成立\"的类型是可被实例化（inhabited）的，即它可以被构造。等式类型只有一个构造器 'Refl'，因此 1+1=2 "
+"的证明为："
+
+#: ../source/proofs/definitional.rst:92 aa3e090af32142bba8bd2f819fd44645
+msgid ""
+"Now that we can represent propositions as types other aspects of "
+"propositional logic can also be translated to types as follows:"
+msgstr "既然我们可以用类型表示命题，命题逻辑的其他方面也可以如下转化为类型："
+
+#: ../source/proofs/definitional.rst:96 0471f0ca49cc4b0ebac977167ffbd2c6
+msgid "propositions"
+msgstr "命题（propositions）"
+
+#: ../source/proofs/definitional.rst:96 dbdff720bb9f4d30b33199091772fed2
+msgid "example of possible type"
+msgstr "可能的类型示例（example of possible type）"
+
+#: ../source/proofs/definitional.rst:98 ffe13314d5084e5f89c92c9c46302d39
+msgid "A"
+msgstr "A"
+
+#: ../source/proofs/definitional.rst:98 4d5f874d840c4fddb56d2ba1043fbcf1
+msgid "x=y"
+msgstr "x=y"
+
+#: ../source/proofs/definitional.rst:100 15fb2a97f8294b49b3e551f8273896db
+msgid "B"
+msgstr "B"
+
+#: ../source/proofs/definitional.rst:100 ../source/proofs/definitional.rst:108
+#: ../source/proofs/definitional.rst:110 796c006e7be249e8b95dd841855e5bc7
+#: 88e8c857ada342c79aa89a7396b31321 eb26c2862a974ce186b73b8cad1e5b6e
+msgid "y=z"
+msgstr "y=z"
+
+#: ../source/proofs/definitional.rst:102 76d2173ef5284a09b395cc1d66ae9507
+msgid "and"
+msgstr "与（and）"
+
+#: ../source/proofs/definitional.rst:102 9b80192cc21b4c71837057d1babc730e
+msgid "A /\\\\ B"
+msgstr "A /\\\\ B"
+
+#: ../source/proofs/definitional.rst:102 966d28068c23435b998a73d05b9391bb
+msgid "Pair(x=y,y=z)"
+msgstr "Pair(x=y,y=z)"
+
+#: ../source/proofs/definitional.rst:104 d1871ece79ed4c52afe77c2d44720207
+msgid "or"
+msgstr "或（or）"
+
+#: ../source/proofs/definitional.rst:104 d7ffee823085466ab5c0c9adbb4c2f39
+msgid "A \\\\/ B"
+msgstr "A \\\\/ B"
+
+#: ../source/proofs/definitional.rst:104 cd1287d0df914093b903ef051041f21d
+msgid "Either(x=y,y=z)"
+msgstr "Either(x=y,y=z)"
+
+#: ../source/proofs/definitional.rst:106 69ee30c2a23b4919964b929099b82906
+msgid "implies"
+msgstr "蕴含（implies）"
+
+#: ../source/proofs/definitional.rst:106 f1edafc871404363a4ebfd78fdfda0a7
+msgid "A -> B"
+msgstr "A -> B"
+
+#: ../source/proofs/definitional.rst:106 b0573697c18b40d188318ad46511af11
+msgid "(x=y) -> (y=z)"
+msgstr "(x=y) -> (y=z)"
+
+#: ../source/proofs/definitional.rst:108 b1cccecaf64748c99e376d6b0e4049fa
+msgid "for all"
+msgstr "对所有（for all）"
+
+#: ../source/proofs/definitional.rst:110 f40f72843f9c440e86438d9e739d4bd7
+msgid "exists"
+msgstr "存在（exists）"
+
+#: ../source/proofs/definitional.rst:115 becfb6bf4429423fb38f34ebb76f572a
+msgid "And (conjunction)"
+msgstr "与（合取，And/Conjunction）"
+
+#: ../source/proofs/definitional.rst:117 f27a53dadc0d4b2b9b28201c788860e0
+msgid "We can have a type which corresponds to conjunction:"
+msgstr "我们可以有一个与合取对应的类型："
+
+#: ../source/proofs/definitional.rst:123 ab05ad881dd3420fa2d740fe2b57f1fe
+msgid "There is a built in type called 'Pair'."
+msgstr "内置有一个名为 'Pair' 的类型。"
+
+#: ../source/proofs/definitional.rst:126 5c405b9da0914f57bba6f0e4f8a70eb9
+msgid "Or (disjunction)"
+msgstr "或（析取，Or/Disjunction）"
+
+#: ../source/proofs/definitional.rst:128 e7945428fd2d4a0ba5acd41cb77036c2
+msgid "We can have a type which corresponds to disjunction:"
+msgstr "我们可以有一个与析取对应的类型："
+
+#: ../source/proofs/definitional.rst:136 97f431bf399546f0a8b8f4326ae5c0ae
+msgid "There is a built in type called 'Either'."
+msgstr "内置有一个名为 'Either' 的类型。"
+
+#: ../source/proofs/definitional.rst:139 f3012753e202448f9a9439f255535e73
+msgid "Definitional and Propositional Equalities"
+msgstr "定义等式与命题等式（Definitional and Propositional Equalities）"
+
+#: ../source/proofs/definitional.rst:141 0004981d5f394c29a303923f5548c891
+msgid ""
+"We have seen that  we can 'prove' a type by finding a way to construct a "
+"term. In the case of equality types there is only one constructor which "
+"is ``Refl``. We have also seen that each side of the equation does not "
+"have to be identical like '2=2'. It is enough that both sides are "
+"*definitionally equal* like this:"
+msgstr ""
+"我们已经看到，可以通过构造一个项来\"证明\"一个类型。对于等式类型，只有一个构造器 ``Refl``。我们还看到，等式两边不必像 '2=2' "
+"那样完全相同，只要两边*定义上相等*即可，例如："
+
+#: ../source/proofs/definitional.rst:151 79cf3d4aed99444fb439fdad6e6acd50
+msgid ""
+"Both sides of this equation normalise to 2 and so Refl matches and the "
+"proposition is proved."
+msgstr "该等式两边都归约为 2，因此 Refl 匹配，命题得证。"
+
+#: ../source/proofs/definitional.rst:154 7ef4cf3754fb413a8392d4be0d97b5f1
+msgid ""
+"We don't have to stick to terms; we can also use symbolic parameters so "
+"the following type checks:"
+msgstr "我们不必局限于具体项，也可以使用符号参数，因此如下类型也是可通过类型检查的："
+
+#: ../source/proofs/definitional.rst:162 32fbe4f8b429403f95cbc52e4b568ae6
+msgid ""
+"If a proposition/equality type is not definitionally equal but is still "
+"true then it is *propositionally equal*. In this case we may still be "
+"able to prove it but some steps in the proof may require us to add "
+"something into the terms or at least to take some sideways steps to get "
+"to a proof."
+msgstr ""
+"如果一个命题/等式类型不是定义等价但依然为真，那么它就是*命题等价（propositionally "
+"equal）*。在这种情况下，我们仍然可以证明它，但证明过程中可能需要对项做一些变换，或者采取一些间接步骤来完成证明。"
+
+#: ../source/proofs/definitional.rst:167 e6ff89576ef54dbd9b9eb4ab8b4a313f
+msgid ""
+"Especially when working with equalities containing variable terms (inside"
+" functions) it can be hard to know which equality types are "
+"definitionally equal, in this example ``plusReducesL`` is *definitionally"
+" equal* but ``plusReducesR`` is not (although it is *propositionally "
+"equal*). The only difference between them is the order of the operands."
+msgstr ""
+"尤其是在处理包含变量项（如函数内部）的等式时，判断哪些等式类型是定义等价的会比较困难。在本例中，``plusReducesL`` "
+"是*定义等价*，而 ``plusReducesR`` 不是（尽管它是*命题等价*）。两者唯一的区别在于操作数的顺序。"
+
+#: ../source/proofs/definitional.rst:181 52d35f73e2d64c4e932874c9f7880246
+msgid "Checking ``plusReducesR`` gives the following error:"
+msgstr "检查 ``plusReducesR`` 时会出现如下错误："
+
+#: ../source/proofs/definitional.rst:192 1bede3c030cb43aab3264c98effd3190
+msgid "So why is ``Refl`` able to prove some equality types but not others?"
+msgstr "那么，为什么 ``Refl`` 能证明某些等式类型而不能证明其他的？"
+
+#: ../source/proofs/definitional.rst:194 c99d9b82467e4c10af6d8b6122a35d2a
+msgid ""
+"The first answer is that ``plus`` is defined by recursion on its first "
+"argument. So, when the first argument is ``Z``, it reduces, but not when "
+"the second argument is ``Z``."
+msgstr "第一个原因是 ``plus`` 是按第一个参数递归定义的。因此，当第一个参数为 ``Z`` 时可以归约，但第二个参数为 ``Z`` 时则不能。"
+
+#: ../source/proofs/definitional.rst:198 5aff4499ed3c4a50a7b521cbe1a3356a
+msgid ""
+"If an equality type can be proved/constructed by using ``Refl`` alone it "
+"is known as a *definitional equality*. In order to be definitionally "
+"equal both sides of the equation must normalise to the same value."
+msgstr ""
+"如果一个等式类型可以仅用 ``Refl`` 证明/构造，则称为*定义等式（definitional "
+"equality）*。要定义等价，等式两边必须归约为同一个值。"
+
+#: ../source/proofs/definitional.rst:202 14e9ce1fd7fb40ad809205392ecc886b
+msgid ""
+"So when we type ``1+1`` in Idris it is immediately reduced to 2 because "
+"definitional equality is built in"
+msgstr "因此，在 Idris 中输入 ``1+1`` 时会立即归约为 2，因为定义等式是内建的。"
+
+#: ../source/proofs/definitional.rst:210 73b4ff31c1eb4946ac0684640f16555c
+msgid "In the following pages we discuss how to resolve propositional equalities."
+msgstr "在接下来的页面中，我们将讨论如何解决命题等式。"
+

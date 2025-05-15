@@ -1,0 +1,647 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2023, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-16 09:52+0800\n"
+"PO-Revision-Date: 2022-09-03 13:48+0000\n"
+"Last-Translator: grass <hi@grass.show>\n"
+"Language-Team: Chinese (Simplified) <>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../source/reference/pragmas.rst:3 9f0a24a388fa49da8a66a80e2a231c86
+msgid "Pragmas"
+msgstr "编译指示（Pragmas）"
+
+#: ../source/reference/pragmas.rst:8 2e56ba0250ae481593310dfcf833f3bc
+msgid ""
+"Idris2 supports a number of pragmas (identifiable by the `%` prefix). "
+"Some pragmas change compiler behavior until the behavior is changed back "
+"using the same pragma while others apply to the following declaration. A "
+"small niche of pragmas apply directly to one or more arguments instead of"
+" the code following the pragma (like the `%name` pragma described below)."
+msgstr "Idris2 支持多种编译指示（以 `%` 前缀标识）。有些编译指示会改变编译器行为，直到再次用同名指示恢复；有些则只作用于紧随其后的声明。还有一小部分编译指示直接作用于一个或多个参数，而不是后续代码（如下文 `%name` 指示）。"
+
+#: ../source/reference/pragmas.rst:14 2b131d1e21484efc89ed7129a30aa397
+msgid ""
+"This page is a work in progress. If you know about a pragma that is not "
+"described yet, please consider submitting a pull request!"
+msgstr "本页内容仍在完善中。如果你了解未被描述的编译指示，欢迎提交 Pull Request！"
+
+#: ../source/reference/pragmas.rst:18 76196dd536ef47829a9bf7bd44a59ff2
+msgid "Global pragmas"
+msgstr "全局编译指示（Global pragmas）"
+
+#: ../source/reference/pragmas.rst:21 4ad92a13e0574e9fb7d00ca8a26e6dea
+msgid "``%language``"
+msgstr "``%language``"
+
+#: ../source/reference/pragmas.rst:23 617b76be6e3940aa9a3a0e37a435d538
+msgid ""
+"Enable language extensions.  Currently, the only extension is "
+"[#ElabReflection]_."
+msgstr "启用语言扩展。目前仅支持 [#ElabReflection]_。"
+
+#: ../source/reference/pragmas.rst:30 36d12070a6b74643a8395d18364c74d3
+#, python-format
+msgid "``%default``"
+msgstr "``%default``"
+
+#: ../source/reference/pragmas.rst:32 e74dc96f9051435499c5009b4042eb04
+msgid ""
+"Set the default totality requirement for functions, which can be one of "
+"``total``, ``covering``, or ``partial``.  The value is initially set to "
+"``covering`` unless the ``--total`` command line switch is used, which "
+"sets it to ``total``."
+msgstr "设置函数的默认完备性要求，可选值为 ``total``、``covering`` 或 ``partial``。默认值为 ``covering``，除非使用命令行参数 ``--total``，此时默认值为 ``total``。"
+
+#: ../source/reference/pragmas.rst:37 ef42794629bb48ec99664ea326b15fc7
+msgid "``%builtin``"
+msgstr "``%builtin``"
+
+#: ../source/reference/pragmas.rst:39 2dd2e6d2b3b84fad9c228db87aa03871
+msgid ""
+"The ``%builtin Natural`` pragma converts recursive/unary representations "
+"of natural numbers into primitive ``Integer`` representations."
+msgstr "``%builtin Natural`` 指示会将递归/一元表示的自然数转换为原生 ``Integer`` 表示。"
+
+#: ../source/reference/pragmas.rst:42 e5acc7e911174606ab46bd773c921239
+msgid ""
+"This pragma is explained in detail on its own page. For more, see "
+":ref:`builtins`."
+msgstr "该指示在专门页面有详细说明，详见 :ref:`builtins`。"
+
+#: ../source/reference/pragmas.rst:46 04acb6d14c7b4ac9b526d0c32c2d3673
+msgid "``%name``"
+msgstr "``%name``"
+
+#: ../source/reference/pragmas.rst:48 2e73c0445df24da09604cd4bf887e02d
+msgid ""
+"Give the compiler some suggested names to use for a particular type when "
+"it is asked to generate names for values. You can specify any number of "
+"suggested names; they will be used in-order when more than one is needed "
+"for a single definition."
+msgstr "为特定类型向编译器提供建议名称，用于自动生成值名。可指定任意数量的名称，若单个定义需要多个名称，则按顺序使用。"
+
+#: ../source/reference/pragmas.rst:60 a4a0b3ee7bfa45679847a2a863ceacde
+msgid "``%ambiguity_depth``"
+msgstr "``%ambiguity_depth``"
+
+#: ../source/reference/pragmas.rst:62 43b585409fc544689c4cf1696eb9a284
+msgid ""
+"Set how deep nested ambiguous names can be before Idris gives up. The "
+"default is 3, increashing this will effect compiler performance. For more"
+" details, see :ref:`ambiguous-name-resolution`."
+msgstr "设置 Idris 解析嵌套歧义名称的最大深度，超出则放弃。默认值为 3，增大该值会影响编译性能。详见 :ref:`ambiguous-name-resolution`。"
+
+#: ../source/reference/pragmas.rst:66 8fef618a212e4d6fa2960d219eb9d36d
+msgid "``%totality_depth``"
+msgstr "``%totality_depth``"
+
+#: ../source/reference/pragmas.rst:68 141b3b99eb794c8696a7f5034f0c4bb2
+msgid ""
+"Set the number of matching constructors Idris will look under when "
+"checking totality.  For instance `Just xs` is smaller than `Just (x :: "
+"xs)` if Idris looks under the matching constructor. The default value is "
+"5.  Increasing the value may slow down totality checking."
+msgstr "设置 Idris 检查完备性时递归匹配构造子的最大层数。例如，若允许深入匹配构造子，则 `Just xs` 小于 `Just (x :: xs)`。默认值为 5，增大该值会降低检查速度。"
+
+#: ../source/reference/pragmas.rst:73 e85712ae717e45b1b360f8b753aea7fe
+msgid "``%auto_implicit_depth``"
+msgstr "``%auto_implicit_depth``"
+
+#: ../source/reference/pragmas.rst:75 21c18b5a2e8442389c0ac1dbb78481f3
+msgid "Set the search depth for ``auto`` implicits. The default value is 50."
+msgstr "设置 ``auto`` 隐式参数的搜索深度，默认值为 50。"
+
+#: ../source/reference/pragmas.rst:78 ddeaae2fd922433295f6a81603d077e4
+#, python-format
+msgid "``%logging``"
+msgstr "``%logging``"
+
+#: ../source/reference/pragmas.rst:80 95198279beeb417b8e5cb4db98537db7
+msgid "Change the logging level.  See :ref:`sect-logging` for details."
+msgstr "更改日志级别。详见 :ref:`sect-logging`。"
+
+#: ../source/reference/pragmas.rst:89 95e6529d8cef401292479d53fa60c43a
+msgid "``%prefix_record_projections``"
+msgstr "``%prefix_record_projections``"
+
+#: ../source/reference/pragmas.rst:91 23fb12acacfb491a8bf6f44b665a5eb4
+msgid ""
+"Configure whether projection functions without a leading period are "
+"generated for records. It defaults to ``on``.  See :ref:`record-"
+"elaboration` for more details."
+msgstr "配置是否为记录生成不带前导点的投影函数。默认开启。详见 :ref:`record-elaboration`。"
+
+#: ../source/reference/pragmas.rst:98 fbe22fb1f78947699fa3cc59850ff080
+msgid "``%transform``"
+msgstr "``%transform``"
+
+#: ../source/reference/pragmas.rst:100 826b7e09833544cda38e526e49733d76
+msgid ""
+"Replace a function at runtime with another implementation. It allows us "
+"to functions that are appropriate for type checking and have an efficient"
+" version at runtime. For example:"
+msgstr "在运行时用另一个实现替换函数。这样可以在类型检查时使用合适的实现，运行时则用高效版本。例如："
+
+#: ../source/reference/pragmas.rst:112 54051079f72f4f4bb2a3cda2eff62349
+#, python-format
+msgid "``%unbound_implicits``"
+msgstr "``%unbound_implicits``"
+
+#: ../source/reference/pragmas.rst:114 e8679ddfdc424055be9744d2bafc6b7f
+msgid ""
+"Configure whether implicit bindings are automatically added to function "
+"types for unbound lowercase names. It is on by default. See :ref"
+":`unbound-implicits` for more details."
+msgstr "配置是否为未绑定的小写名称自动添加隐式绑定。默认开启。详见 :ref:`unbound-implicits`。"
+
+#: ../source/reference/pragmas.rst:118 a6a70c24018e491ca7a2264f25a41868
+msgid "``%auto_lazy``"
+msgstr "``%auto_lazy``"
+
+#: ../source/reference/pragmas.rst:120 b7053835675d4ace94a1023cae158efb
+msgid ""
+"Configure whether the compiler automatically adds ``delay`` and ``force``"
+" when necessary.  It defaults to ``on``."
+msgstr "配置编译器是否在必要时自动添加 ``delay`` 和 ``force``。默认开启。"
+
+#: ../source/reference/pragmas.rst:125 8357505850aa4ec494405571c46c9024
+#, python-format
+msgid "``%search_timeout``"
+msgstr "``%search_timeout``"
+
+#: ../source/reference/pragmas.rst:127 c810288773c342c9b388bd21e4123134
+msgid "Set the expression search timeout in milliseconds.  The default is 1000."
+msgstr "设置表达式搜索超时时间（毫秒），默认值为 1000。"
+
+#: ../source/reference/pragmas.rst:135 24de269537f945fe878cc40e1888b19a
+msgid "``%nf_metavar_threshold``"
+msgstr "``%nf_metavar_threshold``"
+
+#: ../source/reference/pragmas.rst:137 ccf4ee7efa9746ab9e2626fe67d233e0
+msgid ""
+"Set the maximum number of stuck applications allowed while unifying a "
+"meta. The default value is 25."
+msgstr "设置统一 meta 时允许的最大卡住应用次数，默认值为 25。"
+
+#: ../source/reference/pragmas.rst:141 5d5f892a4e5b4dd2845e904d194d7ed6
+#, python-format
+msgid "``%cg``"
+msgstr "``%cg``"
+
+#: ../source/reference/pragmas.rst:143 493a511962cd4a4eaeb86110bdc9d3e4
+#, python-format
+msgid ""
+"Codegen directives can be included in source code with the ``%cg`` "
+"pragma. For example, instead of using ``--directive "
+"extraRuntime=mycode.ss`` on the command line for the chez backend, you "
+"can write:"
+msgstr "可以用 ``%cg`` 指示在源码中包含代码生成指令。例如，chez 后端下可用 ``%cg`` 代替命令行参数 ``--directive extraRuntime=mycode.ss``："
+
+#: ../source/reference/pragmas.rst:150 b893e2952535414684c85650242901f5
+#, python-format
+msgid ""
+"The ``%cg`` pragma is followed by the name of a codegen and a directive "
+"for that codegen, terminated by newline.  Directives from imported "
+"modules, including transitive imports, will aggregate. All of the "
+"directives given in the source are stored in the module, but only the "
+"directives for the current codegen are used at link time."
+msgstr "``%cg`` 指示后跟代码生成器名称和指令，以换行结束。导入模块（包括传递导入）的指令会聚合。所有源码中的指令都会存储在模块中，但链接时只使用当前代码生成器的指令。"
+
+#: ../source/reference/pragmas.rst:155 71a5a91a18c84efd8e25380e1d2664e9
+msgid ""
+"How directives are treated in aggregate depends on the codegen and "
+"directive. For example, the ``extraRuntime`` directive for the Chez "
+"codegen is deduplicated.  And the javascript backend gives the "
+"``minimal`` directive priority over the ``compact`` directive if both are"
+" present."
+msgstr "指令的聚合方式取决于代码生成器和具体指令。例如，Chez 代码生成器的 ``extraRuntime`` 指令会去重；JavaScript 后端若同时存在 ``minimal`` 和 ``compact``，则优先采用 ``minimal``。"
+
+#: ../source/reference/pragmas.rst:159 c747e2090c4c400bb1ef1ead96083deb
+msgid ""
+"See the section for each codegen under :ref:`sect-execs` for available "
+"directives."
+msgstr "各代码生成器可用指令详见 :ref:`sect-execs`。"
+
+#: ../source/reference/pragmas.rst:162 504b7a2a73264da59a38504d6803f063
+msgid "Pragmas on declarations"
+msgstr "声明上的编译指示（Pragmas on declarations）"
+
+#: ../source/reference/pragmas.rst:165 d23bab5560aa410784d50daee2337ed4
+#, python-format
+msgid "``%deprecate``"
+msgstr "``%deprecate``"
+
+#: ../source/reference/pragmas.rst:167 58b55aebdb4545b4a021e386a24363eb
+msgid ""
+"Mark the following definition as deprecated. Whenever the function is "
+"used, Idris will show a deprecation warning."
+msgstr "将后续定义标记为已弃用。每当该函数被使用时，Idris 会显示弃用警告。"
+
+#: ../source/reference/pragmas.rst:183 5e9f67feb4f7419bae993c7a7bc14e0f
+msgid ""
+"You can use code documentation (triple vertical bar `||| docs`) to "
+"suggest a strategy for removing the deprecated function call and that "
+"documentation will be displayed alongside the warning."
+msgstr "你可以用代码文档（`||| docs` 三竖线）建议移除弃用函数调用的方案，相关文档会与警告一同显示。"
+
+#: ../source/reference/pragmas.rst:202 72435cad084741eeadb08d8d6e55c519
+#, python-format
+msgid "``%inline``"
+msgstr "``%inline``"
+
+#: ../source/reference/pragmas.rst:204 1c50413b0fb44820824626bce45e9eee
+msgid ""
+"Instruct the compiler to inline the following definition when it is "
+"applied. It is generally best to let the compiler and the backend you are"
+" using optimise code based on its predetermined rules, but if you want to"
+" force a function to be inlined when it is called, this pragma will force"
+" it."
+msgstr "指示编译器在应用时内联后续定义。通常建议让编译器和后端根据预设规则优化代码，但如需强制某函数被内联，可用此指示。"
+
+#: ../source/reference/pragmas.rst:215 fb2552911c744335b680dc5b90eaf380
+msgid "``%noinline``"
+msgstr "``%noinline``"
+
+#: ../source/reference/pragmas.rst:217 d0d80bac7dca4b74a292c5df0ddcb64b
+msgid ""
+"Instruct the compiler _not_ to inline the following definition when it is"
+" applied. It is generally best to let the compiler and the backend you "
+"are using optimise code based on its predetermined rules, but if you want"
+" to force a function to never be inlined when it is called, this pragma "
+"will force it."
+msgstr "指示编译器在应用时不要内联后续定义。通常建议让编译器和后端根据预设规则优化代码，但如需强制某函数绝不被内联，可用此指示。"
+
+#: ../source/reference/pragmas.rst:228 5d051ad4ef9a4a5dbcca3cac6de11274
+msgid "``%tcinline``"
+msgstr "``%tcinline``"
+
+#: ../source/reference/pragmas.rst:230 f9c7f84c0d6c4e8ea2545ad67e108d4b
+msgid "Instruct the compiler to inline the function during totality checking."
+msgstr "指示编译器在完备性检查期间内联该函数。"
+
+#: ../source/reference/pragmas.rst:233 1a9c2b5c5313452fac1dfbfd5b2b725f
+#, python-format
+msgid "``%hide``"
+msgstr "``%hide``"
+
+#: ../source/reference/pragmas.rst:235 98187e5d037e4abcab8147ac6307098c
+msgid ""
+"Hide a definition from imports. This is particularly useful when you are "
+"re-definiing functions or types from a module but still need to import "
+"it."
+msgstr "隐藏某个定义，使其在被导入时不可见。对于需要重定义模块中的函数或类型但仍需导入该模块时尤其有用。"
+
+#: ../source/reference/pragmas.rst:248 e99faed9da644581aeda3f1b7d25171d
+msgid "You can also hide fixity declarations if you need to redefine your own."
+msgstr "如需自定义 fixity，也可隐藏原有 fixity 声明。"
+
+#: ../source/reference/pragmas.rst:260 0e2d1d719c32482d91e27caf989324e2
+#, python-format
+msgid "``%unhide``"
+msgstr "``%unhide``"
+
+#: ../source/reference/pragmas.rst:262 f624c9174f9a4e40a3d1be7c3ede1a25
+#, python-format
+msgid ""
+"The ``%unhide`` pragma unhides a definition that was previously hidden "
+"with ``%hide``."
+msgstr "``%unhide`` 指示可取消之前用 ``%hide`` 隐藏的定义。"
+
+#: ../source/reference/pragmas.rst:266 b247966585514d26afd27f100248ea56
+#, python-format
+msgid "``%unsafe``"
+msgstr "``%unsafe``"
+
+#: ../source/reference/pragmas.rst:268 2bcd64432b434018934bfe3b3b538926
+msgid ""
+"Mark a function like ``believe_me`` as being unsafe. The function will be"
+" semantically highlighted in a different color to draw the user's "
+"attention to its use."
+msgstr "将类似 ``believe_me`` 的函数标记为不安全。该函数会以不同颜色高亮，提醒用户注意其使用。"
+
+#: ../source/reference/pragmas.rst:273 152706f128bc419e83e67a04cc8266e7
+#, python-format
+msgid "``%spec``"
+msgstr "``%spec``"
+
+#: ../source/reference/pragmas.rst:275 9e9d5b3d105042b1aecb4ccfe9a4b99b
+msgid "Specialise a function according to a list of arguments."
+msgstr "根据参数列表对函数进行特化。"
+
+#: ../source/reference/pragmas.rst:286 c4b47757dcc54ee2b5b19fe31bc607c3
+#, python-format
+msgid "``%foreign``"
+msgstr "``%foreign``"
+
+#: ../source/reference/pragmas.rst:288 4ee58f4e01ff4e3c838c8f007ed573bb
+msgid ""
+"Declare a foreign function.  It is followed by an indented block of "
+"expressions that evaluate to strings. See :ref:`ffi-overview` for more "
+"details."
+msgstr "声明外部函数。其后为缩进的字符串表达式块。详见 :ref:`ffi-overview`。"
+
+#: ../source/reference/pragmas.rst:293 4015838c5d0b4d3aaf4d7af96ea81d60
+#, python-format
+msgid "``%foreign_impl``"
+msgstr "``%foreign_impl``"
+
+#: ../source/reference/pragmas.rst:295 34825b097c1d4b27a9b036b7c572c034
+#, python-format
+msgid ""
+"Adds an implementation to an existing ``%foreign`` in another file. This "
+"pragma can be used to fill in an implementation for another backend "
+"without changing the original file. In the case of multiple declarations "
+"for a given backend, the backend will choose the one from the most "
+"recently loaded module."
+msgstr "为其他文件中已有的 ``%foreign`` 添加实现。可用于为其他后端补充实现而无需修改原文件。若同一后端有多个声明，将采用最近加载模块中的实现。"
+
+#: ../source/reference/pragmas.rst:306 16f8327dbd6f421294202ea1f781dae5
+#, python-format
+msgid "``%export``"
+msgstr "``%export``"
+
+#: ../source/reference/pragmas.rst:308 af070f47b4af4ebf9000e99e986a0044
+#, python-format
+msgid ""
+"Export an Idris function to the underlying host language. The the name "
+"for each backend is given in an indented block of string expressions, "
+"similar to ``%foreign``.  Currently this pragma is only supported by the "
+"javascript backend."
+msgstr "将 Idris 函数导出到底层宿主语言。每个后端的名称在缩进的字符串表达式块中指定，类似 ``%foreign``。目前仅 JavaScript 后端支持该指示。"
+
+#: ../source/reference/pragmas.rst:320 7abfecd15a9c48efbf21b4c416446e28
+msgid "``%nomangle``"
+msgstr "``%nomangle``"
+
+#: ../source/reference/pragmas.rst:322 9ecfc6e2919e48d480f1e788e27754ba
+#, python-format
+msgid ""
+"This pragma is deprecated.  Instead use ``%export`` to expose functions "
+"to the backend."
+msgstr "该指示已弃用，请用 ``%export`` 向后端暴露函数。"
+
+#: ../source/reference/pragmas.rst:326 3d6f603970ee41c9b4c0950ff3672754
+#, python-format
+msgid "``%hint``"
+msgstr "``%hint``"
+
+#: ../source/reference/pragmas.rst:328 dfef97202d5c445ea33c9325548de630
+#, python-format
+msgid ""
+"Mark a function to be used for ``auto`` search (see :ref:`auto-implicits`"
+" and :ref:`auto-implicit-arguments` for more).  Hints are used internally"
+" for instance resolution and non-named instances are automatically tagged"
+" with ``%hint``."
+msgstr "将函数标记为 ``auto`` 搜索用（详见 :ref:`auto-implicits` 和 :ref:`auto-implicit-arguments`）。Hint 在实例解析时内部使用，未命名实例会自动加上 ``%hint``。"
+
+#: ../source/reference/pragmas.rst:334 609e3fecc4c14234b7c3b288d18f9a32
+#, python-format
+msgid "``%defaulthint``"
+msgstr "``%defaulthint``"
+
+#: ../source/reference/pragmas.rst:336 a6d4b9cae35d41468aaced36cb33cbcb
+msgid "Mark a hint to be tried when no other hints match."
+msgstr "将 hint 标记为无其他 hint 匹配时尝试。"
+
+#: ../source/reference/pragmas.rst:339 fd8f37650d0e4417b2f5a0cf721e6660
+#, python-format
+msgid "``%globalhint``"
+msgstr "``%globalhint``"
+
+#: ../source/reference/pragmas.rst:341 e4cb6d23dea44072aee969528293e736
+#, python-format
+msgid ""
+"A global hint is like a ``%hint``, but it is always tried, while "
+"``%hint`` is only tried if the return type matches."
+msgstr "全局 hint 类似于 ``%hint``，但总会尝试，而 ``%hint`` 仅在返回类型匹配时尝试。"
+
+#: ../source/reference/pragmas.rst:345 8b916378912f4a5d83cfe7ba7a2d2628
+#, python-format
+msgid "``%extern``"
+msgstr "``%extern``"
+
+#: ../source/reference/pragmas.rst:347 a46feccaa35b495183782c40ca381733
+msgid ""
+"Declare a function to be externally implemented, but relies on codegen to"
+" fill in the function rather than specifying the name. The function name "
+"must be explicitly handled in the codegen. It is used for functions like "
+"``prim__newIORef`` in the prelude."
+msgstr "声明函数由外部实现，但由代码生成器补全实现而非指定名称。函数名需在代码生成器中显式处理。常用于 prelude 中如 ``prim__newIORef`` 之类的函数。"
+
+#: ../source/reference/pragmas.rst:353 7a43c5029efc4cbdb94c92795cb31cb9
+msgid "``%macro``"
+msgstr "``%macro``"
+
+#: ../source/reference/pragmas.rst:355 60a23786508b41da8536ac2cbe8b4c77
+msgid ""
+"Mark a function that returns the ``Elab`` monad as a macro. When the "
+"function is used in an expression, it will be run at compile time and the"
+" invocation will be replaced by the result of the elaboration."
+msgstr "将返回 ``Elab`` monad 的函数标记为宏。该函数在表达式中被调用时，会在编译期运行，并用 elaboration 结果替换调用。"
+
+#: ../source/reference/pragmas.rst:360 86446c95df8b44c6abc47a2b4e1bc2be
+#, python-format
+msgid "``%start``"
+msgstr "``%start``"
+
+#: ../source/reference/pragmas.rst:362 ae2554717a6f44e68323ca0c8232f781
+#, python-format
+msgid "The ``%start`` pragma is not implemented."
+msgstr "``%start`` 指示尚未实现。"
+
+#: ../source/reference/pragmas.rst:365 d6ebbcdf44444380a0318b263d83bdb6
+msgid "``%allow_overloads``"
+msgstr "``%allow_overloads``"
+
+#: ../source/reference/pragmas.rst:367 430d1ba1d92b4a14a5f2d8496d8fead5
+msgid "This pragma is no longer used by the compiler."
+msgstr "该指示已不再被编译器使用。"
+
+#: ../source/reference/pragmas.rst:370 9aaa5167b68d44fe99489ca0a3120ac8
+msgid "Internal"
+msgstr "内部（Internal）"
+
+#: ../source/reference/pragmas.rst:372 f4b2226a323e424e82d60710bbcf9c7f
+msgid ""
+"These pragmas are used in the prelude, but aren't typically used in user "
+"programs."
+msgstr "这些指示用于 prelude，但用户程序通常不会用到。"
+
+#: ../source/reference/pragmas.rst:376 8891c3d891ff4c46822af13134cdc3e8
+#, python-format
+msgid "``%rewrite``"
+msgstr "``%rewrite``"
+
+#: ../source/reference/pragmas.rst:378 0c346b40e451404f8be0994126e99ad1
+msgid "Specify the `Equal` type and rewrite function used by rewrite statements."
+msgstr "指定 rewrite 语句使用的 `Equal` 类型和重写函数。"
+
+#: ../source/reference/pragmas.rst:385 27a8f4898ccd489fa61b9b9213067f95
+msgid "``%pair``"
+msgstr "``%pair``"
+
+#: ../source/reference/pragmas.rst:387 02e0aee93ba14506a68f7a5bf000aa5f
+msgid ""
+"This directive is used in the prelude to tell auto implicit search what "
+"to use to look inside pairs."
+msgstr "该指示用于 prelude，告知 auto 隐式搜索如何处理 pair。"
+
+#: ../source/reference/pragmas.rst:394 73e02151851d456eace5955b90854735
+#, python-format
+msgid "``%integerLit``"
+msgstr "``%integerLit``"
+
+#: ../source/reference/pragmas.rst:396 19c2443d9fca43c196aa9e3897cc769b
+msgid ""
+"Define the function used to interpret literal integers. In the prelude, "
+"it is set to ``fromInteger``, so a literal ``2`` is elaborated to "
+"``fromInteger 2``."
+msgstr "定义用于解释整数字面量的函数。在 prelude 中设为 ``fromInteger``，因此字面量 ``2`` 会被 elaboration 为 ``fromInteger 2``。"
+
+#: ../source/reference/pragmas.rst:404 ce36cd698c38471c8b43c02a2a3157d9
+#, python-format
+msgid "``%stringLit``"
+msgstr "``%stringLit``"
+
+#: ../source/reference/pragmas.rst:406 252b28c6b341476eb5eff7323abafa4d
+msgid ""
+"Define the function used to interpret literal strings. In the prelude, it"
+" is set to ``fromString``, so a literal ``\"idris\"`` is elaborated to "
+"``fromString \"idris\"``."
+msgstr "定义用于解释字符串字面量的函数。在 prelude 中设为 ``fromString``，因此字面量 ``\"idris\"`` 会被 elaboration 为 ``fromString \"idris\"``。"
+
+#: ../source/reference/pragmas.rst:415 76fc5b2c16e941d7b81752b57cc21e20
+#, python-format
+msgid "``%charLit``"
+msgstr "``%charLit``"
+
+#: ../source/reference/pragmas.rst:417 9d051bdd16be49e49e4d09379b3fc25c
+msgid ""
+"Define the function used to interpret literal characters. In the prelude,"
+" it is set to ``fromChar``, so a literal ```x```` is elaborated to "
+"``fromChar 'x'``."
+msgstr "定义用于解释字符字面量的函数。在 prelude 中设为 ``fromChar``，因此字面量 ```x``` 会被 elaboration 为 ``fromChar 'x'``。"
+
+#: ../source/reference/pragmas.rst:425 80203fe4ce644a188e9fbced4cdbc42d
+#, python-format
+msgid "``%doubleLit``"
+msgstr "``%doubleLit``"
+
+#: ../source/reference/pragmas.rst:427 8b20cd073e484958a1b3c3b9a7cdf12e
+msgid ""
+"Define the function used to interpret literal numbers with a decimal in "
+"them. In the prelude, it is set to ``fromDouble``, so a literal "
+"```2.0```` is elaborated to ``fromDouble 2.0``."
+msgstr "定义用于解释带小数点数字字面量的函数。在 prelude 中设为 ``fromDouble``，因此字面量 ```2.0``` 会被 elaboration 为 ``fromDouble 2.0``。"
+
+#: ../source/reference/pragmas.rst:436 9c94fd71dab64c1f9f9dc528f62b1a7e
+msgid "Reflection Literals"
+msgstr "反射字面量（Reflection Literals）"
+
+#: ../source/reference/pragmas.rst:440 0dafcbfd38d347b68ef518b860b9a756
+msgid "``%TTImpLit``"
+msgstr "``%TTImpLit``"
+
+#: ../source/reference/pragmas.rst:442 d1a6598e192c4c3886407f8934caf637
+msgid "Allow quoted expressions to be cast to a user defined type."
+msgstr "允许将带引号的表达式转换为用户自定义类型。"
+
+#: ../source/reference/pragmas.rst:472 4464280d01204dda9c375f6a5f356cb8
+#, python-format
+msgid "``%declsLit``"
+msgstr "``%declsLit``"
+
+#: ../source/reference/pragmas.rst:474 60b91e32732445fba508826c261b9d96
+msgid "Allow quoted declarations to be cast to user defined types."
+msgstr "允许将带引号的声明转换为用户自定义类型。"
+
+#: ../source/reference/pragmas.rst:477 52752de1ade240a1b65f44c307c622a0
+msgid "``%nameLit``"
+msgstr "``%nameLit``"
+
+#: ../source/reference/pragmas.rst:479 6546bf4384ad4e0087bf05ad5b326256
+msgid "Allow quoted names to be cast to user defined types."
+msgstr "允许将带引号的名称转换为用户自定义类型。"
+
+#: ../source/reference/pragmas.rst:483 0d60d0ca5a6841f9af5acd2e651f0027
+msgid "Expressions"
+msgstr "表达式相关（Expressions）"
+
+#: ../source/reference/pragmas.rst:485 60c2caf885e64b96aebea972006d88b5
+msgid "Pragmas that occur inside expressions."
+msgstr "出现在表达式内部的编译指示。"
+
+#: ../source/reference/pragmas.rst:488 03787cc9dd5d4e5b9253aed228a71ab2
+#, python-format
+msgid "``%runElab``"
+msgstr "``%runElab``"
+
+#: ../source/reference/pragmas.rst:490 0a47e8729fb244d49e9184dbdc64f999
+#, python-format
+msgid ""
+"The ``%runElab`` pragma can be used at the top level or as an expression."
+" It takes an elaborator script as an argument which runs in the ``Elab`` "
+"monad, has access to Idris' type-checking machinery, and can generate "
+"code."
+msgstr "``%runElab`` 可用于顶层或表达式中。它接受一个 elaborator 脚本作为参数，在 ``Elab`` monad 中运行，可访问 Idris 的类型检查机制并生成代码。"
+
+#: ../source/reference/pragmas.rst:495 de6d04c7dfe04d2381cdb11f95454536
+#, python-format
+msgid "``%search``"
+msgstr "``%search``"
+
+#: ../source/reference/pragmas.rst:497 7e56aff3d0bc44119d793978eb3c1d07
+msgid ""
+"Ask Idris to fill in the value with auto-implicit search. See :ref:`auto-"
+"implicits` for more details."
+msgstr "请求 Idris 用自动隐式搜索补全该值。详见 :ref:`auto-implicits`。"
+
+#: ../source/reference/pragmas.rst:500 eb0caede634940d3afb35dab000395b1
+msgid "``%World``"
+msgstr "``%World``"
+
+#: ../source/reference/pragmas.rst:502 e88f03f864a14d3cb165be22471b4821
+msgid ""
+"The type of the world token used for IO.  For more information, see "
+":ref:`World<sect-world>`."
+msgstr "IO 用 world token 的类型。详见 :ref:`World<sect-world>`。"
+
+#: ../source/reference/pragmas.rst:505 42c0ef8372cd446bac17f55b91c6d16d
+msgid "``%MkWorld``"
+msgstr "``%MkWorld``"
+
+#: ../source/reference/pragmas.rst:507 791389d7d36349d18366b828f564baaf
+msgid ""
+"The world token used for IO.  For more information, see :ref:`World<sect-"
+"world>`."
+msgstr "IO 用 world token。详见 :ref:`World<sect-world>`。"
+
+#: ../source/reference/pragmas.rst:510 5687826204ae4015912160e2b1451cd0
+#, python-format
+msgid "``%syntactic``"
+msgstr "``%syntactic``"
+
+#: ../source/reference/pragmas.rst:512 eee67d673fcc490eb275a7e94fbba8a3
+#, python-format
+msgid ""
+"The ``%syntactic`` pragma can appear after the ``with`` keyword.  It "
+"abstracts over the value syntactically, rather than by value, and can "
+"significantly speed up elaboration where large types are involved, at a "
+"cost of being less general. Try it if \"with\" is slow."
+msgstr "``%syntactic`` 可出现在 ``with`` 关键字后。它以语法方式抽象值而非按值抽象，在涉及大型类型时可显著加快 elaboration，但通用性较低。如果 ``with`` 很慢可尝试此指示。"
+
+#: ../source/reference/pragmas.rst:517 fd2234225fae4e92be14346d58243d3c
+msgid ""
+"https://github.com/stefan-hoeck/idris2-elab-"
+"util/blob/main/src/Doc/Index.md"
+msgstr "https://github.com/stefan-hoeck/idris2-elab-util/blob/main/src/Doc/Index.md"

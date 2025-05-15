@@ -1,0 +1,148 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2023, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-16 09:52+0800\n"
+"PO-Revision-Date: 2022-09-03 13:48+0000\n"
+"Last-Translator: grass <hi@grass.show>\n"
+"Language-Team: Chinese (Simplified) <>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../source/tutorial/introduction.rst:5 2043b82253c34a7ab3519da15a1809af
+msgid "Introduction"
+msgstr "介绍"
+
+#: ../source/tutorial/introduction.rst:7 1721a8755932401cb7b2a09a8fce23c7
+msgid ""
+"In conventional programming languages, there is a clear distinction "
+"between *types* and *values*. For example, in `Haskell "
+"<https://www.haskell.org>`_, the following are types, representing "
+"integers, characters, lists of characters, and lists of any value "
+"respectively:"
+msgstr ""
+"在传统的编程语言中，*类型* 和 *值* 之间有明显的区别。例如，在 `Haskell "
+"<https://www.haskell.org>`_ "
+"，以下是类型，分别代表整数、字符、字符列表和任意值的列表："
+
+#: ../source/tutorial/introduction.rst:13 51b05558dbc14eb0a8669d7178f0f2dc
+msgid "``Int``, ``Char``, ``[Char]``, ``[a]``"
+msgstr "``Int``, ``Char``, ``[Char]``, ``[a]``"
+
+#: ../source/tutorial/introduction.rst:15 25117caaa8b6453c9cc3b72fb2773fbd
+msgid ""
+"Correspondingly, the following values are examples of inhabitants of "
+"those types:"
+msgstr "相应地，以下值是这些类型的成员的示例："
+
+#: ../source/tutorial/introduction.rst:18 555c149387984ccd836cd6218484de88
+msgid "``42``, ``’a’``, ``\"Hello world!\"``, ``[2,3,4,5,6]``"
+msgstr "``42``, ``’a’``, ``\"Hello world!\"``, ``[2,3,4,5,6]``"
+
+#: ../source/tutorial/introduction.rst:20 cc53a5163ba747749d4076be7bc671bf
+msgid ""
+"In a language with *dependent types*, however, the distinction is less "
+"clear. Dependent types allow types to “depend” on values — in other "
+"words, types are a *first class* language construct and can be "
+"manipulated like any other value. The standard example is the type of "
+"lists of a given length [#fn1]_, ``Vect n a``, where ``a`` is the element"
+" type and ``n`` is the length of the list and can be an arbitrary term."
+msgstr ""
+"然而，在具有*依值类型*的语言中，它们的区别不太明显。依值类型允许类型“依赖”值—"
+"—换句话说，类型是*一等*语言结构，可以像任何其他值一样被操作。"
+"标准示例是给定长度的列表类型 [#fn1]_， ``Vect n a`` ，其中 ``a`` 是元素类型，"
+" ``n`` 是列表的长度，且可以任意长。"
+
+#: ../source/tutorial/introduction.rst:27 f12d1b08fc1346d481e3017f8b667871
+msgid ""
+"When types can contain values, and where those values describe "
+"properties, for example the length of a list, the type of a function can "
+"begin to describe its own properties. Take for example the concatenation "
+"of two lists. This operation has the property that the resulting list's "
+"length is the sum of the lengths of the two input lists. We can therefore"
+" give the following type to the ``app`` function, which concatenates "
+"vectors:"
+msgstr ""
+"当类型可以包含值，并且这些值描述属性时，例如一个列表的长度，函数的类型就可以"
+"开始描述它自己的属性。以两个列表的连接为例。这个操作的属性是：结果列表的长度"
+"是两个输入列表的长度之和。因此，我们可以给 ``app`` "
+"函数提供以下类型，它用于连接向量："
+
+#: ../source/tutorial/introduction.rst:39 058ded21ce9240e7b7955741e44054e6
+msgid ""
+"This tutorial introduces Idris, a general purpose functional programming "
+"language with dependent types. The goal of the Idris project is to build "
+"a dependently typed language suitable for verifiable general purpose "
+"programming. To this end, Idris is a compiled language which aims to "
+"generate efficient executable code. It also has a lightweight foreign "
+"function interface which allows easy interaction with external libraries."
+msgstr ""
+"本教程介绍了Idris，一种具有依值类型的通用函数式编程语言。Idris "
+"项目的目标是建立一个适用于可验证的通用编程的依值类型语言。为此，Idris 被设计"
+"为一种编译语言，旨在生成高效的可执行代码。同时它还有一个轻量级的外部函数接口"
+"，允许与外部库轻松互动。"
+
+#: ../source/tutorial/introduction.rst:48 bcb31a1ff6cd459f9c9b80f55fc05a6b
+msgid "Intended Audience"
+msgstr "目标受众"
+
+#: ../source/tutorial/introduction.rst:50 85c663beb2c545739f1273dc1e813214
+msgid ""
+"This tutorial is intended as a brief introduction to the language, and is"
+" aimed at readers already familiar with a functional language such as "
+"`Haskell <https://www.haskell.org>`_ or `OCaml <https://ocaml.org>`_. In "
+"particular, a certain amount of familiarity with Haskell syntax is "
+"assumed, although most concepts will at least be explained briefly. The "
+"reader is also assumed to have some interest in using dependent types for"
+" writing and verifying software."
+msgstr ""
+"本教程旨在作为该语言的简要介绍，并针对已经熟悉函数式语言的读者，如 `Haskell "
+"<https://www.haskell.org>`_ 或 `OCaml <https://ocaml.org>`_ 。特别是假设对 "
+"Haskell 语法有一定程度的熟悉，尽管大多数概念至少会被简单地解释。同时还假设读"
+"者对使用依值类型来编写和验证软件有一定的兴趣。"
+
+#: ../source/tutorial/introduction.rst:58 55e9809779294a7cb93f8dfce660c2dd
+msgid ""
+"For a more in-depth introduction to Idris, which proceeds at a much "
+"slower pace, covering interactive program development, with many more "
+"examples, see `Type-Driven Development with Idris "
+"<https://www.manning.com/books/type-driven-development-with-idris>`_ by "
+"Edwin Brady, available from `Manning <https://www.manning.com>`_."
+msgstr ""
+"关于Idris的更深入的介绍，它以更慢的速度进行，涵盖了交互式程序开发，也有更多的"
+"示例，见 `Type-Driven Development with Idris <https://www.manning.com/books/"
+"type-driven-development-with-idris>`_ ，作者 Edwin Brady ，本书可从 `Manning "
+"<https://www.manning.com>`_ 获取。"
+
+#: ../source/tutorial/introduction.rst:64 ec19fcabc04a42388989b4ddd3331c4f
+msgid "Example Code"
+msgstr "示例代码"
+
+#: ../source/tutorial/introduction.rst:66 dfd96fbc4bad4f089298e20f7e62b5a5
+msgid ""
+"This tutorial includes some example code, which has been tested against "
+"Idris 2. These files are available with the Idris 2 distribution, so that"
+" you can try them out easily. They can be found under ``samples``. It is,"
+" however, strongly recommended that you type them in yourself, rather "
+"than simply loading and reading them."
+msgstr ""
+"本教程包括一些示例代码，这些代码已经针对Idris 2进行了测试。这些文件与Idris "
+"2发行版一起提供，所以你可以很容易地使用它们。它们可以在 ``samples`` "
+"目录下找到。然而，强烈建议你自己输入它们，而不是简单地加载然后阅读。"
+
+#: ../source/tutorial/introduction.rst:73 8fb558743f2942b8abe0dbcdb36640ee
+msgid "Footnotes"
+msgstr "脚注"
+
+#: ../source/tutorial/introduction.rst:74 093a1d7966994bf39b3090af73860e65
+msgid ""
+"Typically, and perhaps confusingly, referred to in the dependently typed "
+"programming literature as \"vectors\"."
+msgstr "通常，并且可能令人困惑的是，在依值类型编程文献中称为“向量”。"

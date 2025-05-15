@@ -1,0 +1,328 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2023, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-16 09:52+0800\n"
+"PO-Revision-Date: 2022-09-03 13:48+0000\n"
+"Last-Translator: grass <hi@grass.show>\n"
+"Language-Team: Chinese (Simplified) <>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../source/tutorial/interactive.rst:5 9c0d500234b64b9483079db022737c09
+msgid "Interactive Editing"
+msgstr "交互式编辑"
+
+#: ../source/tutorial/interactive.rst:7 8b610f9e55c94681b9791683436af784
+msgid ""
+"By now, we have seen several examples of how Idris’ dependent type system"
+" can give extra confidence in a function’s correctness by giving a more "
+"precise description of its intended behaviour in its *type*. We have also"
+" seen an example of how the type system can help with embedded DSL "
+"development by allowing a programmer to describe the type system of an "
+"object language. However, precise types give us more than verification of"
+" programs — we can also use the type system to help write programs which "
+"are *correct by construction*, interactively."
+msgstr ""
+"到目前为止，我们已经看到了几个例子，说明了 Idris 的依值类型系统如何通过更精确"
+"地描述函数的*类型*中的预期行为来增强对函数正确性的信心。"
+"我们还看到了类型系统如何通过允许程序员描述对象语言的类型系统来帮助嵌入式 DSL "
+"开发的示例。然而，精确类型给我们的不仅仅是程序的验证——我们还可以使用类型系统"
+"交互式地来帮助编写*按构造正确*的程序，交互。"
+
+#: ../source/tutorial/interactive.rst:16 82750ad6c9e64d99a1f0f835e0a79e10
+msgid ""
+"The Idris REPL provides several commands for inspecting and modifying "
+"parts of programs, based on their types, such as case splitting on a "
+"pattern variable, inspecting the type of a hole, and even a basic proof "
+"search mechanism. In this section, we explain how these features can be "
+"exploited by a text editor, and specifically how to do so in `Vim "
+"<https://github.com/edwinb/idris2-vim>`_. An interactive mode for `Emacs "
+"<https://github.com/idris-hackers/idris-mode>`_ is also available, "
+"updated for Idris 2 compatibility as of 23 February 2021."
+msgstr ""
+"Idris REPL 提供了几个用于检查和修改程序部分的命令，基于它们的类型，例如模式变"
+"量的大小写分割，检查孔的类型，甚至是基本的证明搜索机制。在本节中，我们将解释"
+"文本编辑器如何利用这些功能，特别是如何在 `Vim <https://github.com/edwinb/"
+"idris2-vim>`_ 中这样做。 `Emacs <https://github.com/idris-hackers/idris-"
+"mode>`_ 的交互模式也可用，自 2021 年 2 月 23 日起针对 Idris 2 "
+"兼容性进行了更新。"
+
+#: ../source/tutorial/interactive.rst:27 ca31527a30984230b23f299dff63b0b0
+msgid "Editing at the REPL"
+msgstr "在 REPL 中编辑"
+
+#: ../source/tutorial/interactive.rst:30 1c9bf5de21304936aaae0d88f11006a2
+msgid ""
+"The Idris2 repl does not support readline in the interest of keeping "
+"dependencies minimal. Unfortunately this precludes some niceties such as "
+"line editing, persistent history and completion. A useful work around is "
+"to install `rlwrap <https://linux.die.net/man/1/rlwrap>`_, this utility "
+"provides all the aforementioned features simply by invoking the Idris2 "
+"repl as an argument to the utility ``rlwrap idris2``"
+msgstr ""
+"为了尽量减少依赖，Idris2 的 REPL 不支持 readline。遗憾的是，这意味着无法使用行编辑、持久历史和补全等功能。一个实用的解决方法是安装 `rlwrap <https://linux.die.net/man/1/rlwrap>`_，只需用 ``rlwrap idris2`` 启动 Idris2 REPL，即可获得上述所有功能。"
+
+#: ../source/tutorial/interactive.rst:37 d665e896b10b4e4284fd144ccc9b88ac
+msgid ""
+"The REPL provides a number of commands, which we will describe shortly, "
+"which generate new program fragments based on the currently loaded "
+"module. These take the general form:"
+msgstr ""
+"REPL 提供了许多命令（下文将简要介绍），可以基于当前加载的模块生成新的程序片段。它们的一般格式如下："
+
+#: ../source/tutorial/interactive.rst:45 bdda4d75653a41dbaac1d1d876e2b87a
+msgid ""
+"That is, each command acts on a specific source line, at a specific name,"
+" and outputs a new program fragment. Each command has an alternative "
+"form, which *updates* the source file in-place:"
+msgstr ""
+"也就是说，每个命令都作用于特定的源代码行和名称，并输出一个新的程序片段。每个命令还有一种变体，可以*就地*更新源文件："
+
+#: ../source/tutorial/interactive.rst:53 aa629504393941399ba171843f3c7921
+msgid ""
+"It is also possible to invoke Idris in a mode which runs a REPL command, "
+"displays the result, then exits, using ``idris2 --client``. For example:"
+msgstr ""
+"你也可以用 ``idris2 --client`` 让 Idris 以一种模式运行 REPL 命令，显示结果后退出。例如："
+
+#: ../source/tutorial/interactive.rst:63 7450be2479ed41bab7fed4dec98ab375
+msgid ""
+"A text editor can take advantage of this, along with the editing "
+"commands, in order to provide interactive editing support."
+msgstr ""
+"文本编辑器可以结合这些命令，实现交互式编辑支持。"
+
+#: ../source/tutorial/interactive.rst:67 7a5c61852be64248993f77a91d22f236
+msgid "Editing Commands"
+msgstr "编辑命令"
+
+#: ../source/tutorial/interactive.rst:70 c1ea2c1a810042f38fd35131743b956e
+msgid ":addclause"
+msgstr ":addclause（添加子句）"
+
+#: ../source/tutorial/interactive.rst:72 835e51279baf467a8263938f45d3fd0d
+msgid ""
+"The ``:addclause n f`` command, abbreviated ``:ac n f``, creates a "
+"template definition for the function named ``f`` declared on line ``n``. "
+"For example, if the code beginning on line 94 contains:"
+msgstr "``:addclause n f`` 命令（缩写为 ``:ac n f``）会为第 n 行声明的函数 ``f`` 创建一个模板定义。例如，如果第 94 行开始的代码包含："
+
+#: ../source/tutorial/interactive.rst:81 3d7bb37c645245259e996e17e2d78860
+msgid "then ``:ac 94 vzipWith`` will give:"
+msgstr "那么执行 ``:ac 94 vzipWith`` 会得到："
+
+#: ../source/tutorial/interactive.rst:87 344986e060db4187809cd52cb3522645
+msgid ""
+"The names are chosen according to hints which may be given by a "
+"programmer, and then made unique by the machine by adding a digit if "
+"necessary. Hints can be given as follows:"
+msgstr "变量名会根据程序员给出的提示选择，如有必要，系统会自动添加数字以保证唯一性。可以如下方式给出提示："
+
+#: ../source/tutorial/interactive.rst:95 51752dae0a76441c969458375f4476b0
+msgid ""
+"This declares that any names generated for types in the ``Vect`` family "
+"should be chosen in the order ``xs``, ``ys``, ``zs``, ``ws``."
+msgstr "这声明了 ``Vect`` 家族类型生成的变量名应按 ``xs``、``ys``、``zs``、``ws`` 的顺序选择。"
+
+#: ../source/tutorial/interactive.rst:99 94339b735e7f4416b304012e7791a97c
+msgid ":casesplit"
+msgstr ":casesplit（分割模式）"
+
+#: ../source/tutorial/interactive.rst:101 7454d583464a4fc4acad0a66bc9bd3a8
+msgid ""
+"The ``:casesplit n c x`` command, abbreviated ``:cs n c x``, splits the "
+"pattern variable ``x`` on line ``n`` at column ``c`` into the various "
+"pattern forms it may take, removing any cases which are impossible due to"
+" unification errors. For example, if the code beginning on line 94 is:"
+msgstr "``:casesplit n c x`` 命令（缩写为 ``:cs n c x``）会将第 n 行第 c 列的模式变量 ``x`` 拆分为所有可能的模式形式，并移除因统一失败而不可能出现的情况。例如，如果第 94 行开始的代码是："
+
+#: ../source/tutorial/interactive.rst:112 e91e8c6715aa404b864ee071843e9034
+msgid "then ``:cs 96 12 xs`` will give:"
+msgstr "那么执行 ``:cs 96 12 xs`` 会得到："
+
+#: ../source/tutorial/interactive.rst:119 722350b87f754d659a54eb6afc8a1af2
+msgid ""
+"That is, the pattern variable ``xs`` has been split into the two possible"
+" cases ``[]`` and ``x :: xs``. Again, the names are chosen according to "
+"the same heuristic. If we update the file (using ``:cs!``) then case "
+"split on ``ys`` on the same line, we get:"
+msgstr "也就是说，模式变量 ``xs`` 被拆分为两种可能的情况：``[]`` 和 ``x :: xs``。变量名的选择仍然遵循同样的规则。如果我们用 ``:cs!`` 更新文件后，在同一行对 ``ys`` 进行分割，会得到："
+
+#: ../source/tutorial/interactive.rst:128 8af885e16ef449e4ba56726ff60244c6
+msgid ""
+"That is, the pattern variable ``ys`` has been split into one case ``[]``,"
+" Idris having noticed that the other possible case ``y :: ys`` would lead"
+" to a unification error."
+msgstr "也就是说，模式变量 ``ys`` 只被拆分为一种情况 ``[]``，因为 Idris 发现另一种可能 ``y :: ys`` 会导致统一失败。"
+
+#: ../source/tutorial/interactive.rst:133 7766da2a2e7f472a9494c5df40e639a2
+msgid ":addmissing"
+msgstr ":addmissing（补全缺失）"
+
+#: ../source/tutorial/interactive.rst:135 68083063cc1c478487c2df9dcc25fede
+msgid ""
+"The ``:addmissing n f`` command, abbreviated ``:am n f``, adds the "
+"clauses which are required to make the function ``f`` on line ``n`` cover"
+" all inputs. For example, if the code beginning on line 94 is:"
+msgstr "``:addmissing n f`` 命令（缩写为 ``:am n f``）会为第 n 行的函数 ``f`` 添加所有必要的分支，使其覆盖所有输入。例如，如果第 94 行开始的代码是："
+
+#: ../source/tutorial/interactive.rst:145 04fd4b6a98ba44d69a88f75d9c2df09c
+msgid "then ``:am 96 vzipWith`` gives:"
+msgstr "那么执行 ``:am 96 vzipWith`` 会得到："
+
+#: ../source/tutorial/interactive.rst:151 4d27ae69b9784435a1fcf65a3b73d6ed
+msgid ""
+"That is, it notices that there are no cases for empty vectors, generates "
+"the required clauses, and eliminates the clauses which would lead to "
+"unification errors."
+msgstr "也就是说，系统发现缺少空向量的情况，自动生成所需分支，并移除会导致统一失败的分支。"
+
+#: ../source/tutorial/interactive.rst:156 2daefecc4f4743b4af5229db7fe6c401
+msgid ":proofsearch"
+msgstr ":proofsearch（证明搜索）"
+
+#: ../source/tutorial/interactive.rst:158 958abfb6c9ff4e778aa2363de0e7c8d2
+msgid ""
+"The ``:proofsearch n f`` command, abbreviated ``:ps n f``, attempts to "
+"find a value for the hole ``f`` on line ``n`` by proof search, trying "
+"values of local variables, recursive calls and constructors of the "
+"required family. Optionally, it can take a list of *hints*, which are "
+"functions it can try applying to solve the hole. For example, if the code"
+" beginning on line 94 is:"
+msgstr "``:proofsearch n f`` 命令（缩写为 ``:ps n f``）会通过证明搜索为第 n 行的孔 ``f`` 寻找一个值，尝试本地变量、递归调用和所需类型族的构造器。它还可以接受一个*提示*列表，即可尝试用于解决孔的函数。例如，如果第 94 行开始的代码是："
+
+#: ../source/tutorial/interactive.rst:172 03132fab25b7450489bd122bd85c6033
+msgid "then ``:ps 96 vzipWith_rhs_1`` will give"
+msgstr "那么执行 ``:ps 96 vzipWith_rhs_1`` 会得到"
+
+#: ../source/tutorial/interactive.rst:178 ae57b5986fb94e2699019958fd595652
+msgid ""
+"This works because it is searching for a ``Vect`` of length 0, of which "
+"the empty vector is the only possibility. Similarly, and perhaps "
+"surprisingly, there is only one possibility if we try to solve ``:ps 97 "
+"vzipWith_rhs_2``:"
+msgstr "之所以这样，是因为它在寻找长度为 0 的 ``Vect``，而空向量是唯一的可能。同理，或许令人惊讶的是，如果我们尝试解决 ``:ps 97 vzipWith_rhs_2``，也只有一种可能："
+
+#: ../source/tutorial/interactive.rst:187 61e914cd5b25482e941e4d79a7fa2ed4
+msgid ""
+"This works because ``vzipWith`` has a precise enough type: The resulting "
+"vector has to be non-empty (a ``::``); the first element must have type "
+"``c`` and the only way to get this is to apply ``f`` to ``x`` and ``y``; "
+"finally, the tail of the vector can only be built recursively."
+msgstr "这是因为 ``vzipWith`` 的类型足够精确：结果向量必须是非空的（即 ``::``）；第一个元素类型为 ``c``，唯一的获取方式是对 ``x`` 和 ``y`` 应用 ``f``；最后，向量的尾部只能递归构造。"
+
+#: ../source/tutorial/interactive.rst:194 659171b74ebb4606855860a8ebbed4d7
+msgid ":makewith"
+msgstr ":makewith（添加 with）"
+
+#: ../source/tutorial/interactive.rst:196 ca9c42d691e14e8baf3e69c7423d4c3f
+msgid ""
+"The ``:makewith n f`` command, abbreviated ``:mw n f``, adds a ``with`` "
+"to a pattern clause. For example, recall ``parity``. If line 10 is:"
+msgstr "``:makewith n f`` 命令（缩写为 ``:mw n f``）会为某个模式分支添加 ``with``。例如，回忆一下 ``parity``。如果第 10 行是："
+
+#: ../source/tutorial/interactive.rst:204 2525ce9ed0f84374a1cca7c06710f260
+msgid "then ``:mw 10 parity`` will give:"
+msgstr "那么执行 ``:mw 10 parity`` 会得到："
+
+#: ../source/tutorial/interactive.rst:211 26c05e078a2345c7bb228f9fc33a03d8
+msgid ""
+"If we then fill in the placeholder ``_`` with ``parity k`` and case split"
+" on ``with_pat`` using ``:cs 11 with_pat`` we get the following patterns:"
+msgstr "如果我们将占位符 ``_`` 替换为 ``parity k``，并用 ``:cs 11 with_pat`` 对 ``with_pat`` 进行分割，会得到如下模式："
+
+#: ../source/tutorial/interactive.rst:220 ceb81d4c3caa4351a6ee9f953d8d3762
+msgid ""
+"Note that case splitting has normalised the patterns here (giving "
+"``plus`` rather than ``+``). In any case, we see that using interactive "
+"editing significantly simplifies the implementation of dependent pattern "
+"matching by showing a programmer exactly what the valid patterns are."
+msgstr "注意，这里的模式分割已经将模式标准化（用 ``plus`` 替代了 ``+``）。无论如何，交互式编辑极大简化了依值模式匹配的实现，让程序员能直观看到所有有效模式。"
+
+#: ../source/tutorial/interactive.rst:227 f04247556b304f6982ae6737d6cc4521
+msgid "Interactive Editing in Vim"
+msgstr "Vim 中的交互式编辑"
+
+#: ../source/tutorial/interactive.rst:229 98736205c27b4eb69956884b06a3493b
+msgid ""
+"The editor mode for Vim provides syntax highlighting, indentation and "
+"interactive editing support using the commands described above. "
+"Interactive editing is achieved using the following editor commands, each"
+" of which update the buffer directly:"
+msgstr "Vim 的编辑器模式提供了语法高亮、缩进和基于上述命令的交互式编辑支持。交互式编辑通过以下编辑器命令实现，每个命令都会直接更新缓冲区："
+
+#: ../source/tutorial/interactive.rst:234 ac53901c4d6d4171adaeadbde297f2c3
+msgid "``\\a`` adds a template definition for the name declared on the"
+msgstr "``\\a`` 为光标所在行声明的名称生成模板定义"
+
+#: ../source/tutorial/interactive.rst:235 f146ea9a7c3d4a54bcea988089b76cd2
+msgid "current line (using ``:addclause``)."
+msgstr "（对应 ``:addclause`` 命令）。"
+
+#: ../source/tutorial/interactive.rst:237 0bfcfb659fa4447188eff53a2d720e18
+msgid "``\\c`` case splits the variable at the cursor (using"
+msgstr "``\\c`` 对光标处的变量进行模式分割"
+
+#: ../source/tutorial/interactive.rst:238 5ebfd290b695428f806af3ded8c78ec8
+msgid "``:casesplit``)."
+msgstr "（对应 ``:casesplit``）。"
+
+#: ../source/tutorial/interactive.rst:240 3af3c270627e456ab5a8905aaa6b065b
+msgid "``\\m`` adds the missing cases for the name at the cursor (using"
+msgstr "``\\m`` 为光标处的名称补全缺失分支"
+
+#: ../source/tutorial/interactive.rst:241 7d895e7ca1824b28a30ab4c95b27fb96
+msgid "``:addmissing``)."
+msgstr "（对应 ``:addmissing``）。"
+
+#: ../source/tutorial/interactive.rst:243 4a662c3ddf484c43baea7a2b1a99ba03
+msgid "``\\w`` adds a ``with`` clause (using ``:makewith``)."
+msgstr "``\\w`` 添加 ``with`` 分支（对应 ``:makewith``）。"
+
+#: ../source/tutorial/interactive.rst:245 3282b9c42338460d9d23b7f4a604605e
+msgid "``\\s`` invokes a proof search to solve the hole under the"
+msgstr "``\\s`` 对光标下的孔进行证明搜索"
+
+#: ../source/tutorial/interactive.rst:246 fec950482287477796fe50e6564ec6b6
+msgid "cursor (using ``:proofsearch``)."
+msgstr "（对应 ``:proofsearch``）。"
+
+#: ../source/tutorial/interactive.rst:248 4ef58df183494e23af71cc6f0906ad7b
+msgid "There are also commands to invoke the type checker and evaluator:"
+msgstr "此外，还有用于调用类型检查器和求值器的命令："
+
+#: ../source/tutorial/interactive.rst:250 35afb710be124665b980c99c7efb91e6
+msgid "``\\t`` displays the type of the (globally visible) name under the"
+msgstr "``\\t`` 显示光标下（全局可见）名称的类型。"
+
+#: ../source/tutorial/interactive.rst:251 f86b91761b6545a3aaea9ce4866858e6
+msgid ""
+"cursor. In the case of a hole, this displays the context and the expected"
+" type."
+msgstr "对于孔，会显示上下文和期望类型。"
+
+#: ../source/tutorial/interactive.rst:254 cdb7c7cfe7784b89bc73b704784e2062
+msgid "``\\e`` prompts for an expression to evaluate."
+msgstr "``\\e`` 提示输入要求值的表达式。"
+
+#: ../source/tutorial/interactive.rst:256 69596899f44141c78b90d674e00567d9
+msgid "``\\r`` reloads and type checks the buffer."
+msgstr "``\\r`` 重新加载并类型检查缓冲区。"
+
+#: ../source/tutorial/interactive.rst:258 7eedd609da8145749d7fe33a16440398
+msgid ""
+"Corresponding commands are also available in the Emacs mode. Support for "
+"other editors can be added in a relatively straightforward manner by "
+"using ``idris2 -–client``. More sophisticated support can be added by "
+"using the IDE protocol (yet to be documented for Idris 2, but which "
+"mostly extends to protocol documented for `Idris 1 <https://docs.idris-"
+"lang.org/en/latest/reference/ide-protocol.html>`_."
+msgstr "Emacs 模式也提供了对应的命令。其他编辑器也可以通过 ``idris2 --client`` 以相对简单的方式实现支持。更复杂的支持可以通过 IDE 协议实现（Idris 2 的协议文档尚未发布，但大体兼容 Idris 1 的协议，详见 `Idris 1 IDE 协议文档 <https://docs.idris-lang.org/en/latest/reference/ide-protocol.html>`_）。"

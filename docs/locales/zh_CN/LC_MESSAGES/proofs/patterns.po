@@ -1,0 +1,292 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2023, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-16 09:52+0800\n"
+"PO-Revision-Date: 2022-09-03 13:48+0000\n"
+"Last-Translator: grass <hi@grass.show>\n"
+"Language-Team: Chinese (Simplified) <>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../source/proofs/patterns.rst:3 f69bca334ea54f36a6c96a30018c8b5b
+msgid "Pattern Matching Proofs"
+msgstr "模式匹配证明（Pattern Matching Proofs）"
+
+#: ../source/proofs/patterns.rst:5 db1b270b3dd442c99f3a70d895b8d0f1
+msgid "In this section, we will provide a proof of ``plus_commutes`` directly, by writing a pattern matching definition. We will use interactive editing features extensively, since it is significantly easier to produce a proof when the machine can give the types of intermediate values and construct components of the proof itself. The commands we will use are summarised below. Where we refer to commands directly, we will use the Vim version, but these commands have a direct mapping to Emacs commands."
+msgstr "本节我们将通过编写模式匹配定义，直接给出 ``plus_commutes`` 的证明。我们会大量使用交互式编辑功能，因为当机器能够给出中间值的类型并自动构造部分证明时，证明过程会更容易。下表总结了我们将用到的命令。文中直接提及命令时采用 Vim 版本，但这些命令在 Emacs 中也有对应。"
+
+#: ../source/proofs/patterns.rst:15 44ba301f10d3434baaa52e301fcd4882
+msgid "Command"
+msgstr "命令（Command）"
+
+#: ../source/proofs/patterns.rst:15 03398ecacb034e7a879d3c2cc6a7887b
+msgid "Vim binding"
+msgstr "Vim 快捷键（Vim binding）"
+
+#: ../source/proofs/patterns.rst:15 7fa615e1c9f443a39122ecdc1cdb01ca
+msgid "Emacs binding"
+msgstr "Emacs 快捷键（Emacs binding）"
+
+#: ../source/proofs/patterns.rst:15 b4c33e28a8a344e99fc22021b661d2f6
+msgid "Explanation"
+msgstr "说明（Explanation）"
+
+#: ../source/proofs/patterns.rst:17 336840b929e64923b75f2ba381a98204
+msgid "Check type"
+msgstr "检查类型（Check type）"
+
+#: ../source/proofs/patterns.rst:17 ddbfbe28b59f446a9e0b99b6951492c0
+msgid "``\\t``"
+msgstr "``\\t``"
+
+#: ../source/proofs/patterns.rst:17 081190bd2d3f4ea0a15532bbf571eb60
+msgid "``C-c C-t``"
+msgstr "``C-c C-t``"
+
+#: ../source/proofs/patterns.rst:17 ce34cd56b9fe43d180a1d11fcecdf858
+msgid "Show type of identifier or hole under the cursor."
+msgstr "显示光标下标识符或空洞的类型。"
+
+#: ../source/proofs/patterns.rst:19 73702ae3e399405e864741be6fd99afc
+msgid "Proof search"
+msgstr "证明搜索（Proof search）"
+
+#: ../source/proofs/patterns.rst:19 11b266038030435f809e50c7581c563a
+msgid "``\\s``"
+msgstr "``\\s``"
+
+#: ../source/proofs/patterns.rst:19 ab6674036e6140a196fd94c8aa7c3dbd
+msgid "``C-c C-a``"
+msgstr "``C-c C-a``"
+
+#: ../source/proofs/patterns.rst:19 0933423406d84b7f85bb8ecd4be3be6f
+msgid "Attempt to solve hole under the cursor by applying simple proof search."
+msgstr "尝试通过简单的证明搜索解决光标下的空洞。"
+
+#: ../source/proofs/patterns.rst:21 aa5cc169348d4d4ebeca628beea767c8
+msgid "Make new definition"
+msgstr "新建定义（Make new definition）"
+
+#: ../source/proofs/patterns.rst:21 c8c41defc56d4de3b2153afb6673221f
+msgid "``\\a``"
+msgstr "``\\a``"
+
+#: ../source/proofs/patterns.rst:21 2a2f3440d70349648529181402fbe328
+msgid "``C-c C-s``"
+msgstr "``C-c C-s``"
+
+#: ../source/proofs/patterns.rst:21 e5da902d0b814237ae6abb89b8939098
+msgid "Add a template definition for the type defined under the cursor."
+msgstr "为光标下定义的类型添加模板定义。"
+
+#: ../source/proofs/patterns.rst:23 12ae6f8e8dd94dbf877a197a8242032e
+msgid "Make lemma"
+msgstr "新建引理（Make lemma）"
+
+#: ../source/proofs/patterns.rst:23 a717666af3334a51968460e19476302d
+msgid "``\\l``"
+msgstr "``\\l``"
+
+#: ../source/proofs/patterns.rst:23 4b7a775df8584e42a014507fc9b4962c
+msgid "``C-c C-e``"
+msgstr "``C-c C-e``"
+
+#: ../source/proofs/patterns.rst:23 c01fa64af52742309bcd412f630c1e81
+msgid "Add a top level function with a type which solves the hole under the cursor."
+msgstr "添加一个顶层函数，其类型可解决光标下的空洞。"
+
+#: ../source/proofs/patterns.rst:25 56bfff64a57044efad38c12932cce9d1
+msgid "Split cases"
+msgstr "分割情况（Split cases）"
+
+#: ../source/proofs/patterns.rst:25 46c0a06dfbce446e8a23daffc15bdd7f
+msgid "``\\c``"
+msgstr "``\\c``"
+
+#: ../source/proofs/patterns.rst:25 c7ba4bcc7832479498c8e77fb7043b6e
+msgid "``C-c C-c``"
+msgstr "``C-c C-c``"
+
+#: ../source/proofs/patterns.rst:25 b52668d50a7b4643af44bb3bf0a59098
+msgid "Create new constructor patterns for each possible case of the variable under the cursor."
+msgstr "为光标下变量的每种可能情况创建新的构造器模式。"
+
+#: ../source/proofs/patterns.rst:30 6b9f3a660d9341b09336b720f1da5e18
+msgid "Creating a Definition"
+msgstr "创建定义（Creating a Definition）"
+
+#: ../source/proofs/patterns.rst:32 b6b512b5b7a34b5d8c62f00edde14e00
+msgid "To begin, create a file ``pluscomm.idr`` containing the following type declaration:"
+msgstr "首先，新建一个文件 ``pluscomm.idr``，并包含如下类型声明："
+
+#: ../source/proofs/patterns.rst:39 011857b07403436dbdaa8b933edc7ff8
+msgid "To create a template definition for the proof, press ``\\a`` (or the equivalent in your editor of choice) on the line with the type declaration. You should see:"
+msgstr "要为该证明创建模板定义，在类型声明行按下 ``\\a``（或你所用编辑器的等效命令）。你应该会看到："
+
+#: ../source/proofs/patterns.rst:48 0dd5ba06abea4336b2d2d20a7a3f23ed
+msgid ""
+"To prove this by induction on ``n``, as we sketched in Section :ref"
+":`sect-inductive`, we begin with a case split on ``n`` (press ``\\c`` "
+"with the cursor over the ``n`` in the definition.) You should see:"
+msgstr "要通过在 ``n`` 上进行归纳来证明这一点，正如我们在 :ref:`sect-inductive` 节中概述的那样，我们首先对 ``n`` 进行情况分割（将光标放在定义中的 ``n`` 上，然后按 ``\\c``）。你应该会看到："
+
+#: ../source/proofs/patterns.rst:59 b16483541018404c8eb02ac65fa91045
+msgid ""
+"If we inspect the types of the newly created holes, "
+"``plus_commutes_rhs_1`` and ``plus_commutes_rhs_2``, we see that the type"
+" of each reflects that ``n`` has been refined to ``Z`` and ``S k`` in "
+"each respective case. Pressing ``\\t`` over ``plus_commutes_rhs_1`` "
+"shows:"
+msgstr "检查新创建的空洞 ``plus_commutes_rhs_1`` 和 ``plus_commutes_rhs_2`` 的类型，可以看到 ``n`` 在每个相应情况下都被细化为了 ``Z`` 和 ``S k``。将光标放在 ``plus_commutes_rhs_1`` 上按 ``\\t`` 会显示："
+
+#: ../source/proofs/patterns.rst:71 8c2dbc8e87944562a75c07482778382b
+msgid "Similarly, for ``plus_commutes_rhs_2``:"
+msgstr "同样地，对于 ``plus_commutes_rhs_2``："
+
+#: ../source/proofs/patterns.rst:80 77bd8937e8dc460a907f7753b12d0e5d
+msgid "It is a good idea to give these slightly more meaningful names:"
+msgstr "给这些空洞起稍微更有意义的名字是个好主意："
+
+#: ../source/proofs/patterns.rst:89 f406e36ca64b452e91ddda0f2312d0e9
+msgid "Base Case"
+msgstr "基例（Base Case）"
+
+#: ../source/proofs/patterns.rst:91 fc86e4f2cc43484a8a0e31fc55cca5e9
+msgid ""
+"We can create a separate lemma for the base case interactively, by "
+"pressing ``\\l`` with the cursor over ``plus_commutes_Z``. This yields:"
+msgstr "我们可以通过将光标放在 ``plus_commutes_Z`` 上并按 ``\\l`` 来交互式地为基例创建一个独立的引理。这将产生："
+
+#: ../source/proofs/patterns.rst:103 782550e676624beeb7d4056bc39c49ca
+msgid ""
+"That is, the hole has been filled with a call to a top level function "
+"``plus_commutes_Z``, applied to the variable in scope ``m``."
+msgstr "也就是说，空洞被填充为对顶层函数 ``plus_commutes_Z`` 的调用，该函数应用于作用域中的变量 ``m``。"
+
+#: ../source/proofs/patterns.rst:106 db2a23402fdf49bb948b029aaf58485b
+msgid ""
+"Unfortunately, we cannot prove this lemma directly, since ``plus`` is "
+"defined by matching on its *first* argument, and here ``plus m Z`` has a "
+"concrete value for its *second argument* (in fact, the left hand side of "
+"the equality has been reduced from ``plus Z m``.) Again, we can prove "
+"this by induction, this time on ``m``."
+msgstr "不幸的是，我们无法直接证明这个引理，因为 ``plus`` 是通过匹配其*第一个*参数来定义的，而这里 ``plus m Z`` 的*第二个参数*是一个具体值（实际上，等式的左侧已经从 ``plus Z m`` 归约而来）。同样，我们可以通过归纳法来证明这一点，这次是对 ``m`` 进行归纳。"
+
+#: ../source/proofs/patterns.rst:112 23b6cb69dbe74590b81b63f835e65efa
+msgid "First, create a template definition with ``\\d``:"
+msgstr "首先，用 ``\\d`` 创建一个模板定义："
+
+#: ../source/proofs/patterns.rst:119 b7119a427a254e3387dbdf8c688e34fa
+msgid "Now, case split on ``m`` with ``\\c``:"
+msgstr "现在，用 ``\\c`` 对 ``m`` 进行情况分割："
+
+#: ../source/proofs/patterns.rst:127 f6ad6baf40554cb8911206ec1b9807b3
+msgid ""
+"Checking the type of ``plus_commutes_Z_rhs_1`` shows the following, which"
+" is provable by ``Refl``:"
+msgstr "检查 ``plus_commutes_Z_rhs_1`` 的类型，可以看到如下内容，这是由 ``Refl`` 证明的："
+
+#: ../source/proofs/patterns.rst:135 b441823151d748f18b6532b6dec1488e
+msgid "For such immediate proofs, we can let write the proof automatically by pressing ``\\s`` with the cursor over ``plus_commutes_Z_rhs_1``. This yields:"
+msgstr "对于这种直接的证明，我们可以在光标位于 ``plus_commutes_Z_rhs_1`` 时按下 ``\\s``，自动生成证明。结果如下："
+
+#: ../source/proofs/patterns.rst:145 1c40d575f2a84f1ba88956211b6cd8f1
+msgid "For ``plus_commutes_Z_rhs_2``, we are not so lucky:"
+msgstr "对于 ``plus_commutes_Z_rhs_2``，我们就没那么幸运了："
+
+#: ../source/proofs/patterns.rst:153 d92730017e114938ad5f8d1fc3105137
+msgid "Inductively, we should know that ``k = plus k Z``, and we can get access to this inductive hypothesis by making a recursive call on k, as follows:"
+msgstr "根据归纳假设，我们应当知道 ``k = plus k Z``，可以通过对 k 递归调用来获得这个归纳假设，如下所示："
+
+#: ../source/proofs/patterns.rst:165 85a36b5a9e074886b73aa8c1fe123890
+msgid "For ``plus_commutes_Z_rhs_2``, we now see:"
+msgstr "此时对于 ``plus_commutes_Z_rhs_2``，我们可以看到："
+
+#: ../source/proofs/patterns.rst:174 ff75c92a12fa4069abd546cc437131cb
+msgid "So we know that ``k = plus k Z``, but how do we use this to update the goal to ``S k = S k``?"
+msgstr "我们已经知道 ``k = plus k Z``，但如何利用这一点将目标变为 ``S k = S k`` 呢？"
+
+#: ../source/proofs/patterns.rst:177 7dade3f5fbd1458a9113d830cfa8e3bb
+msgid "To achieve this, Idris provides a ``replace`` function as part of the prelude:"
+msgstr "为此，Idris 在 prelude（前置库）中提供了 ``replace`` 函数："
+
+#: ../source/proofs/patterns.rst:185 0e4917d3b4784c45b7bb23f9c82e19f2
+msgid "Given a proof that ``x = y``, and a property ``p`` which holds for ``x``, we can get a proof of the same property for ``y``, because we know ``x`` and ``y`` must be the same. Note the multiplicity on ``rule`` means that it's guaranteed to be erased at run time. In practice, this function can be a little tricky to use because in general the implicit argument ``p`` can be hard to infer by unification, so Idris provides a high level syntax which calculates the property and applies ``replace``:"
+msgstr "给定 ``x = y`` 的证明，以及对 ``x`` 成立的性质 ``p``，我们就能得到该性质对 ``y`` 也成立的证明，因为我们知道 ``x`` 和 ``y`` 必然相等。注意 ``rule`` 上的 multiplicity（多重性）意味着它在运行时会被擦除。实际上，这个函数有时不太好用，因为隐式参数 ``p`` 一般难以通过统一推断出来，所以 Idris 提供了高级语法来自动计算性质并应用 ``replace``："
+
+#: ../source/proofs/patterns.rst:198 7c58c629263a4198b7e111c06e92d0ac
+msgid "If we have ``prf : x = y``, and the required type for ``expr`` is some property of ``x``, the ``rewrite ... in`` syntax will search for all occurrences of ``x`` in the required type of ``expr`` and replace them with ``y``. We want to replace ``plus k Z`` with ``k``, so we need to apply our rule ``rec`` in reverse, which we can do using ``sym`` from the Prelude"
+msgstr "如果我们有 ``prf : x = y``，且 ``expr`` 的目标类型是关于 ``x`` 的某个性质，那么 ``rewrite ... in`` 语法会在目标类型中查找所有 ``x`` 并替换为 ``y``。我们希望将 ``plus k Z`` 替换为 ``k``，因此需要反向应用我们的 ``rec`` 规则，这可以通过 Prelude 中的 ``sym`` 实现。"
+
+#: ../source/proofs/patterns.rst:210 c8f0667e317f4d39960253db5fe4bf40
+msgid "Concretely, in our example, we can say:"
+msgstr "具体到本例，我们可以这样写："
+
+#: ../source/proofs/patterns.rst:218 d24e3ba6071e433fb1e91665cdf98a31
+msgid "Checking the type of ``plus_commutes_Z_rhs_2`` now gives:"
+msgstr "此时检查 ``plus_commutes_Z_rhs_2`` 的类型会得到："
+
+#: ../source/proofs/patterns.rst:227 99afeaaa6d954859acd55493cfd3cea7
+msgid "Using the rewrite rule ``rec``, the goal type has been updated with ``plus k Z`` replaced by ``k``."
+msgstr "应用 rewrite 规则 ``rec`` 后，目标类型中的 ``plus k Z`` 已被替换为 ``k``。"
+
+#: ../source/proofs/patterns.rst:230 fe79de63b5e2443eacb90f69965c50f0
+msgid "We can use proof search (``\\s``) to complete the proof, giving:"
+msgstr "我们可以使用证明搜索（``\\s``）来完成证明，结果为："
+
+#: ../source/proofs/patterns.rst:240 9fde9797ca4e43c29cba8f98e35b328e
+msgid "The base case of ``plus_commutes`` is now complete."
+msgstr "至此，``plus_commutes`` 的基例部分已完成。"
+
+#: ../source/proofs/patterns.rst:243 c10de9438f5a4d549b0561d3add1d37c
+msgid "Inductive Step"
+msgstr "归纳步骤（Inductive Step）"
+
+#: ../source/proofs/patterns.rst:245 de6d682be61e4f079f717b3f06756479
+msgid "Our main theorem, ``plus_commutes`` should currently be in the following state:"
+msgstr "我们的主定理 ``plus_commutes`` 此时应处于如下状态："
+
+#: ../source/proofs/patterns.rst:254 6fff9f6dd0984370bf26b9df658534ea
+msgid "Looking again at the type of ``plus_commutes_S``, we have:"
+msgstr "再次查看 ``plus_commutes_S`` 的类型，可以看到："
+
+#: ../source/proofs/patterns.rst:263 392134e8c2c74851914fe90c885b9f57
+msgid "Conveniently, by induction we can immediately tell that ``plus k m = plus m k``, so let us rewrite directly by making a recursive call to ``plus_commutes``. We add this directly, by hand, as follows:"
+msgstr "方便的是，通过归纳我们可以直接得到 ``plus k m = plus m k``，因此可以直接递归调用 ``plus_commutes`` 进行重写。手动添加如下："
+
+#: ../source/proofs/patterns.rst:274 ef06e2b7b3cf4197b775a5fdebe8545f
+msgid "Checking the type of ``plus_commutes_S`` now gives:"
+msgstr "此时检查 ``plus_commutes_S`` 的类型会得到："
+
+#: ../source/proofs/patterns.rst:283 812fd66284c6483ab60dc6aba04601f0
+msgid "The good news is that ``m`` and ``k`` now appear in the correct order. However, we still have to show that the successor symbol ``S`` can be moved to the front in the right hand side of this equality. This remaining lemma takes a similar form to the ``plus_commutes_Z``; we begin by making a new top level lemma with ``\\l``. This gives:"
+msgstr "好消息是 ``m`` 和 ``k`` 现在已经出现在正确的位置。但我们还需要证明右侧的后继符号 ``S`` 可以移到最前面。这个剩余的引理形式与 ``plus_commutes_Z`` 类似；我们先用 ``\\l`` 新建一个顶层引理。结果如下："
+
+#: ../source/proofs/patterns.rst:293 c4125ad6069741099689743e6bcb7e14
+msgid "Again, we make a template definition with ``\\a``:"
+msgstr "同样地，我们用 ``\\a`` 创建模板定义："
+
+#: ../source/proofs/patterns.rst:300 f21ade2240d647df8bdd91102e619d76
+msgid "Like ``plus_commutes_Z``, we can define this by induction over ``m``, since ``plus`` is defined by matching on its first argument. The complete definition is:"
+msgstr "与 ``plus_commutes_Z`` 类似，我们可以对 ``m`` 归纳来定义它，因为 ``plus`` 是按第一个参数模式匹配定义的。完整定义如下："
+
+#: ../source/proofs/patterns.rst:311 fca1647985f543e6808783e45f85b4a4
+msgid "All holes have now been solved."
+msgstr "所有空洞现已解决。"
+
+#: ../source/proofs/patterns.rst:313 c1103aae73f84e4d9a06a28413209e04
+msgid "The ``total`` annotation means that we require the final function to pass the totality checker; i.e. it will terminate on all possible well-typed inputs. This is important for proofs, since it provides a guarantee that the proof is valid in *all* cases, not just those for which it happens to be well-defined."
+msgstr "``total`` 注解表示我们要求最终函数通过全性检查（totality checker）；即它会在所有可能的良类型输入上终止。这对于证明来说很重要，因为它保证了证明在*所有*情况下都成立，而不仅仅是在定义良好的情况下。"
+
+#: ../source/proofs/patterns.rst:319 3760333684364fb8840a7a4915280620
+msgid "Now that ``plus_commutes`` has a ``total`` annotation, we have completed the proof of commutativity of addition on natural numbers."
+msgstr "现在 ``plus_commutes`` 已加上 ``total`` 注解，我们已经完成了自然数加法交换律的证明。"

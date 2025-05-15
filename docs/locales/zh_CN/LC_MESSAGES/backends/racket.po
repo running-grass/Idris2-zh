@@ -1,0 +1,111 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2023, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-16 09:52+0800\n"
+"PO-Revision-Date: 2022-09-03 13:48+0000\n"
+"Last-Translator: grass <hi@grass.show>\n"
+"Language-Team: Chinese (Simplified) <>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../source/backends/racket.rst:3 781147a33d5548fead5a9665cbb447fd
+msgid "Racket Code Generator"
+msgstr "Racket 代码生成器"
+
+#: ../source/backends/racket.rst:5 10c44dff405e46f4a4f3b46885690e0c
+msgid "The Racket code generator is accessed via a REPL command:"
+msgstr "Racket 代码生成器通过 REPL 命令访问："
+
+#: ../source/backends/racket.rst:11 8156b04f50fb4bd688caff15fd12ff0b
+msgid "Alternatively, you can set it via the ``IDRIS2_CG`` environment variable:"
+msgstr "或者，您可以通过 ``IDRIS2_CG`` 环境变量进行设置："
+
+#: ../source/backends/racket.rst:17 de6350c2f3234aa3b75fa7f4514617ff
+msgid ""
+"You can compile an expression ``expr`` of type ``IO ()`` to an executable"
+" as follows, at the REPL:"
+msgstr "您可以在 REPL 中将类型为 ``IO ()`` 的表达式 ``expr`` "
+"编译为可执行文件，如下所示："
+
+#: ../source/backends/racket.rst:24 0493cf14c2494f68a420c778d77a4e1b
+msgid ""
+"...where ``execname`` is the name of the executable file. This will "
+"generate the following:"
+msgstr "...其中 ``execname`` 是可执行文件的名称。这将生成以下内容："
+
+#: ../source/backends/racket.rst:27 2b0a6ee7032743059ebb2a3c337d556f
+msgid "A shell script ``build/exec/execname`` which invokes the program"
+msgstr "调用程序的 shell 脚本 ``build/exec/execname``"
+
+#: ../source/backends/racket.rst:28 81d9e2a1333c4b6bb500173ffff8f341
+msgid ""
+"A subdirectory ``build/exec/execname_app`` which contains all the data "
+"necessary to run the program. This includes the Racket source "
+"(``execname.rkt``), the compiled Racket code (``execname`` or "
+"``execname.exe`` on Windows) and any shared libraries needed for foreign "
+"function definitions."
+msgstr ""
+"一个子目录 ``build/exec/execname_app`` 中包含运行程序所需的所有数据。这包括 "
+"Racket 源代码（ ``execname.rkt`` ）、已编译的 Racket 代码（Windows 上的 "
+"``execname`` 或 ``execname.exe`` ）以及外部函数定义所需的任何共享库。"
+
+#: ../source/backends/racket.rst:33 65f858ba24054b8fb8345c74da502cc5
+msgid ""
+"The executable ``execname`` is relocatable to any subdirectory, provided "
+"that ``execname_app`` is also in the same subdirectory."
+msgstr "可执行的 ``execname`` 可以重新定位到任何子目录，前提是 ``execname_app`` "
+"也在同一个子目录中。"
+
+#: ../source/backends/racket.rst:36 0d8293ff300b4d2d9ac5f277bea82343
+msgid "You can also execute an expression directly:"
+msgstr "你也可以直接执行表达式："
+
+#: ../source/backends/racket.rst:42 e2649881d8ca452e863aeb7a9ab0f1f6
+msgid ""
+"Again, ``expr`` must have type ``IO ()``. This will generate a temporary "
+"executable script ``_tmpracket`` in the ``build/exec`` directory, and "
+"execute that, without compiling to a binary first (so the resulting "
+"Racket code is interpreted)."
+msgstr ""
+"同样， ``expr`` 必须具有 ``IO ()`` 类型。这将在 ``build/exec`` "
+"目录中生成一个临时可执行脚本 ``_tmpracket`` "
+"，并执行该脚本，而无需先编译为二进制文件（因此会解释生成的 Racket 代码）。"
+
+#: ../source/backends/racket.rst:49 cb361e78b5034f3b85d551fcef300a70
+msgid "Racket Directives"
+msgstr "Racket 指令"
+
+#: ../source/backends/racket.rst:51 7cba8cf3ef484b14890a52141363df58
+msgid "``--directive extraRuntime=<path>``"
+msgstr "``--directive extraRuntime=<path>``"
+
+#: ../source/backends/racket.rst:53 1667a298858c48638f81243bcd74870c
+msgid ""
+"Embed Scheme source from ``<path>`` directly into generated output. Can "
+"be specified more than once, in which case all given files will be "
+"included in the order specified."
+msgstr "将来自 ``<path>`` 的 Scheme 源代码直接嵌入到生成的输出中。可以多次指定，在这"
+"种情况下，所有给定的文件都将按指定的顺序包含。"
+
+#: ../source/backends/racket.rst:73 54970395fe14489092fb9c9ef65950da
+msgid "``--directive lazy=weakMemo``"
+msgstr "``--directive lazy=weakMemo``"
+
+#: ../source/backends/racket.rst:75 2b76fd119cf040f98bbc61105b8afa19
+msgid ""
+"Makes all non-toplevel ``Lazy`` and ``Inf`` values to be *weakly* "
+"memoised. That is, once this expression is evaluated at runtime, it is "
+"allowed to not to be recalculated on later accesses until memoised value "
+"is wiped by a garbage collector. Garbage collector is allowed to collect "
+"weakly memoised values at its own discretion, so when no free memory is "
+"available, weakly memoised values are free to be wiped. That's why it is "
+"safer comparing to full memoisation."
+msgstr "使所有非顶层 ``Lazy`` 和 ``Inf`` 值被*弱*记忆化。也就是说，一旦这个表达式在运行时被求值，在后续访问时允许不重新计算，直到记忆化的值被垃圾收集器清除。垃圾收集器可以自行决定是否收集弱记忆化的值，因此当没有可用内存时，弱记忆化的值可以被清除。这就是为什么它比完全记忆化更安全。"

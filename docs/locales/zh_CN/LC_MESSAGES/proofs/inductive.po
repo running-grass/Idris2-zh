@@ -1,0 +1,105 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2023, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-16 09:52+0800\n"
+"PO-Revision-Date: 2022-09-03 13:48+0000\n"
+"Last-Translator: grass <hi@grass.show>\n"
+"Language-Team: Chinese (Simplified) <>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../source/proofs/inductive.rst:5 795b85b0c44f427da9580491011f4f2a
+msgid "Inductive Proofs"
+msgstr "归纳证明（Inductive Proofs）"
+
+#: ../source/proofs/inductive.rst:7 eb38234d9d0344f88ad65b4e81e210a1
+msgid "Before embarking on proving ``plus_commutes`` in Idris itself, let us consider the overall structure of a proof of some property of natural numbers. Recall that they are defined recursively, as follows:"
+msgstr "在正式用 Idris 证明 ``plus_commutes`` 之前，让我们先回顾一下自然数某些性质证明的整体结构。请记住，自然数是递归定义的，如下所示："
+
+#: ../source/proofs/inductive.rst:17 e7c5c687481a4eaab13d911952df699b
+msgid "A *total* function over natural numbers must both terminate, and cover all possible inputs. Idris checks functions for totality by checking that all inputs are covered, and that all recursive calls are on *structurally smaller* values (so recursion will always reach a base case). Recalling ``plus``:"
+msgstr "一个*全函数（total function）*在自然数上必须终止，并覆盖所有可能的输入。Idris 通过检查所有输入是否被覆盖，以及所有递归调用是否作用于*结构上更小*的值，来判断函数的全性（totality）。回顾一下 ``plus`` 的定义："
+
+#: ../source/proofs/inductive.rst:29 d23a976b763b4f08a84db34fc5c4c1e3
+msgid "This is total because it covers all possible inputs (the first argument can only be ``Z`` or ``S k`` for some ``k``, and the second argument ``m`` covers all possible ``Nat``) and in the recursive call, ``k`` is structurally smaller than ``S k`` so the first argument will always reach the base case ``Z`` in any sequence of recursive calls."
+msgstr "该函数是全的，因为它覆盖了所有可能的输入（第一个参数只能是 ``Z`` 或某个 ``S k``，第二个参数 ``m`` 覆盖了所有可能的 ``Nat``），并且在递归调用中，``k`` 结构上小于 ``S k``，因此在任意递归调用序列中，第一个参数最终都会到达基例 ``Z``。"
+
+#: ../source/proofs/inductive.rst:35 7a758be88489402fb22cdd24b12c38c3
+msgid "In some sense, this resembles a mathematical proof by induction (and this is no coincidence!). For some property ``P`` of a natural number ``x``, we can show that ``P`` holds for all ``x`` if:"
+msgstr "在某种意义上，这类似于数学中的归纳法证明（这并非巧合！）。对于自然数 ``x`` 的某个性质 ``P``，我们可以通过以下方式证明 ``P`` 对所有 ``x`` 都成立："
+
+#: ../source/proofs/inductive.rst:39 05e204798ff544e28b96baf199e26cbd
+msgid "``P`` holds for zero (the base case)."
+msgstr "``P`` 对零成立（基例）。"
+
+#: ../source/proofs/inductive.rst:41 bc51111ec85445ca9261464f4467f675
+msgid "Assuming that ``P`` holds for ``k``, we can show ``P`` also holds for ``S k`` (the inductive step)."
+msgstr "假设 ``P`` 对 ``k`` 成立，则可以证明 ``P`` 对 ``S k`` 也成立（归纳步骤）。"
+
+#: ../source/proofs/inductive.rst:44 1bd8283e857a4d4a8648e95b5a39358a
+msgid "In ``plus``, the property we are trying to show is somewhat trivial (for all natural numbers ``x``, there is a ``Nat`` which need not have any relation to ``x``). However, it still takes the form of a base case and an inductive step. In the base case, we show that there is a ``Nat`` arising from ``plus n m`` when ``n = Z``, and in the inductive step we show that there is a ``Nat`` arising when ``n = S k`` and we know we can get a ``Nat`` inductively from ``plus k m``. We could even write a function capturing all such inductive definitions:"
+msgstr "在 ``plus`` 的例子中，我们要证明的性质其实很简单（对于所有自然数 ``x``，都存在一个 ``Nat``，它不一定与 ``x`` 有任何关系）。不过，这依然采用了基例和归纳步骤的形式。在基例中，我们展示当 ``n = Z`` 时，``plus n m`` 会得到一个 ``Nat``；在归纳步骤中，我们展示当 ``n = S k`` 且已知 ``plus k m`` 可以归纳得到一个 ``Nat`` 时，``plus n m`` 也能得到一个 ``Nat``。我们甚至可以写一个函数来抽象所有类似的归纳定义："
+
+#: ../source/proofs/inductive.rst:64 1d706d474dcb43c68a738100be22dfdb
+msgid "Using ``nat_induction``, we can implement an equivalent inductive version of ``plus``:"
+msgstr "利用 ``nat_induction``，我们可以实现一个等价的 ``plus`` 归纳版本："
+
+#: ../source/proofs/inductive.rst:77 a0cafaffebb54a7ea19a91b3dc93340b
+msgid "To prove that ``plus n m = plus m n`` for all natural numbers ``n`` and ``m``, we can also use induction. Either we can fix ``m`` and perform induction on ``n``, or vice versa. We can sketch an outline of a proof; performing induction on ``n``, we have:"
+msgstr "要证明对所有自然数 ``n`` 和 ``m`` 都有 ``plus n m = plus m n``，我们同样可以使用归纳法。可以固定 ``m``，对 ``n`` 归纳，也可以反过来。我们可以勾勒出证明的轮廓：对 ``n`` 归纳时，有："
+
+#: ../source/proofs/inductive.rst:82 4712c90a02584b3b9dc9b6386f3088dc
+msgid "Property ``prop`` is ``\\x => plus x m = plus m x``."
+msgstr "性质 ``prop`` 为 ``\\x => plus x m = plus m x``。"
+
+#: ../source/proofs/inductive.rst:84 1cc21dc3fad04eadb5e662a0119664cd
+msgid "Show that ``prop`` holds in the base case and inductive step:"
+msgstr "证明 ``prop`` 在基例和归纳步骤中都成立："
+
+#: ../source/proofs/inductive.rst f1fea0b6ad3a4aac823572389fe77096
+msgid "Base case: ``prop Z``, i.e."
+msgstr "基例：``prop Z``，即"
+
+#: ../source/proofs/inductive.rst ec70f80a154647efbbd41cf651dc5761
+msgid "``plus Z m = plus m Z``, which reduces to"
+msgstr "``plus Z m = plus m Z``，可化简为"
+
+#: ../source/proofs/inductive.rst f92c3f29fbf0432cb15d384ee5af804f
+msgid "``m = plus m Z`` due to the definition of ``plus``."
+msgstr "根据 ``plus`` 的定义，``m = plus m Z``。"
+
+#: ../source/proofs/inductive.rst c601d83f60ac4d3693bce374af15820d
+msgid "Inductive step: Inductively, we know that ``prop k`` holds for a specific, fixed ``k``, i.e."
+msgstr "归纳步骤：归纳假设 ``prop k`` 对某个固定的 ``k`` 成立，即"
+
+#: ../source/proofs/inductive.rst 5d1940b4b50b4c5c9369304e7e2e700b
+msgid "``plus k m = plus m k`` (the induction hypothesis). Given this, show ``prop (S k)``, i.e."
+msgstr "``plus k m = plus m k``（归纳假设）。在此基础上，证明 ``prop (S k)``，即"
+
+#: ../source/proofs/inductive.rst 31737e73db9e4ce59c926d2f4dd56005
+msgid "``plus (S k) m = plus m (S k)``, which reduces to"
+msgstr "``plus (S k) m = plus m (S k)``，可化简为"
+
+#: ../source/proofs/inductive.rst 4b78bad028a74444ba1082ea708b6279
+msgid "``S (plus k m) = plus m (S k)``. From the induction hypothesis, we can rewrite this to"
+msgstr "``S (plus k m) = plus m (S k)``。根据归纳假设，我们可以将其重写为"
+
+#: ../source/proofs/inductive.rst 1196745bc16041a1aa7c33b6774e672e
+msgid "``S (plus m k) = plus m (S k)``."
+msgstr "``S (plus m k) = plus m (S k)``。"
+
+#: ../source/proofs/inductive.rst:96 bd074894bc63405ca5f444b7384bb1bc
+msgid "To complete the proof we therefore need to show that ``m = plus m Z`` for all natural numbers ``m``, and that ``S (plus m k) = plus m (S k)`` for all natural numbers ``m`` and ``k``. Each of these can also be proved by induction, this time on ``m``."
+msgstr "因此，要完成证明，我们还需要证明对所有自然数 ``m`` 都有 ``m = plus m Z``，以及对所有自然数 ``m`` 和 ``k`` 都有 ``S (plus m k) = plus m (S k)``。这两者同样可以用归纳法证明，这次是对 ``m`` 归纳。"
+
+#: ../source/proofs/inductive.rst:101 13c5bb95915a42f0b2aee51679f5b33a
+msgid "We are now ready to embark on a proof of commutativity of ``plus`` formally in Idris."
+msgstr "现在，我们已经准备好在 Idris 中正式证明 ``plus`` 的交换律了。"

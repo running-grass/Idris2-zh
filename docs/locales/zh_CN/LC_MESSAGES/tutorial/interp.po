@@ -1,0 +1,259 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2023, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-16 09:52+0800\n"
+"PO-Revision-Date: 2022-09-03 13:48+0000\n"
+"Last-Translator: grass <hi@grass.show>\n"
+"Language-Team: Chinese (Simplified) <>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../source/tutorial/interp.rst:5 2037d750d5544c94ae24e4f237463d3f
+msgid "Example: The Well-Typed Interpreter"
+msgstr "示例：良类型（Well-Typed）解释器"
+
+#: ../source/tutorial/interp.rst:7 de29dab7718949daab4efeed381b223b
+msgid ""
+"In this section, we’ll use the features we’ve seen so far to write a "
+"larger example, an interpreter for a simple functional programming "
+"language, with variables, function application, binary operators and an "
+"``if...then...else`` construct. We will use the dependent type system to "
+"ensure that any programs which can be represented are well-typed."
+msgstr ""
+"在本节中，我们将利用前面介绍的特性，编写一个更完整的示例：为一个简单的函数式编程语言实现解释器。该语言包含变量、函数应用、二元运算符以及 ``if...then...else`` 结构。我们将借助依值类型系统，确保所有可表示的程序都是良类型的。"
+
+#: ../source/tutorial/interp.rst:15 e84eaf9237ca494aa70e2b0b3f686cb7
+msgid "Representing Languages"
+msgstr "语言的表示"
+
+#: ../source/tutorial/interp.rst:17 d10413f0484a4b2b800b020d5fc503b5
+msgid ""
+"First, let us define the types in the language. We have integers, "
+"booleans, and functions, represented by ``Ty``:"
+msgstr ""
+"首先，让我们定义该语言中的类型。我们有整数、布尔值和函数，这些都用 ``Ty`` 表示："
+
+#: ../source/tutorial/interp.rst:24 a520afd4f7a64911a5de6941ffa2ac90
+msgid ""
+"We can write a function to translate these representations to a concrete "
+"Idris type — remember that types are first class, so can be calculated "
+"just like any other value:"
+msgstr ""
+"我们可以编写一个函数，将这些类型表示转换为具体的 Idris 类型——请记住，类型是一等公民，因此可以像其他值一样进行计算："
+
+#: ../source/tutorial/interp.rst:35 b1a8f288d3ea4efaa2dff39a1c81cff1
+msgid ""
+"We're going to define a representation of our language in such a way that"
+" only well-typed programs can be represented. We'll index the "
+"representations of expressions by their type, **and** the types of local "
+"variables (the context). The context can be represented using the "
+"``Vect`` data type, so we'll need to import ``Data.Vect`` at the top of "
+"our source file:"
+msgstr ""
+"我们将以一种只有良类型程序才能被表示的方式来定义我们的语言表示。我们会用表达式的类型 **以及** 局部变量的类型（上下文）来索引表达式的表示。上下文可以用 ``Vect`` 数据类型来表示，因此需要在源文件顶部导入 ``Data.Vect``："
+
+#: ../source/tutorial/interp.rst:46 d90cd115b9104a0295d77ea4aebfb22b
+msgid ""
+"Expressions are indexed by the types of the local variables, and the type"
+" of the expression itself:"
+msgstr ""
+"表达式由局部变量的类型和表达式本身的类型索引："
+
+#: ../source/tutorial/interp.rst:53 66020ea47247446e966e7a9906db7b35
+msgid "The full representation of expressions is:"
+msgstr ""
+"表达式的完整表示如下："
+
+#: ../source/tutorial/interp.rst:72 84bcb1c31b9947a492f02404ab46f5ca
+msgid ""
+"The code above makes use of the ``Vect`` and ``Fin`` types from the base "
+"libraries. ``Fin`` is available as part of ``Data.Vect``. Throughout, "
+"``ctxt`` refers to the local variable context."
+msgstr ""
+"上面的代码用到了 base 库中的 ``Vect`` 和 ``Fin`` 类型。``Fin`` 可通过 ``Data.Vect`` 获得。全文中，``ctxt`` 指的是局部变量上下文。"
+
+#: ../source/tutorial/interp.rst:76 56918981a921473f8bdeaab7a520c484
+msgid ""
+"Since expressions are indexed by their type, we can read the typing rules"
+" of the language from the definitions of the constructors. Let us look at"
+" each constructor in turn."
+msgstr ""
+"由于表达式是按其类型索引的，我们可以从构造函数的定义中直接读出该语言的类型规则。下面我们依次看看每个构造函数。"
+
+#: ../source/tutorial/interp.rst:80 b8605f1856e14f7eb4bc9a844f3b2a5f
+msgid ""
+"We use a nameless representation for variables — they are *de Bruijn "
+"indexed*. Variables are represented by a proof of their membership in the"
+" context, ``HasType i ctxt T``, which is a proof that variable ``i`` in "
+"context ``ctxt`` has type ``T``. This is defined as follows:"
+msgstr ""
+"我们采用无名表示法（nameless representation）来表示变量——即 *de Bruijn 索引*。变量由其在上下文中的归属证明 ``HasType i ctxt T`` 表示，这表明在上下文 ``ctxt`` 中，变量 ``i`` 的类型为 ``T``。定义如下："
+
+#: ../source/tutorial/interp.rst:91 7787e59640484c8ea44153b5009f0cb2
+msgid ""
+"We can treat *Stop* as a proof that the most recently defined variable is"
+" well-typed, and *Pop n* as a proof that, if the ``n``\\ th most recently"
+" defined variable is well-typed, so is the ``n+1``\\ th. In practice, "
+"this means we use ``Stop`` to refer to the most recently defined "
+"variable, ``Pop Stop`` to refer to the next, and so on, via the ``Var`` "
+"constructor:"
+msgstr "我们可以将 *Stop* 视为对最近定义变量良类型的证明，而 *Pop n* 则证明如果第 ``n`` 个最近定义的变量是良类型的，那么第 ``n+1`` 个也是良类型的。实际上，这意味着我们用 ``Stop`` 表示最近定义的变量，用 ``Pop Stop`` 表示下一个，以此类推，通过 ``Var`` 构造函数实现："
+
+#: ../source/tutorial/interp.rst:102 99497d04dc794285af4d00acee682866
+msgid ""
+"So, in an expression ``\\x. \\y. x y``, the variable ``x`` would have a "
+"de Bruijn index of 1, represented as ``Pop Stop``, and ``y 0``, "
+"represented as ``Stop``. We find these by counting the number of lambdas "
+"between the definition and the use."
+msgstr "因此，在表达式 ``\\x. \\y. x y`` 中，变量 ``x`` 的 de Bruijn 索引为 1，用 ``Pop Stop`` 表示，变量 ``y`` 的索引为 0，用 ``Stop`` 表示。我们通过计算定义与使用之间的 lambda 数量来确定这些索引。"
+
+#: ../source/tutorial/interp.rst:107 26c6e2bf89b5410c88cdd9944e7bddf6
+msgid "A value carries a concrete representation of an integer:"
+msgstr "值（Value）携带一个整数的具体表示："
+
+#: ../source/tutorial/interp.rst:113 9019067500f842e1ad664eaa6bf11421
+msgid ""
+"A lambda creates a function. In the scope of a function of type ``a -> "
+"t``, there is a new local variable of type ``a``, which is expressed by "
+"the context index:"
+msgstr "lambda（λ）表达式用于创建函数。在类型为 ``a -> t`` 的函数作用域内，会有一个类型为 ``a`` 的新局部变量，这通过上下文索引来表达："
+
+#: ../source/tutorial/interp.rst:121 52d54eae2d9c474f8da1e0b5502b61cc
+msgid ""
+"Function application produces a value of type ``t`` given a function from"
+" ``a`` to ``t`` and a value of type ``a``:"
+msgstr "函数应用：给定一个从 ``a`` 到 ``t`` 的函数和一个类型为 ``a`` 的值，将产生一个类型为 ``t`` 的值："
+
+#: ../source/tutorial/interp.rst:128 1c693c9b33f84b68b156293d4f542d51
+msgid ""
+"We allow arbitrary binary operators, where the type of the operator "
+"informs what the types of the arguments must be:"
+msgstr "我们允许任意二元运算符，其类型决定了参数的类型要求："
+
+#: ../source/tutorial/interp.rst:136 26ff1d3197de4010ac70d27e1b8f98b7
+msgid ""
+"Finally, ``If`` expressions make a choice given a boolean. Each branch "
+"must have the same type, and we will evaluate the branches lazily so that"
+" only the branch which is taken need be evaluated:"
+msgstr "最后，``If`` 表达式根据布尔值进行分支选择。每个分支必须具有相同的类型，并且我们会对分支进行惰性求值，只计算实际被选中的分支："
+
+#: ../source/tutorial/interp.rst:148 a172dcf4aac949649ac8b0f8260fac5c
+msgid "Writing the Interpreter"
+msgstr "编写解释器"
+
+#: ../source/tutorial/interp.rst:150 06676025368e4bf3ba11cf92ab0ba39e
+msgid ""
+"When we evaluate an ``Expr``, we'll need to know the values in scope, as "
+"well as their types. ``Env`` is an environment, indexed over the types in"
+" scope. Since an environment is just another form of list, albeit with a "
+"strongly specified connection to the vector of local variable types, we "
+"use the usual ``::`` and ``Nil`` constructors so that we can use the "
+"usual list syntax. Given a proof that a variable is defined in the "
+"context, we can then produce a value from the environment:"
+msgstr "在对 ``Expr`` 进行求值时，我们需要知道当前作用域中的值及其类型。``Env`` 是一个环境（environment），按当前作用域中的类型进行索引。环境本质上是列表的一种形式，但与局部变量类型向量有严格的对应关系。我们仍然使用常规的 ``::`` 和 ``Nil`` 构造函数，以便可以使用常见的列表语法。只要有变量在上下文中已定义的证明，我们就能从环境中取出对应的值："
+
+#: ../source/tutorial/interp.rst:169 b99c78dba44e4f038f3ab742ca9aa3bf
+msgid ""
+"Given this, an interpreter is a function which translates an ``Expr`` "
+"into a concrete Idris value with respect to a specific environment:"
+msgstr "基于上述定义，解释器就是一个函数，它将 ``Expr`` 按照特定环境（environment）翻译为具体的 Idris 值："
+
+#: ../source/tutorial/interp.rst:177 5aba15f60d794a8094d8f21fed2caa09
+msgid ""
+"The complete interpreter is defined as follows, for reference. For each "
+"constructor, we translate it into the corresponding Idris value:"
+msgstr "完整的解释器定义如下，供参考。对于每个构造函数，我们都将其翻译为对应的 Idris 值："
+
+#: ../source/tutorial/interp.rst:190 45117a440dd8480db51edb13e06b2453
+msgid ""
+"Let us look at each case in turn. To translate a variable, we simply look"
+" it up in the environment:"
+msgstr "我们依次来看每种情况。对于变量，只需在环境中查找即可："
+
+#: ../source/tutorial/interp.rst:197 ea8906a517134d3fa0d90fba4c03115f
+msgid ""
+"To translate a value, we just return the concrete representation of the "
+"value:"
+msgstr "对于值（Value），直接返回其具体表示即可："
+
+#: ../source/tutorial/interp.rst:204 914ceaf2a59748a39a2a2f4e88b5087c
+msgid ""
+"Lambdas are more interesting. In this case, we construct a function which"
+" interprets the scope of the lambda with a new value in the environment. "
+"So, a function in the object language is translated to an Idris function:"
+msgstr "lambda（λ）表达式更有趣。在这种情况下，我们构造一个函数，该函数在环境中引入一个新值来解释 lambda 的作用域。因此，对象语言中的函数会被翻译为 Idris 函数："
+
+#: ../source/tutorial/interp.rst:213 21c3114846d546acb906cc8bf01a879f
+msgid ""
+"For an application, we interpret the function and its argument and apply "
+"it directly. We know that interpreting ``f`` must produce a function, "
+"because of its type:"
+msgstr "对于函数应用（application），我们分别对函数和参数进行解释，然后直接应用。由于类型信息，我们知道解释 ``f`` 必然得到一个函数："
+
+#: ../source/tutorial/interp.rst:221 5341b7e8a1b944d99d88369b2478cb2a
+msgid ""
+"Operators and conditionals are, again, direct translations into the "
+"equivalent Idris constructs. For operators, we apply the function to its "
+"operands directly, and for ``If``, we apply the Idris "
+"``if...then...else`` construct directly."
+msgstr "运算符和条件表达式同样可以直接翻译为等价的 Idris 结构。对于运算符，直接将函数应用于操作数；对于 ``If``，直接使用 Idris 的 ``if...then...else`` 结构。"
+
+#: ../source/tutorial/interp.rst:233 2a964ca594b34e7c90df279cb2c61e02
+msgid "Testing"
+msgstr "测试"
+
+#: ../source/tutorial/interp.rst:235 c67f978a65a34643938061e8034e2ce8
+msgid ""
+"We can make some simple test functions. Firstly, adding two inputs ``\\x."
+" \\y. y + x`` is written as follows:"
+msgstr "我们可以编写一些简单的测试函数。首先，两个输入相加 ``\\x. \\y. y + x`` 可以这样写："
+
+#: ../source/tutorial/interp.rst:243 efb2d5702dd24d0c90b7998eb71d515e
+msgid ""
+"More interestingly, a factorial function ``fact`` (e.g. ``\\x. if (x == "
+"0) then 1 else (fact (x-1) * x)``), can be written as:"
+msgstr "更有趣的是，阶乘函数 ``fact``（例如 ``\\x. if (x == 0) then 1 else (fact (x-1) * x)``）可以这样写："
+
+#: ../source/tutorial/interp.rst:256 f660121136b84eae818c6be209e2362b
+msgid "Running"
+msgstr "运行"
+
+#: ../source/tutorial/interp.rst:258 82300d33c2e24698a54c40867380ff2c
+msgid ""
+"To finish, we write a ``main`` program which interprets the factorial "
+"function on user input:"
+msgstr "最后，我们编写一个 ``main`` 程序，用于对用户输入执行阶乘函数的解释："
+
+#: ../source/tutorial/interp.rst:268 d9b7870bd2fc4504b71c15d64b806374
+msgid ""
+"Here, ``cast`` is an overloaded function which converts a value from one "
+"type to another if possible. Here, it converts a string to an integer, "
+"giving 0 if the input is invalid. An example run of this program at the "
+"Idris interactive environment is:"
+msgstr "这里，``cast`` 是一个重载函数（overloaded function），用于在可能的情况下将一个值从一种类型转换为另一种类型。在本例中，它将字符串转换为整数，如果输入无效则返回 0。以下是在 Idris 交互环境中运行该程序的示例："
+
+#: ../source/tutorial/interp.rst:278 577594edb6ea4c6991a27ec6f06485c6
+msgid "Aside: ``cast``"
+msgstr "补充说明：``cast``"
+
+#: ../source/tutorial/interp.rst:280 83aed885114b426f8c573d4bdcdd8701
+msgid ""
+"The prelude defines an interface ``Cast`` which allows conversion between"
+" types:"
+msgstr "Prelude（预定义库）中定义了一个接口 ``Cast``，用于在类型之间进行转换："
+
+#: ../source/tutorial/interp.rst:288 1c828bb956e8403da2d5097d5f4686ab
+msgid ""
+"It is a *multi-parameter* interface, defining the source type and object "
+"type of the cast. It must be possible for the type checker to infer "
+"*both* parameters at the point where the cast is applied. There are casts"
+" defined between all of the primitive types, as far as they make sense."
+msgstr "它是一个*多参*接口（multi-parameter interface），定义了转换的源类型和目标类型。类型检查器在应用转换时必须能够推断出*两个*参数。只要有意义，所有原始类型之间都定义了转换。"

@@ -1,0 +1,114 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2023, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-16 09:52+0800\n"
+"PO-Revision-Date: 2022-09-03 13:48+0000\n"
+"Last-Translator: grass <hi@grass.show>\n"
+"Language-Team: Chinese (Simplified) <>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../source/app/introapp.rst:2 e7a0229461ab4e47b81458c865d0c16e
+msgid "Introducing App"
+msgstr "APP 介绍"
+
+#: ../source/app/introapp.rst:4 a8ff8c9d6c6c4554b72a70c0a0e4e82a
+msgid ""
+"``App`` is declared as below, in a module ``Control.App``, which is part "
+"of the ``base`` libraries. It is parameterised by an implicit ``Path`` "
+"(which states whether the program's execution path is linear or might "
+"throw exceptions), which has a ``default`` value that the program might "
+"throw, and a ``List Error`` (which gives a list of exception types which "
+"can be thrown, ``Error`` is a synonym for ``Type``):"
+msgstr ""
+"``App`` 声明在模块 ``Control.App`` 中，它是 ``base`` 库的一部分。"
+"它的参数是一个隐含的 ``Path`` "
+"（说明程序的执行路径是线性的还是可能抛出异常），它有一个 ``default`` 值，"
+"程序可能会抛出一个 ``List Error`` （一个可以抛出的异常类型列表， ``Error`` "
+"是 ``Type`` 的同义词）："
+
+#: ../source/app/introapp.rst:19 1e0daeba7f904426af0e2b4aa053e890
+msgid ""
+"It serves the same purpose as ``IO``, but supports throwing and catching "
+"exceptions, and allows us to define more constrained interfaces "
+"parameterised by the list of errors ``es``. e.g. a program which supports"
+" console IO:"
+msgstr ""
+"它的作用与 ``IO`` 相同，但支持抛出和捕获异常，并允许我们定义更多的由错误列表 "
+"``es`` 参数化的约束性接口。例如，一个支持控制台IO的程序："
+
+#: ../source/app/introapp.rst:29 962eb9c10f504c6e8c745fa4857787c6
+msgid "We can use this in a complete program as follows:"
+msgstr "我们可以在一个完整的程序中使用它，如下所示："
+
+#: ../source/app/introapp.rst:44 79ebf279f26b4ad39cfae943d3284db5
+msgid ""
+"Or, a program which supports console IO and carries an ``Int`` state, "
+"labelled ``Counter``:"
+msgstr "或者，一个支持控制台IO的程序，携带一个 ``Int`` 的状态，标记为 ``Counter`` ："
+
+#: ../source/app/introapp.rst:58 ad6c7fa8397247ad87c30da9cb47620e
+msgid ""
+"To run this as part of a complete program, we need to initialise the "
+"state."
+msgstr "为了将其作为一个完整程序的一部分来运行，我们需要初始化状态。"
+
+#: ../source/app/introapp.rst:65 c390e0c5c93a40e49707a1142c06b4cd
+msgid ""
+"For convenience, we can list multiple interfaces in one go, using a "
+"function ``Has``, defined in ``Control.App``, to compute the interface "
+"constraints:"
+msgstr "为了方便起见，我们可以一次性列出多个接口，使用 ``Control.App`` 中定义的函数 "
+"``Has`` 来计算接口约束："
+
+#: ../source/app/introapp.rst:76 49be1729297541e1ae780741cd43277b
+msgid ""
+"The purpose of ``Path`` is to state whether a program can throw "
+"exceptions, so that we can know where it is safe to reference linear "
+"resources. It is declared as follows:"
+msgstr "``Path`` 的目的是说明一个程序是否可以抛出异常，这样我们就可以知道在哪里引用线"
+"性资源是安全的。它被声明如下："
+
+#: ../source/app/introapp.rst:84 27d6aa817283427cb0947e6d35ac56f9
+msgid ""
+"The type of ``App`` states that ``MayThrow`` is the default. We expect "
+"this to be the most common case. After all, realistically, most "
+"operations have possible failure modes, especially those which interact "
+"with the outside world."
+msgstr ""
+"``App`` 的类型中 ``MayThrow`` 是默认的。我们希望这是最常见的情况。毕竟，现实"
+"中，大多数操作都有可能的失败模式，特别是那些与外部世界交互的操作。"
+
+#: ../source/app/introapp.rst:89 9887b8b47889488fbcd6500522021812
+msgid ""
+"The ``0`` on the declaration of ``Has`` indicates that it can only be run"
+" in an erased context, so it will never be run at run-time. To run an "
+"``App`` inside ``IO``, we use an initial list of errors ``Init`` (recall "
+"that an ``Error`` is a synonym for ``Type``):"
+msgstr ""
+"``0`` 在 ``Has`` "
+"的声明中表示它只能在一个被擦除的上下文中运行，所以它在运行时永远不会被运行。"
+"为了在 ``IO`` 内运行一个 ``App`` ，我们使用一个初始错误列表 ``Init`` （记住 "
+"``Error`` 是 ``Type`` 的同义词）："
+
+#: ../source/app/introapp.rst:102 7cfa2e4cb0384934937f494afa4a9724
+msgid ""
+"Generalising the ``Path`` parameter with ``l`` means that we can invoke "
+"``run`` for any application, whether the ``Path`` is ``NoThrow`` or "
+"``MayThrow``. But, in practice, all applications given to ``run`` will "
+"not throw at the top level, because the only exception type available is "
+"the type ``AppHasIO``, which is an empty data type (it has no values). "
+"Any exceptions will have been introduced and handled inside the ``App``."
+msgstr ""
+"通过 ``l`` 对 ``Path`` 参数进行泛化，意味着我们可以为任何应用程序调用 ``run``，"
+"无论 ``Path`` 是 ``NoThrow`` 还是 ``MayThrow``。但在实践中，所有传给 ``run`` "
+"的应用程序都不会在顶层抛出异常，因为唯一可用的异常类型是 ``AppHasIO``，这是一个"
+"空数据类型（它没有任何值）。任何异常都会在 ``App`` 内部被引入和处理。"

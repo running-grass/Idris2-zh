@@ -1,0 +1,895 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2023, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-16 09:52+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../source/backends/backend-cookbook.rst:2
+#: 105bb379f976466ebbb1aa9c8e096460
+msgid "Custom backend cookbook"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:4
+#: 1c1fbaabbb704e3fa65fd3ef66cbece0
+msgid "This document addresses the details on how to implement a custom code generation backend for the Idris compiler."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:7
+#: 25a44d22443942988b4d59c5e98eb7a4
+msgid "This part has no insights about how to implement the dependently typed bits. For that part of the compiler Edwin Brady gave lectures at SPLV20_ which are available online."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:11
+#: af5e8a3a34cf4feaa7a64f6ec916b6ec
+msgid "The architecture of the Idris2 compiler makes it easy to implement a custom code generation back-end."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:14
+#: 8e09333a53ee40e8a271fc1f86dc8781
+msgid "The way to extend Idris with new back-ends is to use it as a library. The module ``Idris.Driver`` exports the function ``mainWithCodegens``, that takes a list of ``(String, Codegen)``, starting idris with these codegens in addition to the built-in ones. The first codegen in the list will be set as the default codegen."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:20
+#: f7180e9014324c62ac788a401288a9fb
+msgid "Anyone who is interested in implementing a custom back-end needs to answer the following questions:"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:23
+#: ../source/backends/backend-cookbook.rst:119
+#: 8f3f094c3936437cb45a84244f0b916e
+#: 994d0fe186964c81b12cc3d15c9211c5
+msgid "Which Intermediate Representation (IR) should be consumed by the custom back-end?"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:24
+#: ../source/backends/backend-cookbook.rst:136
+#: 91ecceb5cd7945f485607a51a117671f
+#: 31cc61e519b64e1eb9a6a233cad6c7dd
+msgid "How to represent primitive values defined by the ``Core.TT.Constant`` type?"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:25
+#: ../source/backends/backend-cookbook.rst:220
+#: 57d6aeae8c6a4d09bc1005f485cb8e8e
+#: adf58d3b2a4441948154a4e90f44a819
+msgid "How to represent Algebraic Data Types?"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:26
+#: ../source/backends/backend-cookbook.rst:290
+#: bdf46b0a6fe7482f983a6de6df04b161
+#: 6eccd14563c547238758e8fd31c99684
+msgid "How to implement special values?"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:27
+#: ../source/backends/backend-cookbook.rst:353
+#: 0dc7eeb6535b42c69d56a88b6806ff62
+#: c809fbf48b494ba681b052ed5deba0c9
+msgid "How to implement primitive operations?"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:28
+#: ../source/backends/backend-cookbook.rst:445
+#: 779178d0373f460fab210743c6fb7499
+#: dbe118516b0349d0b5dd7193ed58f67e
+msgid "How to compile IR expressions?"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:29
+#: d900b5c755b140fdb5c46386b97450df
+msgid "How to compile Definitions?"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:30
+#: f111b624269a4bde8cfed2ad412676ad
+msgid "How to implement Foreign Function Interface?"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:31
+#: ../source/backends/backend-cookbook.rst:675
+#: 29b0139e3c864eeb8f23be15fefa09e0
+#: b014f690b3f74b0f96181888a1390098
+msgid "How to compile modules?"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:32
+#: ../source/backends/backend-cookbook.rst:694
+#: d4d9ee99c86f4fed82bcc3ab820c7a7d
+#: 6f70a12c66db47108882a9842956286a
+msgid "How to embed code snippets?"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:33
+#: ../source/backends/backend-cookbook.rst:715
+#: 5fb7c2110f444fe78d78ad41d9174a1a
+#: 512b503369c54aea85323d03ce1b7e73
+msgid "What should the runtime system support?"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:35
+#: aea339b87d734a1fba82aa901b64c33d
+msgid "First of all, we should know that Idris2 is not an optimizing compiler. Currently its focus is only to compile dependently typed functional code in a timely manner. Its main purpose is to check if the given program is correct in a dependently typed setting and generate code in form of a lambda-calculus like IR where higher-order functions are present. Idris has 3 intermediate representations for code generation. At every level we get a simpler representation, closer to machine code, but it should be stressed that all the aggressive code optimizations should happen in the custom back-ends. The quality and readability of the generated back-end code is on the shoulders of the implementor of the back-end. Idris erases type information, in the IRs as it compiles to scheme by default, and there is no need to keep the type information around. With this in mind let's answer the questions above."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:52
+#: 5424badbbbb8437f991489113813c8aa
+msgid "The architecture of an Idris back-end"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:54
+#: 28ead293eeb246a28401ab0e97189de1
+msgid "Idris compiles its dependently typed front-end language into a representation which is called ``Compile.TT.Term`` . This data type has a few constructors and it represents a dependently typed term. This ``Term`` is transformed to ``Core.CompileExpr.CExp`` which has more constructors than ``Term`` and it is a very similar construct to a lambda calculus with let bindings, structured and tagged data representation, primitive operations, external operations, and case expressions. The ``CExp`` is closer in the compiling process to code generation."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:64
+#: e5d1966a04ce44f99d7ce97e642de4b5
+msgid "The custom code generation back-end gets a context of definitions, a template directory and an output directory, a ``Core.TT.ClosedTerm`` to compile and a path to an output file."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:75
+#: 32360892182e444eac374759f024c822
+msgid "The ``ClosedTerm`` is a special ``Term`` where the list of the unbound variables is empty. This technicality is not important for the code generation of the custom back-end as the back-end needs to call the ``getCompileData`` function which produces the ``Compiler.Common.CompileData`` record."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:81
+#: f587de1d6ec54b029ca146b9c3107fd9
+msgid "The ``CompileData`` contains:"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:83
+#: 31ebdb9aa8974ff6a894e2e7fcc84908
+msgid "A main expression that will be the entry point for the program in ``CExp``"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:84
+#: b0844ffb06d24572b715f021e8d3aea4
+msgid "A list of ``Core.CompileExpr.NamedDef``"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:85
+#: 528056f130a24eb897a6b54c346d657e
+msgid "A list of lambda-lifted definitions ``Compiler.LambdaLift.LiftedDef``"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:86
+#: 663b501ef77546c9a91d18c2b6d88165
+msgid "A list of ``Compiler.ANF.ANFDef``"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:87
+#: 658ec1104ab4491497e5efcef1cf7b85
+msgid "A list of ``Compiler.VMCode.VMDef`` definitions"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:89
+#: d21b8829952a4e4a834c99bd936d6c20
+msgid "These lists contain:"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:91
+#: 98189eb116e5447bae780e05e14dd634
+msgid "Functions"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:92
+#: 2ca03cd53aa14c329001ecab3d743441
+msgid "Top-level data definitions"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:93
+#: 9f522f766a5d40c7bb8dd8e50d0a3ce3
+msgid "Runtime crashes which represent unfilled holes, explicit calls by the user to ``idris_crash``, and unreachable branches in case trees"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:96
+#: 638e4bc75b7e4f3e875bc12184858cdd
+msgid "Foreign call constructs"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:98
+#: d158a6dfdaee4e5e8adab1640dcaaea5
+msgid "The job of the custom code generation back-end is to transform one of the phase encoded definitions (``NamedDef``, ``LiftedDef``, ``CExp``, ``ANF``, or ``VM``) into the intermediate representation of the code generator. It can then run optimizations and generate some form of executable. In summary, the code generator has to understand how to represent tagged data and function applications (even if the function application is partial), how to handle let expressions, how to implement and invoke primitive operations, how to handle ``Erased`` arguments, and how to do runtime crashes."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:107
+#: 78beef485a3d4255b23bf70a4ab2bd1c
+msgid "The implementor of the custom back-end should pick the closest Idris IR which fits to the abstraction of the technology that is aimed to compile to. The implementor should also consider how to transform the simple main expression which is represented in CExp. As Idris does not focus on memory management and threading. The custom back-end should model these concepts for the program that is compiled. One possible approach is to target a fairly high level language and reuse as much as possible from it for the custom back-end. Another possibility is to implement a runtime that is capable of handling memory management and threading."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:121
+#: da9192346d9540b6bb82830be8833fea
+msgid "Now lets turn our attention to the different intermediate representations (IRs) that Idris provides. When the ``getCompileData`` function is invoked with the ``UsePhase`` parameter it will produce a ``CompileData`` record, which will contain lists of top-level definitions that needs to be compiled. These are:"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:127
+#: ec25851dec404229a68baf30d21652bf
+msgid "``NamedDef``"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:128
+#: cb59e0e04f044260819ca0fb35e87aeb
+msgid "``LiftedDef``"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:129
+#: d33b0c07213f4fbeb8a281fef3e13e11
+msgid "``ANFDef``"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:130
+#: 7667d12c40404d5796d5a026350fc586
+msgid "``VMDef``"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:132
+#: 6a8e21546f544e98a77da3c97123cb70
+msgid "The question to answer here is: Which one should be picked? Which one fits to the custom back-end?"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:138
+#: f84eba3d875c4c19910c1b5debc169db
+msgid "After one selects the IR to be used during code generation, the next question to answer is how primitive types should be represented in the back-end. Idris has the following primitive types:"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:142
+#: dc651b83b1da4f69bc3e4b89b1c049d7
+msgid "``Int``"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:143
+#: 877481c7430a44f3a45bebb2af553f38
+msgid "``Integer`` (arbitrary precision)"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:144
+#: faece010eb4d4a779f38c0b5ca1fc615
+msgid "``Bits(8/16/32/64)``"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:145
+#: 9c1fdd7c08544d1c9bfe79dc3302548f
+msgid "``Char``"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:146
+#: 19d560fdc2b3406a9b005f11b585c1dc
+msgid "``String``"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:147
+#: 237a9ef3d3de4f33b77af0a8b1e74ff9
+msgid "``Double``"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:148
+#: f4f599326c474cab8cdff8756e1000ec
+msgid "``WorldVal`` (token for IO computations)"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:150
+#: 5f4d7c811f8940b294b619716456e05e
+msgid "And as Idris allows pattern matching on types all the primitive types have their primitive counterpart for describing a type:"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:153
+#: 21965dc7c2e14a1d8ead8686f1eedb45
+msgid "``IntType``"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:154
+#: 7a561759e06c45a080d995e683db1116
+msgid "``IntegerType``"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:155
+#: 1d7f01dfaf4e45f3bd8ec7b4cc97a3b2
+msgid "``Bits(8/16/32/64)Type``"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:156
+#: 7f63871797b046aeaf89878c77b54c33
+msgid "``StringType``"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:157
+#: d2a7edeb6f7f49999ab5876d70253171
+msgid "``CharType``"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:158
+#: b7a620b8aba34d6aa2934055e8487939
+msgid "``DoubleType``"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:159
+#: 974e67af2c6a45e1ab9da7ba9f8ac4c8
+msgid "``WorldType``"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:161
+#: 535db74fac184e8ea9d25bba5fc82cbd
+msgid "The representation of these primitive types should be a well-thought out design decision as it affects many parts of the code generation, such as conversion from the back-end values when FFI is involved, big part of the data during the runtime is represented in these forms. Representation of primitive types affect the possible optimisation techniques, and they also affect the memory management and garbage collection."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:168
+#: e86c967c0e974f2fa8cefcd0015caf56
+msgid "There are two special primitive types: String and World."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:170
+#: 845a253a4a0b4ad380eeb2aef496e289
+msgid "**String**"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:172
+#: 799a3e46013048599e5669d7a8ab8d9f
+msgid "As its name suggest this type represent a string of characters. As mentioned in `Primitive FFI Types <https://idris2.readthedocs.io/en/latest/ffi/ffi.html#primitive-ffi-types>`_, Strings are encoded in UTF-8."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:176
+#: 0f2a54230fd14ec5bdc951df83f8e4c3
+msgid "It is not always clear who is responsible for freeing up a ``String`` created by a component other than the Idris runtime. Strings created in Idris will always have value, unlike possible String representation of the host technology, where for example NULL pointer can be a value, which can not happen on the Idris side. This creates constraints on the possible representations of the Strings in the custom back-end and diverging from the Idris representation is not a good idea. The best approach here is to build a conversion layer between the string representation of the custom back-end and the runtime."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:187
+#: 43b28c9300c247db8baa02f99b44df82
+msgid "**World**"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:189
+#: aa6c6dc3436a42898d61e8e932e54039
+msgid "In pure functional programming, causality needs to be represented whenever we want to maintain the order in which subexpressions are executed. In Idris a token is used to chain IO function calls. This is an abstract notion about the state of the world. For example this information could be the information that the runtime needs for bookkeeping of the running program."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:196
+#: cb7ac4d7877a4609b5893967d276a086
+msgid "The ``WorldVal`` value in Idris programs is accessed via the ``primIO`` construction which leads us to the ``PrimIO`` module. Let's see the relevant snippets:"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:211
+#: 9e6526b6507e47f6bc322b36ff32b687
+msgid "The world value is referenced as ``%World`` in Idris. It is created by the runtime when the program starts. Its content is changed by the custom runtime. More precisely, the World is created when the ``WorldVal`` is evaluated during the execution of the program. This can happen when the program gets initialized or when an ``unsafePerformIO`` function is executed."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:222
+#: 27b1b6469fee4ea8a46de2c6efe3da52
+msgid "In Idris there are two different ways to define a data type: tagged unions are introduced using the ``data`` keyword while structs are declared via the ``record`` keyword. Declaring a ``record`` amounts to defining a named collection of fields. Let's see examples for both:"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:241
+#: eedc5fdb7d21419aa67b16e1e35d0fdd
+msgid "Idris offers not only algebraic data types but also indexed families. These are tagged union where different constructors may have different return types. Here is ``Vect`` an example of a data type which is an indexed family corresponding to a linked-list whose length is known at compile time. It has one index (of type ``Nat``) representing the length of the list (the value of this index is therefore different for the ``[]`` and ``(::)`` constructors) and a parameter (of type ``Type``) corresponding to the type of values stored in the list."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:256
+#: e9f77cf356d34516aab36888b536c1e9
+msgid "Both data and record are compiled to constructors in the intermediate representations. Two examples of such Constructors are ``Core.CompileExpr.CExp.CCon`` and ``Core.CompileExpr.CDef.MkCon``."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:260
+#: 97dbc0ce791f4edaa93f791cda9630df
+msgid "Compiling the ``Either`` data type will produce three constructor definitions in the IR:"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:263
+#: 3550953207c04dc6a98488bed8ca35c2
+msgid "One for the ``Either`` type itself, with the arity of two. Arity tells how many parameters of the constructor should have. Two is reasonable in this case as the original Idris ``Either`` type has two parameters."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:267
+#: d5d6c95d176440f6a4f2e96bfadbcd8a
+msgid "One for the ``Left`` constructor with arity of three. Three may be surprising, as the constructor only has one argument in Idris, but we should keep in mind the type parameters for the data type too."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:270
+#: 101a1bcd15c14d4ebe93ea7f2aed4352
+msgid "One for the ``Right`` constructor with arity of three."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:272
+#: 56be182086ed4573823ab7be29234499
+msgid "In the IR constructors have unique names. For efficiency reasons, Idris assigns a unique integer tag to each data constructors so that constructor matching is reduced to comparisons of integers instead of strings. In the ``Either`` example above ``Left`` gets tag 0 and ``Right`` gets tag 1."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:277
+#: 431126cd7cee4386902173377299aec7
+msgid "Constructors can be considered structured information: a name together with parameters. The custom back-end needs to decide how to represent such data. For example using ``Dict`` in Python, ``JSON`` in JavaScript, etc. The most important aspect to consider is that these structured values are heap related values, which should be created and stored dynamically. If there is an easy way to map in the host technology, the memory management for these values could be inherited. If not, then the host technology is responsible for implementing an appropriate memory management. For example ``RefC`` is a C backend that implements its own memory management based on reference counting."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:292
+#: f699f9bc550442569650e989f1e3544b
+msgid "Apart from the data constructors there are two special kind of values present in the Idris IRs: type constructors and ``Erased``."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:296
+#: 62df805dc13a46bb856455377ef9b45d
+msgid "Type constructors"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:298
+#: 6dc42eaa28e343eb8c910f303d7f2979
+msgid "Type and data constructors that are not relevant for the program's runtime behaviour may be used at compile butand will be erased from the intermediate representation."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:302
+#: 32018ced26cb452f97d006292697b6b5
+msgid "However some type constructors need to be kept around even at runtime because pattern matching on types is allowed in Idris:"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:311
+#: ebc98f19965e43738f4af7b91a13e634
+msgid "Here we can pattern match on ``a`` and ensure that ``notId`` behaves differently on ``Int`` than all the other types. This will generate an IR that will contain a ``Case`` expression with two branches: one ``Alt`` matching on the ``Int`` type constructor and a default for the non-``Int`` matching part of the ``notId`` function."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:318
+#: 8154a287662643a98963154718ef21f1
+msgid "This is not that special: ``Type`` is a bit like an infinite data type that contains all of the types a user may ever declare or use. This can be handled in the back-end and host language using the same mechanisms that were mobilised to deal with data constructors. The reason for using the same approach is that in dependently typed languages, the same language is used to form both type and value level expressions. Compilation of type level terms will be the same as that of value level terms. This is one of the things that make dependently typed abstraction elegant."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:328
+#: 69e68535e78e41e3833a7b2ff41bc527
+msgid "``Erased``"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:330
+#: 7aa91b619eed494b8616d1c80827ee6e
+msgid "The other kind of special value is ``Erased``. This is generated by the Idris compiler and part of the IR if the original value is only needed during the type elaboration process. For example:"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:344
+#: ede8f7e94608454d9530698bada2f05a
+msgid "Because ``prf`` has quantity ``0``, it is guaranteed to be erased during compilation and thus not present at runtime. Therefore ``prf`` will be represented as ``Erased`` in the IR. The custom back-end needs to represent this value too as any other data value, as it could occur in place of normal values. The simplest approach is to implement it as a special data constructor and let the host technology provided optimizations take care of its removal."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:355
+#: 61120c02e2354c55be016e939e185bbd
+msgid "Primitive operations are defined in the module ``Core.TT.PrimFn``. The constructors of this data type represent the primitive operations that the custom back-end needs to implement. These primitive operations can be grouped as:"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:360
+#: e184539860124e5895d93076e438e681
+msgid "Arithmetic operations (``Add``, ``Sub``, ``Mul``, ``Div``, ``Mod``, ``Neg``)"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:361
+#: f23cb5fc40a244a688f0030f6d832c7f
+msgid "Bit operations (``ShiftL``, ``ShiftR``, ``BAnd``, ``BOr``, ``BXor``)"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:362
+#: 41896aeff9404029b6f09c5d453c2af1
+msgid "Comparison operations (``LT``, ``LTE``, ``EQ``, ``GTE``, ``GT``)"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:363
+#: 671df379bb774a78be86eec45978f5da
+msgid "String operations (``Length``, ``Head``, ``Tail``, ``Index``, ``Cons``, ``Append``, ``Reverse``, ``Substr``)"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:366
+#: 6d6c86c80974442eb71403a5a51aa3a7
+msgid "Double precision floating point operations (``Exp``, ``Log``, ``Sin``, ``Cos``, ``Tan``, ``ASin``, ``ACos``, ``ATan``, ``Sqrt``, ``Floor``, ``Ceiling``)"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:369
+#: 48a078571a3f4566b14dca4793d0dc42
+msgid "Casting of numeric and string values"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:370
+#: 8d2a076b06314ddbb56c39b6a08987c4
+msgid "An unsafe  cast operation ``BelieveMe``"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:371
+#: 0a71987c19ac4620bf770d97f4c58cbf
+msgid "A ``Crash`` operation taking a type and a string and creating a value at that type by raising an error."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:375
+#: 4c2b336cfd5c425eacfea2c3f6b11a95
+msgid "BelieveMe"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:377
+#: 9d807bf07089405891f4b694136195df
+msgid "The primitive ``believe_me`` is an unsafe cast that allows users to bypass the typechecker when they know something to be true even though it cannot be proven."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:380
+#: e717984a7c024af8840060ae6ec4747a
+msgid "For instance, assuming that Idris' primitives are correctly implemented, it should be true that if a boolean equality test on two ``Int`` ``i`` and ``j`` returns ``True`` then ``i`` and ``j`` are equal. Such a theorem can be implemented by using ``believe_me`` to cast ``Refl`` (the constructor for proofs of a propositional equality) from ``i === i`` to ``i === j``. In this case, it should be safe to implement."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:388
+#: 918419dbd0d942d3ae0d3cd5dd9aecc0
+msgid "Boxing"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:390
+#: 9745b25f844448539c7c9a181b4f9147
+msgid "Idris assumes that the back-end representation of the data is not strongly typed and that all the data type have the same kind of representation. This could introduce a constraint on the representation of the primitives and constructor represented data types. One possible solution is that the custom back-end should represent primitive data types the same way it does constructors, using special tags. This is called boxing."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:398
+#: b9e220964ce84808a3cea0d19f4b056a
+msgid "Official backends represent primitive data types as boxed ones."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:400
+#: 5b71f7b89c914a4c9a1c447fde20a943
+msgid "RefC: Boxes the primitives, which makes them easy to put on the heap."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:401
+#: 5a840bb406634db28cbee9ccfde84686
+msgid "Scheme: Prints the values that are a ``Constant`` as Scheme literals."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:404
+#: da1f6053f7ed45569ac1c68301473c71
+msgid "How to compile top-level definitions?"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:406
+#: 62b366f146cc40ffa6fc238e45314fdf
+msgid "As mentioned earlier, Idris has 4 different IRs that are available in the ``CompileData`` record: ``Named``, ``LambdaLifted``, ``ANF``, and ``VMDef``. When assembling the ``CompileData`` we have to tell the Idris compiler which level we are interested in. The ``CompileData`` contains lists of definitions that can be considered as top level definitions that the custom back-end need to generate functions for."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:413
+#: 4d7cde7b1eed4263ae7adf8f0b6d36cc
+msgid "There are four types of top-level definitions that the code generation back-end needs to support:"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:416
+#: 17586da4e92d44e1a305231cbbc4f312
+msgid "Function"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:417
+#: 3f04034e9c064a61acc79aa63ffecd90
+msgid "Constructor"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:418
+#: d3ad83df73584b318be412482086858f
+msgid "Foreign call"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:419
+#: ede90875534f4cd8a9d3722077a61af4
+msgid "Error"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:421
+#: 6afc6d2e2c1d422c9d79a17c65b7d057
+msgid "**Function** contains a lambda calculus like expression."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:423
+#: 610d95e2a5f44a1ea83f8a7539620f53
+msgid "**Constructor** represents a data or a type constructor, and it should be implemented as a function creating the corresponding data structure in the custom back-end."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:427
+#: 87cd1db0fab84bd1b1394a1a1a86dbf5
+msgid "A top-level **foreign call** defines an entry point for calling functions implemented outside the Idris program under compilation. The Foreign construction contains a list of Strings which are the snippets defined by the programmer, the type of the arguments and the return type of the foreign function. The custom back-end should generate a wrapper function. More on this on `How to implement the Foreign Function Interface?`_"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:434
+#: 32d9e38167b844339b56c3eacdc18cbc
+msgid "A top-level **error** definition represents holes in Idris programs, uses of ``idris_crash``, or unreachable branches in a case tree. Users may want to execute incomplete programs for testing purposes which is fine as long as we never actually need the value of any of the holes. Library writers may want to raise an exception if an unrecoverable error has happened. Finally, Idris compiles the unreachable branches of a case tree to runtime error as it is dead code anyway."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:447
+#: ff4975d295944e2aa718f47c451f3aaf
+msgid "The custom back-end should decide which intermediate representation is used as a starting point. The result of the transformation should be expressions and functions of the host technology."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:451
+#: 41d1dbd854d84e97abcda380c0c8958c
+msgid "Definitions in ``ANF`` and ``Lifted`` are represented as a tree like expression, where control flow is based on the ``Let`` and ``Case`` expressions."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:455
+#: 21ed65d42e2a481dbea02913bde21284
+msgid "Case expressions"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:457
+#: b7ca2f44f2074272910e3a6c8449e2dd
+msgid "There are two types of case expressions, one for matching and branching on primitive values such as ``Int``, and the second one is matching and branching on constructor values. The two types of case expressions will have two different representation for alternatives of the cases. These are ``ConstCase`` (for matching on constant values) and ``ConCase`` (for matching on constructors)."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:464
+#: 6ef34cb8a21c40e2a68d17280fab3aec
+msgid "Matching on constructors can be implemented as matching on their tags or, less efficiently, as matching on the name of the constructor. In both cases a match should bind the values of the constructor's arguments to variables in the body of the matching branch. This can be implemented in various ways depending on the host technology: switch expressions, case with pattern matching, or if-then-else chains."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:471
+#: 1357e7d4321d4e0ca378bbcb750391cf
+msgid "When pattern matching binds variables, the number of arguments can be different from the arity of the constructor defined in top-level definitions and in ``GlobalDef``. This is because all the arguments are kept around at typechecking time, but the code generator for the case tree removes the ones which are marked as erased. The code generator of the custom back-end also needs to remove the erased arguments in the constructor implementation. In ``GlobalDef``, ``eraseArg`` contains this information, which can be used to extract the number of arguments which needs to be kept around."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:482
+#: 59d7991a8b41419d8d899ab658ba13d4
+msgid "Creating values"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:484
+#: f1477481c7604e6a8a3bf80a409d05ba
+msgid "Values can be created in two ways."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:486
+#: 69c09dc0a9ac408e88445ff252d51d26
+msgid "If the value is a primitive value, it will be handed to the back-end as a ``PrimVal``. It should be compiled to a constant in the host language following the  design decisions made in the 'How to represent primitive values?' section."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:491
+#: 4b95845056ec4cfd95da2d30a6de07a6
+msgid "If it is a structured value (i.e. a ``Con``) it should be compiled to a function in the host language which creates a dynamic value. Design decisions made for 'How to represent constructor values?' is going to have effect here."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:496
+#: 10e5288f0afc465590138c5be3fd4d7f
+msgid "Function calls"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:498
+#: 5e7fdd44a89f4522a19587dd1bc5f9ac
+msgid "There are four types of function calls: - Saturated function calls (all the arguments are there) - Under-applied function calls (some arguments are missing) - Primitive function calls (necessarily saturated, ``PrimFn`` constructor) - Foreign Function calls (referred to by its name)"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:504
+#: d44dfb2a233349bd8c2db4161f7c0da6
+msgid "The ``ANF`` and ``Lifted`` intermediate representations support under-applied function calls (using the ``UnderApp`` constructor in both IR). The custom back-end needs to support partial application of functions and creating closures in the host technology. This is not a problem with back-ends like Scheme where we get the partial application of a function for free. But if the host language does not have this tool in its toolbox, the custom back-end needs to simulate closures. One possible solution is to manufacture a closure as a special object storing the function and the values it is currently applied to and wait until all the necessary arguments have been received before evaluating it. The same approach is needed if the ``VMCode`` IR was chosen for code generation."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:518
+#: a797a7170abf44e9b456487181fef9e3
+msgid "Let bindings"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:520
+#: b8e8fd8b80044accbac085d2fa368623
+msgid "Both the ``ANF`` and ``Lifted`` intermediate representations have a ``Let`` construct that lets users assign values to local variables. These two IRs differ in their representation of bound variables."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:524
+#: 80b834a8c69c423588ba92cd721e4e10
+msgid "``Lifted`` is a type family indexed by the ``List Name`` of local variables in scope. A variable is represented using ``LLocal``, a constructor that stores a ``Nat`` together with a proof that it points to a valid name in the local scope."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:529
+#: 9c766d77f8fa4a45a551a3d077e0467b
+msgid "``ANF`` is a lower level representation where this kind of guarantees are not present anymore. A local variable is represented using the ``AV`` constructor which stores an ``AVar`` whose definition we include below. The ``ALocal`` constructor stores an ``Int`` that corresponds to the ``Nat`` we would have seen in ``Lifted``. The ``ANull`` constructor refers to an erased variable and its representation in the host language will depend on the design choices made in the 'How to represent ``Erased`` values' section."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:544
+#: bd6c00b29b8a4e38a95dc08fd16896cb
+msgid "VMDef specificities"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:546
+#: 5d3aad333e6c4bd1b72781544bab1085
+msgid "``VMDef`` is meant to be the closest IR to machine code. In ``VMDef``, all the definitions have been compiled to instructions for a small virtual machine with registers and closures."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:550
+#: b028249b5ab74bd3a55d8adcfb3200b4
+msgid "Instead of ``Let`` expressions, there only are ``ASSIGN`` statements at this level."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:553
+#: 9745c913bd8d4b66840cd183a6f3509a
+msgid "Instead of ``Case`` expressions binding variables when they successfully match on a data constructor, ``CASE`` picks a branch based on the constructor itself. An extra operation called ``PROJECT`` is introduced to explicitly extract a constructor's argument based on their position."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:558
+#: f931e610904d45318f7f0399dce1b48b
+msgid "There are no ``App`` or ``UnderApp``. Both are replaced by ``APPLY`` which applies only one value and creates a closure from the application. For erased values the operation ``NULL`` assigns an empty/null value for the register."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:563
+#: 3f12c3e05cee41a38a1ef40a1ca94263
+msgid "How to implement the Foreign Function Interface?"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:565
+#: 323d3cafa21045e0a2fd68dc0ef5e869
+msgid "The Foreign Function Interface (FFI) plays a big role in running Idris programs. The primitive operations which are mentioned above are functions for manipulating values and those functions aren't meant for complex interaction with the runtime system. Many of the primitive types can be thought of as abstract types provided via ``external`` and foreign functions to manipulate them."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:572
+#: 8f9362917c504444a50d039c898b1d01
+msgid "The responsibility of the custom back-end and the host technology is to represent these computations the operationally correct way. The design decisions with respect to representing primitive types in the host technology will inevitably have effects on the design of the FFI."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:578
+#: 2715c286e7d547df948e0ae1f1fce828
+msgid "Foreign Types"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:580
+#: 1c4c78f20e5646b192dd86507a7eb86b
+msgid "Originally Idris had an official back-end implementation in C. Even though this has changed, the names in the types for the FFI kept their C prefix. The ``Core.CompileExpr.CFType`` contains the following definitions, many of them one-to-one mapping from the corresponding primitive type, but some of them needs explanation."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:586
+#: 0f548371c5e24e84a43b672616634fb2
+msgid "The foreign types are:"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:588
+#: ec2e96239e0449a48c7efd032428b5cf
+msgid "``CFUnit``"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:589
+#: bf3884f532e8449aa4e4355a63d59e98
+msgid "``CFInt``"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:590
+#: 2a68fb3afef0420cabf715fb9c4cf9ed
+msgid "``CFUnsigned(8/16/32/64)``"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:591
+#: d7636d610bdd429ca2e72d4516cbea44
+msgid "``CFString``"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:592
+#: f1da082cd9b541e988ba812362a82a81
+msgid "``CFDouble``"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:593
+#: 9398366427bc466abff0a590c3dbbd3a
+msgid "``CFChar``"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:594
+#: 3c21badf1e394f2485040067a1c5b6b2
+msgid "``CFFun`` of type  ``CFType -> CFType -> CFType`` Callbacks can be registered in the host technology via parameters that have CFFun type. The back-end should be able to handle functions that are defined in Idris side and compiled to the host technology. If the custom back-end supports higher order functions then it should be used to implement the support for this kind of FFI type."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:600
+#: ee2a3a7b6e2b4e3b9caa38c2b7e3f20b
+msgid "``CFIORes`` of type ``CFType -> CFType`` Any ``PrimIO`` defined computation will have this extra layer. Pure functions shouldn't have any observable IO effect on the program state in the host technology implemented runtime. NOTE: ``IORes`` is also used when callback functions are registered in the host technology."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:606
+#: 4d153dc0c43545acb7a6ba85f35bca93
+msgid "``CFWorld`` Represents the current state of the world. This should refer to a token that is passed around between function calls. The implementation of the World value should contain back-end specific values and information about the state of the Idris runtime."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:611
+#: 3aaab29b743041df8a3d49c0211a811b
+msgid "``CFStruct`` of type ``String -> List (String, CFType) -> CFType`` is the foreign type associated with the ``System.FFI.Struct``. It represents a C like structure in the custom back-end. ``prim__getField`` and ``prim__setField`` primitives should be implemented to support this CFType."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:616
+#: 8ea34b466ffb415e876791fa0bed1f91
+msgid "``CFUser`` of type ``Name -> List CFType -> CFType`` Types defined with [external] are represented with ``CFUser``. For example ``data MyType : Type where [external]`` will be represented as ``CFUser Module.MyType []``"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:620
+#: 9bef3f1661bd45eca8468405a1cfcfec
+msgid "``CFBuffer`` Foreign type defined for ``Data.Buffer``. Although this is an external type, Idris builds on a random access buffer."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:623
+#: 2f5837e6044c472bbed48b84d065a35d
+msgid "``CFPtr`` The ``Ptr t`` and ``AnyPtr`` are compiled to ``CFPtr`` Any complex structured data that can not be represented as a simple primitive can use this CFPtr to keep track where the value is used. In Idris ``Ptr t`` is defined as external type."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:627
+#: 91887a6a0398498c97763f2fe8a859b8
+msgid "``CFGCPtr`` The ``GCPtr t`` and ``GCAnyPtr`` are compiled to ``CFGCPtr``. ``GCPtr`` is inferred from a Ptr value calling the ``onCollect`` function and has a special property. The ``onCollect`` attaches a finalizer for the pointer which should run when the pointer is freed."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:633
+#: ac5be7f0c6824b58800ab7695cb09f59
+msgid "Examples"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:635
+#: e3aff6a7152448859ddc7e2589a546aa
+msgid "Let's step back and look into how this is represented at the Idris source level. The simplest form of a definition involving the FFI a function definition with a ``%foreign`` pragma. The pragma is passed a list of strings corresponding to a mapping from backends to names for the foreign calls. For instance:"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:645
+#: c2dbbbc322a145f3a3461d5c89a1f9a7
+msgid "this function should be translated by the C back end as a call to the ``add`` function defined in the ``smallc.c`` file. In the FFI, ``Int`` is translated to ``CFInt``. The back-end assumes that the data representation specified in the library file correspond to that of normal Idris values."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:650
+#: cd7d3bcf7d4a4940b6d552a4c925c0af
+msgid "We can also define ``external`` types like in the following examples:"
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:659
+#: 380dd8e133e84a59ae17e033ce89b51c
+msgid "Here ``ThreadID`` is defined as an external type and this type will be represented as ``CFUser \"ThreadID\" []`` internally. The value which is created by the scheme runtime will be considered as a black box."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:663
+#: c944aa1d1e1140e889ded69b894c9a79
+msgid "The type of ``prim__fork``, once translated as a foreign type, is ``[%World -> IORes Unit, %World] -> IORes Main.ThreadID`` Here we see that the ``%World`` is added to the IO computations. The ``%World`` parameter is always the last in the argument list."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:668
+#: 962fd7327d06432a8b934d5d0300d638
+msgid "For the FFI functions, the type information and the user defined string can be found in the top-level definitions. The custom back-end should use the definitions to generate wrapper code, which should convert the types that are described by the ``CFType`` to the types that the function in the ``%foreign`` directive needs.."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:677
+#: 71e0f1492d384f1fb1ed2fb231596888
+msgid "The Idris compiler generates intermediate files for modules, the content of the files are neither part of ``Lifted``, ``ANF``, nor ``VMCode``. Because of this, when the compilation pipeline enters the stage of code generation, all the information will be in one instance of the ``CompileData`` record and the custom code generator back-end can process them as it would see the whole program."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:684
+#: 428444423ec444fa9546a5adcdf19553
+msgid "The custom back-end has the option to introduce some hierarchy for the functions in different namespaces and organize some module structure to let the host technology process the bits and pieces in different sized chunks. However, this feature is not in the scope of the Idris compiler."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:689
+#: 16fa119373844671bacb3e714c0879a7
+msgid "It is worth noting that modules can be mutually recursive in Idris. So a direct compilation of Idris modules to modules in the host language may be unsuccessful."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:696
+#: 02d29fe0c31341258ce53aae0daaf808
+msgid "A possible motivation for implementing a custom back-end for Idris is to generate code that is meant to be used in a larger project. This project may be bound to another language that has many useful librarie  but could benefit from relying on Idris' strong type system in places."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:701
+#: d2a8d48389e24bff80e195831629c6af
+msgid "When writing a code generator for this purpose, the interoperability of the host technology and Idris based on the Foreign Interface can be inconvenient. In this situation, the need to embed code of the host technology arises naturally. Elaboration can be an answer for that."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:706
+#: f73903e211864b15bb79c7f8af7b6a39
+msgid "Elaboration is a typechecking time code generation technique. It relies on the ``Elab`` monad to write scripts that can interact with the typechecking machinery to generate Idris code in ``Core.TT``."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:710
+#: 02dcfd3be2754c3cb2ccb9d3764f4a47
+msgid "When code snippets need to be embedded a custom library should be provided with the custom back-end to turn the valid code snippets into their representation in ``Core.TT``."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:717
+#: cfe6137310494b46b2fd11f9eb7508a3
+msgid "As a summary, a custom back-end for the Idris compiler should create an environment in the host technology that is able to run Idris programs. As Idris is part of the family of functional programming languages, its computation model is based on graph reduction. Programs represented as simple graphs in the memory are based on the closure creation mechanism during evaluation. Closure creation exist even on the lowest levels of IRs. For that reason any runtime in any host technology needs to support some kind of representation of closures and be able to store them on the heap, thus the responsibility of memory management falls on the lap of the implementor of the custom back-end. If the host technology has memory management, the problem is not difficult. It is also likely that storing closures can be easily implemented via the tools of the host technology."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:729
+#: fd5c850a6eb240ba851bd417ee03dc0d
+msgid "Although it is not clear how much functionality a back-end should support. Tools from the Scheme back-end are brought into the Idris world via external types and primitive operations around them. This is a good practice and gives the community the ability to focus on the implementation of a quick compiler for a dependently typed language. One of these hidden features is the concurrency primitives. These are part of the different libraries that could be part of the compiler or part of the contribution package. If the threading model is different for the host technology that the Idris default back-end inherits currently from the Scheme technology it could be a bigger piece of work."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:739
+#: 33a1571a882747babb70078c52285a70
+msgid "IO in Idris is implemented using an abstract ``%World`` value, which serves as token for functions that operate interactively with the World through simple calls to the underlying runtime system. The entry point of the program is the main function, which has the type of the IO unit, such as ``main : IO ()``. This means that every program which runs, starts its part of some IO computation. Under the hood this is implemented via the creation of the ``%World`` abstract value, and invoking the main function, which is compiled to pass the abstract %World value for IO related foreign or external operations."
+msgstr ""
+
+#: ../source/backends/backend-cookbook.rst:748
+#: 88cccfbcebf84235aad08bc8d9286c32
+msgid "There is an operation called ``unsafePerformIO`` in the ``PrimIO`` module. The type signature of ``unsafePerformIO`` tells us that it is capable of evaluating an ``IO`` computation in a pure context. Under the hood it is run in exactly the same way the ``main`` function is. It manufactures a fresh ``%World`` token and passes it to the ``IO`` computations. This leads to a design decision: How to represent the state of the World, and how to represent the world that is instantiated for the sake of the ``unsafePerformIO`` operation via the ``unsafeCreateWorld``? Both the mechanisms of ``main`` and ``unsafeCreateWorld`` use the ``%MkWorld`` constructor, which will be compiled to ``WorldVal`` and its type to ``WorldType``, which means the implementation of the runtime is responsible for creating the abstraction around the World. Implementation of an abstract World value could be based on a singleton pattern, where we can have just one world, or we could have more than one world, resulting in parallel universes for ``unsafePerformIO``."
+msgstr ""

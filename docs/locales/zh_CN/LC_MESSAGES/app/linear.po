@@ -1,0 +1,201 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2023, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-16 09:52+0800\n"
+"PO-Revision-Date: 2022-09-03 13:48+0000\n"
+"Last-Translator: grass <hi@grass.show>\n"
+"Language-Team: Chinese (Simplified) <>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../source/app/linear.rst:2 b2e30fb2b7714309983f3ac19e955195
+msgid "Linear Resources"
+msgstr "线性资源"
+
+#: ../source/app/linear.rst:4 c20825ca486946f88b5f254173bd87f4
+msgid ""
+"We have introduced ``App`` for writing interactive programs, using "
+"interfaces to constrain which operations are permitted, but have not yet "
+"seen the ``Path`` parameter in action. Its purpose is to constrain when "
+"programs can throw exceptions, to know where linear resource usage is "
+"allowed. The bind operator for ``App`` is defined as follows (not via "
+"``Monad``):"
+msgstr ""
+"我们已经介绍了 ``App`` 用于编写交互式程序，使用接口来限制允许哪些操作，"
+"但还没有看到 ``Path`` "
+"参数的作用。其目的是限制程序何时可以抛出异常，以了解允许线性资源使用的位置。 "
+"``App`` 的绑定运算符定义如下（不是通过 ``Monad`` ）："
+
+#: ../source/app/linear.rst:20 129bcd1300fa4cbb88f06827a6615d3e
+msgid ""
+"The intuition behind this type is that, when sequencing two ``App`` "
+"programs:"
+msgstr "这种类型背后的直觉是，当对两个 ``App`` 程序进行排序时："
+
+#: ../source/app/linear.rst:23 8887c51977b94bc8bc798b068a064237
+msgid ""
+"if the first action might throw an exception, then the whole program "
+"might throw."
+msgstr "如果第一个动作可能抛出异常，那么整个程序就可能会抛出异常。"
+
+#: ../source/app/linear.rst:25 e9ecec3c027d44fcbf83b9958a7f1b74
+msgid ""
+"if the first action cannot throw an exception, the second action can "
+"still throw, and the program as a whole can throw."
+msgstr "如果第一个动作不能抛出异常，那么第二个动作仍然可以抛出，整个程序也就会抛出异"
+"常。"
+
+#: ../source/app/linear.rst:27 44c1625ec09a483da8ca7bd792e8893e
+msgid ""
+"if neither action can throw an exception, the program as a whole cannot "
+"throw."
+msgstr "如果两个动作都不会抛出异常，则整个程序都不会抛出异常。"
+
+#: ../source/app/linear.rst:30 a9c7dab3220e48dab933375438dde9df
+msgid ""
+"The reason for the detail in the type is that it is useful to be able to "
+"sequence programs with a different ``Path``, but in doing so, we must "
+"calculate the resulting ``Path`` accurately. Then, if we want to sequence"
+" subprograms with linear variables, we can use an alternative bind "
+"operator which guarantees to run the continuation exactly once:"
+msgstr ""
+"类型中详细的原因是它对具有不同 ``Path`` 的程序进行排序很有用，但在这样做时，"
+"我们必须准确计算得到的 ``Path`` 。然后，如果我们想用线性变量对子程序进行排序"
+"，我们可以使用另一种绑定运算符来保证只运行一次延续："
+
+#: ../source/app/linear.rst:42 586ef48815a24e45bbebf62ac248296b
+msgid ""
+"To illustrate the need for ``bindL``, we can try writing a program which "
+"tracks the state of a secure data store, which requires logging in before"
+" reading the data."
+msgstr "为了说明 ``bindL`` 的必要性，我们可以尝试编写一个程序来跟踪安全数据存储的状态"
+"，这需要在读取数据之前登录。"
+
+#: ../source/app/linear.rst:47 a2ca29d9282d4e15a634f3a4fe2593ed
+msgid "Example: a data store requiring a login"
+msgstr "示例：需要登录的数据存储"
+
+#: ../source/app/linear.rst:49 a89cf4ed61f04f53ae42ced5d379531a
+msgid ""
+"Many software components rely on some form of state, and there may be "
+"operations which are only valid in specific states. For example, consider"
+" a secure data store in which a user must log in before getting access to"
+" some secret data. This system can be in one of two states:"
+msgstr ""
+"许多软件组件依赖于某种形式的状态，并且可能存在仅在特定状态下有效的操作。例如"
+"，考虑一个安全的数据存储，用户必须在其中登录才能访问某些秘密数据。该系统可以"
+"处于以下两种状态之一："
+
+#: ../source/app/linear.rst:54 1b85484efb624fd599989d7900db4cdb
+msgid "``LoggedIn``, in which the user is allowed to read the secret"
+msgstr "``LoggedIn`` ，允许用户在其中读取秘密"
+
+#: ../source/app/linear.rst:55 8f76493a6ec94f0c8991c7f36a124b5e
+msgid "``LoggedOut``, in which the user has no access to the secret"
+msgstr "``LoggedOut`` ，用户无权访问机密"
+
+#: ../source/app/linear.rst:57 6689743629094db3b5e472df747b5b86
+msgid ""
+"We can provide commands to log in, log out, and read the data, as "
+"illustrated in the following diagram:"
+msgstr "我们可以提供登录、注销和读取数据的命令，如下图所示："
+
+#: ../source/app/linear.rst:60 edc1cdf37ff34bf39642a534b5d323fb
+msgid "|login|"
+msgstr "|login|"
+
+#: ../source/app/linear.rst:128 67caaac9b28f4c5bb4364da55568a859
+msgid "login"
+msgstr "登录"
+
+#: ../source/app/linear.rst:62 518782d327b2420b805ccaa94182bfca
+msgid ""
+"The ``login`` command, if it succeeds, moves the overall system state "
+"from ``LoggedOut`` to ``LoggedIn``. The ``logout`` command moves the "
+"state from ``LoggedIn`` to ``LoggedOut``. Most importantly, the "
+"``readSecret`` command is only valid when the system is in the "
+"``LoggedIn`` state."
+msgstr ""
+"``login`` 命令，如果成功，将整个系统状态从 ``LoggedOut`` 移动到 ``LoggedIn`` "
+"。 ``logout`` 命令将状态从 ``LoggedIn`` 移动到 ``LoggedOut`` 。最重要的是， "
+"``readSecret`` 命令仅在系统处于 ``LoggedIn`` 状态时才有效。"
+
+#: ../source/app/linear.rst:67 e9e2e04e42684327851a3d8eb0fb6708
+msgid ""
+"We can represent the state transitions using functions with linear types."
+" To begin, we define an interface for connecting to and disconnecting "
+"from a store:"
+msgstr "我们可以使用线性类型的函数来表示状态转换。首先，我们定义一个用于连接和断开商"
+"店的接口："
+
+#: ../source/app/linear.rst:78 041bd48c30174d23a76fed73f517a8eb
+msgid "Neither ``connect`` nor ``disconnect`` throw, as shown by generalising over ``l``. Once we have a connection, we can use the following functions to access the resource directly:"
+msgstr "如对 ``l`` 的泛化所示，``connect`` 和 ``disconnect`` 都不会抛出异常。建立连接后，我们可以使用以下函数直接访问资源："
+
+#: ../source/app/linear.rst:94 7ba99b1b975c44b5842ab53c01b07dd1
+msgid "``Res`` is defined in the Prelude, since it is commonly useful.  It is a dependent pair type, which associates a value with a linear resource. We'll leave the other definitions abstract, for the purposes of this introductory example."
+msgstr "``Res`` 在 Prelude 中定义，因为它非常常用。它是一种依赖对（dependent pair）类型，将一个值与线性资源关联起来。为便于本介绍性示例，其他定义暂且抽象化处理。"
+
+#: ../source/app/linear.rst:99 1ec6c973b51e428382778497a6309ab1
+msgid "The following listing shows a complete program accessing the store, which reads a password, accesses the store if the password is correct and prints the secret data. It uses ``let (>>=) = bindL`` and ``(>>) = seqL`` to redefine ``do``-notation locally."
+msgstr "下面的代码清单展示了一个完整的存储访问程序：它会读取密码，若密码正确则访问存储并打印机密数据。它通过 ``let (>>=) = bindL`` 和 ``(>>) = seqL`` 在本地重新定义 ``do``-notation。"
+
+#: ../source/app/linear.rst:120 296a24a64efa4ef5a327f2e970f34a77
+msgid "If we omit the ``let (>>=) = bindL``, it will use the default ``(>>=)`` operator, which allows the continuation to be run multiple times, which would mean that ``s`` is not guaranteed to be accessed linearly, and ``storeProg`` would not type check (and similarly with ``(>>) = bindIg``). We can safely use ``getStr`` and ``putStr`` because they are guaranteed not to throw by the ``Path`` parameter in their types."
+msgstr "如果省略 ``let (>>=) = bindL``，将会使用默认的 ``(>>=)`` 运算符，这允许延续（continuation）被多次执行，这意味着 ``s`` 无法保证被线性访问，``storeProg`` 也无法通过类型检查（``(>>) = bindIg`` 同理）。我们可以安全地使用 ``getStr`` 和 ``putStr``，因为它们的类型中的 ``Path`` 参数保证不会抛出异常。"
+
+#: ../source/app/linear.rst:132 ecb80c4cab05482eba0ba33ab0225f37
+msgid "App1: Linear Interfaces"
+msgstr "App1：线性接口"
+
+#: ../source/app/linear.rst:134 8bc47219ca5e4d199d93a75373fccdc8
+msgid "Adding the ``bindL`` function to allow locally rebinding the ``(>>=)`` operator allows us to combine existing linear resource programs with operations in ``App`` - at least, those that don't throw. It would nevertheless be nice to interoperate more directly with ``App``. One advantage of defining interfaces is that we can provide multiple implementations for different contexts, but our implementation of the data store uses primitive functions (which we left undefined in any case) to access the store."
+msgstr "通过添加 ``bindL`` 函数，使我们可以在本地重新绑定 ``(>>=)`` 运算符，从而将现有的线性资源程序与 ``App`` 中的操作结合起来——至少是那些不会抛出异常的操作。当然，如果能与 ``App`` 更直接地互操作会更好。定义接口的一个优点是可以为不同上下文提供多种实现，但我们的数据存储实现是通过原始函数（无论如何都未定义）来访问存储的。"
+
+#: ../source/app/linear.rst:143 5ff28e53da244192b053924162381139
+msgid "To allow control over linear resources, ``Control.App`` provides an alternative parameterised type ``App1``:"
+msgstr "为了便于控制线性资源，``Control.App`` 提供了一个可选的参数化类型 ``App1``："
+
+#: ../source/app/linear.rst:151 48a036d0546343c287c0acfbb9683732
+msgid "There is no need for a ``Path`` argument, since linear programs can never throw. The ``Usage`` argument states whether the value returned is to be used once, or has unrestricted usage, with the default in ``App1`` being to use once:"
+msgstr "不需要 ``Path`` 参数，因为线性程序永远不会抛出异常。``Usage`` 参数说明返回的值是只使用一次还是可以不受限制地使用，``App1`` 中的默认值是只使用一次："
+
+#: ../source/app/linear.rst:160 9dca78f1c655410091b86592421eacdb
+msgid "The main difference from ``App`` is the ``(>>=)`` operator, which has a different multiplicity for the variable bound by the continuation depending on the usage of the first action:"
+msgstr "与 ``App`` 的主要区别在于 ``(>>=)`` 运算符：根据第一个动作的用法，由延续（continuation）绑定的变量具有不同的多重性（multiplicity）："
+
+#: ../source/app/linear.rst:173 b4d7397e3d8a4b038d1fbef03049f96e
+msgid "``Cont1Type`` returns a continuation which uses the argument linearly, if the first ``App1`` program has usage ``One``, otherwise it returns a continuation where argument usage is unrestricted. Either way, because there may be linear resources in scope, the continuation is run exactly once and there can be no exceptions thrown."
+msgstr "如果第一个 ``App1`` 程序的用法为 ``One``，``Cont1Type`` 返回一个线性使用参数的延续（continuation）；否则，返回一个参数用法不受限制的延续。无论哪种情况，由于作用域内可能存在线性资源，延续都只会被执行一次，并且不会抛出异常。"
+
+#: ../source/app/linear.rst:179 58080dd1f2c842c2b971f187b201c66c
+msgid "Using ``App1``, we can define all of the data store operations in a single interface, as shown in the following listing. Each operation other than ``disconnect`` returns a `linear` resource."
+msgstr "使用 ``App1``，我们可以在单个接口中定义所有数据存储操作，如下代码清单所示。除 ``disconnect`` 外，每个操作都返回一个线性资源。"
+
+#: ../source/app/linear.rst:195 558b5eab201740e9b25e6f9de3bc7891
+msgid "We can explicitly move between ``App`` and ``App1``:"
+msgstr "我们可以在 ``App`` 和 ``App1`` 之间显式地进行转换："
+
+#: ../source/app/linear.rst:202 47a64bde5e864b52acce6a1248e89678
+msgid "We can run an ``App`` program using ``app``, inside ``App1``, provided that it is guaranteed not to throw. Similarly, we can run an ``App1`` program using ``app1``, inside ``App``, provided that the value it returns has unrestricted usage. So, for example, we can write:"
+msgstr "我们可以在 ``App1`` 中使用 ``app`` 运行一个 ``App`` 程序，前提是它保证不会抛出异常。同理，也可以在 ``App`` 中用 ``app1`` 运行 ``App1`` 程序，前提是其返回值可以不受限制地使用。例如，可以这样写："
+
+#: ../source/app/linear.rst:216 84eed1f496da4ac195530935fdaa20c4
+msgid "This uses ``app1`` to state that the body of the program is linear, then ``app`` to state that the ``putStr`` operation is in ``App``. We can see that ``connect`` returns a linear resource by inspecting the hole ``what_next``, which also shows that we are running inside ``App1``:"
+msgstr "这里用 ``app1`` 表明程序主体是线性的，再用 ``app`` 表明 ``putStr`` 操作属于 ``App``。我们可以通过检查空洞（hole）``what_next``，看到 ``connect`` 返回一个线性资源，这也说明我们正运行在 ``App1`` 内部："
+
+#: ../source/app/linear.rst:229 3a30dcfa65964c4e946074cc080df4ee
+msgid "For completeness, one way to implement the interface is as follows, with hard coded password and internal data:"
+msgstr "为完整起见，接口的一种实现方式如下，使用了硬编码的密码和内部数据："
+
+#: ../source/app/linear.rst:249 6fc94a98c91c4ae39facad58731bebe7
+msgid "Then we can run it in ``main``:"
+msgstr "然后我们可以在 ``main`` 中运行它："

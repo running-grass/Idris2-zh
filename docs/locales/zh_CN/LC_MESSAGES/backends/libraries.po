@@ -1,0 +1,45 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2023, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-16 09:52+0800\n"
+"PO-Revision-Date: 2022-09-03 13:48+0000\n"
+"Last-Translator: grass <hi@grass.show>\n"
+"Language-Team: Chinese (Simplified) <>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../source/backends/libraries.rst:3 bcac03a24cb946fcb24ef68906c8c5fe
+msgid "Libraries"
+msgstr "类库"
+
+#: ../source/backends/libraries.rst:5 d2654e51ab5a4f439435ea676ed0de91
+msgid "This pragma tells the backend what name to use for a given function."
+msgstr "这个编译指示告诉后端对一个给定的函数使用什么名字。"
+
+#: ../source/backends/libraries.rst:13 dad058e51d9b47fd8dea3e46fe696e15
+msgid ""
+"On backends that support this feature, the function will be called "
+"``foo`` rather than being mangled, with the namespace."
+msgstr "在支持该功能的后端，该函数将被称为 ``foo`` 而不会被混淆，并带有命名空间。"
+
+#: ../source/backends/libraries.rst:16 c67446430a6f49038c641283bd9534c2
+msgid ""
+"If the name you want to use isn't a valid idris identifier, you can use a"
+" different name for the idris name and name that appears in the compiled "
+"code, e.g."
+msgstr "如果您要使用的名称不是有效的 idris 标识符，则可以对已编译代码中显示的 idris "
+"名称和函数使用不同的名称，例如。"
+
+#: ../source/backends/libraries.rst:25 d877d3647f024a74b5ac23a11531aa47
+msgid ""
+"You can also specify different names for different backends, in a similar"
+" way to %foreign"
+msgstr "你也可以为不同的后端指定不同的名称，类似于 %foreign 的方式"

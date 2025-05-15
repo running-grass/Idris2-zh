@@ -1,0 +1,216 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2023, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-16 09:52+0800\n"
+"PO-Revision-Date: 2022-09-03 13:48+0000\n"
+"Last-Translator: grass <hi@grass.show>\n"
+"Language-Team: Chinese (Simplified) <>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../source/reference/strings.rst:2 a220882fad0646a6be822bcfcb7b31a5
+msgid "String literals in Idris"
+msgstr "Idris 中的字符串字面量"
+
+#: ../source/reference/strings.rst:4 72d41e6f70be47da8b6cf752a6e8a650
+msgid ""
+"To facilitate the use of string literals, idris provides three features "
+"in addition to plain string literals: multiline strings, raw strings and "
+"interpolated strings."
+msgstr "为了方便字符串字面量的使用，Idris 除了普通字符串字面量外，还提供了三种特性：多行字符串（multiline strings）、原始字符串（raw strings）和插值字符串（interpolated strings）。"
+
+#: ../source/reference/strings.rst:9 6a17028644f944eb878fe448091a89dc
+msgid "Plain string literals"
+msgstr "普通字符串字面量"
+
+#: ../source/reference/strings.rst:11 0b51c1c9db1c4e29a8fcd4b81e6650aa
+msgid ""
+"String literals behave the way you expect from other programming "
+"language. Use quotation marks ``\"`` around the piece of text that you "
+"want to use as a string:"
+msgstr "字符串字面量的行为与其他编程语言类似。将你想作为字符串使用的文本用引号 ``\"`` 包裹即可："
+
+#: ../source/reference/strings.rst:14 7f0df13f074042feb361755b44e94523
+msgid "``\"hello world\"``"
+msgstr "``\"hello world\"``"
+
+#: ../source/reference/strings.rst:16 d98ba70ce3f04e4794a84582e271f0df
+msgid ""
+"As explained in :doc:`overloadedlit`, string literals can be overloaded "
+"to return a type different than string."
+msgstr "如 :doc:`overloadedlit` 所述，字符串字面量可以重载为返回非 string 类型的值。"
+
+#: ../source/reference/strings.rst:19 7fe74572cd0845adba8eaa557a9b2e2e
+msgid "Multiline string literals"
+msgstr "多行字符串字面量"
+
+#: ../source/reference/strings.rst:21 a59c52e8bc51491ca6a00c70b9c0a94a
+msgid ""
+"In some cases you will have to display a large string literal that spans "
+"multiple lines. For this you can use *multiline string literals*, they "
+"allow you to span a string across multiple vertical lines, preserving the"
+" line returns and the indentation. Additionally they allow you to indent "
+"your multiline string with the surrounding code, without breaking the "
+"intended format of the string."
+msgstr "有时你需要显示跨越多行的大段字符串字面量。此时可以使用 *多行字符串字面量*，它允许你将字符串分布在多行，保留换行和缩进。此外，你还可以根据周围代码缩进多行字符串，而不会破坏字符串的原始格式。"
+
+#: ../source/reference/strings.rst:26 2290a1c4adda4e83911a972a1de288ac
+msgid ""
+"To use multiline strings, start with a triple quote ``\"\"\"`` followed "
+"by a line return, then enter your text and close it with another triple "
+"quote ``\"\"\"`` with whitespace on its left. The indentation of the "
+"closing triple quote will determine how much whitespace should be cropped"
+" from each line of the text."
+msgstr "要使用多行字符串，先输入三引号 ``\"\"\"`` 并换行，然后输入你的文本，最后用左侧带有空白的三引号 ``\"\"\"`` 结束。结束三引号的缩进将决定每行文本应去除多少前导空白。"
+
+#: ../source/reference/strings.rst:33 130da488e66542c18564cc80285d29ce
+msgid ""
+"Multiline strings use triple quotes to enable the automatic cropping of "
+"leading whitespace when the multiline block is indented."
+msgstr "多行字符串使用三引号，可以在多行块缩进时自动裁剪每行的前导空白。"
+
+#: ../source/reference/strings.rst:48 588ca0439a7f45f5823d39db275ad150
+msgid "printing the variable `welcome` will result in the following text:"
+msgstr "打印变量 `welcome` 会得到如下文本："
+
+#: ../source/reference/strings.rst:58 8798565fe0494af4ba93a776f2bf13c4
+msgid ""
+"As you can see, each line has been stripped of its leading 4 space, that "
+"is because the closing delimiter was indented with 4 spaces."
+msgstr "可以看到，每行的前导 4 个空格都被去除了，这是因为结束定界符缩进了 4 个空格。"
+
+#: ../source/reference/strings.rst:61 eaeb459fd4ea44a391b600473748d51a
+msgid "In order to use multiline string literals, remember the following:"
+msgstr "使用多行字符串字面量时，请注意以下几点："
+
+#: ../source/reference/strings.rst:63 4d19c39e047441e484dbf370682e83ac
+msgid "The starting delimited must be followed by a line return"
+msgstr "起始定界符后必须紧跟换行"
+
+#: ../source/reference/strings.rst:64 19411cf31c1e4ab4ba9ec5e51f296562
+msgid ""
+"The ending delimiter's intendation level must not exceed the indentation "
+"of any line"
+msgstr "结束定界符的缩进级别不能超过任何一行的缩进"
+
+#: ../source/reference/strings.rst:67 c65201c5f23c404c9185d5b8446e4997
+msgid "Raw string literals"
+msgstr "原始字符串字面量"
+
+#: ../source/reference/strings.rst:69 218529be6fee4561980a9b2af1a8b4b7
+msgid ""
+"It is not uncommon to write string literals that require some amount of "
+"escaping. For plain string literals the characters ``\\\\`` and ``\"`` "
+"must be escaped, for multiline strings the characters ``\"\"\"`` must be "
+"escaped. Raw string literals allow you to dynamically change the required"
+" escaped sequence in order to avoid having to escape those very common "
+"sets of characters. For this, use ``#\"`` as starting delimiter and "
+"``\"#`` as closing delimiter. The number of ``#`` symbols can be "
+"increased in order to accommodate for edge cases where ``\"#`` would be a"
+" valid symbol. In the following example we are able to match on ``\\{`` "
+"by using half as many ``\\\\`` characters as if we didn't use raw string "
+"literals:"
+msgstr "在编写字符串字面量时，经常需要进行转义。对于普通字符串字面量，字符 ``\\`` 和 ``\"`` 需要转义；对于多行字符串，字符 ``\"\"\"`` 需要转义。原始字符串字面量允许你动态更改所需的转义序列，从而避免频繁转义常见字符。为此，使用 ``#\"`` 作为起始定界符，``\"#`` 作为结束定界符。可以增加 ``#`` 的数量，以适应 ``\"#`` 也可能作为内容出现的特殊情况。如下例所示，使用原始字符串字面量后，匹配 ``\\{`` 时所需的 ``\\\\`` 数量减半。"
+
+#: ../source/reference/strings.rst:84 51cfcd649c8d43cf927caccc0429bf96
+msgid ""
+"If you need to escape characters you still can by using a ``\\\\`` "
+"followed by the same number of ``#`` that you used for your string "
+"delimiters. In the following example we are using two ``#`` characters as"
+" our escape sequence and want to print a line return:"
+msgstr "如果你仍需转义字符，可以使用 ``\\``，后跟与定界符相同数量的 ``#``。下例中我们用两个 ``#`` 作为转义序列，并希望打印一个换行符："
+
+#: ../source/reference/strings.rst:93 9e9225ac91d2438f926f32491ec392be
+msgid ""
+"This last example could be implemented by combining raw string literals "
+"with multiline strings:"
+msgstr "最后一个例子可以通过结合原始字符串字面量和多行字符串来实现："
+
+#: ../source/reference/strings.rst:105 08e140d364b943038ed00d528113edce
+msgid "Interpolated strings"
+msgstr "插值字符串（Interpolated strings）"
+
+#: ../source/reference/strings.rst:107 63ebd601af7b416094441376f2d3a0e7
+msgid ""
+"Concatenating string literals with runtime values happens all the time, "
+"but sprinkling our code with lots of ``\"`` and ``++`` symbols sometimes "
+"hurts legibility which in turn can introduce bugs that are hard to detect"
+" for human eyes. Interpolated strings allow to inline the execution of "
+"programs that evaluate to strings with a string literals in order to "
+"avoid manually writing out the concatenation of those expressions. To use"
+" interpolated strings, use ``\\{`` to start an interpolation slice in "
+"which you can write an idris expression. Close it with ``}``"
+msgstr "将字符串字面量与运行时值拼接是常见操作，但代码中充斥大量 ``\"`` 和 ``++`` 符号会影响可读性，甚至引入难以察觉的 bug。插值字符串允许你在字符串字面量中内联求值为字符串的表达式，避免手动拼接。要使用插值字符串，使用 ``\\{`` 开始插值片段，在其中编写 Idris 表达式，并用 ``}`` 结束。"
+
+#: ../source/reference/strings.rst:130 ed0200af0dcf47d1a9b9e41146e7b666
+msgid ""
+"As you can see in the second line, raw string literals and interpolated "
+"strings can be combined. The starting and closing delimiters indicate how"
+" many ``#`` must be used as escape sequence in the string, since "
+"interpolated strings require the first ``{`` to be escaped, an "
+"interpolated slice in a raw string uses ``\\#{`` as starting delimiter."
+msgstr "如第二行所示，原始字符串字面量和插值字符串可以结合使用。起始和结束定界符指示字符串中需要多少个 ``#`` 作为转义序列。由于插值字符串要求第一个 ``{`` 被转义，因此在原始字符串中的插值片段使用 ``\\#{`` 作为起始定界符。"
+
+#: ../source/reference/strings.rst:135 96262b2fd7d6443aae5a19181f88c621
+msgid ""
+"Additionally multiline strings can also be combined with string "
+"interpolation in the way you expect, as shown with the ``Decl`` pattern. "
+"Finally all three features can be combined together in the last branch of"
+" the example, where a multiline string has a custom escape sequence and "
+"includes an interpolated slice."
+msgstr "此外，多行字符串也可以与字符串插值结合使用，如 ``Decl`` 模式所示。最后，三种特性可以在同一个例子中结合：多行字符串自定义转义序列，并包含插值片段。"
+
+#: ../source/reference/strings.rst:141 0b5b8c0f78534e3c9f33eea37f2ca616
+msgid "Interpolation Interface"
+msgstr "插值接口（Interpolation Interface）"
+
+#: ../source/reference/strings.rst:143 b73c1d7f170f4a1bb588c87a67d5f0b6
+msgid ""
+"The Prelude exposes an ``Interpolation`` interface with one function "
+"``interpolate``. This function is used within every interpolation slice "
+"to convert an arbitrary expression into a string that can be concatenated"
+" with the rest of the interpolated string."
+msgstr "Prelude 提供了一个 ``Interpolation`` 接口，包含一个函数 ``interpolate``。该函数用于每个插值片段，将任意表达式转换为可与插值字符串其他部分拼接的字符串。"
+
+#: ../source/reference/strings.rst:147 21205016092c439fa8914afa11d7f58b
+msgid ""
+"To go into more details, when you write ``\"hello \\{username}\"`` the "
+"compiler translates the expression into ``concat [interpolate \"hello \","
+" interpolate username]`` so that the concatenation is fast and so that if"
+" ``username`` implement the ``Interpolation`` interface, you don't have "
+"to convert it to a string manually."
+msgstr "更具体地说，当你写下 ``\"hello \\{username}\"`` 时，编译器会将其转换为 ``concat [interpolate \"hello \", interpolate username]``，这样拼接更高效。如果 ``username`` 实现了 ``Interpolation`` 接口，你无需手动将其转换为字符串。"
+
+#: ../source/reference/strings.rst:151 1bb4912919c04a5e82182294b9b73fe5
+msgid ""
+"Here is an example where we reuse the ``Expr`` type but instead of "
+"implementing a ``print`` function we implement ``Interpolation``:"
+msgstr "下面是一个例子，我们复用了 ``Expr`` 类型，但实现的不是 ``print`` 函数，而是 ``Interpolation``："
+
+#: ../source/reference/strings.rst:170 98d0fe0d2dd747ed873b56af89caafa6
+msgid ""
+"As you can see we avoid repeated calls to ``print`` since the slices are "
+"automatically applied to ``interpolate``."
+msgstr "可以看到，我们避免了多次调用 ``print``，因为插值片段会自动应用 ``interpolate``。"
+
+#: ../source/reference/strings.rst:173 c81ee0e9e926470a976e98add6eecc4c
+msgid ""
+"We use ``Interpolation`` instead of ``Show`` for interpolation slices "
+"because the semantics of ``show`` are not necessarily the same as "
+"``interpolate``. Typically the implementation of ``show`` for ``String`` "
+"adds double quotes around the text, but for ``interpolate`` what we want "
+"is to return the string as is. In the previous example, ``\"hello "
+"\\{username}\"``, if we were to use ``show`` we would end up with the "
+"string ``\"hello \"Susan`` which displays an extra pair of double quotes."
+" That is why the implementation of ``interpolate`` for ``String`` is the "
+"identity function: ``interpolate x = x``. This way the desugared code "
+"looks like: ``concat [id \"hello \", interpolate username]``."
+msgstr "我们在插值片段中使用 ``Interpolation`` 而不是 ``Show``，因为 ``show`` 的语义与 ``interpolate`` 不完全相同。通常，``String`` 的 ``show`` 实现会在文本两侧加上双引号，而 ``interpolate`` 则直接返回原字符串。例如在前面的例子 ``\"hello \\{username}\"`` 中，如果用 ``show``，结果会变成 ``\"hello \"Susan``，多了一对双引号。因此，``String`` 的 ``interpolate`` 实现就是恒等函数：``interpolate x = x``。这样反糖后的代码就是 ``concat [id \"hello \", interpolate username]``。"

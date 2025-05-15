@@ -1,0 +1,37 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2023, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-16 09:52+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../source/libraries/index.rst:2
+#: 3bb9fb8d4a954d55bab9c28ffd0f2e86
+msgid "Where To Find Libraries"
+msgstr ""
+
+#: ../source/libraries/index.rst:4
+#: c4b49b73a58248efba4ddfd9f55ec05f
+msgid "You can find a canonical source of Idris libraries on the wiki on github: https://github.com/idris-lang/Idris2/wiki/Third-party-Libraries"
+msgstr ""
+
+#: ../source/libraries/index.rst:7
+#: c10d1d728087470bbf3a9cdb8e269484
+msgid "Please feel free to contribute your own libraries there! Eventually, we aim to have a package manager for managing libraries and dependencies. We do not yet have an official one, but there are (at least) one actively developed:"
+msgstr ""
+
+#: ../source/libraries/index.rst:11
+#: 3330a89a43714312b559d62a7acde354
+msgid "Pack: https://github.com/stefan-hoeck/idris2-pack"
+msgstr ""

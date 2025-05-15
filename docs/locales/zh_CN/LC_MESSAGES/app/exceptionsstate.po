@@ -1,0 +1,108 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2023, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-16 09:52+0800\n"
+"PO-Revision-Date: 2022-09-03 13:48+0000\n"
+"Last-Translator: grass <hi@grass.show>\n"
+"Language-Team: Chinese (Simplified) <>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../source/app/exceptionsstate.rst:2 ef41a81c835f4a97a52ec3ad0d4eb7e2
+msgid "Exceptions and State"
+msgstr "异常和状态"
+
+#: ../source/app/exceptionsstate.rst:4 4cb4cc56682149b9a95910f634c2d939
+msgid ""
+"``Control.App`` is primarily intended to make it easier to manage the "
+"common cases of applications with exceptions and state. We can throw and "
+"catch exceptions listed in the list of errors (the ``es`` parameter to "
+"``App``) and introduce new global state."
+msgstr ""
+"``Control.App`` 主要是为了更容易管理有异常和状态的应用程序的常见情况。我们可"
+"以抛出和捕捉错误列表中列出的异常（ ``es`` 参数为 ``App`` "
+"），并引入新的全局状态。"
+
+#: ../source/app/exceptionsstate.rst:10 000c552097ad42fe8eca013643119fef
+msgid "Exceptions"
+msgstr "异常"
+
+#: ../source/app/exceptionsstate.rst:12 e24ce60414a24a6a8d9ef9808c413f45
+msgid ""
+"The ``List Error`` is a list of error types, which can be thrown and "
+"caught using the functions below:"
+msgstr "``List Error`` 是一个错误类型列表，可以使用以下函数抛出和捕获："
+
+#: ../source/app/exceptionsstate.rst:20 bf0b0a777ada4fe8bc2749f62d910b23
+msgid ""
+"We can use ``throw`` and ``catch`` for some exception type ``err`` as "
+"long as the exception type exists in the list of errors, ``es``, as "
+"checked by the ``HasErr`` predicate, also defined in ``Control.App`` "
+"(Also, note that ``Exception`` is a synonym for ``HasErr``):"
+msgstr "只要异常类型存在于错误列表 ``es`` 中，就可以使用 ``throw`` 和 ``catch`` 来抛出和捕获异常，"
+"如 ``HasErr`` 谓词所检查的那样（注意， ``Exception`` 是 ``HasErr`` 的同义词）："
+
+#: ../source/app/exceptionsstate.rst:34 82185b6f2fad446fbb0eae1a428ff73b
+msgid ""
+"Finally, we can introduce new exception types via ``handle``, which runs "
+"a block of code which might throw, handling any exceptions:"
+msgstr "最后，我们可以通过 ``handle`` 引入新的异常类型，运行可能会抛出异常的代码块，并处理任何异常："
+
+#: ../source/app/exceptionsstate.rst:44 8008566fc8184816b322e412318de9e4
+msgid "Adding State"
+msgstr "添加状态"
+
+#: ../source/app/exceptionsstate.rst:46 8eaf130135024c4985d9d7572ffe54e2
+msgid ""
+"Applications will typically need to keep track of state, and we support "
+"this primitively in ``App`` using a ``State`` type, defined in "
+"``Control.App``:"
+msgstr "应用程序通常需要跟踪状态，我们在 ``App`` 中使用 ``Control.App`` 中定义的 "
+"``State`` 类型支持这个原语："
+
+#: ../source/app/exceptionsstate.rst:54 0a9d24603b2f4d1f9c0573275934c7ed
+msgid ""
+"The ``tag`` is used purely to distinguish between different states, and "
+"is not required at run-time, as explicitly stated in the types of ``get``"
+" and ``put``, which are used to access and update a state:"
+msgstr "``tag`` 只被用于区分不同的状态，在运行时是不需要，如用于访问和更新的 ``get`` "
+"和 ``put`` 类型："
+
+#: ../source/app/exceptionsstate.rst:63 df8e618620414d38839fa4b427e75ad8
+msgid ""
+"These use an ``auto``-implicit to pass around a ``State`` with the "
+"relevant ``tag`` implicitly, so we refer to states by tag alone. In "
+"``helloCount`` earlier, we used an empty type ``Counter`` as the tag:"
+msgstr ""
+"它们使用 ``auto``-implicit 来隐式传递带有相关 ``tag`` 的 ``State`` "
+"，因此我们仅通过标签来引用状态。在前面的 ``helloCount`` 中，"
+"我们使用了一个空类型 ``Counter`` 作为标签："
+
+#: ../source/app/exceptionsstate.rst:72 7f48d6f6e8214522ab39876e08fd16be
+msgid ""
+"The list of errors ``e`` is used to ensure that states are only usable in"
+" the list of errors in which they are introduced. States are introduced "
+"using ``new``:"
+msgstr "错误列表 ``e`` 用来确保状态只在其被引入的错误列表中可用。状态是用 ``new`` "
+"引入的："
+
+#: ../source/app/exceptionsstate.rst:80 3e89a66cea514d239dd69a89005a3be9
+msgid ""
+"Note that the type tells us ``new`` runs the program with the state "
+"exactly once. Rather than using ``State`` and ``Exception`` directly, "
+"however, we typically use interfaces to constrain the operations which "
+"are allowed in a list of errors. Internally, ``State`` is implemented via"
+" an ``IORef``, primarily for performance reasons."
+msgstr ""
+"请注意，这个类型告诉我们 ``new`` 用这个状态运行程序正好一次。然而，"
+"我们通常不直接使用 ``State`` 和 ``Exception`` "
+"，而是使用接口来约束错误列表中允许的操作。在内部， ``State`` 是通过 ``IORef``"
+" 实现的，这主要是出于性能的考虑。"
