@@ -1,0 +1,3637 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-08-29 17:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../source/tutorial/conclusions.rst:5
+#: 34646810b6a84466935b96ac907dccbf
+msgid "Further Reading"
+msgstr ""
+
+#: ../source/tutorial/conclusions.rst:7
+#: 0d1d7bf05b8e40988dfe26019531fd36
+msgid "Further information about Idris programming, and programming with dependent types in general, can be obtained from various sources:"
+msgstr ""
+
+#: ../source/tutorial/conclusions.rst:10
+#: 3ef31c6e500a48ac8832b0cb5951490a
+msgid "`Type-Driven Development with Idris <https://www.manning.com/books/type-driven-development-with-idris>`_ by Edwin Brady, available from `Manning <https://www.manning.com>`_."
+msgstr ""
+
+#: ../source/tutorial/conclusions.rst:13
+#: 3bd1b81170cd4423a40750615b97dce0
+msgid "The Idris web site (https://www.idris-lang.org/) and by asking questions on the mailing list."
+msgstr ""
+
+#: ../source/tutorial/conclusions.rst:16
+#: 56bb0f31e383471193c0115f9b237c02
+msgid "The IRC channel ``#idris``, on `webchat.freenode.net <https://webchat.freenode.net/>`__."
+msgstr ""
+
+#: ../source/tutorial/conclusions.rst:19
+#: 0d7cb64e6d114674a7ad4cb3d9b344eb
+msgid "The wiki (https://github.com/idris-lang/Idris-dev/wiki/) has further user provided information, in particular:"
+msgstr ""
+
+#: ../source/tutorial/conclusions.rst:22
+#: 70a02dc669e54da18d5691f1b3e11490
+msgid "https://github.com/idris-lang/Idris-dev/wiki/Manual"
+msgstr ""
+
+#: ../source/tutorial/conclusions.rst:24
+#: 2cf78991229045c19839682483527bbc
+msgid "https://github.com/idris-lang/Idris-dev/wiki/Language-Features"
+msgstr ""
+
+#: ../source/tutorial/conclusions.rst:26
+#: 8cef565972f54d248a026637ad799fcc
+msgid "Examining the prelude and exploring the ``samples`` in the distribution. The Idris 2 source can be found online at:"
+msgstr ""
+
+#: ../source/tutorial/conclusions.rst:29
+#: 149a4bde2b8f436d8c88fb236b520922
+msgid "https://github.com/edwinb/Idris2."
+msgstr ""
+
+#: ../source/tutorial/conclusions.rst:31
+#: 415217993a08406d9fb4454d1c1169ca
+msgid "Existing projects on the ``Idris Hackers`` web space:"
+msgstr ""
+
+#: ../source/tutorial/conclusions.rst:33
+#: c11ca1beefed45b68f97a118addb5c07
+msgid "https://idris-hackers.github.io."
+msgstr ""
+
+#: ../source/tutorial/conclusions.rst:35
+#: 1a21066e6a784698b3a61899fee51d33
+msgid "Various papers (e.g. [#BradyHammond2012]_, [#Brady]_, and [#BradyHammond2010]_).  Although these mostly describe older versions of Idris."
+msgstr ""
+
+#: ../source/tutorial/conclusions.rst:38
+#: dc4bf6eb19684813b427c26cceb9f18d
+msgid "Edwin Brady and Kevin Hammond. 2012. Resource-Safe systems programming with embedded domain specific languages. In Proceedings of the 14th international conference on Practical Aspects of Declarative Languages (PADL'12), Claudio Russo and Neng-Fa Zhou (Eds.). Springer-Verlag, Berlin, Heidelberg, 242-257. DOI=10.1007/978-3-642-27694-1_18 https://dx.doi.org/10.1007/978-3-642-27694-1_18"
+msgstr ""
+
+#: ../source/tutorial/conclusions.rst:46
+#: 8756787314f543f4bfccd4591514916c
+msgid "Edwin C. Brady. 2011. IDRIS ---: systems programming meets full dependent types. In Proceedings of the 5th ACM workshop on Programming languages meets program verification (PLPV '11). ACM, New York, NY, USA, 43-54. DOI=10.1145/1929529.1929536 https://doi.acm.org/10.1145/1929529.1929536"
+msgstr ""
+
+#: ../source/tutorial/conclusions.rst:53
+#: 9809284f302a41cd9a2c940abd51f6eb
+msgid "Edwin C. Brady and Kevin Hammond. 2010. Scrapping your inefficient engine: using partial evaluation to improve domain-specific language implementation. In Proceedings of the 15th ACM SIGPLAN international conference on Functional programming (ICFP '10). ACM, New York, NY, USA, 297-308. DOI=10.1145/1863543.1863587 https://doi.acm.org/10.1145/1863543.1863587"
+msgstr ""
+
+#: ../source/tutorial/index.rst:5
+#: 16f131fe9f4f4309b29e17b93d00306a
+msgid "A Crash Course in Idris 2"
+msgstr ""
+
+#: ../source/tutorial/index.rst:7
+#: 122ac8cf4b50414fa4017f46af91a117
+msgid "This is a crash course in Idris 2 (sort of a tutorial, but rather less gentle I'm afraid!). It provides a brief introduction to programming in the Idris Language. It covers the core language features, assuming some experience with an existing functional programming language such as Haskell or OCaml."
+msgstr ""
+
+#: ../source/tutorial/index.rst:13
+#: 93e53ca5361948fab28fcbb200e03f3c
+msgid "This has been revised and updated from the Idris 1 tutorial. For details of changes since Idris 1, see :ref:`updates-index`."
+msgstr ""
+
+#: ../source/tutorial/index.rst:17
+#: 4f0edd1d72f24c97b5379fdb5ff431c4
+msgid "The documentation for Idris has been published under the Creative Commons CC0 License. As such to the extent possible under law, *The Idris Community* has waived all copyright and related or neighboring rights to Documentation for Idris."
+msgstr ""
+
+#: ../source/tutorial/index.rst:22
+#: abef370344ae473482d31120d289fd57
+msgid "More information concerning the CC0 can be found online at: http://creativecommons.org/publicdomain/zero/1.0/"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:5
+#: e5462ff60e85459cac511d2761901bd9
+msgid "Interactive Editing"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:7
+#: d20ee02283fa4d4a95eadbd90b838826
+msgid "By now, we have seen several examples of how Idris’ dependent type system can give extra confidence in a function’s correctness by giving a more precise description of its intended behaviour in its *type*. We have also seen an example of how the type system can help with embedded DSL development by allowing a programmer to describe the type system of an object language. However, precise types give us more than verification of programs — we can also use the type system to help write programs which are *correct by construction*, interactively."
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:16
+#: af96c8d0c5264e739356ca8330514ff7
+msgid "The Idris REPL provides several commands for inspecting and modifying parts of programs, based on their types, such as case splitting on a pattern variable, inspecting the type of a hole, and even a basic proof search mechanism. In this section, we explain how these features can be exploited by a text editor, and specifically how to do so in `Vim <https://github.com/edwinb/idris2-vim>`_. An interactive mode for `Emacs <https://github.com/idris-hackers/idris-mode>`_ is also available, updated for Idris 2 compatibility as of 23 February 2021."
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:27
+#: 326f904b12e649ee92104f0d5f069715
+msgid "Editing at the REPL"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:30
+#: 6eddb1da5e964f73bcbe6380d1d838e1
+msgid "The Idris2 repl does not support readline in the interest of keeping dependencies minimal. Unfortunately this precludes some niceties such as line editing, persistent history and completion. A useful work around is to install `rlwrap <https://linux.die.net/man/1/rlwrap>`_, this utility provides all the aforementioned features simply by invoking the Idris2 repl as an argument to the utility ``rlwrap idris2``"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:37
+#: b1391a3295194b0eacc1108e74a6d620
+msgid "The REPL provides a number of commands, which we will describe shortly, which generate new program fragments based on the currently loaded module. These take the general form:"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:45
+#: 16e935a9fe5a42ac86a53c929b0363d7
+msgid "That is, each command acts on a specific source line, at a specific name, and outputs a new program fragment. Each command has an alternative form, which *updates* the source file in-place:"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:53
+#: a29525296e604d32a8fd4cd99456123d
+msgid "It is also possible to invoke Idris in a mode which runs a REPL command, displays the result, then exits, using ``idris2 --client``. For example:"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:63
+#: c8465c513a974efd9044816ea2e13c36
+msgid "A text editor can take advantage of this, along with the editing commands, in order to provide interactive editing support."
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:67
+#: f9639307f9dd4a0abee1b9defceb304e
+msgid "Editing Commands"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:70
+#: f98d879370044a22959d74913eadf0fc
+msgid ":addclause"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:72
+#: e68e0111e1a2427385b4fa6ddb1c51d7
+msgid "The ``:addclause n f`` command, abbreviated ``:ac n f``, creates a template definition for the function named ``f`` declared on line ``n``. For example, if the code beginning on line 94 contains:"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:81
+#: 098b1faba3824e17bdf14593b8eccbd8
+msgid "then ``:ac 94 vzipWith`` will give:"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:87
+#: a68dcb635ef94d69b92a39d8fa3343b1
+msgid "The names are chosen according to hints which may be given by a programmer, and then made unique by the machine by adding a digit if necessary. Hints can be given as follows:"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:95
+#: 6cc5600222ca42fe843ca211968d79b3
+msgid "This declares that any names generated for types in the ``Vect`` family should be chosen in the order ``xs``, ``ys``, ``zs``, ``ws``."
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:99
+#: 16982781a19c4091b54bb9cca8740807
+msgid ":casesplit"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:101
+#: a644c944607d466586d7915f2a910e49
+msgid "The ``:casesplit n c x`` command, abbreviated ``:cs n c x``, splits the pattern variable ``x`` on line ``n`` at column ``c`` into the various pattern forms it may take, removing any cases which are impossible due to unification errors. For example, if the code beginning on line 94 is:"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:112
+#: 6ed615ececf44b0a8bb883e3e0424b26
+msgid "then ``:cs 96 12 xs`` will give:"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:119
+#: 685f9f1b76834ce3a6c86b75868a8b6d
+msgid "That is, the pattern variable ``xs`` has been split into the two possible cases ``[]`` and ``x :: xs``. Again, the names are chosen according to the same heuristic. If we update the file (using ``:cs!``) then case split on ``ys`` on the same line, we get:"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:128
+#: 43b25edd8c0442559a7d00ffb267f925
+msgid "That is, the pattern variable ``ys`` has been split into one case ``[]``, Idris having noticed that the other possible case ``y :: ys`` would lead to a unification error."
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:133
+#: 76aad952f69d4a72b7da002f86629616
+msgid ":addmissing"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:135
+#: 007bfc965640415884a3a1caf2c8b7a7
+msgid "The ``:addmissing n f`` command, abbreviated ``:am n f``, adds the clauses which are required to make the function ``f`` on line ``n`` cover all inputs. For example, if the code beginning on line 94 is:"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:145
+#: 4d2b39fc7a7d4eeab366641e77bae4c3
+msgid "then ``:am 96 vzipWith`` gives:"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:151
+#: 2b680a01808143d4b6afd8ac2ddda811
+msgid "That is, it notices that there are no cases for empty vectors, generates the required clauses, and eliminates the clauses which would lead to unification errors."
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:156
+#: 7a1c3353e2844fef83273cbc312f28c3
+msgid ":proofsearch"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:158
+#: bdd32cf79c764e70be0385ae33dead54
+msgid "The ``:proofsearch n f`` command, abbreviated ``:ps n f``, attempts to find a value for the hole ``f`` on line ``n`` by proof search, trying values of local variables, recursive calls and constructors of the required family. Optionally, it can take a list of *hints*, which are functions it can try applying to solve the hole. For example, if the code beginning on line 94 is:"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:172
+#: da6797eb2d9049f59dd6e9433e0ed73d
+msgid "then ``:ps 96 vzipWith_rhs_1`` will give"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:178
+#: 70f097836f83422282ec4ec9acec5089
+msgid "This works because it is searching for a ``Vect`` of length 0, of which the empty vector is the only possibility. Similarly, and perhaps surprisingly, there is only one possibility if we try to solve ``:ps 97 vzipWith_rhs_2``:"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:187
+#: 68fbf670cce04103b982be0fe432801f
+msgid "This works because ``vzipWith`` has a precise enough type: The resulting vector has to be non-empty (a ``::``); the first element must have type ``c`` and the only way to get this is to apply ``f`` to ``x`` and ``y``; finally, the tail of the vector can only be built recursively."
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:194
+#: 270261717d624da99f75b67d0e6c0856
+msgid ":makewith"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:196
+#: 16a592fba6ba48079fb4b46f1a329b63
+msgid "The ``:makewith n f`` command, abbreviated ``:mw n f``, adds a ``with`` to a pattern clause. For example, recall ``parity``. If line 10 is:"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:204
+#: 9b4c898c52ab472095e7b22bfe9c5ee8
+msgid "then ``:mw 10 parity`` will give:"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:211
+#: d1a4a51fb5a3434aa8f3ccb3d741eeac
+msgid "If we then fill in the placeholder ``_`` with ``parity k`` and case split on ``with_pat`` using ``:cs 11 with_pat`` we get the following patterns:"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:220
+#: 8fca635e41b24e9bb86831aaf1125bb9
+msgid "Note that case splitting has normalised the patterns here (giving ``plus`` rather than ``+``). In any case, we see that using interactive editing significantly simplifies the implementation of dependent pattern matching by showing a programmer exactly what the valid patterns are."
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:227
+#: aadb92ab9b184a92821d482600ef7f5c
+msgid "Interactive Editing in Vim"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:229
+#: fbe4349ea782459b866df4b55f23d4f7
+msgid "The editor mode for Vim provides syntax highlighting, indentation and interactive editing support using the commands described above. Interactive editing is achieved using the following editor commands, each of which update the buffer directly:"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:235
+#: aa34346afe70412a94d474697fd8730d
+msgid "``\\a`` adds a template definition for the name declared on the"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:235
+#: 338cfcf77d79423d84e9496f5a3ecdae
+msgid "current line (using ``:addclause``)."
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:238
+#: da1a63dada92416b9b14b2ba179d85b6
+msgid "``\\c`` case splits the variable at the cursor (using"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:238
+#: c521e441d6f443c6bca740f5eb23d6ad
+msgid "``:casesplit``)."
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:241
+#: 00b203407c294604b29e00de65ec4391
+msgid "``\\m`` adds the missing cases for the name at the cursor (using"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:241
+#: 9bb1e3fc38ef4d59bb146b8ec5d49708
+msgid "``:addmissing``)."
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:243
+#: ef35f29d8842481d86aa67f4c28c701e
+msgid "``\\w`` adds a ``with`` clause (using ``:makewith``)."
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:246
+#: b842cdd0ef9b4a7595c12dd4203a3c38
+msgid "``\\s`` invokes a proof search to solve the hole under the"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:246
+#: 17f96c0b35f045819b55ba9184636795
+msgid "cursor (using ``:proofsearch``)."
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:248
+#: 2619a0a9c3904f51846d7cd96eb780f9
+msgid "There are also commands to invoke the type checker and evaluator:"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:252
+#: 4efc2eddf59149f2a11161edd9d8e4e8
+msgid "``\\t`` displays the type of the (globally visible) name under the"
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:251
+#: e0b3277636a0461b9a7fad2fac2b3123
+msgid "cursor. In the case of a hole, this displays the context and the expected type."
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:254
+#: 5054c3a495d34a07985e640a3c02e451
+msgid "``\\e`` prompts for an expression to evaluate."
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:256
+#: 1715ed110e154f239601198977014781
+msgid "``\\r`` reloads and type checks the buffer."
+msgstr ""
+
+#: ../source/tutorial/interactive.rst:258
+#: 34b37e951bc246eb892ded78610db49d
+msgid "Corresponding commands are also available in the Emacs mode. Support for other editors can be added in a relatively straightforward manner by using ``idris2 -–client``. More sophisticated support can be added by using the IDE protocol (yet to be documented for Idris 2, but which mostly extends to protocol documented for `Idris 1 <https://docs.idris-lang.org/en/latest/reference/ide-protocol.html>`_."
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:5
+#: 0990d55a652c498d81506e86df277485
+msgid "Interfaces"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:7
+#: d458f2b9510046b696afa81ab6222800
+msgid "We often want to define functions which work across several different data types. For example, we would like arithmetic operators to work on ``Int``, ``Integer`` and ``Double`` at the very least. We would like ``==`` to work on the majority of data types. We would like to be able to display different types in a uniform way."
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:13
+#: bf1274a833264b59bc240a3029c72086
+msgid "To achieve this, we use *interfaces*, which are similar to type classes in Haskell or traits in Rust. To define an interface, we provide a collection of overloadable functions. A simple example is the ``Show`` interface, which is defined in the prelude and provides an interface for converting values to ``String``:"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:24
+#: 05bc728c417d4351895381fd159ed1de
+msgid "This generates a function of the following type (which we call a *method* of the ``Show`` interface):"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:31
+#: 4dfee611e44341f1913d38bbf88fc695
+msgid "We can read this as: “under the constraint that ``a`` has an implementation of ``Show``, take an input ``a`` and return a ``String``.” An implementation of an interface is defined by giving definitions of the methods of the interface. For example, the ``Show`` implementation for ``Nat`` could be defined as:"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:47
+#: a37cf431a2a948d49e6c06114abf566c
+msgid "Only one implementation of an interface can be given for a type — implementations may not overlap. Implementation declarations can themselves have constraints. To help with resolution, the arguments of an implementation must be constructors (either data or type constructors) or variables (i.e. you cannot give an implementation for a function). For example, to define a ``Show`` implementation for vectors, we need to know that there is a ``Show`` implementation for the element type, because we are going to use it to convert each element to a ``String``:"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:65
+#: 18907e2c55b248b7be635564b63912c3
+msgid "Note that we need the explicit ``forall n .`` in the ``show'`` function because otherwise the ``n`` is already in scope, and fixed to the value of the top level ``n``."
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:70
+#: 639c3191509348a6b51d36605b9ef2eb
+msgid "Default Definitions"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:72
+#: 5689616401534f49bd5ec81a1c7fae43
+msgid "The Prelude defines an ``Eq`` interface which provides methods for comparing values for equality or inequality, with implementations for all of the built-in types:"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:82
+#: 4c382b89f65347cf84bdd3230ec7faab
+msgid "To declare an implementation for a type, we have to give definitions of all of the methods. For example, for an implementation of ``Eq`` for ``Nat``:"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:95
+#: 856bc82a563f47dfba88b8d220dc7217
+msgid "It is hard to imagine many cases where the ``/=`` method will be anything other than the negation of the result of applying the ``==`` method. It is therefore convenient to give a default definition for each method in the interface declaration, in terms of the other method:"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:109
+#: e8a2df14f41e47e78fe93e0e39517374
+msgid "A minimal complete implementation of ``Eq`` requires either ``==`` or ``/=`` to be defined, but does not require both. If a method definition is missing, and there is a default definition for it, then the default is used instead."
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:115
+#: df41556f60fd4e5ba1346853093ca0a0
+msgid "Extending Interfaces"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:117
+#: 05cc6ddb0f274919952209dad45e9d23
+msgid "Interfaces can also be extended. A logical next step from an equality relation ``Eq`` is to define an ordering relation ``Ord``. We can define an ``Ord`` interface which inherits methods from ``Eq`` as well as defining some of its own:"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:138
+#: f3780239d655480e879418b75fc27ce5
+msgid "The ``Ord`` interface allows us to compare two values and determine their ordering. Only the ``compare`` method is required; every other method has a default definition. Using this we can write functions such as ``sort``, a function which sorts a list into increasing order, provided that the element type of the list is in the ``Ord`` interface. We give the constraints on the type variables left of the fat arrow ``=>``, and the function type to the right of the fat arrow:"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:150
+#: 33e0f09926b7496aa96d4c2b2f4f03de
+msgid "Functions, interfaces and implementations can have multiple constraints. Multiple constraints are written in brackets in a comma separated list, for example:"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:159
+#: 2334b84e2c5b4ef9b56113f16e27e6df
+msgid "Constraints are, like types, first class objects in the language. You can see this at the REPL:"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:167
+#: d0a9b529effe4333b04e3f99057fcc78
+msgid "So, ``(Ord a, Show a)`` is an ordinary pair of ``Types``, with two constraints as the first and second element of the pair."
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:171
+#: d6cb1130efd94b4d8585c8b22681b0b7
+msgid "Note: Interfaces and ``mutual`` blocks"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:173
+#: dff582cc506a41aea5f38f0054b39982
+msgid "Idris is strictly \"define before use\", except in ``mutual`` blocks. In a ``mutual`` block, Idris elaborates in two passes: types on the first pass and definitions on the second. When the mutual block contains an interface declaration, it elaborates the interface header but none of the method types on the first pass, and elaborates the method types and any default definitions on the second pass."
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:181
+#: 8435872bb0ce495f9b593450bb468071
+msgid "Quantities for Parameters"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:183
+#: 02ce079e159b42c6a05970d4a3c547de
+msgid "By default parameters that are not explicitly ascribed a type in an ``interface`` declaration are assigned the quantity ``0``. This means that the parameter is not available to use at runtime in the methods' definitions."
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:187
+#: 66dd5f00889a49c19d322227fff585af
+msgid "For instance, ``Show a`` gives rise to a ``0``-quantified type variable ``a`` in the type of the ``show`` method:"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:196
+#: 5a4e8472790b45d2b20fa8895a5b0be1
+msgid "However some use cases require that some of the parameters are available at runtime. We may for instance want to declare an interface for ``Storable`` types. The constraint ``Storable a size`` means that we can store values of type ``a`` in a ``Buffer`` in exactly ``size`` bytes."
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:201
+#: 833f3620ea044505a459e97633608719
+msgid "If the user provides a method to read a value for such a type ``a`` at a given offset, then we can read the ``k`` th element stored in the buffer by computing the appropriate offset from ``k`` and ``size``. This is demonstrated by providing a default implementation for the method ``peekElementOff`` implemented in terms of ``peekByteOff`` and the parameter ``size``."
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:219
+#: 6fab44650f7b4becadd2fc9ff9580e70
+msgid "Note that ``a`` is explicitly marked as runtime irrelevant so that it is erased by the compiler. Equivalently we could have written ``interface Storable a (size : Nat)``. The meaning of ``| a`` is explained in :ref:`DeterminingParameters`."
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:225
+#: 50892bb4ba30453cb60aa32a4786c6cb
+msgid "Functors and Applicatives"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:227
+#: 152001cfa81446adb22603cac6e049b4
+msgid "So far, we have seen single parameter interfaces, where the parameter is of type ``Type``. In general, there can be any number of parameters (even zero), and the parameters can have *any* type. If the type of the parameter is not ``Type``, we need to give an explicit type declaration. For example, the ``Functor`` interface is defined in the prelude:"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:240
+#: 466d569c545149059d71bcd5c20d5375
+msgid "A functor allows a function to be applied across a structure, for example to apply a function to every element in a ``List``:"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:254
+#: 732bd55e475a46e980757a5b5db2fb31
+msgid "Having defined ``Functor``, we can define ``Applicative`` which abstracts the notion of function application:"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:268
+#: 2bb3ce8dc52047c5a7b19d50a323efea
+msgid "Monads and ``do``-notation"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:270
+#: 728d0e0746e0414cbc28146d10d72b12
+msgid "The ``Monad`` interface allows us to encapsulate binding and computation, and is the basis of ``do``-notation introduced in Section :ref:`sect-do`. It extends ``Applicative`` as defined above, and is defined as follows:"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:280
+#: 30459fa542d343128cee1acb8468525c
+msgid "There is also a non-binding sequencing operator, defined for ``Monad`` as:"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:286
+#: a3d52a67639744bfaf40af7cd5b3ffa3
+msgid "Inside a ``do`` block, the following syntactic transformations are applied:"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:289
+#: 32a8db94d41a4ccbb3373d173e661780
+msgid "``x <- v; e`` becomes ``v >>= (\\x => e)``"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:291
+#: 5b27eced647a4770ad95ce75c0d976be
+msgid "``v; e`` becomes ``v >> e``"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:293
+#: 8fa40e5f35e445dc8ed42d0ed31465e3
+msgid "``let x = v; e`` becomes ``let x = v in e``"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:295
+#: 231914d9bc8e428b92bab40939714267
+msgid "``IO`` has an implementation of ``Monad``, defined using primitive functions. We can also define an implementation for ``Maybe``, as follows:"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:304
+#: 7c48bbaa699a45879c017de8f16e8360
+msgid "Using this we can, for example, define a function which adds two ``Maybe Int``, using the monad to encapsulate the error handling:"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:314
+#: 9f1024db9a674ce6b7a9e683a8112196
+msgid "This function will extract the values from ``x`` and ``y``, if they are both available, or return ``Nothing`` if one or both are not (\"fail fast\"). Managing the ``Nothing`` cases is achieved by the ``>>=`` operator, hidden by the ``do`` notation."
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:326
+#: 497ff1dc0a2d46bcbd0f1a5bf9569854
+msgid "The translation of ``do`` notation is entirely syntactic, so there is no need for the ``(>>=)`` and ``(>>)`` operators to be the operator defined in the ``Monad`` interface. Idris will, in general, try to disambiguate which operators you mean by type, but you can explicitly choose with qualified do notation, for example:"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:340
+#: 1943a43ee17544acb026497f69e4ce50
+msgid "The ``Prelude.do`` means that Idris will use the ``(>>=)`` and ``(>>)`` operators defined in the ``Prelude``."
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:344
+#: 9c5013608ae2435f9a0a73bc72916b59
+msgid "Pattern Matching Bind"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:346
+#: 83739bfa02954bb5869dcc74446fc3db
+msgid "Sometimes we want to pattern match immediately on the result of a function in ``do`` notation. For example, let's say we have a function ``readNumber`` which reads a number from the console, returning a value of the form ``Just x`` if the number is valid, or ``Nothing`` otherwise:"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:362
+#: 989f869f9a244a80974c197c2daaee39
+msgid "If we then use it to write a function to read two numbers, returning ``Nothing`` if neither are valid, then we would like to pattern match on the result of ``readNumber``:"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:378
+#: a16d021ceca6451db57d5a8d23678db2
+msgid "If there's a lot of error handling, this could get deeply nested very quickly! So instead, we can combine the bind and the pattern match in one line. For example, we could try pattern matching on values of the form ``Just x_ok``:"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:390
+#: e1427b89b2fd45bf896757086336fdf9
+msgid "There is still a problem, however, because we've now omitted the case for ``Nothing`` so ``readNumbers`` is no longer total! We can add the ``Nothing`` case back as follows:"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:404
+#: 92a58859c75b417f8da3d01ccf49e371
+msgid "The effect of this version of ``readNumbers`` is identical to the first (in fact, it is syntactic sugar for it and directly translated back into that form). The first part of each statement (``Just x_ok <-`` and ``Just y_ok <-``) gives the preferred binding - if this matches, execution will continue with the rest of the ``do`` block. The second part gives the alternative bindings, of which there may be more than one."
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:412
+#: b6bc70201dd54e2baffe323fec644e32
+msgid "``!``-notation"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:414
+#: 92d80e1fc600414d9ed88eda6a0394dd
+msgid "In many cases, using ``do``-notation can make programs unnecessarily verbose, particularly in cases such as ``m_add`` above where the value bound is used once, immediately. In these cases, we can use a shorthand version, as follows:"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:424
+#: 75a3f58d38874f10af85e818d5f62def
+msgid "The notation ``!expr`` means that the expression ``expr`` should be evaluated and then implicitly bound. Conceptually, we can think of ``!`` as being a prefix function with the following type:"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:432
+#: d7fbb0ca650f4f6d81127a586042e47e
+msgid "Note, however, that it is not really a function, merely syntax! In practice, a subexpression ``!expr`` will lift ``expr`` as high as possible within its current scope, bind it to a fresh name ``x``, and replace ``!expr`` with ``x``. Expressions are lifted depth first, left to right. In practice, ``!``-notation allows us to program in a more direct style, while still giving a notational clue as to which expressions are monadic."
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:440
+#: d83be0e09f5c4437aef7147c68797ca2
+msgid "For example, the expression:"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:446
+#: 85819d81f0c04cc9878130de068b1c4d
+msgid "is lifted to:"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:456
+#: 891329b7729e48df88a3db5612d813b0
+msgid "Monad comprehensions"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:458
+#: dcb47b05839b462cbef0506ebfd3ad76
+msgid "The list comprehension notation we saw in Section :ref:`sect-more-expr` is more general, and applies to anything which has an implementation of both ``Monad`` and ``Alternative``:"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:468
+#: 03184b8e0fad458aa568a022a47b25d7
+msgid "In general, a comprehension takes the form ``[ exp | qual1, qual2, …, qualn ]`` where ``quali`` can be one of:"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:471
+#: f7b2c4120b3d4933aede428f507b5682
+msgid "A generator ``x <- e``"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:473
+#: b22bfd48802847a6846c6fc31fb990ef
+msgid "A *guard*, which is an expression of type ``Bool``"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:475
+#: 4b4b789fec04494db9865ac2c72d9932
+msgid "A let binding ``let x = e``"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:477
+#: 70dd9217a9ca488391ac18bc87064ce5
+msgid "To translate a comprehension ``[exp | qual1, qual2, …, qualn]``, first any qualifier ``qual`` which is a *guard* is translated to ``guard qual``, using the following function:"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:485
+#: b063f23bf1cf4f04a9a1ee23ba9372bb
+msgid "Then the comprehension is converted to ``do`` notation:"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:491
+#: 87080011bf0f47b48da868153292137f
+msgid "Using monad comprehensions, an alternative definition for ``m_add`` would be:"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:500
+#: 2d1e2fff0fb84a52af0f58b7d783f8b3
+msgid "Interfaces and IO"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:502
+#: 2b54b90ebda64d77b338df27b2decf83
+msgid "In general, ``IO`` operations in the libraries aren't written using ``IO`` directly, but rather via the ``HasIO`` interface:"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:510
+#: ed07a21a37654c16b588c2067f761634
+msgid "``HasIO`` explains, via ``liftIO``, how to convert a primitive ``IO`` operation to an operation in some underlying type, as long as that type has a ``Monad`` implementation.  These interface allows a programmer to define some more expressive notion of interactive program, while still giving direct access to ``IO`` primitives."
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:517
+#: a4871ca0852941c3b0f5942dffb59dad
+msgid "Idiom brackets"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:519
+#: c08f23fbc4274f069b18cef087076f93
+msgid "While ``do`` notation gives an alternative meaning to sequencing, idioms give an alternative meaning to *application*. The notation and larger example in this section is inspired by Conor McBride and Ross Paterson’s paper “Applicative Programming with Effects” [#ConorRoss]_."
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:524
+#: 3f293234ade54c86bf8ccbda5eca319c
+msgid "First, let us revisit ``m_add`` above. All it is really doing is applying an operator to two values extracted from ``Maybe Int``. We could abstract out the application:"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:534
+#: 93110f56686746dbbd1a2988329e0a51
+msgid "Using this, we can write an alternative ``m_add`` which uses this alternative notion of function application, with explicit calls to ``m_app``:"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:543
+#: 1a0f2bc0de844e11ac80e3e48c2ce553
+msgid "Rather than having to insert ``m_app`` everywhere there is an application, we can use idiom brackets to do the job for us. To do this, we can give ``Maybe`` an implementation of ``Applicative`` as follows, where ``<*>`` is defined in the same way as ``m_app`` above (this is defined in the Idris library):"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:557
+#: 12a4f30d661048d38b8a44c7d3b10732
+msgid "Using ``<*>`` we can use this implementation as follows, where a function application ``[| f a1 …an |]`` is translated into ``pure f <*> a1 <*> … <*> an``:"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:567
+#: d884f71b62d94313a47bf4c5481fdf53
+msgid "An error-handling interpreter"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:569
+#: 0458255a8d0641c49ce2fd13227fe581
+msgid "Idiom notation is commonly useful when defining evaluators. McBride and Paterson describe such an evaluator [#ConorRoss]_, for a language similar to the following:"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:579
+#: 40b1db6b5ede4a6c9e115850a42d5161
+msgid "Evaluation will take place relative to a context mapping variables (represented as ``String``\\s) to ``Int`` values, and can possibly fail. We define a data type ``Eval`` to wrap an evaluator:"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:588
+#: dd03f662bf2248179785bdbbc4c5bc4d
+msgid "Wrapping the evaluator in a data type means we will be able to provide implementations of interfaces for it later. We begin by defining a function to retrieve values from the context during evaluation:"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:602
+#: 9998081983cf463491d047eb825216f3
+msgid "When defining an evaluator for the language, we will be applying functions in the context of an ``Eval``, so it is natural to give ``Eval`` an implementation of ``Applicative``. Before ``Eval`` can have an implementation of ``Applicative`` it is necessary for ``Eval`` to have an implementation of ``Functor``:"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:621
+#: 6b52379eae9a4559915cf6bec0234e70
+msgid "Evaluating an expression can now make use of the idiomatic application to handle errors:"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:635
+#: bdf9635690b1417c853493def903059c
+msgid "For example:"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:645
+#: 7fe8f130bca24fd2b62e404310d732c3
+msgid "Named Implementations"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:647
+#: 1ad399fa439e4e789f815b316668fe01
+msgid "It can be desirable to have multiple implementations of an interface for the same type, for example to provide alternative methods for sorting or printing values. To achieve this, implementations can be *named* as follows:"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:659
+#: 5feef40298674d8382d115e6839d1da4
+msgid "This declares an implementation as normal, but with an explicit name, ``myord``. The syntax ``compare @{myord}`` gives an explicit implementation to ``compare``, otherwise it would use the default implementation for ``Nat``. We can use this, for example, to sort a list of ``Nat`` in reverse. Given the following list:"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:670
+#: a51a19122c654c2c87e2fe29b583ca8d
+msgid "We can sort it using the default ``Ord`` implementation, by using the ``sort`` function available with ``import Data.List``, then we can try with the named implementation ``myord`` as follows, at the Idris prompt:"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:681
+#: d691fa8e7ef44e559a3247e1fd5cf74f
+msgid "Sometimes, we also need access to a named parent implementation. For example, the prelude defines the following ``Semigroup`` interface:"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:689
+#: 187c75340ae44ef4b2127d9db81f38eb
+msgid "Then it defines ``Monoid``, which extends ``Semigroup`` with a “neutral” value:"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:697
+#: c940f886723a4bf693919c7616f30bdf
+msgid "We can define two different implementations of ``Semigroup`` and ``Monoid`` for ``Nat``, one based on addition and one on multiplication:"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:708
+#: 3c3455f5ef094f22a687e4d6b5114c79
+msgid "The neutral value for addition is ``0``, but the neutral value for multiplication is ``1``. It's important, therefore, that when we define implementations of ``Monoid`` they extend the correct ``Semigroup`` implementation. We can do this with a ``using`` clause in the implementation as follows:"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:721
+#: 943467ae44a54e39b069a965075aeaf1
+msgid "The ``using PlusNatSemi`` clause indicates that ``PlusNatMonoid`` should extend ``PlusNatSemi`` specifically."
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:727
+#: 36d39112c4944d17bbd4c3e201d7deb9
+msgid "Interface Constructors"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:729
+#: f76cf73bcc5e415bbb1dfe1b61602048
+msgid "Interfaces, just like records, can be declared with a user-defined constructor."
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:741
+#: 07f5e2ff513e4916aba1c4e753a2e63a
+msgid "Then ``MkB : A t => t -> B t``."
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:746
+#: 54f4608c49ba40ac9f29e1ee998b3060
+msgid "Determining Parameters"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:748
+#: d2f6a601124944eeb7ab909482dda732
+msgid "When an interface has more than one parameter, it can help resolution if the parameters used to find an implementation are restricted. For example:"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:757
+#: 0fe6a66526064df7b61f70a929498978
+msgid "In this interface, only ``m`` needs to be known to find an implementation of this interface, and ``s`` can then be determined from the implementation. This is declared with the ``| m`` after the interface declaration. We call ``m`` a *determining parameter* of the ``MonadState`` interface, because it is the parameter used to find an implementation. This is similar to the concept of *functional dependencies* `in Haskell <https://wiki.haskell.org/Functional_dependencies>`_."
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:764
+#: e1eee732ffce4ba5a2a2bea1e3743246
+msgid "Conor McBride and Ross Paterson. 2008. Applicative programming with effects. J. Funct. Program. 18, 1 (January 2008), 1-13. DOI=10.1017/S0956796807006326 https://dx.doi.org/10.1017/S0956796807006326"
+msgstr ""
+
+#: ../source/tutorial/interp.rst:5
+#: ae8a9dbe0a2349c0aca699bc59ba0e73
+msgid "Example: The Well-Typed Interpreter"
+msgstr ""
+
+#: ../source/tutorial/interp.rst:7
+#: 12d0aacf93ba47548ec6b8844bf0513e
+msgid "In this section, we’ll use the features we’ve seen so far to write a larger example, an interpreter for a simple functional programming language, with variables, function application, binary operators and an ``if...then...else`` construct. We will use the dependent type system to ensure that any programs which can be represented are well-typed."
+msgstr ""
+
+#: ../source/tutorial/interp.rst:15
+#: 4b4dc28ec2444baebc08c3a4afbb4c27
+msgid "Representing Languages"
+msgstr ""
+
+#: ../source/tutorial/interp.rst:17
+#: 47e4752ff7f44f99ae6f374d3d924976
+msgid "First, let us define the types in the language. We have integers, booleans, and functions, represented by ``Ty``:"
+msgstr ""
+
+#: ../source/tutorial/interp.rst:24
+#: 62a5b8f20a4c4f118371576f19a9c242
+msgid "We can write a function to translate these representations to a concrete Idris type — remember that types are first class, so can be calculated just like any other value:"
+msgstr ""
+
+#: ../source/tutorial/interp.rst:35
+#: 9238223840d043fca7f66a8d9a2dfe71
+msgid "We're going to define a representation of our language in such a way that only well-typed programs can be represented. We'll index the representations of expressions by their type, **and** the types of local variables (the context). The context can be represented using the ``Vect`` data type, so we'll need to import ``Data.Vect`` at the top of our source file:"
+msgstr ""
+
+#: ../source/tutorial/interp.rst:46
+#: c837234fb35942c48d70b9882f2c92d9
+msgid "Expressions are indexed by the types of the local variables, and the type of the expression itself:"
+msgstr ""
+
+#: ../source/tutorial/interp.rst:53
+#: 9c6875e5fb8b4c7f8c3d72b8e6fe57eb
+msgid "The full representation of expressions is:"
+msgstr ""
+
+#: ../source/tutorial/interp.rst:72
+#: 6428f3f9294d4094b754e30fba98d542
+msgid "The code above makes use of the ``Vect`` and ``Fin`` types from the base libraries. ``Fin`` is available as part of ``Data.Vect``. Throughout, ``ctxt`` refers to the local variable context."
+msgstr ""
+
+#: ../source/tutorial/interp.rst:76
+#: 9b8979001a2c4ddb9d94eb7bb74823af
+msgid "Since expressions are indexed by their type, we can read the typing rules of the language from the definitions of the constructors. Let us look at each constructor in turn."
+msgstr ""
+
+#: ../source/tutorial/interp.rst:80
+#: 15430f1851914eea94fd7a330957f962
+msgid "We use a nameless representation for variables — they are *de Bruijn indexed*. Variables are represented by a proof of their membership in the context, ``HasType i ctxt T``, which is a proof that variable ``i`` in context ``ctxt`` has type ``T``. This is defined as follows:"
+msgstr ""
+
+#: ../source/tutorial/interp.rst:91
+#: 52711fb95dd0405e8594252231639f37
+msgid "We can treat *Stop* as a proof that the most recently defined variable is well-typed, and *Pop n* as a proof that, if the ``n``\\ th most recently defined variable is well-typed, so is the ``n+1``\\ th. In practice, this means we use ``Stop`` to refer to the most recently defined variable, ``Pop Stop`` to refer to the next, and so on, via the ``Var`` constructor:"
+msgstr ""
+
+#: ../source/tutorial/interp.rst:102
+#: 90782b9d169242df97c1704ee85e0811
+msgid "So, in an expression ``\\x. \\y. x y``, the variable ``x`` would have a de Bruijn index of 1, represented as ``Pop Stop``, and ``y 0``, represented as ``Stop``. We find these by counting the number of lambdas between the definition and the use."
+msgstr ""
+
+#: ../source/tutorial/interp.rst:107
+#: 00c48508f8f2443dbb5ea7c405896b11
+msgid "A value carries a concrete representation of an integer:"
+msgstr ""
+
+#: ../source/tutorial/interp.rst:113
+#: 66c26279979d46a7961384cd16b51227
+msgid "A lambda creates a function. In the scope of a function of type ``a -> t``, there is a new local variable of type ``a``, which is expressed by the context index:"
+msgstr ""
+
+#: ../source/tutorial/interp.rst:121
+#: 23ad56013acf446cbcbffed5a8c80478
+msgid "Function application produces a value of type ``t`` given a function from ``a`` to ``t`` and a value of type ``a``:"
+msgstr ""
+
+#: ../source/tutorial/interp.rst:128
+#: 1ac30995d9b24f27ada1b253dc3358c4
+msgid "We allow arbitrary binary operators, where the type of the operator informs what the types of the arguments must be:"
+msgstr ""
+
+#: ../source/tutorial/interp.rst:136
+#: 1251aac07e904cd99621fafc6f29ad77
+msgid "Finally, ``If`` expressions make a choice given a boolean. Each branch must have the same type, and we will evaluate the branches lazily so that only the branch which is taken need be evaluated:"
+msgstr ""
+
+#: ../source/tutorial/interp.rst:148
+#: cf390d63ea5647d0af57d3833ee91437
+msgid "Writing the Interpreter"
+msgstr ""
+
+#: ../source/tutorial/interp.rst:150
+#: 3a6f004d8b354855a979e42a1a950e55
+msgid "When we evaluate an ``Expr``, we'll need to know the values in scope, as well as their types. ``Env`` is an environment, indexed over the types in scope. Since an environment is just another form of list, albeit with a strongly specified connection to the vector of local variable types, we use the usual ``::`` and ``Nil`` constructors so that we can use the usual list syntax. Given a proof that a variable is defined in the context, we can then produce a value from the environment:"
+msgstr ""
+
+#: ../source/tutorial/interp.rst:169
+#: 7e39bc0347bc4736ae3476b44e9dd87b
+msgid "Given this, an interpreter is a function which translates an ``Expr`` into a concrete Idris value with respect to a specific environment:"
+msgstr ""
+
+#: ../source/tutorial/interp.rst:177
+#: e3fb5d23ff804b81adfe721c114b0e94
+msgid "The complete interpreter is defined as follows, for reference. For each constructor, we translate it into the corresponding Idris value:"
+msgstr ""
+
+#: ../source/tutorial/interp.rst:190
+#: 434d0610652c43009d7e202e0ae892ae
+msgid "Let us look at each case in turn. To translate a variable, we simply look it up in the environment:"
+msgstr ""
+
+#: ../source/tutorial/interp.rst:197
+#: 2d51716be2634c9f8bb90c8314ae254f
+msgid "To translate a value, we just return the concrete representation of the value:"
+msgstr ""
+
+#: ../source/tutorial/interp.rst:204
+#: 5d872b60a10a4a3a87726507ca55ed82
+msgid "Lambdas are more interesting. In this case, we construct a function which interprets the scope of the lambda with a new value in the environment. So, a function in the object language is translated to an Idris function:"
+msgstr ""
+
+#: ../source/tutorial/interp.rst:213
+#: 7bc26154d9b9490896453b80a3d726ba
+msgid "For an application, we interpret the function and its argument and apply it directly. We know that interpreting ``f`` must produce a function, because of its type:"
+msgstr ""
+
+#: ../source/tutorial/interp.rst:221
+#: 4a392c6e6019455990ce215386b1795f
+msgid "Operators and conditionals are, again, direct translations into the equivalent Idris constructs. For operators, we apply the function to its operands directly, and for ``If``, we apply the Idris ``if...then...else`` construct directly."
+msgstr ""
+
+#: ../source/tutorial/interp.rst:233
+#: 9b9822d1a8b04bb78d75412ef11e0913
+msgid "Testing"
+msgstr ""
+
+#: ../source/tutorial/interp.rst:235
+#: 878b763c08164c688d1b929a410ba4f7
+msgid "We can make some simple test functions. Firstly, adding two inputs ``\\x. \\y. y + x`` is written as follows:"
+msgstr ""
+
+#: ../source/tutorial/interp.rst:243
+#: 895010a6ed5c4dba973e84088eba1843
+msgid "More interestingly, a factorial function ``fact`` (e.g. ``\\x. if (x == 0) then 1 else (fact (x-1) * x)``), can be written as:"
+msgstr ""
+
+#: ../source/tutorial/interp.rst:256
+#: 3c3f2b211788423bbee15cb00fd6cf2b
+msgid "Running"
+msgstr ""
+
+#: ../source/tutorial/interp.rst:258
+#: 397d29916f234461bfa274b7283dbbe7
+msgid "To finish, we write a ``main`` program which interprets the factorial function on user input:"
+msgstr ""
+
+#: ../source/tutorial/interp.rst:268
+#: ad10c5b19148431187d27c999fe9f9f3
+msgid "Here, ``cast`` is an overloaded function which converts a value from one type to another if possible. Here, it converts a string to an integer, giving 0 if the input is invalid. An example run of this program at the Idris interactive environment is:"
+msgstr ""
+
+#: ../source/tutorial/interp.rst:278
+#: 7de183aabd5c4b1ca72ed8bad7b7079c
+msgid "Aside: ``cast``"
+msgstr ""
+
+#: ../source/tutorial/interp.rst:280
+#: b9211e6e58e548489e35eb9a65ea9189
+msgid "The prelude defines an interface ``Cast`` which allows conversion between types:"
+msgstr ""
+
+#: ../source/tutorial/interp.rst:288
+#: d62681d57716416f9e950bbe137245ac
+msgid "It is a *multi-parameter* interface, defining the source type and object type of the cast. It must be possible for the type checker to infer *both* parameters at the point where the cast is applied. There are casts defined between all of the primitive types, as far as they make sense."
+msgstr ""
+
+#: ../source/tutorial/introduction.rst:5
+#: fb15bf84709b45a49fe8efbda8ba2c3b
+msgid "Introduction"
+msgstr ""
+
+#: ../source/tutorial/introduction.rst:7
+#: aa49775fb1f3472b9cb0ab0c3f8e50f3
+msgid "In conventional programming languages, there is a clear distinction between *types* and *values*. For example, in `Haskell <https://www.haskell.org>`_, the following are types, representing integers, characters, lists of characters, and lists of any value respectively:"
+msgstr ""
+
+#: ../source/tutorial/introduction.rst:13
+#: f0c8880b18cf4913a50645efd3d71b9d
+msgid "``Int``, ``Char``, ``[Char]``, ``[a]``"
+msgstr ""
+
+#: ../source/tutorial/introduction.rst:15
+#: 9c41839a62b24c40bc6abcf644abc3ca
+msgid "Correspondingly, the following values are examples of inhabitants of those types:"
+msgstr ""
+
+#: ../source/tutorial/introduction.rst:18
+#: a82e09c7add04ed38663bb3ca5f52603
+msgid "``42``, ``’a’``, ``\"Hello world!\"``, ``[2,3,4,5,6]``"
+msgstr ""
+
+#: ../source/tutorial/introduction.rst:20
+#: c21844e9a7024313b303aad339af8837
+msgid "In a language with *dependent types*, however, the distinction is less clear. Dependent types allow types to “depend” on values — in other words, types are a *first class* language construct and can be manipulated like any other value. The standard example is the type of lists of a given length [#fn1]_, ``Vect n a``, where ``a`` is the element type and ``n`` is the length of the list and can be an arbitrary term."
+msgstr ""
+
+#: ../source/tutorial/introduction.rst:27
+#: 7b16ce9577354e44902166f979241cb3
+msgid "When types can contain values, and where those values describe properties, for example the length of a list, the type of a function can begin to describe its own properties. Take for example the concatenation of two lists. This operation has the property that the resulting list's length is the sum of the lengths of the two input lists. We can therefore give the following type to the ``app`` function, which concatenates vectors:"
+msgstr ""
+
+#: ../source/tutorial/introduction.rst:39
+#: d6fd51a898dc4a41815e981eac21f16c
+msgid "This tutorial introduces Idris, a general purpose functional programming language with dependent types. The goal of the Idris project is to build a dependently typed language suitable for verifiable general purpose programming. To this end, Idris is a compiled language which aims to generate efficient executable code. It also has a lightweight foreign function interface which allows easy interaction with external libraries."
+msgstr ""
+
+#: ../source/tutorial/introduction.rst:48
+#: 23280ec126164d6795466ff29645941e
+msgid "Intended Audience"
+msgstr ""
+
+#: ../source/tutorial/introduction.rst:50
+#: fbfc980bf67c4328b434ac65cddab206
+msgid "This tutorial is intended as a brief introduction to the language, and is aimed at readers already familiar with a functional language such as `Haskell <https://www.haskell.org>`_ or `OCaml <https://ocaml.org>`_. In particular, a certain amount of familiarity with Haskell syntax is assumed, although most concepts will at least be explained briefly. The reader is also assumed to have some interest in using dependent types for writing and verifying software."
+msgstr ""
+
+#: ../source/tutorial/introduction.rst:58
+#: 3bf290a5a2894f19ba24aaf731d437cf
+msgid "For a more in-depth introduction to Idris, which proceeds at a much slower pace, covering interactive program development, with many more examples, see `Type-Driven Development with Idris <https://www.manning.com/books/type-driven-development-with-idris>`_ by Edwin Brady, available from `Manning <https://www.manning.com>`_."
+msgstr ""
+
+#: ../source/tutorial/introduction.rst:64
+#: 12a595cbc0ba4c7cb8c91bad3b624992
+msgid "Example Code"
+msgstr ""
+
+#: ../source/tutorial/introduction.rst:66
+#: 40809c2122de447386007d6dcfec937f
+msgid "This tutorial includes some example code, which has been tested against Idris 2. These files are available with the Idris 2 distribution, so that you can try them out easily. They can be found under ``samples``. It is, however, strongly recommended that you type them in yourself, rather than simply loading and reading them."
+msgstr ""
+
+#: ../source/tutorial/introduction.rst:73
+#: ae57904aeafd4a3985109b9dd2bb20f5
+msgid "Footnotes"
+msgstr ""
+
+#: ../source/tutorial/introduction.rst:74
+#: e85ea13dea46473fb7820e9494424485
+msgid "Typically, and perhaps confusingly, referred to in the dependently typed programming literature as \"vectors\"."
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:5
+#: a2182acb732049debb320d3327712cba
+msgid "Miscellany"
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:7
+#: 634caef99a6144599366a13840f94466
+msgid "In this section we discuss a variety of additional features:"
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:9
+#: 490ed410302548ae944fb03d20d8ad48
+msgid "auto, implicit, and default arguments;"
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:10
+#: 5ade330e357647a986cbfcf720a3e3b0
+msgid "literate programming; and"
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:11
+#: a1b46693ea9241cfb78ebd4862b0a7f8
+msgid "the universe hierarchy."
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:14
+#: 7f861dbcafce40e2a2901ad860852a2d
+msgid "Implicit arguments"
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:16
+#: 664440c05e27403694dfc6bfd94d1510
+msgid "We have already seen implicit arguments, which allows arguments to be omitted when they can be inferred by the type checker [#IdrisType]_, e.g."
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:24
+#: 37b96476d28d4c4f9916da2db0f1cef7
+msgid "Auto implicit arguments"
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:26
+#: 857df96465634d79a622e16aca7fb407
+msgid "In other situations, it may be possible to infer arguments not by type checking but by searching the context for an appropriate value, or constructing a proof. For example, the following definition of ``head`` which requires a proof that the list is non-empty:"
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:40
+#: 4bfa1dfa26084934b357a5401e034c52
+msgid "If the list is statically known to be non-empty, either because its value is known or because a proof already exists in the context, the proof can be constructed automatically. Auto implicit arguments allow this to happen silently. We define ``head`` as follows:"
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:50
+#: 576a3cbb542b4501aabfe9047251d0cd
+msgid "The ``auto`` annotation on the implicit argument means that Idris will attempt to fill in the implicit argument by searching for a value of the appropriate type. In fact, internally, this is exactly how interface resolution works. It will try the following, in order:"
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:55
+#: a8501bb72de7485b861ee30a16840122
+msgid "Local variables, i.e. names bound in pattern matches or ``let`` bindings, with exactly the right type."
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:57
+#: 2d7da5474ccd48a8824f4b12c72ae33e
+msgid "The constructors of the required type. If they have arguments, it will search recursively up to a maximum depth of 100."
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:59
+#: ce5b938cca35484c87219deb9e706f4f
+msgid "Local variables with function types, searching recursively for the arguments."
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:61
+#: f28974bbd745453b86ae72ebfb2fb823
+msgid "Any function with the appropriate return type which is marked with the ``%hint`` annotation."
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:64
+#: 85fba9efc5b347baae94837577520f5e
+msgid "In the case that a proof is not found, it can be provided explicitly as normal:"
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:71
+#: cd3ed189858f43658bb33bb033320af5
+msgid "Default implicit arguments"
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:73
+#: e8478ab6d4c94084bd781cc3f8106a42
+msgid "Besides having Idris automatically find a value of a given type, sometimes we want to have an implicit argument with a specific default value. In Idris, we can do this using the ``default`` annotation. While this is primarily intended to assist in automatically constructing a proof where auto fails, or finds an unhelpful value, it might be easier to first consider a simpler case, not involving proofs."
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:79
+#: c45d333abe8e4083aad8ef7113b33628
+msgid "If we want to compute the n'th fibonacci number (and defining the 0th fibonacci number as 0), we could write:"
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:88
+#: d5b539fca0d64857a732708d27d21f1b
+msgid "After this definition, ``fibonacci 5`` is equivalent to ``fibonacci {lag=0} {lead=1} 5``, and will return the 5th fibonacci number. Note that while this works, this is not the intended use of the ``default`` annotation. It is included here for illustrative purposes only. Usually, ``default`` is used to provide things like a custom proof search script."
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:94
+#: 530acc81cf384b4aa4e2fbee4a2d2f73
+msgid "Literate programming"
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:96
+#: a72334dbf83f433fa6b916d86cb47937
+msgid "Like Haskell, Idris supports *literate* programming. If a file has an extension of ``.lidr`` then it is assumed to be a literate file. In literate programs, everything is assumed to be a comment unless the line begins with a greater than sign ``>``, for example:"
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:110
+#: 23c42f3ea59845128bae27a9d068405e
+msgid "An additional restriction is that there must be a blank line between a program line (beginning with ``>``) and a comment line (beginning with any other character)."
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:115
+#: 444e83734b654696891f5bf76210c9b4
+msgid "Cumulativity"
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:119
+#: 1f5ae1fc6de6493588b16126382eb5ad
+msgid "NOT YET IN IDRIS 2"
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:121
+#: 87eb6d9351784f659c1d539470304092
+msgid "Since values can appear in types and *vice versa*, it is natural that types themselves have types. For example:"
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:131
+#: 6c1a0b2af90b484b8497df6b83d76b16
+msgid "But what about the type of ``Type``? If we ask Idris it reports:"
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:138
+#: 05c4eb17aa394de7bd8e8a0fd3acc511
+msgid "If ``Type`` were its own type, it would lead to an inconsistency due to `Girard’s paradox <https://www.cs.cmu.edu/afs/cs.cmu.edu/user/kw/www/scans/girard72thesis.pdf>`_, so internally there is a *hierarchy* of types (or *universes*):"
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:146
+#: 4b9d08573b674b978f2ba83e1d23618e
+msgid "Universes are *cumulative*, that is, if ``x : Type n`` we can also have that ``x : Type m``, as long as ``n < m``. The typechecker generates such universe constraints and reports an error if any inconsistencies are found. Ordinarily, a programmer does not need to worry about this, but it does prevent (contrived) programs such as the following:"
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:160
+#: 838e68d811fb42fca18c27c983a60326
+msgid "The application of ``myid`` to itself leads to a cycle in the universe hierarchy — ``myid``\\ ’s first argument is a ``Type``, which cannot be at a lower level than required if it is applied to itself."
+msgstr ""
+
+#: ../source/tutorial/miscellany.rst:164
+#: d7c688c66a4e42a2920509d6b2490487
+msgid "https://github.com/david-christiansen/idris-type-providers"
+msgstr ""
+
+#: ../source/tutorial/modules.rst:5
+#: 41978b8211cf470ca03a19bf7b3c64ae
+msgid "Modules and Namespaces"
+msgstr ""
+
+#: ../source/tutorial/modules.rst:7
+#: 39a6052f665843caa73477fa76a545ab
+msgid "An Idris program consists of a collection of modules. Each module includes an optional ``module`` declaration giving the name of the module, a list of ``import`` statements giving the other modules which are to be imported, and a collection of declarations and definitions of types, interfaces and functions. For example, the listing below gives a module which defines a binary tree type ``BTree`` (in a file ``BTree.idr``):"
+msgstr ""
+
+#: ../source/tutorial/modules.rst:39
+#: ab5a369dd6a743c29bb961fcdbfe1071
+msgid "The modifiers ``export`` and ``public export`` say which names are visible from other namespaces. These are explained further below."
+msgstr ""
+
+#: ../source/tutorial/modules.rst:42
+#: c23794fdec024cf3a3ecadf90fb41774
+msgid "Then, this gives a main program (in a file ``bmain.idr``) which uses the ``BTree`` module to sort a list:"
+msgstr ""
+
+#: ../source/tutorial/modules.rst:55
+#: 8b9838ea20324a19bdb28fbebb5eb46b
+msgid "The same names can be defined in multiple modules: names are *qualified* with the name of the module. The names defined in the ``BTree`` module are, in full:"
+msgstr ""
+
+#: ../source/tutorial/modules.rst:58
+#: bebd6da875c24e5d943b070136fd19b4
+msgid "``BTree.BTree``"
+msgstr ""
+
+#: ../source/tutorial/modules.rst:59
+#: 2367cccfbad44d2cbcf5a82dc8e2f673
+msgid "``BTree.Leaf``"
+msgstr ""
+
+#: ../source/tutorial/modules.rst:60
+#: 4b0a53180c42467799ab9bb61c237954
+msgid "``BTree.Node``"
+msgstr ""
+
+#: ../source/tutorial/modules.rst:61
+#: 3dc0eefa6a4340f49448132483551c0e
+msgid "``BTree.insert``"
+msgstr ""
+
+#: ../source/tutorial/modules.rst:62
+#: 4b0aab6685c445cab52dad35be89e689
+msgid "``BTree.toList``"
+msgstr ""
+
+#: ../source/tutorial/modules.rst:63
+#: 0da72ba82af042f78bf764ce91dabf5b
+msgid "``BTree.toTree``"
+msgstr ""
+
+#: ../source/tutorial/modules.rst:65
+#: 055182d054ca45f798221fb6882e9dcb
+msgid "If names are otherwise unambiguous, there is no need to give the fully qualified name. Names can be disambiguated either by giving an explicit qualification, using the ``with`` keyword, or according to their type."
+msgstr ""
+
+#: ../source/tutorial/modules.rst:69
+#: ae2c666d25f74b93acb6c838bc1d7779
+msgid "The ``with`` keyword in expressions comes in two variants:"
+msgstr ""
+
+#: ../source/tutorial/modules.rst:71
+#: f0d3f6ffa3814a2d8ba0cc9a35a668bd
+msgid "``with BTree.insert (insert x empty)`` for one name"
+msgstr ""
+
+#: ../source/tutorial/modules.rst:72
+#: de4d4f1b9fd94666bda18ca4d3ce65ff
+msgid "``with [BTree.insert, BTree.empty] (insert x empty)`` for multiple names"
+msgstr ""
+
+#: ../source/tutorial/modules.rst:74
+#: c2ce298f2c0b430aa32ac9d2c59afd8b
+msgid "This is particularly useful with ``do`` notation, where it can often improve error messages: ``with MyModule.(>>=) do ...``"
+msgstr ""
+
+#: ../source/tutorial/modules.rst:77
+#: 36590ec72b964f9daf9e50631514b953
+msgid "There is no formal link between the module name and its filename, although it is generally advisable to use the same name for each. An ``import`` statement refers to a filename, using dots to separate directories. For example, ``import foo.bar`` would import the file ``foo/bar.idr``, which would conventionally have the module declaration ``module foo.bar``. The only requirement for module names is that the main module, with the ``main`` function, must be called ``Main`` — although its filename need not be ``Main.idr``."
+msgstr ""
+
+#: ../source/tutorial/modules.rst:87
+#: 4ff636bcf2e94409b751f11c78e2b014
+msgid "Export Modifiers"
+msgstr ""
+
+#: ../source/tutorial/modules.rst:89
+#: fe78c2945a9143cfb6d1ff2661bfd6ff
+msgid "Idris allows for fine-grained control over the visibility of a namespace's contents. By default, all names defined in a namespace are kept private.  This aids in specification of a minimal interface and for internal details to be left hidden. Idris allows for functions, types, and interfaces to be marked as: ``private``, ``export``, or ``public export``. Their general meaning is as follows:"
+msgstr ""
+
+#: ../source/tutorial/modules.rst:96
+#: b6b35b42706e486d9b895e09f6e30313
+msgid "``private`` meaning that it is not exported at all. This is the default."
+msgstr ""
+
+#: ../source/tutorial/modules.rst:98
+#: 44f47d253ba54752ac8a3e840f0f1847
+msgid "``export`` meaning that its top level type is exported."
+msgstr ""
+
+#: ../source/tutorial/modules.rst:100
+#: 4496487f9b4a493393f4ac1e98b98718
+msgid "``public export`` meaning that the entire definition is exported."
+msgstr ""
+
+#: ../source/tutorial/modules.rst:102
+#: 62f867773d0046a4a99d4b1359acb360
+msgid "A further restriction in modifying the visibility is that definitions must not refer to anything within a lower level of visibility. For example, ``public export`` definitions cannot use ``private`` or ``export`` names, and ``export`` types cannot use ``private`` names. This is to prevent private names leaking into a module's interface."
+msgstr ""
+
+#: ../source/tutorial/modules.rst:109
+#: 3af52186896b4c69834dccbc4b803229
+msgid "Meaning for Functions"
+msgstr ""
+
+#: ../source/tutorial/modules.rst:111
+#: b3e7ad90db2344ef85a73430c230f7ce
+msgid "``export`` the type is exported"
+msgstr ""
+
+#: ../source/tutorial/modules.rst:113
+#: 31f61305ca2347e28d8e571bb80853f1
+msgid "``public export`` the type and definition are exported, and the definition can be used after it is imported. In other words, the definition itself is considered part of the module's interface. The long name ``public export`` is intended to make you think twice about doing this."
+msgstr ""
+
+#: ../source/tutorial/modules.rst:121
+#: d037093d8bcf4217a0f49e74f071e12a
+msgid "Type synonyms in Idris are created by writing a function. When setting the visibility for a module, it is usually a good idea to ``public export`` all type synonyms if they are to be used outside the module. Otherwise, Idris won't know what the synonym is a synonym for."
+msgstr ""
+
+#: ../source/tutorial/modules.rst:127
+#: e37a0366fad0436d90d4a7b17749ab16
+msgid "Since ``public export`` means that a function's definition is exported, this effectively makes the function definition part of the module's API. Therefore, it's generally a good idea to avoid using ``public export`` for functions unless you really mean to export the full definition."
+msgstr ""
+
+#: ../source/tutorial/modules.rst:133
+#: 332b9263d1b54b24a16a2f5a89e21a39
+msgid "*For beginners*: If the function needs to be accessed only at runtime, use ``export``. However, if it's also meant to be used at *compile* time (e.g. to prove a theorem), use ``public export``. For example, consider the function ``plus : Nat -> Nat -> Nat`` discussed previously, and the following theorem: ``thm : plus Z m = m``. In order to prove it, the type checker needs to reduce ``plus Z m`` to ``m`` (and hence obtain ``thm : m = m``). To achieve this, it will need access to the *definition* of ``plus``, which includes the equation ``plus Z m = m``. Therefore, in this case, ``plus`` has to be marked as ``public export``."
+msgstr ""
+
+#: ../source/tutorial/modules.rst:146
+#: 3984158af3594fa1a3df8a643b442b01
+msgid "Meaning for Data Types"
+msgstr ""
+
+#: ../source/tutorial/modules.rst:148
+#: d7ad3f4c9c7549778fbf1ea776116212
+msgid "For data types, the meanings are:"
+msgstr ""
+
+#: ../source/tutorial/modules.rst:150
+#: a838b25613674ec1b1e6ac6f074d1c7a
+msgid "``export`` the type constructor is exported"
+msgstr ""
+
+#: ../source/tutorial/modules.rst:152
+#: 41cb22d4dd074496b6b9d4bea3f1a867
+msgid "``public export`` the type constructor and data constructors are exported"
+msgstr ""
+
+#: ../source/tutorial/modules.rst:156
+#: f803259802d947509e0bfbbc59cea460
+msgid "Meaning for Interfaces"
+msgstr ""
+
+#: ../source/tutorial/modules.rst:158
+#: 72455bca71af4746bf7588dba6db55d3
+msgid "For interfaces, the meanings are:"
+msgstr ""
+
+#: ../source/tutorial/modules.rst:160
+#: d3404470ffac4984bd5825aa969c9c64
+msgid "``export`` the interface name is exported"
+msgstr ""
+
+#: ../source/tutorial/modules.rst:162
+#: 9a3716574bb042c9b5c6b0f8ce5cad4e
+msgid "``public export`` the interface name, method names and default definitions are exported"
+msgstr ""
+
+#: ../source/tutorial/modules.rst:166
+#: d81336e4d04b4e05a55154779cf4246d
+msgid "Propagating Inner Module API's"
+msgstr ""
+
+#: ../source/tutorial/modules.rst:168
+#: 612364b4f83347eb97f89844cec066b5
+msgid "Additionally, a module can re-export a module it has imported, by using the ``public`` modifier on an ``import``. For example:"
+msgstr ""
+
+#: ../source/tutorial/modules.rst:178
+#: 5e0b2c7a9aa0416d8fca6fded88dfe17
+msgid "The module ``A`` will export the name ``a``, as well as any public or abstract names in module ``C``, but will not re-export anything from module ``B``."
+msgstr ""
+
+#: ../source/tutorial/modules.rst:183
+#: 095935ef14dd4563846018b160381ae0
+msgid "Renaming imports"
+msgstr ""
+
+#: ../source/tutorial/modules.rst:185
+#: 1617e2be58364163bba566548cc73844
+msgid "Sometimes it is convenient to be able to access the names in another module via a different namespace (typically, a shorter one). For this, you can use `import...as`. For example:"
+msgstr ""
+
+#: ../source/tutorial/modules.rst:195
+#: 9c714fd6712b444286851e29253bde0c
+msgid "This module ``A`` has access to the exported names from module ``Data.List``, but can also explicitly access them via the module name ``L``. ``import...as`` can also be combined with ``import public`` to create a module which exports a larger API from other sub-modules:"
+msgstr ""
+
+#: ../source/tutorial/modules.rst:207
+#: 0381d05da7bf40418178193f812a77a5
+msgid "Here, any module which imports ``Books`` will have access to the exported interfaces of ``Books.Hardback`` and ``Books.Comic`` both under the namespace ``Books``."
+msgstr ""
+
+#: ../source/tutorial/modules.rst:212
+#: 2aed837148a047dc98f5e6bb5042eed2
+msgid "Explicit Namespaces"
+msgstr ""
+
+#: ../source/tutorial/modules.rst:214
+#: 1a118b3d1f3d4effb9cb62af26f0482a
+msgid "Defining a module also defines a namespace implicitly. However, namespaces can also be given *explicitly*. This is most useful if you wish to overload names within the same module:"
+msgstr ""
+
+#: ../source/tutorial/modules.rst:232
+#: 0a22d5a37e42456986ffd0916fd12f88
+msgid "This (admittedly contrived) module defines two functions with fully qualified names ``Foo.X.test`` and ``Foo.Y.test``, which can be disambiguated by their types:"
+msgstr ""
+
+#: ../source/tutorial/modules.rst:243
+#: db9224a16bb04ba89418ee24e11f2e18
+msgid "The export rules, ``public export`` and ``export``, are *per namespace*, not *per file*, so the two ``test`` definitions above need the ``export`` flag to be visible outside their own namespaces."
+msgstr ""
+
+#: ../source/tutorial/modules.rst:248
+#: b1d064f82b784d28a3f9c8ff87a6f6a5
+msgid "Parameterised blocks"
+msgstr ""
+
+#: ../source/tutorial/modules.rst:250
+#: a21a18507132459cba8b27fed64b8c78
+msgid "Groups of functions can be parameterised over a number of arguments using a ``parameters`` declaration, for example:"
+msgstr ""
+
+#: ../source/tutorial/modules.rst:259
+#: c8d300b311524486a23c9b732d506a56
+msgid "The effect of a ``parameters`` block is to add the declared parameters to every function, type and data constructor within the block. Specifically, adding the parameters to the front of the argument list. Outside the block, the parameters must be given explicitly. The ``addAll`` function, when called from the REPL, will thus have the following type signature."
+msgstr ""
+
+#: ../source/tutorial/modules.rst:271
+#: 3349d63cc5484e069150cb0e8fdac08f
+msgid "and the following definition."
+msgstr ""
+
+#: ../source/tutorial/modules.rst:278
+#: 39ea3c7f7ef54bf99d889e869176e60a
+msgid "Parameters blocks can be nested, and can also include data declarations, in which case the parameters are added explicitly to all type and data constructors. They may also be dependent types with implicit arguments:"
+msgstr ""
+
+#: ../source/tutorial/modules.rst:291
+#: b7f44541837d40f1bc1a85db4370f75e
+msgid "To use ``Vects`` or ``append`` outside the block, we must also give the ``xs`` and ``y`` arguments. Here, we can use placeholders for the values which can be inferred by the type checker:"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:5
+#: 2bdd4a67cba94f2891bd25dcebad8de4
+msgid "Multiplicities"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:7
+#: 401efeb3fff04f5987316eeaeaf10b38
+msgid "Idris 2 is based on `Quantitative Type Theory (QTT) <https://bentnib.org/quantitative-type-theory.html>`_, a core language developed by Bob Atkey and Conor McBride. In practice, this means that every variable in Idris 2 has a *quantity* associated with it. A quantity is one of:"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:13
+#: 5ad738ddf4534e1c83734820f4d923b3
+msgid "``0``, meaning that the variable is *erased* at run time"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:14
+#: 6f0c4b4e9e7149bb909b14405bdd9a90
+msgid "``1``, meaning that the variable is used *exactly once* at run time"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:15
+#: ec59315619de474aa895df870d871ce0
+msgid "*Unrestricted*, which is the same behaviour as Idris 1"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:17
+#: afe24d458ffd43ccb1b9143f1c66f3b6
+msgid "We can see the multiplicities of variables by inspecting holes. For example, if we have the following skeleton definition of ``append`` on vectors..."
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:25
+#: f16398febeb947268a158ede3e365c89
+msgid "...we can look at the hole ``append_rhs``:"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:38
+#: 857d91bd1f3e46e7a1e57f58043e8df6
+msgid "The ``0`` next to ``m``, ``a`` and ``n`` mean that they are in scope, but there will be ``0`` occurrences at run-time. That is, it is **guaranteed** that they will be erased at run-time."
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:42
+#: f5bf306a278a483dbfd14003e0c17663
+msgid "Multiplicities can be explicitly written in function types as follows:"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:44
+#: e84f4bfd5d774d3d8e6bf5bb9aa69ad8
+msgid "``ignoreN : (0 n : Nat) -> Vect n a -> Nat`` - this function cannot look at ``n`` at run time"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:46
+#: e765d46ac8d04914a930718af3249698
+msgid "``duplicate : (1 x : a) -> (a, a)`` - this function must use ``x`` exactly once (so good luck implementing it, by the way. There is no implementation because it would need to use ``x`` twice!)"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:50
+#: 850a93d1192b4820b5dbba469cdaa49b
+msgid "If there is no multiplicity annotation, the argument is unrestricted. If, on the other hand, a name is implicitly bound (like ``a`` in both examples above) the argument is erased. So, the above types could also be written as:"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:54
+#: 0896d6acba9f4737912582df2eb15bd6
+msgid "``ignoreN : {0 a : _} -> (0 n : Nat) -> Vect n a -> Nat``"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:55
+#: 599150cb7ab443f390a9dd7c14109173
+msgid "``duplicate : {0 a : _} -> (1 x : a) -> (a, a)``"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:57
+#: b8e0f704091641249bbb65fa6316002f
+msgid "This section describes what this means for your Idris 2 programs in practice, with several examples. In particular, it describes:"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:60
+#: 60d63e9f1f88488fa202cdf96886e347
+msgid ":ref:`sect-erasure` - how to know what is relevant at run time and what is erased"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:61
+#: 848d0787423b4998b83de5051d3569d9
+msgid ":ref:`sect-linearity` - using the type system to encode *resource usage protocols*"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:62
+#: 57b0b3d37ad04380913a9971a8eeeee2
+msgid ":ref:`sect-pmtypes` - truly first class types"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:64
+#: 37663306d03c42e0b6114c2088d10e01
+msgid "The most important of these for most programs, and the thing you'll need to know about if converting Idris 1 programs to work with Idris 2, is erasure_. The most interesting, however, and the thing which gives Idris 2 much more expressivity, is linearity_, so we'll start there."
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:72
+#: ba297a4256684662907509c075bd8387
+msgid "Linearity"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:74
+#: 7283023ea4e2480c96067eadd61e5cd3
+msgid "The ``1`` multiplicity expresses that a variable must be used exactly once. By \"used\" we mean either:"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:77
+#: 8bc9a2a426c14097812c1db5318fc8d6
+msgid "if the variable is a data type or primitive value, it is pattern matched against, ex. by being the subject of a *case* statement, or a function argument that is pattern matched against, etc.,"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:78
+#: 34fc9a30494d4c1288af8607448d1086
+msgid "if the variable is a function, that function is applied (i.e. ran with an argument)"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:80
+#: 34c0266ae2334c8a96590154f9d354a9
+msgid "First, we'll see how this works on some small examples of functions and data types, then see how it can be used to encode `resource protocols`_."
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:83
+#: 342b5e2d35f741648c59e90b96d8a06d
+msgid "Above, we saw the type of ``duplicate``. Let's try to write it interactively, and see what goes wrong. We'll start by giving the type and a skeleton definition with a hole"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:92
+#: 5375423f1b104db195cf766bc0710800
+msgid "Checking the type of a hole tells us the multiplicity of each variable in scope. If we check the type of ``?help`` we'll see that we can't use ``a`` at run time, and we have to use ``x`` exactly once::"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:102
+#: b32a1d5e00234ba5b5c80dcce991c33f
+msgid "If we use ``x`` for one part of the pair..."
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:109
+#: aa8e50ec88164d609689a27dd03ce1e0
+msgid "...then the type of the remaining hole tells us we can't use it for the other::"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:117
+#: be324b68dace489f9c4fa1e081f0daad
+msgid "The same happens if we try defining ``duplicate x = (?help, x)`` (try it!)."
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:119
+#: 795c91355b92438ebea286abd7af4d5f
+msgid "In order to avoid parsing ambiguities, if you give an explicit multiplicity for a variable as with the argument to ``duplicate``, you need to give it a name too. But, if the name isn't used in the scope of the type, you can use ``_`` instead of a name, as follows:"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:128
+#: 84063e743301409184dcb220df027f6a
+msgid "The intution behind multiplicity ``1`` is that if we have a function with a type of the following form..."
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:135
+#: d88d1993b5b84cff834246c40c88864c
+msgid "...then the guarantee given by the type system is that *if* ``f x`` *is used exactly once, then* ``x`` *is used exactly once*. So, if we insist on trying to define ``duplicate``...::"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:141
+#: 0bf39bbfa7a54a92b407572016ac8af9
+msgid "...then Idris will complain::"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:146
+#: da6f29a984c94b1789e5f1d6d3f2e217
+msgid "A similar intuition applies for data types. Consider the following types, ``Lin`` which wraps an argument that must be used once, and ``Unr`` which wraps an argument with unrestricted use"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:158
+#: 17d39827fec54500b4eb804e40692f28
+msgid "If ``MkLin x`` is used once, then ``x`` is used once. But if ``MkUnr x`` is used once, there is no guarantee on how often ``x`` is used. We can see this a bit more clearly by starting to write projection functions for ``Lin`` and ``Unr`` to extract the argument"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:171
+#: 9776970eb2884eae8a38e991024b8b7d
+msgid "Checking the types of the holes shows us that, for ``getLin``, we must use ``x`` exactly once (Because the ``val`` argument is used once, by pattern matching on it as ``MkLin x``, and if ``MkLin x`` is used once, ``x`` must be used once)::"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:182
+#: d308e9e9403f46fe9447a86e1ed7534f
+msgid "For ``getUnr``, however, we still have to use ``val`` once, again by pattern matching on it, but using ``MkUnr x`` once doesn't place any restrictions on ``x``. So, ``x`` has unrestricted use in the body of ``getUnr``::"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:192
+#: 767f8632c1354924a0a2e4111c1ebd8b
+msgid "If ``getLin`` has an unrestricted argument..."
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:199
+#: 18b28b0da05b45c0b67315fcba2d35b8
+msgid "...then ``x`` is unrestricted in ``howmanyLin``::"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:207
+#: 02ee5c21093d4f799a14cad6c10df0a8
+msgid "Remember the intuition from the type of ``MkLin`` is that if ``MkLin x`` is used exactly once, ``x`` is used exactly once. But, we didn't say that ``MkLin x`` would be used exactly once, so there is no restriction on ``x``."
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:212
+#: e28c048e03fe445cb477a4f70898ba8c
+msgid "Resource protocols"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:214
+#: 05b9c34056c34f5f805227e202b521da
+msgid "One way to take advantage of being able to express linear usage of an argument is in defining resource usage protocols, where we can use linearity to ensure that any unique external resource has only one instance, and we can use functions which are linear in their arguments to represent state transitions on that resource. A door, for example, can be in one of two states, ``Open`` or ``Closed``"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:228
+#: fa735d4a5d394b349f132e1859d9ff26
+msgid "(Okay, we're just pretending here - imagine the ``doorId`` is a reference to an external resource!)"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:231
+#: 39af648f56974be3b24c5554ba3832c9
+msgid "We can define functions for opening and closing the door which explicitly describe how they change the state of a door, and that they are linear in the door"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:240
+#: 26f1a3ba423247e0a501fa6bb09c3022
+msgid "Remember, the intuition is that if ``openDoor d`` is used exactly once, then ``d`` is used exactly once. So, provided that a door ``d`` has multiplicity ``1`` when it's created, we *know* that once we call ``openDoor`` on it, we won't be able to use ``d`` again. Given that ``d`` is an external resource, and ``openDoor`` has changed it's state, this is a good thing!"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:247
+#: 8dadfd25c402434886c3f6eee7c5d96a
+msgid "We can ensure that any door we create has multiplicity ``1`` by creating them with a ``newDoor`` function with the following type"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:254
+#: 6cce7133565e45aa91fd6391c2db92a9
+msgid "That is, ``newDoor`` takes a function, which it runs exactly once. That function takes a door, which is used exactly once. We'll run it in ``IO`` to suggest that there is some interaction with the outside world going on when we create the door. Since the multiplicity ``1`` means the door has to be used exactly once, we need to be able to delete the door when we're finished"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:265
+#: 27a0d3f2006a441d9f6a9b609b771270
+msgid "So an example correct door protocol usage would be"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:276
+#: 9adc43f506bc46428652e1ad30e2ac26
+msgid "It's instructive to build this program interactively, with holes along the way, and see how the multiplicities of ``d``, ``d'`` etc change. For example"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:288
+#: 560ce44d306a4b7395e5a9a35843f547
+msgid "Checking the type of ``?whatnow`` shows that ``d`` is now spent, but we still have to use ``d'`` exactly once::"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:297
+#: 669617a67e774bf792d43d9d628b64e9
+msgid "Note that the ``0`` multiplicity for ``d`` means that we can still *talk* about it - in particular, we can still reason about it in types - but we can't use it again in a relevant position in the rest of the program. It's also fine to shadow the name ``d`` throughout"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:311
+#: 85d60146b69c4aebb11f6d18c8ccc084
+msgid "If we don't follow the protocol correctly - create the door, open it, close it, then delete it - then the program won't type check. For example, we can try not to delete the door before finishing"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:324
+#: 984e4ccb14ac46919e2f9c2cdd06cf98
+msgid "This gives the following error::"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:329
+#: 037cfa86c12f4baeb5b90ef758cbce30
+msgid "There's a lot more to be said about the details here! But, this shows at a high level how we can use linearity to capture resource usage protocols at the type level. If we have an external resource which is guaranteed to be used linearly, like ``Door``, we don't need to run operations on that resource in an ``IO`` monad, since we're already enforcing an ordering on operations and don't have access to any out of date resource states. This is similar to the way interactive programs work in `the Clean programming language <https://clean.cs.ru.nl/Clean>`_, and in fact is how ``IO`` is implemented internally in Idris 2, with a special ``%World`` type for representing the state of the outside world that is always used linearly"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:351
+#: 45a25ba6be77425e8a659d9071979747
+msgid "Having multiplicities in the type system raises several interesting questions, such as:"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:354
+#: 460218f509eb4fd890b36c2df225ce22
+msgid "Can we use linearity information to inform memory management and, for example, have type level guarantees about functions which will not need to perform garbage collection?"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:357
+#: 1ab2e8c3efbf4365807e48d57827dc91
+msgid "How should multiplicities be incorporated into interfaces such as ``Functor``, ``Applicative`` and ``Monad``?"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:359
+#: fc4269a622fe4b67b55eec266cbc8891
+msgid "If we have ``0``, and ``1`` as multiplicities, why stop there? Why not have ``2``, ``3`` and more (like `Granule <https://granule-project.github.io/granule.html>`_)"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:362
+#: 0d8b0734f8844c989ea30534ce2a8ebc
+msgid "What about multiplicity polymorphism, as in the `Linear Haskell proposal <https://arxiv.org/abs/1710.09756>`_?"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:363
+#: 398f0ed9c5ee4cfcbbe5d2382d90866b
+msgid "Even without all of that, what can we do *now*?"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:368
+#: 61d31cdb18054e5ca23e58a7653db294
+msgid "Erasure"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:370
+#: 2fafdc48ee164dea85ba89fe6f188815
+msgid "The ``1`` multiplicity give us many possibilities in the kinds of properties we can express. But, the ``0`` multiplicity is perhaps more important in that it allows us to be precise about which values are relevant at run time, and which are compile time only (that is, which are erased). Using the ``0`` multiplicity means a function's type now tells us exactly what it needs at run time."
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:377
+#: c4f2adf5275d4fdb84f41b60b8d7462c
+msgid "For example, in Idris 1 you could get the length of a vector as follows"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:384
+#: adbb423517ce40d7b47f3d5867cccee4
+msgid "This is fine, since it runs in constant time, but the trade off is that ``n`` has to be available at run time, so at run time we always need the length of the vector to be available if we ever call ``vlen``. Idris 1 can infer whether the length is needed, but there's no easy way for a programmer to be sure."
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:389
+#: 078115c385b444b3b6010c74b39ae3ad
+msgid "In Idris 2, we need to state explicitly that ``n`` is needed at run time"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:396
+#: 8f52aeb40a2e476cb289061e0aabf9ed
+msgid "(Incidentally, also note that in Idris 2, names bound in types are also available in the definition without explicitly rebinding them.)"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:399
+#: 6006fcd80c554f82a834072cfe62cb28
+msgid "This also means that when you call ``vlen``, you need the length available. For example, this will give an error"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:407
+#: 7427a3619f4c4129ae138686e3ded2bf
+msgid "Idris 2 reports::"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:412
+#: 4554ebd3ba5a4e27b2c7134910e4d349
+msgid "This means that it needs to use ``m`` as an argument to pass to ``vlen xs``, where it needs to be available at run time, but ``m`` is not available in ``sumLengths`` because it has multiplicity ``0``."
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:416
+#: 72c28120829044c1a9a4b7a6e22fa2d9
+msgid "We can see this more clearly by replacing the right hand side of ``sumLengths`` with a hole..."
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:424
+#: c79af5a0e66a4bd6af6de99a787a18b6
+msgid "...then checking the hole's type at the REPL::"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:435
+#: 285249e39520452986cfc045134b4da1
+msgid "Instead, we need to give bindings for ``m`` and ``n`` with unrestricted multiplicity"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:443
+#: 23704de2432249faaa9730ff928d022f
+msgid "Remember that giving no multiplicity on a binder, as with ``m`` and ``n`` here, means that the variable has unrestricted usage."
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:446
+#: d4a579391dca436d92bc650060d31051
+msgid "If you're converting Idris 1 programs to work with Idris 2, this is probably the biggest thing you need to think about. It is important to note, though, that if you have bound implicits, such as..."
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:454
+#: 73924cb569674c818eeceb7e547ee98d
+msgid "...then it's a good idea to make sure ``t`` really is needed, or performance might suffer due to the run time building the instance of ``t`` unnecessarily!"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:457
+#: bc081d79d9f1495aaa957c1c93a9561e
+msgid "One final note on erasure: it is an error to try to pattern match on an argument with multiplicity ``0``, unless its value is inferrable from elsewhere. So, the following definition is rejected"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:467
+#: 43d14e91a8cf4ac395a4cb10c1aa0863
+msgid "This is rejected with the error::"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:472
+#: 80eb2825edb94e119c37e0a60b51512b
+msgid "The following, however, is fine, because in ``sNot``, even though we appear to match on the erased argument ``x``, its value is uniquely inferrable from the type of the second argument"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:486
+#: e22e752f77e84aed91471f16dc8a9bda
+msgid "Experience with Idris 2 so far suggests that, most of the time, as long as you're using unbound implicits in your Idris 1 programs, they will work without much modification in Idris 2. The Idris 2 type checker will point out where you require an unbound implicit argument at run time - sometimes this is both surprising and enlightening!"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:495
+#: 39d75b3eae0940e1ad0662abf63df1d7
+msgid "Pattern Matching on Types"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:497
+#: a92e287ded524d039b8c6a6b1a6d5f64
+msgid "One way to think about dependent types is to think of them as \"first class\" objects in the language, in that they can be assigned to variables, passed around and returned from functions, just like any other construct. But, if they're truly first class, we should be able to pattern match on them too! Idris 2 allows us to do this. For example"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:510
+#: ba721eac5ca349ae8fa94b0a532231d2
+msgid "We can try this as follows::"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:519
+#: 12af5ee908794022a1c7c25376328703
+msgid "Pattern matching on function types is interesting, because the return type may depend on the input value. For example, let's add a case to ``showType``"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:527
+#: 7bf155c3ebad4ea090e6b07b9917d8ad
+msgid "Inspecting the type of ``help`` tells us::"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:534
+#: 5a8e69fabcbe4ab090e93cfc465597ab
+msgid "So, the return type ``a`` depends on the input value of type ``Nat``, and we'll need to come up with a value to use ``a``, for example"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:541
+#: 37b49a1d832f4442b471049309e4d75f
+msgid "Note that multiplicities on the binders, and the ability to pattern match on *non-erased* types mean that the following two types are distinct"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:549
+#: 712c897137d74a2ea347138513ae71aa
+msgid "In the case of ``notId``, we can match on ``a`` and get a function which is certainly not the identity function"
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:564
+#: 267ecd35a607418abc0136c741b9208e
+msgid "There is an important consequence of being able to distinguish between relevant and irrelevant type arguments, which is that a function is *only* parametric in ``a`` if ``a`` has multiplicity ``0``. So, in the case of ``notId``, ``a`` is *not* a parameter, and so we can't draw any conclusions about the way the function will behave because it is polymorphic, because the type tells us it might pattern match on ``a``."
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:571
+#: 8c30087d936049c2ac8e9919cd98df5e
+msgid "On the other hand, it is merely a coincidence that, in non-dependently typed languages, types are *irrelevant* and get erased, and values are *relevant* and remain at run time. Idris 2, being based on QTT, allows us to make the distinction between relevant and irrelevant arguments precise. Types can be relevant, values (such as the ``n`` index to vectors) can be irrelevant."
+msgstr ""
+
+#: ../source/tutorial/multiplicities.rst:577
+#: 40e105bd859d434382469291e8e7acb8
+msgid "For more details on multiplicities, see `Idris 2: Quantitative Type Theory in Action <https://www.type-driven.org.uk/edwinb/idris-2-quantitative-type-theory-in-action.html>`_."
+msgstr ""
+
+#: ../source/tutorial/packages.rst:5
+#: d545843afaf84bf7a71812a458937334
+msgid "Packages"
+msgstr ""
+
+#: ../source/tutorial/packages.rst:7
+#: e7d5c73b493048079e27a5da610476c9
+msgid "Idris includes a simple build system for building packages and executables from a named package description file. These files can be used with the Idris compiler to manage the development process."
+msgstr ""
+
+#: ../source/tutorial/packages.rst:12
+#: 4f1af5e852a34aeab70709e84f203054
+msgid "Package Descriptions"
+msgstr ""
+
+#: ../source/tutorial/packages.rst:14
+#: 4522fd7271364cfcad612ec310b51bf5
+msgid "A package description includes the following:"
+msgstr ""
+
+#: ../source/tutorial/packages.rst:16
+#: f87ed061ecfc4623a869b482c189254c
+msgid "A header, consisting of the keyword ``package`` followed by a package name. Package names can be any valid Idris identifier. The iPKG format also takes a quoted version that accepts any valid filename."
+msgstr ""
+
+#: ../source/tutorial/packages.rst:20
+#: 9967ac5d378d48b69c0a3fdd5e7a84a0
+msgid "Fields describing package contents, ``<field> = <value>``."
+msgstr ""
+
+#: ../source/tutorial/packages.rst:22
+#: dd073d2578364fdc94465ac5e3e07c36
+msgid "At least one field must be the modules field, where the value is a comma separated list of modules. For example, given an idris package ``maths`` that has modules ``Maths.idr``, ``Maths.NumOps.idr``, ``Maths.BinOps.idr``, and ``Maths.HexOps.idr``, the corresponding package file would be:"
+msgstr ""
+
+#: ../source/tutorial/packages.rst:37
+#: 31ee190040f1417ca44258d4f30c3062
+msgid "Running ``idris2 --init`` will interactively create a new package file in the current directory. The generated package file lists all configurable fields with a brief description."
+msgstr ""
+
+#: ../source/tutorial/packages.rst:39
+#: cc9b2fe1c65542e0ab23d491d05ed4a1
+msgid "Other examples of package files can be found in the ``libs`` directory of the main Idris repository, and in `third-party libraries <https://github.com/idris-lang/Idris-dev/wiki/Libraries>`_."
+msgstr ""
+
+#: ../source/tutorial/packages.rst:45
+#: 859169d121cd49e7a19f5a82521ece18
+msgid "Using Package files"
+msgstr ""
+
+#: ../source/tutorial/packages.rst:47
+#: eb1de121c52e43cf87dfa0b4dacc5b33
+msgid "Idris itself is aware about packages, and special commands are available to help with, for example, building packages, installing packages, and cleaning packages.  For instance, given the ``maths`` package from earlier we can use Idris as follows:"
+msgstr ""
+
+#: ../source/tutorial/packages.rst:52
+#: 7d58d94092324716a5c7dcda3a134a58
+msgid "``idris2 --build maths.ipkg`` will build all modules in the package"
+msgstr ""
+
+#: ../source/tutorial/packages.rst:54
+#: f23ada6322494a5ebe1bb696d6d822b5
+msgid "``idris2 --install maths.ipkg`` will install the package, making it accessible by other Idris libraries and programs."
+msgstr ""
+
+#: ../source/tutorial/packages.rst:57
+#: 367e5ad22b574c978eb51a86f974821e
+msgid "``idris2 --clean maths.ipkg`` will delete all intermediate code and executable files generated when building."
+msgstr ""
+
+#: ../source/tutorial/packages.rst:60
+#: 0617b32707794e8fb09a808d79e6297e
+msgid "Once the maths package has been installed, the command line option ``--package maths`` makes it accessible (abbreviated to ``-p maths``). For example:"
+msgstr ""
+
+#: ../source/tutorial/packages.rst:69
+#: e6aa2932c6894bde99c64bba5fac643b
+msgid "Package Dependencies Using Atom"
+msgstr ""
+
+#: ../source/tutorial/packages.rst:71
+#: 664cf5b4d6fa46748734c1bcdfe363d5
+msgid "If you are using the Atom editor and have a dependency on another package, corresponding to for instance ``import Lightyear`` or ``import Pruviloj``, you need to let Atom know that it should be loaded. The easiest way to accomplish that is with a .ipkg file. The general contents of an ipkg file will be described in the next section of the tutorial, but for now here is a simple recipe for this trivial case:"
+msgstr ""
+
+#: ../source/tutorial/packages.rst:78
+#: 319d388e1508420fa9aa5a9998933289
+msgid "Create a folder myProject."
+msgstr ""
+
+#: ../source/tutorial/packages.rst:80
+#: 8d196d40387744b3b5ef754893b8920c
+msgid "Add a file myProject.ipkg containing just a couple of lines:"
+msgstr ""
+
+#: ../source/tutorial/packages.rst:88
+#: db2f3a79ba354410b59e20f5989fa286
+msgid "In Atom, use the File menu to Open Folder myProject."
+msgstr ""
+
+#: ../source/tutorial/starting.rst:5
+#: 84fcaaaca5614df8b891ae766893b5c5
+msgid "Getting Started"
+msgstr ""
+
+#: ../source/tutorial/starting.rst:8
+#: 7385a8ea1e67425ab40af6b4cbfcb594
+msgid "Installing from Source"
+msgstr ""
+
+#: ../source/tutorial/starting.rst:16
+#: ca11ab4654d6440fac6dbe8a407f71a4
+msgid "Prerequisites"
+msgstr ""
+
+#: ../source/tutorial/starting.rst:18
+#: 4db2347757684e46a346fefe3d55a49c
+msgid "Idris 2 is implemented in Idris 2 itself, so to bootstrap it you can build from generated Scheme sources. To do this, you need either Chez Scheme (default, and currently preferred since it is the fastest) or Racket. You can get one of these from:"
+msgstr ""
+
+#: ../source/tutorial/starting.rst:23
+#: be7a5a7e6596430ebbe306e0c02bcda5
+msgid "`Chez Scheme <https://cisco.github.io/ChezScheme/>`_"
+msgstr ""
+
+#: ../source/tutorial/starting.rst:24
+#: a884bf89ab6b4771b9f797208063d3b6
+msgid "`Racket <https://download.racket-lang.org/>`_"
+msgstr ""
+
+#: ../source/tutorial/starting.rst:26
+#: 572a5add54e143dfbd985ef4ca2e19fe
+msgid "Both are also available from MacPorts/Homebrew and all major Linux distributions. Windows requires some further prerequisites, see :ref:`windows-install`."
+msgstr ""
+
+#: ../source/tutorial/starting.rst:29
+#: b60dbcbff57d40e29b8658dd378cae4d
+msgid "**Note**: If you install Chez Scheme from source files, building it locally, make sure you run ``./configure --threads`` to build multithreading support in."
+msgstr ""
+
+#: ../source/tutorial/starting.rst:33
+#: ee9986a3533e4ca1851f1005ba437be6
+msgid "Downloading and Installing"
+msgstr ""
+
+#: ../source/tutorial/starting.rst:35
+#: 2f2336b939ab4270a7b854252708d488
+msgid "You can download the Idris 2 source from the `Idris web site <https://www.idris-lang.org/pages/download.html>`_ or get the latest development version from `idris-lang/Idris2 <https://github.com/idris-lang/Idris2>`_ on Github.  This includes the Idris 2 source code and the Scheme code generated from that.  Once you have unpacked the source, you can install it as follows::"
+msgstr ""
+
+#: ../source/tutorial/starting.rst:44
+#: a1a6e66d3fcf411daafcf8cd1b9f1fe7
+msgid "Where `chez` is the executable name of the Chez Scheme compiler. This will vary from system to system, but is often one of ``scheme``, ``chezscheme``, or ``chezscheme9.5``. If you are building via Racket, you can install it as follows::"
+msgstr ""
+
+#: ../source/tutorial/starting.rst:51
+#: b3615b493d2b49298d8660764ec9ae54
+msgid "Once you've successfully bootstrapped with any of the above commands, you can install with the command ``make install``.  This will, by default, install into ``${HOME}/.idris2``. You can change this by editing the options in ``config.mk``. For example, to install into ``/usr/local``, you can edit the ``IDRIS2_PREFIX`` as follows::"
+msgstr ""
+
+#: ../source/tutorial/starting.rst:60
+#: 03100843c59d4135b7f5f44f839ecc3f
+msgid "Installing from a Package Manager"
+msgstr ""
+
+#: ../source/tutorial/starting.rst:63
+#: 0a7c261d084d48aa83ad6e994add44e5
+msgid "Installing Using Homebrew"
+msgstr ""
+
+#: ../source/tutorial/starting.rst:65
+#: b73bbd1a6f584393989169eef3e7b7f9
+msgid "If you are Homebrew user you can install Idris 2 together with all the requirements by running following command::"
+msgstr ""
+
+#: ../source/tutorial/starting.rst:71
+#: 51c8792de5b449488c64c80c41485726
+msgid "Checking Installation"
+msgstr ""
+
+#: ../source/tutorial/starting.rst:73
+#: 7251792e2a30476b9cc9e32c24505fc8
+msgid "To check that installation has succeeded, and to write your first Idris program, create a file called ``hello.idr`` containing the following text:"
+msgstr ""
+
+#: ../source/tutorial/starting.rst:84
+#: aa568de2b9b04e97863c8c64c1f186b3
+msgid "If you are familiar with Haskell, it should be fairly clear what the program is doing and how it works, but if not, we will explain the details later. You can compile the program to an executable by entering ``idris2 hello.idr -o hello`` at the shell prompt. This will, by default, create an executable called ``hello``, which invokes a generated and compiled Chez Scheme program, in the destination directory ``build/exec`` which you can run:"
+msgstr ""
+
+#: ../source/tutorial/starting.rst:98
+#: da9e4842c3f64246ae22bc9ed335f840
+msgid "Please note that the dollar sign ``$`` indicates the shell prompt! Some useful options to the Idris command are:"
+msgstr ""
+
+#: ../source/tutorial/starting.rst:101
+#: b073c217be544adb9c53bfce453838f1
+msgid "``-o prog`` to compile to an executable called ``prog``."
+msgstr ""
+
+#: ../source/tutorial/starting.rst:103
+#: a2e8e7529bb74c7b8b5c76a82724d4f6
+msgid "``--check`` type check the file and its dependencies without starting the interactive environment."
+msgstr ""
+
+#: ../source/tutorial/starting.rst:105
+#: 35a55bff38c943349c89bfa08f1197d0
+msgid "``--package pkg`` add package as dependency, e.g. ``--package contrib`` to make use of the contrib package."
+msgstr ""
+
+#: ../source/tutorial/starting.rst:107
+#: 82d76e388a2b412f90ece405461ced39
+msgid "``--help`` display usage summary and command line options."
+msgstr ""
+
+#: ../source/tutorial/starting.rst:109
+#: 1ca338ee0293496f863dc1230cac77ba
+msgid "You can find out more about compiling to executables in Section :ref:`sect-execs`."
+msgstr ""
+
+#: ../source/tutorial/starting.rst:113
+#: 6f43309c53c548a7ab790876c3dd5bc7
+msgid "The Interactive Environment"
+msgstr ""
+
+#: ../source/tutorial/starting.rst:115
+#: 4d5c62e1f3a74c7c95a77cb15ca10d17
+msgid "Entering ``idris2`` at the shell prompt starts up the interactive environment. You should see something like the following:"
+msgstr ""
+
+#: ../source/tutorial/starting.rst:120
+#: 0a3ad505d6974b4ba440daa4454f40c7
+msgid "This gives a ``ghci`` style interface which allows evaluation of, as well as type checking of, expressions; theorem proving, compilation; editing; and various other operations. The command ``:?`` gives a list of supported commands. Below, we see an example run in which ``hello.idr`` is loaded, the type of ``main`` is checked and then the program is compiled to the executable file ``hello``, available in the destination directory ``build/exec/``. Type checking a file, if successful, creates a bytecode version of the file (in this case ``build/ttc/hello.ttc``) to speed up loading in future. The bytecode is regenerated if the source file changes."
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:5
+#: 85c990e79f4b4136b88d1b022ad25e85
+msgid "Theorem Proving"
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:8
+#: 4f60e62550bf471898414d5263e5914c
+msgid "Equality"
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:10
+#: 72b147569e654fffa4c5f807f4a675f4
+msgid "Idris allows propositional equalities to be declared, allowing theorems about programs to be stated and proved. An equality type is defined as follows in the Prelude:"
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:19
+#: e5adfcac6b83465db52aa13497e36eed
+msgid "As a notational convenience, ``Equal x y`` can be written as ``x = y``. Equalities can be proposed between any values of any types, but the only way to construct a proof of equality is if values actually are equal. For example:"
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:32
+#: 806b225d10db4ee7bf73e23cf519c736
+msgid "If we try..."
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:39
+#: d34f20849a824ee7a3f33a086ef45b60
+msgid "...then we'll get an error:"
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:53
+#: fc5a5dfcc147425aa84e64f3ba8d9273
+msgid "The Empty Type"
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:55
+#: 59567b0b564541278a2b88eb068b90fa
+msgid "There is an empty type, ``Void``, which has no constructors. It is therefore impossible to construct a canonical element of the empty type. We can therefore use the empty type to prove that something is impossible, for example zero is never equal to a successor:"
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:69
+#: 69a1bdd69f3849aaa9e4620dd2251ee9
+msgid "Don't worry if you don't get all the details of how this works just yet - essentially, it applies the library function ``replace``, which uses an equality proof to transform a predicate. Here we use it to transform a value of a type which can exist, the empty tuple, to a value of a type which can’t, by using a proof of something which can’t exist."
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:75
+#: 88cd6fb7d4e54deb95dfeeaf91189215
+msgid "Once we have an element of the empty type, we can prove anything. ``void`` is defined in the library, to assist with proofs by contradiction."
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:84
+#: 84c2a480d9224ca6ae195b4f03869927
+msgid "Proving Theorems"
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:86
+#: 21fea9899cdd4c50961c6620ab76b7bf
+msgid "When type checking dependent types, the type itself gets *normalised*. So imagine we want to prove the following theorem about the reduction behaviour of ``plus``:"
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:94
+#: 6922f1938966443fb11afd25ee12598c
+msgid "We’ve written down the statement of the theorem as a type, in just the same way as we would write the type of a program. In fact there is no real distinction between proofs and programs. A proof, as far as we are concerned here, is merely a program with a precise enough type to guarantee a particular property of interest."
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:100
+#: 1af735e965234ebc8e23777ad95d2408
+msgid "We won’t go into details here, but the Curry-Howard correspondence [#Timothy]_ explains this relationship. The proof itself is immediate, because ``plus Z n`` normalises to ``n`` by the definition of ``plus``:"
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:108
+#: 99a1fbd048ac445d8710465677dd8cc7
+msgid "It is slightly harder if we try the arguments the other way, because plus is defined by recursion on its first argument. The proof also works by recursion on the first argument to ``plus``, namely ``n``."
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:118
+#: 20d7bec8238e4e7ca67447e2456d3e46
+msgid "``cong`` is a function defined in the library which states that equality respects function application:"
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:125
+#: 30fdedfb1d7b46888e25e00c831ded4c
+msgid "To see more detail on what's going on, we can replace the recursive call to ``plusReducesZ`` with a hole:"
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:132
+#: 7b92dc5215cd462f9a07b3ba685a6d21
+msgid "Then inspecting the type of the hole at the REPL shows us:"
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:141
+#: a4c34b4b07764964badd48244db6fea5
+msgid "We can do the same for the reduction behaviour of plus on successors:"
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:149
+#: e0d6629105164258a0888ede21a06fbb
+msgid "Even for small theorems like these, the proofs are a little tricky to construct in one go. When things get even slightly more complicated, it becomes too much to think about to construct proofs in this “batch mode”."
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:154
+#: b2f628bfd89e4a1b9038f52ab9f7b7b7
+msgid "Idris provides interactive editing capabilities, which can help with building proofs. For more details on building proofs interactively in an editor, see :ref:`proofs-index`."
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:161
+#: abf4c987af724be98879cc5f0051e2e0
+msgid "Theorems in Practice"
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:163
+#: 21b56dcbe78544b58f56cbce38468cbc
+msgid "The need to prove theorems can arise naturally in practice. For example, previously (:ref:`sec-views`) we implemented ``natToBin`` using a function ``parity``:"
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:171
+#: 51083129bfa04fb788786155ab0839da
+msgid "We provided a definition for ``parity``, but without explanation.  We might have hoped that it would look something like the following:"
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:183
+#: 004e771b7b704e38868aade7d4ea17f3
+msgid "Unfortunately, this fails with a type error:"
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:193
+#: 02b8b342eb844c22a4f9b219650c6030
+msgid "The problem is that normalising ``S j + S j``, in the type of ``Even`` doesn't result in what we need for the type of the right hand side of ``Parity``. We know that ``S (S (plus j j))`` is going to be equal to ``S j + S j``, but we need to explain it to Idris with a proof. We can begin by adding some *holes* (see :ref:`sect-holes`) to the definition:"
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:210
+#: b07c5dbcc6b748dfa05b7089ddac2bb9
+msgid "Checking the type of ``helpEven`` shows us what we need to prove for the ``Even`` case:"
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:220
+#: 15da44499032454dbbef6213e76d44a1
+msgid "We can therefore write a helper function to *rewrite* the type to the form we need:"
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:228
+#: 9483144fa49148c0b9aef12c083fbb08
+msgid "The ``rewrite ... in`` syntax allows you to change the required type of an expression by rewriting it according to an equality proof. Here, we have used ``plusSuccRightSucc``, which has the following type:"
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:236
+#: 9d480adb4d42422092a3ff9d1017851b
+msgid "We can see the effect of ``rewrite`` by replacing the right hand side of ``helpEven`` with a hole, and working step by step. Beginning with the following:"
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:244
+#: 73a9f03b242c47788471dffb82722171
+msgid "We can look at the type of ``helpEven_rhs``:"
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:253
+#: e45bf30d372848c3931bf61dcb7e01e8
+msgid "Then we can ``rewrite`` by applying ``plusSuccRightSucc j j``, which gives an equation ``S (j + j) = j + S j``, thus replacing ``S (j + j)`` (or, in this case, ``S (plus j j)`` since ``S (j + j)`` reduces to that) in the type with ``j + S j``:"
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:263
+#: ffc3c4f38d25441b8ca73d89c075a906
+msgid "Checking the type of ``helpEven_rhs`` now shows what has happened, including the type of the equation we just used (as the type of ``_rewrite_rule``):"
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:274
+#: e1ee361293b640ab9e63d831413bc594
+msgid "Using ``rewrite`` and another helper for the ``Odd`` case, we can complete ``parity`` as follows:"
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:292
+#: 8fae13b0be09402b8f266399d58eb6cd
+msgid "Full details of ``rewrite`` are beyond the scope of this introductory tutorial, but it is covered in the theorem proving tutorial (see :ref:`proofs-index`)."
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:298
+#: 3bec92acfc2540218b821dc851e1a002
+msgid "Totality Checking"
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:300
+#: d0b1d7cd3cc9409b96e6cfa65800fd5c
+msgid "If we really want to trust our proofs, it is important that they are defined by *total* functions — that is, a function which is defined for all possible inputs and is guaranteed to terminate. Otherwise we could construct an element of the empty type, from which we could prove anything:"
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:318
+#: 8bfb08bbe0b348a8afad6580976153b8
+msgid "Internally, Idris checks every definition for totality, and we can check at the prompt with the ``:total`` command. We see that neither of the above definitions is total:"
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:329
+#: 1679959e3293472a8b531e853438f01d
+msgid "Note the use of the word “possibly” — a totality check can never be certain due to the undecidability of the halting problem. The check is, therefore, conservative. It is also possible (and indeed advisable, in the case of proofs) to mark functions as total so that it will be a compile time error for the totality check to fail:"
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:340
+#: 0c9c412870db4cc39fbf53af1002cec0
+msgid "Reassuringly, our proof in Section :ref:`sect-empty` that the zero and successor constructors are disjoint is total:"
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:348
+#: f59e67dcb3074cc29f88fe68ca8da69e
+msgid "The totality check is, necessarily, conservative. To be recorded as total, a function ``f`` must:"
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:351
+#: b3f7c4ae7cba407b9d774e43f912c610
+msgid "Cover all possible inputs"
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:353
+#: eddfad38119043b9a2ff2b409b685c33
+msgid "Be *well-founded* — i.e. by the time a sequence of (possibly mutually) recursive calls reaches ``f`` again, it must be possible to show that one of its arguments has decreased."
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:357
+#: 85f788787d3f4d1c994310657dc18d01
+msgid "Not use any data types which are not *strictly positive*"
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:359
+#: 6d9931e3cf234b2aa74a3a274abb79ab
+msgid "Not call any non-total functions"
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:362
+#: cda107c2b9224808a0932547e170a0bb
+msgid "Directives and Compiler Flags for Totality"
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:366
+#: 98dd836816c847ba8249168dbb37736a
+msgid "Not all of this is implemented yet for Idris 2"
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:368
+#: e1ba2278f92d46c0ab09ad85a1b7847b
+msgid "By default, Idris allows all well-typed definitions, whether total or not. However, it is desirable for functions to be total as far as possible, as this provides a guarantee that they provide a result for all possible inputs, in finite time. It is possible to make total functions a requirement, either:"
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:373
+#: 403332a60f70438fa1d544d1df1bdabf
+msgid "By using the ``--total`` compiler flag."
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:375
+#: cedfa37320ed4aaaa3b731bc4b6f9078
+msgid "By adding a ``%default total`` directive to a source file. All definitions after this will be required to be total, unless explicitly flagged as ``partial``."
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:379
+#: f74f38c729e048af9d7ffaf90a0a723c
+msgid "All functions *after* a ``%default total`` declaration are required to be total. Correspondingly, after a ``%default partial`` declaration, the requirement is relaxed."
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:383
+#: 79c7b548e652467aaae8b7294a5eabba
+msgid "Finally, the compiler flag ``--warnpartial`` causes to print a warning for any undeclared partial function."
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:387
+#: 3b475179592743179b40ac104a36f293
+msgid "Totality checking issues"
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:389
+#: 6b3ac7ac93f34091afdff6d84fca0b9d
+msgid "Please note that the totality checker is not perfect! Firstly, it is necessarily conservative due to the undecidability of the halting problem, so many programs which *are* total will not be detected as such. Secondly, the current implementation has had limited effort put into it so far, so there may still be cases where it believes a function is total which is not. Do not rely on it for your proofs yet!"
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:397
+#: 224799809e8a40e09c0b4d0e08fe65e9
+msgid "Hints for totality"
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:399
+#: 520f66665fb441389299b1457fe79a96
+msgid "In cases where you believe a program is total, but Idris does not agree, it is possible to give hints to the checker to give more detail for a termination argument. The checker works by ensuring that all chains of recursive calls eventually lead to one of the arguments decreasing towards a base case, but sometimes this is hard to spot. For example, the following definition cannot be checked as ``total`` because the checker cannot decide that ``filter (< x) xs`` will always be smaller than ``(x :: xs)``:"
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:415
+#: c57574f2a99240b19facc803cef1c5d4
+msgid "The function ``assert_smaller``, defined in the prelude, is intended to address this problem:"
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:423
+#: ec932e8b9c88470d9db418c88a7df2f0
+msgid "It simply evaluates to its second argument, but also asserts to the totality checker that ``y`` is structurally smaller than ``x``. This can be used to explain the reasoning for totality if the checker cannot work it out itself. The above example can now be written as:"
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:437
+#: 571d285974784c3589250d03c967d110
+msgid "The expression ``assert_smaller (x :: xs) (filter (<= x) xs)`` asserts that the result of the filter will always be smaller than the pattern ``(x :: xs)``."
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:441
+#: f8b5263e6b1843ef8c255a47ba062a54
+msgid "In more extreme cases, the function ``assert_total`` marks a subexpression as always being total:"
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:449
+#: 03cba6e7abee417caa5f4599457b315e
+msgid "In general, this function should be avoided, but it can be very useful when reasoning about primitives or externally defined functions (for example from a C library) where totality can be shown by an external argument."
+msgstr ""
+
+#: ../source/tutorial/theorems.rst:455
+#: fd8db052e0a54b64bb6c180644c09717
+msgid "Timothy G. Griffin. 1989. A formulae-as-type notion of control. In Proceedings of the 17th ACM SIGPLAN-SIGACT symposium on Principles of programming languages (POPL '90). ACM, New York, NY, USA, 47-58. DOI=10.1145/96709.96714 https://doi.acm.org/10.1145/96709.96714"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:5
+#: 17c53b8fff4641aa9b6803b9ba60c930
+msgid "Types and Functions"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:8
+#: d1a53d4811f04a25b91c7077c5aa454f
+msgid "Primitive Types"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:10
+#: 716598508b1b4f45b7bee70702384849
+msgid "Idris defines several primitive types: ``Int``, ``Integer`` and ``Double`` for numeric operations, ``Char`` and ``String`` for text manipulation, and ``Ptr`` which represents foreign pointers. There are also several data types declared in the library, including ``Bool``, with values ``True`` and ``False``. We can declare some constants with these types. Enter the following into a file ``Prims.idr`` and load it into the Idris interactive environment by typing ``idris2 Prims.idr``:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:34
+#: 8fc84d28da284bb1aed2e573414eba5b
+msgid "An Idris file consists of an optional module declaration (here ``module Prims``) followed by an optional list of imports and a collection of declarations and definitions. In this example no imports have been specified. However Idris programs can consist of several modules and the definitions in each module each have their own namespace. This is discussed further in Section :ref:`sect-namespaces`. When writing Idris programs both the order in which definitions are given and indentation are significant. Functions and data types must be defined before use, incidentally each definition must have a type declaration, for example see ``x : Int``, ``foo : String``, from the above listing. New declarations must begin at the same level of indentation as the preceding declaration. Alternatively, a semicolon ``;`` can be used to terminate declarations."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:48
+#: 661e7526769c43d69d6c8bca340224e1
+msgid "A library module ``prelude`` is automatically imported by every Idris program, including facilities for IO, arithmetic, data structures and various common functions. The prelude defines several arithmetic and comparison operators, which we can use at the prompt. Evaluating things at the prompt gives an answer, for example:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:61
+#: 3858d61716e0409088f2836ce5d27f79
+msgid "All of the usual arithmetic and comparison operators are defined for the primitive types. They are overloaded using interfaces, as we will discuss in Section :ref:`sect-interfaces` and can be extended to work on user defined types. Boolean expressions can be tested with the ``if...then...else`` construct, for example:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:73
+#: 70b8029aa37c46498a20b27f7d4b6f2c
+msgid "Data Types"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:75
+#: f081a043561f47d18bbd477f225be5ef
+msgid "Data types are declared in a similar way and with similar syntax to Haskell. Natural numbers and lists, for example, can be declared as follows:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:85
+#: fd30bff95edd4928ad9f4d39bf292836
+msgid "Data type names cannot begin with a lower case letter (we will see later why not!).  The above declarations are taken from the standard library. Unary natural numbers can be either zero (``Z``), or the successor of another natural number (``S k``). Lists can either be empty (``Nil``) or a value added to the front of another list (``x :: xs``). In the declaration for ``List``, we used an infix operator ``::``. New operators such as this can be added using a fixity declaration, as follows:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:97
+#: a575c505458a4e589569f973ff71beed
+msgid "Functions, data constructors and type constructors may all be given infix operators as names. They may be used in prefix form if enclosed in brackets, e.g. ``(::)``. Infix operators can use any of the symbols:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:106
+#: 6b2d9b815211489badc068069e2a68bf
+msgid "Some operators built from these symbols can't be user defined. These are"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:108
+#: e88b53246aa943b3b42b72f282676ffd
+msgid "``%``, ``\\``, ``:``, ``=``, ``|``, ``|||``, ``<-``, ``->``, ``=>``, ``?``, ``!``, ``&``, ``**``, ``..``"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:112
+#: 8e83787ef8064483bd6b19c61d8b7e4e
+msgid "Functions"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:114
+#: 8eaccc92c6a04fc48c01472d597b5fdd
+msgid "Functions are implemented by pattern matching, again using a similar syntax to Haskell. The main difference is that Idris requires type declarations for all functions, using a single colon ``:`` (rather than Haskell’s double colon ``::``). Some natural number arithmetic functions can be defined as follows, again taken from the standard library:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:133
+#: 4c62a33b2c98486ba62d09e35112f46c
+msgid "The standard arithmetic operators ``+`` and ``*`` are also overloaded for use by ``Nat``, and are implemented using the above functions. Unlike Haskell, there is no restriction on whether function names must begin with a capital letter or not. Function names (``plus`` and ``mult`` above), data constructors (``Z``, ``S``, ``Nil`` and ``::``) and type constructors (``Nat`` and ``List``) are all part of the same namespace. By convention, however, data types and constructor names typically begin with a capital letter. We can test these functions at the Idris prompt:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:150
+#: 1701739c65674c3ab57dfbdc425d3184
+msgid "Like arithmetic operations, integer literals are also overloaded using interfaces, meaning that we can also test the functions as follows:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:160
+#: 8a463e05ca624af7b1c8f70477403513
+msgid "You may wonder, by the way, why we have unary natural numbers when our computers have perfectly good integer arithmetic built in. The reason is primarily that unary numbers have a very convenient structure which is easy to reason about, and easy to relate to other data structures as we will see later. Nevertheless, we do not want this convenience to be at the expense of efficiency. Fortunately, Idris knows about the relationship between ``Nat`` (and similarly structured types) and numbers. This means it can optimise the representation, and functions such as ``plus`` and ``mult``."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:171
+#: 0e813152cc1345349c1e99ab1b4b7caf
+msgid "``where`` clauses"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:173
+#: e31c89334fc24a438f4c50c51226e744
+msgid "Functions can also be defined *locally* using ``where`` clauses. For example, to define a function which reverses a list, we can use an auxiliary function which accumulates the new, reversed list, and which does not need to be visible globally:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:186
+#: 5827dee92eac4ce291a0a7add827cc46
+msgid "Indentation is significant — functions in the ``where`` block must be indented further than the outer function."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:189
+#: 1b7e8f1702374e5cb3cf5eae265206db
+msgid "Scope"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:191
+#: dba6c0a8e1674ab2893a9f5d382e8025
+msgid "Any names which are visible in the outer scope are also visible in the ``where`` clause (unless they have been redefined, such as ``xs`` here). A name which appears in the type will be in scope in the ``where`` clause."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:196
+#: 307d714e713f46b6885d952ca279ba0b
+msgid "As well as functions, ``where`` blocks can include local data declarations, such as the following where ``MyLT`` is not accessible outside the definition of ``foo``:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:212
+#: fdc61a7c92254c79b8e7f1c28c3bc67d
+msgid "Functions defined in a ``where`` clause need a type declaration just like any top level function. Here is another example of how this works in practice:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:238
+#: bce28d5b2b4044289435f7bb15f27968
+msgid "Totality and Covering"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:240
+#: f52302b95fda4f359181325c117917d6
+msgid "By default, functions in Idris must be ``covering``. That is, there must be patterns which cover all possible values of the inputs types. For example, the following definition will give an error:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:249
+#: 0a9a509dd3244612b83b58b0300709f8
+msgid "This gives an error because ``fromMaybe Nothing`` is not defined. Idris reports:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:257
+#: 94904b3bad5e4fe192de631c86ba8ca8
+msgid "You can override this with a ``partial`` annotation:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:264
+#: 2f819fbe3e0b4e9a95235c8ee4935636
+msgid "However, this is not advisable, and in general you should only do this during the initial development of a function, or during debugging.  If you try to evaluate ``fromMaybe Nothing`` at run time you will get a run time error."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:269
+#: 26e84d3d87b5479095bc92b6c0c5f83d
+msgid "Holes"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:271
+#: 9924b30be78e49779a34a90d5f6def9a
+msgid "Idris programs can contain *holes* which stand for incomplete parts of programs. For example, we could leave a hole for the greeting in our \"Hello world\" program:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:280
+#: 2e39e79429214774b647a9973fe9eb60
+msgid "The syntax ``?greeting`` introduces a hole, which stands for a part of a program which is not yet written. This is a valid Idris program, and you can check the type of ``greeting``:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:290
+#: ff1828db51064749b610d95941f6b1dc
+msgid "Checking the type of a hole also shows the types of any variables in scope. For example, given an incomplete definition of ``even``:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:299
+#: 4e5cd515904449989c508ec5713412b5
+msgid "We can check the type of ``even_rhs`` and see the expected return type, and the type of the variable ``k``:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:309
+#: 4a0872d243984d2aabda944e6b3967e4
+msgid "Holes are useful because they help us write functions *incrementally*. Rather than writing an entire function in one go, we can leave some parts unwritten and use Idris to tell us what is necessary to complete the definition."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:315
+#: bb15ca97b29a479ebae703522a5b678e
+msgid "Dependent Types"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:320
+#: 0aed2b98cbfc4f6bba733733538fba81
+msgid "First Class Types"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:322
+#: b2c3975be59744b886d7c8681283c6cb
+msgid "In Idris, types are first class, meaning that they can be computed and manipulated (and passed to functions) just like any other language construct. For example, we could write a function which computes a type:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:332
+#: 188e2ff2fe8b4bdaa812543203b24ba8
+msgid "This function calculates the appropriate type from a ``Bool`` which flags whether the type should be a singleton or not. We can use this function to calculate a type anywhere that a type can be used. For example, it can be used to calculate a return type:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:343
+#: b64bfccc03d9451a9f85272e69663593
+msgid "Or it can be used to have varying input types. The following function calculates either the sum of a list of ``Nat``, or returns the given ``Nat``, depending on whether the singleton flag is true:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:355
+#: 84b5d174cf0a49d787c650341485df3e
+msgid "Vectors"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:357
+#: 66ab6458543e446d98cd604957d910f3
+msgid "A standard example of a dependent data type is the type of “lists with length”, conventionally called vectors in the dependent type literature. They are available as part of the Idris library, by importing ``Data.Vect``, or we can declare them as follows:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:368
+#: 0e9b7d4fb05e4b56809630face778a14
+msgid "Note that we have used the same constructor names as for ``List``. Ad-hoc name overloading such as this is accepted by Idris, provided that the names are declared in different namespaces (in practice, normally in different modules). Ambiguous constructor names can normally be resolved from context."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:374
+#: e99e37f686a643769cd5d624896df88b
+msgid "This declares a family of types, and so the form of the declaration is rather different from the simple type declarations above. We explicitly state the type of the type constructor ``Vect`` — it takes a ``Nat`` and a type as an argument, where ``Type`` stands for the type of types. We say that ``Vect`` is *indexed* over ``Nat`` and *parameterised* by ``Type``. Each constructor targets a different part of the family of types. ``Nil`` can only be used to construct vectors with zero length, and ``::`` to construct vectors with non-zero length. In the type of ``::``, we state explicitly that an element of type ``a`` and a tail of type ``Vect k a`` (i.e., a vector of length ``k``) combine to make a vector of length ``S k``."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:386
+#: 5f8ba44dab7a4903bf12fe6b8d06a83b
+msgid "We can define functions on dependent types such as ``Vect`` in the same way as on simple types such as ``List`` and ``Nat`` above, by pattern matching. The type of a function over ``Vect`` will describe what happens to the lengths of the vectors involved. For example, ``++``, defined as follows, appends two ``Vect``:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:398
+#: 7392849e6fc74bdeacb0d28f1dffb806
+msgid "The type of ``(++)`` states that the resulting vector’s length will be the sum of the input lengths. If we get the definition wrong in such a way that this does not hold, Idris will not accept the definition. For example:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:409
+#: 70986b0fef6141ba87c48f27b33a855c
+msgid "When run through the Idris type checker, this results in the following:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:423
+#: be4b565a3dd644d790e47719ee251788
+msgid "This error message suggests that there is a length mismatch between two vectors — we needed a vector of length ``k + m``, but provided a vector of length ``k + k``."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:428
+#: b078ff23be4b4f7e800a29812afd5f2e
+msgid "The Finite Sets"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:430
+#: 257731cb20c442baa9e945fda6099977
+msgid "Finite sets, as the name suggests, are sets with a finite number of elements. They are available as part of the Idris library, by importing ``Data.Fin``, or can be declared as follows:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:440
+#: 99744f2e76b9442fa55ce75d424deb21
+msgid "From the signature,  we can see that this is a type constructor that takes a ``Nat``, and produces a type. So this is not a set in the sense of a collection that is a container of objects, rather it is the canonical set of unnamed elements, as in \"the set of 5 elements,\" for example. Effectively, it is a type that captures integers that fall into the range of zero to ``(n - 1)`` where ``n`` is the argument used to instantiate the ``Fin`` type. For example, ``Fin 5`` can be thought of as the type of integers between 0 and 4."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:447
+#: 20dfb20039994fdb83e704754dca4839
+msgid "Let us look at the constructors in greater detail."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:449
+#: 2281e667e9b0429dbcde6d4743344288
+msgid "``FZ`` is the zeroth element of a finite set with ``S k`` elements; ``FS n`` is the ``n+1``\\ th element of a finite set with ``S k`` elements. ``Fin`` is indexed by a ``Nat``, which represents the number of elements in the set. Since we can’t construct an element of an empty set, neither constructor targets ``Fin Z``."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:455
+#: f8ba9a88b68e44c682023e9fc8c0933f
+msgid "As mentioned above, a useful application of the ``Fin`` family is to represent bounded natural numbers. Since the first ``n`` natural numbers form a finite set of ``n`` elements, we can treat ``Fin n`` as the set of integers greater than or equal to zero and less than ``n``."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:460
+#: 5142389d0f1b4bfcadaaa98fd1ede8ab
+msgid "For example, the following function which looks up an element in a ``Vect``, by a bounded index given as a ``Fin n``, is defined in the prelude:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:470
+#: c909fae465c74e62b53675b46d81b6c4
+msgid "This function looks up a value at a given location in a vector. The location is bounded by the length of the vector (``n`` in each case), so there is no need for a run-time bounds check. The type checker guarantees that the location is no larger than the length of the vector, and of course no less than zero."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:476
+#: fbc828c91d7a4425a1cb7ff85b04e778
+msgid "Note also that there is no case for ``Nil`` here. This is because it is impossible. Since there is no element of ``Fin Z``, and the location is a ``Fin n``, then ``n`` can not be ``Z``. As a result, attempting to look up an element in an empty vector would give a compile time type error, since it would force ``n`` to be ``Z``."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:483
+#: bc5d16e839834b36b1471cb4dc4ca1fc
+msgid "Implicit Arguments"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:485
+#: abbf42bebe2b4adf8304dfda0ea331f5
+msgid "Let us take a closer look at the type of ``index``:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:491
+#: a6716d3844f84011ae50e67bed00fb40
+msgid "It takes two arguments, an element of the finite set of ``n`` elements, and a vector with ``n`` elements of type ``a``. But there are also two names, ``n`` and ``a``, which are not declared explicitly. These are *implicit* arguments to ``index``. We could also write the type of ``index`` as:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:501
+#: d220c90e118d404a8df7951bd1e4dbd4
+msgid "Implicit arguments, given with the ``forall`` declaration, are not given in applications of ``index``; their values can be inferred from the types of the ``Fin n`` and ``Vect n a`` arguments. Any name beginning with a lower case letter which appears as a parameter or index in a type declaration, which is not applied to any arguments, will *always* be automatically bound as an implicit argument; this is why data type names cannot begin with a lower case letter. Implicit arguments can still be given explicitly in applications, using ``{a=value}`` and ``{n=value}``, for example:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:517
+#: 6790ae9d36eb4353805d775a9f197996
+msgid "In fact, any argument, implicit or explicit, may be given a name. We could have declared the type of ``index`` as:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:524
+#: a409ae029c2d46ef8b9feb40977747f9
+msgid "It is a matter of taste whether you want to do this — sometimes it can help document a function by making the purpose of an argument more clear."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:528
+#: 22b528fd807a4de1af2881cdf906af3a
+msgid "The names of implicit arguments are in scope in the body of the function, although they cannot be used at run time. There is much more to say about implicit arguments - we will discuss the question of what is available at run time, among other things, in Section :ref:`sect-multiplicities`"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:534
+#: 7f433792607041479abc3eb369f02310
+msgid "Note: Declaration Order and ``mutual`` blocks"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:536
+#: 8ae9681efadc4300abff3141fe25cd48
+msgid "In general, functions and data types must be defined before use, since dependent types allow functions to appear as part of types, and type checking can rely on how particular functions are defined (though this is only true of total functions; see Section :ref:`sect-totality`). However, this restriction can be relaxed by using a ``mutual`` block, which allows data types and functions to be defined simultaneously:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:554
+#: 8b934ec4e3974593931e75f82581be12
+msgid "In a ``mutual`` block, first all of the type declarations are added, then the function bodies. As a result, none of the function types can depend on the reduction behaviour of any of the functions in the block."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:559
+#: ca204895b41943efa40fdb8d1e2d5788
+msgid "Forward declarations can allow you to have more fine-grained control over the order in which mutually defined concepts are declared. This can be useful if you need to mention a datatype's constructor in the type of a mutually defined function, or need to rely on the behaviour of a mutually defined function for something to typecheck."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:602
+#: dcaefdd8923745bebd323574907d300b
+msgid "Placing signature declarations forward can suggest Idris to detect their corresponding mutual definitions."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:606
+#: 0f4a2c5bc0cb42d887c6fb86703d8d3a
+msgid "I/O"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:608
+#: 9c927e817f454f439f619d6e9eba6f92
+msgid "Computer programs are of little use if they do not interact with the user or the system in some way. The difficulty in a pure language such as Idris — that is, a language where expressions do not have side-effects — is that I/O is inherently side-effecting. So, Idris provides a parameterised type ``IO`` which *describes* the interactions that the run-time system will perform when executing a function:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:619
+#: 376c1d3e3afd420ea7fdbb902bb4770e
+msgid "We’ll leave the definition of ``IO`` abstract, but effectively it describes what the I/O operations to be executed are, rather than how to execute them. The resulting operations are executed externally, by the run-time system. We’ve already seen one I/O program:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:629
+#: ba84504d55414491a91ec46a4378ab0a
+msgid "The type of ``putStrLn`` explains that it takes a string, and returns an I/O action which produces an element of the unit type ``()``. There is a variant ``putStr`` which decribes the output of a string without a newline:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:638
+#: cb802d22dec24cbcb0362819f66b0fb7
+msgid "We can also read strings from user input:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:644
+#: bf7bf6594a0d4d86985bbd120c4c3261
+msgid "A number of other I/O operations are available. For example, by adding ``import System.File`` to your program, you get access to functions for reading and writing files, including:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:660
+#: 7eea7ecce7f84620a82383a7f8ecb132
+msgid "Note that several of these return ``Either``, since they may fail."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:665
+#: 4d6fef86a7d4405f90e35375eb17f353
+msgid "“``do``” notation"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:667
+#: 33486cd9073a4c359933d33a40ed1cac
+msgid "I/O programs will typically need to sequence actions, feeding the output of one computation into the input of the next. ``IO`` is an abstract type, however, so we can’t access the result of a computation directly. Instead, we sequence operations with ``do`` notation:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:679
+#: 682e96697965442ab8729dbe43ce4dc0
+msgid "The syntax ``x <- iovalue`` executes the I/O operation ``iovalue``, of type ``IO a``, and puts the result, of type ``a`` into the variable ``x``. In this case, ``getLine`` returns an ``IO String``, so ``name`` has type ``String``. Indentation is significant — each statement in the do block must begin in the same column. The ``pure`` operation allows us to inject a value directly into an IO operation:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:690
+#: 4434b580c11643af907238ed14822985
+msgid "As we will see later, ``do`` notation is more general than this, and can be overloaded."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:693
+#: c54f0a95d066428ca969c07b63708a70
+msgid "You can try executing ``greet`` at the Idris 2 REPL by running the command ``:exec greet``:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:704
+#: 7235ead62d504ab0a3d98d5b08db677a
+msgid "Laziness"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:706
+#: 920e4a83c9984236b6b0e14b78ba850c
+msgid "Normally, arguments to functions are evaluated before the function itself (that is, Idris uses *eager* evaluation). However, this is not always the best approach. Consider the following function:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:716
+#: 9bd09b0bccb046a8b712fa1c77399bc6
+msgid "This function uses one of the ``t`` or ``e`` arguments, but not both. We would prefer if *only* the argument which was used was evaluated. To achieve this, Idris provides a ``Lazy`` primitive, which allows evaluation to be suspended. It is a primitive, but conceptually we can think of it as follows:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:728
+#: 9a0c159c7ef643dbbe3de11210f77a90
+msgid "A value of type ``Lazy a`` is unevaluated until it is forced by ``Force``. The Idris type checker knows about the ``Lazy`` type, and inserts conversions where necessary between ``Lazy a`` and ``a``, and vice versa. We can therefore write ``ifThenElse`` as follows, without any explicit use of ``Force`` or ``Delay``:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:741
+#: a3a9a4d771c14dfdbe27d2ea39d03096
+msgid "Infinite data Types"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:743
+#: 2fb7fd9d2a004eb59e206baa291dd809
+msgid "Infinite data types (codata) allow us to define infinite data structures by marking recursive arguments as potentially infinite. One example of an infinite type is Stream, which is defined as follows."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:752
+#: b8bef10b146c4c1783b4b03e8a430aa6
+msgid "The following is an example of how the codata type ``Stream`` can be used to form an infinite data structure. In this case we are creating an infinite stream of ones."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:762
+#: 9c206a87e48c410abfc2d804947068b6
+msgid "Useful Data Types"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:764
+#: 3fb819ab42be40f0a86d566da9044598
+msgid "Idris includes a number of useful data types and library functions (see the ``libs/`` directory in the distribution, and the `documentation <https://www.idris-lang.org/pages/documentation.html>`_). This section describes a few of these, and how to import them."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:770
+#: e3f0cb4ef92d4501aa01f03a46395905
+msgid "``List`` and ``Vect``"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:772
+#: 554e9106e4304a7aadcc350af9b87d38
+msgid "We have already seen the ``List`` and ``Vect`` data types:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:782
+#: 56f8c18d5f47469d83c24f6baece625e
+msgid "You can get access to ``Vect`` with ``import Data.Vect``. Note that the constructor names are the same for each — constructor names (in fact, names in general) can be overloaded, provided that they are declared in different namespaces (see Section :ref:`sect-namespaces`), and will typically be resolved according to their type. As syntactic sugar, any implementation of the names ``Nil`` and ``::`` can be written in list form. For example:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:790
+#: 6f7587d3c48d47d7b05daa89b6901a5d
+msgid "``[]`` means ``Nil``"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:792
+#: 0695558afcf64a07b2517f67733c2ff6
+msgid "``[1,2,3]`` means ``1 :: 2 :: 3 :: Nil``"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:794
+#: 51843a81ae954f00871ca98239c42d70
+msgid "Similarly, any implementation of the names ``Lin`` and ``:<`` can be written in **snoc**-list form:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:797
+#: 1dc4ee9b7b544bae97cd1aa7aa67c601
+msgid "``[<]`` mean ``Lin``"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:798
+#: 9c186255666d4b3cbef1eb2aad440d3e
+msgid "``[< 1, 2, 3]`` means ``Lin :< 1 :< 2 :< 3``."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:800
+#: 08ede167ec1f41e186b6929a22fb96a8
+msgid "and the prelude includes a pre-defined datatype for snoc-lists:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:807
+#: 27853815dcf449e1bf594c7f56c2ead5
+msgid "The library also defines a number of functions for manipulating these types. ``map`` is overloaded both for ``List`` and ``Vect`` (we'll see more details of precisely how later when we cover interfaces in Section :ref:`sect-interfaces`) and applies a function to every element of the list or vector."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:823
+#: 9ce07ff8d9e649858aaac831e8152e14
+msgid "For example, given the following vector of integers, and a function to double an integer:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:834
+#: 453373a9c0c1424fb07f2e786f281e59
+msgid "the function ``map`` can be used as follows to double every element in the vector:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:842
+#: 8cc05db3182441bf90c4a0a67970a92f
+msgid "For more details of the functions available on ``List`` and ``Vect``, look in the library files:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:845
+#: 2289a15ce1ed476abbb894885cc09327
+msgid "``libs/base/Data/List.idr``"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:847
+#: b721d7cadb914c3ab32fb852c766d117
+msgid "``libs/base/Data/Vect.idr``"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:849
+#: 56e2eb3845174523ae7aff4e9cc207df
+msgid "Functions include filtering, appending, reversing, and so on."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:852
+#: 991d2a7e54af4e2fa53f3bded33a874a
+msgid "Aside: Anonymous functions and operator sections"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:854
+#: 1b119c4ee3da435984b2f177e68521d2
+msgid "There are neater ways to write the above expression. One way would be to use an anonymous function:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:862
+#: 328ef54f75e24b1883a9630b2d7c69c7
+msgid "The notation ``\\x => val`` constructs an anonymous function which takes one argument, ``x`` and returns the expression ``val``. Anonymous functions may take several arguments, separated by commas, e.g. ``\\x, y, z => val``. Arguments may also be given explicit types, e.g. ``\\x : Int => x * 2``, and can pattern match, e.g. ``\\(x, y) => x + y``. We could also use an operator section:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:874
+#: 0feeddaf050a4d3388e763b400897dd7
+msgid "``(*2)`` is shorthand for a function which multiplies a number by 2. It expands to ``\\x => x * 2``. Similarly, ``(2*)`` would expand to ``\\x => 2 * x``."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:879
+#: a84abddb2c5d4acdab9e264b2d9795f9
+msgid "Maybe"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:881
+#: 5c8003a114ad425ba754ffea5b6cc427
+msgid "``Maybe``, defined in the Prelude, describes an optional value. Either there is a value of the given type, or there isn’t:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:888
+#: 53f99f99e8164fe0a1c1e9676a67a21a
+msgid "``Maybe`` is one way of giving a type to an operation that may fail. For example, looking something up in a ``List`` (rather than a vector) may result in an out of bounds error:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:899
+#: 1000d67b9ff1435ca5338f023054f3d2
+msgid "The ``maybe`` function is used to process values of type ``Maybe``, either by applying a function to the value, if there is one, or by providing a default value:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:907
+#: b441a8ca7c2846339b783f1c307a28a4
+msgid "Note that the types of the first two arguments are wrapped in ``Lazy``. Since only one of the two arguments will actually be used, we mark them as ``Lazy`` in case they are large expressions where it would be wasteful to compute and then discard them."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:913
+#: 5059cf4336474dca8edbc892157ca403
+msgid "Tuples"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:915
+#: cc74f9c479d7423babcaf71376f7fe9a
+msgid "Values can be paired with the following built-in data type:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:921
+#: 20376f14e1ff48fa833012b2938e4c25
+msgid "As syntactic sugar, we can write ``(a, b)`` which, according to context, means either ``Pair a b`` or ``MkPair a b``. Tuples can contain an arbitrary number of values, represented as nested pairs:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:943
+#: f50024af4e8a4e06a2d4ed5b4722e888
+msgid "Dependent Pairs"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:945
+#: 02226d7109d441ec906b8f6ca741d2b3
+msgid "Dependent pairs allow the type of the second element of a pair to depend on the value of the first element:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:953
+#: a7e2ad11ab364f11adf3e60639bb99dd
+msgid "Again, there is syntactic sugar for this. ``(x : a ** p)`` is the type of a pair of A and P, where the name ``x`` can occur inside ``p``. ``( x ** p )`` constructs a value of this type. For example, we can pair a number with a ``Vect`` of a particular length:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:963
+#: b7e274f6983746279250d93eba196a97
+msgid "If you like, you can write it out the long way; the two are equivalent:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:970
+#: 4faa3f597ff948d4a308090ba6094560
+msgid "The type checker could infer the value of the first element from the length of the vector. We can write an underscore ``_`` in place of values which we expect the type checker to fill in, so the above definition could also be written as:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:980
+#: 6a77f0ccd4274a8695c27d722f1d6154
+msgid "We might also prefer to omit the type of the first element of the pair, since, again, it can be inferred:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:988
+#: 7e0dadc3f4284dbdbe6f24f32fbe4a23
+msgid "One use for dependent pairs is to return values of dependent types where the index is not necessarily known in advance. For example, if we filter elements out of a ``Vect`` according to some predicate, we will not know in advance what the length of the resulting vector will be:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:998
+#: 122570d2a7b7430dadc92aa63e2ebc34
+msgid "If the ``Vect`` is empty, the result is:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1004
+#: a2d97efc6126481b98e4b1ef8f28259e
+msgid "In the ``::`` case, we need to inspect the result of a recursive call to ``filter`` to extract the length and the vector from the result. To do this, we use a ``case`` expression, which allows pattern matching on intermediate values:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1018
+#: fb9f9810605440aeb9d970ac081e0b45
+msgid "Dependent pairs are sometimes referred to as “Sigma types”."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1021
+#: 003af37f7a974771b3cb32066154c3fd
+msgid "Records"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1023
+#: a68ec1735d1a4e37bc803b6b01f57d4f
+msgid "*Records* are data types which collect several values (the record's *fields*) together. Idris provides syntax for defining records and automatically generating field access and update functions. Unlike the syntax used for data structures, records in Idris follow a different syntax to that seen with Haskell. For example, we can represent a person’s name and age in a record:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1039
+#: 89c2476019604ef5ab5deceba3b87d85
+msgid "The constructor name is provided using the ``constructor`` keyword, and the *fields* are then given which are in an indented block following the `where` keyword (here, ``firstName``, ``middleName``, ``lastName``, and ``age``). You can declare multiple fields on a single line, provided that they have the same type. The field names can be used to access the field values:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1054
+#: 88e31e01649241ecb482b6d4aa32ac58
+msgid "We can use prefix field projections, like in Haskell:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1065
+#: eea5fa158d3f402096c7e498bfcfa94f
+msgid "Prefix field projections can be disabled per record definition using pragma ``%prefix_record_projections off``, which makes all subsequently defined records generate only dotted projections. This pragma has effect until the end of the module or until the closest occurrence of ``%prefix_record_projections on``."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1071
+#: 1cd4cfcf4deb4069b10ffd7bd1a1924c
+msgid "We can also use the field names to update a record (or, more precisely, produce a copy of the record with the given fields updated):"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1082
+#: cac3e9ecf79d4c55ae486e3d653d9fc9
+msgid "The syntax ``{ field := val, ... }`` generates a function which updates the given fields in a record. ``:=`` assigns a new value to a field, and ``$=`` applies a function to update its value."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1086
+#: bea014edb9884443a6b9d2497669dc9a
+msgid "Each record is defined in its own namespace, which means that field names can be reused in multiple records."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1089
+#: 48f720211fef413a865566ffc1d46006
+msgid "Records, and fields within records, can have dependent types. Updates are allowed to change the type of a field, provided that the result is well-typed."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1100
+#: 529d990d50eb4335babe75723feb5e9c
+msgid "It is safe to update the ``students`` field to a vector of a different length because it will not affect the type of the record:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1113
+#: ea415eccdc554f809e451833f7196301
+msgid "We could also use ``$=`` to define ``addStudent`` more concisely:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1121
+#: 59b5dd5d87b6455c866e7408f2a7dc2a
+msgid "Nested record projection"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1123
+#: 569d8725a76a4506b3fca7ccd7172a87
+msgid "Nested record fields can be accessed using the dot notation:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1130
+#: c490514c07d24bb4862bbe6d44d459ed
+msgid "For the dot notation, there must be no spaces after the dots but there may be spaces before the dots. The composite projection must be parenthesised, otherwise ``map .a.b.c xs`` would be understood as ``map.a.b.c xs``."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1134
+#: 8eed841451d04d96a716cf324e1bfbf0
+msgid "Nested record fields can be accessed using the prefix notation, too:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1141
+#: f2c2c1a94cd749ae871089a5ab2a734c
+msgid "Dots with spaces around them stand for function composition operators."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1144
+#: 997d1e2e579949b9b1b651a768bf858f
+msgid "Nested record update"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1146
+#: 0c16ab895ceb484eaba9eab71ba83a20
+msgid "Idris also provides a convenient syntax for accessing and updating nested records. For example, if a field is accessible with the expression ``x.a.b.c``, it can be updated using the following syntax:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1155
+#: 51ccec4eea7c418ab7cf1e9c844c93b4
+msgid "This returns a new record, with the field accessed by the path ``a.b.c`` set to ``val``. The syntax is first class, i.e. ``{ a.b.c := val }`` itself has a function type."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1159
+#: 68956027d9374957b254a5944161082f
+msgid "The ``$=`` notation is also valid for nested record updates."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1162
+#: 68fdd0ffe84148718308740b9bd19625
+msgid "Dependent Records"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1164
+#: b5d020101dcf4704a7ee64d45ed890fc
+msgid "Records can also be dependent on values. Records have *parameters*, which cannot be updated like the other fields. The parameters appear as arguments to the resulting type, and are written following the record type name. For example, a pair type could be defined as follows:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1176
+#: 272d7a3302324ac6a21fc2056ad858a5
+msgid "Using the ``Class`` record from earlier, the size of the class can be restricted using a ``Vect`` and the size included in the type by parameterising the record with the size.  For example:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1187
+#: edfaf25414ed4dc180d776e7244e813f
+msgid "In the case of ``addStudent`` earlier, we can still add a student to a ``SizedClass`` since the size is implicit, and will be updated when a student is added:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1196
+#: 5877057a73f1447a981d2aa9d3ee55fa
+msgid "In fact, the dependent pair type we have just seen is, in practice, defined as a record, with fields ``fst`` and ``snd`` which allow projecting values out of the pair:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1207
+#: a06a3db3df014144827d8384cb66523b
+msgid "It is possible to use record update syntax to update dependent fields, provided that all related fields are updated at once. For example:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1217
+#: 5b99f04993ff4dccb6e7be1383c619c3
+msgid "Or even:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1230
+#: 1a486a64f1fc4c92837240c121fe475e
+msgid "More Expressions"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1235
+#: 57fab5b05e99444db63d82ae428d9fda
+msgid "``let`` bindings"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1237
+#: 16f6147bf8f54c77ba31f8dcad1292eb
+msgid "Intermediate values can be calculated using ``let`` bindings:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1245
+#: 4dc1a2d22e8847c0bc08bc9a33ffdab5
+msgid "We can do pattern matching in ``let`` bindings too. For example, we can extract fields from a record as follows, as well as by pattern matching at the top level:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1257
+#: 36657664ddfd437c8dcc4e4953d0b2c9
+msgid "These let bindings can be annotated with a type:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1265
+#: 8918e28b66bd49e8bbe2e5c40b31440d
+msgid "We can also use the symbol ``:=`` instead of ``=`` to, among other things, avoid ambiguities with propositional equality:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1273
+#: bd7dc260df57421fb60059a35f558868
+msgid "Local definitions can also be introduced using ``let``. Just like top level ones and ones defined in a ``where`` clause you need to:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1276
+#: 7c6ed3acd33b4afa817a849db4de27ca
+msgid "declare the function and its type"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1277
+#: 745aafa2d401408f97215481ce7112d6
+msgid "define the function by pattern matching"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1286
+#: da012f7ca55d4aa297505a5cc17a4d55
+msgid "The symbol ``:=`` cannot be used in a local function definition. Which means that it can be used to interleave let bindings and local definitions without introducing ambiguities."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1301
+#: 2e995732c9b146ba962734aab6704502
+msgid "List comprehensions"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1303
+#: 28951e37379c42e2b93cd399346bd4f3
+msgid "Idris provides *comprehension* notation as a convenient shorthand for building lists. The general form is:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1310
+#: 2e8c216a56904112a47977b9900ce782
+msgid "This generates the list of values produced by evaluating the ``expression``, according to the conditions given by the comma separated ``qualifiers``. For example, we can build a list of Pythagorean triples as follows:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1321
+#: 998bf274411e49f8a2e7f7fa327bc9db
+msgid "The ``[a..b]`` notation is another shorthand which builds a list of numbers between ``a`` and ``b``. Alternatively ``[a,b..c]`` builds a list of numbers between ``a`` and ``c`` with the increment specified by the difference between ``a`` and ``b``. This works for type ``Nat``, ``Int`` and ``Integer``, using the ``enumFromTo`` and ``enumFromThenTo`` function from the prelude."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1329
+#: 6f6fee058d0343e9b91079334e8ad6db
+msgid "``case`` expressions"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1331
+#: 11672d24855c4fe4893f811410a3abdd
+msgid "Another way of inspecting intermediate values is to use a ``case`` expression. The following function, for example, splits a string into two at a given character:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1341
+#: 2824a2e57ffc47e4848a7745a94320e7
+msgid "``break`` is a library function which breaks a string into a pair of strings at the point where the given function returns true. We then deconstruct the pair it returns, and remove the first character of the second string."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1346
+#: 1d8448b979434d57a0669c30cc119312
+msgid "A ``case`` expression can match several cases, for example, to inspect an intermediate value of type ``Maybe a``. Recall ``list_lookup`` which looks up an index in a list, returning ``Nothing`` if the index is out of bounds. We can use this to write ``lookup_default``, which looks up an index and returns a default value if the index is out of bounds:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1360
+#: e87b14b564ee429293faec91cb4988db
+msgid "If the index is in bounds, we get the value at that index, otherwise we get a default value:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1371
+#: 67efbfb51bf04c65a270724c12e67f39
+msgid "Totality"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1373
+#: 47c2805bd89f48f7a99d3ce758a9b711
+msgid "Idris distinguishes between *total* and *partial* functions. A total function is a function that either:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1376
+#: 4f29cfb7c57748e49452e3c4ce89afd8
+msgid "Terminates for all possible inputs, or"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1377
+#: 6906b3f1877e41ef85eaf354d8a2da7c
+msgid "Produces a non-empty, finite, prefix of a possibly infinite result"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1379
+#: dbdc2d4b26d845b187498f3f76c6a2dc
+msgid "If a function is total, we can consider its type a precise description of what that function will do. For example, if we have a function with a return type of ``String`` we know something different, depending on whether or not it's total:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1384
+#: ca333c63b43a420e9a2267d5c5aff62e
+msgid "If it's total, it will return a value of type ``String`` in finite time;"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1385
+#: 96405599163c4ae0b36a34c5815ac779
+msgid "If it's partial, then as long as it doesn't crash or enter an infinite loop, it will return a ``String``."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1388
+#: 943a7df40d4e483eac07ff9000da796d
+msgid "Idris makes this distinction so that it knows which functions are safe to evaluate while type checking (as we've seen with :ref:`sect-fctypes`). After all, if it tries to evaluate a function during type checking which doesn't terminate, then type checking won't terminate! Therefore, only total functions will be evaluated during type checking. Partial functions can still be used in types, but will not be evaluated further."
+msgstr ""
+
+#: ../source/tutorial/views.rst:5
+#: 6db3b28a28fc4a4283492629b9c585cc
+msgid "Views and the “``with``” rule"
+msgstr ""
+
+#: ../source/tutorial/views.rst:9
+#: 5c44302b7ac044a9a6bc6b15a673be02
+msgid "NOT UPDATED FOR IDRIS 2 YET"
+msgstr ""
+
+#: ../source/tutorial/views.rst:12
+#: 8f4401ff04f9433998600bb195f04853
+msgid "Dependent pattern matching"
+msgstr ""
+
+#: ../source/tutorial/views.rst:14
+#: 818e2eb45a5d4234bb86880723cecc88
+msgid "Since types can depend on values, the form of some arguments can be determined by the value of others. For example, if we were to write down the implicit length arguments to ``(++)``, we’d see that the form of the length argument was determined by whether the vector was empty or not:"
+msgstr ""
+
+#: ../source/tutorial/views.rst:26
+#: 9198f1ce9ee24b92bff959f36165ffde
+msgid "If ``n`` was a successor in the ``[]`` case, or zero in the ``::`` case, the definition would not be well typed."
+msgstr ""
+
+#: ../source/tutorial/views.rst:32
+#: c438613df4884593829625f3464c7cd6
+msgid "The ``with`` rule — matching intermediate values"
+msgstr ""
+
+#: ../source/tutorial/views.rst:34
+#: 9c767ad1ce054b96adef229087046b34
+msgid "Very often, we need to match on the result of an intermediate computation. Idris provides a construct for this, the ``with`` rule, inspired by views in ``Epigram`` [#McBridgeMcKinna]_, which takes account of the fact that matching on a value in a dependently typed language can affect what we know about the forms of other values. In its simplest form, the ``with`` rule adds another argument to the function being defined."
+msgstr ""
+
+#: ../source/tutorial/views.rst:42
+#: f768a8868d8b4f7a881e4ad64be2d494
+msgid "We have already seen a vector filter function. This time, we define it using ``with`` as follows:"
+msgstr ""
+
+#: ../source/tutorial/views.rst:52
+#: 999e80db1d4f45c1a7c147e649e0c6dd
+msgid "Here, the ``with`` clause allows us to deconstruct the result of ``filter p xs``. The view refined argument pattern ``filter p (x :: xs)`` goes beneath the ``with`` clause, followed by a vertical bar ``|``, followed by the deconstructed intermediate result ``( _ ** xs' )``. If the view refined argument pattern is unchanged from the original function argument pattern, then the left side of ``|`` is extraneous and may be omitted with an underscore ``_``:"
+msgstr ""
+
+#: ../source/tutorial/views.rst:65
+#: 90f30091457b4d7098bc53212db878fb
+msgid "``with`` clauses can also be nested:"
+msgstr ""
+
+#: ../source/tutorial/views.rst:76
+#: ee8fa1e22761488b8d06128ee71318fa
+msgid "and left hand sides that are the same as their parent's can be skipped by using ``_`` to focus on the patterns for the most local ``with``. Meaning that the above ``foo`` can be rewritten as follows:"
+msgstr ""
+
+#: ../source/tutorial/views.rst:89
+#: ed673d2a87b94c8dabbe334e955d34b4
+msgid "If the intermediate computation itself has a dependent type, then the result can affect the forms of other arguments — we can learn the form of one value by testing another. In these cases, view refined argument patterns must be explicit. For example, a ``Nat`` is either even or odd. If it is even it will be the sum of two equal ``Nat``. Otherwise, it is the sum of two equal ``Nat`` plus one:"
+msgstr ""
+
+#: ../source/tutorial/views.rst:102
+#: 1b5d45e9f2fe407f866a812e61028974
+msgid "We say ``Parity`` is a *view* of ``Nat``. It has a *covering function* which tests whether it is even or odd and constructs the predicate accordingly. Note that we're going to need access to ``n`` at run time, so although it's an implicit argument, it has unrestricted multiplicity."
+msgstr ""
+
+#: ../source/tutorial/views.rst:111
+#: d8ef5d4dd01f416aa2950263435ccb85
+msgid "We’ll come back to the definition of ``parity`` shortly. We can use it to write a function which converts a natural number to a list of binary digits (least significant first) as follows, using the ``with`` rule:"
+msgstr ""
+
+#: ../source/tutorial/views.rst:124
+#: 6a2701f86bec45cbb7eb6de7ba495ddb
+msgid "The value of ``parity k`` affects the form of ``k``, because the result of ``parity k`` depends on ``k``. So, as well as the patterns for the result of the intermediate computation (``Even`` and ``Odd``) right of the ``|``, we also write how the results affect the other patterns left of the ``|``. That is:"
+msgstr ""
+
+#: ../source/tutorial/views.rst:130
+#: 5fa930fc6b1549b68c410f76afda1b7a
+msgid "When ``parity k`` evaluates to ``Even``, we can refine the original argument ``k`` to a refined pattern ``(j + j)`` according to ``Parity (n + n)`` from the ``Even`` constructor definition. So ``(j + j)`` replaces ``k`` on the left side of ``|``, and the ``Even`` constructor appears on the right side. The natural number ``j`` in the refined pattern can be used on the right side of the ``=`` sign."
+msgstr ""
+
+#: ../source/tutorial/views.rst:138
+#: a2291b2375b347198a7842d56cd2b795
+msgid "Otherwise, when ``parity k`` evaluates to ``Odd``, the original argument ``k`` is refined to ``S (j + j)`` according to ``Parity (S (n + n))`` from the ``Odd`` constructor definition, and ``Odd`` now appears on the right side of ``|``, again with the natural number ``j`` used on the right side of the ``=`` sign."
+msgstr ""
+
+#: ../source/tutorial/views.rst:144
+#: 0aacb56cc7084c58bb07eb97e564edff
+msgid "Note that there is a function in the patterns (``+``) and repeated occurrences of ``j`` - this is allowed because another argument has determined the form of these patterns."
+msgstr ""
+
+#: ../source/tutorial/views.rst:149
+#: 5803d3753ddf4760aa83c269a8881122
+msgid "Defining ``parity``"
+msgstr ""
+
+#: ../source/tutorial/views.rst:151
+#: d0212fc452b648dc9354af76db879811
+msgid "The definition of ``parity`` is a little tricky, and requires some knowledge of theorem proving (see Section :ref:`sect-theorems`), but for completeness, here it is:"
+msgstr ""
+
+#: ../source/tutorial/views.rst:166
+#: 0485399e7f8a4cedb76e54f6febff4a4
+msgid "For full details on ``rewrite`` in particular, please refer to the theorem proving tutorial, in Section :ref:`proofs-index`."
+msgstr ""
+
+#: ../source/tutorial/views.rst:169
+#: 3b9a60aafd44404aa8dac2c71545180d
+msgid "Conor McBride and James McKinna. 2004. The view from the left. J. Funct. Program. 14, 1 (January 2004), 69-111. https://doi.org/10.1017/S0956796803004829"
+msgstr ""
+
+#: ../source/tutorial/windows.rst:4
+#: b587ef0d125242adbda0757f2f9ac8e9
+msgid "Prerequisites for Windows"
+msgstr ""
+
+#: ../source/tutorial/windows.rst:7
+#: 7c8d0bf288784891a7220aa3b30f8b6e
+msgid "MSYS2"
+msgstr ""
+
+#: ../source/tutorial/windows.rst:9
+#: 5ffc15a541d243cc9c1fb5017669eb2f
+msgid "To build Idris 2 on Windows, an Unix-like environment is needed for all the utilities used during the build. `MSYS2 <https://www.msys2.org>`_ provides that for us."
+msgstr ""
+
+#: ../source/tutorial/windows.rst:12
+#: dd87b30753934345b415d75a5979b992
+msgid "Download the latest version of MSYS2"
+msgstr ""
+
+#: ../source/tutorial/windows.rst:13
+#: e9e531f3d3164421b452ffe3b5c988e9
+msgid "Run the installer. Don't install it under Program files as it needs to write files (the \"unix\" home directory lies under there, for example)"
+msgstr ""
+
+#: ../source/tutorial/windows.rst:16
+#: a73da2f7ebc94e52a785ba006321ad69
+msgid "In the directory where you installed MSYS2, find the file ``mingw64.ini`` and add the line ``MSYS2_PATH_TYPE=inherit``. This adds the normal windows PATH to the shell in MSYS2."
+msgstr ""
+
+#: ../source/tutorial/windows.rst:19
+#: cc5d02ef8ec544b79d4d550687686ca1
+msgid "Start MSYS2 (click on mingw64.exe, as the icon in the start menu won't pick up the MSYS2_PATH_TYPE from the ini, it can be added to the system settings)"
+msgstr ""
+
+#: ../source/tutorial/windows.rst:22
+#: 26f9971c187d49e594717bcf1b0e717b
+msgid "Update the installation with the latest releases with ``pacman -Syu``"
+msgstr ""
+
+#: ../source/tutorial/windows.rst:24
+#: 4c5d21f7021347efb06d5a0214e9c6de
+msgid "Install the programs that the build needs with::"
+msgstr ""
+
+#: ../source/tutorial/windows.rst:30
+#: cc5e6197e3fa44bbba8c76392ab01627
+msgid "Chez Scheme"
+msgstr ""
+
+#: ../source/tutorial/windows.rst:32
+#: a94149c273be45b5a5833b613fac167b
+msgid "Chez Scheme has a ready-made installer at `GitHub <https://github.com/cisco/ChezScheme/releases>`_"
+msgstr ""
+
+#: ../source/tutorial/windows.rst:34
+#: cc4413b4c3f841b8a9301c81d8fdbdec
+msgid "Download the installer and run it, do not install it in a path with spaces, currently Idris2 has trouble with them."
+msgstr ""
+
+#: ../source/tutorial/windows.rst:36
+#: bbca4af8acf14dfda90b6d06a7dcf832
+msgid "Add the threaded 64-bit scheme to the PATH. It is the ``\\bin\\ta6nt`` subdirectory to where Chez Scheme was installed. So if you used \"C:\\Chez\" it will be in ``C:\\Chez\\bin\\ta6nt``"
+msgstr ""
+
+#: ../source/tutorial/windows.rst:41
+#: c813c2f47a8d481bb47f083917b052dc
+msgid "Building"
+msgstr ""
+
+#: ../source/tutorial/windows.rst:43
+#: ebd05489e1df42e886334e8595fd37f0
+msgid "Start a fresh MSYS2 shell so that it knows about your modified PATH (it's important to use Mingw64 to get access to the right compilers)."
+msgstr ""
+
+#: ../source/tutorial/windows.rst:46
+#: 8e9b49b3074348ab8b7ad32710347d90
+msgid "Navigate to the Idris2 directory."
+msgstr ""
+
+#: ../source/tutorial/windows.rst:47
+#: 2f4b2632b0ba43bcbbd7ddad2a5481bd
+msgid "Set the SCHEME environment variable that Idris2 needs ``export SCHEME=scheme``. This can be set permanently in the bash profile file or the Windows settings."
+msgstr ""
+
+#: ../source/tutorial/windows.rst:50
+#: e5c5565eafa04c59800ba1c770849689
+msgid "Now ``make bootstrap && make install`` should build Idris2 and install it in ``home/<username>/.idris2/bin`` under your MSYS2 installation. If you add that to the PATH in Windows settings it will be usable from any command line (including Powershell or DOS), that you open."
+msgstr ""

@@ -1,0 +1,1055 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-08-28 21:56+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../source/proofs/definitional.rst:1
+#: 3138adc94cad4839b4a2351ac38578a5
+msgid "Before we discuss the details of theorem proving in Idris, we will describe some fundamental concepts:"
+msgstr ""
+
+#: ../source/proofs/definitional.rst:4
+#: d7b6d026b8ac40f689dcfd53dca517dd
+msgid "Propositions and judgments"
+msgstr ""
+
+#: ../source/proofs/definitional.rst:5
+#: 46b2123fcd0a4756b2e2a6a0c12b6c8c
+msgid "Boolean and constructive logic"
+msgstr ""
+
+#: ../source/proofs/definitional.rst:6
+#: ../source/proofs/definitional.rst:57
+#: 8c8c5339da2944e2bcfdd37943d7209f
+#: 7b3a780760394728a629aacbd5a3504d
+msgid "Curry-Howard correspondence"
+msgstr ""
+
+#: ../source/proofs/definitional.rst:7
+#: 3b3d3ecbb36c492da60f3a443d45cfed
+msgid "Definitional and propositional equalities"
+msgstr ""
+
+#: ../source/proofs/definitional.rst:8
+#: 41c42568b0a24dde9ca6ac05d4089ef8
+msgid "Axiomatic and constructive approaches"
+msgstr ""
+
+#: ../source/proofs/definitional.rst:11
+#: 576215c63db942d5ab88d478bd217f19
+msgid "Propositions and Judgments"
+msgstr ""
+
+#: ../source/proofs/definitional.rst:13
+#: 0ce5f8d24cf040e8b5ea69ae5ca7dd6d
+msgid "Propositions are the subject of our proofs. Before the proof, we can't formally say if they are true or not. If the proof is successful then the result is a 'judgment'.  For instance, if the ``proposition`` is,"
+msgstr ""
+
+#: ../source/proofs/definitional.rst:18
+#: 0b2bd65c7093446eb6676675fa6814f4
+msgid "1+1=2"
+msgstr ""
+
+#: ../source/proofs/definitional.rst:21
+#: 478c3399426b4217813586abf82a3c36
+msgid "When we prove it, the ``judgment`` is,"
+msgstr ""
+
+#: ../source/proofs/definitional.rst:24
+#: dbaddb9360204c868f29dc414d4e4d70
+msgid "1+1=2 true"
+msgstr ""
+
+#: ../source/proofs/definitional.rst:27
+#: 54ffbe6f558c4b119543e1bd7c5c758e
+msgid "Or if the ``proposition`` is,"
+msgstr ""
+
+#: ../source/proofs/definitional.rst:30
+#: 4c9b4a6e76ec4b0d8ce0bbc382e41db3
+msgid "1+1=3"
+msgstr ""
+
+#: ../source/proofs/definitional.rst:33
+#: d40e95b40ed24a5b9f4317fb4290036f
+msgid "we can't prove it is true, but it is still a valid proposition and perhaps we can prove it is false so the ``judgment`` is,"
+msgstr ""
+
+#: ../source/proofs/definitional.rst:37
+#: 1456fd8ddb234a39a32e1b94185fed61
+msgid "1+1=3 false"
+msgstr ""
+
+#: ../source/proofs/definitional.rst:40
+#: 3468b4a5e0604bb8b92b834bc8ad2b21
+msgid "This may seem a bit pedantic but it is important to be careful: in mathematics not every proposition is true or false. For instance, a proposition may be unproven or even unprovable."
+msgstr ""
+
+#: ../source/proofs/definitional.rst:44
+#: bf9fcf28c6a04a1493b3f70beab01dab
+msgid "So the logic here is different from the logic that comes from boolean algebra. In that case what is not true is false and what is not false is true. The logic we are using here does not have this law, the \"Law of Excluded Middle\", so we cannot use it."
+msgstr ""
+
+#: ../source/proofs/definitional.rst:49
+#: 045f62aef6fa434e9648f8d1d492765b
+msgid "A false proposition is taken to be a contradiction and if we have a contradiction then we can prove anything, so we need to avoid this. Some languages, used in proof assistants, prevent contradictions."
+msgstr ""
+
+#: ../source/proofs/definitional.rst:53
+#: e3467bd832484e0b9aefecc77a3ad674
+msgid "The logic we are using is called constructive (or sometimes intuitional) because we are constructing a 'database' of judgments."
+msgstr ""
+
+#: ../source/proofs/definitional.rst:59
+#: 581403427f574bc98ad24fb880e5abab
+msgid "So how do we relate these proofs to Idris programs? It turns out that there is a correspondence between constructive logic and type theory. They have the same structure and we can switch back and forth between the two notations."
+msgstr ""
+
+#: ../source/proofs/definitional.rst:63
+#: 0087d4ab50924dfa8f0e81761bc78557
+msgid "The way that this works is that a proposition is a type so..."
+msgstr ""
+
+#: ../source/proofs/definitional.rst:73
+#: aef6e6a9c60e47059be74131e8c877cb
+msgid "...is a proposition and it is also a type. The following will also produce an equality type:"
+msgstr ""
+
+#: ../source/proofs/definitional.rst:82
+#: f6757874157f4f6495333822cffa8cfc
+msgid "Both of these are valid propositions so both are valid equality types. But how do we represent a true judgment? That is, how do we denote 1+1=2 is true but not 1+1=3?  A type that is true is inhabited, that is, it can be constructed. An equality type has only one constructor 'Refl' so a proof of 1+1=2 is"
+msgstr ""
+
+#: ../source/proofs/definitional.rst:92
+#: f7d696c8b57e4495943f03193d82e2bc
+msgid "Now that we can represent propositions as types other aspects of propositional logic can also be translated to types as follows:"
+msgstr ""
+
+#: ../source/proofs/definitional.rst:96
+#: 874916b4dce64fcf9cfaf2449d24af56
+msgid "propositions"
+msgstr ""
+
+#: ../source/proofs/definitional.rst:96
+#: f030e5995b6a447690977ae07cd6d6a6
+msgid "example of possible type"
+msgstr ""
+
+#: ../source/proofs/definitional.rst:98
+#: 214683a1ce87401b8dde697be6e2c6c3
+msgid "A"
+msgstr ""
+
+#: ../source/proofs/definitional.rst:98
+#: cad96e38ee5a460e83f068f66fa5dab2
+msgid "x=y"
+msgstr ""
+
+#: ../source/proofs/definitional.rst:100
+#: 58e64649b0fe4095aa6905c8fcaf9efe
+msgid "B"
+msgstr ""
+
+#: ../source/proofs/definitional.rst:100
+#: ../source/proofs/definitional.rst:108
+#: ../source/proofs/definitional.rst:110
+#: 6a90cf5ec9924343904901dfaa524193
+#: 67dd339941eb47c98fd9068b2be4a290
+#: 52f06b95a93f4eaaa0d33c7250e7ca13
+msgid "y=z"
+msgstr ""
+
+#: ../source/proofs/definitional.rst:102
+#: efdafc563fe44979ab455df8d123a949
+msgid "and"
+msgstr ""
+
+#: ../source/proofs/definitional.rst:102
+#: 107c31d61b3149b19c02ee32ad445373
+msgid "A /\\\\ B"
+msgstr ""
+
+#: ../source/proofs/definitional.rst:102
+#: 9022a9681e8b4079be68ba104e92097e
+msgid "Pair(x=y,y=z)"
+msgstr ""
+
+#: ../source/proofs/definitional.rst:104
+#: d069d8a2258f41b5a8d34824689c38be
+msgid "or"
+msgstr ""
+
+#: ../source/proofs/definitional.rst:104
+#: 14b85671ae834245a5ec53e1feb7dfc3
+msgid "A \\\\/ B"
+msgstr ""
+
+#: ../source/proofs/definitional.rst:104
+#: 801e926061d54b4987ef4953de616f44
+msgid "Either(x=y,y=z)"
+msgstr ""
+
+#: ../source/proofs/definitional.rst:106
+#: f4523f066d774f93a3ae452a0e60b17f
+msgid "implies"
+msgstr ""
+
+#: ../source/proofs/definitional.rst:106
+#: f058bb5dc10244ad9792f7013b4d5e5e
+msgid "A -> B"
+msgstr ""
+
+#: ../source/proofs/definitional.rst:106
+#: 79d950d17156447abc02267e9db5ffbc
+msgid "(x=y) -> (y=z)"
+msgstr ""
+
+#: ../source/proofs/definitional.rst:108
+#: 2e75d16ef8384a65ac6243ab87ef01aa
+msgid "for all"
+msgstr ""
+
+#: ../source/proofs/definitional.rst:110
+#: 25a619dfdb9945ec9f582bbe040a3cc1
+msgid "exists"
+msgstr ""
+
+#: ../source/proofs/definitional.rst:115
+#: 7b40c0ac1e344492bc155a5fcca211c1
+msgid "And (conjunction)"
+msgstr ""
+
+#: ../source/proofs/definitional.rst:117
+#: 1bed99eb37264bcd9654cd210457ae5e
+msgid "We can have a type which corresponds to conjunction:"
+msgstr ""
+
+#: ../source/proofs/definitional.rst:123
+#: 13f94f81b98041feba967f71eb7d06ae
+msgid "There is a built in type called 'Pair'."
+msgstr ""
+
+#: ../source/proofs/definitional.rst:126
+#: d60a59a702184e7a901952690ff43a7c
+msgid "Or (disjunction)"
+msgstr ""
+
+#: ../source/proofs/definitional.rst:128
+#: d92a7398bea94f8b9e5344ff33dca268
+msgid "We can have a type which corresponds to disjunction:"
+msgstr ""
+
+#: ../source/proofs/definitional.rst:136
+#: d85a8065b28e40e9b017b3fe963489de
+msgid "There is a built in type called 'Either'."
+msgstr ""
+
+#: ../source/proofs/definitional.rst:139
+#: 466f8374dcde429b849e10a249514f1b
+msgid "Definitional and Propositional Equalities"
+msgstr ""
+
+#: ../source/proofs/definitional.rst:141
+#: c633175f2d604229ac7ab1bde40e6988
+msgid "We have seen that  we can 'prove' a type by finding a way to construct a term. In the case of equality types there is only one constructor which is ``Refl``. We have also seen that each side of the equation does not have to be identical like '2=2'. It is enough that both sides are *definitionally equal* like this:"
+msgstr ""
+
+#: ../source/proofs/definitional.rst:151
+#: 1d8f19ebf05245c19d7f89f16e862841
+msgid "Both sides of this equation normalise to 2 and so Refl matches and the proposition is proved."
+msgstr ""
+
+#: ../source/proofs/definitional.rst:154
+#: 6aaa470d58fa4dec89396165a80d875c
+msgid "We don't have to stick to terms; we can also use symbolic parameters so the following type checks:"
+msgstr ""
+
+#: ../source/proofs/definitional.rst:162
+#: 7418ce9df22942f99f2abc8dbefc92dd
+msgid "If a proposition/equality type is not definitionally equal but is still true then it is *propositionally equal*. In this case we may still be able to prove it but some steps in the proof may require us to add something into the terms or at least to take some sideways steps to get to a proof."
+msgstr ""
+
+#: ../source/proofs/definitional.rst:167
+#: aad0058568ba4ca6829b4e195689626d
+msgid "Especially when working with equalities containing variable terms (inside functions) it can be hard to know which equality types are definitionally equal, in this example ``plusReducesL`` is *definitionally equal* but ``plusReducesR`` is not (although it is *propositionally equal*). The only difference between them is the order of the operands."
+msgstr ""
+
+#: ../source/proofs/definitional.rst:181
+#: 4bdb132fa8fe4493aca1755ded719fd1
+msgid "Checking ``plusReducesR`` gives the following error:"
+msgstr ""
+
+#: ../source/proofs/definitional.rst:192
+#: 7d7f7dfc60284939b8d4eeca40687d2f
+msgid "So why is ``Refl`` able to prove some equality types but not others?"
+msgstr ""
+
+#: ../source/proofs/definitional.rst:194
+#: 21dd824f401f4a6a9ccbb3ca60b2432a
+msgid "The first answer is that ``plus`` is defined by recursion on its first argument. So, when the first argument is ``Z``, it reduces, but not when the second argument is ``Z``."
+msgstr ""
+
+#: ../source/proofs/definitional.rst:198
+#: 801f1d642c094653a02e94a0b5a4a13e
+msgid "If an equality type can be proved/constructed by using ``Refl`` alone it is known as a *definitional equality*. In order to be definitionally equal both sides of the equation must normalise to the same value."
+msgstr ""
+
+#: ../source/proofs/definitional.rst:202
+#: 0fd191732cf546a3a733bb376e9c9534
+msgid "So when we type ``1+1`` in Idris it is immediately reduced to 2 because definitional equality is built in"
+msgstr ""
+
+#: ../source/proofs/definitional.rst:210
+#: a035d098b342417cbb906bb82792487d
+msgid "In the following pages we discuss how to resolve propositional equalities."
+msgstr ""
+
+#: ../source/proofs/index.rst:5
+#: 1cb883a131ca43719913b94c0145fdc7
+msgid "Theorem Proving"
+msgstr ""
+
+#: ../source/proofs/index.rst:7
+#: 4b9ceebb70b346d7bece4f9550cafd68
+msgid "A tutorial on theorem proving in Idris 2."
+msgstr ""
+
+#: ../source/proofs/index.rst:11
+#: 4cbd972113e342a1a0668f0042da0530
+msgid "The documentation for Idris has been published under the Creative Commons CC0 License. As such to the extent possible under law, *The Idris Community* has waived all copyright and related or neighboring rights to Documentation for Idris."
+msgstr ""
+
+#: ../source/proofs/index.rst:16
+#: 288ab9f09e1942bbad833a2142a9984c
+msgid "More information concerning the CC0 can be found online at: http://creativecommons.org/publicdomain/zero/1.0/"
+msgstr ""
+
+#: ../source/proofs/inductive.rst:5
+#: 040e526895df46bc8550957e6fab6a0a
+msgid "Inductive Proofs"
+msgstr ""
+
+#: ../source/proofs/inductive.rst:7
+#: d03c8520746e4443acf82806bf066ce5
+msgid "Before embarking on proving ``plus_commutes`` in Idris itself, let us consider the overall structure of a proof of some property of natural numbers. Recall that they are defined recursively, as follows:"
+msgstr ""
+
+#: ../source/proofs/inductive.rst:17
+#: 4538581c8ddf42059f23994468d12879
+msgid "A *total* function over natural numbers must both terminate, and cover all possible inputs. Idris checks functions for totality by checking that all inputs are covered, and that all recursive calls are on *structurally smaller* values (so recursion will always reach a base case). Recalling ``plus``:"
+msgstr ""
+
+#: ../source/proofs/inductive.rst:29
+#: 5375603f47034684a88918dbac76b7b1
+msgid "This is total because it covers all possible inputs (the first argument can only be ``Z`` or ``S k`` for some ``k``, and the second argument ``m`` covers all possible ``Nat``) and in the recursive call, ``k`` is structurally smaller than ``S k`` so the first argument will always reach the base case ``Z`` in any sequence of recursive calls."
+msgstr ""
+
+#: ../source/proofs/inductive.rst:35
+#: 0a7f2a52e09743e5a82b9d6d49ec3df0
+msgid "In some sense, this resembles a mathematical proof by induction (and this is no coincidence!). For some property ``P`` of a natural number ``x``, we can show that ``P`` holds for all ``x`` if:"
+msgstr ""
+
+#: ../source/proofs/inductive.rst:39
+#: c8e84e2026124bd3bc1e0dd442b8319f
+msgid "``P`` holds for zero (the base case)."
+msgstr ""
+
+#: ../source/proofs/inductive.rst:41
+#: b4564c68a71d4e0993f8830f95553f26
+msgid "Assuming that ``P`` holds for ``k``, we can show ``P`` also holds for ``S k`` (the inductive step)."
+msgstr ""
+
+#: ../source/proofs/inductive.rst:44
+#: 9de529349aee4c7f915d2fcc323f6eb8
+msgid "In ``plus``, the property we are trying to show is somewhat trivial (for all natural numbers ``x``, there is a ``Nat`` which need not have any relation to ``x``). However, it still takes the form of a base case and an inductive step. In the base case, we show that there is a ``Nat`` arising from ``plus n m`` when ``n = Z``, and in the inductive step we show that there is a ``Nat`` arising when ``n = S k`` and we know we can get a ``Nat`` inductively from ``plus k m``. We could even write a function capturing all such inductive definitions:"
+msgstr ""
+
+#: ../source/proofs/inductive.rst:64
+#: 7deb6d8c21f14d41985ed41a0e8af06a
+msgid "Using ``nat_induction``, we can implement an equivalent inductive version of ``plus``:"
+msgstr ""
+
+#: ../source/proofs/inductive.rst:77
+#: 710ec849abc64d9b934668405bd2f034
+msgid "To prove that ``plus n m = plus m n`` for all natural numbers ``n`` and ``m``, we can also use induction. Either we can fix ``m`` and perform induction on ``n``, or vice versa. We can sketch an outline of a proof; performing induction on ``n``, we have:"
+msgstr ""
+
+#: ../source/proofs/inductive.rst:82
+#: 865e53d7fd3845728524ff91ce47eb2e
+msgid "Property ``prop`` is ``\\x => plus x m = plus m x``."
+msgstr ""
+
+#: ../source/proofs/inductive.rst:84
+#: 80b88300eefa433db4f581780e7b7482
+msgid "Show that ``prop`` holds in the base case and inductive step:"
+msgstr ""
+
+#: ../source/proofs/inductive.rst:0
+#: 094cb76d248a49268dc725bccb3ea61c
+msgid "Base case: ``prop Z``, i.e."
+msgstr ""
+
+#: ../source/proofs/inductive.rst:0
+#: 7af2139c98434d27b4cda0e657eb8e90
+msgid "``plus Z m = plus m Z``, which reduces to"
+msgstr ""
+
+#: ../source/proofs/inductive.rst:0
+#: 6c53a7174b6f4438b76ef8b34d44fe4e
+msgid "``m = plus m Z`` due to the definition of ``plus``."
+msgstr ""
+
+#: ../source/proofs/inductive.rst:0
+#: adb024892f634020a5fa4af9550c714d
+msgid "Inductive step: Inductively, we know that ``prop k`` holds for a specific, fixed ``k``, i.e."
+msgstr ""
+
+#: ../source/proofs/inductive.rst:0
+#: 869e8664d8e54015aea6c9860b151f1b
+msgid "``plus k m = plus m k`` (the induction hypothesis). Given this, show ``prop (S k)``, i.e."
+msgstr ""
+
+#: ../source/proofs/inductive.rst:0
+#: aaa7010417bd4197b37d488737221f43
+msgid "``plus (S k) m = plus m (S k)``, which reduces to"
+msgstr ""
+
+#: ../source/proofs/inductive.rst:0
+#: b5ec3344c3df450aadd5052f3309e4d3
+msgid "``S (plus k m) = plus m (S k)``. From the induction hypothesis, we can rewrite this to"
+msgstr ""
+
+#: ../source/proofs/inductive.rst:0
+#: 8c98714a4aef44ebaa2f31dc1229bc21
+msgid "``S (plus m k) = plus m (S k)``."
+msgstr ""
+
+#: ../source/proofs/inductive.rst:96
+#: b679d8996cad4470b72db901f5b04d5b
+msgid "To complete the proof we therefore need to show that ``m = plus m Z`` for all natural numbers ``m``, and that ``S (plus m k) = plus m (S k)`` for all natural numbers ``m`` and ``k``. Each of these can also be proved by induction, this time on ``m``."
+msgstr ""
+
+#: ../source/proofs/inductive.rst:101
+#: 961531a7918a4727aa56739d2f0cd0cc
+msgid "We are now ready to embark on a proof of commutativity of ``plus`` formally in Idris."
+msgstr ""
+
+#: ../source/proofs/patterns.rst:3
+#: ce919df581684ee5ad46418c2b7991ae
+msgid "Pattern Matching Proofs"
+msgstr ""
+
+#: ../source/proofs/patterns.rst:5
+#: 3f21912fdc0846d5a67262b596804bd9
+msgid "In this section, we will provide a proof of ``plus_commutes`` directly, by writing a pattern matching definition. We will use interactive editing features extensively, since it is significantly easier to produce a proof when the machine can give the types of intermediate values and construct components of the proof itself. The commands we will use are summarised below. Where we refer to commands directly, we will use the Vim version, but these commands have a direct mapping to Emacs commands."
+msgstr ""
+
+#: ../source/proofs/patterns.rst:15
+#: 91c9359046164f279dfd59a7c8d3ad38
+msgid "Command"
+msgstr ""
+
+#: ../source/proofs/patterns.rst:15
+#: d4d2476bc2a74f3a86f624145a7cbd52
+msgid "Vim binding"
+msgstr ""
+
+#: ../source/proofs/patterns.rst:15
+#: 141ecb37489947f39736e804fe4eab08
+msgid "Emacs binding"
+msgstr ""
+
+#: ../source/proofs/patterns.rst:15
+#: 34fead4f4f2b40fa977ebb6ee25b208b
+msgid "Explanation"
+msgstr ""
+
+#: ../source/proofs/patterns.rst:17
+#: 3f4a3e635d594349a60b08850d673011
+msgid "Check type"
+msgstr ""
+
+#: ../source/proofs/patterns.rst:17
+#: 05187a54a6754c12b54cdc64d2bd7c4f
+msgid "``\\t``"
+msgstr ""
+
+#: ../source/proofs/patterns.rst:17
+#: 43f29377d3e14a7f905a67cf22278f62
+msgid "``C-c C-t``"
+msgstr ""
+
+#: ../source/proofs/patterns.rst:17
+#: 9cc7e2d2ac58429e8af2908282cd917c
+msgid "Show type of identifier or hole under the cursor."
+msgstr ""
+
+#: ../source/proofs/patterns.rst:19
+#: b10c720f3b6443ed923706b98ee0202c
+msgid "Proof search"
+msgstr ""
+
+#: ../source/proofs/patterns.rst:19
+#: 9a049e720a144c418679b6741415ca9d
+msgid "``\\s``"
+msgstr ""
+
+#: ../source/proofs/patterns.rst:19
+#: 99e201d9c8fd4185a012798afa9bbd8e
+msgid "``C-c C-a``"
+msgstr ""
+
+#: ../source/proofs/patterns.rst:19
+#: ad6092a258224b84a7016e507fff581c
+msgid "Attempt to solve hole under the cursor by applying simple proof search."
+msgstr ""
+
+#: ../source/proofs/patterns.rst:21
+#: 3efaef735b2f44b59fd95a37784c77e6
+msgid "Make new definition"
+msgstr ""
+
+#: ../source/proofs/patterns.rst:21
+#: dd7963d84419444889537d01b494ddff
+msgid "``\\a``"
+msgstr ""
+
+#: ../source/proofs/patterns.rst:21
+#: 9d2cd512c9b045a3a0d3f9df215920a6
+msgid "``C-c C-s``"
+msgstr ""
+
+#: ../source/proofs/patterns.rst:21
+#: c4ebd30cf8e7430aa1fbe3200d49317b
+msgid "Add a template definition for the type defined under the cursor."
+msgstr ""
+
+#: ../source/proofs/patterns.rst:23
+#: 2f580af03a0148099652f1fabbbfab00
+msgid "Make lemma"
+msgstr ""
+
+#: ../source/proofs/patterns.rst:23
+#: 4de816bc4f0941caa21acd6435643710
+msgid "``\\l``"
+msgstr ""
+
+#: ../source/proofs/patterns.rst:23
+#: 7ee6c13b25364a42996fc8420ef03403
+msgid "``C-c C-e``"
+msgstr ""
+
+#: ../source/proofs/patterns.rst:23
+#: 3f2d0cce74a941f995cbc890570b30a0
+msgid "Add a top level function with a type which solves the hole under the cursor."
+msgstr ""
+
+#: ../source/proofs/patterns.rst:25
+#: 9968cced737e43ccbb654b83880daa18
+msgid "Split cases"
+msgstr ""
+
+#: ../source/proofs/patterns.rst:25
+#: 1491714d73d94e6093ffa3fcc2d8569b
+msgid "``\\c``"
+msgstr ""
+
+#: ../source/proofs/patterns.rst:25
+#: f017799ef6ec403eb00702a6edc7c848
+msgid "``C-c C-c``"
+msgstr ""
+
+#: ../source/proofs/patterns.rst:25
+#: 25ec272a696f42a89f4f8305401f676c
+msgid "Create new constructor patterns for each possible case of the variable under the cursor."
+msgstr ""
+
+#: ../source/proofs/patterns.rst:30
+#: acd2a1938710420a992643e21d15da61
+msgid "Creating a Definition"
+msgstr ""
+
+#: ../source/proofs/patterns.rst:32
+#: bfcf6d8c7d89469bb499ae6dc2f30785
+msgid "To begin, create a file ``pluscomm.idr`` containing the following type declaration:"
+msgstr ""
+
+#: ../source/proofs/patterns.rst:39
+#: cea4911d27f94e1aad01291d2cd8825a
+msgid "To create a template definition for the proof, press ``\\a`` (or the equivalent in your editor of choice) on the line with the type declaration. You should see:"
+msgstr ""
+
+#: ../source/proofs/patterns.rst:48
+#: 4f84184beea746d8b867b35f5fd5fe1a
+msgid "To prove this by induction on ``n``, as we sketched in Section :ref:`sect-inductive`, we begin with a case split on ``n`` (press ``\\c`` with the cursor over the ``n`` in the definition.) You should see:"
+msgstr ""
+
+#: ../source/proofs/patterns.rst:59
+#: 41e0832ae2d34d818cb8abb50e1b2edb
+msgid "If we inspect the types of the newly created holes, ``plus_commutes_rhs_1`` and ``plus_commutes_rhs_2``, we see that the type of each reflects that ``n`` has been refined to ``Z`` and ``S k`` in each respective case. Pressing ``\\t`` over ``plus_commutes_rhs_1`` shows:"
+msgstr ""
+
+#: ../source/proofs/patterns.rst:71
+#: 6c32d3646f014b268c05f297071f4228
+msgid "Similarly, for ``plus_commutes_rhs_2``:"
+msgstr ""
+
+#: ../source/proofs/patterns.rst:80
+#: b62f1541f60746468926d40d294b2e5f
+msgid "It is a good idea to give these slightly more meaningful names:"
+msgstr ""
+
+#: ../source/proofs/patterns.rst:89
+#: cbb198e6b157481abbf46b53748560f1
+msgid "Base Case"
+msgstr ""
+
+#: ../source/proofs/patterns.rst:91
+#: 91c8c4a7de2e49fb9d8e58469a8b73e6
+msgid "We can create a separate lemma for the base case interactively, by pressing ``\\l`` with the cursor over ``plus_commutes_Z``. This yields:"
+msgstr ""
+
+#: ../source/proofs/patterns.rst:103
+#: e2f88d71e58749d1ad084f60654bc4d2
+msgid "That is, the hole has been filled with a call to a top level function ``plus_commutes_Z``, applied to the variable in scope ``m``."
+msgstr ""
+
+#: ../source/proofs/patterns.rst:106
+#: 65e5a31f0dcf47019bc9e96cc1d62537
+msgid "Unfortunately, we cannot prove this lemma directly, since ``plus`` is defined by matching on its *first* argument, and here ``plus m Z`` has a concrete value for its *second argument* (in fact, the left hand side of the equality has been reduced from ``plus Z m``.) Again, we can prove this by induction, this time on ``m``."
+msgstr ""
+
+#: ../source/proofs/patterns.rst:112
+#: 5e7d07d5a37743e59e763ec43de19da5
+msgid "First, create a template definition with ``\\d``:"
+msgstr ""
+
+#: ../source/proofs/patterns.rst:119
+#: 46770312bdf546ffb7b6ac18b721a1d7
+msgid "Now, case split on ``m`` with ``\\c``:"
+msgstr ""
+
+#: ../source/proofs/patterns.rst:127
+#: 1a65253384be4844a253b6ad131ac7e7
+msgid "Checking the type of ``plus_commutes_Z_rhs_1`` shows the following, which is provable by ``Refl``:"
+msgstr ""
+
+#: ../source/proofs/patterns.rst:135
+#: 6cd15d9f989a4f73af92c4d8558e8797
+msgid "For such immediate proofs, we can let write the proof automatically by pressing ``\\s`` with the cursor over ``plus_commutes_Z_rhs_1``. This yields:"
+msgstr ""
+
+#: ../source/proofs/patterns.rst:145
+#: 93f5b7d7cdf549c7aad3dfdceefa61e3
+msgid "For ``plus_commutes_Z_rhs_2``, we are not so lucky:"
+msgstr ""
+
+#: ../source/proofs/patterns.rst:153
+#: aaa7e12391f04970985a2908742538c6
+msgid "Inductively, we should know that ``k = plus k Z``, and we can get access to this inductive hypothesis by making a recursive call on k, as follows:"
+msgstr ""
+
+#: ../source/proofs/patterns.rst:165
+#: 37cf469d58d94af884c04c41dec98c6c
+msgid "For ``plus_commutes_Z_rhs_2``, we now see:"
+msgstr ""
+
+#: ../source/proofs/patterns.rst:174
+#: 954f3d9c854245a28004d14cd725c831
+msgid "So we know that ``k = plus k Z``, but how do we use this to update the goal to ``S k = S k``?"
+msgstr ""
+
+#: ../source/proofs/patterns.rst:177
+#: 89afc4bbc97940818f24552f56ffc89e
+msgid "To achieve this, Idris provides a ``replace`` function as part of the prelude:"
+msgstr ""
+
+#: ../source/proofs/patterns.rst:185
+#: 61e762fba1ff4e0597c60b47ea58d280
+msgid "Given a proof that ``x = y``, and a property ``p`` which holds for ``x``, we can get a proof of the same property for ``y``, because we know ``x`` and ``y`` must be the same. Note the multiplicity on ``rule`` means that it's guaranteed to be erased at run time. In practice, this function can be a little tricky to use because in general the implicit argument ``p`` can be hard to infer by unification, so Idris provides a high level syntax which calculates the property and applies ``replace``:"
+msgstr ""
+
+#: ../source/proofs/patterns.rst:198
+#: 53cb38d5a7b049f7a916fb33d1aa6ad7
+msgid "If we have ``prf : x = y``, and the required type for ``expr`` is some property of ``x``, the ``rewrite ... in`` syntax will search for all occurrences of ``x`` in the required type of ``expr`` and replace them with ``y``. We want to replace ``plus k Z`` with ``k``, so we need to apply our rule ``rec`` in reverse, which we can do using ``sym`` from the Prelude"
+msgstr ""
+
+#: ../source/proofs/patterns.rst:210
+#: 86a8349af8044b50aa1355844fe9414a
+msgid "Concretely, in our example, we can say:"
+msgstr ""
+
+#: ../source/proofs/patterns.rst:218
+#: 98613a3590de471e9295799314f09539
+msgid "Checking the type of ``plus_commutes_Z_rhs_2`` now gives:"
+msgstr ""
+
+#: ../source/proofs/patterns.rst:227
+#: 7c90604966c341a3935b9e6f3ce5c22c
+msgid "Using the rewrite rule ``rec``, the goal type has been updated with ``plus k Z`` replaced by ``k``."
+msgstr ""
+
+#: ../source/proofs/patterns.rst:230
+#: 87217a01e7194fc3ad97355028d7f522
+msgid "We can use proof search (``\\s``) to complete the proof, giving:"
+msgstr ""
+
+#: ../source/proofs/patterns.rst:240
+#: e1c5f455a8484c8db28fd2d3b0e6fe31
+msgid "The base case of ``plus_commutes`` is now complete."
+msgstr ""
+
+#: ../source/proofs/patterns.rst:243
+#: 3240526c32ff4046bd07b60c77b03c97
+msgid "Inductive Step"
+msgstr ""
+
+#: ../source/proofs/patterns.rst:245
+#: 0678e92638ab4ac282b80a275478cd66
+msgid "Our main theorem, ``plus_commutes`` should currently be in the following state:"
+msgstr ""
+
+#: ../source/proofs/patterns.rst:254
+#: bdc8b5b373d4411a91bcc4e9f64a95f9
+msgid "Looking again at the type of ``plus_commutes_S``, we have:"
+msgstr ""
+
+#: ../source/proofs/patterns.rst:263
+#: 0d689435dbce46d4b47fcdb274ccd3e3
+msgid "Conveniently, by induction we can immediately tell that ``plus k m = plus m k``, so let us rewrite directly by making a recursive call to ``plus_commutes``. We add this directly, by hand, as follows:"
+msgstr ""
+
+#: ../source/proofs/patterns.rst:274
+#: d72ea92b288740049e87817767e54f1d
+msgid "Checking the type of ``plus_commutes_S`` now gives:"
+msgstr ""
+
+#: ../source/proofs/patterns.rst:283
+#: 6f8a0925331f465baa29611bc4ac17e3
+msgid "The good news is that ``m`` and ``k`` now appear in the correct order. However, we still have to show that the successor symbol ``S`` can be moved to the front in the right hand side of this equality. This remaining lemma takes a similar form to the ``plus_commutes_Z``; we begin by making a new top level lemma with ``\\l``. This gives:"
+msgstr ""
+
+#: ../source/proofs/patterns.rst:293
+#: 497cfcc75dd4469fad3cf3c64b622d52
+msgid "Again, we make a template definition with ``\\a``:"
+msgstr ""
+
+#: ../source/proofs/patterns.rst:300
+#: c7bcd2ca9dc94c33815522727f9b0010
+msgid "Like ``plus_commutes_Z``, we can define this by induction over ``m``, since ``plus`` is defined by matching on its first argument. The complete definition is:"
+msgstr ""
+
+#: ../source/proofs/patterns.rst:311
+#: 5e9c1e65753e406bbe28d7b1b9883c6f
+msgid "All holes have now been solved."
+msgstr ""
+
+#: ../source/proofs/patterns.rst:313
+#: eb028d0942a84186adb1cf68383cdffd
+msgid "The ``total`` annotation means that we require the final function to pass the totality checker; i.e. it will terminate on all possible well-typed inputs. This is important for proofs, since it provides a guarantee that the proof is valid in *all* cases, not just those for which it happens to be well-defined."
+msgstr ""
+
+#: ../source/proofs/patterns.rst:319
+#: ebffb49fd6e644f4b2109ec2bca40647
+msgid "Now that ``plus_commutes`` has a ``total`` annotation, we have completed the proof of commutativity of addition on natural numbers."
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:3
+#: a737f8f957f44ff69e72c740b21ff49c
+msgid "Running example: Addition of Natural Numbers"
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:5
+#: 8f369803dcd84c54a22d14d732e5286f
+msgid "Throughout this tutorial, we will be working with the following function, defined in the Idris prelude, which defines addition on natural numbers:"
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:15
+#: bade47b7e2454817ad84add643a00aae
+msgid "It is defined by the above equations, meaning that we have for free the properties that adding ``m`` to zero always results in ``m``, and that adding ``m`` to any non-zero number ``S k`` always results in ``S (plus k m)``. We can see this by evaluation at the Idris REPL (i.e. the prompt, the read-eval-print loop):"
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:29
+#: e70bc393195a440e8856b422deb8fbed
+msgid "Note that unlike many other language REPLs, the Idris REPL performs evaluation on *open* terms, meaning that it can reduce terms which appear inside lambda bindings, like those above. Therefore, we can introduce unknowns ``k`` and ``m`` as lambda bindings and see how ``plus`` reduces."
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:35
+#: 0f1223ee788d44bfacd73c58de3a29ad
+msgid "The ``plus`` function has a number of other useful properties, for example:"
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:38
+#: 67f116bec3e34cbfaf6d166e48fc35e4
+msgid "It is *commutative*, that is for all ``Nat`` inputs ``n`` and ``m``, we know that ``plus n m = plus m n``."
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:41
+#: 5de674d28cac42cd999eed5edff545aa
+msgid "It is *associative*, that is for all ``Nat`` inputs ``n``, ``m`` and ``p``, we know that ``plus n (plus m p) = plus (plus m n) p``."
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:44
+#: d64ce1ca21cd4758994fcf3eec20057a
+msgid "We can use these properties in an Idris program, but in order to do so we must *prove* them."
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:48
+#: d74416c553634c4ead43b08f1fc30d09
+msgid "Equality Proofs"
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:50
+#: 34d925db2a1c4b338d94febd9212e856
+msgid "Idris defines a propositional equality type as follows:"
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:57
+#: 08363362e4724a54b203b14b8fb864d2
+msgid "As syntactic sugar, ``Equal x y`` can be written as ``x = y``."
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:59
+#: 5a682bdbcfb442129f312868b1bbbe12
+msgid "It is *propositional* equality, where the type states that any two values in different types ``a`` and ``b`` may be proposed to be equal. There is only one way to *prove* equality, however, which is by reflexivity (``Refl``)."
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:64
+#: d26ebd49e6944fbd99ec768f0d07cf41
+msgid "We have a *type* for propositional equality here, and correspondingly a *program* inhabiting an instance of this type can be seen as a proof of the corresponding proposition [1]_. So, trivially, we can prove that ``4`` equals ``4``:"
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:74
+#: 0a6d3b2fba0c42f8a626720ab30c066f
+msgid "However, trying to prove that ``4 = 5`` results in failure:"
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:81
+#: da8d18a7e6c642e090a4785c18019fa2
+msgid "The type ``4 = 5`` is a perfectly valid type, but is uninhabited, so when trying to type check this definition, Idris gives the following error:"
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:94
+#: ef08fe91161c4ea7979c0d51d3e34214
+msgid "Type checking equality proofs"
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:96
+#: 2018353f4f7f464e9f34a78e22c72d83
+msgid "An important step in type checking Idris programs is *unification*, which attempts to resolve implicit arguments such as the implicit argument ``x`` in ``Refl``. As far as our understanding of type checking proofs is concerned, it suffices to know that unifying two terms involves reducing both to normal form then trying to find an assignment to implicit arguments which will make those normal forms equal."
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:103
+#: 12beab40bee5449288630f9c55bf57db
+msgid "When type checking ``Refl``, Idris requires that the type is of the form ``x = x``, as we see from the type of ``Refl``. In the case of ``four_eq_five``, Idris will try to unify the expected type ``4 = 5`` with the type of ``Refl``, ``x = x``, notice that a solution requires that ``x`` be both ``4`` and ``5``, and therefore fail."
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:109
+#: 7d7d728654d84ee1ad8a0bb7e577a58d
+msgid "Since type checking involves reduction to normal form, we can write the following equalities directly:"
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:124
+#: ../source/proofs/propositional.rst:124
+#: 926de0e559424094af16465679525ef6
+#: 82214f3a459247b98df7665af9372ced
+msgid "Heterogeneous Equality"
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:126
+#: 6b76c612da9c46d7b01b6cfabaf1ecc5
+msgid "Equality in Idris is *heterogeneous*, meaning that we can even propose equalities between values in different types:"
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:133
+#: d6f8faa7828045d697e2f780aa69327b
+msgid "The type ``Z = \"Z\"`` is uninhabited, and one might wonder why it is useful to be able to propose equalities between values in different types. However, with dependent types, such equalities can arise naturally. For example, if two vectors are equal, their lengths must be equal:"
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:143
+#: 3744e37599314c7d95cd734f77056856
+msgid "In the above declaration, ``xs`` and ``ys`` have different types because their lengths are different, but we would still like to draw a conclusion about the lengths if they happen to be equal. We can define ``vect_eq_length`` as follows:"
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:152
+#: c7e9ea6c7cbf43efb4e00f8c498feb88
+msgid "By matching on ``Refl`` for the third argument, we know that the only valid value for ``ys`` is ``xs``, because they must be equal, and therefore their types must be equal, so the lengths must be equal."
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:156
+#: 5db5c912c5e04b27ad881d6639ae4c18
+msgid "Alternatively, we can put an underscore for the second ``xs``, since there is only one value which will type check:"
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:164
+#: fc69473f27c040c28ff64b5436c69609
+msgid "Properties of ``plus``"
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:166
+#: 0cae940e4e024da98443383c5968cedf
+msgid "Using the ``(=)`` type, we can now state the properties of ``plus`` given above as Idris type declarations:"
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:174
+#: 7170ed003b084d90b98926e3c95cb133
+msgid "Both of these properties (and many others) are proved for natural number addition in the Idris standard library, using ``(+)`` from the ``Num`` interface rather than using ``plus`` directly. They have the names ``plusCommutative`` and ``plusAssociative`` respectively."
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:179
+#: 24bc680443e1486eb66b8e159e7a23ab
+msgid "In the remainder of this tutorial, we will explore several different ways of proving ``plus_commutes`` (or, to put it another way, writing the function.) We will also discuss how to use such equality proofs, and see where the need for them arises in practice."
+msgstr ""
+
+#: ../source/proofs/pluscomm.rst:185
+#: e0c3f7e02af64a01afd1aeec8caf7901
+msgid "This is known as the Curry-Howard correspondence."
+msgstr ""
+
+#: ../source/proofs/propositional.rst:1
+#: bb48761903cc4c5a82e8bddd3dfcc74b
+msgid "This page attempts to explain some of the techniques used in Idris to prove propositional equalities."
+msgstr ""
+
+#: ../source/proofs/propositional.rst:5
+#: 03b527731d9a45719534d5dfcb987664
+msgid "Proving Propositional Equality"
+msgstr ""
+
+#: ../source/proofs/propositional.rst:7
+#: a0395a075ad74fcebbc5eb6e4fc2aa9c
+msgid "We have seen that definitional equalities can be proved using ``Refl`` since they always normalise to values that can be compared directly."
+msgstr ""
+
+#: ../source/proofs/propositional.rst:10
+#: 6f3dc1827cc24d6eafee5b350ea5ccde
+msgid "However with propositional equalities we are using symbolic variables, which do not always normalise."
+msgstr ""
+
+#: ../source/proofs/propositional.rst:13
+#: f2872fbfdf324a47b3bc0b39ebb5fcfe
+msgid "So to take the previous example:"
+msgstr ""
+
+#: ../source/proofs/propositional.rst:19
+#: 95697c96eb16427c8d12e794db185044
+msgid "In this case ``plus n Z`` does not normalise to n. Even though both sides of the equality are provably equal we cannot claim ``Refl`` as a proof."
+msgstr ""
+
+#: ../source/proofs/propositional.rst:22
+#: 155785563cdf4393841a8779cc64eae3
+msgid "If the pattern match cannot match for all ``n`` then we need to match all possible values of ``n``. In this case"
+msgstr ""
+
+#: ../source/proofs/propositional.rst:33
+#: 1a9210e411c8418785f9cf15d7cf4f63
+msgid "we can't use ``Refl`` to prove ``plus n 0 = n`` for all ``n``. Instead, we call it for each case separately.  So, in the second line for example, the type checker substitutes ``Z`` for ``n`` in the type being matched, and reduces the type accordingly."
+msgstr ""
+
+#: ../source/proofs/propositional.rst:39
+#: d7b99c393459430186969c3dae842ff6
+msgid "Replace"
+msgstr ""
+
+#: ../source/proofs/propositional.rst:41
+#: 94bd201e7d834825b947a18eb77eb5de
+msgid "This implements the 'indiscernability of identicals' principle, if two terms are equal then they have the same properties. In other words, if ``x=y``, then we can substitute y for x in any expression. In our proofs we can express this as:"
+msgstr ""
+
+#: ../source/proofs/propositional.rst:45
+#: 1701fc2b43414795aca976560b1fe84d
+msgid "if x=y then prop x = prop y"
+msgstr ""
+
+#: ../source/proofs/propositional.rst:48
+#: a01f805ad1fe4b7d86fd2540ce5cf500
+msgid "where prop is a pure function representing the property. In the examples below prop is an expression in some variable with a type like this: ``prop: n -> Type``"
+msgstr ""
+
+#: ../source/proofs/propositional.rst:51
+#: fca8727a95d949158da7a37b5a238b3e
+msgid "So if ``n`` is a natural number variable then ``prop`` could be something like ``\\n => 2*n + 3``."
+msgstr ""
+
+#: ../source/proofs/propositional.rst:54
+#: 167462bf1a7748309e6ce063f7d26064
+msgid "To use this in our proofs there is the following function in the prelude:"
+msgstr ""
+
+#: ../source/proofs/propositional.rst:62
+#: 87b67f43c5f347fea50e20d3bfcf34eb
+msgid "If we supply an equality (x=y) and a proof of a property of x (``prop x``) then we get a proof of a property of y (``prop y``). So, in the following example, if we supply ``p1 x`` which is a proof that ``x=2`` and the equality ``x=y`` then we get a proof that ``y=2``."
+msgstr ""
+
+#: ../source/proofs/propositional.rst:76
+#: 00e8f14a31444620a0ac71c5b1a3468d
+msgid "Rewrite"
+msgstr ""
+
+#: ../source/proofs/propositional.rst:78
+#: 9a106445eb98431089dd1ad71fcf81fc
+msgid "In practice, ``replace`` can be a little tricky to use because in general the implicit argument ``prop`` can be hard to infer for the machine, so Idris provides a high level syntax which calculates the property and applies ``replace``."
+msgstr ""
+
+#: ../source/proofs/propositional.rst:83
+#: a9b942610c054055ba63831003d4beef
+msgid "Example: again we supply ``p1 x`` which is a proof that ``x=2`` and the equality ``y=x`` then we get a proof that ``y=2``."
+msgstr ""
+
+#: ../source/proofs/propositional.rst:94
+#: d067dae119e64d85b11a99be29fa1958
+msgid "We can think of ``rewrite`` as working in this way:"
+msgstr ""
+
+#: ../source/proofs/propositional.rst:96
+#: 45286f13dddb4480944725171eb35e39
+msgid "Start with a equation ``x=y`` and a property ``prop : x -> Type``"
+msgstr ""
+
+#: ../source/proofs/propositional.rst:97
+#: 1f02dabab293484799c793210f127ec6
+msgid "Search for ``x`` in ``prop``"
+msgstr ""
+
+#: ../source/proofs/propositional.rst:98
+#: a3ae435e18e4467cbaedb3999f6f1dd0
+msgid "Replaces all occurrences of ``x`` with ``y`` in ``prop``."
+msgstr ""
+
+#: ../source/proofs/propositional.rst:100
+#: 231f36c3c31442b3b31e3ce6d4d66511
+msgid "That is, we are doing a substitution."
+msgstr ""
+
+#: ../source/proofs/propositional.rst:102
+#: 7086db82b52842a3967d7a297adde07f
+msgid "Notice that here we need to supply reverse equality, i.e. ``y=x`` instead of ``x=y``. This is because ``rewrite`` performs the substitution of left part of equality to the right part and this substitution is done in the *return type*. Thus, here in the return type ``y=2`` we need to apply ``y=x`` in order to match the type of the argument ``x=2``."
+msgstr ""
+
+#: ../source/proofs/propositional.rst:108
+#: 7ab37f801e7248949810a8f7dabdbff7
+msgid "Symmetry and Transitivity"
+msgstr ""
+
+#: ../source/proofs/propositional.rst:110
+#: 70777c1860b34ffcb0d5ecf8f59127c5
+msgid "In addition to 'reflexivity' equality also obeys 'symmetry' and 'transitivity' and these are also included in the prelude:"
+msgstr ""
+
+#: ../source/proofs/propositional.rst:126
+#: e69faf21785e47fc9d5fe9d8407f6dea
+msgid "Also included in the prelude:"
+msgstr ""

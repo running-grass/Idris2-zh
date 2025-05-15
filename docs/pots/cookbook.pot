@@ -1,0 +1,162 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-08-28 21:56+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../source/cookbook/index.rst:4
+#: 7acbe014eb3d48cda04d5c54fd8ea7b7
+msgid "Cookbook"
+msgstr ""
+
+#: ../source/cookbook/index.rst:6
+#: f1e4d2d4fe164f73a19f909acd51ba0b
+msgid "The cookbook provides common recipes for common patterns and applications in Idris 2."
+msgstr ""
+
+#: ../source/cookbook/parsing.rst:2
+#: 072a7a0be1de4b688be327c76749a35c
+msgid "Parsing"
+msgstr ""
+
+#: ../source/cookbook/parsing.rst:4
+#: 600668d8ef744340a75ab6747676af44
+msgid "Idris 2 comes with a Lexing and a Parsing library built into the ``contrib`` package."
+msgstr ""
+
+#: ../source/cookbook/parsing.rst:6
+#: 91d06425bd6241ee86934fdd30bd13a2
+msgid "For this cookbook, we will write a very simple parser for a lambda calculus parser that will accept the following language:"
+msgstr ""
+
+#: ../source/cookbook/parsing.rst:13
+#: 82338ea4b1c848f28e60c526bc7ef0b1
+msgid "Once we write a lambda calculus parser, we will also see how we can take advantage of a powerful built in expression parser in Idris 2 to write a small calculator that should be smart enough to parse the following expression:"
+msgstr ""
+
+#: ../source/cookbook/parsing.rst:22
+#: 8dc421339cba4bd0885d469c0a308991
+msgid "Lexer"
+msgstr ""
+
+#: ../source/cookbook/parsing.rst:24
+#: 110a9c2cc34c49958b4703902ba6f939
+msgid "The main lexer module is under ``Text.Lexer``. This module contains ``toTokenMap`` which is a function that converts a ``List (Lexer, k) -> TokenMap (Token k)`` where ``k`` is a token kind. This function could be used for simple lexer to token mappings. The module also includes high level lexers for specifying quantity and common programming primitives like ``alphas``, ``intLit``, ``lineComment`` and ``blockComment``."
+msgstr ""
+
+#: ../source/cookbook/parsing.rst:30
+#: e7e1097adbdd432189c6dfe60310adeb
+msgid "The ``Text.Lexer`` module also reexports ``Text.Lexer.Core``, ``Text.Quantity`` and ``Text.Token``."
+msgstr ""
+
+#: ../source/cookbook/parsing.rst:32
+#: 80346f23c71c46e78ec2c96f47612b22
+msgid "``Text.Lexer.Core`` provides the building blocks of the lexer, including a type called ``Recognise`` which is the underlying data type for the lexer. The other important function that this module provides is a ``lex`` which takes in a lexer and returns the tokens."
+msgstr ""
+
+#: ../source/cookbook/parsing.rst:36
+#: 728e59ad038a4fdb91a6a5dcbc597154
+msgid "``Text.Quantity`` provides a data type ``Quantity`` which can be used with certain lexers to specify how many times something is expected to appear."
+msgstr ""
+
+#: ../source/cookbook/parsing.rst:39
+#: 7a3e6607e34b47f28fcb08de8be352b4
+msgid "``Text.Token`` provides a data type ``Token`` that represents a parsed token, its kind and the text. This module also provides an important interface called ``TokenKind`` which tells the lexer how to map token kinds to Idris 2 types and how to convert each kind from a string to a value."
+msgstr ""
+
+#: ../source/cookbook/parsing.rst:44
+#: aca458fa4f9c473db653402c87a20765
+msgid "Parser"
+msgstr ""
+
+#: ../source/cookbook/parsing.rst:46
+#: beac12073c8b4cfabf4bbf653c3e799a
+msgid "The main parser module is under ``Text.Parser``. This module contains different grammar parsers, the main one being ``match`` which takes a ``TokenKind`` and returns the value as defined in the ``TokenKind`` interface. There are other grammar parsers as well, but for our example, we will only be using ``match``."
+msgstr ""
+
+#: ../source/cookbook/parsing.rst:50
+#: 4c6c0a4b945042c5b505838e0790da27
+msgid "The ``Text.Parser`` module reexports ``Text.Parser.Core``, ``Text.Quantity`` and ``Text.Token``."
+msgstr ""
+
+#: ../source/cookbook/parsing.rst:52
+#: 3fa56338290349f2b0b27cc1c69c7a38
+msgid "``Text.Parser.Core`` provides the building blocks of the parser, including a type called ``Grammar`` which is the underlying data type for the parser. The other important function that this module provides is ``parse`` which takes in a ``Grammar`` and returns the parsed expression."
+msgstr ""
+
+#: ../source/cookbook/parsing.rst:56
+#: ba9cd08a45144a99a7a855c41113f4b8
+msgid "We covered ``Text.Quantity`` and ``Text.Token`` in the Lexer section so we're not going to repeat what they do here."
+msgstr ""
+
+#: ../source/cookbook/parsing.rst:60
+#: ecc05b586a374568836728e185bed615
+msgid "Lambda Calculus Lexer & Parser"
+msgstr ""
+
+#: ../source/cookbook/parsing.rst:62
+#: 92b78b67c5844d92883175411407d86f
+msgid "LambdaCalculus.idr"
+msgstr ""
+
+#: ../source/cookbook/parsing.rst:231
+#: 5c850a8fd74f4c279b88fe2e019e30b2
+msgid "Testing out our parser gives us back the following output:"
+msgstr ""
+
+#: ../source/cookbook/parsing.rst:240
+#: 71107cf7816841c7a2fa584fbb78ee67
+msgid "Expression Parser"
+msgstr ""
+
+#: ../source/cookbook/parsing.rst:242
+#: 1e6e69e07aa94df88122e4d8228e75ea
+msgid "Idris 2 also comes with a very convenient expression parser that is aware of precedence and associativity in ``Text.Parser.Expression``."
+msgstr ""
+
+#: ../source/cookbook/parsing.rst:245
+#: edd092b407d045c1aa83df11d42be84a
+msgid "The main function called ``buildExpressionParser`` takes in an ``OperatorTable`` and a ``Grammar`` that represents the terms, and returns a parsed expression. The magic comes from the ``OperatorTable`` since this table defines all the operators, the grammars for those operators, the precedence, and the associativity."
+msgstr ""
+
+#: ../source/cookbook/parsing.rst:250
+#: bcc1c52f844b428c8aafbcbb8f0c0180
+msgid "An ``OperatorTable`` is a list of lists containing the ``Op`` type. The ``Op`` type allows you to specify ``Prefix``, ``Postfix``, and ``Infix`` operators along with their grammars. ``Infix`` also contains the associativity called ``Assoc`` which can specify left associativity or ``AssocLeft``, right associativity assoc or ``AssocRight`` and as being non-associative or ``AssocNone``."
+msgstr ""
+
+#: ../source/cookbook/parsing.rst:255
+#: 707f93c905b042b4b3b3f4c384a42f7a
+msgid "An example of an operator table we'll be using for the calculator is:"
+msgstr ""
+
+#: ../source/cookbook/parsing.rst:268
+#: a4bf8e50f8f34190b6fac86b41dcccdd
+msgid "This table defines 4 operators for mulitiplication, division, addition and subtraction. Mulitiplication and division show up in the first table because they have higher precedence than addition and subtraction, which show up in the second table. We're also defining them as infix operators, with a specific grammar and all being left associative via ``AssocLeft``."
+msgstr ""
+
+#: ../source/cookbook/parsing.rst:274
+#: cc31b42a33aa440abef02269154d9477
+msgid "Building a Calculator"
+msgstr ""
+
+#: ../source/cookbook/parsing.rst:276
+#: 61e9fe2138984b649be6321e94932f27
+msgid "Calculator.idr"
+msgstr ""
+
+#: ../source/cookbook/parsing.rst:388
+#: 7dc860f4e2a04082a0c016ba813eeb2b
+msgid "Testing out our calculator gives us back the following output:"
+msgstr ""

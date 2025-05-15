@@ -1,0 +1,621 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-08-28 21:56+0800\n"
+"PO-Revision-Date: 2022-08-29 09:22+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"Language-Team: Chinese (Simplified) <https://weblate.grass.work:30443/"
+"projects/idris/faq/zh_Hans/>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 4.13.1\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../source/faq/faq.rst:3 5717c769cf354a868b4f1039188e32ea
+msgid "Frequently Asked Questions"
+msgstr "常见问题解答"
+
+#: ../source/faq/faq.rst:6 8c25420fef6f4c84af8969b68621ea19
+msgid "What are the aims of the Idris project?"
+msgstr "Idris 项目的目标是什么？"
+
+#: ../source/faq/faq.rst:8 6bb979040be74b1abed7fb69d444ff53
+msgid ""
+"Idris aims to make advanced type-related programming techniques "
+"accessible to software practitioners. An important philosophy that we "
+"follow is that Idris *allows* software developers to express invariants "
+"of their data and prove properties of programs, but will not *require* "
+"them to do so."
+msgstr ""
+"Idris "
+"旨在使软件从业者可以使用与类型相关的高级编程技术。我们遵循的一个重要理念是，"
+"Idris *允许* 软件开发人员表达其数据的不变量并证明程序的属性，但不会 *要求* "
+"他们必须这样做。"
+
+#: ../source/faq/faq.rst:13 d73546fe0db340828473e52c6e83cfcb
+msgid ""
+"Many of the answers in this FAQ demonstrate this philosophy, and we "
+"always bear this in mind when making language and library design "
+"decisions."
+msgstr "此常见问题解答中的许多答案都证明了这一理念，我们在做出语言和库设计决策时始终"
+"牢记这一点。"
+
+#: ../source/faq/faq.rst:16 f3f04ad4fb564d0497005e604e05ee35
+msgid ""
+"Idris is primarily a research project, led by Edwin Brady at the "
+"University of St Andrews, and has benefited from SICSA "
+"(https://www.sicsa.ac.uk) and EPSRC (https://www.epsrc.ac.uk/) funding. "
+"This does influence some design choices and implementation priorities, "
+"and means that some things are not as polished as we'd like. "
+"Nevertheless, we are still trying to make it as widely usable as we can!"
+msgstr ""
+"Idris 主要是一个研究项目，由圣安德鲁斯大学的 Edwin Brady 领导，并受益于 "
+"SICSA (https://www.sicsa.ac.uk) 和 EPSRC (https://www.epsrc.ac.uk) /) 资助。"
+"这确实会影响一些设计选择和实现优先级，并且意味着有些事情没有我们想要的那么完"
+"美。尽管如此，我们仍在努力使其尽可能广泛地使用！"
+
+#: ../source/faq/faq.rst:24 827aa21ae2dd41a8a6f3f2a2eb282a89
+msgid "Where can I find libraries? Is there a package manager?"
+msgstr "我在哪里可以找到库？有包管理器吗？"
+
+#: ../source/faq/faq.rst:26 c21e829711a14ce2b873758ec871f29d
+msgid ""
+"We don't yet have a package manager, but you can still find a source of "
+"libraries on the wiki: https://github.com/idris-"
+"lang/Idris2/wiki/1-%5BLanguage%5D-Libraries"
+msgstr ""
+"我们还没有包管理器，但您仍然可以在 wiki 上找到库的来源：https://github.com/"
+"idris-lang/Idris2/wiki/1-%5BLanguage%5D-Libraries"
+
+#: ../source/faq/faq.rst:29 e4d6da64766541eb91b022bb22a7526a
+msgid ""
+"Fortunately, the dependencies are currently not that complicated, but "
+"we'd still like a package manager to help! There isn't an official one "
+"yet, but two are in development:"
+msgstr "幸运的是，依赖关系目前并不复杂，但我们仍然希望包管理器提供帮助！目前还没有正"
+"式的，但有两个正在开发中："
+
+#: ../source/faq/faq.rst:33 ff8e675f5dcb4bbdbbe513c2b173bcc6
+msgid "Inigo: https://github.com/idris-community/inigo"
+msgstr "Inigo: https://github.com/idris-community/inigo"
+
+#: ../source/faq/faq.rst:34 2176cdb1b38043c7a0457704c4ee38db
+msgid "sae: https://github.com/DoctorRyner/sae"
+msgstr "sae: https://github.com/DoctorRyner/sae"
+
+#: ../source/faq/faq.rst:37 09ea3bfd01684f49ac0fcb59a097bf7f
+msgid "Can Idris 2 compile itself?"
+msgstr "Idris 2 可以使用自己进行编译吗？"
+
+#: ../source/faq/faq.rst:39 743716b5ad604a5fb7e802a01ea90c0e
+msgid ""
+"Yes, Idris 2 is implemented in Idris 2. By default, it targets `Chez "
+"Scheme <https://cisco.github.io/ChezScheme/>`_, so you can bootstrap from"
+" the generated Scheme code, as described in Section :ref:`sect-starting`."
+msgstr ""
+"是的，Idris 2 在 Idris 2 中实现。默认情况下，它以 `Chez Scheme <https://cisco"
+".github.io/ChezScheme/>`_ 为目标，因此您可以从生成的 Scheme 代码引导，如 :ref"
+":`sect-starting` 一节所述。"
+
+#: ../source/faq/faq.rst:44 40700409620d48f48cb8fad20dfab955
+msgid ""
+"Why does Idris 2 target Scheme? Surely a dynamically typed target "
+"language is going to be slow?"
+msgstr "为什么 Idris 2 以 Scheme 为目标？动态类型的目标语言肯定会很慢吗？"
+
+#: ../source/faq/faq.rst:46 88d222636e134b50bf2f4786216ed1ea
+msgid ""
+"You may be surprised at how fast Chez Scheme is! `Racket "
+"<https://download.racket-lang.org/>`_, as an alternative target, also "
+"performs well. Both perform better than the Idris 1 back end, which is "
+"written in C but has not had the decades of engineering effort by run "
+"time system specialists that Chez and Racket have. Chez Scheme also "
+"allows us to turn off run time checks, which we do."
+msgstr ""
+"您可能会对 Chez Scheme 的速度感到惊讶！ `Racket <https://download.racket-lang"
+".org/>`_ 作为替代目标，也表现良好。两者的性能都优于 Idris 1 后端，后者是用 C "
+"语言编写的，但没有像 Chez 和 Racket 那样经过运行时系统专家数十年的工程努力。 "
+"Chez Scheme 还允许我们关闭运行时检查，我们也是这样做的。"
+
+#: ../source/faq/faq.rst:52 42240cecbacf4cee953798e04d5062a7
+msgid ""
+"As anecdotal evidence of the performance improvement, we compared the "
+"performance of the Idris 2 runtime with the Idris 1 runtime, using a "
+"version of the compiler built with the Chez runtime and the same version "
+"built with the bootstrapping Idris 2.  On a Dell XPS 13 running Ubuntu, "
+"with the versions of 23rd May 2020, the performance was:"
+msgstr ""
+"作为性能改进的观察性证据，我们使用使用 Chez 运行时构建的编译器版本和使用引导 "
+"Idris 2 构建的相同版本，比较了 Idris 2 运行时与 Idris 1 运行时的性能。在戴尔 "
+"XPS 13运行 2020 年 5 月 23 日版本的 Ubuntu，性能为："
+
+#: ../source/faq/faq.rst:58 6da9a022adea4cd7ba7af6a8e062f83e
+msgid ""
+"Idris 2 (with the Chez Scheme runtime) checked its own source in 93 "
+"seconds."
+msgstr "Idris 2（使用 Chez Scheme 运行时）在 93 秒内检查完自己的源码。"
+
+#: ../source/faq/faq.rst:59 e806e520ce1644228119a5df0d4597f1
+msgid ""
+"The bootstrapping Idris 2 (compiled with Idris 1) checked the same source"
+" in 125s."
+msgstr "引导 Idris 2（使用 Idris 1 编译）在 125 秒内检查完相同的源码。"
+
+#: ../source/faq/faq.rst:60 14869524e89b477eb5708b8e0f4e666c
+msgid ""
+"Idris 1 checked the bootstrapping Idris 2's source (the same as the "
+"above, but with minor variations due to the syntax changes) in 768 "
+"seconds."
+msgstr "Idris 1 在 768 秒内检查完引导 Idris 2 "
+"的源码（与上述相同，但由于语法更改而略有不同）。"
+
+#: ../source/faq/faq.rst:63 8ef348b29eb94795be61afafe5018426
+msgid ""
+"Unfortunately we can't repeat this experiment with the latest version, "
+"since the bootstrapping Idris 2 is no longer able to build the current "
+"version."
+msgstr "不幸的是，我们不能用最新版本重复这个实验，因为引导 Idris 2 "
+"不再能够构建当前版本。"
+
+#: ../source/faq/faq.rst:66 5390512be5914f68bf2d2c34245d6f77
+msgid ""
+"This is, nevertheless, not intended to be a long term solution, even if "
+"it is a very convenient way to bootstrap."
+msgstr "然而，这并不是一个长期的解决方案，即使它是一种非常方便的引导方式。"
+
+#: ../source/faq/faq.rst:70 ea21723ede8b4778b44b7f329ccc3784
+msgid "Can Idris 2 generate Javascript? What about plug-in code generators?"
+msgstr "Idris 2 可以生成 Javascript 吗？那么可插拔代码生成器呢？"
+
+#: ../source/faq/faq.rst:72 ae6edca8157d47c6b70b6fcd9f05a270
+msgid ""
+"Yes! A `JavaScript code generator "
+"<https://idris2.readthedocs.io/en/latest/backends/javascript.html>`_ is "
+"built in, and can target either the browser or NodeJS."
+msgstr ""
+"是的！ `JavaScript 代码生成器 <https://idris2.readthedocs.io/en/latest/"
+"backends/javascript.html>`_ 是内置的，可以针对浏览器或 NodeJS。"
+
+#: ../source/faq/faq.rst:75 e29d0a2b3ec84e90af6df6a7153cb214
+msgid ""
+"Like Idris 1, Idris 2 `supports plug-in code generation "
+"<https://idris2.readthedocs.io/en/latest/backends/custom.html>`_ to allow"
+" you to write a back end for the platform of your choice."
+msgstr ""
+"与 Idris 1 一样，Idris 2 `支持可插拔代码生成器 <https://idris2.readthedocs."
+"io/en/latest/backends/custom.html>`_ 允许您为您选择的平台编写后端。"
+
+#: ../source/faq/faq.rst:80 2940959068cc42c6874f709c6b00e331
+msgid "What are the main differences between Idris 1 and Idris 2?"
+msgstr "Idris 1 和 Idris 2 之间的主要区别是什么？"
+
+#: ../source/faq/faq.rst:82 7f07ae41803b46aba13b764191c76557
+msgid ""
+"The most important difference is that Idris 2 explicitly represents "
+"*erasure* in types, so that you can see at compile time which function "
+"and data type arguments are erased, and which will be present at run "
+"time. You can see more details in :ref:`sect-multiplicities`."
+msgstr ""
+"最重要的区别是 Idris 2 明确表示 *擦除* 类型，因此您可以在编译时看到哪些函数和"
+"数据类型参数被擦除，哪些将在运行时出现。您可以在 :ref:`sect-multiplicities` "
+"中查看更多详细信息。"
+
+#: ../source/faq/faq.rst:87 4cc8ba60fce24562a0da511dece49b1e
+msgid ""
+"Idris 2 has significantly better type checking performance (perhaps even "
+"an order of magnitude!) and generates significantly better code."
+msgstr "Idris 2 "
+"具有明显更好的类型检查性能（甚至可能是数量级的差异！）并生成更好的代码。"
+
+#: ../source/faq/faq.rst:90 30949b4591e84924a8822cff5f369f0e
+msgid ""
+"Also, being implemented in Idris, we've been able to take advantage of "
+"the type system to remove some significant sources of bugs!"
+msgstr "此外，在 Idris 中实现，我们已经能够利用类型系统来消除一些重要的错误来源！"
+
+#: ../source/faq/faq.rst:93 3c1da7f31b6b49cfa1ceff03cb89ba71
+msgid "You can find more details in Section :ref:`updates-index`."
+msgstr "您可以在 :ref:`updates-index` 部分中找到更多详细信息。"
+
+#: ../source/faq/faq.rst:96 9871963d50704103a0711f50eb8d1057
+msgid "Why aren't there more linearity annotations in the library?"
+msgstr "为什么库中没有更多的线性注解？"
+
+#: ../source/faq/faq.rst:98 f439eca9c3fe4159a695dc0f085d0c3a
+msgid ""
+"In theory, now that Idris 2 is based on Quantitative Type Theory (see "
+"Section :ref:`sect-multiplicities`), we can write more precise types in "
+"the Prelude and Base libraries which give more precise usage information."
+" We have chosen not to do that (yet) however. Consider, for example, what"
+" would happen if we did::"
+msgstr ""
+"理论上，现在 Idris 2 基于定量类型理论（参见章节 :ref:`sect-multiplicities` "
+"），我们可以在 Prelude 和 Base 库中编写更精确的类型，从而提供更精确的使用信息"
+"。但是，我们选择（暂时）不这样做。例如，考虑一下如果我们这样做会发生什么："
+
+#: ../source/faq/faq.rst:107 049274e720d84cc194676b2f499f9d8a
+msgid ""
+"This is definitely correct, because ``x`` is used exactly once. However, "
+"we also have::"
+msgstr "这绝对是正确的，因为 ``x`` 只使用了一次。但是，我们也有::"
+
+#: ../source/faq/faq.rst:112 bd7a43f2043c42dc88ecc7f565478e47
+msgid ""
+"We can't guarantee that the function passed to ``map`` is linear in its "
+"argument in general, and so we can no longer say ``map id xs`` since the "
+"multiplicity of ``id`` doesn't match the multiplicity of the function "
+"passed to ``map``."
+msgstr ""
+"通常情况下，我们不能保证传递给 map 的函数在其参数中是线性的，"
+"因此我们不能再说 ``map id xs`` ，因为 ``id`` 的多重性和传递给 ``map`` "
+"的函数的多重性不匹配。"
+
+#: ../source/faq/faq.rst:117 ba0add1688c847d19c76e2323f020af6
+msgid ""
+"Eventually, we hope to extend the core language with multiplicity "
+"polymorphism which will help resolve these problems. Until then, we "
+"consider linearity an experimental new feature in the type system, and "
+"therefore we follow the general philosophy that if you don't want to use "
+"linearity, its presence mustn't impact the way you write programs."
+msgstr ""
+"最终，我们希望通过多重性多态来扩展核心语言，这将有助于解决这些问题。在那之前"
+"，我们认为线性是类型系统中的一个实验性新特性，因此我们遵循一般理念，即如果你"
+"不想使用线性，它的存在一定不会影响你编写程序的方式。"
+
+#: ../source/faq/faq.rst:124 922522916dd44507aa4eb9e70fcd6ec2
+msgid "How do I get command history in the Idris2 REPL?"
+msgstr "如何在 Idris2 REPL 中获取命令历史记录？"
+
+#: ../source/faq/faq.rst:126 12b304f6745244a99e20b89d74970030
+msgid ""
+"The Idris2 REPL does not support readline in the interest of keeping "
+"dependencies minimal. A useful work around is to install `rlwrap "
+"<https://linux.die.net/man/1/rlwrap>`_, this utility provides command "
+"history simply by invoking the Idris2 repl as an argument to the utility "
+"``rlwrap idris2``."
+msgstr ""
+"Idris2 REPL 不支持 readline 以保持最小的依赖关系。一个有用的解决方法是安装 `"
+"rlwrap <https://linux.die.net/man/1/rlwrap>`_ ，这个程序只需调用 Idris2 repl "
+"作为程序 ``rlwrap idris2`` 的参数即可提供命令历史记录。"
+
+#: ../source/faq/faq.rst:132 b1337aa467e74899990951e1d28fbd38
+msgid ""
+"The goal, eventually, is to use the IDE mode or the Idris API as the "
+"basis of an implementation of a sophisticated REPL, developed "
+"independently from the Idris 2 core. As far as we know, nobody is yet "
+"working on this: if you're interested, please get in touch and we can "
+"help you get started!"
+msgstr ""
+"最终目标是使用 IDE 模式或 Idris API 作为独立于 Idris 2 核心开发的复杂 REPL 实"
+"现的基础。据我们所知，目前还没有人致力于此：如果您有兴趣，请联系我们，我们可"
+"以帮助您开始！"
+
+#: ../source/faq/faq.rst:138 4efd027fc0284986879e9ccd230357fc
+msgid "Why does Idris use eager evaluation rather than lazy?"
+msgstr "为什么 Idris 使用及早求值而不是惰性求值？"
+
+#: ../source/faq/faq.rst:140 cb50e30affc0484eb58dd43c53aafaaf
+msgid ""
+"Idris uses eager evaluation for more predictable performance, in "
+"particular because one of the longer term goals is to be able to write "
+"efficient and verified low level code such as device drivers and network "
+"infrastructure. Furthermore, the Idris type system allows us to state "
+"precisely the type of each value, and therefore the run-time form of each"
+" value. In a lazy language, consider a value of type ``Int``:"
+msgstr ""
+"Idris 使用及早求值来获得更可预测的性能，特别是因为长期目标之一是能够编写高效"
+"且经过验证的低级代码，例如设备驱动程序和网络基础设施。此外，Idris 类型系统允"
+"许我们准确地声明每个值的类型，从而准确地声明每个值的运行时形式。在惰性语言中"
+"，考虑一个类型为 ``Int`` 的值："
+
+#: ../source/faq/faq.rst:151 9cc3ee99b6d24384a8d06083560845d6
+msgid ""
+"What is the representation of ``thing`` at run-time? Is it a bit pattern "
+"representing an integer, or is it a pointer to some code which will "
+"compute an integer? In Idris, we have decided that we would like to make "
+"this distinction precise, in the type:"
+msgstr ""
+"``thing`` 在运行时的表示形式是什么？它是表示整数的位模式，还是指向某些将计算"
+"整数的代码的指针？在 Idris 中，我们决定在类型中使这种区分更加精确："
+
+#: ../source/faq/faq.rst:161 80091a1182074412a07230d5a2733dd1
+msgid ""
+"Here, it is clear from the type that ``thing_val`` is guaranteed to be a "
+"concrete ``Int``, whereas ``thing_comp`` is a computation which will "
+"produce an ``Int``."
+msgstr ""
+"在这里，从类型中可以清楚地看出， ``thing_val`` 被保证是一个具体的 ``Int`` ，"
+"而 ``thing_comp`` 是一个将会产生一个 ``Int`` 的计算。"
+
+#: ../source/faq/faq.rst:166 2aedf09127b343bcab9ce4c5f20bd92c
+msgid "How can I make lazy control structures?"
+msgstr "如何创建惰性控制结构？"
+
+#: ../source/faq/faq.rst:168 770f54f764c948079902110e595ab14e
+msgid ""
+"You can make control structures using the special Lazy type. For example,"
+" one way to implement a non-dependent ``if...then...else...`` would be "
+"via a function named ``ifThenElse``:"
+msgstr ""
+"您可以使用特殊的 Lazy 类型创建控制结构。例如，实现不依赖的 ``if...then..."
+"else...`` 的一种方法是通过名为 ``ifThenElse`` 的函数："
+
+#: ../source/faq/faq.rst:178 6bd4df05cdf443cabee41c97fd508b6a
+msgid ""
+"The type ``Lazy a`` for ``t`` and ``e`` indicates that those arguments "
+"will only be evaluated if they are used, that is, they are evaluated "
+"lazily."
+msgstr "``t`` 和 ``e`` 的 ``Lazy a`` "
+"类型表示只有在使用它们时才会对这些参数求值，也就是说，它们会被延迟求值。"
+
+#: ../source/faq/faq.rst:181 5f70da4f996840edb4427bc3dc239e06
+msgid ""
+"By the way: we don't actually implement ``if...then...else...`` this way "
+"in Idris 2! Rather, it is transformed to a ``case`` expression which "
+"allows dependent ``if``."
+msgstr ""
+"顺便说一句：我们实际上并没有在 Idris 2 中以这种方式实现 ``if...then..."
+"else...”`` 相反，它被转换为允许依赖 ``if`` 的 ``case`` 表达式。"
+
+#: ../source/faq/faq.rst:186 6a1db21843f948cbada40f6b4a9f2bb1
+msgid "Evaluation at the REPL doesn't behave as I expect. What's going on?"
+msgstr "REPL 的求值并不像我预期的那样。这是怎么回事？"
+
+#: ../source/faq/faq.rst:188 45d1e0a705c64f2abfca46013426d7e7
+msgid ""
+"Being a fully dependently typed language, Idris has two phases where it "
+"evaluates things, compile-time and run-time. At compile-time it will only"
+" evaluate things which it knows to be total (i.e. terminating and "
+"covering all possible inputs) in order to keep type checking decidable. "
+"The compile-time evaluator is part of the Idris kernel, and is "
+"implemented as an interpreter in Idris. Since everything is known to have"
+" a normal form here, the evaluation strategy doesn't actually matter "
+"because either way it will get the same answer! In practice, it uses call"
+" by name, since this avoids evaluating sub-expressions which are not "
+"needed for type checking."
+msgstr ""
+"作为一种完全依赖类型的语言，Idris 有两个阶段来对事物求值，编译时和运行时。在"
+"编译时，它只会求值它知道的全部内容（即终止并覆盖所有可能的输入），以保持类型"
+"检查的可判定性。编译时求值器是 Idris 内核的一部分，在 Idris 中作为解释器实现"
+"。由于这里的所有内容都具有范式，因此求值策略实际上并不重要，因为无论哪种方式"
+"都会得到相同的答案！在实践中，它使用按名称调用，因为这避免了类型检查不需要的"
+"子表达式求值。"
+
+#: ../source/faq/faq.rst:198 d427b9292e5545cd8b7fa7696481fc32
+msgid ""
+"The REPL, for convenience, uses the compile-time notion of evaluation. As"
+" well as being easier to implement (because we have the evaluator "
+"available) this can be very useful to show how terms evaluate in the type"
+" checker. So you can see the difference between:"
+msgstr ""
+"为方便起见，REPL 使用了编译时的求值概念。除了更容易实现（因为我们有可用的求值"
+"器），这对于显示被求值项在类型检查器中如何求值非常有用。所以你可以看到两者之"
+"间的区别："
+
+#: ../source/faq/faq.rst:211 42b4d15d0e0d48f5904f16561c567838
+msgid ""
+"If you want to compile and execute an expression at the REPL, you can use"
+" the ``:exec`` command. In this case, the expression must have type ``IO "
+"a`` (for any ``a``, although it won't print the result)."
+msgstr ""
+"如果你想在 REPL 编译和执行一个表达式，你可以使用 ``:exec`` "
+"命令。在这种情况下，表达式必须具有类型 ``IO a`` （ ``a`` "
+"可以是任何类型，尽管它不会打印结果）。"
+
+#: ../source/faq/faq.rst:216 a25bdd0577b647fd9c450ff4b1a576bb
+msgid "Why can't I use a function with no arguments in a type?"
+msgstr "为什么我不能使用类型中没有参数的函数？"
+
+#: ../source/faq/faq.rst:218 4b3fd1750c4743ccab356050850d462c
+msgid ""
+"If you use a name in a type which begins with a lower case letter, and "
+"which is not applied to any arguments, then Idris will treat it as an "
+"implicitly bound argument. For example:"
+msgstr "如果您在以小写字母开头且不应用于任何参数的类型中使用名称，则 Idris "
+"会将其视为隐式绑定参数。例如："
+
+#: ../source/faq/faq.rst:226 5badd8a7665e414fb9d2e4cd1d2e0f7b
+msgid ""
+"Here, ``n``, ``m``, and ``ty`` are implicitly bound. This rule applies "
+"even if there are functions defined elsewhere with any of these names. "
+"For example, you may also have:"
+msgstr ""
+"在这里， ``n`` 、 ``m`` 和 ``ty`` 是隐式绑定的。即使在其他地方定义了具有任何"
+"这些名称的函数，此规则也适用。例如，您可能还拥有："
+
+#: ../source/faq/faq.rst:235 1256cb19c46e485ba9e9356c2795542a
+msgid ""
+"Even in this case, ``ty`` is still considered implicitly bound in the "
+"definition of ``append``, rather than making the type of ``append`` "
+"equivalent to..."
+msgstr "即使在这种情况下， ``ty`` 仍然被认为是隐式绑定在 ``append`` 的定义中，"
+"而不是使 ``append`` 的类型等价于..."
+
+#: ../source/faq/faq.rst:242 5a2f410ad03a4f9e8147c80cbcf3d6d2
+msgid ""
+"...which is probably not what was intended!  The reason for this rule is "
+"so that it is clear just from looking at the type of ``append``, and no "
+"other context, what the implicitly bound names are."
+msgstr "...这可能不是预期的！这条规则的原因是，只看 ``append`` "
+"的类型，而不是其他上下文，就可以清楚地知道隐式绑定的名称是什么。"
+
+#: ../source/faq/faq.rst:246 3b056f4e3bec4ff3afe1f3960782aed0
+msgid ""
+"If you want to use an unapplied name in a type, you have three options. "
+"You can either explicitly qualify it, for example, if ``ty`` is defined "
+"in the namespace ``Main`` you can do the following:"
+msgstr ""
+"如果您想在类型中使用未应用的名称，您有三个选项。您可以明确限定它，例如，"
+"如果在命名空间 ``Main`` 中定义了 ``ty`` ，则可以执行以下操作："
+
+#: ../source/faq/faq.rst:254 8cccb2c5da3a482fbb9f1da9c4937d9c
+msgid ""
+"Alternatively, you can use a name which does not begin with a lower case "
+"letter, which will never be implicitly bound:"
+msgstr "或者，您可以使用不以小写字母开头的名称，它永远不会被隐式绑定："
+
+#: ../source/faq/faq.rst:264 7fadcbd23659460cbe41ad9f9b7d4c7b
+msgid ""
+"As a convention, if a name is intended to be used as a type synonym, it "
+"is best for it to begin with a capital letter to avoid this restriction."
+msgstr "按照惯例，如果一个名称打算用作类型同义词，最好以大写字母开头以避免这种限制。"
+
+#: ../source/faq/faq.rst:267 18be007b5241420081e96ff4ff8a1d3d
+msgid ""
+"Finally, you can turn off the automatic binding of implicits with the "
+"directive:"
+msgstr "最后，您可以使用指令关闭隐式的自动绑定："
+
+#: ../source/faq/faq.rst:274 f92bf5e57e024a59b193dbf703f0502c
+msgid ""
+"In this case, you can bind ``n`` and ``m`` as implicits, but not ``ty``, "
+"as follows:"
+msgstr "在这种情况下，您可以将 ``n`` 和 ``m`` 绑定为隐式，但不能将 ``ty`` "
+"绑定，如下所示："
+
+#: ../source/faq/faq.rst:282 965c1734b9a6476aa4b80dd9e5e89ba1
+msgid ""
+"Why don't the ``Functor``, ``Applicative``, ``Monad`` and other "
+"interfaces include the laws?"
+msgstr "为什么 ``Functor`` 、 ``Applicative`` 、 ``Monad`` 等接口不包含定律？"
+
+#: ../source/faq/faq.rst:284 5669ea974f3146738bf2a643d66085e5
+msgid ""
+"On the face of it, this sounds like a good idea, because the type system "
+"allows us to specify the laws. We don't do this in the prelude, though, "
+"for two main reasons:"
+msgstr "从表面上看，这听起来是个好主意，因为类型系统允许我们指定规律。不过，"
+"我们不会在 prelude 中这样做，主要有两个原因："
+
+#: ../source/faq/faq.rst:288 d887a6d4ec6549d594085e199782ac6c
+msgid ""
+"It goes against the philosophy (above) that Idris *allows* programmers to"
+" prove properties of their programs, but does not *require* it."
+msgstr "它违背了 Idris *允许* 程序员证明其程序的属性，但不 *要求* "
+"它的哲学（在上面）。"
+
+#: ../source/faq/faq.rst:290 478a10c170a34707968cf9af2837d6cc
+msgid ""
+"A valid, lawful, implementation may not necessarily be provably lawful "
+"within the Idris system, especially if it involves higher order "
+"functions."
+msgstr "在 Idris 系统内，有效、合法的实现不一定是可证明合法的，尤其是在涉及更高阶功能"
+"的情况下。"
+
+#: ../source/faq/faq.rst:293 3770d3cd3682461e8e1029e3236c4b5d
+msgid ""
+"There are verified versions of the interfaces in ``Control.Algebra``, "
+"which extend interfaces with laws."
+msgstr "``Control.Algebra`` 中有经过验证的接口版本，它们扩展了带有定律的接口。"
+
+#: ../source/faq/faq.rst:297 8a6570873f734ad7afcdee5dbc650574
+msgid ""
+"I have an obviously terminating program, but Idris says it possibly isn't"
+" total. Why is that?"
+msgstr "我有一个明显终止的程序，但 Idris 说它可能不是完全函数。这是为什么？"
+
+#: ../source/faq/faq.rst:299 f5a51a547acb44f98a71e50e184ae1c8
+msgid ""
+"Idris can't decide in general whether a program is terminating due to the"
+" undecidability of the `Halting Problem "
+"<https://en.wikipedia.org/wiki/Halting_problem>`_. It is possible, "
+"however, to identify some programs which are definitely terminating. "
+"Idris does this using \"size change termination\" which looks for "
+"recursive paths from a function back to itself. On such a path, there "
+"must be at least one argument which converges to a base case."
+msgstr ""
+"由于 `停机问题 <https://en.wikipedia.org/wiki/Halting_problem>`_ 的不确定性，"
+"Idris 通常无法确定程序是否终止。但是，可以识别某些肯定终止的程序。 Idris "
+"使用 “大小更改终止” 来执行此操作，它查找从函数返回到自身的递归路径。在这样的"
+"路径上，必须至少有一个参数收敛到基本情况。"
+
+#: ../source/faq/faq.rst:307 873322062b2b4f0eb822a6d86def9987
+msgid "Mutually recursive functions are supported"
+msgstr "支持相互递归函数"
+
+#: ../source/faq/faq.rst:309 b4473ab10ae44711a6c4b7a1b724f8ca
+msgid ""
+"However, all functions on the path must be fully applied. In particular, "
+"higher order applications are not supported"
+msgstr "不过，递归路径上的所有函数必须被完整地应用。此外，Idris 不支持高阶应用。"
+
+#: ../source/faq/faq.rst:312 8811ecae742c4b3594a1004690c98f51
+msgid ""
+"Idris identifies arguments which converge to a base case by looking for "
+"recursive calls to syntactically smaller arguments of inputs. e.g. ``k`` "
+"is syntactically smaller than ``S (S k)`` because ``k`` is a subterm of "
+"``S (S k)``, but ``(k, k)`` is not syntactically smaller than ``(S k, S "
+"k)``."
+msgstr ""
+"Idris 通过查找对语法上较小的输入参数的递归调用来识别收敛到基本情况的参数。"
+"例如 ``k`` 在语法上小于 ``S (S k)`` 因为 ``k`` 是 ``S (S k)`` 的子项，但 ``("
+"k, k)`` 在语法不小于 ``(S k, S k)`` 。"
+
+#: ../source/faq/faq.rst:318 db9fce024edf4f69995e3527e0c5d6ac
+msgid ""
+"If you have a function which you believe to be terminating, but Idris "
+"does not, you can either restructure the program, or use the "
+"``assert_total`` function."
+msgstr "如果你有一个你认为要终止的函数，但 Idris 不这么认为，你可以重新组织程序，"
+"或者使用 ``assert_total`` 函数。"
+
+#: ../source/faq/faq.rst:323 8344f942bcf8481f858bdfa61f994a89
+msgid "Does Idris have universe polymorphism? What is the type of ``Type``?"
+msgstr "Idris 有全域多态吗？ ``Type`` 的类型是什么？"
+
+#: ../source/faq/faq.rst:325 140129054bad4ec5add595357724dad4
+msgid ""
+"Idris 2 currently implements ``Type : Type``. Don't worry, this will not "
+"be the case forever! For Idris 1, the FAQ answered this question as "
+"follows:"
+msgstr "Idris 2 当前实现了 ``Type : Type`` 。别担心，这不会永远如此！对于 Idris 1，"
+"FAQ 对这个问题的回答如下："
+
+#: ../source/faq/faq.rst:328 958cf2f4789443b2b3ab68cf336832cb
+msgid ""
+"Rather than universe polymorphism, Idris has a cumulative hierarchy of "
+"universes; ``Type : Type 1``, ``Type 1 : Type 2``, etc. Cumulativity "
+"means that if ``x : Type n`` and ``n <= m``, then ``x : Type m``. "
+"Universe levels are always inferred by Idris, and cannot be specified "
+"explicitly. The REPL command ``:type Type 1`` will result in an error, as"
+" will attempting to specify the universe level of any type."
+msgstr ""
+"Idris 不是全域多态，而是全域的累积层层级。 ``Type : Type 1``, ``Type 1 : "
+"Type 2`` 等等。累积性意味着如果 ``x : Type n`` 并且 ``n <= m`` ，那么 ``x : "
+"Type m `` 。全域级别总是由 Idris 推断，不能明确指定。 REPL 命令 ``:type Type "
+"1`` 将导致错误，尝试指定任何类型的全域级别也会导致错误。"
+
+#: ../source/faq/faq.rst:337 94567f84ef2b4cc4b52663e67ff0bcdb
+msgid "What does the name “Idris” mean?"
+msgstr "“Idris”这个名字是什么意思？"
+
+#: ../source/faq/faq.rst:339 4fa2125153824e618761ef1b0efb2d3c
+msgid ""
+"British people of a certain age may be familiar with this `singing dragon"
+" <https://www.youtube.com/watch?v=G5ZMNyscPcg>`_. If that doesn’t help, "
+"maybe you can invent a suitable acronym :-) ."
+msgstr ""
+"到了一定年龄的英国人可能对这条 `会唱歌的龙  <https://www.youtube.com/"
+"watch?v=G5ZMNyscPcg>`_ "
+"比较熟悉。如果这没有帮助，也许你可以发明一个合适的首字母缩略词:-)。"
+
+#: ../source/faq/faq.rst:344 a5d760d924e64f10a35c3132f527fe09
+msgid "Where can I find the community standards for the Idris community?"
+msgstr "在哪里可以找到 Idris 社区的社区标准？"
+
+#: ../source/faq/faq.rst:346 a322913e76e144afbaa8a9a1dd2a6d65
+msgid ""
+"The Idris Community Standards are stated `here <https://www.idris-"
+"lang.org/pages/community-standards.html>`_"
+msgstr ""
+"Idris 社区标准在 `这里 <https://www.idris-lang.org/pages/community-standards."
+"html>`_ 声明"

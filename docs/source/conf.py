@@ -296,3 +296,7 @@ epub_exclude_files = ['search.html']
 
 # If false, no index is generated.
 #epub_use_index = True
+
+gettext_uuid = True
+gettext_compact = True
+locale_dirs = ["../locales"]

@@ -1,0 +1,1197 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-08-28 21:56+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../source/implementation/ide-protocol.rst:3
+#: 86e155058b9e432e895855e4ca4a5670
+msgid "The IDE Protocol"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:5
+#: a4d990ef55934f0bab92e6d983062f36
+msgid "The Idris REPL has two modes of interaction: a human-readable syntax designed for direct use in a terminal, and a machine-readable syntax designed for using Idris as a backend for external tools."
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:7
+#: 010da84c72804242ab42e65892ff2033
+msgid "The IDE-Protocol is versioned separately from the Idris compiler. The first version of Idris (written in Haskell and is at v1.3.3) implements version one of the IDE Protocol, and Idris2 (self-hosting and is at v.0.3.0) implements version two of the IDE Protocol."
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:10
+#: 4285201f8d234835abd8bdfa189b2574
+msgid "The protocol and its serialisation/deserialisation routines are part of the `Protocol` submodule hierarchy and are packaged in the `idris2protocols.ipkg` package."
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:13
+#: 154663f6e08d4cec8ed0e4b46f4ac6d1
+msgid "Starting IDE Mode"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:15
+#: d1ad2f58c55c4bb98f99a1bec7031985
+msgid "To initiate the IDE-Protocol on stdin/stdout, use the ``--ide-mode`` command line option. To run the protocol over a TCP socket, use the ``--ide-mode-socket`` option: ::"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:21
+#: 874c442f42be40d7bb3f73412c106ce4
+msgid "By default this will chose an open port, print the number of the port to stdout followed by a newline, and listen to that socket on localhost. You may optionally specify the hostname and port to listen to: ::"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:27
+#: 5a928847e18941faad54ceb85d53381b
+msgid "The IDE-Protocol will run on that socket, and Idris will exit when the client disconnects from the socket."
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:31
+#: be727796c72343c78603f11c81ad208c
+msgid "Protocol Overview"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:33
+#: 9f9f84b0ed3d4de5ab90c7d1aeb6f335
+msgid "The communication protocol is of asynchronous request-reply style: a single request from the client is handled by Idris at a time. Idris waits for a request on its standard input stream, and outputs the answer or answers to standard output. The result of a request can be either success, failure, or intermediate output; and furthermore, before the result is delivered, there might be additional meta-messages."
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:38
+#: b97431d78f004eccadd5bf1d0ffbe157
+msgid "A reply can consist of multiple messages: any number of messages to inform the user about the progress of the request or other informational output, and finally a result, either ``ok`` or ``error``."
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:40
+#: 42767dd350da4adabc2772d091d07b40
+msgid "The wire format is the length of the message in characters, encoded in 6 characters hexadecimal, followed by the message encoded as S-expression (sexp). Additionally, each request includes a unique integer (counting upwards), which is repeated in all messages corresponding to that request."
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:43
+#: 2fa609129f514a6494308414bcde174d
+msgid "An example interaction from loading the file ``/home/hannes/empty.idr`` looks as follows on the wire: ::"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:51
+#: c57236153d714d7a8d389e0a3df5bcd3
+msgid "The first message is the request from idris-mode to load the specific file, which length is hex 2a, decimal 42 (including the newline at the end). The request identifier is set to 1. The first message from Idris is to write the string ``Type checking /home/hannes/empty.idr``, another is to set the prompt to ``*/home/hannes/empty``. The answer, starting with ``:return`` is ``ok``, and additional information is that the file was loaded."
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:56
+#: 5acd9ba6de394beaa3cb853f20669b10
+msgid "There are three atoms in the wire language: numbers, strings, and symbols. The only compound object is a list, which is surrounded by parenthesis. The syntax is::"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:63
+#: 563b7328b5704b308c0dfc30debdd55b
+msgid "where ``NUM`` is either 0 or a positive integer, ``ALPHA`` is an alphabetical character, and ``STR`` is the contents of a string, with ``\"`` escaped by a backslash. The atom ``nil`` is accepted instead of ``()`` for compatibility with some regexp pretty-printing routines."
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:66
+#: 570f1c5f03824c17b288e87808df0f7d
+msgid "The state of the Idris process is mainly the active file, which needs to be kept synchronised between the editor and Idris. This is achieved by the already seen ``:load-file`` command."
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:70
+#: a8fadd22252f4def861f42a227309d77
+msgid "Protocol Versioning"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:72
+#: 67b73e2c5e4245ba873acb50481b2f50
+msgid "When interacting with Idris through the IDE Protocol the initial message sent by the running Idris Process is the version (major and minor) of the IDE Protocol being used."
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:74
+#: afbb1aa381614f449433864df1bc8779
+msgid "The expected message has the following format:"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:76
+#: 1da61c7d30c848ddbdd4440ab9345180
+msgid "``(:protocol-version MAJOR MINOR)``"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:78
+#: 0615c4588e584bc8825e8ca20812e613
+msgid "IDE Clients can use this to help support multiple Idris versions."
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:81
+#: 012d21a6af604e28880b47889580c8b0
+msgid "Commands"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:83
+#: f4c635441a144fa1994c23d83df0f16b
+msgid "The available commands are listed below. They are compatible with Version 1 and 2.0 of the protocol unless otherwise stated."
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:88
+#: d5f201b763a54c7bbe6fb96dd1a7cfcf
+msgid "``(:load-file FILENAME [LINE])``"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:87
+#: 4ba0378e09fd43519f179f2024a3cf93
+msgid "Load the named file.  If a ``LINE`` number is provided, the file is only loaded up to that line.  Otherwise, the entire file is loaded. Version 2 of the IDE Protocol requires that the file name be a quoted string, as in ``(:load-file \"MyFile.idr\")`` and not ``(:load-file MyFile.idr)``."
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:92
+#: 5e8b654422b24c51b322df21953ec3dd
+msgid "``(:cd FILEPATH)``"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:91
+#: ef0e8c38a327401b93ae67767f3af5e5
+msgid "Change the working direction to the given ``FILEPATH``. Version 2 of the IDE Protocol requires that the path is quoted, as in ``(:cd \"a/b/c\")`` and not ``(:cd a/b/c)``."
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:95
+#: 896f492304c44d39953c08ba4a7712c7
+msgid "``(:interpret STRING)``"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:95
+#: 175e57171b0a470882b9b3f349bfd027
+msgid "Interpret ``STRING`` at the Idris REPL, returning a highlighted result."
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:99
+#: ce256eadbf8949199baf73d09ef993af
+msgid "``(:type-of STRING)``"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:98
+#: 7ffeccc6ddde4585abf2e89080d12de9
+msgid "Return the type of the name, written with Idris syntax in the ``STRING``. The reply may contain highlighting information."
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:103
+#: 75f595486a7b4c998dbdbec5c4d38f68
+msgid "``(:case-split LINE NAME)``"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:102
+#: f1b91486f387401683a2e72cb9aa83b8
+msgid "Generate a case-split for the pattern variable ``NAME`` on program line ``LINE``. The pattern-match cases to be substituted are returned as a string with no highlighting."
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:107
+#: d4314d63c6014b629e302b18d2f9919f
+msgid "``(:add-clause LINE NAME)``"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:106
+#: 668f20d349d1486dab0fd315368aa3a5
+msgid "Generate an initial pattern-match clause for the function declared as ``NAME`` on program line ``LINE``. The initial clause is returned as a string with no highlighting."
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:110
+#: 1d91e6ed5b70493c9321f885dbdf2ff9
+msgid "``(:add-proof-clause LINE NAME)``"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:110
+#: a18f1627ea9a48e88c6224471583fcfb
+msgid "Add a clause driven by the ``<==`` syntax."
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:114
+#: 2e6750835868438e9b7a244f90879adc
+msgid "``(:add-missing LINE NAME)``"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:113
+#: f468544d0a494db290f3ac190cbbe4e1
+msgid "Add the missing cases discovered by totality checking the function declared as ``NAME`` on program line ``LINE``. The missing clauses are returned as a string with no highlighting."
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:118
+#: 79e2a494065c440e8b46d4c903dd1dcd
+msgid "``(:make-with LINE NAME)``"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:117
+#: d9ace0c3978f4920989641b6d2d655ac
+msgid "Create a with-rule pattern match template for the clause of function ``NAME`` on line ``LINE``. The new code is returned with no highlighting."
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:122
+#: 87aa670fdf134db7bdd70af2d46ebc53
+msgid "``(:make-case LINE NAME)``"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:121
+#: 409a638bceed4549aa7245faf6f5164f
+msgid "Create a case pattern match template for the clause of function ``NAME`` on line ``LINE``. The new code is returned with no highlighting."
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:125
+#: bc37cf8b68a242f6a914fc93ca5f51a9
+msgid "``(:make-lemma LINE NAME)``"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:125
+#: c33d581e82e342ccb8cee429b5ab7327
+msgid "Create a top level function with a type which solves the hole named ``NAME`` on line ``LINE``."
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:130
+#: 00369462523e48f7bec56d07ecebdc77
+msgid "``(:proof-search LINE NAME HINTS)``"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:128
+#: b34aa351a16a45cbafdc66d8712e14a0
+msgid "Attempt to fill out the hole on ``LINE`` named ``NAME`` by proof search. ``HINTS`` is a possibly-empty list of additional things to try while searching. This operation is also called ``ExprSearch`` in the Idris 2 API."
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:133
+#: 5774234c5bd946b19fabb5c68d1426ec
+msgid "``(:refine LINE NAME TM)``"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:133
+#: 7368b112edd84889ae3635acc9d4a630
+msgid "Refine the hole on ``LINE`` named ``NAME`` by using the term ``TM``."
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:138
+#: 55a5c1c3bfee4086a722cfc373d08309
+msgid "``(:docs-for NAME [MODE])``"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:136
+#: 9d1bcdf746554098a3318eef896796a7
+msgid "Look up the documentation for ``NAME``, and return it as a highlighted string. If ``MODE`` is ``:overview``, only the first paragraph of documentation is provided for ``NAME``. If ``MODE`` is ``:full``, or omitted, the full documentation is returned for ``NAME``."
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:141
+#: 9418bb825fbd4fc295ec4239b202ff10
+msgid "``(:apropos STRING)``"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:141
+#: ba0302558ecc402499bf30ee124616a8
+msgid "Search the documentation for mentions of ``STRING``, and return any found as a list of highlighted strings."
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:144
+#: ec84edca6547471eb9525d295bb8f50e
+msgid "``(:metavariables WIDTH)``"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:144
+#: 7d35eeb08ca04f019a9e2b784b62eb84
+msgid "List the currently-active holes, with their types pretty-printed in ``WIDTH`` columns."
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:147
+#: ee286c3dcb07430f9e812ddeffe021d7
+msgid "``(:who-calls NAME)``"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:147
+#: 2acf93eea14e445c804ceb1b76e51c05
+msgid "Get a list of callers of ``NAME``."
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:150
+#: 9878a38677c645649a2725256e4826a8
+msgid "``(:calls-who NAME)``"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:150
+#: 334d2aba5fe048fb9dbd477058974cd1
+msgid "Get a list of callees of ``NAME``."
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:153
+#: f451724412034050bd8ca78a73c5f487
+msgid "``(:browse-namespace NAMESPACE)``"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:153
+#: 70d737b607954f93bc586b52849881db
+msgid "Return the contents of ``NAMESPACE``, like ``:browse`` at the command-line REPL."
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:156
+#: 53c583a6ee284bf0b3bfdfceb93ae74d
+msgid "``(:normalise-term TM)``"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:156
+#: 9db6989ba9994e448abfee9886f3ba5d
+msgid "Return a highlighted string consisting of the results of normalising the serialised term ``TM`` (which would previously have been sent as the ``tt-term`` property of a string)."
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:160
+#: 9e74cf1c4af44d89be7a5ff7aa8a7178
+msgid "``(:show-term-implicits TM)``"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:159
+#: 57d025b919af4f20a30c760fed2a351b
+msgid "Return a highlighted string, consisting of the results of making all arguments in serialised term ``TM`` explicit. The arguments in ``TM`` would previously have been sent as the ``tt-term`` property of a string."
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:164
+#: e4b278aea83f4d038a54ced709011527
+msgid "``(:hide-term-implicits TM)``"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:163
+#: c1284bc9542f43e49bda70ee4260f0ac
+msgid "Return a highlighted string, consisting of the results of making all arguments in serialised term ``TM`` follow their usual implicitness setting. The arguments in ``TM`` would previously have been sent as the ``tt-term`` property of a string."
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:168
+#: 16cde19db4ab4262aebf39d5beac34e8
+msgid "``(:elaborate-term TM)``"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:167
+#: 9e612bf8875244419194ebf5aa8f4574
+msgid "Return a highlighted string, consisting of the core language term corresponding to serialised term ``TM``. The arguments in ``TM`` would previously have been sent as the ``tt-term`` property of a string."
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:171
+#: 3f3d9c662fa84c948b0476c3a78feb7c
+msgid "``(:print-definition NAME)``"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:171
+#: f9d8f98971654da387da360b786d2b0f
+msgid "Return the definition of ``NAME`` as a highlighted string."
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:174
+#: 8a4e96398cdf42e7954a39767042c4c0
+msgid "``(:repl-completions NAME)``"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:174
+#: f84f347f8873400aaff55d4bc5d7c1fe
+msgid "Search names, types and documentations which contain ``NAME``. Return the result of tab-completing ``NAME`` as a REPL command."
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:177
+#: 34c8dc04ead546c3b4f5a7639c06745e
+msgid "``:version``"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:177
+#: d839d04f4390442ca702faeeca415274
+msgid "Return the version information of the Idris compiler."
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:180
+#: ac90f431b33949e2ac3075e3e5109f4f
+msgid "New For Version 2"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:182
+#: 8f7df86b34ec4730b22ae21229588ddf
+msgid "New in Version 2 of the protocol are:"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:185
+#: f563e652685b4a80aa7a3764ba6eb353
+msgid "``(:generate-def LINE NAME)``"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:185
+#: e9ab257462e54e1ab60a41886482598e
+msgid "Attempt to generate a complete definition from a type."
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:188
+#: 4284dc65b7ea4cbd912e4171ddb0d639
+msgid "``(:generate-def-next)``"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:188
+#: fc67118c88bf43d7a9545052f63a2520
+msgid "Replace the previous generated definition with the next generated definition."
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:191
+#: 0d1928207d764a1eb92482a3d99b8c18
+msgid "``(:proof-search-next)``"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:191
+#: 70963445050b468e94add304999caf6b
+msgid "Replace the previous proof search result with the next proof search result."
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:195
+#: 2092238f8ccc4ea2852534a0e667993f
+msgid "``(:intro LINE NAME)``"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:194
+#: 693cd180265640e98863aa463ccea2b1
+msgid "Returns the non-empty list of valid saturated constructors that can be used in the hole at line ``LINE`` named ``NAME``."
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:198
+#: 1c43b518e2454de4ae6ac4331c8430ba
+msgid "Possible Replies"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:200
+#: 1f5036752ef044cf862b6f16a6db2a4f
+msgid "Possible replies include a normal final reply: ::"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:205
+#: a29eed7e195e47549a0e6a867acf7cda
+msgid "A normal intermediate reply: ::"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:210
+#: 3246fe7f5c884caebaddaaf64719b156
+msgid "Informational and/or abnormal replies: ::"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:217
+#: 7406839f0f374bdabac1807b2348a126
+msgid "Warnings include compiler errors that don't cause the compiler to stop."
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:220
+#: ff9135bfd2464740be183cb5e0de66ae
+msgid "Output Highlighting"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:222
+#: 9cf08d66decc41569128d6552ec05179
+msgid "Idris mode supports highlighting the output from Idris. In reality, this highlighting is controlled by the Idris compiler. Some of the return forms from Idris support an optional extra parameter: a list mapping spans of text to metadata about that text. Clients can then use this list both to highlight the displayed output and to enable richer interaction by having more metadata present. For example, the Emacs mode allows right-clicking identifiers to get a menu with access to documentation and type signatures."
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:229
+#: e8943d456657435d9257b900ceb01de7
+msgid "A particular semantic span is a three element list. The first element of the list is the index at which the span begins, the second element is the number of characters included in the span, and the third is the semantic data itself. The semantic data is a list of lists. The head of each list is a key that denotes what kind of metadata is in the list, and the tail is the metadata itself."
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:277
+#: 2654d288de5543a0ab4c76423921075b
+msgid "The following keys are available:"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:235
+#: 0f11e813cecc4cf9b1c50c9234307620
+msgid "``name``"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:236
+#: d3986fbbb47b42cfb2bcdfa64790902d
+msgid "gives a reference to the fully-qualified Idris name"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:237
+#: c4d5e6056fef432f901aab7e9586fdb3
+msgid "``implicit``"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:238
+#: 2551c26e6e9d4886890a0d4c75707015
+msgid "provides a Boolean value that is True if the region is the name of an implicit argument"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:250
+#: bac939ed2e554ee99762fb4169c560b6
+msgid "``decor``"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:240
+#: 77cd5987578f4a32a7389e0fb9c662cd
+msgid "describes the category of a token, which can be:"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:242
+#: da025b7160d54a62940ca9729818d7a1
+msgid "``type``: type constructors"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:244
+#: 12993e523ea245719a4719560b9cdaec
+msgid "``function``: defined functions"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:246
+#: e24b7df7dd3d4244a121b46b3b0e17b5
+msgid "``data``: data constructors"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:248
+#: be823b1c5b304ef8a0b4206d91983aa8
+msgid "``bound``: bound variables, or"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:250
+#: c0ce635ebb2f44edb0c869db6ebe333e
+msgid "``keyword``"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:262
+#: 7d18081a7bda4de69d7831a4e1970764
+msgid "``source-loc``"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:253
+#: af73b73353434917b5a1c9e9b99a316a
+msgid "states that the region refers to a source code location. Its body is a collection of key-value pairs, with the following possibilities:"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:256
+#: c2c2678fb2184c6b8b3d6051b7e63fbf
+msgid "``filename``"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:256
+#: 6c8243f35e0b4757b55a0b8673f210ae
+msgid "provides the filename"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:259
+#: 2df540ce2bc64d139389b3eaefa3f9ed
+msgid "``start``"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:259
+#: f0663b3b1f41412a834ca7cf962bf672
+msgid "provides the line and column that the source location starts at as a two-element tail"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:262
+#: a00168c0c98645ad98690a14d4607500
+msgid "``end``"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:262
+#: 553097c09eee4b438f1182245abc46c4
+msgid "provides the line and column that the source location ends at as a two-element tail"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:265
+#: 54892ea1051e4d7e820c13dab1c159c1
+msgid "``text-formatting``"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:265
+#: dffe51edccd7479480a7a811c4b6faae
+msgid "provides an attribute of formatted text. This is for use with natural-language text, not code, and is presently emitted only from inline documentation. The potential values are ``bold``, ``italic``, and ``underline``."
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:268
+#: 5514be4aa5564c728211dba88f1dd023
+msgid "``link-href``"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:268
+#: 8dcc15be45d74bd596537eb7dd3c077f
+msgid "provides a URL that the corresponding text is a link to."
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:271
+#: 9a592abbcb944d029e966d682c59a9f6
+msgid "``quasiquotation``"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:271
+#: 0380933eab334b5dab5fe97db7a80352
+msgid "states that the region is quasiquoted."
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:274
+#: d83ce08df853493ab0d7b699e97f02cc
+msgid "``antiquotation``"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:274
+#: 7bd90989ebfb42c9aa0b228dd8003fd2
+msgid "states that the region is antiquoted."
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:277
+#: 639e5defdff24ca5a1ef62d77013661c
+msgid "``tt-term``"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:277
+#: 02a86db5753a4a8c8dc80ae6cb06bb80
+msgid "A serialised representation of the Idris core term corresponding to the region of text."
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:280
+#: d58d0b1f479b4eda90fcd38df2c1414d
+msgid "Source Code Highlighting"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:282
+#: 89c99171c8f343f6b228926f05e6abe8
+msgid "Idris supports instructing editors how to colour their code. When elaborating source code or REPL input, Idris will locate regions of the source code corresponding to names, and emit information about these names using the same metadata as output highlighting."
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:285
+#: 6678326b3ee0463f82bb6ec16dbf75e0
+msgid "These messages will arrive as replies to the command that caused elaboration to occur, such as ``:load-file`` or ``:interpret``. They have the format: ::"
+msgstr ""
+
+#: ../source/implementation/ide-protocol.rst:290
+#: 09cf556fd85847f99de6ddd4036e5cf5
+msgid "where ``POSNS`` is a list of positions to highlight. Each of these is a two-element list whose first element is a position (encoded as for the ``source-loc`` property above) and whose second element is highlighting metadata in the same format used for output."
+msgstr ""
+
+#: ../source/implementation/index.rst:5
+#: 405446d3abb94ab5880ca4920143a03e
+msgid "Implementation Notes"
+msgstr ""
+
+#: ../source/implementation/index.rst:9
+#: f0faacc5d5b04c76a29470101e4ddb4e
+msgid "The documentation for Idris has been published under the Creative Commons CC0 License. As such to the extent possible under law, *The Idris Community* has waived all copyright and related or neighboring rights to Documentation for Idris."
+msgstr ""
+
+#: ../source/implementation/index.rst:14
+#: 2b3f605de0fb4b8db116ae3ecb6e2c9b
+msgid "More information concerning the CC0 can be found online at: http://creativecommons.org/publicdomain/zero/1.0/"
+msgstr ""
+
+#: ../source/implementation/index.rst:16
+#: 767c511297bb4c4d9abff3e99d45efc6
+msgid "This section contains (or will contain, hopefully) a variety of notes on aspects of the implementation of Idris 2, in the hope that they help with debugging and future contributions."
+msgstr ""
+
+#: ../source/implementation/overview.rst:3
+#: 8d5c10f7f9bb4f71b299842b40e043c4
+msgid "Implementation Overview"
+msgstr ""
+
+#: ../source/implementation/overview.rst:5
+#: 5e7fae778a764873a39c306b187960ab
+msgid "These are some unsorted notes on aspects of the implementation. Sketchy, and not always completely up to date, but hopefully give some hints as to what's going on and some ideas where to look in the code to see how certain features work."
+msgstr ""
+
+#: ../source/implementation/overview.rst:11
+#: 5a281c2007114102ab8c3035cfa605d1
+msgid "Introduction"
+msgstr ""
+
+#: ../source/implementation/overview.rst:13
+#: 3d4d307282fc4c9c81b72d1461c490f4
+msgid "Core language TT (defined in ``Core.TT``), based on quantitative type theory (see https://bentnib.org/quantitative-type-theory.html). Binders have \"multiplicities\" which are either *0*, *1* or *unlimited*."
+msgstr ""
+
+#: ../source/implementation/overview.rst:17
+#: 20e1013b18214f55b8edab8058c0bfc8
+msgid "Terms are indexed over the names in scope so that we know terms are always well scoped. Values (i.e. normal forms) are defined in ``Core.Value`` as ``NF``; constructors do not evaluate their arguments until explicitly requested."
+msgstr ""
+
+#: ../source/implementation/overview.rst:21
+#: 417a63c149b242ea94fc4e7044151fd5
+msgid "Elaborate to *TT* from a higher level language *TTImp* (defined in ``TTImp.TTImp``), which is TT with implicit arguments, local function definitions, case blocks, as patterns, qualified names with automatic type-directed disambiguation, and proof search."
+msgstr ""
+
+#: ../source/implementation/overview.rst:26
+#: d785dc2b41f34f02b822faf835c3ff0b
+msgid "Elaboration relies on unification (in ``Core.Unify``), which allows postponing of unification problems. Essentially works the same way as Agda as described in Ulf Norell's thesis."
+msgstr ""
+
+#: ../source/implementation/overview.rst:30
+#: af74f43bca054314b2a11c1ff932e376
+msgid "General idea is that high level languages will provide a translation to TT. In the ``Idris/`` namespace we define the high level syntax for Idris, which translates to TTImp by desugaring operators, do notation, etc."
+msgstr ""
+
+#: ../source/implementation/overview.rst:34
+#: 904ee4cbe64a45ad899247db9b62eb24
+msgid "There is a separate linearity check after elaboration, which updates types of holes (and is aware of case blocks). This is implemented in ``Core.LinearCheck``. During this check, we also recalculate the multiplicities in hole applications so that they are displayed appropriately (e.g. if a linear variable is unused elsewhere, it will always appear with multiplicity 1 in holes)."
+msgstr ""
+
+#: ../source/implementation/overview.rst:42
+#: 0aba8bb750a948438323d3ee40bdf35d
+msgid "Where to find things:"
+msgstr ""
+
+#: ../source/implementation/overview.rst:44
+#: ec91b2b56f59479b90dcdc8c88b1a445
+msgid "``Core/`` -- anything related to the core TT, typechecking and unification"
+msgstr ""
+
+#: ../source/implementation/overview.rst:45
+#: b4c0f7203387439bb1ba34b4ca4408fe
+msgid "``TTImp/`` -- anything related to the implicit TT and its elaboration"
+msgstr ""
+
+#: ../source/implementation/overview.rst:47
+#: 6cd637aa9ce640ad919f18d229cc2cec
+msgid "``TTImp/Elab/`` -- Elaboration state and elaboration of terms"
+msgstr ""
+
+#: ../source/implementation/overview.rst:48
+#: 27b0497e5c474890b20fa211d553ab87
+msgid "``TTImp/Interactive/`` -- Interactive editing infrastructure"
+msgstr ""
+
+#: ../source/implementation/overview.rst:50
+#: cd3fb1f10b9143309f80d8afc6f8670d
+msgid "``Parser/`` -- various utilities for parsing and lexing TT and TTImp (and other things)"
+msgstr ""
+
+#: ../source/implementation/overview.rst:51
+#: 17b45f8334614d34a91635f6589fcbd7
+msgid "``Utils/`` -- some generally useful utilities"
+msgstr ""
+
+#: ../source/implementation/overview.rst:52
+#: 43854d680ed44153a4b82b0c662fb39d
+msgid "``Idris/`` -- anything relating to the high level language, translating to TTImp"
+msgstr ""
+
+#: ../source/implementation/overview.rst:54
+#: f4c37180cff44b3888485294001c237f
+msgid "``Idris/Elab/`` -- High level construct elaboration machinery (e.g. interfaces)"
+msgstr ""
+
+#: ../source/implementation/overview.rst:56
+#: 7110c61e4d7b4754948b667068c24fda
+msgid "``Compiler/`` -- back ends"
+msgstr ""
+
+#: ../source/implementation/overview.rst:59
+#: de88e167c0514b03baacd33eccb7cdc3
+msgid "The Core Type, and Ref"
+msgstr ""
+
+#: ../source/implementation/overview.rst:61
+#: cd49cb91ffca4ac99e776af39e14635d
+msgid "``Core`` is a \"monad\" (not really, for efficiency reasons, at the moment...) supporting ``Error``'s and ``IO`` (I did originally plan to allow restricting this to some specific IO operations, but haven't yet).  The raw syntax is defined by a type ``RawImp`` which has a source location at each node, and any errors in elaboration note the location at the point where the error occurred, as a file context ``FC``."
+msgstr ""
+
+#: ../source/implementation/overview.rst:68
+#: 5e72905da7f2472aac6abb16a236d024
+msgid "``Ref`` is essentially an ``IORef``. Typically we pass them implicitly and use labels to disambiguate which one we mean. See ``Core.Core`` for their definition. Again, ``IORef`` is for efficiency - even if it would be neater to use a state monad this turned out to be about 2-3 times faster, so I'm going with the \"ugly\" choice..."
+msgstr ""
+
+#: ../source/implementation/overview.rst:75
+#: 931514501deb41358e71bbe6cd7bf01c
+msgid "Term representation"
+msgstr ""
+
+#: ../source/implementation/overview.rst:77
+#: a9d1edaeb6d341398014884cfeeab148
+msgid "Terms in the core language are indexed by a list of the names in scope, most recently defined first:"
+msgstr ""
+
+#: ../source/implementation/overview.rst:84
+#: 767292e74a3143ca8217ba86ac22a071
+msgid "This means that terms are always well scoped, and we can use the type system to keep us right when manipulating names. For example, we have:"
+msgstr ""
+
+#: ../source/implementation/overview.rst:92
+#: ac6e4e11c0ad4cfb93fdb45886c07884
+msgid "So local variables are represented by an index into the local context (a de Bruijn index, ``idx``), and a proof, erased at run time, that the index is valid. So everything is de Bruijn indexed, but the type checker still keeps track of the indices so that we don't have to think too hard!"
+msgstr ""
+
+#: ../source/implementation/overview.rst:97
+#: 645a64541ce74fb4a76ef2d4c1c3d1ac
+msgid "``Core.TT`` contains various handy tools for manipulating terms with their indices, such as:"
+msgstr ""
+
+#: ../source/implementation/overview.rst:108
+#: 553ce2664c564f589e6fc15e163af5f2
+msgid "Note that the types are explicit about when the ``vars`` needs to be passed at run time, and when it isn't. Mostly where it's needed it's to help with displaying names, or name generation, rather than any fundamental reason in the core. In general, this isn't expensive at run time."
+msgstr ""
+
+#: ../source/implementation/overview.rst:113
+#: f86762b1760d45159b931409e7728927
+msgid "Environments, defined in ``Core.Env``, map local variables to binders:"
+msgstr ""
+
+#: ../source/implementation/overview.rst:119
+#: fe0c3ea13e50421c82fb941407db61a9
+msgid "A binders is typically a *lambda*, a *pi*, or a *let* (with a value), but can also be a *pattern variable*. See the definition of ``TT`` for more details. Where we have a term, we usually also need an ``Env``."
+msgstr ""
+
+#: ../source/implementation/overview.rst:123
+#: b49e1d4a70004202ad9cba6d7d1b412e
+msgid "We also have values, which are in head normal form, and defined in ``Core.Value``:"
+msgstr ""
+
+#: ../source/implementation/overview.rst:130
+#: ff5ff735e2e547d781bcbc2327cc9735
+msgid "We can convert a term to a value by normalising..."
+msgstr ""
+
+#: ../source/implementation/overview.rst:137
+#: 436e7036a28e48e391c60246a544e7e4
+msgid "...and back again, by quoting:"
+msgstr ""
+
+#: ../source/implementation/overview.rst:144
+#: 5e8711a8073a465b818cd6470f3552e3
+msgid "Both ``nf`` and ``quote`` are defined in ``Core.Normalise``. We don't always know whether we'll need to work with ``NF`` or ``Term``, so we also have a \"glued\" representation, ``Glued vars``, again defined in ``Core.Normalise``, which lazily computes either a ``NF`` or ``Term`` as required. Elaborating a term returns the type as a ``Glued vars``."
+msgstr ""
+
+#: ../source/implementation/overview.rst:150
+#: 43b70800898d4ed3915964614f2f9a90
+msgid "``Term`` separates ``Ref`` (global user defined names) from ``Meta``, which are globally defined metavariables. For efficiency, metavariables are only substituted into terms if they have non-0 multiplicity, to preserve sharing as much as possible."
+msgstr ""
+
+#: ../source/implementation/overview.rst:156
+#: 7547c04b2b9a46798f36ca5ebad68ac3
+msgid "Unification"
+msgstr ""
+
+#: ../source/implementation/overview.rst:157
+#: 600c8e5029a04cab81956de08d26e038
+msgid "Unification is probably the most important part of the elaboration process, and infers values for implicit arguments. That is, it finds values for the things which are referred to by ``Meta`` in ``Term``. It is defined in ``Core.Unify``, as the top level unification function has the following type:"
+msgstr ""
+
+#: ../source/implementation/overview.rst:174
+#: e45c751491cf457e98662b328bf6af3f
+msgid "The ``Unify`` interface is there because it is convenient to be able to define unification on ``Term`` and ``NF``, as well as ``Closure`` (which is part of ``NF`` to represent unevaluated arguments to constructors)."
+msgstr ""
+
+#: ../source/implementation/overview.rst:178
+#: 9105a84da7fb42f88d9fdebb40b40cfc
+msgid "This is one place where indexing over ``vars`` is extremely valuable: we have to keep the environment consistent, so unification won't accidentally introduce any scoping bugs!"
+msgstr ""
+
+#: ../source/implementation/overview.rst:182
+#: 58802aad79d1496799e0f57c3f30aef1
+msgid "Idris 2 implements pattern unification - see Adam Gundry's thesis for an accessible introduction."
+msgstr ""
+
+#: ../source/implementation/overview.rst:186
+#: 1229b83491234b40821068c5e0e1ece6
+msgid "Context"
+msgstr ""
+
+#: ../source/implementation/overview.rst:188
+#: 82bfeedd1d114a2383b574be0c491b56
+msgid "``Core.Context`` defines all the things needed for TT. Most importantly: ``Def`` gives definitions of names (case trees, builtins, constructors and holes, mostly); ``GlobalDef`` is a definition with all the other information about it (type, visibility, totality, etc); ``Context`` is a context mapping names to ``GlobalDef``, and ``Defs`` is the core data structure with everything needed to typecheck more definitions."
+msgstr ""
+
+#: ../source/implementation/overview.rst:195
+#: 3fa9ef37d83b4cf78a0f99fe4328989c
+msgid "The main Context type stores definitions in an array, indexed by a \"resolved name id\", an integer, for fast look up. This means that it also needs to be able to convert between resolved names and full names. The ``HasNames`` interface defines methods for going back and forth between structures with human readable names, and structures with resolved integer names."
+msgstr ""
+
+#: ../source/implementation/overview.rst:201
+#: 9ebb7dcb55384b02bf3447fa358a3548
+msgid "Since we store names in an array, all the lookup functions need to be in the ``Core`` monad. This also turns out to help with loading checked files (see below)."
+msgstr ""
+
+#: ../source/implementation/overview.rst:206
+#: 4b8bd84e2f6a4f968efc69e7c7941e66
+msgid "Elaboration Overview"
+msgstr ""
+
+#: ../source/implementation/overview.rst:208
+#: b29e8f7eb4014fa3affdb553ff1b350b
+msgid "Elaboration of ``RawImp`` to ``TT`` is driven by ``TTImp.Elab``, with the top level function for elaborating terms defined in ``TTImp.Elab.Term``, support functions defined in ``TTImp.Elab.Check``, and elaborators for the various TTImp constructs defined in separate files under ``TTImp.Elab.*``."
+msgstr ""
+
+#: ../source/implementation/overview.rst:214
+#: cc8ce013caf74667953a79d8cb085636
+msgid "Laziness"
+msgstr ""
+
+#: ../source/implementation/overview.rst:216
+#: 1bf9846bd86640889da38f84814f7de5
+msgid "Like Idris 1, laziness is marked in types using ``Lazy``, ``Delay`` and ``Force``, or ``Inf`` (instead of ``Lazy``) for codata. Unlike Idris 1, these are language primitives rather than special purpose names."
+msgstr ""
+
+#: ../source/implementation/overview.rst:220
+#: 72e7f505ead1444db7e665a786b1d3c0
+msgid "Implicit laziness resolution is handled during unification (in ``Core.Unify``). When unification is invoked (by ``convert`` in ``TTImp.Elab.Check``) with the ``withLazy`` flag set, it checks whether it is converting a lazy type with a non-lazy type. If so, it continues with unification, but returning that either a ``Force`` or ``Delay`` needs inserting as appropriate."
+msgstr ""
+
+#: ../source/implementation/overview.rst:227
+#: fbc98746965c4df08c865a0a66dc6da0
+msgid "TTC format"
+msgstr ""
+
+#: ../source/implementation/overview.rst:229
+#: 0be03e6ef49f4184bf00c39baf2caa94
+msgid "We can save things to binary if we have an implementation of the TTC interface for it. See ``Utils.Binary`` to see how this is done. It uses a global reference ``Ref Bin Binary`` which uses ``Data.Buffer`` underneath."
+msgstr ""
+
+#: ../source/implementation/overview.rst:233
+#: e81ee765863747c4ba5beeb3f693da82
+msgid "When we load checked TTC files, we don't process the definitions immediately, but rather store them as a ``ContextEntry``, which is either a ``Binary`` blob, or a processed definition. We only process the definitions the first time they are looked up, since converting Binary to the definition is fairly costly (due to having to construct a lot of AST nodes), and often definitions in an imported file are never used."
+msgstr ""
+
+#: ../source/implementation/overview.rst:241
+#: 6137c922297f478abadf1bde1515ab24
+msgid "Bound Implicits"
+msgstr ""
+
+#: ../source/implementation/overview.rst:243
+#: 3e8ec43222184c8bbde8c1487d21aa36
+msgid "The ``RawImp`` type has a constructor ``IBindVar``. The first time we encounter an ``IBindVar``, we record the name as one which will be implicitly bound. At the end of elaboration, we decide which holes should turn into bound variables (Pi bound in types, Pattern bound on a LHS, still holes on the RHS) by looking at the list of names bound as ``IBindVar``, the things they depend on, and sorting them so that they are bound in dependency order. This happens in ``TTImp.Implicit.getToBind``."
+msgstr ""
+
+#: ../source/implementation/overview.rst:251
+#: 3b2c0e7f65944fa191c089a4fd702def
+msgid "Once we know what the bound implicits need to be, we bind them in ``bindImplicits``. Any application of a hole which stands for a bound implicit gets turned into a local binding (either Pi or Pat as appropriate, or PLet for @-patterns)."
+msgstr ""
+
+#: ../source/implementation/overview.rst:257
+#: a834df2f758a43fbae746cf385002fa5
+msgid "Unbound Implicits"
+msgstr ""
+
+#: ../source/implementation/overview.rst:259
+#: beb681b9c2324143bd465a8aafa474e6
+msgid "Any name beginning with a lower case letter is considered an unbound implicit. They are elaborated as holes, which may depend on the initial environment of the elaboration, and after elaboration they are converted to an implicit pi binding, with multiplicity 0. So, for example:"
+msgstr ""
+
+#: ../source/implementation/overview.rst:268
+#: c61cfc391a9a476180b2366589b86fde
+msgid "becomes:"
+msgstr ""
+
+#: ../source/implementation/overview.rst:274
+#: 0fe87c6141ce469abb27c2d2ad9df69b
+msgid "Bindings are ordered according to dependency. It'll infer any additional names, e.g. in:"
+msgstr ""
+
+#: ../source/implementation/overview.rst:281
+#: 66d48736658a43f08fc6e5b929138e10
+msgid "... where ``xs`` is a ``Vect n a``, it infers bindings for ``n`` and ``a``."
+msgstr ""
+
+#: ../source/implementation/overview.rst:283
+#: 133f1259d99546fab6fa28fa7e5f0041
+msgid "The ``%unbound_implicits`` directive means that it will no longer automatically bind names (that is, ``a`` and ``b`` in ``map`` above) but it will still infer the types for any additional names, e.g. if you write:"
+msgstr ""
+
+#: ../source/implementation/overview.rst:291
+#: 952dc55933b5456e9fbfb83983ae6b20
+msgid "... it will still infer a type for ``xs`` and infer bindings for ``n`` and ``a``."
+msgstr ""
+
+#: ../source/implementation/overview.rst:295
+#: be7894e7c33b4953a8fa2764341f972e
+msgid "Implicit arguments"
+msgstr ""
+
+#: ../source/implementation/overview.rst:297
+#: 4a7a0bb10d6744a4b5d910883bd18dad
+msgid "When we encounter an implicit argument (``_`` in the raw syntax, or added when we elaborate an application and see that there is an implicit needed) we make a new hole which is a fresh name applied to the current environment, and return that as the elaborated term. This happens in ``TTImp.Elab.Check``, with the function ``metaVar``.  If there's enough information elsewhere we'll find the definition of the hole by unification."
+msgstr ""
+
+#: ../source/implementation/overview.rst:304
+#: 1d522a967abc4b20bcd1827dcc38e893
+msgid "We never substitute holes in a term during elaboration and rely on normalisation if we need to look inside it. If there are holes remaining after elaboration of a definition, report an error (it's okay for a hole in a type as long as it's resolved by the time the definition is done)."
+msgstr ""
+
+#: ../source/implementation/overview.rst:309
+#: 7a603ac5378348dba2a4cd9fe107289d
+msgid "See ``Elab.App.makeImplicit``, ``Elab.App.makeAutoImplicit`` to see where we add holes for the implicit arguments in applications."
+msgstr ""
+
+#: ../source/implementation/overview.rst:312
+#: 7d883dce7853458ea5cfa30598f54fca
+msgid "``Elab.App`` does quite a lot of tricky stuff! In an attempt to help with resolving ambiguous names and record updates, it will sometimes delay elaboration of an argument (see ``App.checkRestApp``) so that it can get more information about its type first."
+msgstr ""
+
+#: ../source/implementation/overview.rst:317
+#: f699e9423a3347c885bdc4a8864fd7c7
+msgid "``Core.Unify.solveConstraints`` revisits all of the currently unsolved holes and constrained definitions, and tries again to unify any constraints which they require. It also tries to resolve anything defined by proof search. The current state of unification is defined in ``Core.UnifyState``, and unification constraints record which metavariables are blocking them. This improves performance, since we'll only retry a constraint if one of the blocking metavariables has been resolved."
+msgstr ""
+
+#: ../source/implementation/overview.rst:326
+#: ba19920b43b64bf89973a42a722423ba
+msgid "Additional type inference"
+msgstr ""
+
+#: ../source/implementation/overview.rst:328
+#: e7a03d6b96104819b9cd1a59818dfb4b
+msgid "A ``?`` in a type means \"infer this part of the type\".  This is distinct from ``_`` in types, which means \"I don't care what this is\". The distinction is in what happens when inference fails.  If inference fails for ``_``, we implicitly bind a new name (just like pattern matching on the lhs - i.e. it means match anything). If inference fails for ``?``, we leave it as a hole and try to fill it in later. As a result, we can say:"
+msgstr ""
+
+#: ../source/implementation/overview.rst:340
+#: 858b5405ec5441598995e79a9aa2d89d
+msgid "... and the ``?`` will be inferred to be 4. But if we say:"
+msgstr ""
+
+#: ../source/implementation/overview.rst:347
+#: b0c53cb9928f4fa2a2e582ff6b9b555e
+msgid "... we'll get an error, because the ``_`` has been bound as a new name. Both ``?`` and ``_`` are represented in ``RawImp`` by the ``Implicit`` constructor, which has a boolean flag meaning \"bind if unresolved\"."
+msgstr ""
+
+#: ../source/implementation/overview.rst:351
+#: 7d02199290114814b03866061708104a
+msgid "So the meaning of ``_`` is now consistent on the lhs and in types (i.e. it means infer a value and bind a variable on failure to infer anything). In practice, using ``_`` will get you the old Idris behaviour, but ``?`` might get you a bit more type inference."
+msgstr ""
+
+#: ../source/implementation/overview.rst:357
+#: 2cf668287db5484eae2aa7b729afc82c
+msgid "Auto Implicits"
+msgstr ""
+
+#: ../source/implementation/overview.rst:359
+#: 2bf9b5fa27e24b609925eab334b22244
+msgid "Auto implicits are resolved by proof search, and can be given explicit arguments in the same way as ordinary implicits: i.e. ``{x = exp}`` to give ``exp`` as the value for auto implicit ``x``. Interfaces are syntactic sugar for auto implicits (it is the same resolution mechanism - interfaces translate into records, and implementations translate into hints for the search)."
+msgstr ""
+
+#: ../source/implementation/overview.rst:365
+#: 787ac26be2c4483991ec4563e169eb89
+msgid "The argument syntax ``@{exp}`` means that the value of the next auto implicit in the application should be ``exp`` - this is the same as the syntax for invoking named implementations in Idris 1, but interfaces and auto implicits have been combined now."
+msgstr ""
+
+#: ../source/implementation/overview.rst:370
+#: 838bf7798d814a2592457b5715bd4bd0
+msgid "Implicit search is defined in ``Core.AutoSearch``. It will only begin a search if all the *determining arguments* of the goal are defined, meaning that they don't contain *any* holes. This avoids committing too early to the solution of a hole by resolving it by search, rather than unification, unless a programmer has explicitly said (via a ``search`` option on a data type) that that's what they want."
+msgstr ""
+
+#: ../source/implementation/overview.rst:378
+#: 2ed6f1470aeb446fbbea8bd050b0b519
+msgid "Dot Patterns"
+msgstr ""
+
+#: ../source/implementation/overview.rst:380
+#: 9eb6a14408fe4c9c8ae5fe3ac9d1e9ec
+msgid "``IMustUnify`` is a constructor of ``RawImp``. When we elaborate this, we generate a hole, then elaborate the term, and add a constraint that the generated hole must unify with the term which was explicitly given (in ``UnifyState.addDot``), without resolving any holes. This is finally checked in ``UnifyState.checkDots``."
+msgstr ""
+
+#: ../source/implementation/overview.rst:386
+#: 4a49e62e50784496aacf758ffa24aa24
+msgid "Proof Search"
+msgstr ""
+
+#: ../source/implementation/overview.rst:388
+#: b0e0a79605a54ac4951808d1307c5730
+msgid "A definition constructed with ``Core.Context.BySearch`` is a hole which will be resolved by searching for something which fits the type. This happens in ``Core.AutoSearch``. It checks all possible hints for a term, to ensure that only one is possible."
+msgstr ""
+
+#: ../source/implementation/overview.rst:394
+#: 339e966aa7b4464181afa028c0f11a44
+msgid "@-Patterns"
+msgstr ""
+
+#: ../source/implementation/overview.rst:396
+#: 2de68f56991a4961afe26a45db81b6ab
+msgid "Names which are bound in types are also bound as @-patterns, meaning that functions have access to them. For example, we can say:"
+msgstr ""
+
+#: ../source/implementation/overview.rst:405
+#: a5a3e40aa05e4ee98a7898adfa1fa66a
+msgid "As patterns are implemented as a constructor of ``TT``, which makes a lot of things more convenient (especially case tree compilation)."
+msgstr ""
+
+#: ../source/implementation/overview.rst:409
+#: fa84c61f921a4d1d9f418c053831f53f
+msgid "Linear Types"
+msgstr ""
+
+#: ../source/implementation/overview.rst:411
+#: 21202610bfb44cbd80a7fe6bdba404b5
+msgid "Following Conor McBride and Bob Atkey's work, all binders have a multiplicity annotation (``RigCount``). After elaboration in ``TTImp.Elab``, we do a separate linearity check which: a) makes sure that linear variables are used exactly once; b) updates hole types to properly reflect usage information."
+msgstr ""
+
+#: ../source/implementation/overview.rst:417
+#: bc01b7eb43c74a188c9108967df9ebea
+msgid "Local definitions"
+msgstr ""
+
+#: ../source/implementation/overview.rst:419
+#: cef74c6e2c3942bb86dc5e9d6cb9361b
+msgid "We elaborate relative to an environment, meaning that we can elaborate local function definitions. We keep track of the names being defined in a nested block of declarations, and ensure that they are lifted to top level definitions in TT by applying them to every name in scope."
+msgstr ""
+
+#: ../source/implementation/overview.rst:424
+#: ee6f14c53b12422cbf930863fe349b13
+msgid "Since we don't know how many times a local definition will be applied, in general, anything bound with multiplicity 1 is passed to the local definition with multiplicity 0, so if you want to use it in a local definition, you need to pass it explicitly."
+msgstr ""
+
+#: ../source/implementation/overview.rst:430
+#: 5d6a2b274d93410985bed88cd633f8e5
+msgid "Case blocks"
+msgstr ""
+
+#: ../source/implementation/overview.rst:432
+#: 457ceda99208494da76fd10174ce2a3a
+msgid "Similar to local definitions, these are lifted to top level definitions which represent the case block, which is immediately applied to the scrutinee of the case. We don't attempt to calculate the multiplicities of arguments when elaborating the case block, since we'll probably get it wrong - instead, these are checked during linearity checking, which knows about case functions."
+msgstr ""
+
+#: ../source/implementation/overview.rst:438
+#: 46cca259c00b4eff830ee469e9c28fa9
+msgid "Case blocks in the scope of local definitions are tricky, because the names need to match up, and the types might be refined, but we also still need to apply the local names to the scope in which they were defined. This is a bit fiddly, and dealt with by the ``ICaseLocal`` constructor of ``RawImp``."
+msgstr ""
+
+#: ../source/implementation/overview.rst:443
+#: 857bdd6976434b559891a81b71d2bb07
+msgid "Various parts of the system treat case blocks specially, even though they aren't strictly part of the core. In particular, these are linearity checking and totality checking."
+msgstr ""
+
+#: ../source/implementation/overview.rst:448
+#: 7b0629f6e7ad4291af8fa79136717e0f
+msgid "Parameters"
+msgstr ""
+
+#: ../source/implementation/overview.rst:450
+#: 5f9d812073854306ae30147fc901867a
+msgid "The parameters to a data type are taken to be the arguments which appear, unchanged, in the same position, everywhere across a data definition."
+msgstr ""
+
+#: ../source/implementation/overview.rst:454
+#: 15c93c8d8b0445f6a13af45aeef2bbd7
+msgid "Erasure"
+msgstr ""
+
+#: ../source/implementation/overview.rst:456
+#: 72421474e05446ab8b8016d303b12559
+msgid "Unbound implicits are given ``0`` multiplicity, so the rule is now that if you don't explicitly write it in the type of a function or constructor, the argument is erased at run time."
+msgstr ""
+
+#: ../source/implementation/overview.rst:460
+#: c56d87f0c5fa4914a2d923f8bf4d4521
+msgid "Elaboration and the case tree compiler check ensure that 0-multiplicity arguments are not inspected in case trees. In the compiler, 0-multiplicity arguments to constructors are erased completely, whereas 0-multiplicity arguments to functions are replaced with a placeholder erased value."
+msgstr ""
+
+#: ../source/implementation/overview.rst:466
+#: 82fbaa39f3364d318e6da9c7f6ce974b
+msgid "Namespaces and name visibility"
+msgstr ""
+
+#: ../source/implementation/overview.rst:468
+#: 87aff121053946368858c9a6ba73eea9
+msgid "Same rules mostly apply as in Idris 1. The difference is that visibility is *per namespace* not *per file* (that is, files have no relevance other except in that they introduce their own namespace, and in that they allow separate typechecking)."
+msgstr ""
+
+#: ../source/implementation/overview.rst:473
+#: 5f71bbfa63f14c15a15915f3f1b9b46f
+msgid "One effect of this is that when a file defines nested namespaces, the inner namespace can see what's in the outer namespace, but not vice versa unless names defined in the inner namespace are explicitly exported. The visibility modifiers ``export``, ``public export``, and ``private`` control whether the name can be seen in any other namespace, and it's nothing to do with the file they're defined in at all."
+msgstr ""
+
+#: ../source/implementation/overview.rst:480
+#: 919e743eb42844d5b6dd1910da296dc7
+msgid "Unlike Idris 1, there is no restriction on whether public definitions can refer to private names. The only restriction on ``private`` names is that they can't be referred to directly (i.e. in code) outside the namespace."
+msgstr ""
+
+#: ../source/implementation/overview.rst:485
+#: 8ef39ccae701459e8b6c25fccbb2b081
+msgid "Records"
+msgstr ""
+
+#: ../source/implementation/overview.rst:487
+#: b2650b745afd462a83eac4d0d4e754c5
+msgid "Records are part of TTImp (rather than the surface language). Elaborating a record declaration creates a data type and associated projection functions. Record setters are generated on demand while elaborating TTImp (in ``TTImp.Elab.Record``). Setters are translated directly to ``case`` blocks, which means that update of dependent fields works as one might expect (i.e. it's safe as long as all of the fields are updated at the same time consistently)."
+msgstr ""
