@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020, The Idris Community
+# Copyright (C) 2020-2023, The Idris Community
 # This file is distributed under the same license as the Idris2 package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-28 21:56+0800\n"
+"POT-Creation-Date: 2025-05-15 23:55+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -48,7 +48,7 @@ msgstr ""
 
 #: ../source/reference/builtins.rst:31
 #: 858a3a06add3497db34320d123a532a4
-msgid "There are a few rules governing when this optimization occures:"
+msgid "There are a few rules governing when this optimization occurs:"
 msgstr ""
 
 #: ../source/reference/builtins.rst:33
@@ -191,73 +191,73 @@ msgstr ""
 msgid "The output documents, in reverse chronological order, the cumulative time taken for the operation (and sub operations) to complete. Sub levels are indicated by successive repetitions of ``+``."
 msgstr ""
 
-#: ../source/reference/debugging.rst:15
+#: ../source/reference/debugging.rst:16
 #: 62138d18945f41e491e066a22a67f201
 msgid "Logging"
 msgstr ""
 
-#: ../source/reference/debugging.rst:17
+#: ../source/reference/debugging.rst:18
 #: 5def9c4cdf064cfcbc1f62906aca72fe
 msgid "The compiler logs various categories of information during operation at various levels."
 msgstr ""
 
-#: ../source/reference/debugging.rst:19
+#: ../source/reference/debugging.rst:20
 #: 5f97aa6c469448be813989b4ef2c6de5
 msgid "Log levels are characterised by two things:"
 msgstr ""
 
-#: ../source/reference/debugging.rst:21
+#: ../source/reference/debugging.rst:22
 #: 2738277427a7471b86345b50189f4e26
 msgid "a dot-separated path of ever finer topics of interest e.g. scope.let"
 msgstr ""
 
-#: ../source/reference/debugging.rst:22
+#: ../source/reference/debugging.rst:23
 #: 965c9c00d985490f92db2d7ac8fb7a5e
 msgid "a natural number corresponding to the verbosity level e.g. 5"
 msgstr ""
 
-#: ../source/reference/debugging.rst:24
+#: ../source/reference/debugging.rst:25
 #: 5bcae5978f124c4d8438bba34fd8f310
 msgid "If the user asks for some logs by writing::"
 msgstr ""
 
-#: ../source/reference/debugging.rst:28
+#: ../source/reference/debugging.rst:29
 #: 03079c89147a49eebad0a72f41c0308a
 msgid "they will get all of the logs whose path starts with `scope` and whose verbosity level is less or equal to `5`. By combining different logging directives, users can request information about everything (with a low level of details) and at the same time focus on a particular subsystem they want to get a lot of information about. For instance:::"
 msgstr ""
 
-#: ../source/reference/debugging.rst:37
+#: ../source/reference/debugging.rst:38
 #: 5a767f0df55148b5bdb14db5db644c0b
 msgid "will deliver basic information about the various phases the compiler goes through and deliver a lot of information about scope-checking let binders."
 msgstr ""
 
-#: ../source/reference/debugging.rst:41
+#: ../source/reference/debugging.rst:42
 #: 972d5f85a4e042e0bf0b95581dd78fc0
 msgid "You can set the logging level at the command line using::"
 msgstr ""
 
-#: ../source/reference/debugging.rst:45
+#: ../source/reference/debugging.rst:46
 #: 941e24ca123a47569af6caeb511fe0ac
 msgid "and through the REPL using::"
 msgstr ""
 
-#: ../source/reference/debugging.rst:51
+#: ../source/reference/debugging.rst:52
 #: ca139605f1a743728a39231529ace347
 msgid "The supported logging categories can be found using the command line flag::"
 msgstr ""
 
-#: ../source/reference/debugging.rst:56
+#: ../source/reference/debugging.rst:57
 #: d66975e2408349519b6a8c9c55c982cb
 msgid "REPL Commands"
 msgstr ""
 
-#: ../source/reference/debugging.rst:58
+#: ../source/reference/debugging.rst:59
 #: ac4e61d8681b421b96977705660c4f4f
 msgid "To see more debug information from the REPL there are several options one can set."
 msgstr ""
 
-#: ../source/reference/debugging.rst:60
-#: ../source/reference/debugging.rst:72
+#: ../source/reference/debugging.rst:61
+#: ../source/reference/debugging.rst:73
 #: ee494d61ddfc4b9890b3ff4a6645a690
 #: 3bc396f2ba8a4dd59fa40096ccb500e9
 msgid "Logging Categories"
@@ -296,12 +296,12 @@ msgstr ""
 msgid "show values of implicit arguments"
 msgstr ""
 
-#: ../source/reference/debugging.rst:68
+#: ../source/reference/debugging.rst:69
 #: df91f9e4e73a4ae6932c01a900b91a0d
 msgid "Compiler Flags"
 msgstr ""
 
-#: ../source/reference/debugging.rst:70
+#: ../source/reference/debugging.rst:71
 #: 4b2b7639885247029bb6ccf92e56fba4
 msgid "There are several 'hidden' compiler flags that can help expose Idris' inner workings."
 msgstr ""
@@ -356,22 +356,22 @@ msgstr ""
 msgid "do more elaborator checks (currently conversion in LinearCheck)"
 msgstr ""
 
-#: ../source/reference/debugging.rst:84
+#: ../source/reference/debugging.rst:85
 #: 2c692c98cb5244339f76f9e582ae9235
 msgid "Output Formats"
 msgstr ""
 
-#: ../source/reference/debugging.rst:87
+#: ../source/reference/debugging.rst:88
 #: ce6ae92306114c33bff09b770b9d04a5
 msgid "Debug Output"
 msgstr ""
 
-#: ../source/reference/debugging.rst:89
+#: ../source/reference/debugging.rst:90
 #: 4e4f0c4d4e314a99b663b049568c01b0
 msgid "Calling ``:di <name>`` dumps debugging information about the selected term. Specifically dumped are:"
 msgstr ""
 
-#: ../source/reference/debugging.rst:92
+#: ../source/reference/debugging.rst:93
 #: b0ebadf0e77841d5ab4cf3de0b1ce737
 msgid "Debugging Information"
 msgstr ""
@@ -508,89 +508,229 @@ msgstr ""
 msgid "Idris 2 recognises a number of environment variables, to decide where to look for packages, external libraries, code generators, etc. It currently recognises, in approximately the order you're likely to need them:"
 msgstr ""
 
-#: ../source/reference/envvars.rst:11
-#: 021322dba40e47f5ae57ee3aa64115b8
-msgid "``EDITOR`` - Sets the editor used in REPL :e command"
-msgstr ""
-
 #: ../source/reference/envvars.rst:12
-#: 4f9b74b79bc24d43bce83f5ae1c26220
-msgid "``IDRIS2_CG`` - Sets which code generator to use when compiling programs"
+#: 309a830c003c4357a2cbc8254199cb54
+msgid "Build-time"
 msgstr ""
 
-#: ../source/reference/envvars.rst:13
-#: 660b99d3ad704243981b651037e6f1f1
-msgid "``IDRIS2_PACKAGE_PATH`` - Lists the directories where Idris2 looks for packages, in addition to the defaults (which are under the ``IDRIS2_PREFIX`` and in the ``depends`` subdirectory of the current working directory). Directories are separated by a ``:``, or a ``;`` on Windows"
-msgstr ""
-
-#: ../source/reference/envvars.rst:17
-#: e140d5bb94cd4c82b943fdb4ffeb738f
-msgid "``IDRIS2_PATH`` - Places Idris2 looks for import files, in addition to the imports in packages"
-msgstr ""
-
-#: ../source/reference/envvars.rst:19
-#: 7f2e68cad69a45e296c2f4d9855e4d99
-msgid "``IDRIS2_DATA`` - Places Idris2 looks for its data files. These are typically support code for code generators."
-msgstr ""
-
-#: ../source/reference/envvars.rst:21
-#: 16054b5376d94618af6e7950a26b5627
-msgid "``IDRIS2_LIBS`` - Places Idris2 looks for libraries used by code generators."
-msgstr ""
-
-#: ../source/reference/envvars.rst:22
+#: ../source/reference/envvars.rst:14
 #: c0e538710828403a923e2074ea81a14e
-msgid "``IDRIS2_PREFIX`` - Gives the Idris2 installation prefix"
+msgid "``PREFIX`` - Default way to set the Idris2 installation prefix."
+msgstr ""
+
+#: ../source/reference/envvars.rst:15
+#: c0e538710828403a923e2074ea81a14e
+msgid "``IDRIS2_PREFIX`` - Alternative way to set the Idris2 installation prefix."
+msgstr ""
+
+#: ../source/reference/envvars.rst:18
+#: e617f52028224eeb9ccaa252793f1ea9
+msgid "Runtime"
+msgstr ""
+
+#: ../source/reference/envvars.rst:20
+#: 021322dba40e47f5ae57ee3aa64115b8
+msgid "``EDITOR`` - Editor used in REPL ``:e`` command."
 msgstr ""
 
 #: ../source/reference/envvars.rst:23
-#: d7a99157b4ca41a0886aa1f73d7fd70e
-msgid "``CHEZ`` - Sets the location of the ``chez`` executable used in Chez codegen"
-msgstr ""
-
-#: ../source/reference/envvars.rst:24
-#: d7f73b3a63414cea97ebcc0d8bd48f46
-msgid "``RACKET`` - Sets the location of the ``racket`` executable used in Racket codegen"
+#: c89c367c463f4f91beac857cff3cccc5
+msgid "Both"
 msgstr ""
 
 #: ../source/reference/envvars.rst:25
-#: 98e3f7be9c954e5795cd6171e8ade4a6
-msgid "``RACKET_RACO`` - Sets the location of the ``raco`` executable used in Racket codegen"
+#: 420d66929ce545a697ce8b0ef8fce63c
+msgid "``IDRIS2_CG`` - Codegen backend."
 msgstr ""
 
 #: ../source/reference/envvars.rst:26
-#: b6f14e95786d4a4b87d8bbcb68a8fdce
-msgid "``GAMBIT_GSI`` - Sets the location of the ``gsi`` executable used in Gambit codegen"
-msgstr ""
-
-#: ../source/reference/envvars.rst:27
-#: 201cc56efb1c47a8986df7dae7eb8b9b
-msgid "``GAMBIT_GSC`` - Sets the location of the ``gsc`` executable used in Gambit codegen"
+#: e140d5bb94cd4c82b943fdb4ffeb738f
+msgid "``IDRIS2_PATH`` - Directories where Idris2 looks for import files, in addition to the imports in packages"
 msgstr ""
 
 #: ../source/reference/envvars.rst:28
-#: f79596bc641943aabfe6796df38aa907
-msgid "``GAMBIT_GSC_BACKEND`` - Sets the ``gsc`` executable backend argument"
+#: 660b99d3ad704243981b651037e6f1f1
+msgid "``IDRIS2_PACKAGE_PATH`` - Directories where Idris2 looks for Idris 2 packages, in addition to the defaults (which are under the ``IDRIS2_PREFIX`` and in the ``depends`` subdirectory of the current working directory). Directories are separated by a ``:`` on MacOS and \\*NIX systems, or a ``;`` on Windows"
 msgstr ""
 
-#: ../source/reference/envvars.rst:29
+#: ../source/reference/envvars.rst:33
+#: 7f2e68cad69a45e296c2f4d9855e4d99
+msgid "``IDRIS2_DATA`` - Directories where Idris2 looks for data files. These are typically support code for code generators."
+msgstr ""
+
+#: ../source/reference/envvars.rst:35
+#: 16054b5376d94618af6e7950a26b5627
+msgid "``IDRIS2_LIBS`` - Directories where Idris2 looks for libraries (for code generation)."
+msgstr ""
+
+#: ../source/reference/envvars.rst:37
+#: d7a99157b4ca41a0886aa1f73d7fd70e
+msgid "``CHEZ`` - Chez backend: location of the ``chez`` executable."
+msgstr ""
+
+#: ../source/reference/envvars.rst:38
+#: d7f73b3a63414cea97ebcc0d8bd48f46
+msgid "``RACKET`` - Racket backend: location of the ``racket`` executable."
+msgstr ""
+
+#: ../source/reference/envvars.rst:39
+#: 98e3f7be9c954e5795cd6171e8ade4a6
+msgid "``RACKET_RACO`` - Racket backend: location of the ``raco`` executable."
+msgstr ""
+
+#: ../source/reference/envvars.rst:40
+#: 10b5a110ad7d4f01b451986ff5c8603a
+msgid "``IDRIS2_INC_CGS`` - Code generators to use (comma separated) when compiling modules incrementally."
+msgstr ""
+
+#: ../source/reference/envvars.rst:42
 #: b7cb296eb42047f48960804d5d7d8f14
-msgid "``IDRIS2_CC`` - Sets the location of the C compiler executable used in RefC codegen"
+msgid "``IDRIS2_CC`` - RefC backend: location of the C compiler executable."
 msgstr ""
 
-#: ../source/reference/envvars.rst:30
+#: ../source/reference/envvars.rst:43
+#: 4f9b74b79bc24d43bce83f5ae1c26220
+msgid "``IDRIS2_CFLAGS`` - RefC backend: C compiler flags."
+msgstr ""
+
+#: ../source/reference/envvars.rst:44
+#: 8b819cb3da5c4645b19608d5bef771e5
+msgid "``IDRIS2_CPPFLAGS`` - RefC backend: C preprocessor flags."
+msgstr ""
+
+#: ../source/reference/envvars.rst:45
+#: 17f5c9a3daf04aee9c07f4281b2703a2
+msgid "``IDRIS2_LDFLAGS`` - RefC backend: C linker flags."
+msgstr ""
+
+#: ../source/reference/envvars.rst:46
+#: 16054b5376d94618af6e7950a26b5627
+msgid "``IDRIS2_LDLIBS`` - RefC backend: C linker library names or flags."
+msgstr ""
+
+#: ../source/reference/envvars.rst:47
 #: 4a8323f62b904ce1ba2d003fc3972f5a
-msgid "``CC`` - Sets the location of the C compiler executable used in RefC codegen"
+msgid "``CC`` - RefC backend: C compiler executable (IDRIS2_CC takes precedence)."
 msgstr ""
 
-#: ../source/reference/envvars.rst:31
+#: ../source/reference/envvars.rst:48
+#: 129388e1764c4d739aafc37d548e6f4e
+msgid "``CFLAGS`` - RefC backend: C compiler flags (IDRIS2_CFLAGS takes precedence)."
+msgstr ""
+
+#: ../source/reference/envvars.rst:49
+#: 33f3b2d8b57640e88ec0231a1249326d
+msgid "``CPPFLAGS`` - RefC backend: C preprocessor flags (IDRIS2_CPPFLAGS takes precedence)."
+msgstr ""
+
+#: ../source/reference/envvars.rst:50
+#: 0c4843c645304c18a678e72d5e89521d
+msgid "``LDFLAGS`` - RefC backend: C linker flags (IDRIS2_LDFLAGS takes precedence)."
+msgstr ""
+
+#: ../source/reference/envvars.rst:51
+#: 16054b5376d94618af6e7950a26b5627
+msgid "``LDLIBS`` - RefC backend: C linker library names or flags."
+msgstr ""
+
+#: ../source/reference/envvars.rst:52
 #: 53c98e78d4e440a29259ecaac4984317
-msgid "``NODE`` - Sets the location of the ``node`` executable used in Node codegen"
+msgid "``NODE`` - NodeJS backend: ``node`` executable."
 msgstr ""
 
-#: ../source/reference/envvars.rst:32
+#: ../source/reference/envvars.rst:53
 #: 4b514d65fed44a29940ea6a701dcae01
-msgid "``PATH`` - used to search for executables in certain codegens"
+msgid "``PATH`` - PATH variable is used to search for executables in certain codegens."
+msgstr ""
+
+#: ../source/reference/envvars.rst:55
+#: e111d039b70f4b688a1a351e90b656f3
+msgid "``NO_COLOR`` - Instruct Idris not to print colour to stdout. Passing the --colour/--color option will supersede this environment variable."
+msgstr ""
+
+#: ../source/reference/envvars.rst:57
+#: b6f14e95786d4a4b87d8bbcb68a8fdce
+msgid "``GAMBIT_GSI`` - Gambit backend: location of the ``gsi`` executable."
+msgstr ""
+
+#: ../source/reference/envvars.rst:58
+#: 201cc56efb1c47a8986df7dae7eb8b9b
+msgid "``GAMBIT_GSC`` - Gambit backend: location of the ``gsc`` executable."
+msgstr ""
+
+#: ../source/reference/envvars.rst:59
+#: f79596bc641943aabfe6796df38aa907
+msgid "``GAMBIT_GSC_BACKEND`` - Gambit backend: arguments passed to ``gsc``."
+msgstr ""
+
+#: ../source/reference/failing.rst:2
+#: 1632126576bd4793b9d8cc36d4684029
+msgid "Failing blocks"
+msgstr ""
+
+#: ../source/reference/failing.rst:7
+#: 8a0fbc904b0742a7b37064b0a459fa98
+msgid "Failing blocks let users check that some code parses but is rejected during elaboration. Their simplest form is using the keyword ``failing`` followed by some indented Idris code:"
+msgstr ""
+
+#: ../source/reference/failing.rst:17
+#: 15bafe8d3c094f84a94947d3b59f83d1
+msgid "Putting the code above in a file and asking Idris to check it will not produce an error message since the code in the ``failing`` block is rejected, i.e. fails."
+msgstr ""
+
+#: ../source/reference/failing.rst:21
+#: 39685490a66446e1abd8dbac0760052d
+msgid "The ``failing`` keyword optionally takes a string argument. If present, the string attached to the failing block is checked against the error message raised to check that it appears in the error. This lets the user document the kind of error expected in the block, while at the same time checking that the error message is indeed what we expected. For example, in the following example, we make sure that Idris rejects a proof that the character ``'a'`` is equal to ``'b'`` by throwing an error when unifying them:"
+msgstr ""
+
+#: ../source/reference/failing.rst:35
+#: 461ade25e6ac4d788bafbadf12053e47
+msgid "Failing blocks can be helpful when demonstrating false paths or starts in a program or example. Valid code is accepted in failing blocks, so intermediary helper functions can be used as long as at least one statement in the block fails (it does not have to be the first or last statement!):"
+msgstr ""
+
+#: ../source/reference/failing.rst:55
+#: cf346cd9f40e4dbca1ff4620c7895d14
+msgid "Invalid failing blocks"
+msgstr ""
+
+#: ../source/reference/failing.rst:57
+#: 141da25c57cd4d7c8d7223cc40725569
+msgid "Should the failing block not fail, i.e. the code inside is accepted during elaboration, the compiler will report an error:"
+msgstr ""
+
+#: ../source/reference/failing.rst:66
+#: cb7272a6711b44cd827bdd189d98ae5d
+msgid "Checking the above gives:"
+msgstr ""
+
+#: ../source/reference/failing.rst:72
+#: 512f8bf30ee340cc940e0d7e65e4d57a
+msgid "Similarly, if an expected error (sub)string is given but the error output does not match, we get:"
+msgstr ""
+
+#: ../source/reference/failing.rst:79
+#: e237f97e6b5f4fe5bbe0ba36dc66c747
+msgid "Followed by the given expected error string and the actual error output, allowing us to compare and contrast."
+msgstr ""
+
+#: ../source/reference/failing.rst:83
+#: 476727b4d440436fa350078d79ca275e
+msgid "One block per falsehood"
+msgstr ""
+
+#: ../source/reference/failing.rst:85
+#: 26882decbc9d468c98d8bb4afca8cd3f
+msgid "**Take care to use separate ``failing`` blocks per thing to check.** Using a single block can lead to unexpected results. The following example passes, since the second statement fails:"
+msgstr ""
+
+#: ../source/reference/failing.rst:102
+#: 0dacfd00c37843a6b49f42a0baa85562
+msgid "Instead, separate the statements out into separate failing blocks:"
+msgstr ""
+
+#: ../source/reference/failing.rst:118
+#: 57249aecc35b4419b94720ce1d6dc59c
+msgid "This causes two ``Error: Failing block did not fail`` messages to be emitted, as one would expect."
 msgstr ""
 
 #: ../source/reference/index.rst:3
@@ -655,149 +795,416 @@ msgstr ""
 
 #: ../source/reference/literate.rst:23
 #: 27f691d286744d0083af83780b61d3b9
-msgid "In future we should add support for literate ``LaTeX`` files, and potentially other common document formats. But more importantly, a more intelligent processing of literate documents using a pandoc like library in Idris such as: `Edda <https://github.com/jfdm/edda>` would also be welcome."
+msgid "In future we should add support for literate ``LaTeX`` files, and potentially other common document formats. But more importantly, a more intelligent processing of literate documents using a pandoc like library in Idris such as: `Edda <https://github.com/jfdm/edda>`_ would also be welcome."
 msgstr ""
 
-#: ../source/reference/literate.rst:27
+#: ../source/reference/literate.rst:28
 #: 2d0213daff9d4ea0a41cd540a6befb6b
 msgid "Bird Style Literate Files"
 msgstr ""
 
-#: ../source/reference/literate.rst:29
+#: ../source/reference/literate.rst:30
 #: b4256311b56a4ec68e1dabfe85a8f6e2
 msgid "We treat files with an extension of ``.lidr`` as bird style literate files."
 msgstr ""
 
-#: ../source/reference/literate.rst:31
+#: ../source/reference/literate.rst:32
 #: 15148b0947954cc89cf5240038a62941
-msgid "Bird notation is a classic literate mode found in Haskell, (and Orwell) in which visible code lines begin with ``>`` and hidden lines with ``<``. Other lines are treated as documentation."
+msgid "Bird notation is a classic literate mode found in Haskell (and Orwell), in which visible code lines begin with ``>`` and hidden lines with ``<``. Other lines are treated as documentation."
 msgstr ""
 
-#: ../source/reference/literate.rst:37
+#: ../source/reference/literate.rst:38
 #: ff2506a8a7ca4c03a8368c6e89433ca8
 msgid "We have diverged from ``lhs2tex`` in which ``<`` is traditionally used to display inactive code. Bird-style is presented as is, and we recommended use of the other styles for much more comprehensive literate mode."
 msgstr ""
 
-#: ../source/reference/literate.rst:41
+#: ../source/reference/literate.rst:42
 #: 82296c3c80024701b83457e021b2c23b
 msgid "Embedding in Markdown-like documents"
 msgstr ""
 
-#: ../source/reference/literate.rst:43
+#: ../source/reference/literate.rst:44
 #: 80fe248186384c048c04db23aba2fcf3
 msgid "While Bird Style literate mode is useful, it does not lend itself well to more modern markdown-like notations such as Org-Mode and CommonMark. Idris2 also provides support for recognising both 'visible' and 'invisible' code blocks and lines in both CommonMark and OrgMode documents using native code blocks and lines.."
 msgstr ""
 
-#: ../source/reference/literate.rst:48
+#: ../source/reference/literate.rst:49
 #: ea50dac639c34d71993947e7f22c8d0b
 msgid "The idea being is that:"
 msgstr ""
 
-#: ../source/reference/literate.rst:50
+#: ../source/reference/literate.rst:51
 #: 36002c4ec5bd4ee3bee18ef3cd389764
 msgid "**Visible** content will be kept in the pretty printer's output;"
 msgstr ""
 
-#: ../source/reference/literate.rst:51
+#: ../source/reference/literate.rst:52
 #: 32406c23fb594e6cac499c78e5905a1e
 msgid "**Invisible** content will be removed; and"
 msgstr ""
 
-#: ../source/reference/literate.rst:52
+#: ../source/reference/literate.rst:53
 #: 7a098253f53043d2ab6197aa18df6e68
 msgid "**Specifications** will be displayed *as is* and not touched by the compiler."
 msgstr ""
 
-#: ../source/reference/literate.rst:55
+#: ../source/reference/literate.rst:56
 #: d698aae1154749b2adbb46bbe6ee3f46
 msgid "OrgMode"
 msgstr ""
 
-#: ../source/reference/literate.rst:57
+#: ../source/reference/literate.rst:58
 #: 42b26cfcf6db4cefbf37ffa76b568e04
 msgid "We treat files with an extension of ``.org`` as org-style literate files. Each of the following markup is recognised regardless of case:"
 msgstr ""
 
-#: ../source/reference/literate.rst:60
+#: ../source/reference/literate.rst:61
 #: 0a6f9c12d6c646acb54fe65123ec853d
 msgid "Org mode source blocks for idris sans options are recognised as visible code blocks::"
 msgstr ""
 
-#: ../source/reference/literate.rst:66
+#: ../source/reference/literate.rst:67
 #: 3921f055b93a474ebf153e26aa44f4b7
 msgid "Comment blocks that begin with ``#+BEGIN_COMMENT idris`` are treated as invisible code blocks::"
 msgstr ""
 
-#: ../source/reference/literate.rst:72
+#: ../source/reference/literate.rst:73
 #: a44062c7ebed439a8a834bae401a9cfc
 msgid "Visible code lines, and specifications, are not supported. Invisible code lines are denoted with ``#+IDRIS:``::"
 msgstr ""
 
-#: ../source/reference/literate.rst:76
+#: ../source/reference/literate.rst:77
 #: 67cbc129873441ef83b53ca48a15b1b7
 msgid "Specifications can be given using OrgModes plain source or example blocks::"
 msgstr ""
 
-#: ../source/reference/literate.rst:86
+#: ../source/reference/literate.rst:87
 #: bc053beee23c4534b347116bf8b8a22d
 msgid "CommonMark"
 msgstr ""
 
-#: ../source/reference/literate.rst:88
+#: ../source/reference/literate.rst:89
 #: 745652a86158428789243656b13046ff
-msgid "We treat files with an extension of ``.md`` and ``.markdown`` as CommonMark style literate files."
+msgid "We treat Markdown files with an extension of ``.md`` or ``.markdown`` and Djot files with an extension of ``.dj`` as CommonMark style literate files."
 msgstr ""
 
-#: ../source/reference/literate.rst:90
+#: ../source/reference/literate.rst:91
 #: 4e45388e25714527ae8919c820d80a0d
 msgid "CommonMark source blocks for idris sans options are recognised as visible code blocks::"
 msgstr ""
 
-#: ../source/reference/literate.rst:100
+#: ../source/reference/literate.rst:101
 #: b6855061a5f04090b1b48be4c3ad5183
-msgid "Comment blocks of the form ``<!-- idris\\n ... \\n -->`` are treated as invisible code blocks::"
+msgid "Comment blocks of the form ``<!-- idris\\n ... \\n-->`` are treated as invisible code blocks::"
 msgstr ""
 
-#: ../source/reference/literate.rst:106
-#: ../source/reference/literate.rst:144
+#: ../source/reference/literate.rst:107
+#: ../source/reference/literate.rst:200
+#: 1faa6cf422ca4bc8b04b3b6d474ae270
+#: 7984323c3b8442ae8140802219c1268c
+msgid "Syntax of beginnings and endings of visible and invisible code blocks must not have preceding white spaces::"
+msgstr ""
+
+#: ../source/reference/literate.rst:129
+#: ../source/reference/literate.rst:167
 #: 77c30822089b415d913ff3a3aadad516
-#: fda1b3ceb4d1449fb6cf73ed1fac6442
+#: 77c30822089b415d913ff3a3aadad516
 msgid "Code lines are not supported."
 msgstr ""
 
-#: ../source/reference/literate.rst:108
+#: ../source/reference/literate.rst:131
 #: 8652068e111a4e9498bd83e9c70cc9b3
 msgid "Specifications can be given using CommonMark's pre-formatted blocks (indented by four spaces) or unlabelled code blocks.::"
 msgstr ""
 
-#: ../source/reference/literate.rst:127
+#: ../source/reference/literate.rst:150
 #: 5088761b0fac47acaaff9448d111f6c7
 msgid "LaTeX"
 msgstr ""
 
-#: ../source/reference/literate.rst:129
+#: ../source/reference/literate.rst:152
 #: 235e5573b48a4e8b811eb1d823d79f7a
 msgid "We treat files with an extension of ``.tex`` and ``.ltx`` as LaTeX style literate files."
 msgstr ""
 
-#: ../source/reference/literate.rst:131
+#: ../source/reference/literate.rst:154
 #: 687439a4415140aca26a5e9ac2885a09
 msgid "We treat environments named ``code`` as visible code blocks::"
 msgstr ""
 
-#: ../source/reference/literate.rst:138
+#: ../source/reference/literate.rst:161
 #: b8da0284a222403cbcc3b784c4b9cf39
 msgid "We treat environments named ``hidden`` as invisible code blocks::"
 msgstr ""
 
-#: ../source/reference/literate.rst:146
+#: ../source/reference/literate.rst:169
 #: 4d9d9bf72254461889c3f1949322425a
 msgid "Specifications can be given using user defined environments."
 msgstr ""
 
-#: ../source/reference/literate.rst:148
+#: ../source/reference/literate.rst:171
 #: 9f18b75ca0394f1e837dadd9883fa08b
 msgid "We do not provide definitions for these code blocks and ask the user to define them. With one such example using ``fancyverbatim`` and ``comment`` packages as::"
+msgstr ""
+
+#: ../source/reference/literate.rst:184
+#: f03592acd60441cabfdf82cbde3123de
+msgid "Typst"
+msgstr ""
+
+#: ../source/reference/literate.rst:186
+#: 745652a86158428789243656b13046ff
+msgid "We treat files with an extension of ``.typ`` as `Typst <https://github.com/typst/typst>`_ style literate files."
+msgstr ""
+
+#: ../source/reference/literate.rst:188
+#: b6855061a5f04090b1b48be4c3ad5183
+msgid "Code blocks with the Idris language set are recognised as visible code blocks::"
+msgstr ""
+
+#: ../source/reference/literate.rst:194
+#: b6855061a5f04090b1b48be4c3ad5183
+msgid "Comment blocks of the form ``/* idris\\n ... \\n*/`` are treated as invisible code blocks::"
+msgstr ""
+
+#: ../source/reference/literate.rst:218
+#: f30e5051473149f49ad3ee2b8c07b5ff
+msgid "Code lines using ``#raw`` function are not supported."
+msgstr ""
+
+#: ../source/reference/literate.rst:220
+#: 8652068e111a4e9498bd83e9c70cc9b3
+msgid "Specifications can be given using ``#raw`` function with the language and block being set, e.g.::"
+msgstr ""
+
+#: ../source/reference/operators.rst:5
+#: f70860a7da0c490b9b6a1fae69644419
+msgid "Operators"
+msgstr ""
+
+#: ../source/reference/operators.rst:7
+#: 8b208c2eae154d268ef797e08619d118
+msgid "Idris2 does not have syntax blocs (like in Idris1) or mixfix operators (like in Agda). Instead, it expands on the abilities of infix operators to enable library designers to write Domain Specific Languages (DSLs) while keeping error messages under control."
+msgstr ""
+
+#: ../source/reference/operators.rst:11
+#: 6da77555b3a6440b8f7a81ecac37bdd7
+msgid "Because operators are not linked to function definitions, they are also part of the file namespacing and follow the same rules as other defintions."
+msgstr ""
+
+#: ../source/reference/operators.rst:15
+#: 58d7747218d74275b79a80e485afac9a
+msgid "Operators can and will make some code less legible. Use with taste and caution. This document is meant to be mainly used by library authors and advanced users. If you are on the fence about using operators, err on the side of caution and avoid them."
+msgstr ""
+
+#: ../source/reference/operators.rst:21
+#: b61c1be598b34eb0865bcdde4bb608ba
+msgid "Basics"
+msgstr ""
+
+#: ../source/reference/operators.rst:23
+#: 0c8ffd55dc734385b7de2cccc21e4c2e
+msgid "Before we jump into the fancy features, let us explain how operators work for most users."
+msgstr ""
+
+#: ../source/reference/operators.rst:26
+#: cad02e6a0ef5478ab1c8e63132b6a1c3
+msgid "When you see an expression"
+msgstr ""
+
+#: ../source/reference/operators.rst:33
+#: b72cdbcc18a041daa96854f27099bf07
+msgid "It means that there is a function ``(+)`` and a *fixity* declaration in scope. A fixity for this operator looks like this"
+msgstr ""
+
+#: ../source/reference/operators.rst:40
+#: 3a4e33c4a327444aa6c2fac7399e0eca
+msgid "It starts with a fixity keyword, you have the choice to use either ``infixl``, ``infixr``, ``infix`` or ``prefix``."
+msgstr ""
+
+#: ../source/reference/operators.rst:43
+#: 07217102e9f743469a416e2e5b6b51ad
+msgid "``infixl`` means the operator is left-associative, so that successive applications of the operator will bracket to the left: ``n + m + 3 + x = (((n + m) + 3) + x)```. Similarly, ``infixr`` is right-associative, and ``infix`` is non-associative, so the brackets are mandatory. Here, we chose for ``+`` to be left-associative, hence ``infixl``."
+msgstr ""
+
+#: ../source/reference/operators.rst:48
+#: d62dc14ca1654fca8ba411b400c011d5
+msgid "The number after the fixity indicate the *precedence level* of the operator, that is, if it should be bracketed before, or after, other operators used in the same expression. For example, we want ``*`` to *take precedence* over ``+`` we write:"
+msgstr ""
+
+#: ../source/reference/operators.rst:56
+#: bf311204e7c448d6b63889f793a6f80d
+msgid "This way, the expression ``n + m * x`` is correctly interpreted as ``n + (m * x)``."
+msgstr ""
+
+#: ../source/reference/operators.rst:58
+#: 26b0ee182a2c4ffb89b7fa189c19d0dc
+msgid "Fixity declarations are optional and change how a file is parsed, but you can use any function defined with operator symbols with parenthesis around it:"
+msgstr ""
+
+#: ../source/reference/operators.rst:67
+#: 5304ba583990432a90b5b00f90af708d
+msgid "Because fixities are separated from the function definitions, a single operator can have 0 or multiple fixity definitions. In the next section, we explain how to deal with multiple fixity definitions."
+msgstr ""
+
+#: ../source/reference/operators.rst:72
+#: 8e30a0c2ebc541a18dfa5968883ec636
+msgid "Fixity & Precedence Namespacing"
+msgstr ""
+
+#: ../source/reference/operators.rst:73
+#: 0182c756efaf447ba43ae496978e2fcd
+msgid "Sometimes it could be that you need to import two libraries that export conflicting fixities. If that is the case, the compiler will emit a warning and pick one of the fixities to parse the file. If that happens, you should hide the fixity definitions that you do not wish to use. For this, use the ``%hide`` directive, just like you would to hide a function definition, but use the fixity and the operator to hide at the end. Let's work through an example:"
+msgstr ""
+
+#: ../source/reference/operators.rst:101
+#: 73547e1ec3664134984fcbe94225ecfd
+msgid "This program will raise a warning on the last line of module ``C`` because there are two conflicting fixities in scope. Should we parse the expression as ``(1 - 3) - 10`` or as ``1 - (3 - 10)``? In those cases, you can hide the extra fixity you do not wish to use by using ``%hide``:"
+msgstr ""
+
+#: ../source/reference/operators.rst:118
+#: cc649f023b3b489b93c2ffced5e66656
+msgid "In which case the program will be parsed as ``1 - (3 - 10)`` and not emit any errors."
+msgstr ""
+
+#: ../source/reference/operators.rst:122
+#: 515c8edc953f4822b5a45444de4d3d2b
+msgid "Export modifiers on fixities"
+msgstr ""
+
+#: ../source/reference/operators.rst:124
+#: c6892465a08f45daaeb3546908fe9797
+msgid "Just like other top-level declarations in the language, fixities can be exported with the ``export`` access modifier, or kept private with ``private``."
+msgstr ""
+
+#: ../source/reference/operators.rst:127
+#: 40e2b2de8d104e43a2a40f9b20ba1667
+msgid "A ``private`` fixity will remain in scope for the rest of the file but will not be visible to users that import the module. Because fixities and operators are separate, this does not mean you cannot use the functions that have this operator name, it merely means that you cannot use it in infix position. But you can use it as a regular function application using brackets. Let us see what this looks like"
+msgstr ""
+
+#: ../source/reference/operators.rst:154
+#: ac90daa7252c49a2bba438da781c4473
+msgid "In what follows, we have two examples of programs that benefit from declaring a fixity ``private`` rather than ``export``."
+msgstr ""
+
+#: ../source/reference/operators.rst:158
+#: 95e33b526edf483ca4346ba364b1fbff
+msgid "Private record fixity pattern"
+msgstr ""
+
+#: ../source/reference/operators.rst:160
+#: f0517bf4a6be469c90c1e18d00b000e7
+msgid "Private fixity declarations are useful in conjuction with records. When you declare a record with operators as fields, it is helpful to write them in infix position. However, the compiler will also synthesize a projection function for the field that takes as first argument the a value of the record to project from. This makes using the operator as a binary infix operator impossible, since it now has 3 arguments."
+msgstr ""
+
+#: ../source/reference/operators.rst:184
+#: 2420f9a9cd2b44c28b0ed2bf0b1bdce7
+msgid "What we really want to write is ``natRel x y = (<@>) x y`` but ``(<@>)`` now has type ``SomeRelation a -> a -> a -> Type``."
+msgstr ""
+
+#: ../source/reference/operators.rst:187
+#: 38b13e055a3945909efafe573b7aa9bf
+msgid "The solution is to define a private field with a private fixity and a public one which relies on proof search to find the appropriate argument:"
+msgstr ""
+
+#: ../source/reference/operators.rst:211
+#: 244a95521e7e46f393ebfaab1e30a988
+msgid "We define ``(<@>)`` as a projection function with an implicit parameter allowing it to be used as a binary operator once again."
+msgstr ""
+
+#: ../source/reference/operators.rst:215
+#: cc52ca1565f64fd4ad7c4604f6fccb01
+msgid "Private Local definition"
+msgstr ""
+
+#: ../source/reference/operators.rst:217
+#: 40f4c43dd14448578cdcb0f0dc978396
+msgid "Private fixity definitions are useful when redefining an operator fixity in a module. This happens when multiple DSLs are imported as the same time and you do not want to expose conflicting fixity declarations:"
+msgstr ""
+
+#: ../source/reference/operators.rst:236
+#: b015fd1de2e64a8cbd8fd5159ce5de44
+msgid "Here ``distrib1`` makes explicit use of the operator being defined as right-associative."
+msgstr ""
+
+#: ../source/reference/operators.rst:240
+#: b8e051ab222f4b18b9df2ce9812140e1
+msgid "Typebind Operators"
+msgstr ""
+
+#: ../source/reference/operators.rst:242
+#: a087aaa62b9e43cfa6d75c9cec879bd9
+msgid "In dependently-typed programming, we have the ability define constructors which first argument is a type and the second is a type indexed over the first argument. A typical example of this is the dependent linear arrow:"
+msgstr ""
+
+#: ../source/reference/operators.rst:253
+#: ee14876f868b4570947d59ffff804874
+msgid "However, when trying to use it in infix position, we have to use a lambda to populate the second argument:"
+msgstr ""
+
+#: ../source/reference/operators.rst:261
+#: 192c9446838a48bebfb7effad05a8175
+msgid "What we really want to write, is something like the dependent arrow ``->`` but for linear types:"
+msgstr ""
+
+#: ../source/reference/operators.rst:269
+#: 42ac511313bc49b39daaa417e62b93de
+msgid "The above syntax is allowed if the operator is declared as ``typebind``. For this, simply add the ``typebind`` keyword in front of the fixity declaration."
+msgstr ""
+
+#: ../source/reference/operators.rst:276
+#: 9ae8475921dd4f77a3a687cd71bf5f6c
+msgid "``typebind`` is a modifier like ``export`` and both can be used at the same time."
+msgstr ""
+
+#: ../source/reference/operators.rst:279
+#: e423e21c9c0a4792bc6f2e57f58717a0
+msgid "An operator defined as ``typebind`` cannot be used in regular position anymore, writing ``Nat =@ (\\x => Singleton x)`` will raise an error."
+msgstr ""
+
+#: ../source/reference/operators.rst:282
+#: 69f6af0a5f38474dab0976e6550834e4
+msgid "This new syntax is purely syntax sugar and converts any instance of ``(name : type) op expr`` into ``type op (\\name : type => expr)``"
+msgstr ""
+
+#: ../source/reference/operators.rst:285
+#: 21c91149cffe4baba67c49d08916a98b
+msgid "Because of its left-to-right binding structure, typebind operators can only ever be ``infixr`` with precedence 0."
+msgstr ""
+
+#: ../source/reference/operators.rst:290
+#: ba50177da6264a82b7ec8d739702540d
+msgid "Autobind Operators"
+msgstr ""
+
+#: ../source/reference/operators.rst:292
+#: 154f6b63ff034759a0ae16ad1b6d9564
+msgid "Typebind operators allow to bind a *type* on the left side of an operator, so that is can be used as the index of the second argument. But sometimes, there is no dependency between the first and second argument, yet we still want to use binding syntax. For those cases, we use ``autobind``."
+msgstr ""
+
+#: ../source/reference/operators.rst:297
+#: 8899e8e061034d118f8c025128222a5b
+msgid "An example of this is a DSL for a dependently-typed programming language where the constructor for ``Pi`` takes terms on the left and lambdas on the right:"
+msgstr ""
+
+#: ../source/reference/operators.rst:311
+#: 9d2aaea5147c44029bec77ed6e5a632f
+msgid "We would like to use a custom operator to build values using ``VPi``, but its signature does not follow the pattern that ``typebind`` uses. Instead, we use ``autobind`` to tell the compiler that the type of the lambda must be inferred. For this we use ``:=`` instead of ``:``:"
+msgstr ""
+
+#: ../source/reference/operators.rst:331
+#: a04dfc23322545f19f16743cf1154108
+msgid "This new syntax is much closer to what the code is meant to look like for users accustomed to dependently-typed programming languages."
+msgstr ""
+
+#: ../source/reference/operators.rst:334
+#: ac44451f0256468b89cfddbc07cd95d0
+msgid "More technically, any ``autobind`` operator is called with the syntax ``(name := expr) op body`` and is desugared into ``expr op (\\name : ? => body)``. If you want, or need, to give the type explicitly, you can still do so by using the full syntax: ``(name : type := expr) op body`` which is desugared into ``expr op (\\name : type => body)``."
+msgstr ""
+
+#: ../source/reference/operators.rst:340
+#: 1c928a46780749deaf460a74d2e5510d
+msgid "Like ``typebind``, ``autobind`` operators cannot be used as regular operators anymore , additionally an ``autobind`` operator cannot use the ``typebind`` syntax either."
 msgstr ""
 
 #: ../source/reference/overloadedlit.rst:2
@@ -1080,6 +1487,56 @@ msgstr ""
 msgid "In each case, if more than one version satisfies the constraint, it will choose the one with the highest version number. If package versions are omitted in directory names, they are treated as the version ``0``."
 msgstr ""
 
+#: ../source/reference/packages.rst:167
+#: dd83d6b86e8e43768cc44c476cb9dc12
+msgid "Support file install directories"
+msgstr ""
+
+#: ../source/reference/packages.rst:169
+#: a24d0a6bb85e4c52a73bfacbb0f2552f
+msgid "As noted above, packages can be installed globally or locally to be used as dependencies in other projects. In either case, there are two directories within a package's install root that Idris 2 treats specially when the package is depended upon by some other Idris package."
+msgstr ""
+
+#: ../source/reference/packages.rst:173
+#: d186fbb4bc824d91b50042c2e5a4dff5
+msgid "Those directories are ``lib`` and ``data``."
+msgstr ""
+
+#: ../source/reference/packages.rst:175
+#: ab7e969372fb4617a635a309c52bdadb
+msgid "Below we will refer to these directories as ``pkgname-<version>/lib`` and ``pkgname-<version>/data`` and in all cases these folders may be located locally in the depending project within a ``depends`` directory or globally (you can ask Idris 2 for the global install directory with ``idris2 --libdir``)."
+msgstr ""
+
+#: ../source/reference/packages.rst:180
+#: 7a8debc424ff4616b10faca6f86cabfd
+msgid "Library files"
+msgstr ""
+
+#: ../source/reference/packages.rst:182
+#: 7c46e0e97ec84f0882ab836f916130b2
+msgid "Idris will look for library files at ``pkgname-<version>/lib``. Library files are those that will need to be around whenever an executable that depends on your library is run. That is, these files are not built into the executable, but rather linked against or otherwise referred to during building and then loaded in at runtime. A common example of this type of file is a shared object file (these commonly have the extension ``.so`` on Linux systems and ``.dylib`` on Mac OS systems)."
+msgstr ""
+
+#: ../source/reference/packages.rst:189
+#: 4ed1c6ce53d24bb99fefbf64848d5ccf
+msgid "When building with the Scheme or Refc backends, you may want your package to use Idris 2's ``C`` FFI and rely on a ``C`` support file. The FFI interface is documented elsewhere so we won't go into that here. Once you do have a support file written in ``C``, you can build an ``so`` file using your package's post-build hook. Then, install (copy) that ``so`` file into the ``lib`` subfolder where Idris has installed your package in your post-install hook. When an executable depends on your package, Idris will copy shared object files from the ``lib`` directory into the build folder for the executable."
+msgstr ""
+
+#: ../source/reference/packages.rst:197
+#: 10a5112d8db649669840cd8cefe0bc68
+msgid "Data files"
+msgstr ""
+
+#: ../source/reference/packages.rst:199
+#: 0683f3f840d44fb9924e7140d22872d1
+msgid "Idris will look for data files at ``pkgname-<version>/data``. Data files are a bit open-ended in how they are used. One important use-case is adding support files for the ``Javascript`` FFI. ``Javascript`` support files are different from ``C`` support files in that they get built *into* the executable rather than installed alongside it. The FFI interface is documented elsewhere, but we will briefly touch on the subject to describe the end-to-end packaging of JS support files using the ``data`` directory."
+msgstr ""
+
+#: ../source/reference/packages.rst:206
+#: 00efb78f35134debb9b26172738abd92
+msgid "When building with the NodeJS backend, you can refer to functions you've defined in external support JS files by using the FFI pattern ``node:support:my_func,my_lib``. This pattern will prompt idris to look in any ``data`` directories it knows about for a ``js`` folder and a file named ``my_lib.js`` within it. So, you can specify a post-install hook for your package that copies any needed support JS files into the ``pkgname-<version>/data/js`` folder to enable Idris to later build that support file into any JS executables that depend on your package."
+msgstr ""
+
 #: ../source/reference/pragmas.rst:3
 #: e6fc9261e6c44767b733931a3fbc982c
 msgid "Pragmas"
@@ -1095,64 +1552,554 @@ msgstr ""
 msgid "This page is a work in progress. If you know about a pragma that is not described yet, please consider submitting a pull request!"
 msgstr ""
 
-#: ../source/reference/pragmas.rst:19
+#: ../source/reference/pragmas.rst:18
+#: 3808ee27dc604aadaac2bd975ca6b9b3
+msgid "Global pragmas"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:21
+#: d4e2fb2fd24d494bad7bd9402f4ff83e
+msgid "``%language``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:23
+#: b304709de5cc46bcb776e4c127e7927c
+msgid "Enable language extensions.  Currently, the only extension is [#ElabReflection]_."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:30
+#: d4e2fb2fd24d494bad7bd9402f4ff83e
+msgid "``%default``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:32
+#: 3625e2b3f72742bf9491f9079b25772f
+msgid "Set the default totality requirement for functions, which can be one of ``total``, ``covering``, or ``partial``.  The value is initially set to ``covering`` unless the ``--total`` command line switch is used, which sets it to ``total``."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:37
 #: baec70c37f6c44dfaefc265ae9424ff7
 msgid "``%builtin``"
 msgstr ""
 
-#: ../source/reference/pragmas.rst:21
+#: ../source/reference/pragmas.rst:39
 #: 0b12bd04a1e44099914cd99c5da23906
 msgid "The ``%builtin Natural`` pragma converts recursive/unary representations of natural numbers into primitive ``Integer`` representations."
 msgstr ""
 
-#: ../source/reference/pragmas.rst:24
+#: ../source/reference/pragmas.rst:42
 #: 988e38ebab464b5cb0131cf2fa67c9a4
 msgid "This pragma is explained in detail on its own page. For more, see :ref:`builtins`."
 msgstr ""
 
-#: ../source/reference/pragmas.rst:27
-#: d4e2fb2fd24d494bad7bd9402f4ff83e
-msgid "``%deprecate``"
-msgstr ""
-
-#: ../source/reference/pragmas.rst:29
-#: 4bb3320e2d5541a5b7f449c0ed8bfd8b
-msgid "Mark the following definition as deprecated. Whenever the function is used, Idris will show a deprecation warning."
-msgstr ""
-
-#: ../source/reference/pragmas.rst:45
-#: 923859d0c0fb4df7afc628001750607f
-msgid "You can use code documentation (triple vertical bar `||| docs`) to suggest a strategy for removing the deprecated function call and that documentation will be displayed alongside the warning."
-msgstr ""
-
-#: ../source/reference/pragmas.rst:64
-#: aee5e7c759904fe8bb7112d4c3065daf
-msgid "``%inline``"
-msgstr ""
-
-#: ../source/reference/pragmas.rst:66
-#: 7c3adc4345e8434b812ccf62dbf2deb0
-msgid "Instruct the compiler to inline the following definition when it is applied. It is generally best to let the compiler and the backend you are using optimize code based on its predetermined rules, but if you want to force a function to be inlined when it is called, this pragma will force it."
-msgstr ""
-
-#: ../source/reference/pragmas.rst:77
-#: 42ec1f2bf45e426d9843b2803f41eeb7
-msgid "``%noinline``"
-msgstr ""
-
-#: ../source/reference/pragmas.rst:79
-#: e63337204d1c491389c545d741c5c00b
-msgid "Instruct the compiler _not_ to inline the following definition when it is applied. It is generally best to let the compiler and the backend you are using optimize code based on its predetermined rules, but if you want to force a function to never be inlined when it is called, this pragma will force it."
-msgstr ""
-
-#: ../source/reference/pragmas.rst:90
+#: ../source/reference/pragmas.rst:46
 #: 2137ddb34e5848dc84ca9d5f403c2e01
 msgid "``%name``"
 msgstr ""
 
-#: ../source/reference/pragmas.rst:92
+#: ../source/reference/pragmas.rst:48
 #: 0e9bcf6426e04728a3198de4c5474a1b
 msgid "Give the compiler some suggested names to use for a particular type when it is asked to generate names for values. You can specify any number of suggested names; they will be used in-order when more than one is needed for a single definition."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:60
+#: a1c351f85d3f42bcbb3b9cd8f9218ec7
+msgid "``%ambiguity_depth``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:62
+#: 9ec60dd2f0784a559f48cb65cac96071
+msgid "Set how deep nested ambiguous names can be before Idris gives up. The default is 3, increashing this will effect compiler performance. For more details, see :ref:`ambiguous-name-resolution`."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:66
+#: 19ac592d81254bbc945ae9f50e94085f
+msgid "``%totality_depth``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:68
+#: a6e9aff503ea49248281a9dc116cb7cd
+msgid "Set the number of matching constructors Idris will look under when checking totality.  For instance `Just xs` is smaller than `Just (x :: xs)` if Idris looks under the matching constructor. The default value is 5.  Increasing the value may slow down totality checking."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:73
+#: 607184d8f58f4a22906bd41ad07cdfc2
+msgid "``%auto_implicit_depth``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:75
+#: ada0a6144f6e41809530f8c8fe9745a9
+msgid "Set the search depth for ``auto`` implicits. The default value is 50."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:78
+#: 42ec1f2bf45e426d9843b2803f41eeb7
+msgid "``%logging``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:80
+#: a26a05311ebb4152ac4f52b7d852e16d
+msgid "Change the logging level.  See :ref:`sect-logging` for details."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:89
+#: ac11bd329fc143939c8bc8caa50ce324
+msgid "``%prefix_record_projections``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:91
+#: 10344bbbbd594763aec753b2468b3029
+msgid "Configure whether projection functions without a leading period are generated for records. It defaults to ``on``.  See :ref:`record-elaboration` for more details."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:98
+#: 42ec1f2bf45e426d9843b2803f41eeb7
+msgid "``%transform``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:100
+#: 7122a4fc5ba64824b50b19d71cc6ac75
+msgid "Replace a function at runtime with another implementation. It allows us to functions that are appropriate for type checking and have an efficient version at runtime. For example:"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:112
+#: 6df66b5a95fc49fca83ef2871493c824
+msgid "``%unbound_implicits``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:114
+#: 84c2375aaa524535ad6213bb64f2b2f2
+msgid "Configure whether implicit bindings are automatically added to function types for unbound lowercase names. It is on by default. See :ref:`unbound-implicits` for more details."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:118
+#: d4e2fb2fd24d494bad7bd9402f4ff83e
+msgid "``%auto_lazy``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:120
+#: c3f85f3c800a4ec9a36fe2c9ff7728f9
+msgid "Configure whether the compiler automatically adds ``delay`` and ``force`` when necessary.  It defaults to ``on``."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:125
+#: 2413a2698e8247efaa03fabda3742ebf
+msgid "``%search_timeout``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:127
+#: 29bec451fa3a471ea3e2748fe0f26d33
+msgid "Set the expression search timeout in milliseconds.  The default is 1000."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:135
+#: b2fec70547a04f7ab60b09310f3bf66d
+msgid "``%nf_metavar_threshold``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:137
+#: 66010193b78b4de69a4f161b5a8f9cd6
+msgid "Set the maximum number of stuck applications allowed while unifying a meta. The default value is 25."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:141
+#: 2137ddb34e5848dc84ca9d5f403c2e01
+msgid "``%cg``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:143
+#: bd4df83532ed42dfab892f653c8328f3
+msgid "Codegen directives can be included in source code with the ``%cg`` pragma. For example, instead of using ``--directive extraRuntime=mycode.ss`` on the command line for the chez backend, you can write:"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:150
+#: 52579234d3844c6fadb34fb14c415dde
+msgid "The ``%cg`` pragma is followed by the name of a codegen and a directive for that codegen, terminated by newline.  Directives from imported modules, including transitive imports, will aggregate. All of the directives given in the source are stored in the module, but only the directives for the current codegen are used at link time."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:155
+#: f3dbcfe306864579a75a429d1403481d
+msgid "How directives are treated in aggregate depends on the codegen and directive. For example, the ``extraRuntime`` directive for the Chez codegen is deduplicated.  And the javascript backend gives the ``minimal`` directive priority over the ``compact`` directive if both are present."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:159
+#: 9dbc5ec5f5eb490a80282e8a2ac0c3aa
+msgid "See the section for each codegen under :ref:`sect-execs` for available directives."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:162
+#: 2e9e2998d27a4a7da25472ceab3549df
+msgid "Pragmas on declarations"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:165
+#: d4e2fb2fd24d494bad7bd9402f4ff83e
+msgid "``%deprecate``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:167
+#: 4bb3320e2d5541a5b7f449c0ed8bfd8b
+msgid "Mark the following definition as deprecated. Whenever the function is used, Idris will show a deprecation warning."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:183
+#: 923859d0c0fb4df7afc628001750607f
+msgid "You can use code documentation (triple vertical bar `||| docs`) to suggest a strategy for removing the deprecated function call and that documentation will be displayed alongside the warning."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:202
+#: aee5e7c759904fe8bb7112d4c3065daf
+msgid "``%inline``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:204
+#: 7c3adc4345e8434b812ccf62dbf2deb0
+msgid "Instruct the compiler to inline the following definition when it is applied. It is generally best to let the compiler and the backend you are using optimise code based on its predetermined rules, but if you want to force a function to be inlined when it is called, this pragma will force it."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:215
+#: 42ec1f2bf45e426d9843b2803f41eeb7
+msgid "``%noinline``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:217
+#: e63337204d1c491389c545d741c5c00b
+msgid "Instruct the compiler _not_ to inline the following definition when it is applied. It is generally best to let the compiler and the backend you are using optimise code based on its predetermined rules, but if you want to force a function to never be inlined when it is called, this pragma will force it."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:228
+#: 42ec1f2bf45e426d9843b2803f41eeb7
+msgid "``%tcinline``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:230
+#: 8f2a89bf36ec4332ba29d087983d6434
+msgid "Instruct the compiler to inline the function during totality checking."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:233
+#: 2137ddb34e5848dc84ca9d5f403c2e01
+msgid "``%hide``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:235
+#: 403a488fae5b4311bbda77d1f7bd1a9a
+msgid "Hide a definition from imports. This is particularly useful when you are re-definiing functions or types from a module but still need to import it."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:248
+#: 2b4488b298954dc5a50f462001bb1d9f
+msgid "You can also hide fixity declarations if you need to redefine your own."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:260
+#: aee5e7c759904fe8bb7112d4c3065daf
+msgid "``%unhide``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:262
+#: 4ee038a0ae1c46229eaca38c7ec1d3af
+msgid "The ``%unhide`` pragma unhides a definition that was previously hidden with ``%hide``."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:266
+#: 2137ddb34e5848dc84ca9d5f403c2e01
+msgid "``%unsafe``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:268
+#: 18dca29fad124e9ba7b891b38b9d2aba
+msgid "Mark a function like ``believe_me`` as being unsafe. The function will be semantically highlighted in a different color to draw the user's attention to its use."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:273
+#: d4e2fb2fd24d494bad7bd9402f4ff83e
+msgid "``%spec``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:275
+#: 71e130116b194f5b846d22450aa46345
+msgid "Specialise a function according to a list of arguments."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:286
+#: 42ec1f2bf45e426d9843b2803f41eeb7
+msgid "``%foreign``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:288
+#: 3cce60d410d9422a97824fc452b8bf21
+msgid "Declare a foreign function.  It is followed by an indented block of expressions that evaluate to strings. See :ref:`ffi-overview` for more details."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:293
+#: 42ec1f2bf45e426d9843b2803f41eeb7
+msgid "``%foreign_impl``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:295
+#: fa3856358184446ba2a25d22df3ec50f
+msgid "Adds an implementation to an existing ``%foreign`` in another file. This pragma can be used to fill in an implementation for another backend without changing the original file. In the case of multiple declarations for a given backend, the backend will choose the one from the most recently loaded module."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:306
+#: d4e2fb2fd24d494bad7bd9402f4ff83e
+msgid "``%export``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:308
+#: a88079add8174ccfb0d67a4f9b040460
+msgid "Export an Idris function to the underlying host language. The the name for each backend is given in an indented block of string expressions, similar to ``%foreign``.  Currently this pragma is only supported by the javascript backend."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:320
+#: 42ec1f2bf45e426d9843b2803f41eeb7
+msgid "``%nomangle``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:322
+#: 258ae0a619c046f9b02a558a24c5b821
+msgid "This pragma is deprecated.  Instead use ``%export`` to expose functions to the backend."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:326
+#: aee5e7c759904fe8bb7112d4c3065daf
+msgid "``%hint``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:328
+#: 7139fc11500f4243a169c671bba88d56
+msgid "Mark a function to be used for ``auto`` search (see :ref:`auto-implicits` and :ref:`auto-implicit-arguments` for more).  Hints are used internally for instance resolution and non-named instances are automatically tagged with ``%hint``."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:334
+#: baec70c37f6c44dfaefc265ae9424ff7
+msgid "``%defaulthint``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:336
+#: 72c4e83e26c84158b704e0c1e08321ca
+msgid "Mark a hint to be tried when no other hints match."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:339
+#: 42ec1f2bf45e426d9843b2803f41eeb7
+msgid "``%globalhint``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:341
+#: e27a3cc518ce453593fba17e16b5af21
+msgid "A global hint is like a ``%hint``, but it is always tried, while ``%hint`` is only tried if the return type matches."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:345
+#: d4e2fb2fd24d494bad7bd9402f4ff83e
+msgid "``%extern``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:347
+#: 20ecd10dffe344bbb519219158fa7302
+msgid "Declare a function to be externally implemented, but relies on codegen to fill in the function rather than specifying the name. The function name must be explicitly handled in the codegen. It is used for functions like ``prim__newIORef`` in the prelude."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:353
+#: 2137ddb34e5848dc84ca9d5f403c2e01
+msgid "``%macro``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:355
+#: 00346b0954a2430da3d6d8021a2fad4f
+msgid "Mark a function that returns the ``Elab`` monad as a macro. When the function is used in an expression, it will be run at compile time and the invocation will be replaced by the result of the elaboration."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:360
+#: 2137ddb34e5848dc84ca9d5f403c2e01
+msgid "``%start``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:362
+#: 642956e8286746f4b7d8a202df8af2b5
+msgid "The ``%start`` pragma is not implemented."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:365
+#: d3cb26ad720443b59e11f0beaeb021d1
+msgid "``%allow_overloads``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:367
+#: 988e38ebab464b5cb0131cf2fa67c9a4
+msgid "This pragma is no longer used by the compiler."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:370
+#: 59fbe07a5643490f890d6bd52e2179c8
+msgid "Internal"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:372
+#: 518422f3caf7416f87d1e7d3c797220f
+msgid "These pragmas are used in the prelude, but aren't typically used in user programs."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:376
+#: d4e2fb2fd24d494bad7bd9402f4ff83e
+msgid "``%rewrite``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:378
+#: 58ce675dc9cd4978aacd35c504e85369
+msgid "Specify the `Equal` type and rewrite function used by rewrite statements."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:385
+#: 2137ddb34e5848dc84ca9d5f403c2e01
+msgid "``%pair``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:387
+#: b1683dce82474798840466b66db5b954
+msgid "This directive is used in the prelude to tell auto implicit search what to use to look inside pairs."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:394
+#: aee5e7c759904fe8bb7112d4c3065daf
+msgid "``%integerLit``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:396
+#: 3086c773cf234bdebfa45ca525cced29
+msgid "Define the function used to interpret literal integers. In the prelude, it is set to ``fromInteger``, so a literal ``2`` is elaborated to ``fromInteger 2``."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:404
+#: 42ec1f2bf45e426d9843b2803f41eeb7
+msgid "``%stringLit``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:406
+#: 4610c0dee00a4d8ab26f0e46430d08b0
+msgid "Define the function used to interpret literal strings. In the prelude, it is set to ``fromString``, so a literal ``\"idris\"`` is elaborated to ``fromString \"idris\"``."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:415
+#: d4e2fb2fd24d494bad7bd9402f4ff83e
+msgid "``%charLit``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:417
+#: acd4694414744390ac8e6fe537eda45f
+msgid "Define the function used to interpret literal characters. In the prelude, it is set to ``fromChar``, so a literal ```x```` is elaborated to ``fromChar 'x'``."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:425
+#: d4e2fb2fd24d494bad7bd9402f4ff83e
+msgid "``%doubleLit``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:427
+#: 241d72b274414909a70cbf8e806cbd91
+msgid "Define the function used to interpret literal numbers with a decimal in them. In the prelude, it is set to ``fromDouble``, so a literal ```2.0```` is elaborated to ``fromDouble 2.0``."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:436
+#: 587c3e7b97ab4d75bf534d15941140f8
+msgid "Reflection Literals"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:440
+#: d4e2fb2fd24d494bad7bd9402f4ff83e
+msgid "``%TTImpLit``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:442
+#: 4d6cb2ec196147afb35dc0f0cb5f90ab
+msgid "Allow quoted expressions to be cast to a user defined type."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:472
+#: d4e2fb2fd24d494bad7bd9402f4ff83e
+msgid "``%declsLit``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:474
+#: bc4edd3aed5f4154ac752c3adf9ae1e4
+msgid "Allow quoted declarations to be cast to user defined types."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:477
+#: 2137ddb34e5848dc84ca9d5f403c2e01
+msgid "``%nameLit``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:479
+#: dc653296d06142f7aee8b24e40ac75fe
+msgid "Allow quoted names to be cast to user defined types."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:483
+#: 346b7d1f2b824b8fb4f8b90e4a65fe78
+msgid "Expressions"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:485
+#: aa89b532c0334a4db487e2624496c5be
+msgid "Pragmas that occur inside expressions."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:488
+#: baec70c37f6c44dfaefc265ae9424ff7
+msgid "``%runElab``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:490
+#: b485f866d412459da3a55c64d4556f95
+msgid "The ``%runElab`` pragma can be used at the top level or as an expression. It takes an elaborator script as an argument which runs in the ``Elab`` monad, has access to Idris' type-checking machinery, and can generate code."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:495
+#: d4e2fb2fd24d494bad7bd9402f4ff83e
+msgid "``%search``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:497
+#: b2273befc2b742d9b0e84e4de5c29ee0
+msgid "Ask Idris to fill in the value with auto-implicit search. See :ref:`auto-implicits` for more details."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:500
+#: 42ec1f2bf45e426d9843b2803f41eeb7
+msgid "``%World``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:502
+#: 9a0d0169a46141ccb28b83bcc335f199
+msgid "The type of the world token used for IO.  For more information, see :ref:`World<sect-world>`."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:505
+#: baec70c37f6c44dfaefc265ae9424ff7
+msgid "``%MkWorld``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:507
+#: 3bd386a6ee3748ea8860f994e9a4e908
+msgid "The world token used for IO.  For more information, see :ref:`World<sect-world>`."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:510
+#: d4e2fb2fd24d494bad7bd9402f4ff83e
+msgid "``%syntactic``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:512
+#: fbbff309b68a4bc7866b68dc690cadaa
+msgid "The ``%syntactic`` pragma can appear after the ``with`` keyword.  It abstracts over the value syntactically, rather than by value, and can significantly speed up elaboration where large types are involved, at a cost of being less general. Try it if \"with\" is slow."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:517
+#: 236f811657a94a20a98955ea8834d497
+msgid "https://github.com/stefan-hoeck/idris2-elab-util/blob/main/src/Doc/Index.md"
 msgstr ""
 
 #: ../source/reference/records.rst:2
@@ -1235,72 +2182,72 @@ msgstr ""
 msgid "``(simpleExpr .field1 .field2 .field3)`` desugars to ``((.field .field2 .field3) simpleExpr)``"
 msgstr ""
 
-#: ../source/reference/records.rst:54
+#: ../source/reference/records.rst:56
 #: 6f36e6770f6a4f4d8b1b9299052ac11c
 msgid "Record elaboration"
 msgstr ""
 
-#: ../source/reference/records.rst:56
+#: ../source/reference/records.rst:58
 #: 7ec8a95aa36b4a3b81b1f4815753cf61
 msgid "there is a new pragma ``%prefix_record_projections``, which is ``on`` by default"
 msgstr ""
 
-#: ../source/reference/records.rst:59
+#: ../source/reference/records.rst:61
 #: 9e64359d2e1649789366e09d8cd83206
 msgid "for every field ``f`` of a record ``R``, we get:"
 msgstr ""
 
-#: ../source/reference/records.rst:61
+#: ../source/reference/records.rst:63
 #: c169f04c221a4f97a51d242432be9ad3
 msgid "projection ``f`` in namespace ``R`` (exactly like now), unless ``%prefix_record_projections`` is ``off``"
 msgstr ""
 
-#: ../source/reference/records.rst:64
+#: ../source/reference/records.rst:66
 #: 0051a9b081b24f739da685d938040077
 msgid "projection ``.f`` in namespace ``R`` with the same definition"
 msgstr ""
 
-#: ../source/reference/records.rst:67
+#: ../source/reference/records.rst:69
 #: eebc5557c8d6425da0e3be6bcd885459
 msgid "Example code"
 msgstr ""
 
-#: ../source/reference/records.rst:76
+#: ../source/reference/records.rst:78
 #: d9208f1608e6431c841050aabf8fd38b
 msgid "This record creates two projections: * ``.x : Point -> Double`` * ``.y : Point -> Double``"
 msgstr ""
 
-#: ../source/reference/records.rst:80
+#: ../source/reference/records.rst:82
 #: 25358430a96b41b1a400a311996e43d4
 msgid "Because ``%prefix_record_projections`` are ``on`` by default, we also get: * ``x : Point -> Double`` * ``y : Point -> Double``"
 msgstr ""
 
-#: ../source/reference/records.rst:84
+#: ../source/reference/records.rst:86
 #: f03e600d8de54f8f8c4d130ce6668e7b
 msgid "To prevent cluttering the ordinary global name space with short identifiers, we can do this:"
 msgstr ""
 
-#: ../source/reference/records.rst:95
+#: ../source/reference/records.rst:97
 #: 833dde8d39934c07a5a16727c5752128
 msgid "For ``Rect``, we don't get the prefix projections:"
 msgstr ""
 
-#: ../source/reference/records.rst:104
+#: ../source/reference/records.rst:106
 #: dbdd4591e74544d8975737af19809da1
 msgid "Let's define some constants:"
 msgstr ""
 
-#: ../source/reference/records.rst:117
+#: ../source/reference/records.rst:119
 #: 5c3e69562db142748b00ab7add0011fd
 msgid "User-defined projections work, too. (Should they?)"
 msgstr ""
 
-#: ../source/reference/records.rst:124
+#: ../source/reference/records.rst:126
 #: f35ccb0a6e854c0785f19daf640ee81b
 msgid "Finally, the examples:"
 msgstr ""
 
-#: ../source/reference/records.rst:188
+#: ../source/reference/records.rst:190
 #: f422fbbf5f894c42831e5e07a87d6a4f
 msgid "Parses but does not typecheck:"
 msgstr ""
@@ -1387,7 +2334,7 @@ msgstr ""
 
 #: ../source/reference/strings.rst:69
 #: 8b4dfbe2680a417f96f67a1dcfa6adc4
-msgid "It is not uncommon to write string literals that require some amount of escaping. For plain string literals the characters ``\\\\`` and ``\"`` must be escaped, for multiline strings the characters ``\"\"\"`` must be escaped. Raw string literals allow you to dynamically change the required escaped sequence in order to avoid having to escape those very common sets of characters. For this, use ``#\"`` as starting delimiter and ``\"#`` as closing delimiter. The number of ``#`` symbols can be increased in order to accomodate for edge cases where ``\"#`` would be a valid symbol. In the following example we are able to match on ``\\{`` by using half as many ``\\\\`` characters as if we didn't use raw string literals:"
+msgid "It is not uncommon to write string literals that require some amount of escaping. For plain string literals the characters ``\\\\`` and ``\"`` must be escaped, for multiline strings the characters ``\"\"\"`` must be escaped. Raw string literals allow you to dynamically change the required escaped sequence in order to avoid having to escape those very common sets of characters. For this, use ``#\"`` as starting delimiter and ``\"#`` as closing delimiter. The number of ``#`` symbols can be increased in order to accommodate for edge cases where ``\"#`` would be a valid symbol. In the following example we are able to match on ``\\{`` by using half as many ``\\\\`` characters as if we didn't use raw string literals:"
 msgstr ""
 
 #: ../source/reference/strings.rst:84

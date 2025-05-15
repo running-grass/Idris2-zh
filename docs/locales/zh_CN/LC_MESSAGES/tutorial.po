@@ -7,17 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-29 17:33+0800\n"
+"POT-Creation-Date: 2025-05-15 23:55+0800\n"
 "PO-Revision-Date: 2022-09-16 07:30+0000\n"
-"Last-Translator: grass <467195537@qq.com>\n"
-"Language-Team: Chinese (Simplified) <https://weblate.grass.work:30443/"
-"projects/idris-lang/idris2-docs-tutorial/zh_Hans/>\n"
+"Last-Translator: grass <hi@grass.show>\n"
 "Language: zh_CN\n"
+"Language-Team: Chinese (Simplified) "
+"<>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.13.1\n"
 "Generated-By: Babel 2.10.3\n"
 
 #: ../source/tutorial/conclusions.rst:5 34646810b6a84466935b96ac907dccbf
@@ -191,11 +190,9 @@ msgid ""
 " programs — we can also use the type system to help write programs which "
 "are *correct by construction*, interactively."
 msgstr ""
-"到目前为止，我们已经看到了几个例子，说明了 Idris 的依赖类型系统如何通过更精确"
-"地描述函数的*类型*中的预期行为来增强对函数正确性的信心。"
-"我们还看到了类型系统如何通过允许程序员描述对象语言的类型系统来帮助嵌入式 DSL "
-"开发的示例。然而，精确类型给我们的不仅仅是程序的验证——我们还可以使用类型系统"
-"交互式地来帮助编写*按构造正确*的程序，交互。"
+"到目前为止，我们已经看到了几个例子，说明了 Idris "
+"的依赖类型系统如何通过更精确地描述函数的*类型*中的预期行为来增强对函数正确性的信心。我们还看到了类型系统如何通过允许程序员描述对象语言的类型系统来帮助嵌入式"
+" DSL 开发的示例。然而，精确类型给我们的不仅仅是程序的验证——我们还可以使用类型系统交互式地来帮助编写*按构造正确*的程序，交互。"
 
 #: ../source/tutorial/interactive.rst:16 af96c8d0c5264e739356ca8330514ff7
 msgid ""
@@ -208,12 +205,11 @@ msgid ""
 "<https://github.com/idris-hackers/idris-mode>`_ is also available, "
 "updated for Idris 2 compatibility as of 23 February 2021."
 msgstr ""
-"Idris REPL 提供了几个用于检查和修改程序部分的命令，基于它们的类型，例如模式变"
-"量的大小写分割，检查孔的类型，甚至是基本的证明搜索机制。在本节中，我们将解释"
-"文本编辑器如何利用这些功能，特别是如何在 `Vim <https://github.com/edwinb/"
-"idris2-vim>`_ 中这样做。 `Emacs <https://github.com/idris-hackers/idris-"
-"mode>`_ 的交互模式也可用，自 2021 年 2 月 23 日起针对 Idris 2 "
-"兼容性进行了更新。"
+"Idris REPL "
+"提供了几个用于检查和修改程序部分的命令，基于它们的类型，例如模式变量的大小写分割，检查孔的类型，甚至是基本的证明搜索机制。在本节中，我们将解释文本编辑器如何利用这些功能，特别是如何在"
+" `Vim <https://github.com/edwinb/idris2-vim>`_ 中这样做。 `Emacs "
+"<https://github.com/idris-hackers/idris-mode>`_ 的交互模式也可用，自 2021 年 2 月 23 "
+"日起针对 Idris 2 兼容性进行了更新。"
 
 #: ../source/tutorial/interactive.rst:27 326f904b12e649ee92104f0d5f069715
 msgid "Editing at the REPL"
@@ -1021,10 +1017,11 @@ msgstr ""
 "``Applicative`` ，如下所示，其中 ``<*>`` 的定义与上面 ``m_app`` 相同（这是在 Idris 库中定义的）："
 
 #: ../source/tutorial/interfaces.rst:557 12a4f30d661048d38b8a44c7d3b10732
+#, fuzzy
 msgid ""
 "Using ``<*>`` we can use this implementation as follows, where a function"
-" application ``[| f a1 …an |]`` is translated into ``pure f <*> a1 <*> … "
-"<*> an``:"
+" application ``[| f a1 … an |]`` is translated into ``pure f <*> a1 <*> …"
+" <*> an``:"
 msgstr ""
 "我们可以按照下面的方式使用使用 ``<*>`` ，如下所示，函数应用 ``[| f a1 …an |]`` 会被翻译成 ``pure f <*> "
 "a1 <*> … <*> an`` ："
@@ -1131,10 +1128,11 @@ msgid ""
 msgstr "我们可以为 ``Nat`` 定义 ``Semigroup`` 和 ``Monoid`` 两种不同的实现，一种基于加法，一种基于乘法："
 
 #: ../source/tutorial/interfaces.rst:708 3c3455f5ef094f22a687e4d6b5114c79
+#, fuzzy
 msgid ""
 "The neutral value for addition is ``0``, but the neutral value for "
 "multiplication is ``1``. It's important, therefore, that when we define "
-"implementations of ``Monoid`` they extend the correct ``Semigroup`` "
+"implementations of ``Monoid`` that they extend the correct ``Semigroup`` "
 "implementation. We can do this with a ``using`` clause in the "
 "implementation as follows:"
 msgstr ""
@@ -1158,21 +1156,28 @@ msgid ""
 msgstr "接口，就像记录一样，可以用一个用户定义的构造函数来声明。"
 
 #: ../source/tutorial/interfaces.rst:741 07f5e2ff513e4916aba1c4e753a2e63a
-msgid "Then ``MkB : A t => t -> B t``."
+#, fuzzy
+msgid "Then ``MkB : A t => t -> B t``. If we have"
 msgstr "然后 ``MkB : A t => t -> B t`` 。"
 
-#: ../source/tutorial/interfaces.rst:746 54f4608c49ba40ac9f29e1ee998b3060
+#: ../source/tutorial/interfaces.rst:751 23490db1d863446eac60c2f83e833186
+msgid ""
+"Then we can use the function ``getAB`` even though we didn't implement "
+"the interface ``B`` for ``Nat`` by passing an implementation inline"
+msgstr ""
+
+#: ../source/tutorial/interfaces.rst:761 54f4608c49ba40ac9f29e1ee998b3060
 msgid "Determining Parameters"
 msgstr "确定参数"
 
-#: ../source/tutorial/interfaces.rst:748 d2f6a601124944eeb7ab909482dda732
+#: ../source/tutorial/interfaces.rst:763 d2f6a601124944eeb7ab909482dda732
 msgid ""
 "When an interface has more than one parameter, it can help resolution if "
 "the parameters used to find an implementation are restricted. For "
 "example:"
 msgstr "当一个接口有一个以上的参数时，如果用来寻找实现的参数受到限制，就会有助于解决。比如说："
 
-#: ../source/tutorial/interfaces.rst:757 0fe6a66526064df7b61f70a929498978
+#: ../source/tutorial/interfaces.rst:772 0fe6a66526064df7b61f70a929498978
 msgid ""
 "In this interface, only ``m`` needs to be known to find an implementation"
 " of this interface, and ``s`` can then be determined from the "
@@ -1187,7 +1192,7 @@ msgstr ""
 "声明的。我们称 ``m`` 为 ``MonadState`` 接口的 *决定性参数* ，因为它是用来寻找实现的参数。这类似于Haskell中 "
 "*功能依赖* 的概念* ` <https://wiki.haskell.org/Functional_dependencies>`_ 。"
 
-#: ../source/tutorial/interfaces.rst:764 e1eee732ffce4ba5a2a2bea1e3743246
+#: ../source/tutorial/interfaces.rst:779 e1eee732ffce4ba5a2a2bea1e3743246
 msgid ""
 "Conor McBride and Ross Paterson. 2008. Applicative programming with "
 "effects. J. Funct. Program. 18, 1 (January 2008), 1-13. "
@@ -1591,11 +1596,11 @@ msgid ""
 "omitted when they can be inferred by the type checker [#IdrisType]_, e.g."
 msgstr "我们已经看到了隐式参数，它允许在类型检查器 [#IdrisType]_ 在可以推断出参数时省略参数，例如。"
 
-#: ../source/tutorial/miscellany.rst:24 37b96476d28d4c4f9916da2db0f1cef7
+#: ../source/tutorial/miscellany.rst:26 37b96476d28d4c4f9916da2db0f1cef7
 msgid "Auto implicit arguments"
 msgstr "自动隐式参数"
 
-#: ../source/tutorial/miscellany.rst:26 857df96465634d79a622e16aca7fb407
+#: ../source/tutorial/miscellany.rst:28 857df96465634d79a622e16aca7fb407
 msgid ""
 "In other situations, it may be possible to infer arguments not by type "
 "checking but by searching the context for an appropriate value, or "
@@ -1603,7 +1608,7 @@ msgid ""
 "which requires a proof that the list is non-empty:"
 msgstr "在其他情况下，可能不是通过类型检查而是通过在上下文中搜索适当的值或构造证明来推断参数。例如，下面 ``head`` 的定义需要证明列表是非空的："
 
-#: ../source/tutorial/miscellany.rst:40 4bfa1dfa26084934b357a5401e034c52
+#: ../source/tutorial/miscellany.rst:42 4bfa1dfa26084934b357a5401e034c52
 msgid ""
 "If the list is statically known to be non-empty, either because its value"
 " is known or because a proof already exists in the context, the proof can"
@@ -1613,7 +1618,7 @@ msgstr ""
 "如果列表静态已知为非空，或者因为它的值是已知的，或者因为上下文中已经存在证明，则可以自动构造证明。自动隐式参数允许这种情况静默发生。我们定义 "
 "``head`` 如下："
 
-#: ../source/tutorial/miscellany.rst:50 576a3cbb542b4501aabfe9047251d0cd
+#: ../source/tutorial/miscellany.rst:52 576a3cbb542b4501aabfe9047251d0cd
 msgid ""
 "The ``auto`` annotation on the implicit argument means that Idris will "
 "attempt to fill in the implicit argument by searching for a value of the "
@@ -1623,42 +1628,42 @@ msgstr ""
 "隐式参数上的 ``auto`` 注解意味着 Idris "
 "将尝试通过搜索适当类型的值来填充隐式参数。事实上，在内部，这正是接口解析的工作方式。它将按顺序尝试以下操作："
 
-#: ../source/tutorial/miscellany.rst:55 a8501bb72de7485b861ee30a16840122
+#: ../source/tutorial/miscellany.rst:57 a8501bb72de7485b861ee30a16840122
 msgid ""
 "Local variables, i.e. names bound in pattern matches or ``let`` bindings,"
 " with exactly the right type."
 msgstr "局部变量，即模式匹配或 ``let`` 绑定中的名称，具有完全正确的类型。"
 
-#: ../source/tutorial/miscellany.rst:57 2d7da5474ccd48a8824f4b12c72ae33e
+#: ../source/tutorial/miscellany.rst:59 2d7da5474ccd48a8824f4b12c72ae33e
 msgid ""
 "The constructors of the required type. If they have arguments, it will "
 "search recursively up to a maximum depth of 100."
 msgstr "所需类型的构造函数。如果它们有参数，它将递归搜索的最大深度为 100。"
 
-#: ../source/tutorial/miscellany.rst:59 ce5b938cca35484c87219deb9e706f4f
+#: ../source/tutorial/miscellany.rst:61 ce5b938cca35484c87219deb9e706f4f
 msgid ""
 "Local variables with function types, searching recursively for the "
 "arguments."
 msgstr "具有函数类型的局部变量，递归搜索参数。"
 
-#: ../source/tutorial/miscellany.rst:61 f28974bbd745453b86ae72ebfb2fb823
+#: ../source/tutorial/miscellany.rst:63 f28974bbd745453b86ae72ebfb2fb823
 #, python-format
 msgid ""
 "Any function with the appropriate return type which is marked with the "
 "``%hint`` annotation."
 msgstr "任何具有适当返回类型且标有 ``%hint`` 注解的函数。"
 
-#: ../source/tutorial/miscellany.rst:64 85fba9efc5b347baae94837577520f5e
+#: ../source/tutorial/miscellany.rst:66 85fba9efc5b347baae94837577520f5e
 msgid ""
 "In the case that a proof is not found, it can be provided explicitly as "
 "normal:"
 msgstr "在没有找到证明的情况下，可以像往常一样明确提供："
 
-#: ../source/tutorial/miscellany.rst:71 cd3ed189858f43658bb33bb033320af5
+#: ../source/tutorial/miscellany.rst:73 cd3ed189858f43658bb33bb033320af5
 msgid "Default implicit arguments"
 msgstr "默认隐式参数"
 
-#: ../source/tutorial/miscellany.rst:73 e8478ab6d4c94084bd781cc3f8106a42
+#: ../source/tutorial/miscellany.rst:75 e8478ab6d4c94084bd781cc3f8106a42
 msgid ""
 "Besides having Idris automatically find a value of a given type, "
 "sometimes we want to have an implicit argument with a specific default "
@@ -1671,13 +1676,13 @@ msgstr ""
 "``default`` 注解来做到这一点。虽然这主要是为了帮助自动构建 auto "
 "失败或发现无用值的证明，但首先考虑不涉及证明的更简单的情况可能更容易。"
 
-#: ../source/tutorial/miscellany.rst:79 c45d333abe8e4083aad8ef7113b33628
+#: ../source/tutorial/miscellany.rst:81 c45d333abe8e4083aad8ef7113b33628
 msgid ""
 "If we want to compute the n'th fibonacci number (and defining the 0th "
 "fibonacci number as 0), we could write:"
 msgstr "如果我们想计算第 n 个斐波那契数（并将第 0 个斐波那契数定义为 0），我们可以这样写："
 
-#: ../source/tutorial/miscellany.rst:88 d5b539fca0d64857a732708d27d21f1b
+#: ../source/tutorial/miscellany.rst:90 d5b539fca0d64857a732708d27d21f1b
 msgid ""
 "After this definition, ``fibonacci 5`` is equivalent to ``fibonacci "
 "{lag=0} {lead=1} 5``, and will return the 5th fibonacci number. Note that"
@@ -1689,11 +1694,11 @@ msgstr ""
 "个斐波那契数。请注意，虽然这有效，但这不是 ``default`` 注解的预期用途。此处仅用于说明目的。通常， ``default`` "
 "用于提供自定义证明搜索脚本之类的东西。"
 
-#: ../source/tutorial/miscellany.rst:94 530acc81cf384b4aa4e2fbee4a2d2f73
+#: ../source/tutorial/miscellany.rst:96 530acc81cf384b4aa4e2fbee4a2d2f73
 msgid "Literate programming"
 msgstr "文学编程"
 
-#: ../source/tutorial/miscellany.rst:96 a72334dbf83f433fa6b916d86cb47937
+#: ../source/tutorial/miscellany.rst:98 a72334dbf83f433fa6b916d86cb47937
 msgid ""
 "Like Haskell, Idris supports *literate* programming. If a file has an "
 "extension of ``.lidr`` then it is assumed to be a literate file. In "
@@ -1703,32 +1708,32 @@ msgstr ""
 "与 Haskell 一样，Idris 支持 *文学* 编程。如果一个文件的扩展名为 .lidr ，那么它被认为是一个 文学(literate) "
 "文件。在文学编程中，所有内容都被假定为注释，除非该行以大于号 ``>`` 开头，例如："
 
-#: ../source/tutorial/miscellany.rst:110 23c42f3ea59845128bae27a9d068405e
+#: ../source/tutorial/miscellany.rst:112 23c42f3ea59845128bae27a9d068405e
 msgid ""
 "An additional restriction is that there must be a blank line between a "
 "program line (beginning with ``>``) and a comment line (beginning with "
 "any other character)."
 msgstr "另一个限制是程序行（以 ``>`` 开头）和注释行（以任何其他字符开头）之间必须有一个空行。"
 
-#: ../source/tutorial/miscellany.rst:115 444e83734b654696891f5bf76210c9b4
+#: ../source/tutorial/miscellany.rst:117 444e83734b654696891f5bf76210c9b4
 msgid "Cumulativity"
 msgstr "累积性"
 
-#: ../source/tutorial/miscellany.rst:119 1f5ae1fc6de6493588b16126382eb5ad
+#: ../source/tutorial/miscellany.rst:121 1f5ae1fc6de6493588b16126382eb5ad
 msgid "NOT YET IN IDRIS 2"
 msgstr "尚未在 IDRIS 2 中"
 
-#: ../source/tutorial/miscellany.rst:121 87eb6d9351784f659c1d539470304092
+#: ../source/tutorial/miscellany.rst:123 87eb6d9351784f659c1d539470304092
 msgid ""
 "Since values can appear in types and *vice versa*, it is natural that "
 "types themselves have types. For example:"
 msgstr "由于值可以出现在类型中，然后 *反之亦然* ，因此类型本身具有类型是很自然的。例如："
 
-#: ../source/tutorial/miscellany.rst:131 6c1a0b2af90b484b8497df6b83d76b16
+#: ../source/tutorial/miscellany.rst:133 6c1a0b2af90b484b8497df6b83d76b16
 msgid "But what about the type of ``Type``? If we ask Idris it reports:"
 msgstr "但是 ``Type`` 的类型呢？如果我们问 Idris ，它会报告："
 
-#: ../source/tutorial/miscellany.rst:138 05c4eb17aa394de7bd8e8a0fd3acc511
+#: ../source/tutorial/miscellany.rst:140 05c4eb17aa394de7bd8e8a0fd3acc511
 msgid ""
 "If ``Type`` were its own type, it would lead to an inconsistency due to "
 "`Girard’s paradox "
@@ -1739,7 +1744,7 @@ msgstr ""
 "<https://www.cs.cmu.edu/afs/cs.cmu.edu/user/kw/www/scans/girard72thesis.pdf>`_"
 " 而导致不一致性，所以内部有一个 *层级* 类型（或 *全域* ）："
 
-#: ../source/tutorial/miscellany.rst:146 4b9d08573b674b978f2ba83e1d23618e
+#: ../source/tutorial/miscellany.rst:148 4b9d08573b674b978f2ba83e1d23618e
 msgid ""
 "Universes are *cumulative*, that is, if ``x : Type n`` we can also have "
 "that ``x : Type m``, as long as ``n < m``. The typechecker generates such"
@@ -1750,7 +1755,7 @@ msgstr ""
 "全域是 *累积的* ，也就是说，如果 ``x : Type n`` 我们也可以拥有 ``x : Type m`` ，只要 ``n < m`` "
 "。如果发现任何不一致，类型检查器会生成这样的全域约束并报告错误。通常，程序员不需要担心这一点，但它确实会防止（构造出）以下程序："
 
-#: ../source/tutorial/miscellany.rst:160 838e68d811fb42fca18c27c983a60326
+#: ../source/tutorial/miscellany.rst:162 838e68d811fb42fca18c27c983a60326
 msgid ""
 "The application of ``myid`` to itself leads to a cycle in the universe "
 "hierarchy — ``myid``\\ ’s first argument is a ``Type``, which cannot be "
@@ -1759,7 +1764,7 @@ msgstr ""
 "``myid`` 对自身的应用会导致 Universe 层次结构中的循环 - ``myid`` 的第一个参数是 ``Type`` "
 "，如果应用它，那么其级别不能低于所要求的级别。"
 
-#: ../source/tutorial/miscellany.rst:164 d7c688c66a4e42a2920509d6b2490487
+#: ../source/tutorial/miscellany.rst:166 d7c688c66a4e42a2920509d6b2490487
 msgid "https://github.com/david-christiansen/idris-type-providers"
 msgstr "https://github.com/david-christiansen/idris-type-providers"
 
@@ -1849,27 +1854,25 @@ msgid ""
 "improve error messages: ``with MyModule.(>>=) do ...``"
 msgstr "这对于 ``do`` 记法特别有用，它通常可以改善错误消息： ``with MyModule.(>>=) do ...``"
 
-#: ../source/tutorial/modules.rst:77 36590ec72b964f9daf9e50631514b953
+#: ../source/tutorial/modules.rst:77 e7fb902f61334f9d9656d5c20ea6a02a
 msgid ""
-"There is no formal link between the module name and its filename, "
-"although it is generally advisable to use the same name for each. An "
-"``import`` statement refers to a filename, using dots to separate "
-"directories. For example, ``import foo.bar`` would import the file "
-"``foo/bar.idr``, which would conventionally have the module declaration "
-"``module foo.bar``. The only requirement for module names is that the "
-"main module, with the ``main`` function, must be called ``Main`` — "
-"although its filename need not be ``Main.idr``."
+"If a file contains a module declaration ``module Foo.Bar.MyModule``, its "
+"path relative to the ``sourcedir`` specified in the ``.ipkg`` project "
+"file (defaults to ``.``) must be ``./Foo/Bar/MyModule.idr``. If you are "
+"not using an ``.ipkg`` project file, the path must be relative to the "
+"directory you are running Idris from. Similarly, an ``import`` statement "
+"also refers to such a relative filepath stripped of its file extension, "
+"using dots to separate directories. As in the example above, all modules "
+"names and directories must be capitalised identifiers. If a file does not"
+" contain a module declaration, it is considered to be a module whose "
+"identifier is ``Main``."
 msgstr ""
-"尽管一般来说，模块名称和文件名之间没有正式的联系，模块和文件使用相同的名称是明智的。 ``import`` "
-"语句指的是文件名，使用点来分隔目录。例如， ``import foo.bar`` 将导入文件 ``foo/bar.idr`` "
-"，按照惯例，该文件的模块声明是 ``module foo.bar`` 。对模块名称的唯一要求是，带有 ``main`` 函数的主模块必须被称为 "
-"``Main`` —— 尽管其文件名不需要是 ``Main.idr`` 。"
 
-#: ../source/tutorial/modules.rst:87 4ff636bcf2e94409b751f11c78e2b014
+#: ../source/tutorial/modules.rst:88 4ff636bcf2e94409b751f11c78e2b014
 msgid "Export Modifiers"
 msgstr "导出修饰符"
 
-#: ../source/tutorial/modules.rst:89 fe78c2945a9143cfb6d1ff2661bfd6ff
+#: ../source/tutorial/modules.rst:90 fe78c2945a9143cfb6d1ff2661bfd6ff
 msgid ""
 "Idris allows for fine-grained control over the visibility of a "
 "namespace's contents. By default, all names defined in a namespace are "
@@ -1882,19 +1885,19 @@ msgstr ""
 "这有助于规范一个最小的接口和隐藏内部细节。Idris 允许函数、类型和接口被标记为 ``private``, ``export`` 或 "
 "``public export`` 。它们的一般含义如下："
 
-#: ../source/tutorial/modules.rst:96 b6b35b42706e486d9b895e09f6e30313
+#: ../source/tutorial/modules.rst:97 b6b35b42706e486d9b895e09f6e30313
 msgid "``private`` meaning that it is not exported at all. This is the default."
 msgstr "``private`` 意味着它不会被导出。这是默认设置。"
 
-#: ../source/tutorial/modules.rst:98 44f47d253ba54752ac8a3e840f0f1847
+#: ../source/tutorial/modules.rst:99 44f47d253ba54752ac8a3e840f0f1847
 msgid "``export`` meaning that its top level type is exported."
 msgstr "``export`` 意味着顶层类型已被导出。"
 
-#: ../source/tutorial/modules.rst:100 4496487f9b4a493393f4ac1e98b98718
+#: ../source/tutorial/modules.rst:101 4496487f9b4a493393f4ac1e98b98718
 msgid "``public export`` meaning that the entire definition is exported."
 msgstr "``public export`` 意味着整个定义被导出。"
 
-#: ../source/tutorial/modules.rst:102 62f867773d0046a4a99d4b1359acb360
+#: ../source/tutorial/modules.rst:103 62f867773d0046a4a99d4b1359acb360
 msgid ""
 "A further restriction in modifying the visibility is that definitions "
 "must not refer to anything within a lower level of visibility. For "
@@ -1906,15 +1909,15 @@ msgstr ""
 "``private`` 或 ``export`` 名称，而 ``export`` 类型不能使用 ``private`` "
 "名称。这是为了防止私有名称泄露到模块的接口中。"
 
-#: ../source/tutorial/modules.rst:109 3af52186896b4c69834dccbc4b803229
+#: ../source/tutorial/modules.rst:110 3af52186896b4c69834dccbc4b803229
 msgid "Meaning for Functions"
 msgstr "用于函数时的含义"
 
-#: ../source/tutorial/modules.rst:111 b3e7ad90db2344ef85a73430c230f7ce
+#: ../source/tutorial/modules.rst:112 b3e7ad90db2344ef85a73430c230f7ce
 msgid "``export`` the type is exported"
 msgstr "``export`` 类型被导出"
 
-#: ../source/tutorial/modules.rst:113 31f61305ca2347e28d8e571bb80853f1
+#: ../source/tutorial/modules.rst:114 31f61305ca2347e28d8e571bb80853f1
 msgid ""
 "``public export`` the type and definition are exported, and the "
 "definition can be used after it is imported. In other words, the "
@@ -1925,7 +1928,7 @@ msgstr ""
 "``public export`` 类型和定义被导出，定义被导入后可以使用。换句话说，定义本身被认为是模块接口的一部分。 ``public "
 "export`` 这个长名字是为了让你在做这件事时三思而行。"
 
-#: ../source/tutorial/modules.rst:121 d037093d8bcf4217a0f49e74f071e12a
+#: ../source/tutorial/modules.rst:122 d037093d8bcf4217a0f49e74f071e12a
 msgid ""
 "Type synonyms in Idris are created by writing a function. When setting "
 "the visibility for a module, it is usually a good idea to ``public "
@@ -1935,7 +1938,7 @@ msgstr ""
 "Idris 中的类型同义词是通过编写函数创建的。设置模块的可见性时，如果要在模块外使用所有类型的同义词，最好将它们设置为 ``public "
 "export`` 。否则，Idris 将不知道该同义词是谁的同义词。"
 
-#: ../source/tutorial/modules.rst:127 e37a0366fad0436d90d4a7b17749ab16
+#: ../source/tutorial/modules.rst:128 e37a0366fad0436d90d4a7b17749ab16
 msgid ""
 "Since ``public export`` means that a function's definition is exported, "
 "this effectively makes the function definition part of the module's API. "
@@ -1945,7 +1948,7 @@ msgstr ""
 "由于 ``public export`` 意味着一个函数的定义被导出，这实际上使函数定义成为模块 API "
 "的一部分。因此，一般来说，除非你真的想导出完整的定义，否则最好不要对函数使用 ``public export`` 。"
 
-#: ../source/tutorial/modules.rst:133 332b9263d1b54b24a16a2f5a89e21a39
+#: ../source/tutorial/modules.rst:134 332b9263d1b54b24a16a2f5a89e21a39
 msgid ""
 "*For beginners*: If the function needs to be accessed only at runtime, "
 "use ``export``. However, if it's also meant to be used at *compile* time "
@@ -1963,69 +1966,91 @@ msgstr ""
 " : m = m`` ）。* 为了实现这一点，它需要访问*的定义 ``plus`` ，其中包括方程式 ``plus Z m = m`` "
 "。因此，在这种情况下， ``plus`` 必须被标记为 ``public export`` 。"
 
-#: ../source/tutorial/modules.rst:146 3984158af3594fa1a3df8a643b442b01
+#: ../source/tutorial/modules.rst:147 3984158af3594fa1a3df8a643b442b01
 msgid "Meaning for Data Types"
 msgstr "数据类型的含义"
 
-#: ../source/tutorial/modules.rst:148 d7ad3f4c9c7549778fbf1ea776116212
+#: ../source/tutorial/modules.rst:149 d7ad3f4c9c7549778fbf1ea776116212
 msgid "For data types, the meanings are:"
 msgstr "对于数据类型，其含义是："
 
-#: ../source/tutorial/modules.rst:150 a838b25613674ec1b1e6ac6f074d1c7a
+#: ../source/tutorial/modules.rst:151 a838b25613674ec1b1e6ac6f074d1c7a
 msgid "``export`` the type constructor is exported"
 msgstr "``export`` 类型构造器被导出"
 
-#: ../source/tutorial/modules.rst:152 41cb22d4dd074496b6b9d4bea3f1a867
+#: ../source/tutorial/modules.rst:153 41cb22d4dd074496b6b9d4bea3f1a867
 msgid "``public export`` the type constructor and data constructors are exported"
 msgstr "``public export`` 类型构造器和数据构造器会被导出"
 
-#: ../source/tutorial/modules.rst:156 f803259802d947509e0bfbbc59cea460
+#: ../source/tutorial/modules.rst:157 f803259802d947509e0bfbbc59cea460
 msgid "Meaning for Interfaces"
 msgstr "接口上的含义"
 
-#: ../source/tutorial/modules.rst:158 72455bca71af4746bf7588dba6db55d3
+#: ../source/tutorial/modules.rst:159 72455bca71af4746bf7588dba6db55d3
 msgid "For interfaces, the meanings are:"
 msgstr "对于接口，其含义是："
 
-#: ../source/tutorial/modules.rst:160 d3404470ffac4984bd5825aa969c9c64
+#: ../source/tutorial/modules.rst:161 d3404470ffac4984bd5825aa969c9c64
 msgid "``export`` the interface name is exported"
 msgstr "``export`` 接口名称被导出"
 
-#: ../source/tutorial/modules.rst:162 9a3716574bb042c9b5c6b0f8ce5cad4e
+#: ../source/tutorial/modules.rst:163 9a3716574bb042c9b5c6b0f8ce5cad4e
 msgid ""
 "``public export`` the interface name, method names and default "
 "definitions are exported"
 msgstr "``public export`` 接口名称、方法名称和默认定义被导出"
 
-#: ../source/tutorial/modules.rst:166 d81336e4d04b4e05a55154779cf4246d
+#: ../source/tutorial/modules.rst:167 c94049fe71a448eba5b39ff44405c3ea
+#, fuzzy
+msgid "Meaning for fixity declarations"
+msgstr "用于函数时的含义"
+
+#: ../source/tutorial/modules.rst:169 e89b21a5fc4548e59cd659f64a5fd7f2
+msgid ""
+"The modifiers differ slightly when applied to fixities. Un-labelled "
+"fixities are exported rather than be private. There is no difference "
+"between `public export` and `export`. In summary:"
+msgstr ""
+
+#: ../source/tutorial/modules.rst:173 6127cc43b9024e279d8aa3600664cec1
+msgid "``private`` means the fixity declaration is only visible within the file."
+msgstr ""
+
+#: ../source/tutorial/modules.rst:175 db9224a16bb04ba89418ee24e11f2e18
+msgid ""
+"``public export`` and ``export`` are the same and the fixity is exported."
+" The access modifier could also be eluded for the same effect."
+msgstr ""
+
+#: ../source/tutorial/modules.rst:179 d81336e4d04b4e05a55154779cf4246d
 msgid "Propagating Inner Module API's"
 msgstr "传播内部模块的 API"
 
-#: ../source/tutorial/modules.rst:168 612364b4f83347eb97f89844cec066b5
+#: ../source/tutorial/modules.rst:181 612364b4f83347eb97f89844cec066b5
 msgid ""
 "Additionally, a module can re-export a module it has imported, by using "
 "the ``public`` modifier on an ``import``. For example:"
 msgstr "此外，一个模块可以重新输出它所导入的模块，方法是在 ``public`` 修改器上使用 ``import`` 。例如："
 
-#: ../source/tutorial/modules.rst:178 5e0b2c7a9aa0416d8fca6fded88dfe17
+#: ../source/tutorial/modules.rst:191 5e0b2c7a9aa0416d8fca6fded88dfe17
 msgid ""
 "The module ``A`` will export the name ``a``, as well as any public or "
 "abstract names in module ``C``, but will not re-export anything from "
 "module ``B``."
 msgstr "模块 ``A`` 将导出名称 ``a`` 以及模块 ``C`` 中的任何公共或抽象名称，但不会从模块 ``B`` 重新导出任何东西。"
 
-#: ../source/tutorial/modules.rst:183 095935ef14dd4563846018b160381ae0
+#: ../source/tutorial/modules.rst:196 095935ef14dd4563846018b160381ae0
 msgid "Renaming imports"
 msgstr "重命名导入"
 
-#: ../source/tutorial/modules.rst:185 1617e2be58364163bba566548cc73844
+#: ../source/tutorial/modules.rst:198 1617e2be58364163bba566548cc73844
 msgid ""
 "Sometimes it is convenient to be able to access the names in another "
 "module via a different namespace (typically, a shorter one). For this, "
 "you can use `import...as`. For example:"
 msgstr "有时，能够通过不同的命名空间（通常是较短的命名空间）访问另一个模块中的名称是很方便的。为此，你可以使用 `import...as` 。例如："
 
-#: ../source/tutorial/modules.rst:195 9c714fd6712b444286851e29253bde0c
+#: ../source/tutorial/modules.rst:208 9c714fd6712b444286851e29253bde0c
 msgid ""
 "This module ``A`` has access to the exported names from module "
 "``Data.List``, but can also explicitly access them via the module name "
@@ -2035,7 +2060,7 @@ msgstr ""
 "这个模块 ``A`` 可以访问从模块 ``Data.List`` 导出的名称，但也可以通过模块名称 ``L`` 明确地访问它们。 "
 "``import...as`` 也可以与 ``import public`` 结合起来，创建一个模块，从其他子模块导出一个更大的API："
 
-#: ../source/tutorial/modules.rst:207 0381d05da7bf40418178193f812a77a5
+#: ../source/tutorial/modules.rst:220 0381d05da7bf40418178193f812a77a5
 msgid ""
 "Here, any module which imports ``Books`` will have access to the exported"
 " interfaces of ``Books.Hardback`` and ``Books.Comic`` both under the "
@@ -2044,25 +2069,25 @@ msgstr ""
 "在这里，任何导入 ``Books`` 的模块都可以访问 ``Books.Hardback`` 和 ``Books.Comic`` "
 "的导出接口，两者都在命名空间 ``Books`` 。"
 
-#: ../source/tutorial/modules.rst:212 2aed837148a047dc98f5e6bb5042eed2
+#: ../source/tutorial/modules.rst:225 2aed837148a047dc98f5e6bb5042eed2
 msgid "Explicit Namespaces"
 msgstr "显式命名空间"
 
-#: ../source/tutorial/modules.rst:214 1a118b3d1f3d4effb9cb62af26f0482a
+#: ../source/tutorial/modules.rst:227 1a118b3d1f3d4effb9cb62af26f0482a
 msgid ""
 "Defining a module also defines a namespace implicitly. However, "
 "namespaces can also be given *explicitly*. This is most useful if you "
 "wish to overload names within the same module:"
 msgstr "定义一个模块也隐含地定义了一个命名空间。然而，命名空间也可以被 *明确* 地赋予 。如果你想在同一个模块中重载名字，这会非常有用："
 
-#: ../source/tutorial/modules.rst:232 0a22d5a37e42456986ffd0916fd12f88
+#: ../source/tutorial/modules.rst:245 0a22d5a37e42456986ffd0916fd12f88
 msgid ""
 "This (admittedly contrived) module defines two functions with fully "
 "qualified names ``Foo.X.test`` and ``Foo.Y.test``, which can be "
 "disambiguated by their types:"
 msgstr "这个模块（公认是设计好的）定义了两个函数，其全称是 ``Foo.X.test`` 和 ``Foo.Y.test`` ，可以通过其类型来区分："
 
-#: ../source/tutorial/modules.rst:243 db9224a16bb04ba89418ee24e11f2e18
+#: ../source/tutorial/modules.rst:256 db9224a16bb04ba89418ee24e11f2e18
 msgid ""
 "The export rules, ``public export`` and ``export``, are *per namespace*, "
 "not *per file*, so the two ``test`` definitions above need the ``export``"
@@ -2071,17 +2096,51 @@ msgstr ""
 "导出规则 ``public export`` 和 ``export`` ，是 *按命名空间* ，而不是 *按文件* ，所以上面的两个 "
 "``test`` 定义需要 ``export`` 标志才能在它们自己的命名空间之外可见。"
 
-#: ../source/tutorial/modules.rst:248 b1d064f82b784d28a3f9c8ff87a6f6a5
-msgid "Parameterised blocks"
+#: ../source/tutorial/modules.rst:261 ca2042b5947b46c69cd51f119c5fcc07
+#, fuzzy
+msgid "Explicit namespaces inside functions"
+msgstr "显式命名空间"
+
+#: ../source/tutorial/modules.rst:263 9fe3d6d734fb49129b76443846868917
+msgid ""
+"Explicit namespaces can be defined inside ``where``-blocks of functions. "
+"Unlike other definitions (e.g. ``data`` or ``record``), such namespace "
+"definitions are understood as belonging to the scope of the function "
+"definition itself."
+msgstr ""
+
+#: ../source/tutorial/modules.rst:268 0aa52d1234ee4279837f29c66c3575a0
+msgid "For example, the following code should typecheck."
+msgstr ""
+
+#: ../source/tutorial/modules.rst:282 7427e2a38d4e47b78c4ebb18000c2083
+msgid ""
+"Notice that if a function that contains namespace definition has "
+"parameters, then definitions inside this namespace will have these "
+"parameters too. This is done because such definitions have access to "
+"values of the parameters."
+msgstr ""
+
+#: ../source/tutorial/modules.rst:286 54f61cd7629143ed97f882452954eaa6
+msgid ""
+"These parameters must be passed explicitly when accessing namespaced "
+"definitions from outside the function where they are declared, and must "
+"not be passed when accessed from the inside. This behaviour is similar to"
+" parameterised blocks described below. Look at the following example."
+msgstr ""
+
+#: ../source/tutorial/modules.rst:305 b7ebb949c816473295f3a9597ce8709a
+#, fuzzy
+msgid "Parameterised blocks - `parameters`-blocks"
 msgstr "参数化块"
 
-#: ../source/tutorial/modules.rst:250 a21a18507132459cba8b27fed64b8c78
+#: ../source/tutorial/modules.rst:307 a21a18507132459cba8b27fed64b8c78
 msgid ""
 "Groups of functions can be parameterised over a number of arguments using"
 " a ``parameters`` declaration, for example:"
 msgstr "例如，可以使用 ``parameters`` 声明，在一些参数上对函数组进行参数化："
 
-#: ../source/tutorial/modules.rst:259 c8d300b311524486a23c9b732d506a56
+#: ../source/tutorial/modules.rst:316 c8d300b311524486a23c9b732d506a56
 msgid ""
 "The effect of a ``parameters`` block is to add the declared parameters to"
 " every function, type and data constructor within the block. "
@@ -2094,18 +2153,18 @@ msgstr ""
 "块的作用是将声明的参数添加到该块内的每个函数、类型和数据构造器中。具体来说，就是将参数添加到参数列表的前面。在块之外，必须明确地给出参数。 "
 "``addAll`` 函数，当从 REPL 中调用时，将有以下类型签名。"
 
-#: ../source/tutorial/modules.rst:271 3349d63cc5484e069150cb0e8fdac08f
+#: ../source/tutorial/modules.rst:328 3349d63cc5484e069150cb0e8fdac08f
 msgid "and the following definition."
 msgstr "和以下定义。"
 
-#: ../source/tutorial/modules.rst:278 39ea3c7f7ef54bf99d889e869176e60a
+#: ../source/tutorial/modules.rst:335 39ea3c7f7ef54bf99d889e869176e60a
 msgid ""
 "Parameters blocks can be nested, and can also include data declarations, "
 "in which case the parameters are added explicitly to all type and data "
 "constructors. They may also be dependent types with implicit arguments:"
 msgstr "参数块可以是嵌套的，也可以包括数据声明，在这种情况下，参数被明确地添加到所有类型和数据构造器中。它们也可以是具有隐含参数的依赖类型："
 
-#: ../source/tutorial/modules.rst:291 b7f44541837d40f1bc1a85db4370f75e
+#: ../source/tutorial/modules.rst:348 b7f44541837d40f1bc1a85db4370f75e
 msgid ""
 "To use ``Vects`` or ``append`` outside the block, we must also give the "
 "``xs`` and ``y`` arguments. Here, we can use placeholders for the values "
@@ -2113,6 +2172,12 @@ msgid ""
 msgstr ""
 "要在块外使用 ``Vects`` 或 ``append`` ，我们还必须给出 ``xs`` 和 ``y`` "
 "的参数。在这里，我们可以使用占位符来表示可以由类型检查器推断出来的值："
+
+#: ../source/tutorial/modules.rst:357 65e15b0a8e5a487cbc80bfcce0e5129e
+msgid ""
+"You can specify what quantity and if the parameters are implicits using "
+"the same syntax as record parameters."
+msgstr ""
 
 #: ../source/tutorial/multiplicities.rst:5 2bdd4a67cba94f2891bd25dcebad8de4
 msgid "Multiplicities"
@@ -2405,13 +2470,14 @@ msgid ""
 msgstr "我们可以定义开门和关门的函数，明确描述它们如何改变门的状态，并且它们在门中是线性的"
 
 #: ../source/tutorial/multiplicities.rst:240 26f1a3ba423247e0a501fa6bb09c3022
+#, fuzzy
 msgid ""
 "Remember, the intuition is that if ``openDoor d`` is used exactly once, "
 "then ``d`` is used exactly once. So, provided that a door ``d`` has "
 "multiplicity ``1`` when it's created, we *know* that once we call "
 "``openDoor`` on it, we won't be able to use ``d`` again. Given that ``d``"
-" is an external resource, and ``openDoor`` has changed it's state, this "
-"is a good thing!"
+" is an external resource, and ``openDoor`` has changed its state, this is"
+" a good thing!"
 msgstr ""
 "记住，直觉是这样的，如果 ``openDoor d`` 被精确使用一次，那么 ``d`` 也被精确使用一次。因此，只要一扇门 ``d`` "
 "在创建时具有多重性 ``1`` ，我们就 *知道* ，一旦我们对它调用 ``openDoor`` ，我们将不能再使用 ``d`` 。鉴于 "
@@ -2971,18 +3037,30 @@ msgid ""
 "requirements by running following command::"
 msgstr "如果你是 Homebrew 用户，你可以通过运行以下命令安装 Idris 2 和所有的依赖："
 
-#: ../source/tutorial/starting.rst:71 51c8792de5b449488c64c80c41485726
+#: ../source/tutorial/starting.rst:71 0a57fe8a651a4531849ba3e460707596
+#, fuzzy
+msgid "Installing Using Yay"
+msgstr "使用 Homebrew 进行安装"
+
+#: ../source/tutorial/starting.rst:73 1ed0bec4d03a4849bb97f2e52026aa61
+#, fuzzy
+msgid ""
+"If you are an Arch based distro user, you can install Idris 2 together "
+"with all the requirements by running following command::"
+msgstr "如果你是 Homebrew 用户，你可以通过运行以下命令安装 Idris 2 和所有的依赖："
+
+#: ../source/tutorial/starting.rst:79 51c8792de5b449488c64c80c41485726
 msgid "Checking Installation"
 msgstr "检查安装"
 
-#: ../source/tutorial/starting.rst:73 7251792e2a30476b9cc9e32c24505fc8
+#: ../source/tutorial/starting.rst:81 7251792e2a30476b9cc9e32c24505fc8
 msgid ""
 "To check that installation has succeeded, and to write your first Idris "
 "program, create a file called ``hello.idr`` containing the following "
 "text:"
 msgstr "为了检查安装是否成功，并编写你的第一个 Idris 程序，创建一个名为 ``hello.idr`` 的文件，并包含以下文本："
 
-#: ../source/tutorial/starting.rst:84 aa568de2b9b04e97863c8c64c1f186b3
+#: ../source/tutorial/starting.rst:92 aa568de2b9b04e97863c8c64c1f186b3
 msgid ""
 "If you are familiar with Haskell, it should be fairly clear what the "
 "program is doing and how it works, but if not, we will explain the "
@@ -2996,49 +3074,49 @@ msgstr ""
 "``idris2 hello.idr -o hello`` 来将程序编译成可执行文件。默认情况下，这将创建一个名为 ``hello`` "
 "的可执行程序，它将调用一个生成和编译的 Chez Scheme 程序，在目标目录 ``build/exec`` 中，你可以运行它："
 
-#: ../source/tutorial/starting.rst:98 da9e4842c3f64246ae22bc9ed335f840
+#: ../source/tutorial/starting.rst:106 da9e4842c3f64246ae22bc9ed335f840
 msgid ""
 "Please note that the dollar sign ``$`` indicates the shell prompt! Some "
 "useful options to the Idris command are:"
 msgstr "请注意，美元符号 ``$`` 表示 shell 提示！ Idris 命令的一些有用的选项是："
 
-#: ../source/tutorial/starting.rst:101 b073c217be544adb9c53bfce453838f1
+#: ../source/tutorial/starting.rst:109 b073c217be544adb9c53bfce453838f1
 msgid "``-o prog`` to compile to an executable called ``prog``."
 msgstr "``-o prog`` 编译成可执行文件，名为 ``prog`` 。"
 
-#: ../source/tutorial/starting.rst:103 a2e8e7529bb74c7b8b5c76a82724d4f6
+#: ../source/tutorial/starting.rst:111 a2e8e7529bb74c7b8b5c76a82724d4f6
 msgid ""
 "``--check`` type check the file and its dependencies without starting the"
 " interactive environment."
 msgstr "``--check`` 文件类型检查和它的依赖关系，而不启动交互式环境。"
 
-#: ../source/tutorial/starting.rst:105 35a55bff38c943349c89bfa08f1197d0
+#: ../source/tutorial/starting.rst:113 35a55bff38c943349c89bfa08f1197d0
 msgid ""
 "``--package pkg`` add package as dependency, e.g. ``--package contrib`` "
 "to make use of the contrib package."
 msgstr "``--package pkg`` 添加软件包为依赖项，例如 ``--package contrib`` 表示使用 contrib 包。"
 
-#: ../source/tutorial/starting.rst:107 82d76e388a2b412f90ece405461ced39
+#: ../source/tutorial/starting.rst:115 82d76e388a2b412f90ece405461ced39
 msgid "``--help`` display usage summary and command line options."
 msgstr "``--help`` 显示使用摘要和命令行选项。"
 
-#: ../source/tutorial/starting.rst:109 1ca338ee0293496f863dc1230cac77ba
+#: ../source/tutorial/starting.rst:117 1ca338ee0293496f863dc1230cac77ba
 msgid ""
 "You can find out more about compiling to executables in Section :ref"
 ":`sect-execs`."
 msgstr "你可以在 :ref:`sect-execs` 一节中找到更多关于编译成可执行文件的信息。"
 
-#: ../source/tutorial/starting.rst:113 6f43309c53c548a7ab790876c3dd5bc7
+#: ../source/tutorial/starting.rst:121 6f43309c53c548a7ab790876c3dd5bc7
 msgid "The Interactive Environment"
 msgstr "交互式环境"
 
-#: ../source/tutorial/starting.rst:115 4d5c62e1f3a74c7c95a77cb15ca10d17
+#: ../source/tutorial/starting.rst:123 4d5c62e1f3a74c7c95a77cb15ca10d17
 msgid ""
 "Entering ``idris2`` at the shell prompt starts up the interactive "
 "environment. You should see something like the following:"
 msgstr "在 shell 提示符下输入 ``idris2`` ，就会启动交互式环境。你应该看到类似下面的内容："
 
-#: ../source/tutorial/starting.rst:120 0a3ad505d6974b4ba440daa4454f40c7
+#: ../source/tutorial/starting.rst:128 0a3ad505d6974b4ba440daa4454f40c7
 msgid ""
 "This gives a ``ghci`` style interface which allows evaluation of, as well"
 " as type checking of, expressions; theorem proving, compilation; editing;"
@@ -4051,10 +4129,11 @@ msgstr ""
 "操作是什么，而不是如何执行它们。由此产生的操作是在外部由运行时系统执行的。我们已经看到了一个I/O程序："
 
 #: ../source/tutorial/typesfuns.rst:629 ba84504d55414491a91ec46a4378ab0a
+#, fuzzy
 msgid ""
 "The type of ``putStrLn`` explains that it takes a string, and returns an "
 "I/O action which produces an element of the unit type ``()``. There is a "
-"variant ``putStr`` which decribes the output of a string without a "
+"variant ``putStr`` which describes the output of a string without a "
 "newline:"
 msgstr ""
 "``putStrLn`` 的类型说明它接收一个字符串，并返回一个 I/O 动作，产生一个单元类型的元素 ``()`` 。另外它有一个变体 "
@@ -4219,7 +4298,8 @@ msgid ""
 msgstr "同样，任何名称为 ``Lin`` 和 ``:<`` 的实现都可以写成 **snoc**-list 形式："
 
 #: ../source/tutorial/typesfuns.rst:797 1dc4ee9b7b544bae97cd1aa7aa67c601
-msgid "``[<]`` mean ``Lin``"
+#, fuzzy
+msgid "``[<]`` means ``Lin``"
 msgstr "``[<]`` 意味着 ``Lin``"
 
 #: ../source/tutorial/typesfuns.rst:798 9c186255666d4b3cbef1eb2aad440d3e
@@ -4624,44 +4704,57 @@ msgstr "我们也可以在 ``let`` 绑定中进行模式匹配。例如，我们
 msgid "These let bindings can be annotated with a type:"
 msgstr "这些 let 绑定可以使用类型注解："
 
-#: ../source/tutorial/typesfuns.rst:1265 8918e28b66bd49e8bbe2e5c40b31440d
+#: ../source/tutorial/typesfuns.rst:1265 0973d583f20e4442902faedbcaa925c6
 msgid ""
-"We can also use the symbol ``:=`` instead of ``=`` to, among other "
-"things, avoid ambiguities with propositional equality:"
+"Since ``=`` can either indicate a type of equality (``===`` or ``~=~``) "
+"or a definition, some expressions can be ambiguous. Here is an example:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1276 8918e28b66bd49e8bbe2e5c40b31440d
+#, fuzzy
+msgid ""
+"We can also use the symbol ``:=`` instead of ``=`` in this context to, "
+"among other things, avoid these ambiguities with propositional equality:"
 msgstr "我们还可以使用符号 ``:=`` 来代替 ``=`` ，除其他事项外，避免命题相等的歧义："
 
-#: ../source/tutorial/typesfuns.rst:1273 bd7dc260df57421fb60059a35f558868
+#: ../source/tutorial/typesfuns.rst:1284 9d0edfc8305b44aea9d32d9c218ec12a
+msgid ""
+"The code above can be read as \"``ty`` has type ``Type`` and its value is"
+" ``v = v``\"."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1287 bd7dc260df57421fb60059a35f558868
 msgid ""
 "Local definitions can also be introduced using ``let``. Just like top "
 "level ones and ones defined in a ``where`` clause you need to:"
 msgstr "本地定义也可以使用 ``let`` 引入。就像顶层定义和在 ``where`` 子句中定义的一样，你需要："
 
-#: ../source/tutorial/typesfuns.rst:1276 7c6ed3acd33b4afa817a849db4de27ca
+#: ../source/tutorial/typesfuns.rst:1290 7c6ed3acd33b4afa817a849db4de27ca
 msgid "declare the function and its type"
 msgstr "声明函数和它的类型"
 
-#: ../source/tutorial/typesfuns.rst:1277 745aafa2d401408f97215481ce7112d6
+#: ../source/tutorial/typesfuns.rst:1291 745aafa2d401408f97215481ce7112d6
 msgid "define the function by pattern matching"
 msgstr "通过模式匹配来定义函数"
 
-#: ../source/tutorial/typesfuns.rst:1286 da012f7ca55d4aa297505a5cc17a4d55
+#: ../source/tutorial/typesfuns.rst:1300 da012f7ca55d4aa297505a5cc17a4d55
 msgid ""
 "The symbol ``:=`` cannot be used in a local function definition. Which "
 "means that it can be used to interleave let bindings and local "
 "definitions without introducing ambiguities."
 msgstr "符号 ``:=`` 不能在局部函数定义中使用。这意味着它可以用来交错使用 let 绑定和局部定义，而不会引入歧义。"
 
-#: ../source/tutorial/typesfuns.rst:1301 2e995732c9b146ba962734aab6704502
+#: ../source/tutorial/typesfuns.rst:1315 2e995732c9b146ba962734aab6704502
 msgid "List comprehensions"
 msgstr "列表推导式"
 
-#: ../source/tutorial/typesfuns.rst:1303 28951e37379c42e2b93cd399346bd4f3
+#: ../source/tutorial/typesfuns.rst:1317 28951e37379c42e2b93cd399346bd4f3
 msgid ""
 "Idris provides *comprehension* notation as a convenient shorthand for "
 "building lists. The general form is:"
 msgstr "Idris提 供了 *推导式* 符号，作为建立列表的方便速记法。其一般形式是："
 
-#: ../source/tutorial/typesfuns.rst:1310 2e8c216a56904112a47977b9900ce782
+#: ../source/tutorial/typesfuns.rst:1324 2e8c216a56904112a47977b9900ce782
 msgid ""
 "This generates the list of values produced by evaluating the "
 "``expression``, according to the conditions given by the comma separated "
@@ -4671,7 +4764,7 @@ msgstr ""
 "通过对 ``expression`` 进行求值，根据逗号分隔的 ``qualifiers`` "
 "给出的条件生成一个符合条件的列表。例如，我们可以建立一个毕达哥拉斯三段论的列表，如下所示："
 
-#: ../source/tutorial/typesfuns.rst:1321 998bf274411e49f8a2e7f7fa327bc9db
+#: ../source/tutorial/typesfuns.rst:1335 998bf274411e49f8a2e7f7fa327bc9db
 msgid ""
 "The ``[a..b]`` notation is another shorthand which builds a list of "
 "numbers between ``a`` and ``b``. Alternatively ``[a,b..c]`` builds a list"
@@ -4684,18 +4777,18 @@ msgstr ""
 " 和 ``c`` 之间建立一个数字列表，增量由 ``a`` 和 ``b`` 之间的差异指定。这适用于 ``Nat``, ``Int`` 和 "
 "``Integer`` 类型，是 prelude 中的 ``enumFromTo`` 和 ``enumFromThenTo`` 函数的语法糖。"
 
-#: ../source/tutorial/typesfuns.rst:1329 6f6fee058d0343e9b91079334e8ad6db
+#: ../source/tutorial/typesfuns.rst:1343 6f6fee058d0343e9b91079334e8ad6db
 msgid "``case`` expressions"
 msgstr "``case`` 表达式"
 
-#: ../source/tutorial/typesfuns.rst:1331 11672d24855c4fe4893f811410a3abdd
+#: ../source/tutorial/typesfuns.rst:1345 11672d24855c4fe4893f811410a3abdd
 msgid ""
 "Another way of inspecting intermediate values is to use a ``case`` "
 "expression. The following function, for example, splits a string into two"
 " at a given character:"
 msgstr "另一种检查中间值的方法是使用 ``case`` 表达式。例如，下面的函数在一个给定的字符处将一个字符串分成两个："
 
-#: ../source/tutorial/typesfuns.rst:1341 2824a2e57ffc47e4848a7745a94320e7
+#: ../source/tutorial/typesfuns.rst:1355 2824a2e57ffc47e4848a7745a94320e7
 msgid ""
 "``break`` is a library function which breaks a string into a pair of "
 "strings at the point where the given function returns true. We then "
@@ -4705,7 +4798,7 @@ msgstr ""
 "``break`` "
 "是一个库函数，它在给定函数返回真值的地方将一个字符串分解成一对子字符串。然后我们对它返回的一对子字符串进行解构，并删除第二个子字符串的第一个字符。"
 
-#: ../source/tutorial/typesfuns.rst:1346 1d8448b979434d57a0669c30cc119312
+#: ../source/tutorial/typesfuns.rst:1360 1d8448b979434d57a0669c30cc119312
 msgid ""
 "A ``case`` expression can match several cases, for example, to inspect an"
 " intermediate value of type ``Maybe a``. Recall ``list_lookup`` which "
@@ -4717,31 +4810,32 @@ msgstr ""
 "函数，它在一个列表中查找一个索引，如果索引出界则返回 ``Nothing`` 。我们可以用它来写 ``lookup_default`` "
 "，它查找一个索引，如果索引出界则返回一个默认值："
 
-#: ../source/tutorial/typesfuns.rst:1360 e87b14b564ee429293faec91cb4988db
+#: ../source/tutorial/typesfuns.rst:1374 e87b14b564ee429293faec91cb4988db
 msgid ""
 "If the index is in bounds, we get the value at that index, otherwise we "
 "get a default value:"
 msgstr "如果索引在范围内，我们得到该索引的值，否则我们得到一个默认值："
 
-#: ../source/tutorial/typesfuns.rst:1371 67efbfb51bf04c65a270724c12e67f39
+#: ../source/tutorial/typesfuns.rst:1385 67efbfb51bf04c65a270724c12e67f39
 msgid "Totality"
 msgstr "完全性"
 
-#: ../source/tutorial/typesfuns.rst:1373 47c2805bd89f48f7a99d3ce758a9b711
+#: ../source/tutorial/typesfuns.rst:1387 47c2805bd89f48f7a99d3ce758a9b711
 msgid ""
 "Idris distinguishes between *total* and *partial* functions. A total "
 "function is a function that either:"
 msgstr "Idris 区分了 *完全* 和 *部分* 函数。完全函数是一个这样的函数，它要么："
 
-#: ../source/tutorial/typesfuns.rst:1376 4f29cfb7c57748e49452e3c4ce89afd8
+#: ../source/tutorial/typesfuns.rst:1390 4f29cfb7c57748e49452e3c4ce89afd8
 msgid "Terminates for all possible inputs, or"
 msgstr "对所有可能的输入终止，或者"
 
-#: ../source/tutorial/typesfuns.rst:1377 6906b3f1877e41ef85eaf354d8a2da7c
-msgid "Produces a non-empty, finite, prefix of a possibly infinite result"
+#: ../source/tutorial/typesfuns.rst:1391 6906b3f1877e41ef85eaf354d8a2da7c
+#, fuzzy
+msgid "Produces a non-empty, finite prefix of a possibly infinite result"
 msgstr "产生一个非空的、有限的、或者一个可能是无限结果的前缀"
 
-#: ../source/tutorial/typesfuns.rst:1379 dbdc2d4b26d845b187498f3f76c6a2dc
+#: ../source/tutorial/typesfuns.rst:1393 dbdc2d4b26d845b187498f3f76c6a2dc
 msgid ""
 "If a function is total, we can consider its type a precise description of"
 " what that function will do. For example, if we have a function with a "
@@ -4751,17 +4845,17 @@ msgstr ""
 "如果一个函数是完全的，我们可以认为其类型是对该函数将做什么的精确描述。例如，如果我们有一个返回类型为 ``String`` "
 "的函数，我们知道一些不同的东西，这取决于它是否是完全的："
 
-#: ../source/tutorial/typesfuns.rst:1384 ca333c63b43a420e9a2267d5c5aff62e
+#: ../source/tutorial/typesfuns.rst:1398 ca333c63b43a420e9a2267d5c5aff62e
 msgid "If it's total, it will return a value of type ``String`` in finite time;"
 msgstr "如果是完全的，它将在有限时间内返回一个类型为 ``String`` 的值："
 
-#: ../source/tutorial/typesfuns.rst:1385 96405599163c4ae0b36a34c5815ac779
+#: ../source/tutorial/typesfuns.rst:1399 96405599163c4ae0b36a34c5815ac779
 msgid ""
 "If it's partial, then as long as it doesn't crash or enter an infinite "
 "loop, it will return a ``String``."
 msgstr "如果是部分的，那么只要不崩溃或进入无限循环，就会返回一个 ``String`` 。"
 
-#: ../source/tutorial/typesfuns.rst:1388 943a7df40d4e483eac07ff9000da796d
+#: ../source/tutorial/typesfuns.rst:1402 943a7df40d4e483eac07ff9000da796d
 msgid ""
 "Idris makes this distinction so that it knows which functions are safe to"
 " evaluate while type checking (as we've seen with :ref:`sect-fctypes`). "
@@ -4777,15 +4871,11 @@ msgstr ""
 msgid "Views and the “``with``” rule"
 msgstr ""
 
-#: ../source/tutorial/views.rst:9 5c44302b7ac044a9a6bc6b15a673be02
-msgid "NOT UPDATED FOR IDRIS 2 YET"
-msgstr ""
-
-#: ../source/tutorial/views.rst:12 8f4401ff04f9433998600bb195f04853
+#: ../source/tutorial/views.rst:8 8f4401ff04f9433998600bb195f04853
 msgid "Dependent pattern matching"
 msgstr ""
 
-#: ../source/tutorial/views.rst:14 818e2eb45a5d4234bb86880723cecc88
+#: ../source/tutorial/views.rst:10 818e2eb45a5d4234bb86880723cecc88
 msgid ""
 "Since types can depend on values, the form of some arguments can be "
 "determined by the value of others. For example, if we were to write down "
@@ -4793,17 +4883,17 @@ msgid ""
 "length argument was determined by whether the vector was empty or not:"
 msgstr ""
 
-#: ../source/tutorial/views.rst:26 9198f1ce9ee24b92bff959f36165ffde
+#: ../source/tutorial/views.rst:22 9198f1ce9ee24b92bff959f36165ffde
 msgid ""
 "If ``n`` was a successor in the ``[]`` case, or zero in the ``::`` case, "
 "the definition would not be well typed."
 msgstr ""
 
-#: ../source/tutorial/views.rst:32 c438613df4884593829625f3464c7cd6
+#: ../source/tutorial/views.rst:28 c438613df4884593829625f3464c7cd6
 msgid "The ``with`` rule — matching intermediate values"
 msgstr ""
 
-#: ../source/tutorial/views.rst:34 9c767ad1ce054b96adef229087046b34
+#: ../source/tutorial/views.rst:30 9c767ad1ce054b96adef229087046b34
 msgid ""
 "Very often, we need to match on the result of an intermediate "
 "computation. Idris provides a construct for this, the ``with`` rule, "
@@ -4814,13 +4904,21 @@ msgid ""
 "defined."
 msgstr ""
 
-#: ../source/tutorial/views.rst:42 f768a8868d8b4f7a881e4ad64be2d494
+#: ../source/tutorial/views.rst:38 ff0af81d34ee484599ba96b037c2a053
+msgid ""
+"When this intermediate computation additionally appears in the type of "
+"the function being defined, the ``with`` construct allows us to capture "
+"these occurrences so that the observations made in the patterns will be "
+"reflected in the type."
+msgstr ""
+
+#: ../source/tutorial/views.rst:43 f768a8868d8b4f7a881e4ad64be2d494
 msgid ""
 "We have already seen a vector filter function. This time, we define it "
 "using ``with`` as follows:"
 msgstr ""
 
-#: ../source/tutorial/views.rst:52 999e80db1d4f45c1a7c147e649e0c6dd
+#: ../source/tutorial/views.rst:53 999e80db1d4f45c1a7c147e649e0c6dd
 msgid ""
 "Here, the ``with`` clause allows us to deconstruct the result of ``filter"
 " p xs``. The view refined argument pattern ``filter p (x :: xs)`` goes "
@@ -4831,18 +4929,24 @@ msgid ""
 "with an underscore ``_``:"
 msgstr ""
 
-#: ../source/tutorial/views.rst:65 90f30091457b4d7098bc53212db878fb
+#: ../source/tutorial/views.rst:66 90f30091457b4d7098bc53212db878fb
 msgid "``with`` clauses can also be nested:"
 msgstr ""
 
-#: ../source/tutorial/views.rst:76 ee8fa1e22761488b8d06128ee71318fa
+#: ../source/tutorial/views.rst:77 ee8fa1e22761488b8d06128ee71318fa
 msgid ""
 "and left hand sides that are the same as their parent's can be skipped by"
 " using ``_`` to focus on the patterns for the most local ``with``. "
 "Meaning that the above ``foo`` can be rewritten as follows:"
 msgstr ""
 
-#: ../source/tutorial/views.rst:89 ed673d2a87b94c8dabbe334e955d34b4
+#: ../source/tutorial/views.rst:90 a7999de4c17f4d06adaec6ba7307a6a9
+msgid ""
+"Equivalently, multiple expressions separated by ``|`` can be can be "
+"deconstructed in one ``with`` statement:"
+msgstr ""
+
+#: ../source/tutorial/views.rst:100 ed673d2a87b94c8dabbe334e955d34b4
 msgid ""
 "If the intermediate computation itself has a dependent type, then the "
 "result can affect the forms of other arguments — we can learn the form of"
@@ -4852,7 +4956,7 @@ msgid ""
 "the sum of two equal ``Nat`` plus one:"
 msgstr ""
 
-#: ../source/tutorial/views.rst:102 1b5d45e9f2fe407f866a812e61028974
+#: ../source/tutorial/views.rst:113 1b5d45e9f2fe407f866a812e61028974
 msgid ""
 "We say ``Parity`` is a *view* of ``Nat``. It has a *covering function* "
 "which tests whether it is even or odd and constructs the predicate "
@@ -4860,14 +4964,14 @@ msgid ""
 "so although it's an implicit argument, it has unrestricted multiplicity."
 msgstr ""
 
-#: ../source/tutorial/views.rst:111 d8ef5d4dd01f416aa2950263435ccb85
+#: ../source/tutorial/views.rst:122 d8ef5d4dd01f416aa2950263435ccb85
 msgid ""
 "We’ll come back to the definition of ``parity`` shortly. We can use it to"
 " write a function which converts a natural number to a list of binary "
 "digits (least significant first) as follows, using the ``with`` rule:"
 msgstr ""
 
-#: ../source/tutorial/views.rst:124 6a2701f86bec45cbb7eb6de7ba495ddb
+#: ../source/tutorial/views.rst:135 6a2701f86bec45cbb7eb6de7ba495ddb
 msgid ""
 "The value of ``parity k`` affects the form of ``k``, because the result "
 "of ``parity k`` depends on ``k``. So, as well as the patterns for the "
@@ -4876,7 +4980,7 @@ msgid ""
 "of the ``|``. That is:"
 msgstr ""
 
-#: ../source/tutorial/views.rst:130 5fa930fc6b1549b68c410f76afda1b7a
+#: ../source/tutorial/views.rst:141 5fa930fc6b1549b68c410f76afda1b7a
 msgid ""
 "When ``parity k`` evaluates to ``Even``, we can refine the original "
 "argument ``k`` to a refined pattern ``(j + j)`` according to ``Parity (n "
@@ -4886,7 +4990,7 @@ msgid ""
 "used on the right side of the ``=`` sign."
 msgstr ""
 
-#: ../source/tutorial/views.rst:138 a2291b2375b347198a7842d56cd2b795
+#: ../source/tutorial/views.rst:149 a2291b2375b347198a7842d56cd2b795
 msgid ""
 "Otherwise, when ``parity k`` evaluates to ``Odd``, the original argument "
 "``k`` is refined to ``S (j + j)`` according to ``Parity (S (n + n))`` "
@@ -4895,31 +4999,31 @@ msgid ""
 "right side of the ``=`` sign."
 msgstr ""
 
-#: ../source/tutorial/views.rst:144 0aacb56cc7084c58bb07eb97e564edff
+#: ../source/tutorial/views.rst:155 0aacb56cc7084c58bb07eb97e564edff
 msgid ""
 "Note that there is a function in the patterns (``+``) and repeated "
 "occurrences of ``j`` - this is allowed because another argument has "
 "determined the form of these patterns."
 msgstr ""
 
-#: ../source/tutorial/views.rst:149 5803d3753ddf4760aa83c269a8881122
+#: ../source/tutorial/views.rst:160 5803d3753ddf4760aa83c269a8881122
 msgid "Defining ``parity``"
 msgstr ""
 
-#: ../source/tutorial/views.rst:151 d0212fc452b648dc9354af76db879811
+#: ../source/tutorial/views.rst:162 d0212fc452b648dc9354af76db879811
 msgid ""
 "The definition of ``parity`` is a little tricky, and requires some "
 "knowledge of theorem proving (see Section :ref:`sect-theorems`), but for "
 "completeness, here it is:"
 msgstr ""
 
-#: ../source/tutorial/views.rst:166 0485399e7f8a4cedb76e54f6febff4a4
+#: ../source/tutorial/views.rst:177 0485399e7f8a4cedb76e54f6febff4a4
 msgid ""
 "For full details on ``rewrite`` in particular, please refer to the "
 "theorem proving tutorial, in Section :ref:`proofs-index`."
 msgstr ""
 
-#: ../source/tutorial/views.rst:169 3b9a60aafd44404aa8dac2c71545180d
+#: ../source/tutorial/views.rst:180 3b9a60aafd44404aa8dac2c71545180d
 msgid ""
 "Conor McBride and James McKinna. 2004. The view from the left. J. Funct. "
 "Program. 14, 1 (January 2004), 69-111. "
@@ -5053,3 +5157,30 @@ msgstr ""
 
 #~ msgid "then ``:cs 96 xs`` will give:"
 #~ msgstr ""
+
+#~ msgid ""
+#~ "There is no formal link between "
+#~ "the module name and its filename, "
+#~ "although it is generally advisable to"
+#~ " use the same name for each. An"
+#~ " ``import`` statement refers to a "
+#~ "filename, using dots to separate "
+#~ "directories. For example, ``import foo.bar``"
+#~ " would import the file ``foo/bar.idr``, "
+#~ "which would conventionally have the "
+#~ "module declaration ``module foo.bar``. The "
+#~ "only requirement for module names is "
+#~ "that the main module, with the "
+#~ "``main`` function, must be called "
+#~ "``Main`` — although its filename need"
+#~ " not be ``Main.idr``."
+#~ msgstr ""
+#~ "尽管一般来说，模块名称和文件名之间没有正式的联系，模块和文件使用相同的名称是明智的。 ``import`` "
+#~ "语句指的是文件名，使用点来分隔目录。例如， ``import foo.bar`` 将导入文件 "
+#~ "``foo/bar.idr`` ，按照惯例，该文件的模块声明是 ``module foo.bar``"
+#~ " 。对模块名称的唯一要求是，带有 ``main`` 函数的主模块必须被称为 ``Main``"
+#~ " —— 尽管其文件名不需要是 ``Main.idr`` 。"
+
+#~ msgid "NOT UPDATED FOR IDRIS 2 YET"
+#~ msgstr ""
+

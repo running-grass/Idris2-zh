@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020, The Idris Community
+# Copyright (C) 2020-2023, The Idris Community
 # This file is distributed under the same license as the Idris2 package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Idris2 0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-28 21:56+0800\n"
+"POT-Creation-Date: 2025-05-15 23:55+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,45 +33,45 @@ msgstr ""
 
 #: ../source/app/exceptionsstate.rst:12
 #: 08972c9fa2ba4593a9f7a02e16215424
-msgid "The ``List Error`` is a list of error types, usable via the ``Exception`` interface defined in ``Control.App``:"
+msgid "The ``List Error`` is a list of error types, which can be thrown and caught using the functions below:"
 msgstr ""
 
-#: ../source/app/exceptionsstate.rst:21
+#: ../source/app/exceptionsstate.rst:20
 #: 86ef8b9c80bb4ba69073753a4da529ca
-msgid "We can use ``throw`` and ``catch`` for some exception type ``err`` as long as the exception type exists in the list of errors. This is checked with the ``HasErr`` predicate, also defined in ``Control.App``:"
+msgid "We can use ``throw`` and ``catch`` for some exception type ``err`` as long as the exception type exists in the list of errors, ``es``, as checked by the ``HasErr`` predicate, also defined in ``Control.App`` (Also, note that ``Exception`` is a synonym for ``HasErr``):"
 msgstr ""
 
-#: ../source/app/exceptionsstate.rst:33
+#: ../source/app/exceptionsstate.rst:34
 #: 8f93c5a4f91a4e5695653b53ed3dee32
-msgid "Note the ``HasErr`` constraint on ``Exception``: this is one place where it is notationally convenient that the ``auto`` implicit mechanism and the interface resolution mechanism are identical in Idris 2. Finally, we can introduce new exception types via ``handle``, which runs a block of code which might throw, handling any exceptions:"
+msgid "Finally, we can introduce new exception types via ``handle``, which runs a block of code which might throw, handling any exceptions:"
 msgstr ""
 
-#: ../source/app/exceptionsstate.rst:46
+#: ../source/app/exceptionsstate.rst:44
 #: ecdfc7539d294e0da92fd6f8416cdf03
 msgid "Adding State"
 msgstr ""
 
-#: ../source/app/exceptionsstate.rst:48
+#: ../source/app/exceptionsstate.rst:46
 #: 1459688721e94b20ae7589d5e4c50e3d
 msgid "Applications will typically need to keep track of state, and we support this primitively in ``App`` using a ``State`` type, defined in ``Control.App``:"
 msgstr ""
 
-#: ../source/app/exceptionsstate.rst:56
+#: ../source/app/exceptionsstate.rst:54
 #: 112cb81189ae4607b9845f121ef78957
 msgid "The ``tag`` is used purely to distinguish between different states, and is not required at run-time, as explicitly stated in the types of ``get`` and ``put``, which are used to access and update a state:"
 msgstr ""
 
-#: ../source/app/exceptionsstate.rst:65
+#: ../source/app/exceptionsstate.rst:63
 #: 038622605d9e43f9b8a3f9ecab689d9d
 msgid "These use an ``auto``-implicit to pass around a ``State`` with the relevant ``tag`` implicitly, so we refer to states by tag alone. In ``helloCount`` earlier, we used an empty type ``Counter`` as the tag:"
 msgstr ""
 
-#: ../source/app/exceptionsstate.rst:74
+#: ../source/app/exceptionsstate.rst:72
 #: 13f4546355154ba9a4899f0f7caa634b
 msgid "The list of errors ``e`` is used to ensure that states are only usable in the list of errors in which they are introduced. States are introduced using ``new``:"
 msgstr ""
 
-#: ../source/app/exceptionsstate.rst:82
+#: ../source/app/exceptionsstate.rst:80
 #: 1bac24f4997b4e4db0a853994ace8468
 msgid "Note that the type tells us ``new`` runs the program with the state exactly once. Rather than using ``State`` and ``Exception`` directly, however, we typically use interfaces to constrain the operations which are allowed in a list of errors. Internally, ``State`` is implemented via an ``IORef``, primarily for performance reasons."
 msgstr ""
@@ -278,7 +278,7 @@ msgstr ""
 
 #: ../source/app/introapp.rst:102
 #: 98003c8c6987481eb49d3568baff1394
-msgid "Generalising the ``Path`` parameter with ``l`` means that we can invoke ``run`` for any application, whether the ``Path`` is ``NoThrow`` or ``MayThrow``. But, in practice, all applications given to ``run`` will not throw at the top level, because the only exception type available is the type ``AppHasIO``. Any exceptions will have been introduced and handled inside the ``App``."
+msgid "Generalising the ``Path`` parameter with ``l`` means that we can invoke ``run`` for any application, whether the ``Path`` is ``NoThrow`` or ``MayThrow``. But, in practice, all applications given to ``run`` will not throw at the top level, because the only exception type available is the type ``AppHasIO``, which is an empty data type (it has no values). Any exceptions will have been introduced and handled inside the ``App``."
 msgstr ""
 
 #: ../source/app/linear.rst:2
@@ -351,9 +351,8 @@ msgstr ""
 msgid "|login|"
 msgstr ""
 
-#: ../source/app/linear.rst:126
+#: ../source/app/linear.rst:128
 #: 4d8aac8fd0184086b065fefc5666414b
-#: 514a1f0eeba24474b0d00a20e2503546
 msgid "login"
 msgstr ""
 
@@ -379,70 +378,70 @@ msgstr ""
 
 #: ../source/app/linear.rst:99
 #: 6129eae5431b410fa5f213a3509da842
-msgid "The following listing shows a complete program accessing the store, which reads a password, accesses the store if the password is correct and prints the secret data. It uses ``let (>>=) = bindL`` to redefine ``do``-notation locally."
+msgid "The following listing shows a complete program accessing the store, which reads a password, accesses the store if the password is correct and prints the secret data. It uses ``let (>>=) = bindL`` and ``(>>) = seqL`` to redefine ``do``-notation locally."
 msgstr ""
 
-#: ../source/app/linear.rst:119
+#: ../source/app/linear.rst:120
 #: ba10d31af905426e90d3bb73a8ff2fed
-msgid "If we omit the ``let (>>=) = bindL``, it will use the default ``(>>=)`` operator, which allows the continuation to be run multiple times, which would mean that ``s`` is not guaranteed to be accessed linearly, and ``storeProg`` would not type check. We can safely use ``getStr`` and ``putStr`` because they are guaranteed not to throw by the ``Path`` parameter in their types."
+msgid "If we omit the ``let (>>=) = bindL``, it will use the default ``(>>=)`` operator, which allows the continuation to be run multiple times, which would mean that ``s`` is not guaranteed to be accessed linearly, and ``storeProg`` would not type check (and similarly with ``(>>) = bindIg``). We can safely use ``getStr`` and ``putStr`` because they are guaranteed not to throw by the ``Path`` parameter in their types."
 msgstr ""
 
-#: ../source/app/linear.rst:130
+#: ../source/app/linear.rst:132
 #: 16a59a302f574fa0a743dc875b04f637
 msgid "App1: Linear Interfaces"
 msgstr ""
 
-#: ../source/app/linear.rst:132
+#: ../source/app/linear.rst:134
 #: a84075c3fd214d90ac3b9e12d1f747a1
 msgid "Adding the ``bindL`` function to allow locally rebinding the ``(>>=)`` operator allows us to combine existing linear resource programs with operations in ``App`` - at least, those that don't throw. It would nevertheless be nice to interoperate more directly with ``App``. One advantage of defining interfaces is that we can provide multiple implementations for different contexts, but our implementation of the data store uses primitive functions (which we left undefined in any case) to access the store."
 msgstr ""
 
-#: ../source/app/linear.rst:141
+#: ../source/app/linear.rst:143
 #: d520685d209e4c47a9aa7500db3bb4a8
 msgid "To allow control over linear resources, ``Control.App`` provides an alternative parameterised type ``App1``:"
 msgstr ""
 
-#: ../source/app/linear.rst:149
+#: ../source/app/linear.rst:151
 #: 95830cb8e95f4ded895f4c147b01e959
 msgid "There is no need for a ``Path`` argument, since linear programs can never throw. The ``Usage`` argument states whether the value returned is to be used once, or has unrestricted usage, with the default in ``App1`` being to use once:"
 msgstr ""
 
-#: ../source/app/linear.rst:158
+#: ../source/app/linear.rst:160
 #: 85a885101b5e4db5ac41f1b8b37507d5
 msgid "The main difference from ``App`` is the ``(>>=)`` operator, which has a different multiplicity for the variable bound by the continuation depending on the usage of the first action:"
 msgstr ""
 
-#: ../source/app/linear.rst:171
+#: ../source/app/linear.rst:173
 #: 9975ae63407043b0b3f679cd465bf8d7
 msgid "``Cont1Type`` returns a continuation which uses the argument linearly, if the first ``App1`` program has usage ``One``, otherwise it returns a continuation where argument usage is unrestricted. Either way, because there may be linear resources in scope, the continuation is run exactly once and there can be no exceptions thrown."
 msgstr ""
 
-#: ../source/app/linear.rst:177
+#: ../source/app/linear.rst:179
 #: 66921b1528674047b0cc87d4740f1743
 msgid "Using ``App1``, we can define all of the data store operations in a single interface, as shown in the following listing. Each operation other than ``disconnect`` returns a `linear` resource."
 msgstr ""
 
-#: ../source/app/linear.rst:193
+#: ../source/app/linear.rst:195
 #: f2c1369cd97f40689634b41fd1ac4fa7
 msgid "We can explicitly move between ``App`` and ``App1``:"
 msgstr ""
 
-#: ../source/app/linear.rst:200
+#: ../source/app/linear.rst:202
 #: 01b1e4a37b1c4a288acf3472c8e502dd
 msgid "We can run an ``App`` program using ``app``, inside ``App1``, provided that it is guaranteed not to throw. Similarly, we can run an ``App1`` program using ``app1``, inside ``App``, provided that the value it returns has unrestricted usage. So, for example, we can write:"
 msgstr ""
 
-#: ../source/app/linear.rst:214
+#: ../source/app/linear.rst:216
 #: 96a6cdbd7f084805b62ad21e252670cb
 msgid "This uses ``app1`` to state that the body of the program is linear, then ``app`` to state that the ``putStr`` operation is in ``App``. We can see that ``connect`` returns a linear resource by inspecting the hole ``what_next``, which also shows that we are running inside ``App1``:"
 msgstr ""
 
-#: ../source/app/linear.rst:227
+#: ../source/app/linear.rst:229
 #: fedb4ca58e474230981d24424567fe39
 msgid "For completeness, one way to implement the interface is as follows, with hard coded password and internal data:"
 msgstr ""
 
-#: ../source/app/linear.rst:247
+#: ../source/app/linear.rst:249
 #: 93054fe65c524ed4b9ab84960ca87139
 msgid "Then we can run it in ``main``:"
 msgstr ""
