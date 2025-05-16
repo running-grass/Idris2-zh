@@ -329,7 +329,6 @@ msgstr "我们可以定义开门和关门的函数，明确描述它们如何改
 "线性的"
 
 #: ../source/tutorial/multiplicities.rst:240 2b4afc1593e046f1bf56f50de5cdc644
-#, fuzzy
 msgid ""
 "Remember, the intuition is that if ``openDoor d`` is used exactly once, "
 "then ``d`` is used exactly once. So, provided that a door ``d`` has "
@@ -338,9 +337,9 @@ msgid ""
 " is an external resource, and ``openDoor`` has changed its state, this is"
 " a good thing!"
 msgstr ""
-"记住，直觉是这样的，如果 ``openDoor d`` 被精确使用一次，那么 ``d`` "
-"也被精确使用一次。因此，只要一扇门 ``d`` 在创建时具有多重性 ``1`` ，我们就 "
-"*知道* ，一旦我们对它调用 ``openDoor`` ，我们将不能再使用 ``d`` 。鉴于 ``d`` "
+"记住，直觉是这样的：如果 ``openDoor d`` 被精确使用一次，那么 ``d`` "
+"也会被精确使用一次。因此，只要门 ``d`` 在创建时具有多重性 ``1`` ，我们就 "
+"*知道* 一旦对它调用 ``openDoor`` ，我们将不能再使用 ``d`` 。考虑到 ``d`` "
 "是一个外部资源，而 ``openDoor`` 已经改变了它的状态，这是一件好事！"
 
 #: ../source/tutorial/multiplicities.rst:247 4bb71649c9374cb79f8bb1275cab9caf
@@ -622,7 +621,7 @@ msgid ""
 " construct. But, if they're truly first class, we should be able to "
 "pattern match on them too! Idris 2 allows us to do this. For example"
 msgstr ""
-"思考依赖类型的一种方式是将它们视为语言中的 \"一等 \" 对象，因为它们可以像其他"
+"思考依值类型的一种方式是将它们视为语言中的 \"一等 \" 对象，因为它们可以像其他"
 "结构体一样被分配给变量、传递和从函数中返回。但是，如果它们是真正的一等对象，"
 "我们也应该能够对它们进行模式匹配。Idris 2 允许我们这样做。例如"
 
@@ -687,7 +686,7 @@ msgid ""
 "precise. Types can be relevant, values (such as the ``n`` index to "
 "vectors) can be irrelevant."
 msgstr ""
-"另一方面，这只是一个巧合，在非依赖类型的语言中，类型是 *不相关的* "
+"另一方面，这只是一个巧合，在非依值类型的语言中，类型是 *不相关的* "
 "并会被抹去，而值是 *相关的* 且会在运行时保留。Idris 2 是基于 QTT "
 "的，允许我们精确区分相关和不相关的参数。类型可以是相关的，值（如 ``n`` "
 "向量的索引）可以是不相关的。"

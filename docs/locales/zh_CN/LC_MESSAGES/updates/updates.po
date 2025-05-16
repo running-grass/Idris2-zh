@@ -118,7 +118,7 @@ msgid ""
 "safely be erased. More importantly, it's one of the difficulties when "
 "programming: how can a programmer *know* when an argument will be erased?"
 msgstr ""
-"编译依赖类型编程语言的困难之一是决定哪些参数在运行时使用，哪些可以安全地擦除"
+"编译依值类型编程语言的困难之一是决定哪些参数在运行时使用，哪些可以安全地擦除"
 "。更重要的是，这也是编程时的困难之一：程序员如何 *知道* 什么时候会删除参数？"
 
 #: ../source/updates/updates.rst:57 d9153291f1d3443188e7fb5268e30cb7
@@ -735,7 +735,7 @@ msgid ""
 "Functions can now be defined locally, using a ``let`` block. For example,"
 " ``greet`` in the following example, which is defined in the scope of a "
 "local variable ``x``:"
-msgstr "现在可以使用 ``let`` 块在本地定义函数。例如，以下示例中的 ``greet`` ，"
+msgstr "现在可以使用 ``let`` 块在局部定义函数。例如，以下示例中的 ``greet`` ，"
 "它是在局部变量 ``x`` 的作用域内定义的："
 
 #: ../source/updates/updates.rst:529 e34f4f5bc88e41baa9e7374370389943

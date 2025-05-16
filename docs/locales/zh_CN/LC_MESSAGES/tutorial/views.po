@@ -58,7 +58,7 @@ msgid ""
 msgstr ""
 "我们经常需要对中间计算的结果进行匹配。Idris 为此提供了 ``with`` 规则，这一构造受 ``Epigram`` "
 "[#McBridgeMcKinna]_ "
-"中的视图（view）启发。它考虑到，在依赖类型语言中对某个值进行匹配，可能会影响我们对其他值形式的认知。在最简单的形式下，``with`` "
+"中的视图（view）启发。它考虑到，在依值类型语言中对某个值进行匹配，可能会影响我们对其他值形式的认知。在最简单的形式下，``with`` "
 "规则会为正在定义的函数增加一个参数。"
 
 #: ../source/tutorial/views.rst:38 e57bc8d24e2e4364b1a0037e1d88d9bf
@@ -115,7 +115,7 @@ msgid ""
 "If it is even it will be the sum of two equal ``Nat``. Otherwise, it is "
 "the sum of two equal ``Nat`` plus one:"
 msgstr ""
-"如果中间计算本身具有依赖类型，其结果就会影响其他参数的形式——我们可以通过测试一个值来推断另一个值的形式。在这些情况下，视图细化参数模式必须显式给出。例如，一个"
+"如果中间计算本身具有依值类型，其结果就会影响其他参数的形式——我们可以通过测试一个值来推断另一个值的形式。在这些情况下，视图细化参数模式必须显式给出。例如，一个"
 " ``Nat`` 要么是偶数，要么是奇数。如果是偶数，它就是两个相等 ``Nat`` 的和；否则，就是两个相等 ``Nat`` 的和再加一："
 
 #: ../source/tutorial/views.rst:113 f85e7a9ac1c943d9a2a4de730cb119f1
@@ -130,7 +130,6 @@ msgstr ""
 "``n``，因此尽管它是隐式参数，但其复用性（multiplicity）不受限制。"
 
 #: ../source/tutorial/views.rst:122 5dfeb015b1b24ef9ab3848be5d5b9c8e
-#, fuzzy
 msgid ""
 "We’ll come back to the definition of ``parity`` shortly. We can use it to"
 " write a function which converts a natural number to a list of binary "

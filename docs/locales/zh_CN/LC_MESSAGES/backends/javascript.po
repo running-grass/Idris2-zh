@@ -96,7 +96,6 @@ msgstr ""
 "和后端之间的互操作。"
 
 #: ../source/backends/javascript.rst:65 e4f420a87af044d599b11c8bb3fc34ce
-#, fuzzy
 msgid ""
 "However, unless you have good reasons to do otherwise, consider using one"
 " of the other fixed precision integral types. They are supposed to behave"
@@ -106,11 +105,7 @@ msgid ""
 "``Bits64``, and ``Integer`` are represented by ``BigInt``. The example "
 "above could therefore be improved by using ``Int32`` instead of ``Int``:"
 msgstr ""
-"但是，除非您有充分的理由这样做，否则请考虑使用其他固定精度整数类型之一。它们"
-"应该在所有后端上都具有相同的行为。所有精度高达 32 位的有符号和无符号整型（ "
-"``Int8``, ``Int16``, ``Int32``, ``Bits8``, ``Bits16``, 和 ``Bits32`` ）都由 "
-"``Number`` 表示，而 ``Int64`` 、 ``Bits64`` 和 ``Integer`` 由 ``BigInt`` "
-"表示。因此，可以通过使用 ``Int32`` 代替 ``Int`` 来改进上面的示例："
+"不过，除非有特别充分的理由，否则建议优先使用其他定长整数类型。这些类型在所有后端的行为应当保持一致。所有精度不超过 32 位的有符号和无符号整数（如 ``Int8``、``Int16``、``Int32``、``Bits8``、``Bits16`` 和 ``Bits32``）都由 ``Number`` 表示，而 ``Int64``、``Bits64`` 和 ``Integer`` 则由 ``BigInt`` 表示。因此，上述示例可以通过将 ``Int`` 替换为 ``Int32`` 进行改进："
 
 #: ../source/backends/javascript.rst:82 b0b80bf93c654e6e9143ddec8325c5fb
 msgid "Browser Example"
@@ -280,7 +275,6 @@ msgid "Handling JavaScript events"
 msgstr "处理 JavaScript 事件"
 
 #: ../source/backends/javascript.rst:213 65196e38290847e7875549e99b676269
-#, fuzzy
 msgid ""
 "In this example shows how to attach an event handler to a particular DOM "
 "element. Values of events are also associated with ``AnyPtr`` on the "
@@ -288,10 +282,7 @@ msgid ""
 "different types. Also it demonstrates how a simple callback function "
 "defined in Idris can be used on the JavaScript side."
 msgstr ""
-"在这个例子中显示了如何将一个事件处理程序附加到一个特定的 DOM 元素。在Idris "
-"方面事件的值也是 ``AnyPtr`` 类型。为了分离 ``DomNode`` 和 ``DomEvent`` "
-"我们创建了两个不同的类型。它还演示了在 Idris "
-"中定义的一个简单的回调函数如何在 JavaScript 侧使用。"
+"本例展示了如何将事件处理器附加到特定的 DOM 元素。在 Idris 端，事件的值同样通过 ``AnyPtr`` 进行关联。为了区分 ``DomNode`` 和 ``DomEvent``，我们分别定义了两种不同的类型。此外，该示例还演示了如何在 JavaScript 端使用 Idris 中定义的简单回调函数。"
 
 #: ../source/backends/javascript.rst:219 8cf4dcc534e345828ba7e84da7b9ad20
 msgid "Directives"

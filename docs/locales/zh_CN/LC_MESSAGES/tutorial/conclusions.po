@@ -24,7 +24,7 @@ msgstr "延伸阅读"
 msgid ""
 "Further information about Idris programming, and programming with "
 "dependent types in general, can be obtained from various sources:"
-msgstr "有关 Idris 编程和一般依赖类型编程的更多信息，可以从各种来源获得："
+msgstr "有关 Idris 编程和一般依值类型编程的更多信息，可以从各种来源获得："
 
 #: ../source/tutorial/conclusions.rst:10 67b7c7e644e44c9b934b12d6aeeb5a2f
 msgid ""

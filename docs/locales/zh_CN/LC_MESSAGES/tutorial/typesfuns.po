@@ -211,7 +211,7 @@ msgid ""
 "auxiliary function which accumulates the new, reversed list, and which "
 "does not need to be visible globally:"
 msgstr ""
-"也可以使用 ``where`` 从句在 *本地* 定义函数。例如，为了定义一个反转列表的函数"
+"也可以使用 ``where`` 从句在 *局部* 定义函数。例如，为了定义一个反转列表的函数"
 "，我们可以使用一个辅助函数来累积新的反转后的列表，而这个函数不需要全局可见："
 
 #: ../source/tutorial/typesfuns.rst:186 98cc9fff4cbb48d78231114352b9ee32
@@ -240,7 +240,7 @@ msgid ""
 "As well as functions, ``where`` blocks can include local data "
 "declarations, such as the following where ``MyLT`` is not accessible "
 "outside the definition of ``foo``:"
-msgstr "除了函数， ``where`` 块也可以包括本地数据类型声明，比如下面的 ``MyLT`` 在 "
+msgstr "除了函数， ``where`` 块也可以包括局部数据类型声明，比如下面的 ``MyLT`` 在 "
 "``foo`` 的定义之外不能访问："
 
 #: ../source/tutorial/typesfuns.rst:212 8903bcda005f4d96b701b6099d801a56
@@ -332,7 +332,7 @@ msgstr "孔的用途在于可以帮助我们 *渐进的* "
 
 #: ../source/tutorial/typesfuns.rst:315 a5c84061be6c438ea434ce836f2a39e5
 msgid "Dependent Types"
-msgstr "依赖类型"
+msgstr "依值类型"
 
 #: ../source/tutorial/typesfuns.rst:320 751486bcef3046d78ea47dc0e89171b2
 msgid "First Class Types"
@@ -377,7 +377,7 @@ msgid ""
 "``Data.Vect``, or we can declare them as follows:"
 msgstr ""
 "依赖数据类型的一个标准例子是 \"有长度的列表\" "
-"类型，在依赖类型文献中习惯上称为向量。它们作为 Idris 库的一部分，可以通过 "
+"类型，在依值类型文献中习惯上称为向量。它们作为 Idris 库的一部分，可以通过 "
 "``Data.Vect`` 导入，或者我们可以像这样声明它们："
 
 #: ../source/tutorial/typesfuns.rst:368 beea738889d84fe7ae3385297374424d
@@ -423,7 +423,7 @@ msgid ""
 " to the lengths of the vectors involved. For example, ``++``, defined as "
 "follows, appends two ``Vect``:"
 msgstr ""
-"我们可以通过模式匹配的方式，在 ``Vect`` 这样的依赖类型上定义函数，就像在上面 "
+"我们可以通过模式匹配的方式，在 ``Vect`` 这样的依值类型上定义函数，就像在上面 "
 "``List`` 和 ``Nat`` 这样的简单类型上一样。 ``Vect`` "
 "上的函数的类型将描述涉及到的向量的长度会发生什么。例如，下面定义的 ``++`` "
 "用于链接两个 ``Vect`` ："
@@ -617,7 +617,7 @@ msgid ""
 "However, this restriction can be relaxed by using a ``mutual`` block, "
 "which allows data types and functions to be defined simultaneously:"
 msgstr ""
-"一般来说，函数和数据类型必须在使用前定义，因为依赖类型允许函数作为类型的一部"
+"一般来说，函数和数据类型必须在使用前定义，因为依值类型允许函数作为类型的一部"
 "分出现，而类型检查可以依赖于特定函数的定义方式（尽管这只适用于完全函数；见 "
 ":ref:`sect-totality`）。然而，可以通过使用 ``mutual`` "
 "块来放宽这个限制，它允许数据类型和函数同时被定义："
@@ -678,16 +678,14 @@ msgstr ""
 "I/O程序："
 
 #: ../source/tutorial/typesfuns.rst:629 7985af9cd26d4d8ba0a847eebe5ddd6e
-#, fuzzy
 msgid ""
 "The type of ``putStrLn`` explains that it takes a string, and returns an "
 "I/O action which produces an element of the unit type ``()``. There is a "
 "variant ``putStr`` which describes the output of a string without a "
 "newline:"
 msgstr ""
-"``putStrLn`` 的类型说明它接收一个字符串，并返回一个 I/O 动作，"
-"产生一个单元类型的元素 ``()`` 。另外它有一个变体 ``putStr`` "
-"，它描述了一个没有换行的字符串的输出："
+"``putStrLn`` 的类型表明它接收一个字符串，并返回一个产生单元类型 ``()`` "
+"元素的 I/O 动作。它还有一个变体 ``putStr``，用于输出不带换行符的字符串："
 
 #: ../source/tutorial/typesfuns.rst:638 e40156d7e6cd419a8349bf25d537809d
 msgid "We can also read strings from user input:"
@@ -846,11 +844,11 @@ msgstr ""
 
 #: ../source/tutorial/typesfuns.rst:790 68d9a72e356f4d9380b8d73823294383
 msgid "``[]`` means ``Nil``"
-msgstr "``[]`` 意味着 ``Nil``"
+msgstr "``[]`` 表示 ``Nil``"
 
 #: ../source/tutorial/typesfuns.rst:792 b62c63c4d3ae4d31ad6f2903c7b544cb
 msgid "``[1,2,3]`` means ``1 :: 2 :: 3 :: Nil``"
-msgstr "``[1,2,3]`` 意味着 ``1 :: 2 :: 3 :: Nil``"
+msgstr "``[1,2,3]`` 表示 ``1 :: 2 :: 3 :: Nil``"
 
 #: ../source/tutorial/typesfuns.rst:794 8aad0588bce74dc3a4ecac5155a50711
 msgid ""
@@ -859,13 +857,12 @@ msgid ""
 msgstr "同样，任何名称为 ``Lin`` 和 ``:<`` 的实现都可以写成 **snoc**-list 形式："
 
 #: ../source/tutorial/typesfuns.rst:797 51692e10405b4060abe502a8f0ea112b
-#, fuzzy
 msgid "``[<]`` means ``Lin``"
-msgstr "``[<]`` 意味着 ``Lin``"
+msgstr "``[<]`` 表示 ``Lin``"
 
 #: ../source/tutorial/typesfuns.rst:798 e6fe010831ff42a98f86322628c940b6
 msgid "``[< 1, 2, 3]`` means ``Lin :< 1 :< 2 :< 3``."
-msgstr "``[< 1, 2, 3]`` 意味着 ``Lin :< 1 :< 2 :< 3``。"
+msgstr "``[< 1, 2, 3]`` 表示 ``Lin :< 1 :< 2 :< 3``。"
 
 #: ../source/tutorial/typesfuns.rst:800 a48d2330ffe148c68d303ea1e8a5d4f5
 msgid "and the prelude includes a pre-defined datatype for snoc-lists:"
@@ -1004,13 +1001,13 @@ msgstr ""
 
 #: ../source/tutorial/typesfuns.rst:943 c68c954296bd47ca8738eb53666d4bc8
 msgid "Dependent Pairs"
-msgstr "依赖对"
+msgstr "依值对"
 
 #: ../source/tutorial/typesfuns.rst:945 cf11fbb4a48540748f9a6ae35787d2fc
 msgid ""
 "Dependent pairs allow the type of the second element of a pair to depend "
 "on the value of the first element:"
-msgstr "依赖对允许一个对中的第二个元素的类型取决于第一个元素的值："
+msgstr "依值对允许一个对中的第二个元素的类型取决于第一个元素的值："
 
 #: ../source/tutorial/typesfuns.rst:953 05d82896fb7a47e3b446a2cdf44bce47
 msgid ""
@@ -1049,7 +1046,7 @@ msgid ""
 "elements out of a ``Vect`` according to some predicate, we will not know "
 "in advance what the length of the resulting vector will be:"
 msgstr ""
-"依赖对的一个用途是返回依赖类型的值，其中的索引不一定事先知道。例如，"
+"依值对的一个用途是返回依值类型的值，其中的索引不一定事先知道。例如，"
 "如果我们根据一些谓词从 ``Vect`` "
 "中过滤出元素，我们将不会事先知道所产生的向量的长度："
 
@@ -1070,7 +1067,7 @@ msgstr ""
 
 #: ../source/tutorial/typesfuns.rst:1018 87d0a034284045028941af43a12b1cf4
 msgid "Dependent pairs are sometimes referred to as “Sigma types”."
-msgstr "依赖对有时被称为 \"Sigma 类型\"。"
+msgstr "依值对有时被称为 \"Sigma 类型\"。"
 
 #: ../source/tutorial/typesfuns.rst:1021 f034ce812c03469ab64b42e16a6b4448
 msgid "Records"
@@ -1148,7 +1145,7 @@ msgid ""
 "Records, and fields within records, can have dependent types. Updates are"
 " allowed to change the type of a field, provided that the result is well-"
 "typed."
-msgstr "记录和记录中的字段可以有依赖类型。允许更新改变一个字段的类型，只要其结果是良"
+msgstr "记录和记录中的字段可以有依值类型。允许更新改变一个字段的类型，只要其结果是良"
 "类型。"
 
 #: ../source/tutorial/typesfuns.rst:1100 87de6e323b514ad7b5f2fe63d0e266a2
@@ -1215,7 +1212,7 @@ msgstr "``$=`` 符号对嵌套的记录更新也有效。"
 
 #: ../source/tutorial/typesfuns.rst:1162 5623a84ec3544fff88772f488c0f3440
 msgid "Dependent Records"
-msgstr "依赖记录"
+msgstr "依值记录"
 
 #: ../source/tutorial/typesfuns.rst:1164 e7394afdfd9743db94d6b71fe3bb05cc
 msgid ""
@@ -1250,8 +1247,8 @@ msgid ""
 "In fact, the dependent pair type we have just seen is, in practice, "
 "defined as a record, with fields ``fst`` and ``snd`` which allow "
 "projecting values out of the pair:"
-msgstr "事实上，我们刚才看到的依赖对类型在实践中被定义为一条记录，其字段 ``fst`` 和 "
-"``snd`` 允许从依赖对中投影出数值："
+msgstr "事实上，我们刚才看到的依值对类型在实践中被定义为一条记录，其字段 ``fst`` 和 "
+"``snd`` 允许从依值对中投影出数值："
 
 #: ../source/tutorial/typesfuns.rst:1207 ef723e8c52a147f582b9b5e041f1d85c
 msgid ""
@@ -1291,26 +1288,26 @@ msgstr "这些 let 绑定可以使用类型注解："
 msgid ""
 "Since ``=`` can either indicate a type of equality (``===`` or ``~=~``) "
 "or a definition, some expressions can be ambiguous. Here is an example:"
-msgstr ""
+msgstr "由于 ``=`` 既可以表示类型相等（``===`` 或 ``~=~``）也可以表示定义，某些表达式可能会有歧义。这里是一个例子："
 
 #: ../source/tutorial/typesfuns.rst:1276 4a44760cdaee4f97ac258eea31771efa
-#, fuzzy
 msgid ""
 "We can also use the symbol ``:=`` instead of ``=`` in this context to, "
 "among other things, avoid these ambiguities with propositional equality:"
-msgstr "我们还可以使用符号 ``:=`` 来代替 ``=`` ，除其他事项外，避免命题相等的歧义："
+msgstr "在这种情况下，我们也可以使用符号 ``:=`` 来代替 ``=``，除其他用途外，还可以避免与命题相等性相关的歧义："
 
 #: ../source/tutorial/typesfuns.rst:1284 7a05b1daf4034e478c59d8d3573947ff
 msgid ""
 "The code above can be read as \"``ty`` has type ``Type`` and its value is"
 " ``v = v``\"."
 msgstr ""
+"上面的代码可以读作 \"``ty`` 的类型是 ``Type`` 并且它的值是 ``v = v``\"。"
 
 #: ../source/tutorial/typesfuns.rst:1287 e654cc29d4884f69901cb36dc3d8e421
 msgid ""
 "Local definitions can also be introduced using ``let``. Just like top "
 "level ones and ones defined in a ``where`` clause you need to:"
-msgstr "本地定义也可以使用 ``let`` 引入。就像顶层定义和在 ``where`` "
+msgstr "局部定义也可以使用 ``let`` 引入。就像顶层定义和在 ``where`` "
 "子句中定义的一样，你需要："
 
 #: ../source/tutorial/typesfuns.rst:1290 14d1c1ddde994759ae9d1ea1e611041a
@@ -1420,9 +1417,8 @@ msgid "Terminates for all possible inputs, or"
 msgstr "对所有可能的输入终止，或者"
 
 #: ../source/tutorial/typesfuns.rst:1391 6a5150b8ae1b4280adf90dd1064affa9
-#, fuzzy
 msgid "Produces a non-empty, finite prefix of a possibly infinite result"
-msgstr "产生一个非空的、有限的、或者一个可能是无限结果的前缀"
+msgstr "产生一个可能无限结果的非空有限前缀"
 
 #: ../source/tutorial/typesfuns.rst:1393 6c56f7a7032c471b82913b808b24525a
 msgid ""

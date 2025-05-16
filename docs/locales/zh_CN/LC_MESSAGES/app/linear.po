@@ -154,7 +154,7 @@ msgid ""
 "We'll leave the other definitions abstract, for the purposes of this "
 "introductory example."
 msgstr ""
-"``Res`` 是在 Prelude 中定义的，因为它通常很有用。它是一种依赖对类型，将值与线"
+"``Res`` 是在 Prelude 中定义的，因为它通常很有用。它是一种依值对类型，将值与线"
 "性资源相关联。出于这个介绍性示例的目的，我们将保留其他定义抽象。"
 
 #: ../source/app/linear.rst:99 1ec6c973b51e428382778497a6309ab1
@@ -166,7 +166,7 @@ msgid ""
 " to redefine ``do``-notation locally."
 msgstr ""
 "下面的清单显示了一个访问存储的完整程序，它读取密码，如果密码正确则访问存储并"
-"打印秘密数据。它使用 ``let (>>=) = bindL`` 在本地重新定义 ``do``-notation。"
+"打印秘密数据。它使用 ``let (>>=) = bindL`` 在局部重新定义 ``do``-notation。"
 
 #: ../source/app/linear.rst:120 296a24a64efa4ef5a327f2e970f34a77
 #, fuzzy
@@ -200,7 +200,7 @@ msgid ""
 "data store uses primitive functions (which we left undefined in any case)"
 " to access the store."
 msgstr ""
-"添加 ``bindL`` 函数以允许在本地重新绑定 ``(>>=)`` "
+"添加 ``bindL`` 函数以允许在局部重新绑定 ``(>>=)`` "
 "运算符允许我们将现有的线性资源程序与 ``App`` 中的操作结合起来 - "
 "至少是那些不会抛出的。尽管如此，与 ``App`` 更直接地互操作会很好。定义接口的一"
 "个优点是我们可以为不同的上下文提供多种实现，但是我们的数据存储实现使用原始函"

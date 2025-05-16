@@ -598,14 +598,13 @@ msgstr ""
 "``m_app`` 相同（这是在 Idris 库中定义的）："
 
 #: ../source/tutorial/interfaces.rst:557 a2c9806aeb6d4ebb8fbbf9c3a40e7289
-#, fuzzy
 msgid ""
 "Using ``<*>`` we can use this implementation as follows, where a function"
 " application ``[| f a1 … an |]`` is translated into ``pure f <*> a1 <*> …"
 " <*> an``:"
 msgstr ""
-"我们可以按照下面的方式使用使用 ``<*>`` ，如下所示，函数应用 ``[| f a1 …an "
-"|]`` 会被翻译成 ``pure f <*> a1 <*> … <*> an`` ："
+"使用 ``<*>`` 我们可以这样使用这个实现，其中函数应用 ``[| f a1 … an |]`` "
+"会被翻译成 ``pure f <*> a1 <*> … <*> an`` ："
 
 #: ../source/tutorial/interfaces.rst:567 3051630889334f13b7a4b7492a73b2f5
 msgid "An error-handling interpreter"
@@ -715,7 +714,6 @@ msgstr "我们可以为 ``Nat`` 定义 ``Semigroup`` 和 ``Monoid`` "
 "两种不同的实现，一种基于加法，一种基于乘法："
 
 #: ../source/tutorial/interfaces.rst:708 2b6aa9772939472cb690ec3b35de0c57
-#, fuzzy
 msgid ""
 "The neutral value for addition is ``0``, but the neutral value for "
 "multiplication is ``1``. It's important, therefore, that when we define "
@@ -724,7 +722,7 @@ msgid ""
 "implementation as follows:"
 msgstr ""
 "加法的中性值是 ``0`` ，但乘法的中性值是 ``1`` 。因此，重要的是，当我们定义 "
-"``Monoid`` 的实现时，它们会扩展正确的 ``Semigroup`` 实现。"
+"``Monoid`` 的实现时，它们要扩展正确的 ``Semigroup`` 实现。"
 "我们可以通过实现中的 ``using`` 子句来做到这一点，具体如下："
 
 #: ../source/tutorial/interfaces.rst:721 7c6fecedb1a64a5fa699366afd1b02c0
@@ -744,16 +742,15 @@ msgid ""
 "constructor."
 msgstr "接口，就像记录一样，可以用一个用户定义的构造函数来声明。"
 
-#: ../source/tutorial/interfaces.rst:741 12377215744b4abf904af9a029db4ed8
-#, fuzzy
+#: ../source/tutorial/interfaces.rst:741 12377215744b6abf904af9a029db4ed8
 msgid "Then ``MkB : A t => t -> B t``. If we have"
-msgstr "然后 ``MkB : A t => t -> B t`` 。"
+msgstr "然后 ``MkB : A t => t -> B t`` 。如果我们有"
 
 #: ../source/tutorial/interfaces.rst:751 1f66f0051b9e48db8dfc2cce7887a3fa
 msgid ""
 "Then we can use the function ``getAB`` even though we didn't implement "
 "the interface ``B`` for ``Nat`` by passing an implementation inline"
-msgstr ""
+msgstr "然后我们可以使用函数 ``getAB`` ，即使我们没有为 ``Nat`` 实现接口 ``B`` ，也可以通过内联传递一个实现"
 
 #: ../source/tutorial/interfaces.rst:761 d6bd7b2b1dc544ecaf898ea43a78258f
 msgid "Determining Parameters"

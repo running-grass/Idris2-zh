@@ -123,16 +123,14 @@ msgid ""
 msgstr "如果你是 Homebrew 用户，你可以通过运行以下命令安装 Idris 2 和所有的依赖："
 
 #: ../source/tutorial/starting.rst:71 bede181a181c48f09bfdd7a53d82f6ac
-#, fuzzy
 msgid "Installing Using Yay"
-msgstr "使用 Homebrew 进行安装"
+msgstr "使用 Yay 进行安装"
 
 #: ../source/tutorial/starting.rst:73 810c41c567d84afb8540b85054c6d571
-#, fuzzy
 msgid ""
 "If you are an Arch based distro user, you can install Idris 2 together "
 "with all the requirements by running following command::"
-msgstr "如果你是 Homebrew 用户，你可以通过运行以下命令安装 Idris 2 和所有的依赖："
+msgstr "如果你使用的是基于 Arch 的发行版，你可以通过运行以下命令安装 Idris 2 和所有依赖："
 
 #: ../source/tutorial/starting.rst:79 198501cc7ed94307ae0e5266b995684f
 msgid "Checking Installation"

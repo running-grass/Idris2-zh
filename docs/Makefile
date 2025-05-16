@@ -31,3 +31,7 @@ update: pots
 .PHONY: py
 py:
 	source .venv/bin/activate
+
+.PHONY: stat
+stat:
+	sphinx-intl stat

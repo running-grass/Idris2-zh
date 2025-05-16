@@ -121,7 +121,7 @@ msgid ""
 "names and directories must be capitalised identifiers. If a file does not"
 " contain a module declaration, it is considered to be a module whose "
 "identifier is ``Main``."
-msgstr ""
+msgstr "如果一个文件包含模块声明 ``module Foo.Bar.MyModule``，那么它在 ``.ipkg`` 项目文件中 `sourcedir`（默认为 ``.``）下的相对路径必须为 ``./Foo/Bar/MyModule.idr``。如果你没有使用 ``.ipkg`` 项目文件，则路径必须相对于你运行 Idris 的目录。同理，``import`` 语句也指向去掉扩展名后的相对文件路径，目录之间用点分隔。如上例，所有模块名和目录都必须是首字母大写的标识符。如果文件没有模块声明，则被视为模块 ``Main``。"
 
 #: ../source/tutorial/modules.rst:88 1f566b6867854b5e8db827fdf45c2b18
 msgid "Export Modifiers"
@@ -263,26 +263,25 @@ msgid ""
 msgstr "``public export`` 接口名称、方法名称和默认定义被导出"
 
 #: ../source/tutorial/modules.rst:167 550bee9ae05b473aa76ee3a5d6bff0b0
-#, fuzzy
 msgid "Meaning for fixity declarations"
-msgstr "用于函数时的含义"
+msgstr "优先级声明的含义"
 
 #: ../source/tutorial/modules.rst:169 693af72dfb5045999be97e5de37900b6
 msgid ""
 "The modifiers differ slightly when applied to fixities. Un-labelled "
 "fixities are exported rather than be private. There is no difference "
 "between `public export` and `export`. In summary:"
-msgstr ""
+msgstr "修饰符应用于运算符优先级声明时略有不同。未加修饰的优先级声明会被导出，而不是私有。`public export` 和 `export` 没有区别。总结如下："
 
 #: ../source/tutorial/modules.rst:173 6b869c6c4d5441a4a318e6506dab459e
 msgid "``private`` means the fixity declaration is only visible within the file."
-msgstr ""
+msgstr "``private`` 表示优先级声明仅在当前文件内可见。"
 
 #: ../source/tutorial/modules.rst:175 4cc90dcccd6542d8b8abc756fa7ba47e
 msgid ""
-"``public export`` and ``export`` are the same and the fixity is exported."
-" The access modifier could also be eluded for the same effect."
-msgstr ""
+"``public export`` and ``export`` are the same and the fixity is exported. "
+"The access modifier could also be eluded for the same effect."
+msgstr "``public export`` 和 ``export`` 等价，都会导出优先级声明。不加修饰符也有同样效果。"
 
 #: ../source/tutorial/modules.rst:179 ef74db8eecaa49779ab6371f70a246f2
 msgid "Propagating Inner Module API's"
@@ -366,9 +365,8 @@ msgstr ""
 "标志才能在它们自己的命名空间之外可见。"
 
 #: ../source/tutorial/modules.rst:261 021f89a18886411f83e0486473bd2090
-#, fuzzy
 msgid "Explicit namespaces inside functions"
-msgstr "显式命名空间"
+msgstr "函数内的显式命名空间"
 
 #: ../source/tutorial/modules.rst:263 aae9681f621040f1aeda27f5595dd488
 msgid ""
@@ -376,11 +374,11 @@ msgid ""
 "Unlike other definitions (e.g. ``data`` or ``record``), such namespace "
 "definitions are understood as belonging to the scope of the function "
 "definition itself."
-msgstr ""
+msgstr "可以在函数的 ``where`` 块中显式定义命名空间。与其他定义（如 ``data`` 或 ``record``）不同，这类命名空间定义被视为属于该函数定义自身的作用域。"
 
 #: ../source/tutorial/modules.rst:268 b5edccbf30f344a19f6447d513b8fe69
 msgid "For example, the following code should typecheck."
-msgstr ""
+msgstr "例如，下面的代码可以通过类型检查。"
 
 #: ../source/tutorial/modules.rst:282 80ff9a36e29744a8bd459d7e21abd85f
 msgid ""
@@ -388,7 +386,7 @@ msgid ""
 "parameters, then definitions inside this namespace will have these "
 "parameters too. This is done because such definitions have access to "
 "values of the parameters."
-msgstr ""
+msgstr "注意，如果一个包含命名空间定义的函数有参数，则该命名空间内的定义也会拥有这些参数。这是因为这些定义可以访问这些参数的值。"
 
 #: ../source/tutorial/modules.rst:286 e7e5a89dde5347989820b0233042ce5a
 msgid ""
@@ -396,12 +394,11 @@ msgid ""
 "definitions from outside the function where they are declared, and must "
 "not be passed when accessed from the inside. This behaviour is similar to"
 " parameterised blocks described below. Look at the following example."
-msgstr ""
+msgstr "当从函数外部访问带命名空间的定义时，必须显式传递这些参数；而在函数内部访问时则不需要传递。这一行为类似于下文描述的参数化块。请看如下示例。"
 
 #: ../source/tutorial/modules.rst:305 23f6b262deaa4aa8b30d99871c671f48
-#, fuzzy
 msgid "Parameterised blocks - `parameters`-blocks"
-msgstr "参数化块"
+msgstr "参数化块 - `parameters` 块"
 
 #: ../source/tutorial/modules.rst:307 9867148cc0bf4697be3d70f65be85a3d
 msgid ""
@@ -432,7 +429,7 @@ msgid ""
 "in which case the parameters are added explicitly to all type and data "
 "constructors. They may also be dependent types with implicit arguments:"
 msgstr "参数块可以是嵌套的，也可以包括数据声明，在这种情况下，参数被明确地添加到所有"
-"类型和数据构造器中。它们也可以是具有隐含参数的依赖类型："
+"类型和数据构造器中。它们也可以是具有隐含参数的依值类型："
 
 #: ../source/tutorial/modules.rst:348 0ff1be00e9cf40e1a64a4665738cf6d7
 msgid ""
@@ -447,4 +444,4 @@ msgstr ""
 msgid ""
 "You can specify what quantity and if the parameters are implicits using "
 "the same syntax as record parameters."
-msgstr ""
+msgstr "你可以用与记录参数相同的语法，指定参数的数量以及是否为隐式参数。"
