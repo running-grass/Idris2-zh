@@ -93,7 +93,7 @@ msgid ""
 "When type checking dependent types, the type itself gets *normalised*. So"
 " imagine we want to prove the following theorem about the reduction "
 "behaviour of ``plus``:"
-msgstr "在对依赖类型进行类型检查时，类型本身会被*归约*（normalise）。假设我们想要证明关于 ``plus`` 归约行为的如下定理："
+msgstr "在对依值类型进行类型检查时，类型本身会被*归约*（normalise）。假设我们想要证明关于 ``plus`` 归约行为的如下定理："
 
 #: ../source/tutorial/theorems.rst:94 74e552be79294836bca6e6eeb7b94386
 #, fuzzy

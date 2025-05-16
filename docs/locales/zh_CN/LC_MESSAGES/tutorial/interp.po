@@ -28,7 +28,7 @@ msgid ""
 "``if...then...else`` construct. We will use the dependent type system to "
 "ensure that any programs which can be represented are well-typed."
 msgstr ""
-"在本节中，我们将利用前面介绍的特性，编写一个更完整的示例：为一个简单的函数式编程语言实现解释器。该语言包含变量、函数应用、二元运算符以及 ``if...then...else`` 结构。我们将借助依赖类型系统，确保所有可表示的程序都是良类型的。"
+"在本节中，我们将利用前面介绍的特性，编写一个更完整的示例：为一个简单的函数式编程语言实现解释器。该语言包含变量、函数应用、二元运算符以及 ``if...then...else`` 结构。我们将借助依值类型系统，确保所有可表示的程序都是良类型的。"
 
 #: ../source/tutorial/interp.rst:15 e84eaf9237ca494aa70e2b0b3f686cb7
 msgid "Representing Languages"
