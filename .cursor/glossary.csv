@@ -130,3 +130,7 @@ constrained,受限的
 interface,接口
 name overloading,名称重载
 namespace,命名空间
+Dependent pattern matching,依值模式匹配
+type safe,类型安全
+well typed,良类型
+refined,细化

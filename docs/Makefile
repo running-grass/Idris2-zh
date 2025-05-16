@@ -27,3 +27,7 @@ pots:
 .PHONY: update
 update: pots
 	sphinx-intl update -p pots -l zh_CN
+	
+.PHONY: py
+py:
+	source .venv/bin/activate
