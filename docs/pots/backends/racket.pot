@@ -1,0 +1,92 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2023, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-16 09:52+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../source/backends/racket.rst:3
+#: 781147a33d5548fead5a9665cbb447fd
+msgid "Racket Code Generator"
+msgstr ""
+
+#: ../source/backends/racket.rst:5
+#: 10c44dff405e46f4a4f3b46885690e0c
+msgid "The Racket code generator is accessed via a REPL command:"
+msgstr ""
+
+#: ../source/backends/racket.rst:11
+#: 8156b04f50fb4bd688caff15fd12ff0b
+msgid "Alternatively, you can set it via the ``IDRIS2_CG`` environment variable:"
+msgstr ""
+
+#: ../source/backends/racket.rst:17
+#: de6350c2f3234aa3b75fa7f4514617ff
+msgid "You can compile an expression ``expr`` of type ``IO ()`` to an executable as follows, at the REPL:"
+msgstr ""
+
+#: ../source/backends/racket.rst:24
+#: 0493cf14c2494f68a420c778d77a4e1b
+msgid "...where ``execname`` is the name of the executable file. This will generate the following:"
+msgstr ""
+
+#: ../source/backends/racket.rst:27
+#: 2b0a6ee7032743059ebb2a3c337d556f
+msgid "A shell script ``build/exec/execname`` which invokes the program"
+msgstr ""
+
+#: ../source/backends/racket.rst:28
+#: 81d9e2a1333c4b6bb500173ffff8f341
+msgid "A subdirectory ``build/exec/execname_app`` which contains all the data necessary to run the program. This includes the Racket source (``execname.rkt``), the compiled Racket code (``execname`` or ``execname.exe`` on Windows) and any shared libraries needed for foreign function definitions."
+msgstr ""
+
+#: ../source/backends/racket.rst:33
+#: 65f858ba24054b8fb8345c74da502cc5
+msgid "The executable ``execname`` is relocatable to any subdirectory, provided that ``execname_app`` is also in the same subdirectory."
+msgstr ""
+
+#: ../source/backends/racket.rst:36
+#: 0d8293ff300b4d2d9ac5f277bea82343
+msgid "You can also execute an expression directly:"
+msgstr ""
+
+#: ../source/backends/racket.rst:42
+#: e2649881d8ca452e863aeb7a9ab0f1f6
+msgid "Again, ``expr`` must have type ``IO ()``. This will generate a temporary executable script ``_tmpracket`` in the ``build/exec`` directory, and execute that, without compiling to a binary first (so the resulting Racket code is interpreted)."
+msgstr ""
+
+#: ../source/backends/racket.rst:49
+#: cb361e78b5034f3b85d551fcef300a70
+msgid "Racket Directives"
+msgstr ""
+
+#: ../source/backends/racket.rst:51
+#: 7cba8cf3ef484b14890a52141363df58
+msgid "``--directive extraRuntime=<path>``"
+msgstr ""
+
+#: ../source/backends/racket.rst:53
+#: 1667a298858c48638f81243bcd74870c
+msgid "Embed Scheme source from ``<path>`` directly into generated output. Can be specified more than once, in which case all given files will be included in the order specified."
+msgstr ""
+
+#: ../source/backends/racket.rst:73
+#: 54970395fe14489092fb9c9ef65950da
+msgid "``--directive lazy=weakMemo``"
+msgstr ""
+
+#: ../source/backends/racket.rst:75
+#: 2b76fd119cf040f98bbc61105b8afa19
+msgid "Makes all non-toplevel ``Lazy`` and ``Inf`` values to be *weakly* memoised. That is, once this expression is evaluated at runtime, it is allowed to not to be recalculated on later accesses until memoised value is wiped by a garbage collector. Garbage collector is allowed to collect weakly memoised values at its own discretion, so when no free memory is available, weakly memoised values are free to be wiped. That's why it is safer comparing to full memoisation."
+msgstr ""

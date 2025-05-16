@@ -1,0 +1,341 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2023, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-16 09:52+0800\n"
+"PO-Revision-Date: 2022-09-03 13:48+0000\n"
+"Last-Translator: grass <hi@grass.show>\n"
+"Language-Team: Chinese (Simplified) <>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../source/ffi/readline.rst:5 806f7a5facf242059aa31a1f07e322fb
+msgid "Example: Minimal Readline Bindings"
+msgstr "示例：最小化的 Readline 绑定"
+
+#: ../source/ffi/readline.rst:7 6bd1d78fcc1c48b99a1e07171e30e7b5
+#, fuzzy
+msgid ""
+"In this section, we'll see how to create bindings for a C library (the "
+"`GNU Readline <https://tiswww.case.edu/php/chet/readline/rltop.html>`_ "
+"library) in Idris, and make them available in a package. We'll only "
+"create the most minimal bindings, but nevertheless they demonstrate some "
+"of the trickier problems in creating bindings to a C library, in that "
+"they need to handle memory allocation of ``String``."
+msgstr ""
+"在本节中，我们将看到如何在 Idris 中为 C 库（`GNU Readline <https://tiswww."
+"case.edu/php/chet/readline/rltop.html>`_ "
+"库）创建绑定，以及使它们在一个包中可用。我们将只创建最小的绑定，"
+"但是它们展示了创建与 C "
+"库的绑定时的一些更棘手的问题，因为它们需要处理“字符串”的内存分配。"
+
+#: ../source/ffi/readline.rst:14 21eb705c8a2649169494523157ed03a3
+#, fuzzy
+msgid ""
+"You can find the example in full in the Idris 2 source repository, in "
+"`samples/FFI-readline "
+"<https://github.com/edwinb/Idris2/tree/master/samples/FFI-readline>`_. As"
+" a minimal example, this can be used as a starting point for other C "
+"library bindings."
+msgstr ""
+"您可以在 Idris 2 源代码库的 `samples/FFI-readline <https://github.com/edwinb/"
+"Idris2/tree/master/samples/FFI-readline>`_ "
+"中找到完整的示例。作为一个最小的示例，这可以用作其他 C 库绑定的起点。"
+
+#: ../source/ffi/readline.rst:20 8b0e3895a06446c2be6097ba0d284a58
+#, fuzzy
+msgid ""
+"We are going to provide bindings to the following functions in the "
+"Readline API, available via ``#include <readline/readline.h>``:"
+msgstr "我们将在 Readline API 中提供对以下函数的绑定，可通过 #include <readline/"
+"readline.h> 获得："
+
+#: ../source/ffi/readline.rst:28 36d3d70a8d70491b8d01bea83b352290
+#, fuzzy
+msgid ""
+"Additionally, we are going to support tab completion, which in the "
+"Readline API is achieved by setting a global variable to a callback "
+"function (see Section :ref:`sect-callbacks`) which explains how to handle"
+" the completion:"
+msgstr ""
+"此外，我们将支持制表符补全，在 Readline API "
+"中，这是通过将全局变量设置为回调函数来实现的（参见 :ref:`sect-callbacks "
+"部分），它解释了如何处理补全："
+
+#: ../source/ffi/readline.rst:38 5f6090c933554beda69252e261df27db
+#, fuzzy
+msgid ""
+"A completion function takes a ``String``, which is the text to complete, "
+"and an ``Int``, which is the number of times it has asked for a "
+"completion so far. In Idris, this could be a function ``complete : String"
+" -> Int -> IO String``. So, for example, if the text so far is "
+"``\"id\"``, and the possible completions are ``idiomatic`` and ``idris``,"
+" then ``complete \"id\" 0`` would produce the string ``\"idiomatic\"`` "
+"and ``complete \"id\" 1`` would produce ``\"idris\"``."
+msgstr ""
+"完成函数需要一个“字符串”，它是要完成的文本，和一个“整数”，它是到目前为止它要"
+"求完成的次数。在 Idris 中，这可能是一个函数 ``complete : String -> Int -> IO "
+"String``。因此，例如，如果到目前为止的文本是“id”，并且可能的补全是“惯用”和“id"
+"ris”，那么“完整的“id”0 将产生字符串``\"idiomatic\"`` 和 ``complete \"id\" 1``"
+" 会产生 ``\"idris\"``。"
+
+#: ../source/ffi/readline.rst:45 a45d10ce598c4111871b6952adf3d9bb
+#, fuzzy
+msgid ""
+"We will define *glue* functions in a C file ``idris_readline.c``, which "
+"compiles to a shared object ``libidrisreadline``, so we write a function "
+"for locating the C functions:"
+msgstr ""
+"我们将在 C 文件 ``idris_readline.c`` 中定义 *glue* 函数，"
+"该文件编译为共享对象 ``libidrisreadline``，因此我们编写了一个用于定位 C "
+"函数的函数："
+
+#: ../source/ffi/readline.rst:54 16e6c7bbb1974ce3ac8d874726d4b54a
+#, fuzzy, python-format
+msgid ""
+"Each of the foreign bindings will have a ``%foreign`` specifier which "
+"locates functions via ``rlib``."
+msgstr "每个外部绑定都有一个“%foreign”说明符，它通过“rlib”定位函数。"
+
+#: ../source/ffi/readline.rst:58 08e419fbb63541ef9bb5f34bcec17068
+#, fuzzy
+msgid "Basic behaviour: Reading input, and history"
+msgstr "基本行为：阅读输入和历史"
+
+#: ../source/ffi/readline.rst:60 2c180458a52748d6a73a366e931eeaa4
+#, fuzzy
+msgid ""
+"We can start by writing a binding for ``readline`` directly. It's "
+"interactive, so needs to return a ``PrimIO``:"
+msgstr "我们可以从直接为 readline "
+"编写绑定开始。它是交互式的，因此需要返回一个“PrimIO”："
+
+#: ../source/ffi/readline.rst:68 cf70ead132794b1eaa5d509ecb7499b3
+#, fuzzy
+msgid "Then, we can write an ``IO`` wrapper:"
+msgstr "然后，我们可以编写一个 ``IO`` 包装器："
+
+#: ../source/ffi/readline.rst:75 ce3640f2e3694de3bcf0b93f734b7e93
+#, fuzzy
+msgid ""
+"Unfortunately, this isn't quite good enough! The C ``readline`` function "
+"returns a ``NULL`` string if there is no input due to encountering an end"
+" of file. So, we need to handle that - if we don't, we'll get a crash on "
+"encountering end of file (remember: it's the Idris programmer's "
+"responsibility to give an appropriate type to the C binding!)"
+msgstr ""
+"不幸的是，这还不够好！如果由于遇到文件结尾而没有输入，则 C ``readline`` "
+"函数将返回 ``NULL`` 字符串。所以，我们需要处理它——如果我们不这样做，我们会在"
+"遇到文件结尾时崩溃（记住：为 C 绑定提供适当的类型是 Idris 程序员的责任！）"
+
+#: ../source/ffi/readline.rst:81 14c8d1135953490ea06bf2737ca25aa4
+#, fuzzy
+msgid ""
+"Instead, we need to use a ``Ptr`` to say that it might be a ``NULL`` "
+"pointer (see Section :ref:`sect-ffi-string`):"
+msgstr "相反，我们需要使用 ``Ptr`` 来表示它可能是 ``NULL`` 指针（参见章节:ref:`sect-"
+"ffi-string`）："
+
+#: ../source/ffi/readline.rst:89 101dfcc68c0a4c44b677ac17c3203ff7
+#, fuzzy
+msgid ""
+"We also need to provide a way to check whether the returned ``Ptr "
+"String`` is ``NULL``. To do so, we'll write some glue code to convert "
+"back and forth between ``Ptr String`` and ``String``, in a file "
+"``idris_readline.c`` and a corresponding header ``idris_readline.h``. In "
+"``idris_readline.h`` we have:"
+msgstr ""
+"我们还需要提供一种方法来检查返回的“Ptr String”是否为“NULL”。为此，我们将在 "
+"``idris_readline.c`` 文件和相应的 ``idris_readline.h` "
+"文件中编写一些胶水代码来在``Ptr String`` 和 ``String`` 之间来回转换`。在 "
+"idris_readline.h 中，我们有："
+
+#: ../source/ffi/readline.rst:101 170c9a075f394611b25545be58254128
+#, fuzzy
+msgid "Correspondingly, in ``idris_readline.c``:"
+msgstr "相应地，在 idris_readline.c 中："
+
+#: ../source/ffi/readline.rst:121 65b1f89cef5c4f84ae9c44815f7ff7b5
+#, fuzzy
+msgid ""
+"Now, we can use ``prim__readline`` as follows, with a safe API, checking "
+"whether the result it returns is ``NULL`` or a concrete ``String``:"
+msgstr ""
+"现在，我们可以使用 ``prim__readline`` 如下，通过一个安全的 "
+"API，检查它返回的结果是``NULL`` 还是具体的``String``："
+
+#: ../source/ffi/readline.rst:141 77338f1b1932438c8cb64556444ae13b
+#, fuzzy
+msgid ""
+"We'll need ``nullString`` and ``mkString`` later, for dealing with "
+"completions."
+msgstr "稍后我们将需要 ``nullString`` 和 ``mkString`` 来处理完成。"
+
+#: ../source/ffi/readline.rst:143 6ee194c29c3e4f609190636bb161fda4
+#, fuzzy
+msgid ""
+"Once we've read a string, we'll want to add it to the input history. We "
+"can provide a binding to ``add_history`` as follows:"
+msgstr "一旦我们读取了一个字符串，我们就会想把它添加到输入历史中。我们可以提供对 "
+"``add_history`` 的绑定，如下所示："
+
+#: ../source/ffi/readline.rst:155 59b6199d13c24898b18a038e6f8ee524
+#, fuzzy
+msgid ""
+"In this case, since Idris is in control of the ``String``, we know it's "
+"not going to be ``NULL``, so we can add it directly."
+msgstr "在这种情况下，由于 Idris 控制着 ``String``，我们知道它不会是 "
+"``NULL``，所以我们可以直接添加它。"
+
+#: ../source/ffi/readline.rst:158 bb857ae5388341f791c18181ecef3575
+#, fuzzy
+msgid ""
+"A small ``readline`` program that reads input, and echoes it, recording "
+"input history for non-empty inputs, can be written as follows:"
+msgstr "一个读取输入并回显它的小型“readline”程序，记录非空输入的输入历史，可以编写如"
+"下："
+
+#: ../source/ffi/readline.rst:173 b5c18821a8a048b2a1a71e236f1d6ba1
+#, fuzzy
+msgid ""
+"This gives us command history, and command line editing, but Readline "
+"becomes much more useful when we add tab completion. The default tab "
+"completion, which is available even in the small example above, is to tab"
+" complete file names in the current working directory. But for any "
+"realistic application, we probably want to tab complete other commands, "
+"such as function names, references to local data, or anything that is "
+"appropriate for the application."
+msgstr ""
+"这为我们提供了命令历史记录和命令行编辑，但是当我们添加制表符完成时，Readline "
+"变得更加有用。默认的制表符补全，即使在上面的小示例中也可用，是在当前工作目录"
+"中补全文件名。但是对于任何实际的应用程序，我们可能希望使用 Tab "
+"来完成其他命令，例如函数名称、对本地数据的引用或任何适合该应用程序的命令。"
+
+#: ../source/ffi/readline.rst:181 3c124158dc1045aa8c2a25403f0b70db
+#, fuzzy
+msgid "Completions"
+msgstr "完成"
+
+#: ../source/ffi/readline.rst:183 e0cf1ffe56734e69a1aee1e79c4781ba
+#, fuzzy
+msgid ""
+"Readline has a large API, with several ways of supporting tab completion,"
+" typically involving setting a global variable to an appropriate "
+"completion function. We'll use the following:"
+msgstr "Readline 有一个庞大的 API，有多种支持制表符补全的方法，通常涉及将全局变量设置"
+"为适当的补全函数。我们将使用以下内容："
+
+#: ../source/ffi/readline.rst:192 5c85e9bca1b4411a9310e424c9f088b8
+#, fuzzy
+msgid ""
+"The completion function takes the prefix of the completion, and the "
+"number of times it has been called so far on this prefix, and returns the"
+" next completion, or ``NULL`` if there are no more completions. An Idris "
+"equivalent would therefore have the following type:"
+msgstr ""
+"完成函数接受完成的前缀，以及到目前为止在该前缀上调用它的次数，并返回下一个完"
+"成，如果没有更多的完成，则返回“NULL”。因此，一个 Idris 等价物将具有以下类型："
+
+#: ../source/ffi/readline.rst:201 fbdb73d76a8046fbb1fd26c9978bfa8e
+#, fuzzy
+msgid ""
+"The function returns ``Nothing`` if there are no more completions, or "
+"``Just str`` for some ``str`` if there is another one for the current "
+"input."
+msgstr "如果没有更多的完成，该函数返回“Nothing”，或者如果当前输入有另一个完成，则返回"
+"“Just str”一些“str”。"
+
+#: ../source/ffi/readline.rst:205 5aad94868ea44d3a86485d7c5af144e2
+#, fuzzy
+msgid ""
+"We might hope that it's a matter of defining a function to assign the "
+"completion function..."
+msgstr "我们可能希望这是定义一个函数来分配完成函数的问题......"
+
+#: ../source/ffi/readline.rst:214 242ecc80f2364dedbb36fe5a41d11ab2
+#, fuzzy
+msgid ""
+"...then defining the Idris binding, which needs to take into account that"
+" the Readline library expects ``NULL`` when there are no more "
+"completions:"
+msgstr "...然后定义 Idris 绑定，这需要考虑到 Readline 库在没有更多完成时期望 "
+"``NULL``："
+
+#: ../source/ffi/readline.rst:231 1dd705bf0e3f4c8eb739c496cbf133d8
+#, fuzzy
+msgid ""
+"So, we turn ``Nothing`` into ``nullString`` and ``Just str`` into "
+"``mkString str``. Unfortunately, this doesn't quite work. To see what "
+"goes wrong, let's try it for the most basic completion function that "
+"returns one completion no matter what the input:"
+msgstr ""
+"所以，我们把“Nothing”变成了“nullString”，“Just str”变成了“mkString str”。不幸"
+"的是，这并不完全奏效。为了看看出了什么问题，让我们试试这个最基本的完成函数，"
+"不管输入是什么，它都会返回一个完成："
+
+#: ../source/ffi/readline.rst:242 327c3355e15643b094d33b28b95f8fbd
+#, fuzzy
+msgid ""
+"We'll try this in a small modification of ``echoLoop`` above, setting a "
+"completion function first:"
+msgstr "我们将在上面的“echoLoop”的一个小修改中尝试这个，首先设置一个完成函数："
+
+#: ../source/ffi/readline.rst:251 71cd2b7d39734523a3904819acad90c9
+#, fuzzy
+msgid ""
+"We see that there is a problem when we try running it, and hitting TAB "
+"before entering anything:"
+msgstr "当我们尝试运行它并在输入任何内容之前点击 TAB 时，我们看到存在问题："
+
+#: ../source/ffi/readline.rst:259 d262567b69be4f698c24ff766a76eafa
+#, fuzzy
+msgid ""
+"The Idris code which sets up the completion is fine, but there is a "
+"problem with the memory allocation in the C glue code."
+msgstr "设置完成的 Idris 代码很好，但是 C 胶水代码中的内存分配存在问题。"
+
+#: ../source/ffi/readline.rst:262 13c63f5fe3364573b48eeab7c1efdd4e
+#, fuzzy
+msgid ""
+"This problem arises because we haven't thought carefully enough about "
+"which parts of our program are responsible for allocating and freeing "
+"strings. When Idris calls a foreign function that returns a string, it "
+"copies the string to the Idris heap and frees it immediately. But, if the"
+" foreign library also frees the string, it ends up being freed twice. "
+"This is what's happening here: the callback passed to "
+"``prim__setCompletion`` frees the string and puts it onto the Idris heap,"
+" but Readline also frees the string returned by ``prim__setCompletion`` "
+"once it has processed it. We can solve this problem by writing a wrapper "
+"for the completion function which reallocates the string, and using that "
+"in ``idrisrl_setCompletion`` instead."
+msgstr ""
+"出现这个问题是因为我们没有仔细考虑程序的哪些部分负责分配和释放字符串。当 "
+"Idris 调用返回字符串的外部函数时，它会将字符串复制到 Idris 堆并立即释放它。但"
+"是，如果外部库也释放了字符串，它最终会被释放两次。这就是这里发生的事情："
+"传递给 ``prim__setCompletion`` 的回调释放字符串并将其放入 Idris 堆，但 "
+"Readline 也会在处理完 ``prim__setCompletion`` 返回的字符串后释放它。我们可以"
+"通过为重新分配字符串的完成函数编写一个包装器来解决这个问题，并在 "
+"idrisrl_setCompletion 中使用它。"
+
+#: ../source/ffi/readline.rst:296 314a660997d4406ba1d2ed3fe048df7a
+#, fuzzy
+msgid ""
+"So, we define the completion function in C, which calls the Idris "
+"completion function then makes sure the string returned by the Idris "
+"function is copied to the C heap."
+msgstr "因此，我们在 C 中定义了完成函数，它调用 Idris 完成函数，然后确保将 Idris "
+"函数返回的字符串复制到 C 堆中。"
+
+#: ../source/ffi/readline.rst:300 508216df6b8a4259a917cf8cf548be82
+#, fuzzy
+msgid ""
+"We now have a primitive API that covers the most fundamental features of "
+"the readline API:"
+msgstr "我们现在有一个原始 API，它涵盖了 readline API 的最基本功能："

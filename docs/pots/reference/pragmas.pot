@@ -1,0 +1,582 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2023, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-16 09:52+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../source/reference/pragmas.rst:3
+#: 9f0a24a388fa49da8a66a80e2a231c86
+msgid "Pragmas"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:8
+#: 2e56ba0250ae481593310dfcf833f3bc
+msgid "Idris2 supports a number of pragmas (identifiable by the `%` prefix). Some pragmas change compiler behavior until the behavior is changed back using the same pragma while others apply to the following declaration. A small niche of pragmas apply directly to one or more arguments instead of the code following the pragma (like the `%name` pragma described below)."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:14
+#: 2b131d1e21484efc89ed7129a30aa397
+msgid "This page is a work in progress. If you know about a pragma that is not described yet, please consider submitting a pull request!"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:18
+#: 76196dd536ef47829a9bf7bd44a59ff2
+msgid "Global pragmas"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:21
+#: 4ad92a13e0574e9fb7d00ca8a26e6dea
+msgid "``%language``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:23
+#: 617b76be6e3940aa9a3a0e37a435d538
+msgid "Enable language extensions.  Currently, the only extension is [#ElabReflection]_."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:30
+#: 36d12070a6b74643a8395d18364c74d3
+msgid "``%default``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:32
+#: e74dc96f9051435499c5009b4042eb04
+msgid "Set the default totality requirement for functions, which can be one of ``total``, ``covering``, or ``partial``.  The value is initially set to ``covering`` unless the ``--total`` command line switch is used, which sets it to ``total``."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:37
+#: ef42794629bb48ec99664ea326b15fc7
+msgid "``%builtin``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:39
+#: 2dd2e6d2b3b84fad9c228db87aa03871
+msgid "The ``%builtin Natural`` pragma converts recursive/unary representations of natural numbers into primitive ``Integer`` representations."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:42
+#: e5acc7e911174606ab46bd773c921239
+msgid "This pragma is explained in detail on its own page. For more, see :ref:`builtins`."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:46
+#: 04acb6d14c7b4ac9b526d0c32c2d3673
+msgid "``%name``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:48
+#: 2e73c0445df24da09604cd4bf887e02d
+msgid "Give the compiler some suggested names to use for a particular type when it is asked to generate names for values. You can specify any number of suggested names; they will be used in-order when more than one is needed for a single definition."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:60
+#: a4a0b3ee7bfa45679847a2a863ceacde
+msgid "``%ambiguity_depth``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:62
+#: 43b585409fc544689c4cf1696eb9a284
+msgid "Set how deep nested ambiguous names can be before Idris gives up. The default is 3, increashing this will effect compiler performance. For more details, see :ref:`ambiguous-name-resolution`."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:66
+#: 8fef618a212e4d6fa2960d219eb9d36d
+msgid "``%totality_depth``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:68
+#: 141b3b99eb794c8696a7f5034f0c4bb2
+msgid "Set the number of matching constructors Idris will look under when checking totality.  For instance `Just xs` is smaller than `Just (x :: xs)` if Idris looks under the matching constructor. The default value is 5.  Increasing the value may slow down totality checking."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:73
+#: e85712ae717e45b1b360f8b753aea7fe
+msgid "``%auto_implicit_depth``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:75
+#: 21c18b5a2e8442389c0ac1dbb78481f3
+msgid "Set the search depth for ``auto`` implicits. The default value is 50."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:78
+#: ddeaae2fd922433295f6a81603d077e4
+msgid "``%logging``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:80
+#: 95198279beeb417b8e5cb4db98537db7
+msgid "Change the logging level.  See :ref:`sect-logging` for details."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:89
+#: 95e6529d8cef401292479d53fa60c43a
+msgid "``%prefix_record_projections``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:91
+#: 23fb12acacfb491a8bf6f44b665a5eb4
+msgid "Configure whether projection functions without a leading period are generated for records. It defaults to ``on``.  See :ref:`record-elaboration` for more details."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:98
+#: fbe22fb1f78947699fa3cc59850ff080
+msgid "``%transform``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:100
+#: 826b7e09833544cda38e526e49733d76
+msgid "Replace a function at runtime with another implementation. It allows us to functions that are appropriate for type checking and have an efficient version at runtime. For example:"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:112
+#: 54051079f72f4f4bb2a3cda2eff62349
+msgid "``%unbound_implicits``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:114
+#: e8679ddfdc424055be9744d2bafc6b7f
+msgid "Configure whether implicit bindings are automatically added to function types for unbound lowercase names. It is on by default. See :ref:`unbound-implicits` for more details."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:118
+#: a6a70c24018e491ca7a2264f25a41868
+msgid "``%auto_lazy``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:120
+#: b7053835675d4ace94a1023cae158efb
+msgid "Configure whether the compiler automatically adds ``delay`` and ``force`` when necessary.  It defaults to ``on``."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:125
+#: 8357505850aa4ec494405571c46c9024
+msgid "``%search_timeout``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:127
+#: c810288773c342c9b388bd21e4123134
+msgid "Set the expression search timeout in milliseconds.  The default is 1000."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:135
+#: 24de269537f945fe878cc40e1888b19a
+msgid "``%nf_metavar_threshold``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:137
+#: ccf4ee7efa9746ab9e2626fe67d233e0
+msgid "Set the maximum number of stuck applications allowed while unifying a meta. The default value is 25."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:141
+#: 5d5f892a4e5b4dd2845e904d194d7ed6
+msgid "``%cg``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:143
+#: 493a511962cd4a4eaeb86110bdc9d3e4
+msgid "Codegen directives can be included in source code with the ``%cg`` pragma. For example, instead of using ``--directive extraRuntime=mycode.ss`` on the command line for the chez backend, you can write:"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:150
+#: b893e2952535414684c85650242901f5
+msgid "The ``%cg`` pragma is followed by the name of a codegen and a directive for that codegen, terminated by newline.  Directives from imported modules, including transitive imports, will aggregate. All of the directives given in the source are stored in the module, but only the directives for the current codegen are used at link time."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:155
+#: 71a5a91a18c84efd8e25380e1d2664e9
+msgid "How directives are treated in aggregate depends on the codegen and directive. For example, the ``extraRuntime`` directive for the Chez codegen is deduplicated.  And the javascript backend gives the ``minimal`` directive priority over the ``compact`` directive if both are present."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:159
+#: c747e2090c4c400bb1ef1ead96083deb
+msgid "See the section for each codegen under :ref:`sect-execs` for available directives."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:162
+#: 504b7a2a73264da59a38504d6803f063
+msgid "Pragmas on declarations"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:165
+#: d23bab5560aa410784d50daee2337ed4
+msgid "``%deprecate``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:167
+#: 58b55aebdb4545b4a021e386a24363eb
+msgid "Mark the following definition as deprecated. Whenever the function is used, Idris will show a deprecation warning."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:183
+#: 5e9f67feb4f7419bae993c7a7bc14e0f
+msgid "You can use code documentation (triple vertical bar `||| docs`) to suggest a strategy for removing the deprecated function call and that documentation will be displayed alongside the warning."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:202
+#: 72435cad084741eeadb08d8d6e55c519
+msgid "``%inline``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:204
+#: 1c50413b0fb44820824626bce45e9eee
+msgid "Instruct the compiler to inline the following definition when it is applied. It is generally best to let the compiler and the backend you are using optimise code based on its predetermined rules, but if you want to force a function to be inlined when it is called, this pragma will force it."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:215
+#: fb2552911c744335b680dc5b90eaf380
+msgid "``%noinline``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:217
+#: d0d80bac7dca4b74a292c5df0ddcb64b
+msgid "Instruct the compiler _not_ to inline the following definition when it is applied. It is generally best to let the compiler and the backend you are using optimise code based on its predetermined rules, but if you want to force a function to never be inlined when it is called, this pragma will force it."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:228
+#: 5d051ad4ef9a4a5dbcca3cac6de11274
+msgid "``%tcinline``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:230
+#: f9c7f84c0d6c4e8ea2545ad67e108d4b
+msgid "Instruct the compiler to inline the function during totality checking."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:233
+#: 1a9c2b5c5313452fac1dfbfd5b2b725f
+msgid "``%hide``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:235
+#: 98187e5d037e4abcab8147ac6307098c
+msgid "Hide a definition from imports. This is particularly useful when you are re-definiing functions or types from a module but still need to import it."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:248
+#: e99faed9da644581aeda3f1b7d25171d
+msgid "You can also hide fixity declarations if you need to redefine your own."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:260
+#: 0e2d1d719c32482d91e27caf989324e2
+msgid "``%unhide``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:262
+#: f624c9174f9a4e40a3d1be7c3ede1a25
+msgid "The ``%unhide`` pragma unhides a definition that was previously hidden with ``%hide``."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:266
+#: b247966585514d26afd27f100248ea56
+msgid "``%unsafe``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:268
+#: 2bcd64432b434018934bfe3b3b538926
+msgid "Mark a function like ``believe_me`` as being unsafe. The function will be semantically highlighted in a different color to draw the user's attention to its use."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:273
+#: 152706f128bc419e83e67a04cc8266e7
+msgid "``%spec``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:275
+#: 9e9d5b3d105042b1aecb4ccfe9a4b99b
+msgid "Specialise a function according to a list of arguments."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:286
+#: c4b47757dcc54ee2b5b19fe31bc607c3
+msgid "``%foreign``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:288
+#: 4ee58f4e01ff4e3c838c8f007ed573bb
+msgid "Declare a foreign function.  It is followed by an indented block of expressions that evaluate to strings. See :ref:`ffi-overview` for more details."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:293
+#: 4015838c5d0b4d3aaf4d7af96ea81d60
+msgid "``%foreign_impl``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:295
+#: 34825b097c1d4b27a9b036b7c572c034
+msgid "Adds an implementation to an existing ``%foreign`` in another file. This pragma can be used to fill in an implementation for another backend without changing the original file. In the case of multiple declarations for a given backend, the backend will choose the one from the most recently loaded module."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:306
+#: 16f8327dbd6f421294202ea1f781dae5
+msgid "``%export``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:308
+#: af070f47b4af4ebf9000e99e986a0044
+msgid "Export an Idris function to the underlying host language. The the name for each backend is given in an indented block of string expressions, similar to ``%foreign``.  Currently this pragma is only supported by the javascript backend."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:320
+#: 7abfecd15a9c48efbf21b4c416446e28
+msgid "``%nomangle``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:322
+#: 9ecfc6e2919e48d480f1e788e27754ba
+msgid "This pragma is deprecated.  Instead use ``%export`` to expose functions to the backend."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:326
+#: 3d6f603970ee41c9b4c0950ff3672754
+msgid "``%hint``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:328
+#: dfef97202d5c445ea33c9325548de630
+msgid "Mark a function to be used for ``auto`` search (see :ref:`auto-implicits` and :ref:`auto-implicit-arguments` for more).  Hints are used internally for instance resolution and non-named instances are automatically tagged with ``%hint``."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:334
+#: 609e3fecc4c14234b7c3b288d18f9a32
+msgid "``%defaulthint``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:336
+#: a6d4b9cae35d41468aaced36cb33cbcb
+msgid "Mark a hint to be tried when no other hints match."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:339
+#: fd8f37650d0e4417b2f5a0cf721e6660
+msgid "``%globalhint``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:341
+#: e4cb6d23dea44072aee969528293e736
+msgid "A global hint is like a ``%hint``, but it is always tried, while ``%hint`` is only tried if the return type matches."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:345
+#: 8b916378912f4a5d83cfe7ba7a2d2628
+msgid "``%extern``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:347
+#: a46feccaa35b495183782c40ca381733
+msgid "Declare a function to be externally implemented, but relies on codegen to fill in the function rather than specifying the name. The function name must be explicitly handled in the codegen. It is used for functions like ``prim__newIORef`` in the prelude."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:353
+#: 7a43c5029efc4cbdb94c92795cb31cb9
+msgid "``%macro``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:355
+#: 60a23786508b41da8536ac2cbe8b4c77
+msgid "Mark a function that returns the ``Elab`` monad as a macro. When the function is used in an expression, it will be run at compile time and the invocation will be replaced by the result of the elaboration."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:360
+#: 86446c95df8b44c6abc47a2b4e1bc2be
+msgid "``%start``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:362
+#: ae2554717a6f44e68323ca0c8232f781
+msgid "The ``%start`` pragma is not implemented."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:365
+#: d6ebbcdf44444380a0318b263d83bdb6
+msgid "``%allow_overloads``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:367
+#: 430d1ba1d92b4a14a5f2d8496d8fead5
+msgid "This pragma is no longer used by the compiler."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:370
+#: 9aaa5167b68d44fe99489ca0a3120ac8
+msgid "Internal"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:372
+#: f4b2226a323e424e82d60710bbcf9c7f
+msgid "These pragmas are used in the prelude, but aren't typically used in user programs."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:376
+#: 8891c3d891ff4c46822af13134cdc3e8
+msgid "``%rewrite``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:378
+#: 0c346b40e451404f8be0994126e99ad1
+msgid "Specify the `Equal` type and rewrite function used by rewrite statements."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:385
+#: 27a8f4898ccd489fa61b9b9213067f95
+msgid "``%pair``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:387
+#: 02e0aee93ba14506a68f7a5bf000aa5f
+msgid "This directive is used in the prelude to tell auto implicit search what to use to look inside pairs."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:394
+#: 73e02151851d456eace5955b90854735
+msgid "``%integerLit``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:396
+#: 19c2443d9fca43c196aa9e3897cc769b
+msgid "Define the function used to interpret literal integers. In the prelude, it is set to ``fromInteger``, so a literal ``2`` is elaborated to ``fromInteger 2``."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:404
+#: ce36cd698c38471c8b43c02a2a3157d9
+msgid "``%stringLit``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:406
+#: 252b28c6b341476eb5eff7323abafa4d
+msgid "Define the function used to interpret literal strings. In the prelude, it is set to ``fromString``, so a literal ``\"idris\"`` is elaborated to ``fromString \"idris\"``."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:415
+#: 76fc5b2c16e941d7b81752b57cc21e20
+msgid "``%charLit``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:417
+#: 9d051bdd16be49e49e4d09379b3fc25c
+msgid "Define the function used to interpret literal characters. In the prelude, it is set to ``fromChar``, so a literal ```x```` is elaborated to ``fromChar 'x'``."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:425
+#: 80203fe4ce644a188e9fbced4cdbc42d
+msgid "``%doubleLit``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:427
+#: 8b20cd073e484958a1b3c3b9a7cdf12e
+msgid "Define the function used to interpret literal numbers with a decimal in them. In the prelude, it is set to ``fromDouble``, so a literal ```2.0```` is elaborated to ``fromDouble 2.0``."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:436
+#: 9c94fd71dab64c1f9f9dc528f62b1a7e
+msgid "Reflection Literals"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:440
+#: 0dafcbfd38d347b68ef518b860b9a756
+msgid "``%TTImpLit``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:442
+#: d1a6598e192c4c3886407f8934caf637
+msgid "Allow quoted expressions to be cast to a user defined type."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:472
+#: 4464280d01204dda9c375f6a5f356cb8
+msgid "``%declsLit``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:474
+#: 60b91e32732445fba508826c261b9d96
+msgid "Allow quoted declarations to be cast to user defined types."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:477
+#: 52752de1ade240a1b65f44c307c622a0
+msgid "``%nameLit``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:479
+#: 6546bf4384ad4e0087bf05ad5b326256
+msgid "Allow quoted names to be cast to user defined types."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:483
+#: 0d60d0ca5a6841f9af5acd2e651f0027
+msgid "Expressions"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:485
+#: 60c2caf885e64b96aebea972006d88b5
+msgid "Pragmas that occur inside expressions."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:488
+#: 03787cc9dd5d4e5b9253aed228a71ab2
+msgid "``%runElab``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:490
+#: 0a47e8729fb244d49e9184dbdc64f999
+msgid "The ``%runElab`` pragma can be used at the top level or as an expression. It takes an elaborator script as an argument which runs in the ``Elab`` monad, has access to Idris' type-checking machinery, and can generate code."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:495
+#: de6d04c7dfe04d2381cdb11f95454536
+msgid "``%search``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:497
+#: 7e56aff3d0bc44119d793978eb3c1d07
+msgid "Ask Idris to fill in the value with auto-implicit search. See :ref:`auto-implicits` for more details."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:500
+#: eb0caede634940d3afb35dab000395b1
+msgid "``%World``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:502
+#: e88f03f864a14d3cb165be22471b4821
+msgid "The type of the world token used for IO.  For more information, see :ref:`World<sect-world>`."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:505
+#: 42c0ef8372cd446bac17f55b91c6d16d
+msgid "``%MkWorld``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:507
+#: 791389d7d36349d18366b828f564baaf
+msgid "The world token used for IO.  For more information, see :ref:`World<sect-world>`."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:510
+#: 5687826204ae4015912160e2b1451cd0
+msgid "``%syntactic``"
+msgstr ""
+
+#: ../source/reference/pragmas.rst:512
+#: eee67d673fcc490eb275a7e94fbba8a3
+msgid "The ``%syntactic`` pragma can appear after the ``with`` keyword.  It abstracts over the value syntactically, rather than by value, and can significantly speed up elaboration where large types are involved, at a cost of being less general. Try it if \"with\" is slow."
+msgstr ""
+
+#: ../source/reference/pragmas.rst:517
+#: fd2234225fae4e92be14346d58243d3c
+msgid "https://github.com/stefan-hoeck/idris2-elab-util/blob/main/src/Doc/Index.md"
+msgstr ""

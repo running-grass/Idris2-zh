@@ -1,0 +1,92 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2023, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-16 09:52+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../source/tutorial/introduction.rst:5
+#: 2043b82253c34a7ab3519da15a1809af
+msgid "Introduction"
+msgstr ""
+
+#: ../source/tutorial/introduction.rst:7
+#: 1721a8755932401cb7b2a09a8fce23c7
+msgid "In conventional programming languages, there is a clear distinction between *types* and *values*. For example, in `Haskell <https://www.haskell.org>`_, the following are types, representing integers, characters, lists of characters, and lists of any value respectively:"
+msgstr ""
+
+#: ../source/tutorial/introduction.rst:13
+#: 51b05558dbc14eb0a8669d7178f0f2dc
+msgid "``Int``, ``Char``, ``[Char]``, ``[a]``"
+msgstr ""
+
+#: ../source/tutorial/introduction.rst:15
+#: 25117caaa8b6453c9cc3b72fb2773fbd
+msgid "Correspondingly, the following values are examples of inhabitants of those types:"
+msgstr ""
+
+#: ../source/tutorial/introduction.rst:18
+#: 555c149387984ccd836cd6218484de88
+msgid "``42``, ``’a’``, ``\"Hello world!\"``, ``[2,3,4,5,6]``"
+msgstr ""
+
+#: ../source/tutorial/introduction.rst:20
+#: cc53a5163ba747749d4076be7bc671bf
+msgid "In a language with *dependent types*, however, the distinction is less clear. Dependent types allow types to “depend” on values — in other words, types are a *first class* language construct and can be manipulated like any other value. The standard example is the type of lists of a given length [#fn1]_, ``Vect n a``, where ``a`` is the element type and ``n`` is the length of the list and can be an arbitrary term."
+msgstr ""
+
+#: ../source/tutorial/introduction.rst:27
+#: f12d1b08fc1346d481e3017f8b667871
+msgid "When types can contain values, and where those values describe properties, for example the length of a list, the type of a function can begin to describe its own properties. Take for example the concatenation of two lists. This operation has the property that the resulting list's length is the sum of the lengths of the two input lists. We can therefore give the following type to the ``app`` function, which concatenates vectors:"
+msgstr ""
+
+#: ../source/tutorial/introduction.rst:39
+#: 058ded21ce9240e7b7955741e44054e6
+msgid "This tutorial introduces Idris, a general purpose functional programming language with dependent types. The goal of the Idris project is to build a dependently typed language suitable for verifiable general purpose programming. To this end, Idris is a compiled language which aims to generate efficient executable code. It also has a lightweight foreign function interface which allows easy interaction with external libraries."
+msgstr ""
+
+#: ../source/tutorial/introduction.rst:48
+#: bcb31a1ff6cd459f9c9b80f55fc05a6b
+msgid "Intended Audience"
+msgstr ""
+
+#: ../source/tutorial/introduction.rst:50
+#: 85c663beb2c545739f1273dc1e813214
+msgid "This tutorial is intended as a brief introduction to the language, and is aimed at readers already familiar with a functional language such as `Haskell <https://www.haskell.org>`_ or `OCaml <https://ocaml.org>`_. In particular, a certain amount of familiarity with Haskell syntax is assumed, although most concepts will at least be explained briefly. The reader is also assumed to have some interest in using dependent types for writing and verifying software."
+msgstr ""
+
+#: ../source/tutorial/introduction.rst:58
+#: 55e9809779294a7cb93f8dfce660c2dd
+msgid "For a more in-depth introduction to Idris, which proceeds at a much slower pace, covering interactive program development, with many more examples, see `Type-Driven Development with Idris <https://www.manning.com/books/type-driven-development-with-idris>`_ by Edwin Brady, available from `Manning <https://www.manning.com>`_."
+msgstr ""
+
+#: ../source/tutorial/introduction.rst:64
+#: ec19fcabc04a42388989b4ddd3331c4f
+msgid "Example Code"
+msgstr ""
+
+#: ../source/tutorial/introduction.rst:66
+#: dfd96fbc4bad4f089298e20f7e62b5a5
+msgid "This tutorial includes some example code, which has been tested against Idris 2. These files are available with the Idris 2 distribution, so that you can try them out easily. They can be found under ``samples``. It is, however, strongly recommended that you type them in yourself, rather than simply loading and reading them."
+msgstr ""
+
+#: ../source/tutorial/introduction.rst:73
+#: 8fb558743f2942b8abe0dbcdb36640ee
+msgid "Footnotes"
+msgstr ""
+
+#: ../source/tutorial/introduction.rst:74
+#: 093a1d7966994bf39b3090af73860e65
+msgid "Typically, and perhaps confusingly, referred to in the dependently typed programming literature as \"vectors\"."
+msgstr ""

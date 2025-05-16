@@ -1,0 +1,62 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2023, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-16 09:52+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../source/reference/documenting.rst:5
+#: c321833fa8d943bcb70f49f59214c1fb
+msgid "Documenting Idris Code"
+msgstr ""
+
+#: ../source/reference/documenting.rst:7
+#: 4c12059113d24601bcd27dd57869baa6
+msgid "Idris documentation comes in two major forms: comments, which exist for a reader’s edification and are ignored by the compiler, and inline API documentation, which the compiler parses and stores for future reference. To consult the documentation for a declaration ``f``, write ``:doc f`` at the REPL or use the appropriate command in your editor (``C-c C-d`` in Emacs, ``<LocalLeader>h`` in Vim)."
+msgstr ""
+
+#: ../source/reference/documenting.rst:15
+#: 45cbc52cf2414fe9a36e7b4a5038cc23
+msgid "Comments"
+msgstr ""
+
+#: ../source/reference/documenting.rst:17
+#: 83b755613a574d75bc47579de5095142
+msgid "Use comments to explain why code is written the way that it is. Idris’s comment syntax is the same as that of Haskell: lines beginning with ``--`` are comments, and regions bracketed by ``{-`` and ``-}`` are comments even if they extend across multiple lines. These can be used to comment out lines of code or provide simple documentation for the readers of Idris code."
+msgstr ""
+
+#: ../source/reference/documenting.rst:25
+#: 00f701309ae9407c85e5260153f0d21a
+msgid "Inline Documentation"
+msgstr ""
+
+#: ../source/reference/documenting.rst:27
+#: 0092eaa9ba7c456d8f4cac3a104b944f
+msgid "Idris also supports a comprehensive and rich inline syntax for Idris code to be generated. This syntax also allows for named parameters and variables within type signatures to be individually annotated using a syntax similar to Javadoc parameter annotations."
+msgstr ""
+
+#: ../source/reference/documenting.rst:32
+#: 903fda1beb8448a097bc43515afdee67
+msgid "Documentation always comes before the declaration being documented. Inline documentation applies to either top-level declarations or to constructors. Documentation for specific arguments to constructors, type constructors, or functions can be associated with these arguments using their names."
+msgstr ""
+
+#: ../source/reference/documenting.rst:38
+#: e3c6520d99c74a1d85e45630dba6a709
+msgid "The inline documentation for a declaration is an unbroken string of lines, each of which begins with ``|||`` (three pipe symbols). The first paragraph of the documentation is taken to be an overview, and in some contexts, only this overview will be shown. After the documentation for the declaration as a whole, it is possible to associate documentation with specific named parameters, which can either be explicitly name or the results of converting free variables to implicit parameters.  Annotations are the same as with Javadoc annotations, that is for the named parameter ``(n : T)``, the corresponding annotation is ``||| @ n Some description`` that is placed before the declaration."
+msgstr ""
+
+#: ../source/reference/documenting.rst:50
+#: c2ffa44c8d264681851ea04b9898be99
+msgid "Documentation is written in Markdown, though not all contexts will display all possible formatting (for example, images are not displayed when viewing documentation in the REPL, and only some terminals render italics correctly). A comprehensive set of examples is given below."
+msgstr ""

@@ -1,0 +1,112 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2023, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-16 09:52+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../source/backends/refc.rst:3
+#: b96f77d4d8eb4578b357168907388479
+msgid "C with Reference Counting"
+msgstr ""
+
+#: ../source/backends/refc.rst:5
+#: 878caca51788441fa4e47b08b6144f8d
+msgid "There is an experimental code generator which compiles to an executable via C, using a reference counting garbage collector. This is intended as a lightweight (i.e. minimal dependencies) code generator that can be ported to multiple platforms, especially those with memory constraints."
+msgstr ""
+
+#: ../source/backends/refc.rst:10
+#: 83e01a2124f949c897086edc6c207242
+msgid "Performance is not as good as the Scheme based code generators, partly because the reference counting has not yet had any optimisation, and partly because of the limitations of C. However, the main goal is portability: the generated code should run on any platform that supports a C compiler."
+msgstr ""
+
+#: ../source/backends/refc.rst:15
+#: 486419c55b5b43088854cf867f9930dd
+msgid "This code generator can be accessed via the REPL command:"
+msgstr ""
+
+#: ../source/backends/refc.rst:21
+#: f72f1cad471f4e729af0ce2ed08091b9
+msgid "Alternatively, you can set it via the ``IDRIS2_CG`` environment variable:"
+msgstr ""
+
+#: ../source/backends/refc.rst:27
+#: 33c7000e2a7948f893a47592bf932a13
+msgid "The C compiler it invokes is determined by either the ``IDRIS2_CC`` or ``CC`` environment variables. If neither is set, it uses ``cc``."
+msgstr ""
+
+#: ../source/backends/refc.rst:30
+#: d1197778e54f49bfb6dc69d9bc29fe0b
+msgid "This code generator does not yet support `:exec`, just `:c`."
+msgstr ""
+
+#: ../source/backends/refc.rst:32
+#: 92e8bcd314f846c89d96085f988c27bd
+msgid "Also note that, if you link with any dynamic libraries for interfacing with C, you will need to arrange for them to be accessible via ``LD_LIBRARY_PATH`` when running the executable. The default Idris 2 support libraries are statically linked."
+msgstr ""
+
+#: ../source/backends/refc.rst:38
+#: ed6890401e7b44b1bc9c36890e317a8f
+msgid "Extending RefC"
+msgstr ""
+
+#: ../source/backends/refc.rst:40
+#: 874cfe967cd9455d96a341ff948d1cfb
+msgid "RefC can be extended to produce a new backend for languages that support C foreign functions. For example, a `Python backend for Idris <https://github.com/madman-bob/idris2-python>`_."
+msgstr ""
+
+#: ../source/backends/refc.rst:44
+#: e526537ec79a405fa983e519cc3150b2
+msgid "In your backend, use the ``Compiler.RefC`` functions ``generateCSourceFile``, ``compileCObjectFile {asLibrary = True}``, and ``compileCFile {asShared = True}`` to generate a ``.so`` shared object file."
+msgstr ""
+
+#: ../source/backends/refc.rst:54
+#: f379af922eb84b29807a09efbbdc2453
+msgid "To run a compiled Idris program, call the ``int main(int argc, char *argv[])`` function in the compiled ``.so`` file, with the arguments you wish to pass to the running program."
+msgstr ""
+
+#: ../source/backends/refc.rst:58
+#: f80bc55996314bd7b5ef69cf83448bed
+msgid "For example, in Python:"
+msgstr ""
+
+#: ../source/backends/refc.rst:72
+#: f667f7d1b16944de922e4efdc2d23074
+msgid "Extending RefC FFIs"
+msgstr ""
+
+#: ../source/backends/refc.rst:74
+#: 3207ff93f3294b9b8bc478c2e7ba8ca4
+msgid "To make the generated C code recognize additional FFI languages beyond the standard RefC FFIs, pass the ``additionalFFILangs`` option to ``generateCSourceFile``, with a list of the language identifiers your backend recognizes."
+msgstr ""
+
+#: ../source/backends/refc.rst:83
+#: 4cf2b6a5f5d8474fb6cb175bf67a1342
+msgid "This will generate stub FFI function pointers in the generated C file, which your backend should set to the appropriate C functions before ``main`` is called."
+msgstr ""
+
+#: ../source/backends/refc.rst:87
+#: 0d22910fa4424087981c7f0e814c17aa
+msgid "Each ``%foreign \"lang: foreignFuncName, opts\"`` definition for a function will produce a stub, of the appropriate function pointer type. This stub will be called ``cName $ NS (mkNamespace lang) funcName``, where ``funcName`` is the fully qualified Idris name of that function."
+msgstr ""
+
+#: ../source/backends/refc.rst:92
+#: 08d06104205f48ae80c517b4f5124844
+msgid "So the ``%foreign`` function"
+msgstr ""
+
+#: ../source/backends/refc.rst:99
+#: 6248586fc9d04a109ce419d512210ebe
+msgid "produces a stub ``python_Main_abs``, which can be backpatched in Python by:"
+msgstr ""

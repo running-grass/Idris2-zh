@@ -1,0 +1,97 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2023, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-16 09:52+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../source/backends/index.rst:5
+#: 9c143027051c4ba0b1cd29b7faf5ef47
+msgid "Compiling to Executables"
+msgstr ""
+
+#: ../source/backends/index.rst:9
+#: cbbdc0c69c104ebb98942895dfcbb5d8
+msgid "The documentation for Idris has been published under the Creative Commons CC0 License. As such to the extent possible under law, *The Idris Community* has waived all copyright and related or neighboring rights to Documentation for Idris."
+msgstr ""
+
+#: ../source/backends/index.rst:14
+#: 340cc16505474ee991c35c383d1b79b0
+msgid "More information concerning the CC0 can be found online at: http://creativecommons.org/publicdomain/zero/1.0/"
+msgstr ""
+
+#: ../source/backends/index.rst:16
+#: 0024aad2f5424d44b510e9b8a263596f
+msgid "Idris 2 (the language) is designed to be independent of any specific code generator. Still, since the point of writing a program is to be able to run it, it's important to know how to do so! By default, Idris compiles to executables via `Chez Scheme <https://www.scheme.com/>`_."
+msgstr ""
+
+#: ../source/backends/index.rst:21
+#: 64f3d6eaaf844e7ea4b5e30efb951181
+msgid "You can compile to an executable as follows, at the REPL:"
+msgstr ""
+
+#: ../source/backends/index.rst:27
+#: 19da836d9a4544cba34e852784d936ec
+msgid "...where ``execname`` is the name of the executable file to generate, and ``expr`` is the Idris expression which will be executed. ``expr`` must have type ``IO ()``. This will result in an executable file ``execname``, in a directory ``build/exec``, relative to the current working directory."
+msgstr ""
+
+#: ../source/backends/index.rst:32
+#: 33b4ed0d946f4a748e939eab6ac1f11a
+msgid "You can also execute expressions directly:"
+msgstr ""
+
+#: ../source/backends/index.rst:38
+#: b1e65932b45c432baace5997dce8fa61
+msgid "Again, ``expr`` must have type ``IO ()``."
+msgstr ""
+
+#: ../source/backends/index.rst:40
+#: 764c0c3976154e53a8d88341ca83c790
+msgid "Finally, you can compile to an executable from the command line by adding the ``-o <output file>`` option:"
+msgstr ""
+
+#: ../source/backends/index.rst:47
+#: 25b2024ca7b94cdcbdee8568fa9d258e
+msgid "This will compile the expression ``Main.main``, generating an executable ``hello`` (with an extension depending on the code generator) in the ``build/exec`` directory."
+msgstr ""
+
+#: ../source/backends/index.rst:51
+#: 0c77b5358b07495e964a6c02f2b9443f
+msgid "By default, Idris 2 is a whole program compiler - that is, it finds all the necessary function definitions and compiles them only when you build an executable. This gives plenty of optimisation opportunities, but can also be slow for rebuilding. However, if the backend supports it, you can build modules and executables *incrementally*:"
+msgstr ""
+
+#: ../source/backends/index.rst:62
+#: 3bc6a6dfcfc841edbf461e62c3150fba
+msgid "If the backend supports it, you can generate profiling data by setting the ``profile`` flag, either by starting Idris with ``--profile``, or running ``:set profile`` at the REPL. The profile data generated will depend on the back end you are using. Currently, the Chez and Racket back ends support generating profile data."
+msgstr ""
+
+#: ../source/backends/index.rst:68
+#: 24c7845b73a9460f818f60a3327efe0b
+msgid "There are five code generators provided in Idris 2, and there is a system for plugging in new code generators for a variety of targets. The default is to compile via Chez Scheme, with an alternative via Racket or Gambit. You can set the code generator at the REPL with the `:set codegen` command, or via the `IDRIS2_CG` environment variable."
+msgstr ""
+
+#: ../source/backends/index.rst:85
+#: 385e423f8d4c4e07853f7fcc1a5d2255
+msgid "There are also external code generators that aren't part of the main Idris 2 repository and can be found on Idris 2 wiki:"
+msgstr ""
+
+#: ../source/backends/index.rst:88
+#: ab436d7c6ad245b49d916d82e444e10d
+msgid "`External backends <https://github.com/idris-lang/Idris2/wiki/External-backends>`_"
+msgstr ""
+
+#: ../source/backends/index.rst:90
+#: 82a3334ad43d419f9879a343a7b7ab76
+msgid "There is work in progress support for generating libraries for other languages from idris2 code."
+msgstr ""

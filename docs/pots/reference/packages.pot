@@ -1,0 +1,322 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2023, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-16 09:52+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../source/reference/packages.rst:5
+#: 5bb98f8f433b43bfa50dd02521052daa
+msgid "Packages"
+msgstr ""
+
+#: ../source/reference/packages.rst:7
+#: 81338602f342431f8767b5c287a7dabf
+msgid "Idris includes a system for building packages from a package description file.  These files can be used with the Idris compiler to manage the development process of your Idris programs and packages."
+msgstr ""
+
+#: ../source/reference/packages.rst:12
+#: 6ecd01bbab7d4b71b2bcb6a1693865d8
+msgid "Package Descriptions"
+msgstr ""
+
+#: ../source/reference/packages.rst:14
+#: ef46bdf33b9542a9ab7fc88109848150
+msgid "A package description includes the following:"
+msgstr ""
+
+#: ../source/reference/packages.rst:16
+#: 8c929551f67a4d2baefe8492f9d9d473
+msgid "A header, consisting of the keyword ``package`` followed by the package name. Package names can be any valid Idris identifier. The iPKG format also takes a quoted version that accepts any valid filename."
+msgstr ""
+
+#: ../source/reference/packages.rst:19
+#: 45ff1250844846c2b22855b7c6f8085b
+msgid "Fields describing package contents, ``<field> = <value>``"
+msgstr ""
+
+#: ../source/reference/packages.rst:21
+#: bf71eba47eb7491098c5616b26d78131
+msgid "Packages can describe libraries, executables, or both, and should include a version number. For library packages, one field must be the modules field, where the value is a comma separated list of modules to be installed. For example, a library ``test`` which has two modules ``Foo.idr`` and ``Bar.idr`` as source files would be written as follows::"
+msgstr ""
+
+#: ../source/reference/packages.rst:32
+#: c6134a3eeed9418585a86ee6d1e14177
+msgid "When installed, this will be in a directory ``test-0.1``. If the version number is missing, it will default to ``0``."
+msgstr ""
+
+#: ../source/reference/packages.rst:35
+#: c64816ca2c184596a48a6d16e47d4a22
+msgid "Other examples of package files can be found in the ``libs`` directory of the main Idris repository, and in `third-party libraries <https://github.com/idris-lang/Idris-dev/wiki/Libraries>`_."
+msgstr ""
+
+#: ../source/reference/packages.rst:39
+#: bf26c6821dec43debd83c76cfb730d83
+msgid "Metadata"
+msgstr ""
+
+#: ../source/reference/packages.rst:41
+#: b9e7393b48274f3ebb30ccddd5db0514
+msgid "The `iPKG` format supports additional metadata associated with the package. The added fields are:"
+msgstr ""
+
+#: ../source/reference/packages.rst:44
+#: 2ac1a71ddd584eebbaf42d9a45a7aeab
+msgid "``brief = \"<text>\"``, a string literal containing a brief description of the package."
+msgstr ""
+
+#: ../source/reference/packages.rst:47
+#: a6206c2e3ca44038aac1a03990f8994a
+msgid "``version = <version number>``, a semantic version number, which must be in the form of integers separated by dots (e.g. ``1.0.0``, ``0.3.0``, ``3.1.4`` etc)"
+msgstr ""
+
+#: ../source/reference/packages.rst:50
+#: 6ffdf717f49d40fe84819d7a6356a282
+msgid "``langversion <version constraints>``, see ``depends`` below for a list of allowable constraints. For example, ``langversion >= 0.5.1 && < 1.0.0``"
+msgstr ""
+
+#: ../source/reference/packages.rst:53
+#: e17cd84263ae4e18b60d94ded2ba18d5
+msgid "``readme = \"<file>\"``, location of the README file."
+msgstr ""
+
+#: ../source/reference/packages.rst:55
+#: d78bbb1f5117421697a39a42d5ea90f4
+msgid "``license = \"<text>\"``, a string description of the licensing information."
+msgstr ""
+
+#: ../source/reference/packages.rst:58
+#: 534d408b86de474099db3e61b5c62301
+msgid "``authors = \"<text>\"``, the author information."
+msgstr ""
+
+#: ../source/reference/packages.rst:60
+#: a8124f229c4640c982e774320a9f2542
+msgid "``maintainers = \"<text>\"``, Maintainer information."
+msgstr ""
+
+#: ../source/reference/packages.rst:62
+#: e8bbe95f6c0b4f9eb38df8b0fbed7588
+msgid "``homepage = \"<url>\"``, the website associated with the package."
+msgstr ""
+
+#: ../source/reference/packages.rst:64
+#: 272c5761eb4342c3b63894b928fd00ea
+msgid "``sourceloc = \"<url>\"``, the location of the DVCS where the source can be found."
+msgstr ""
+
+#: ../source/reference/packages.rst:67
+#: edf6c7e316f84dabb024d4451343d5d1
+msgid "``bugtracker = \"<url>\"``, the location of the project's bug tracker."
+msgstr ""
+
+#: ../source/reference/packages.rst:70
+#: 58af5fdfd3074af2a9026b312fac13ba
+msgid "Directories"
+msgstr ""
+
+#: ../source/reference/packages.rst:72
+#: 6b88123f0c40431eba372d767796cca4
+msgid "``sourcedir = \"<dir>\"``, the directory to look for Idris source files."
+msgstr ""
+
+#: ../source/reference/packages.rst:74
+#: b1b18983971748988afd2bc9951d4769
+msgid "``builddir = \"<dir>\"``, the directory to put the checked modules and the artefacts from the code generator."
+msgstr ""
+
+#: ../source/reference/packages.rst:77
+#: 63e5f8d2585a4e1f98ebbf20eadbf2d7
+msgid "``outputdir = \"<dir>\"``, the directory where the code generator should output the executable."
+msgstr ""
+
+#: ../source/reference/packages.rst:81
+#: 91c0717d12ee4e2bb777441b5428861d
+msgid "Common Fields"
+msgstr ""
+
+#: ../source/reference/packages.rst:83
+#: d9665c9f240e4c54b0048c8057d7e5a3
+msgid "Other common fields which may be present in an ``ipkg`` file are:"
+msgstr ""
+
+#: ../source/reference/packages.rst:85
+#: 7654e830e6ae4a8080cef614fcdff1b0
+msgid "``executable = <output>``, which takes the name of the executable file to generate. Executable names can be any valid Idris identifier. the iPKG format also takes a quoted version that accepts any valid filename."
+msgstr ""
+
+#: ../source/reference/packages.rst:90
+#: 68f6f8394f3f424db134cfe8de6cec0c
+msgid "Executables are placed in ``build/exec`` by default. The location can be changed by specifying the ``outputdir`` field."
+msgstr ""
+
+#: ../source/reference/packages.rst:93
+#: b99400ab62ba4c5d90c69cc4f75fc0cf
+msgid "``main = <module>``, which takes the name of the main module, and must be present if the ``executable`` field is present."
+msgstr ""
+
+#: ../source/reference/packages.rst:96
+#: 7ed637fe03e04fa290b5eaa4ea8d7416
+msgid "``opts = \"<idris options>\"``, which allows options to be passed to Idris."
+msgstr ""
+
+#: ../source/reference/packages.rst:99
+#: 88386970e9544ae5b38de713a87eb43d
+msgid "``depends = <pkg description> (',' <pkg description>)+``, a comma separated list of package names that the Idris package requires. The ``pkg_description`` is the package name, followed by an optional list of version constraints. Version constraints are separated by ``&&`` and can use operators ``<``, ``<=``, ``>``, ``>=``, ``==``. For example, the following are valid package descriptions:"
+msgstr ""
+
+#: ../source/reference/packages.rst:106
+#: 4975fa7be9214a05849b3bc95fd22650
+msgid "``contrib`` (no constraints)"
+msgstr ""
+
+#: ../source/reference/packages.rst:108
+#: 93b57d79510f4f55b12bd272baa54b12
+msgid "``contrib == 0.3.0`` (an exact version constraint)"
+msgstr ""
+
+#: ../source/reference/packages.rst:110
+#: 95577b9a96b747528599731eed3e538f
+msgid "``contrib >= 0.3.0`` (an inclusive lower bound)"
+msgstr ""
+
+#: ../source/reference/packages.rst:112
+#: b74f336fd08148d49440686d7e13b720
+msgid "``contrib >= 0.3.0 && < 0.4`` (an inclusive lower bound, and exclusive upper bound)"
+msgstr ""
+
+#: ../source/reference/packages.rst:117
+#: cb138ee36ed94c24bb5c7029a98b8718
+msgid "Comments"
+msgstr ""
+
+#: ../source/reference/packages.rst:119
+#: 445d3c384b24459097e470d436001063
+msgid "Package files support comments using the standard Idris singleline ``--`` and multiline ``{- -}`` format."
+msgstr ""
+
+#: ../source/reference/packages.rst:122
+#: dfc257a56670450b936f0df92790781c
+msgid "Using Package files"
+msgstr ""
+
+#: ../source/reference/packages.rst:124
+#: 4b8d5200182e4a32b50ab4d4005b9e09
+msgid "Given an Idris package file ``test.ipkg`` it can be used with the Idris compiler as follows:"
+msgstr ""
+
+#: ../source/reference/packages.rst:126
+#: fe7c9ef994c0472f89e1762fc9796928
+msgid "``idris2 --build test.ipkg`` will build all modules in the package"
+msgstr ""
+
+#: ../source/reference/packages.rst:128
+#: e563e23fa865488fa872e12810e8cf0e
+msgid "``idris2 --install test.ipkg`` will install the package to the global Idris library directory (that is ``$IDRIS2_PREFIX/idris-<version>/``), making the modules in its ``modules`` field accessible by other Idris libraries and programs. Note that this doesn't install any executables, just library modules."
+msgstr ""
+
+#: ../source/reference/packages.rst:134
+#: 44fc83d918ee4114be836988ce33fbe4
+msgid "``idris2 --clean test.ipkg`` will clean the intermediate build files."
+msgstr ""
+
+#: ../source/reference/packages.rst:136
+#: 96bbab1014874d1181ed8e13e55f02bd
+msgid "``idris2 --mkdoc test.ipkg`` will generate HTML documentation for the package, output to ``build/docs``"
+msgstr ""
+
+#: ../source/reference/packages.rst:139
+#: 440aa3462d1c4b2a909f83319e1f68ca
+msgid "Once the test package has been installed, the command line option ``--package test`` makes it accessible (abbreviated to ``-p test``). For example::"
+msgstr ""
+
+#: ../source/reference/packages.rst:146
+#: 3d3e19f6928146b280f82faf55b55ab8
+msgid "Where does Idris look for packages?"
+msgstr ""
+
+#: ../source/reference/packages.rst:148
+#: c972c20a35dc43bdbc0c7a566810c524
+msgid "Compiled packages are directories with compiled TTC files (see :ref:`build-artefacts` section). Directory structure of the source `*.idr` files is preserved for TTC files."
+msgstr ""
+
+#: ../source/reference/packages.rst:151
+#: ca0f67dea4934250bbc2b5e659f5b69c
+msgid "Compiled packages can be installed globally (under ``$IDRIS2_PREFIX/idris-<version>/`` as described above) or locally (under a ``depends`` subdirectory in the top level working directory of a project). Packages specified using ``-p pkgname`` or with the ``depends`` field of a package will then be located as follows:"
+msgstr ""
+
+#: ../source/reference/packages.rst:157
+#: 44ea946ca945405ebc161bc4cb17b9a6
+msgid "First, Idris looks in ``depends/pkgname-<version>``, for a package which satisfies the version constraint."
+msgstr ""
+
+#: ../source/reference/packages.rst:159
+#: 3cc532bd66c149598e8324df8df76b97
+msgid "If no package is found locally, Idris looks in ``$IDRIS2_PREFIX/idris-<version>/pkgname-<version>``."
+msgstr ""
+
+#: ../source/reference/packages.rst:162
+#: 04309ca052ee49a886a2bb2236b3968d
+msgid "In each case, if more than one version satisfies the constraint, it will choose the one with the highest version number. If package versions are omitted in directory names, they are treated as the version ``0``."
+msgstr ""
+
+#: ../source/reference/packages.rst:167
+#: 8fe9acc5ced7446d9560e5c2dd3b4f3b
+msgid "Support file install directories"
+msgstr ""
+
+#: ../source/reference/packages.rst:169
+#: e1637753c6b7493fa33fd924bc01ca25
+msgid "As noted above, packages can be installed globally or locally to be used as dependencies in other projects. In either case, there are two directories within a package's install root that Idris 2 treats specially when the package is depended upon by some other Idris package."
+msgstr ""
+
+#: ../source/reference/packages.rst:173
+#: c1b16c17b5e449a392a54d0394d666ce
+msgid "Those directories are ``lib`` and ``data``."
+msgstr ""
+
+#: ../source/reference/packages.rst:175
+#: 23763ec5ce3247129d3c9181aa375f80
+msgid "Below we will refer to these directories as ``pkgname-<version>/lib`` and ``pkgname-<version>/data`` and in all cases these folders may be located locally in the depending project within a ``depends`` directory or globally (you can ask Idris 2 for the global install directory with ``idris2 --libdir``)."
+msgstr ""
+
+#: ../source/reference/packages.rst:180
+#: 79dffb0053fe48b0ba26224562fb3e28
+msgid "Library files"
+msgstr ""
+
+#: ../source/reference/packages.rst:182
+#: 0cf39465708e47f1a8206662435fb32d
+msgid "Idris will look for library files at ``pkgname-<version>/lib``. Library files are those that will need to be around whenever an executable that depends on your library is run. That is, these files are not built into the executable, but rather linked against or otherwise referred to during building and then loaded in at runtime. A common example of this type of file is a shared object file (these commonly have the extension ``.so`` on Linux systems and ``.dylib`` on Mac OS systems)."
+msgstr ""
+
+#: ../source/reference/packages.rst:189
+#: 27d1b5cc08de4fb3a1703c04568994a1
+msgid "When building with the Scheme or Refc backends, you may want your package to use Idris 2's ``C`` FFI and rely on a ``C`` support file. The FFI interface is documented elsewhere so we won't go into that here. Once you do have a support file written in ``C``, you can build an ``so`` file using your package's post-build hook. Then, install (copy) that ``so`` file into the ``lib`` subfolder where Idris has installed your package in your post-install hook. When an executable depends on your package, Idris will copy shared object files from the ``lib`` directory into the build folder for the executable."
+msgstr ""
+
+#: ../source/reference/packages.rst:197
+#: f61b2038a2f74b0b9f159b3e9b2f5cb1
+msgid "Data files"
+msgstr ""
+
+#: ../source/reference/packages.rst:199
+#: 99ac8ac4767c48a99f29364684ae9c92
+msgid "Idris will look for data files at ``pkgname-<version>/data``. Data files are a bit open-ended in how they are used. One important use-case is adding support files for the ``Javascript`` FFI. ``Javascript`` support files are different from ``C`` support files in that they get built *into* the executable rather than installed alongside it. The FFI interface is documented elsewhere, but we will briefly touch on the subject to describe the end-to-end packaging of JS support files using the ``data`` directory."
+msgstr ""
+
+#: ../source/reference/packages.rst:206
+#: e42f61a948b649b396ece37e0d9a3c19
+msgid "When building with the NodeJS backend, you can refer to functions you've defined in external support JS files by using the FFI pattern ``node:support:my_func,my_lib``. This pattern will prompt idris to look in any ``data`` directories it knows about for a ``js`` folder and a file named ``my_lib.js`` within it. So, you can specify a post-install hook for your package that copies any needed support JS files into the ``pkgname-<version>/data/js`` folder to enable Idris to later build that support file into any JS executables that depend on your package."
+msgstr ""

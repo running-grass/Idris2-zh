@@ -1,0 +1,42 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2023, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-16 09:52+0800\n"
+"PO-Revision-Date: 2022-09-03 13:48+0000\n"
+"Last-Translator: grass <hi@grass.show>\n"
+"Language-Team: Chinese (Simplified) <>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../source/proofs/index.rst:5 c43fb7c61f76422a966c8ec7e14771f5
+msgid "Theorem Proving"
+msgstr "定理证明"
+
+#: ../source/proofs/index.rst:7 64c462a241b44949b209b7150f4abbce
+msgid "A tutorial on theorem proving in Idris 2."
+msgstr "Idris 2 中的定理证明教程。"
+
+#: ../source/proofs/index.rst:11 42d130f040674c12a2dd1c4114a6633b
+msgid ""
+"The documentation for Idris has been published under the Creative Commons"
+" CC0 License. As such to the extent possible under law, *The Idris "
+"Community* has waived all copyright and related or neighboring rights to "
+"Documentation for Idris."
+msgstr ""
+"Idris 的文档已在知识共享 CC0 许可下发布。因此，在法律允许的范围内，*Idris "
+"社区* 已经放弃了 Idris 文档的所有版权和相关或邻近的权利。"
+
+#: ../source/proofs/index.rst:16 065bafa8e4b3413ba40ec5eb3b8f22f7
+msgid ""
+"More information concerning the CC0 can be found online at: "
+"http://creativecommons.org/publicdomain/zero/1.0/"
+msgstr "关于CC0的更多信息，可以在网上找到：http://creativecommons.org/publicdomain/"
+"zero/1.0/"

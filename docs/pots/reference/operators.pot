@@ -1,0 +1,247 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2023, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-16 09:52+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../source/reference/operators.rst:5
+#: dd523fd0a16c4727a5ff44b287ce7f7d
+msgid "Operators"
+msgstr ""
+
+#: ../source/reference/operators.rst:7
+#: c256b837b4a94a7b9a104f7b2c3e656f
+msgid "Idris2 does not have syntax blocs (like in Idris1) or mixfix operators (like in Agda). Instead, it expands on the abilities of infix operators to enable library designers to write Domain Specific Languages (DSLs) while keeping error messages under control."
+msgstr ""
+
+#: ../source/reference/operators.rst:11
+#: eb8a61a2ac2843a086407de615899e45
+msgid "Because operators are not linked to function definitions, they are also part of the file namespacing and follow the same rules as other defintions."
+msgstr ""
+
+#: ../source/reference/operators.rst:15
+#: db24cb64abd747258e413214f06c5d00
+msgid "Operators can and will make some code less legible. Use with taste and caution. This document is meant to be mainly used by library authors and advanced users. If you are on the fence about using operators, err on the side of caution and avoid them."
+msgstr ""
+
+#: ../source/reference/operators.rst:21
+#: bdd3fe0e73f1431ca92a96cbc1a44885
+msgid "Basics"
+msgstr ""
+
+#: ../source/reference/operators.rst:23
+#: 88ff4bd32db74695b6fd2d1544789c47
+msgid "Before we jump into the fancy features, let us explain how operators work for most users."
+msgstr ""
+
+#: ../source/reference/operators.rst:26
+#: eea58d3fa91544edb0293f45ff008228
+msgid "When you see an expression"
+msgstr ""
+
+#: ../source/reference/operators.rst:33
+#: 9fd1289085bb4836b8dc22f5bb82d54d
+msgid "It means that there is a function ``(+)`` and a *fixity* declaration in scope. A fixity for this operator looks like this"
+msgstr ""
+
+#: ../source/reference/operators.rst:40
+#: a0f383cd77684885ab3d2a52bc15a719
+msgid "It starts with a fixity keyword, you have the choice to use either ``infixl``, ``infixr``, ``infix`` or ``prefix``."
+msgstr ""
+
+#: ../source/reference/operators.rst:43
+#: 8d2546f318a24eb5903cedd0376bf454
+msgid "``infixl`` means the operator is left-associative, so that successive applications of the operator will bracket to the left: ``n + m + 3 + x = (((n + m) + 3) + x)```. Similarly, ``infixr`` is right-associative, and ``infix`` is non-associative, so the brackets are mandatory. Here, we chose for ``+`` to be left-associative, hence ``infixl``."
+msgstr ""
+
+#: ../source/reference/operators.rst:48
+#: f09e000047ce4652b373e0d3bf696ec5
+msgid "The number after the fixity indicate the *precedence level* of the operator, that is, if it should be bracketed before, or after, other operators used in the same expression. For example, we want ``*`` to *take precedence* over ``+`` we write:"
+msgstr ""
+
+#: ../source/reference/operators.rst:56
+#: c72d2023badf41fb9857f7e4ce409a3f
+msgid "This way, the expression ``n + m * x`` is correctly interpreted as ``n + (m * x)``."
+msgstr ""
+
+#: ../source/reference/operators.rst:58
+#: 508e722005904f7089c5083966b7183c
+msgid "Fixity declarations are optional and change how a file is parsed, but you can use any function defined with operator symbols with parenthesis around it:"
+msgstr ""
+
+#: ../source/reference/operators.rst:67
+#: 63001d41f0664345bf55d561f8b11ef4
+msgid "Because fixities are separated from the function definitions, a single operator can have 0 or multiple fixity definitions. In the next section, we explain how to deal with multiple fixity definitions."
+msgstr ""
+
+#: ../source/reference/operators.rst:72
+#: bbdd62e110354f50a661d45ce381cf0c
+msgid "Fixity & Precedence Namespacing"
+msgstr ""
+
+#: ../source/reference/operators.rst:73
+#: ee371733962c4f11a60bd1df4afbe0f7
+msgid "Sometimes it could be that you need to import two libraries that export conflicting fixities. If that is the case, the compiler will emit a warning and pick one of the fixities to parse the file. If that happens, you should hide the fixity definitions that you do not wish to use. For this, use the ``%hide`` directive, just like you would to hide a function definition, but use the fixity and the operator to hide at the end. Let's work through an example:"
+msgstr ""
+
+#: ../source/reference/operators.rst:101
+#: 6962a9e808f34f70b6a7e218966ded8b
+msgid "This program will raise a warning on the last line of module ``C`` because there are two conflicting fixities in scope. Should we parse the expression as ``(1 - 3) - 10`` or as ``1 - (3 - 10)``? In those cases, you can hide the extra fixity you do not wish to use by using ``%hide``:"
+msgstr ""
+
+#: ../source/reference/operators.rst:118
+#: ca82b00c76c242e69589adc3524ff1d4
+msgid "In which case the program will be parsed as ``1 - (3 - 10)`` and not emit any errors."
+msgstr ""
+
+#: ../source/reference/operators.rst:122
+#: 2607d68e8111407db5013e1edb623161
+msgid "Export modifiers on fixities"
+msgstr ""
+
+#: ../source/reference/operators.rst:124
+#: 579c5cce0ce445a486463a99464838a5
+msgid "Just like other top-level declarations in the language, fixities can be exported with the ``export`` access modifier, or kept private with ``private``."
+msgstr ""
+
+#: ../source/reference/operators.rst:127
+#: 9a41232c35e24c35b32949a228e375f2
+msgid "A ``private`` fixity will remain in scope for the rest of the file but will not be visible to users that import the module. Because fixities and operators are separate, this does not mean you cannot use the functions that have this operator name, it merely means that you cannot use it in infix position. But you can use it as a regular function application using brackets. Let us see what this looks like"
+msgstr ""
+
+#: ../source/reference/operators.rst:154
+#: 9b75a72c00a842c3b5a332e54f2d1e22
+msgid "In what follows, we have two examples of programs that benefit from declaring a fixity ``private`` rather than ``export``."
+msgstr ""
+
+#: ../source/reference/operators.rst:158
+#: bea4a9cced7a48b6a5b0e47a43b4c99f
+msgid "Private record fixity pattern"
+msgstr ""
+
+#: ../source/reference/operators.rst:160
+#: 4ed2511644b74b629823459ce25525c3
+msgid "Private fixity declarations are useful in conjuction with records. When you declare a record with operators as fields, it is helpful to write them in infix position. However, the compiler will also synthesize a projection function for the field that takes as first argument the a value of the record to project from. This makes using the operator as a binary infix operator impossible, since it now has 3 arguments."
+msgstr ""
+
+#: ../source/reference/operators.rst:184
+#: ee9f7bf170c043b9a2917bda007121ed
+msgid "What we really want to write is ``natRel x y = (<@>) x y`` but ``(<@>)`` now has type ``SomeRelation a -> a -> a -> Type``."
+msgstr ""
+
+#: ../source/reference/operators.rst:187
+#: 91817d8b924e4f6dbb7594d0b771856a
+msgid "The solution is to define a private field with a private fixity and a public one which relies on proof search to find the appropriate argument:"
+msgstr ""
+
+#: ../source/reference/operators.rst:211
+#: f71f6388e39344b0a7e2bdb88e5c12f4
+msgid "We define ``(<@>)`` as a projection function with an implicit parameter allowing it to be used as a binary operator once again."
+msgstr ""
+
+#: ../source/reference/operators.rst:215
+#: 56bf5c1c4cb34fa5b8113747ac4c2346
+msgid "Private Local definition"
+msgstr ""
+
+#: ../source/reference/operators.rst:217
+#: 0016f6e7bf704ea8aa1960dad4a068be
+msgid "Private fixity definitions are useful when redefining an operator fixity in a module. This happens when multiple DSLs are imported as the same time and you do not want to expose conflicting fixity declarations:"
+msgstr ""
+
+#: ../source/reference/operators.rst:236
+#: 9a5a3e323c084232ac4d65092fc2e028
+msgid "Here ``distrib1`` makes explicit use of the operator being defined as right-associative."
+msgstr ""
+
+#: ../source/reference/operators.rst:240
+#: 3bdd42b7ec404d399ab698aa11d5e70a
+msgid "Typebind Operators"
+msgstr ""
+
+#: ../source/reference/operators.rst:242
+#: aa9bc0eee8a34ffe8172cacbaf45eae6
+msgid "In dependently-typed programming, we have the ability define constructors which first argument is a type and the second is a type indexed over the first argument. A typical example of this is the dependent linear arrow:"
+msgstr ""
+
+#: ../source/reference/operators.rst:253
+#: 502295b65a4c4398aa40c0dabe40aba0
+msgid "However, when trying to use it in infix position, we have to use a lambda to populate the second argument:"
+msgstr ""
+
+#: ../source/reference/operators.rst:261
+#: 2ffbe40a163847909c818afc05207439
+msgid "What we really want to write, is something like the dependent arrow ``->`` but for linear types:"
+msgstr ""
+
+#: ../source/reference/operators.rst:269
+#: 549aff0adf3947afb33436c462be5e6d
+msgid "The above syntax is allowed if the operator is declared as ``typebind``. For this, simply add the ``typebind`` keyword in front of the fixity declaration."
+msgstr ""
+
+#: ../source/reference/operators.rst:276
+#: 40deba4bab2444a0821803eb3c9924ea
+msgid "``typebind`` is a modifier like ``export`` and both can be used at the same time."
+msgstr ""
+
+#: ../source/reference/operators.rst:279
+#: dcd8081091464711a5ad3382cce344a6
+msgid "An operator defined as ``typebind`` cannot be used in regular position anymore, writing ``Nat =@ (\\x => Singleton x)`` will raise an error."
+msgstr ""
+
+#: ../source/reference/operators.rst:282
+#: fe42d60340f547929b8adf532bc41fba
+msgid "This new syntax is purely syntax sugar and converts any instance of ``(name : type) op expr`` into ``type op (\\name : type => expr)``"
+msgstr ""
+
+#: ../source/reference/operators.rst:285
+#: b82f65e423a54024a6e6e743bc5e205f
+msgid "Because of its left-to-right binding structure, typebind operators can only ever be ``infixr`` with precedence 0."
+msgstr ""
+
+#: ../source/reference/operators.rst:290
+#: 178010bb65aa42d5a0c5a284455a1ff8
+msgid "Autobind Operators"
+msgstr ""
+
+#: ../source/reference/operators.rst:292
+#: ca202b7e457a4033b7d79da79d162c90
+msgid "Typebind operators allow to bind a *type* on the left side of an operator, so that is can be used as the index of the second argument. But sometimes, there is no dependency between the first and second argument, yet we still want to use binding syntax. For those cases, we use ``autobind``."
+msgstr ""
+
+#: ../source/reference/operators.rst:297
+#: 5cf571f926d44b50b9e6946225d88f10
+msgid "An example of this is a DSL for a dependently-typed programming language where the constructor for ``Pi`` takes terms on the left and lambdas on the right:"
+msgstr ""
+
+#: ../source/reference/operators.rst:311
+#: 09e5a719cb8344bf92b32c136b0d6611
+msgid "We would like to use a custom operator to build values using ``VPi``, but its signature does not follow the pattern that ``typebind`` uses. Instead, we use ``autobind`` to tell the compiler that the type of the lambda must be inferred. For this we use ``:=`` instead of ``:``:"
+msgstr ""
+
+#: ../source/reference/operators.rst:331
+#: 4c3c37cc08cb4080a791ede4537fb664
+msgid "This new syntax is much closer to what the code is meant to look like for users accustomed to dependently-typed programming languages."
+msgstr ""
+
+#: ../source/reference/operators.rst:334
+#: 303df65bb9b34f3d8d8604338189e7ea
+msgid "More technically, any ``autobind`` operator is called with the syntax ``(name := expr) op body`` and is desugared into ``expr op (\\name : ? => body)``. If you want, or need, to give the type explicitly, you can still do so by using the full syntax: ``(name : type := expr) op body`` which is desugared into ``expr op (\\name : type => body)``."
+msgstr ""
+
+#: ../source/reference/operators.rst:340
+#: 2d65930179b64744a44d9ef63fc5fa54
+msgid "Like ``typebind``, ``autobind`` operators cannot be used as regular operators anymore , additionally an ``autobind`` operator cannot use the ``typebind`` syntax either."
+msgstr ""

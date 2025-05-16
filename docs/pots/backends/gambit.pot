@@ -1,0 +1,112 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2023, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-16 09:52+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../source/backends/gambit.rst:3
+#: 9d9cc91666f0467fab688dcaa733e3f9
+msgid "Gambit Scheme Code Generator"
+msgstr ""
+
+#: ../source/backends/gambit.rst:5
+#: e97d82a25d37487c9ed7ddb239c9dc16
+msgid "The Gambit Scheme code generator can be accessed via the REPL command:"
+msgstr ""
+
+#: ../source/backends/gambit.rst:11
+#: 9afd057de9e74f6387f8b96ce49b3f0d
+msgid "Alternatively, you can set it via the ``IDRIS2_CG`` environment variable:"
+msgstr ""
+
+#: ../source/backends/gambit.rst:17
+#: 938162d42f1c4ce494c8d05a985676ba
+msgid "To run Idris programs with this generator, you will need to install `Gambit Scheme <https://gambitscheme.org>`_. Gambit Scheme is free software, and available via most package managers."
+msgstr ""
+
+#: ../source/backends/gambit.rst:21
+#: 03dbd5e232a34a819ea13ced5b2c4d2b
+msgid "You can compile an expression ``expr`` of type ``IO ()`` to an executable as follows, at the REPL:"
+msgstr ""
+
+#: ../source/backends/gambit.rst:28
+#: 8be63a3fe1a6404894ef59537c02e95e
+msgid "...where ``execname`` is the name of the executable file. This will generate the following:"
+msgstr ""
+
+#: ../source/backends/gambit.rst:31
+#: 11117ef1c4e34f99932f35f92f6bca18
+msgid "An executable binary ``build/exec/execname`` of the program."
+msgstr ""
+
+#: ../source/backends/gambit.rst:32
+#: 46f9a782f6554a4aa3a1c786b0bb0643
+msgid "A Gambit Scheme source file ``build/exec/execname.scm``, from which the binary is generated."
+msgstr ""
+
+#: ../source/backends/gambit.rst:35
+#: 17874e77debe40cb939b2ab35e864c66
+msgid "You can also execute an expression directly:"
+msgstr ""
+
+#: ../source/backends/gambit.rst:41
+#: 955e12a1f6084ef8ab0f25413555ec2b
+msgid "Again, ``expr`` must have type ``IO ()``. This will generate a temporary Scheme file, and execute the Gambit interpreter on it."
+msgstr ""
+
+#: ../source/backends/gambit.rst:46
+#: f21672a4def44266914566718c1b2bf3
+msgid "Gambit Directives"
+msgstr ""
+
+#: ../source/backends/gambit.rst:48
+#: 0062dc0a8cc3477dbec0f4ce2dc3ec29
+msgid "``--directive extraRuntime=<path>``"
+msgstr ""
+
+#: ../source/backends/gambit.rst:50
+#: 91c6a8f06acf4f7f9798964682ced6e4
+msgid "Embed Scheme source from ``<path>`` directly into generated output. Can be specified more than once, in which case all given files will be included in the order specified."
+msgstr ""
+
+#: ../source/backends/gambit.rst:70
+#: c0c14b6282314faf9d72a0071ae59220
+msgid "``--directive C``"
+msgstr ""
+
+#: ../source/backends/gambit.rst:72
+#: 816c4e68d7274ef4a25842e64e6a7f2f
+msgid "Compile to C. With this directive, gambit will generate a `.c` file instead of an executable."
+msgstr ""
+
+#: ../source/backends/gambit.rst:79
+#: 5c79d179e8bc40a3ad8a4d410ad37add
+msgid "Gambit Environment Configurations"
+msgstr ""
+
+#: ../source/backends/gambit.rst:81
+#: ab82b355d679428cb6cfb86147711dae
+msgid "``GAMBIT_GSC_BACKEND``"
+msgstr ""
+
+#: ../source/backends/gambit.rst:83
+#: 75fefe6e9c2d4f02916d2a9e397e6860
+msgid "The ``GAMBIT_GSC_BACKEND`` variable controls which C compiler Gambit will use during compilation. E.g. to use clang:"
+msgstr ""
+
+#: ../source/backends/gambit.rst:89
+#: e0c8de9192394b7ba76c8eb5cd4a368e
+msgid "Gambit version 4.9.4 or newer supports the ``-cc`` option, which configures the compiler backend Gambit will use to build the binary."
+msgstr ""

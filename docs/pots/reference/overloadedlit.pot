@@ -1,0 +1,47 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2023, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-16 09:52+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../source/reference/overloadedlit.rst:2
+#: 1dbaba534d9d4be282b2331836154021
+msgid "Overloaded literals"
+msgstr ""
+
+#: ../source/reference/overloadedlit.rst:7
+#: fdecfb7cda754f1dba39c3fb5bcd02fe
+msgid "The compiler provides directives for literals overloading, respectively ``%stringLit <fun>`` and ``%integerLit <fun>`` for string and integer literals. During elaboration, the given function is applied to the corresponding literal. In the Prelude these functions are set to ``fromString`` and ``fromInteger``."
+msgstr ""
+
+#: ../source/reference/overloadedlit.rst:12
+#: 00eab91bc507498eb06b80c0a0e1deac
+msgid "The interface ``FromString ty`` provides the ``fromString : String -> ty`` function, while the ``Num ty`` interface provides the ``fromInteger : Integer -> ty`` function for all numerical types."
+msgstr ""
+
+#: ../source/reference/overloadedlit.rst:17
+#: 21fe54bd17e24688b6c524790a0d10d7
+msgid "Restricted overloads"
+msgstr ""
+
+#: ../source/reference/overloadedlit.rst:18
+#: 5bc1fb2c3e5d4e30a94dbc3a5399a238
+msgid "Although the overloading of literals can be achieved by implementing the interfaces described above, in principle only a function with the correct signature and name is enough to achieve the desired behaviour. This can be exploited to obtain more restrictive overloading such as converting literals to ``Fin n`` values, where integer literals greater or equal to n are not constructible values for the type. Additional implicit arguments can be added to the function signature, in particular auto implicit arguments for searching proofs. As an example, this is the implementation of ``fromInteger`` for ``Fin n``."
+msgstr ""
+
+#: ../source/reference/overloadedlit.rst:36
+#: d87ff75f318541bda936e40a10e49a4e
+msgid "The ``prf`` auto implicit is an automatically constructed proof (if possible) that the literal is suitable for the ``Fin n`` type. The restricted behaviour can be observed in the REPL, where the failure to construct a valid proof is caught during the type-checking phase and not at runtime:"
+msgstr ""

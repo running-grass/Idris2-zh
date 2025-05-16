@@ -1,0 +1,42 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2023, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-16 09:52+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../source/tutorial/index.rst:5
+#: 111059f2af08418d9e25ea154de7aeb5
+msgid "A Crash Course in Idris 2"
+msgstr ""
+
+#: ../source/tutorial/index.rst:7
+#: 3ac89cabcaab48de9f6a1fce5ebac0fd
+msgid "This is a crash course in Idris 2 (sort of a tutorial, but rather less gentle I'm afraid!). It provides a brief introduction to programming in the Idris Language. It covers the core language features, assuming some experience with an existing functional programming language such as Haskell or OCaml."
+msgstr ""
+
+#: ../source/tutorial/index.rst:13
+#: 0a966d323ea2481e84aa9203024a8685
+msgid "This has been revised and updated from the Idris 1 tutorial. For details of changes since Idris 1, see :ref:`updates-index`."
+msgstr ""
+
+#: ../source/tutorial/index.rst:17
+#: b4302b3db1f34055bbb85117fff2e1e0
+msgid "The documentation for Idris has been published under the Creative Commons CC0 License. As such to the extent possible under law, *The Idris Community* has waived all copyright and related or neighboring rights to Documentation for Idris."
+msgstr ""
+
+#: ../source/tutorial/index.rst:22
+#: 664ad67568d24e8aa981d87ed858d614
+msgid "More information concerning the CC0 can be found online at: http://creativecommons.org/publicdomain/zero/1.0/"
+msgstr ""

@@ -1,0 +1,937 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2023, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-16 09:52+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../source/tutorial/typesfuns.rst:5
+#: 607ec0f00c314785946993b1998d1485
+msgid "Types and Functions"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:8
+#: 2cfcab0767b845eaac874c4d57649739
+msgid "Primitive Types"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:10
+#: 271895bbad9c497bb1e7bdc217937ff4
+msgid "Idris defines several primitive types: ``Int``, ``Integer`` and ``Double`` for numeric operations, ``Char`` and ``String`` for text manipulation, and ``Ptr`` which represents foreign pointers. There are also several data types declared in the library, including ``Bool``, with values ``True`` and ``False``. We can declare some constants with these types. Enter the following into a file ``Prims.idr`` and load it into the Idris interactive environment by typing ``idris2 Prims.idr``:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:34
+#: 67daff5842a7416f9c3127abee54fb3f
+msgid "An Idris file consists of an optional module declaration (here ``module Prims``) followed by an optional list of imports and a collection of declarations and definitions. In this example no imports have been specified. However Idris programs can consist of several modules and the definitions in each module each have their own namespace. This is discussed further in Section :ref:`sect-namespaces`. When writing Idris programs both the order in which definitions are given and indentation are significant. Functions and data types must be defined before use, incidentally each definition must have a type declaration, for example see ``x : Int``, ``foo : String``, from the above listing. New declarations must begin at the same level of indentation as the preceding declaration. Alternatively, a semicolon ``;`` can be used to terminate declarations."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:48
+#: cddb69bf20d0481b80335be6bf17d7ed
+msgid "A library module ``prelude`` is automatically imported by every Idris program, including facilities for IO, arithmetic, data structures and various common functions. The prelude defines several arithmetic and comparison operators, which we can use at the prompt. Evaluating things at the prompt gives an answer, for example:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:61
+#: d520c12b670e42c5b7e9f183bd94b29b
+msgid "All of the usual arithmetic and comparison operators are defined for the primitive types. They are overloaded using interfaces, as we will discuss in Section :ref:`sect-interfaces` and can be extended to work on user defined types. Boolean expressions can be tested with the ``if...then...else`` construct, for example:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:73
+#: bce0fd433a1049e389d32368cf5550f3
+msgid "Data Types"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:75
+#: bdcf83c9841843619000951cb799fef7
+msgid "Data types are declared in a similar way and with similar syntax to Haskell. Natural numbers and lists, for example, can be declared as follows:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:85
+#: 59cfbfe7ebee4d16999e400e807c0fc6
+msgid "Data type names cannot begin with a lower case letter (we will see later why not!).  The above declarations are taken from the standard library. Unary natural numbers can be either zero (``Z``), or the successor of another natural number (``S k``). Lists can either be empty (``Nil``) or a value added to the front of another list (``x :: xs``). In the declaration for ``List``, we used an infix operator ``::``. New operators such as this can be added using a fixity declaration, as follows:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:97
+#: 5bf75f35a3b9427fb69de2211dd21921
+msgid "Functions, data constructors and type constructors may all be given infix operators as names. They may be used in prefix form if enclosed in brackets, e.g. ``(::)``. Infix operators can use any of the symbols:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:106
+#: 9ca504458dfb4492beae83fb379c73dd
+msgid "Some operators built from these symbols can't be user defined. These are"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:108
+#: 05fdb1da91274e45b2502e710b937e33
+msgid "``%``, ``\\``, ``:``, ``=``, ``|``, ``|||``, ``<-``, ``->``, ``=>``, ``?``, ``!``, ``&``, ``**``, ``..``"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:112
+#: 0a6920364a61409da274515602768920
+msgid "Functions"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:114
+#: 132ba66711c64c66bc8e7912c2f3c8ba
+msgid "Functions are implemented by pattern matching, again using a similar syntax to Haskell. The main difference is that Idris requires type declarations for all functions, using a single colon ``:`` (rather than Haskell’s double colon ``::``). Some natural number arithmetic functions can be defined as follows, again taken from the standard library:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:133
+#: 5a17facd86544c3fa98545d63033a0e1
+msgid "The standard arithmetic operators ``+`` and ``*`` are also overloaded for use by ``Nat``, and are implemented using the above functions. Unlike Haskell, there is no restriction on whether function names must begin with a capital letter or not. Function names (``plus`` and ``mult`` above), data constructors (``Z``, ``S``, ``Nil`` and ``::``) and type constructors (``Nat`` and ``List``) are all part of the same namespace. By convention, however, data types and constructor names typically begin with a capital letter. We can test these functions at the Idris prompt:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:150
+#: a4691621c83a4cd485279ac785271da0
+msgid "Like arithmetic operations, integer literals are also overloaded using interfaces, meaning that we can also test the functions as follows:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:160
+#: dfe28bc5f69340f3931eecb25b34e673
+msgid "You may wonder, by the way, why we have unary natural numbers when our computers have perfectly good integer arithmetic built in. The reason is primarily that unary numbers have a very convenient structure which is easy to reason about, and easy to relate to other data structures as we will see later. Nevertheless, we do not want this convenience to be at the expense of efficiency. Fortunately, Idris knows about the relationship between ``Nat`` (and similarly structured types) and numbers. This means it can optimise the representation, and functions such as ``plus`` and ``mult``."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:171
+#: 2a724d2944364b64b65d38cc73aeaf51
+msgid "``where`` clauses"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:173
+#: 8f0962253fb64b43a41f502ee7de8ca7
+msgid "Functions can also be defined *locally* using ``where`` clauses. For example, to define a function which reverses a list, we can use an auxiliary function which accumulates the new, reversed list, and which does not need to be visible globally:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:186
+#: 98cc9fff4cbb48d78231114352b9ee32
+msgid "Indentation is significant — functions in the ``where`` block must be indented further than the outer function."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:189
+#: 99dcaa5a13414fbcabfc99e47d7eaf6f
+msgid "Scope"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:191
+#: ef4576ab41bd4a069ad0f1ea1119aca1
+msgid "Any names which are visible in the outer scope are also visible in the ``where`` clause (unless they have been redefined, such as ``xs`` here). A name which appears in the type will be in scope in the ``where`` clause."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:196
+#: 2b71c9b858014e9aa1bc012f134622f3
+msgid "As well as functions, ``where`` blocks can include local data declarations, such as the following where ``MyLT`` is not accessible outside the definition of ``foo``:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:212
+#: 8903bcda005f4d96b701b6099d801a56
+msgid "Functions defined in a ``where`` clause need a type declaration just like any top level function. Here is another example of how this works in practice:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:238
+#: 004a94c103944363b8cba6a0cf83b483
+msgid "Totality and Covering"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:240
+#: f5fdd1956e2046ef83e47ec711b202ef
+msgid "By default, functions in Idris must be ``covering``. That is, there must be patterns which cover all possible values of the inputs types. For example, the following definition will give an error:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:249
+#: 50af57084598444d87fcaf77a9982c92
+msgid "This gives an error because ``fromMaybe Nothing`` is not defined. Idris reports:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:257
+#: d6e92491883d4c9fa9706133ba97c789
+msgid "You can override this with a ``partial`` annotation:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:264
+#: 71494bbf963c4a478ba42ba1b18c3a06
+msgid "However, this is not advisable, and in general you should only do this during the initial development of a function, or during debugging.  If you try to evaluate ``fromMaybe Nothing`` at run time you will get a run time error."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:269
+#: d83d700db3ac445f99619aec8014aae0
+msgid "Holes"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:271
+#: c61a091a79a94d23be07288b9de9b64b
+msgid "Idris programs can contain *holes* which stand for incomplete parts of programs. For example, we could leave a hole for the greeting in our \"Hello world\" program:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:280
+#: b44367e2d7ce455dac9d16c6f8da0354
+msgid "The syntax ``?greeting`` introduces a hole, which stands for a part of a program which is not yet written. This is a valid Idris program, and you can check the type of ``greeting``:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:290
+#: 1eb0d92cfccd4dd283ad7c91c40282ea
+msgid "Checking the type of a hole also shows the types of any variables in scope. For example, given an incomplete definition of ``even``:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:299
+#: ebb6dbd5c66e439e9170db33c309e281
+msgid "We can check the type of ``even_rhs`` and see the expected return type, and the type of the variable ``k``:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:309
+#: f5111fe88f5e4e9da7c5fdbf4b3c3141
+msgid "Holes are useful because they help us write functions *incrementally*. Rather than writing an entire function in one go, we can leave some parts unwritten and use Idris to tell us what is necessary to complete the definition."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:315
+#: a5c84061be6c438ea434ce836f2a39e5
+msgid "Dependent Types"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:320
+#: 751486bcef3046d78ea47dc0e89171b2
+msgid "First Class Types"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:322
+#: 6193020322b843c39580adf94cb24672
+msgid "In Idris, types are first class, meaning that they can be computed and manipulated (and passed to functions) just like any other language construct. For example, we could write a function which computes a type:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:332
+#: c60c6f96559b4ab8924bef4c1a261103
+msgid "This function calculates the appropriate type from a ``Bool`` which flags whether the type should be a singleton or not. We can use this function to calculate a type anywhere that a type can be used. For example, it can be used to calculate a return type:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:343
+#: cf89dcf71b164f89a2ce209c57522711
+msgid "Or it can be used to have varying input types. The following function calculates either the sum of a list of ``Nat``, or returns the given ``Nat``, depending on whether the singleton flag is true:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:355
+#: 3e39e48b61514665947c0868a3871207
+msgid "Vectors"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:357
+#: 8a8d68f00a7f4cc0a106a36ab814b5b3
+msgid "A standard example of a dependent data type is the type of “lists with length”, conventionally called vectors in the dependent type literature. They are available as part of the Idris library, by importing ``Data.Vect``, or we can declare them as follows:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:368
+#: beea738889d84fe7ae3385297374424d
+msgid "Note that we have used the same constructor names as for ``List``. Ad-hoc name overloading such as this is accepted by Idris, provided that the names are declared in different namespaces (in practice, normally in different modules). Ambiguous constructor names can normally be resolved from context."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:374
+#: e48c0f6a0cb54e0aba7d5f8e39dd612f
+msgid "This declares a family of types, and so the form of the declaration is rather different from the simple type declarations above. We explicitly state the type of the type constructor ``Vect`` — it takes a ``Nat`` and a type as an argument, where ``Type`` stands for the type of types. We say that ``Vect`` is *indexed* over ``Nat`` and *parameterised* by ``Type``. Each constructor targets a different part of the family of types. ``Nil`` can only be used to construct vectors with zero length, and ``::`` to construct vectors with non-zero length. In the type of ``::``, we state explicitly that an element of type ``a`` and a tail of type ``Vect k a`` (i.e., a vector of length ``k``) combine to make a vector of length ``S k``."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:386
+#: 6a70c6afa6474c7b956d12244c2aaee8
+msgid "We can define functions on dependent types such as ``Vect`` in the same way as on simple types such as ``List`` and ``Nat`` above, by pattern matching. The type of a function over ``Vect`` will describe what happens to the lengths of the vectors involved. For example, ``++``, defined as follows, appends two ``Vect``:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:398
+#: 164c4ca1299645038ee0b844ff5daba2
+msgid "The type of ``(++)`` states that the resulting vector’s length will be the sum of the input lengths. If we get the definition wrong in such a way that this does not hold, Idris will not accept the definition. For example:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:409
+#: e6e7f39d8e854c66b1b210bb24518461
+msgid "When run through the Idris type checker, this results in the following:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:423
+#: 3602556e2a2c4f2a83ab8d0841451481
+msgid "This error message suggests that there is a length mismatch between two vectors — we needed a vector of length ``k + m``, but provided a vector of length ``k + k``."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:428
+#: 3740a204917d4e3f8e85d718a6be165f
+msgid "The Finite Sets"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:430
+#: 24e3f090e40d49348ddb3f1bf9a92117
+msgid "Finite sets, as the name suggests, are sets with a finite number of elements. They are available as part of the Idris library, by importing ``Data.Fin``, or can be declared as follows:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:440
+#: a034dc6e35da4a7880c5b569269d6254
+msgid "From the signature,  we can see that this is a type constructor that takes a ``Nat``, and produces a type. So this is not a set in the sense of a collection that is a container of objects, rather it is the canonical set of unnamed elements, as in \"the set of 5 elements,\" for example. Effectively, it is a type that captures integers that fall into the range of zero to ``(n - 1)`` where ``n`` is the argument used to instantiate the ``Fin`` type. For example, ``Fin 5`` can be thought of as the type of integers between 0 and 4."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:447
+#: 7aa7d9daa1af48b798000ae1ab014a91
+msgid "Let us look at the constructors in greater detail."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:449
+#: 6d153b139cee41e595409fbf24b0893f
+msgid "``FZ`` is the zeroth element of a finite set with ``S k`` elements; ``FS n`` is the ``n+1``\\ th element of a finite set with ``S k`` elements. ``Fin`` is indexed by a ``Nat``, which represents the number of elements in the set. Since we can’t construct an element of an empty set, neither constructor targets ``Fin Z``."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:455
+#: 4884aa7571f44a7c9f9f1a4da267d4a9
+msgid "As mentioned above, a useful application of the ``Fin`` family is to represent bounded natural numbers. Since the first ``n`` natural numbers form a finite set of ``n`` elements, we can treat ``Fin n`` as the set of integers greater than or equal to zero and less than ``n``."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:460
+#: c3b816a5644b49a6a3050aff00738708
+msgid "For example, the following function which looks up an element in a ``Vect``, by a bounded index given as a ``Fin n``, is defined in the prelude:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:470
+#: 114c0c155b8744fcb11dc252f6857690
+msgid "This function looks up a value at a given location in a vector. The location is bounded by the length of the vector (``n`` in each case), so there is no need for a run-time bounds check. The type checker guarantees that the location is no larger than the length of the vector, and of course no less than zero."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:476
+#: da07562dc6d74c57a56e63052e3bb87c
+msgid "Note also that there is no case for ``Nil`` here. This is because it is impossible. Since there is no element of ``Fin Z``, and the location is a ``Fin n``, then ``n`` can not be ``Z``. As a result, attempting to look up an element in an empty vector would give a compile time type error, since it would force ``n`` to be ``Z``."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:483
+#: 0abd8b28ffe74f3d9ed8014db9172369
+msgid "Implicit Arguments"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:485
+#: e1c7de7739074a948f66dc96d6e09cb1
+msgid "Let us take a closer look at the type of ``index``:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:491
+#: b1bfcf5054fb4d2d8ebe021c84f332e4
+msgid "It takes two arguments, an element of the finite set of ``n`` elements, and a vector with ``n`` elements of type ``a``. But there are also two names, ``n`` and ``a``, which are not declared explicitly. These are *implicit* arguments to ``index``. We could also write the type of ``index`` as:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:501
+#: 7dbb26db0ae44f10b58bb7924651e260
+msgid "Implicit arguments, given with the ``forall`` declaration, are not given in applications of ``index``; their values can be inferred from the types of the ``Fin n`` and ``Vect n a`` arguments. Any name beginning with a lower case letter which appears as a parameter or index in a type declaration, which is not applied to any arguments, will *always* be automatically bound as an implicit argument; this is why data type names cannot begin with a lower case letter. Implicit arguments can still be given explicitly in applications, using ``{a=value}`` and ``{n=value}``, for example:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:517
+#: 52d56dea15a9413d8282baa10ac2394f
+msgid "In fact, any argument, implicit or explicit, may be given a name. We could have declared the type of ``index`` as:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:524
+#: 745b71942e804061bc981c6f654bea7b
+msgid "It is a matter of taste whether you want to do this — sometimes it can help document a function by making the purpose of an argument more clear."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:528
+#: 17682d8d776245f1b7090601ce951f29
+msgid "The names of implicit arguments are in scope in the body of the function, although they cannot be used at run time. There is much more to say about implicit arguments - we will discuss the question of what is available at run time, among other things, in Section :ref:`sect-multiplicities`"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:534
+#: dc969e1d73424f8ca3dd6d89f28e3f32
+msgid "Note: Declaration Order and ``mutual`` blocks"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:536
+#: 4643805f125f4577b2fd1498fe62c19b
+msgid "In general, functions and data types must be defined before use, since dependent types allow functions to appear as part of types, and type checking can rely on how particular functions are defined (though this is only true of total functions; see Section :ref:`sect-totality`). However, this restriction can be relaxed by using a ``mutual`` block, which allows data types and functions to be defined simultaneously:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:554
+#: 37f979e00e904078bd04e51f3f5885fc
+msgid "In a ``mutual`` block, first all of the type declarations are added, then the function bodies. As a result, none of the function types can depend on the reduction behaviour of any of the functions in the block."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:559
+#: 20490a8d455e4048979accf7cd12bea0
+msgid "Forward declarations can allow you to have more fine-grained control over the order in which mutually defined concepts are declared. This can be useful if you need to mention a datatype's constructor in the type of a mutually defined function, or need to rely on the behaviour of a mutually defined function for something to typecheck."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:602
+#: b6ebfa312e634eec9a0e1f0138e7de7f
+msgid "Placing signature declarations forward can suggest Idris to detect their corresponding mutual definitions."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:606
+#: d269218387794376ac64b200815602f2
+msgid "I/O"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:608
+#: ab9648bc6dab4345a9212c339b597222
+msgid "Computer programs are of little use if they do not interact with the user or the system in some way. The difficulty in a pure language such as Idris — that is, a language where expressions do not have side-effects — is that I/O is inherently side-effecting. So, Idris provides a parameterised type ``IO`` which *describes* the interactions that the run-time system will perform when executing a function:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:619
+#: 2782a46a1bc945499eda71a771e3749c
+msgid "We’ll leave the definition of ``IO`` abstract, but effectively it describes what the I/O operations to be executed are, rather than how to execute them. The resulting operations are executed externally, by the run-time system. We’ve already seen one I/O program:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:629
+#: 7985af9cd26d4d8ba0a847eebe5ddd6e
+msgid "The type of ``putStrLn`` explains that it takes a string, and returns an I/O action which produces an element of the unit type ``()``. There is a variant ``putStr`` which describes the output of a string without a newline:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:638
+#: e40156d7e6cd419a8349bf25d537809d
+msgid "We can also read strings from user input:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:644
+#: ff08990915a54343903ee8cb85fc7d07
+msgid "A number of other I/O operations are available. For example, by adding ``import System.File`` to your program, you get access to functions for reading and writing files, including:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:660
+#: c8684af6c1aa43f59c8608e030ad519a
+msgid "Note that several of these return ``Either``, since they may fail."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:665
+#: 78e48880ac1f41e1bbfcb694a0581308
+msgid "“``do``” notation"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:667
+#: 3bc3463ccb0f45ec963f84c8a5fc8483
+msgid "I/O programs will typically need to sequence actions, feeding the output of one computation into the input of the next. ``IO`` is an abstract type, however, so we can’t access the result of a computation directly. Instead, we sequence operations with ``do`` notation:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:679
+#: 4446d8ed080546f8b985d284c2cf1f8f
+msgid "The syntax ``x <- iovalue`` executes the I/O operation ``iovalue``, of type ``IO a``, and puts the result, of type ``a`` into the variable ``x``. In this case, ``getLine`` returns an ``IO String``, so ``name`` has type ``String``. Indentation is significant — each statement in the do block must begin in the same column. The ``pure`` operation allows us to inject a value directly into an IO operation:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:690
+#: e5bcfc5be61c40e9b889462aa894319c
+msgid "As we will see later, ``do`` notation is more general than this, and can be overloaded."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:693
+#: 03880cf79d434f7c88b23399c5a9867c
+msgid "You can try executing ``greet`` at the Idris 2 REPL by running the command ``:exec greet``:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:704
+#: 847336e3059b4d9a9a408e04ada0daef
+msgid "Laziness"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:706
+#: 1f6b5de7817845e397c4aa4844a335d0
+msgid "Normally, arguments to functions are evaluated before the function itself (that is, Idris uses *eager* evaluation). However, this is not always the best approach. Consider the following function:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:716
+#: 58585dccbe694475983df529ee556a50
+msgid "This function uses one of the ``t`` or ``e`` arguments, but not both. We would prefer if *only* the argument which was used was evaluated. To achieve this, Idris provides a ``Lazy`` primitive, which allows evaluation to be suspended. It is a primitive, but conceptually we can think of it as follows:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:728
+#: 42fd30b0801f4a1592a277090a7d5995
+msgid "A value of type ``Lazy a`` is unevaluated until it is forced by ``Force``. The Idris type checker knows about the ``Lazy`` type, and inserts conversions where necessary between ``Lazy a`` and ``a``, and vice versa. We can therefore write ``ifThenElse`` as follows, without any explicit use of ``Force`` or ``Delay``:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:741
+#: 271cb8886d6a4cb498c3996b1c458d69
+msgid "Infinite data Types"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:743
+#: 3fcb0c69cf1549d780bd01b2a6a9c27b
+msgid "Infinite data types (codata) allow us to define infinite data structures by marking recursive arguments as potentially infinite. One example of an infinite type is Stream, which is defined as follows."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:752
+#: dc7ffae784b44a07aeccf8f3efa13c88
+msgid "The following is an example of how the codata type ``Stream`` can be used to form an infinite data structure. In this case we are creating an infinite stream of ones."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:762
+#: bb1219c00f3a4a7e9accd3c52af6c0f5
+msgid "Useful Data Types"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:764
+#: 121ca5190c2f46f7bc385f980db05798
+msgid "Idris includes a number of useful data types and library functions (see the ``libs/`` directory in the distribution, and the `documentation <https://www.idris-lang.org/pages/documentation.html>`_). This section describes a few of these, and how to import them."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:770
+#: 6b537a48fd43471c9acb54120513bec7
+msgid "``List`` and ``Vect``"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:772
+#: 7090ebbd3a39424197ab5c009f5e35a1
+msgid "We have already seen the ``List`` and ``Vect`` data types:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:782
+#: 87d90c86e4f74416a0a7885fafe40af2
+msgid "You can get access to ``Vect`` with ``import Data.Vect``. Note that the constructor names are the same for each — constructor names (in fact, names in general) can be overloaded, provided that they are declared in different namespaces (see Section :ref:`sect-namespaces`), and will typically be resolved according to their type. As syntactic sugar, any implementation of the names ``Nil`` and ``::`` can be written in list form. For example:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:790
+#: 68d9a72e356f4d9380b8d73823294383
+msgid "``[]`` means ``Nil``"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:792
+#: b62c63c4d3ae4d31ad6f2903c7b544cb
+msgid "``[1,2,3]`` means ``1 :: 2 :: 3 :: Nil``"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:794
+#: 8aad0588bce74dc3a4ecac5155a50711
+msgid "Similarly, any implementation of the names ``Lin`` and ``:<`` can be written in **snoc**-list form:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:797
+#: 51692e10405b4060abe502a8f0ea112b
+msgid "``[<]`` means ``Lin``"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:798
+#: e6fe010831ff42a98f86322628c940b6
+msgid "``[< 1, 2, 3]`` means ``Lin :< 1 :< 2 :< 3``."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:800
+#: a48d2330ffe148c68d303ea1e8a5d4f5
+msgid "and the prelude includes a pre-defined datatype for snoc-lists:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:807
+#: dba584f63e0e4501af42b9e04b5ba77f
+msgid "The library also defines a number of functions for manipulating these types. ``map`` is overloaded both for ``List`` and ``Vect`` (we'll see more details of precisely how later when we cover interfaces in Section :ref:`sect-interfaces`) and applies a function to every element of the list or vector."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:823
+#: 5ed1b17723374166a069c8029e2d4cc1
+msgid "For example, given the following vector of integers, and a function to double an integer:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:834
+#: c845e3aada78445bbb1a1ea1017b88b9
+msgid "the function ``map`` can be used as follows to double every element in the vector:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:842
+#: 8ac441b5b19346bb83296b6b67449ddd
+msgid "For more details of the functions available on ``List`` and ``Vect``, look in the library files:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:845
+#: 8764d4278ad9497bbda3e57592cf8c4f
+msgid "``libs/base/Data/List.idr``"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:847
+#: 4ae900ed8e2541a7bc17e2ff2667a2ce
+msgid "``libs/base/Data/Vect.idr``"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:849
+#: 7751eabd45c14067ae648e4b76405c30
+msgid "Functions include filtering, appending, reversing, and so on."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:852
+#: 7d2e69a39073413da8c6c0dc79b18c3b
+msgid "Aside: Anonymous functions and operator sections"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:854
+#: cfdab609503842e0815788ccc6755b6d
+msgid "There are neater ways to write the above expression. One way would be to use an anonymous function:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:862
+#: 032fed9c4fee4338affe010a3330f7be
+msgid "The notation ``\\x => val`` constructs an anonymous function which takes one argument, ``x`` and returns the expression ``val``. Anonymous functions may take several arguments, separated by commas, e.g. ``\\x, y, z => val``. Arguments may also be given explicit types, e.g. ``\\x : Int => x * 2``, and can pattern match, e.g. ``\\(x, y) => x + y``. We could also use an operator section:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:874
+#: 19d1a8c98dd9486a94588e059efac65a
+msgid "``(*2)`` is shorthand for a function which multiplies a number by 2. It expands to ``\\x => x * 2``. Similarly, ``(2*)`` would expand to ``\\x => 2 * x``."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:879
+#: caed01a4c8fc4a2395f3f24e31b76903
+msgid "Maybe"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:881
+#: 7f1ef030e9ea4d5dba32e289cb84e120
+msgid "``Maybe``, defined in the Prelude, describes an optional value. Either there is a value of the given type, or there isn’t:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:888
+#: 86f06bdea4cc4305bc71bacc56e5ee2c
+msgid "``Maybe`` is one way of giving a type to an operation that may fail. For example, looking something up in a ``List`` (rather than a vector) may result in an out of bounds error:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:899
+#: cfc650ec0f02435b9a9abf2d986158df
+msgid "The ``maybe`` function is used to process values of type ``Maybe``, either by applying a function to the value, if there is one, or by providing a default value:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:907
+#: 13e0cf7e00654fc1a8dfc7d70abc4874
+msgid "Note that the types of the first two arguments are wrapped in ``Lazy``. Since only one of the two arguments will actually be used, we mark them as ``Lazy`` in case they are large expressions where it would be wasteful to compute and then discard them."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:913
+#: 6f2fe960173e4d498f0657eaf752bb7c
+msgid "Tuples"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:915
+#: 9310feafe140423a9105d8359b822173
+msgid "Values can be paired with the following built-in data type:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:921
+#: a45a7bec43404e2bb08ce5e76442ec9b
+msgid "As syntactic sugar, we can write ``(a, b)`` which, according to context, means either ``Pair a b`` or ``MkPair a b``. Tuples can contain an arbitrary number of values, represented as nested pairs:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:943
+#: c68c954296bd47ca8738eb53666d4bc8
+msgid "Dependent Pairs"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:945
+#: cf11fbb4a48540748f9a6ae35787d2fc
+msgid "Dependent pairs allow the type of the second element of a pair to depend on the value of the first element:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:953
+#: 05d82896fb7a47e3b446a2cdf44bce47
+msgid "Again, there is syntactic sugar for this. ``(x : a ** p)`` is the type of a pair of A and P, where the name ``x`` can occur inside ``p``. ``( x ** p )`` constructs a value of this type. For example, we can pair a number with a ``Vect`` of a particular length:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:963
+#: 229fb2e1e00644de9be6a508d64ac334
+msgid "If you like, you can write it out the long way; the two are equivalent:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:970
+#: 59e697d09b084d53b6d0e13607316c5d
+msgid "The type checker could infer the value of the first element from the length of the vector. We can write an underscore ``_`` in place of values which we expect the type checker to fill in, so the above definition could also be written as:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:980
+#: f88e6e9313504cc4b13c00ba5d03124b
+msgid "We might also prefer to omit the type of the first element of the pair, since, again, it can be inferred:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:988
+#: fa2cd8e652754c639aafc4490b019608
+msgid "One use for dependent pairs is to return values of dependent types where the index is not necessarily known in advance. For example, if we filter elements out of a ``Vect`` according to some predicate, we will not know in advance what the length of the resulting vector will be:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:998
+#: ff6a3da185b247909098d7783e548139
+msgid "If the ``Vect`` is empty, the result is:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1004
+#: 27ddd05fb0844cc49a966fe91e2be2a9
+msgid "In the ``::`` case, we need to inspect the result of a recursive call to ``filter`` to extract the length and the vector from the result. To do this, we use a ``case`` expression, which allows pattern matching on intermediate values:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1018
+#: 87d0a034284045028941af43a12b1cf4
+msgid "Dependent pairs are sometimes referred to as “Sigma types”."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1021
+#: f034ce812c03469ab64b42e16a6b4448
+msgid "Records"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1023
+#: e81fecebaeda4ac4850157ca8bb14d11
+msgid "*Records* are data types which collect several values (the record's *fields*) together. Idris provides syntax for defining records and automatically generating field access and update functions. Unlike the syntax used for data structures, records in Idris follow a different syntax to that seen with Haskell. For example, we can represent a person’s name and age in a record:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1039
+#: 029c817c32c84b93a895e5705bc12959
+msgid "The constructor name is provided using the ``constructor`` keyword, and the *fields* are then given which are in an indented block following the `where` keyword (here, ``firstName``, ``middleName``, ``lastName``, and ``age``). You can declare multiple fields on a single line, provided that they have the same type. The field names can be used to access the field values:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1054
+#: b31366ccc51b4b3aa46446b848978ecb
+msgid "We can use prefix field projections, like in Haskell:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1065
+#: 264455efbc814385b04f4ba35766a0da
+msgid "Prefix field projections can be disabled per record definition using pragma ``%prefix_record_projections off``, which makes all subsequently defined records generate only dotted projections. This pragma has effect until the end of the module or until the closest occurrence of ``%prefix_record_projections on``."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1071
+#: d35f701aa3b74b57ab4f2bebc8552faa
+msgid "We can also use the field names to update a record (or, more precisely, produce a copy of the record with the given fields updated):"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1082
+#: a94ae56388884fa3853ad8f9074a92ff
+msgid "The syntax ``{ field := val, ... }`` generates a function which updates the given fields in a record. ``:=`` assigns a new value to a field, and ``$=`` applies a function to update its value."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1086
+#: d1c271723bb746eb8007a8c6d7ebaeb1
+msgid "Each record is defined in its own namespace, which means that field names can be reused in multiple records."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1089
+#: 06f0e400ad384e6b8f059e995d43116d
+msgid "Records, and fields within records, can have dependent types. Updates are allowed to change the type of a field, provided that the result is well-typed."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1100
+#: 87de6e323b514ad7b5f2fe63d0e266a2
+msgid "It is safe to update the ``students`` field to a vector of a different length because it will not affect the type of the record:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1113
+#: c2d8f464359e4a48b2f5bf048b5b3c63
+msgid "We could also use ``$=`` to define ``addStudent`` more concisely:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1121
+#: f5721ab9d020496a971bb26868531340
+msgid "Nested record projection"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1123
+#: 38c695e29d544e64a27b08013c0cb449
+msgid "Nested record fields can be accessed using the dot notation:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1130
+#: 5a55301935a649a38fc322777c6ab4c6
+msgid "For the dot notation, there must be no spaces after the dots but there may be spaces before the dots. The composite projection must be parenthesised, otherwise ``map .a.b.c xs`` would be understood as ``map.a.b.c xs``."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1134
+#: a764b4a6b4cb4e95a15823a01d18cdcb
+msgid "Nested record fields can be accessed using the prefix notation, too:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1141
+#: 85ce94793bef47dbb371b1f20cd51905
+msgid "Dots with spaces around them stand for function composition operators."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1144
+#: d190abb73c8047409a851c9aec8e0015
+msgid "Nested record update"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1146
+#: 8c239da320824ff4ac003ee572ca8b63
+msgid "Idris also provides a convenient syntax for accessing and updating nested records. For example, if a field is accessible with the expression ``x.a.b.c``, it can be updated using the following syntax:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1155
+#: 196ec28d772c44928ee580c46f861bb7
+msgid "This returns a new record, with the field accessed by the path ``a.b.c`` set to ``val``. The syntax is first class, i.e. ``{ a.b.c := val }`` itself has a function type."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1159
+#: 2809c37e782844fd8454d747860e354b
+msgid "The ``$=`` notation is also valid for nested record updates."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1162
+#: 5623a84ec3544fff88772f488c0f3440
+msgid "Dependent Records"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1164
+#: e7394afdfd9743db94d6b71fe3bb05cc
+msgid "Records can also be dependent on values. Records have *parameters*, which cannot be updated like the other fields. The parameters appear as arguments to the resulting type, and are written following the record type name. For example, a pair type could be defined as follows:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1176
+#: 39fe4dbec6c841d2ad5062efaeea5670
+msgid "Using the ``Class`` record from earlier, the size of the class can be restricted using a ``Vect`` and the size included in the type by parameterising the record with the size.  For example:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1187
+#: 585b874117c84fa98485eae1b03bb709
+msgid "In the case of ``addStudent`` earlier, we can still add a student to a ``SizedClass`` since the size is implicit, and will be updated when a student is added:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1196
+#: e6408444a5b84c4b99335b95fe222efc
+msgid "In fact, the dependent pair type we have just seen is, in practice, defined as a record, with fields ``fst`` and ``snd`` which allow projecting values out of the pair:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1207
+#: ef723e8c52a147f582b9b5e041f1d85c
+msgid "It is possible to use record update syntax to update dependent fields, provided that all related fields are updated at once. For example:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1217
+#: 3cadbab0c7d84a14bef400a26ff9ebd3
+msgid "Or even:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1230
+#: 320af901999140a988bcc89d3e6bd717
+msgid "More Expressions"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1235
+#: e5ba272d42584d0eaedce68784f359a1
+msgid "``let`` bindings"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1237
+#: 66b6d56a522c48f4be579764994dd9ed
+msgid "Intermediate values can be calculated using ``let`` bindings:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1245
+#: 68b0574b3c614cc7aefa522efaea73c7
+msgid "We can do pattern matching in ``let`` bindings too. For example, we can extract fields from a record as follows, as well as by pattern matching at the top level:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1257
+#: b9d546d0b52a4e4dbf15b3f23db4d048
+msgid "These let bindings can be annotated with a type:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1265
+#: eee4912ed19f458e9a9dd625064d70c2
+msgid "Since ``=`` can either indicate a type of equality (``===`` or ``~=~``) or a definition, some expressions can be ambiguous. Here is an example:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1276
+#: 4a44760cdaee4f97ac258eea31771efa
+msgid "We can also use the symbol ``:=`` instead of ``=`` in this context to, among other things, avoid these ambiguities with propositional equality:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1284
+#: 7a05b1daf4034e478c59d8d3573947ff
+msgid "The code above can be read as \"``ty`` has type ``Type`` and its value is ``v = v``\"."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1287
+#: e654cc29d4884f69901cb36dc3d8e421
+msgid "Local definitions can also be introduced using ``let``. Just like top level ones and ones defined in a ``where`` clause you need to:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1290
+#: 14d1c1ddde994759ae9d1ea1e611041a
+msgid "declare the function and its type"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1291
+#: a500ba9f490f4aa4a7bc353fc2765aec
+msgid "define the function by pattern matching"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1300
+#: 6c5d19fa908040fa9232882b87f080d3
+msgid "The symbol ``:=`` cannot be used in a local function definition. Which means that it can be used to interleave let bindings and local definitions without introducing ambiguities."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1315
+#: 34c555579bf84b0cbefff071e28cd873
+msgid "List comprehensions"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1317
+#: 48e10edff0d64ec88735a0a83e314b08
+msgid "Idris provides *comprehension* notation as a convenient shorthand for building lists. The general form is:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1324
+#: 9c76b6540daa4b20b82ea49ff910a11a
+msgid "This generates the list of values produced by evaluating the ``expression``, according to the conditions given by the comma separated ``qualifiers``. For example, we can build a list of Pythagorean triples as follows:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1335
+#: 546800856e62468a8408cbc54c6937fe
+msgid "The ``[a..b]`` notation is another shorthand which builds a list of numbers between ``a`` and ``b``. Alternatively ``[a,b..c]`` builds a list of numbers between ``a`` and ``c`` with the increment specified by the difference between ``a`` and ``b``. This works for type ``Nat``, ``Int`` and ``Integer``, using the ``enumFromTo`` and ``enumFromThenTo`` function from the prelude."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1343
+#: 7f3d81d6f9be4543bf7f369a5f0c11db
+msgid "``case`` expressions"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1345
+#: 244061b42fd04b8091697aab73bf102b
+msgid "Another way of inspecting intermediate values is to use a ``case`` expression. The following function, for example, splits a string into two at a given character:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1355
+#: 1b2c3e69e9304b1d99e473df26798fbe
+msgid "``break`` is a library function which breaks a string into a pair of strings at the point where the given function returns true. We then deconstruct the pair it returns, and remove the first character of the second string."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1360
+#: 0436b6aef5614a6ba5713d1a19a8eda2
+msgid "A ``case`` expression can match several cases, for example, to inspect an intermediate value of type ``Maybe a``. Recall ``list_lookup`` which looks up an index in a list, returning ``Nothing`` if the index is out of bounds. We can use this to write ``lookup_default``, which looks up an index and returns a default value if the index is out of bounds:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1374
+#: 402a6440485e4bfe8b748e26f1f927c5
+msgid "If the index is in bounds, we get the value at that index, otherwise we get a default value:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1385
+#: a3f587428c1e4216ac01654b8222a7d0
+msgid "Totality"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1387
+#: cb1328293dbf48e2995334f701864da6
+msgid "Idris distinguishes between *total* and *partial* functions. A total function is a function that either:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1390
+#: 3b978fc32b924f899a2404f1d1f674f3
+msgid "Terminates for all possible inputs, or"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1391
+#: 6a5150b8ae1b4280adf90dd1064affa9
+msgid "Produces a non-empty, finite prefix of a possibly infinite result"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1393
+#: 6c56f7a7032c471b82913b808b24525a
+msgid "If a function is total, we can consider its type a precise description of what that function will do. For example, if we have a function with a return type of ``String`` we know something different, depending on whether or not it's total:"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1398
+#: 60ae6f0a96d4456c8b13cdd4faa0edac
+msgid "If it's total, it will return a value of type ``String`` in finite time;"
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1399
+#: f635e63b1e0147a4bf4b06ba68e06292
+msgid "If it's partial, then as long as it doesn't crash or enter an infinite loop, it will return a ``String``."
+msgstr ""
+
+#: ../source/tutorial/typesfuns.rst:1402
+#: f1e99a7137cf49fa8311b593821cdb3f
+msgid "Idris makes this distinction so that it knows which functions are safe to evaluate while type checking (as we've seen with :ref:`sect-fctypes`). After all, if it tries to evaluate a function during type checking which doesn't terminate, then type checking won't terminate! Therefore, only total functions will be evaluated during type checking. Partial functions can still be used in types, but will not be evaluated further."
+msgstr ""

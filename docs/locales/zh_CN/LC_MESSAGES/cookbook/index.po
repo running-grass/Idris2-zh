@@ -1,0 +1,27 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020-2023, The Idris Community
+# This file is distributed under the same license as the Idris2 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Idris2 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-16 09:52+0800\n"
+"PO-Revision-Date: 2022-09-03 13:48+0000\n"
+"Last-Translator: grass <hi@grass.show>\n"
+"Language-Team: Chinese (Simplified) <>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../source/cookbook/index.rst:4 87c836899f3348c2992e7efc791b45d2
+msgid "Cookbook"
+msgstr "经典实例"
+
+#: ../source/cookbook/index.rst:6 c4f759ff133541e1b91bb99111e92b17
+msgid ""
+"The cookbook provides common recipes for common patterns and applications"
+" in Idris 2."
+msgstr "经典实例是为 Idris 2 中的常见模式和应用提供常见的案例。"
